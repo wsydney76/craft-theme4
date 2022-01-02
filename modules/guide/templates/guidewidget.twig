@@ -1,0 +1,16 @@
+{% if not entries %}
+    No new guides available.
+{% endif %}
+<table class="data fullwidth">
+
+{% for entry in entries %}
+    <tr>
+        <td>
+            <a href="{{ cpUrl("guide/#{entry.slug}") }}">{{ entry.title }}</a>
+            <span class="light nowrap">{{ entry.postDate|date('short') }}</span>
+            <br>
+            {{ entry.teaser }}
+        </td>
+    </tr>
+{% endfor %}
+</table>

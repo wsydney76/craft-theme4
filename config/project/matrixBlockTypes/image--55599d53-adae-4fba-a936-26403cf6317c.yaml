@@ -1,0 +1,56 @@
+field: 7384bc4c-31c8-4906-a830-d53525e01989 # Guide Inhalt
+fieldLayouts:
+  3f77fa72-ac36-4cc3-9b16-1f514e772f7c:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: e3acce1b-3e44-4216-bb4f-95d5ee8ce6e7 # Bild
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  e3acce1b-3e44-4216-bb4f-95d5ee8ce6e7: # Bild
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Bild
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: 'Bild auswählen'
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+      singleUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:a010299b-071c-4852-81f6-c15875a5ba4f' # Guide
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Assets
+handle: image
+name: Bild
+sortOrder: 3

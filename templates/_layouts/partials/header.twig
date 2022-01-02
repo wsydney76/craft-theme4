@@ -1,0 +1,47 @@
+{% switch theme.headerStyle %}
+
+{% case "end" %}
+
+    <div class="flex justify-between items-center">
+        <div class="z-30 text-2xl">
+            {{ siteNameHtml|raw }}
+        </div>
+        <div>
+            {{ navHtml|raw }}
+        </div>
+    </div>
+
+{% case "start" %}
+
+    <div class="flex items-center">
+        <div class="text-2xl">
+            {{ siteNameHtml|raw }}
+        </div>
+        <div class="ml-8">
+            {{ navHtml|raw }}
+        </div>
+    </div>
+
+{% case "rowLeft" %}
+    <div>
+        <div class="text-4xl">
+            {{ siteNameHtml|raw }}
+        </div>
+        <div class="mt-4">
+            {{ navHtml|raw }}
+        </div>
+    </div>
+{% case "rowCenter" %}
+    <div class="">
+        <div class="text-4xl flex justify-center">
+            {{ siteNameHtml|raw }}
+        </div>
+        <div class="mt-4 flex justify-center">
+            {{ navHtml|raw }}
+        </div>
+    </div>
+{% endswitch %}
+
+{{ mobileNavHtml|raw }}
+
+

@@ -1,0 +1,6 @@
+{% if entry.bodyContent %}
+    {% include "_partials/blocks.twig" with {
+        entry,
+        query: clone(entry.bodyContent)
+    } only %}
+{% endif %}

@@ -1,0 +1,113 @@
+field: 266ac6c3-03c0-40eb-8f24-c5c22ed1c5c0 # Content
+fieldLayouts:
+  65d2f478-9280-48a2-855f-6cbc575565c0:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 3ac8b547-8089-43db-b7de-39c79c658368 # Audios
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 80122cfd-218e-4ef3-b770-e09e5e158847 # Pattern
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  3ac8b547-8089-43db-b7de-39c79c658368: # Audios
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: audios
+    instructions: 'Nur eine Playlist pro Seite!'
+    name: Audios
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 82a2d82a-ecb9-4e2d-b41d-c67f2f77f73a # Image
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 666c8cf3-0639-4757-aefa-9490930dbf0f # Audio
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 95a20cdb-9cb3-4522-a2bf-db9721d195e8 # Titel
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - dbc263da-95a4-428a-a2eb-82d51acb4523 # Artist
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 04d14d45-3d49-4d75-9b1b-56b1cbe51772 # Dauer
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_25_audios}}'
+      fieldLayout: table
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  80122cfd-218e-4ef3-b770-e09e5e158847: # Pattern
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: pattern
+    instructions: ''
+    name: Pattern
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Multiple Songs'
+            -
+              - value
+              - multipleSongs
+            -
+              - default
+              - '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: playlist
+name: Playlist
+sortOrder: 7

@@ -1,0 +1,46 @@
+columnSuffix: nnpvkgsj
+contentColumnType: string
+fieldGroup: d868de82-ae37-4897-a6bb-ef08e919650b # Common
+handle: increaseTitleContrast
+instructions: ''
+name: 'Increase Title Contrast'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - None
+        -
+          - value
+          - none
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Box (darkened box behind title)'
+        -
+          - value
+          - box
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Image (darkened image)'
+        -
+          - value
+          - image
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

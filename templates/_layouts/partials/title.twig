@@ -1,0 +1,12 @@
+{% set showTeaser = themeOptions.showTeaser ?? true %}
+
+{% if 'text' in theme.titleStyle|lower %}
+    <div class="">
+        {% if showTeaser and entry is defined and entry.teaser %}
+            <div class="mt-2 text-base">
+                {{ entry.teaser }}
+            </div>
+        {% endif %}
+        <h1 class="text-4xl text-h1 mt-1 py-2 tracking-widest">{{ entry.title ?? title }}</h1>
+    </div>
+{% endif %}

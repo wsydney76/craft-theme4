@@ -1,0 +1,39 @@
+{% extends "_layouts/main.twig" %}
+
+{% block page %}
+
+
+    {% block navbarArea %}
+        <div class="{{ theme.stickyNavbar ? 'sticky top-0 z-50' }} bg-nav">
+            <div class="container max-w-screen-{{ theme.headerWidth }} mx-auto  px-8">
+                <div class="py-4">
+                    {{ navbarHtml|raw }}
+                </div>
+            </div>
+            {% if theme.showScrollIndicator %}
+                {% include '_layouts/partials/scroll_indicator.twig' %}
+            {% endif %}
+        </div>
+    {% endblock %}
+
+    <main>
+        {% block titleArea %}
+            {% include '_layouts/partials/fullwidth_titlearea.twig' %}
+        {% endblock %}
+
+        <article>
+            {{ block('content') }}
+        </article>
+    </main>
+
+    {% block footerArea %}
+        <div class="mt-8 {{ theme.footerWidth != 'full' ? "container max-w-screen-#{ theme.footerWidth } mx-auto px-8" }} bg-footer-bg text-footer-text">
+            <div class="container max-w-screen-{{ theme.footerInnerWidth }} mx-auto {{ theme.footerWidth != theme.footerInnerWidth }} py-4 {{ theme.footerBorder ? 'border-t border-footer-border' }}">
+                {% include '_layouts/partials/footer.twig' %}
+            </div>
+        </div>
+    {% endblock %}
+
+
+{% endblock %}
+

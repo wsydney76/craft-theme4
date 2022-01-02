@@ -1,0 +1,22 @@
+{% extends "_layouts/#{theme.layout}.twig" %}
+
+{% set themeOptions = {
+    showMeta: theme.titleStyle == 'coverBoxed'
+}%}
+
+{% block content %}
+
+    {% if theme.titleStyle != 'coverBoxed' %}
+        {% include '_partials/entry_meta.twig' %}
+    {% endif %}
+
+    {{ parent() }}
+
+    {% include '_partials/related_entries.twig' with {query: entry.entries} %}
+
+    {% include '_partials/entry_nav.twig' with {condition:{section:entry.section.handle}} %}
+
+
+{% endblock %}
+
+

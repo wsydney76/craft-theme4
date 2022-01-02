@@ -1,0 +1,10 @@
+siteUid: null
+sortOrder: 3
+template: _ajax/page.json
+uriParts:
+  - fetchpage/
+  -
+    - slug
+    - '[^\/]+'
+  - .json
+uriPattern: 'fetchpage/<slug:[^\/]+>.json'

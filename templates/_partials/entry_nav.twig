@@ -1,0 +1,18 @@
+{# @var entry \craft\elements\Entry #}
+
+{% set prev = entry.prev(condition) %}
+{% set next = entry.next(condition) %}
+<div class="max-w-screen-{{ theme.pageWidth }} mx-auto px-block">
+    <div class="border-t border-border mt-block pt-4 flex justify-between">
+        <div class="col-md-6 pt-2 border-right">
+            {% if prev %}
+                &lt; {{ prev.link }}
+            {% endif %}
+        </div>
+        <div class="col-md-6 pt-2 text-right">
+            {% if next %}
+                {{ next.link }} &gt;
+            {% endif %}
+        </div>
+    </div>
+</div>

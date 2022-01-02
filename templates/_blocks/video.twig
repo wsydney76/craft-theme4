@@ -1,0 +1,25 @@
+{% set video = block.videoFile.one %}
+{% set image = block.posterImage.one %}
+{% if video %}
+
+
+    {# {% if block.showInModal %}
+        <div x-data="{showVideo: false}" @click.outside="showVideo = false" @keyup.escape.window="showVideo = false">
+            <button @click="showVideo=true">Show</button>
+            {% embed '_layouts/embeds/modal.twig' with {show: 'showVideo'} %}
+                {% block content %}
+                    <div>
+                        <video src="{{ video.url }}" controls class="bg-black"
+                              ></video>
+                    </div>
+                {% endblock %}
+            {% endembed %}
+        </div>
+    {% endif %}#}
+
+    <div>
+        <video src="{{ video.url }}" poster="{{ image.url ?? '' }}" controls class="w-full bg-black"
+               style="opacity: 1 !important;"></video>
+    </div>
+{% endif %}
+

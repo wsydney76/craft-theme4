@@ -1,0 +1,14 @@
+{% from '_macros/lib.twig' import img %}
+
+<div class="overflow-hidden p-1 {{ classes ?? '' }}">
+
+    <a class="bg-none block z-20 focus:outline-none focus:ring-4 focus:ring-black  overflow-hidden" href="{{ url }}" data-caption="{{ image is defined and image ? image.title }}">
+        {% if image is defined %}
+            {{ image.img(transform)|attr({class:'transform hover:scale-110 transition'}) }}
+        {% else %}
+            <img class="transform hover:scale-110 transition" src="{{ src }}">
+        {% endif %}
+    </a>
+
+</div>
+

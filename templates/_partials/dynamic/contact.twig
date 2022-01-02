@@ -1,0 +1,37 @@
+<div class="space-y-4">
+
+    {% if siteInfo.text %}
+        <div>
+            {{ siteInfo.text|nl2br }}
+        </div>
+    {% endif %}
+
+
+    {% if siteInfo.eMail %}
+        <div>
+            E-Mail: {{ siteInfo.eMail }}
+        </div>
+    {% endif %}
+
+
+    {% if siteInfo.telephone %}
+        <div>
+            Telefon: {{ siteInfo.telephone }}
+        </div>
+    {% endif %}
+
+
+    {% if siteInfo.fax %}
+        <div>
+            Fax: {{ siteInfo.fax }}
+        </div>
+    {% endif %}
+
+    {% if siteInfo.webSite %}
+        <div>
+            Website: <a href="{{ siteInfo.webSite }}">{{ siteInfo.webSite }}</a>
+        </div>
+    {% endif %}
+
+</div>
+

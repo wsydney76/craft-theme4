@@ -1,0 +1,42 @@
+{% if not craft.app.request.isPreview %}
+    <div x-data="{
+        showInfo: false,
+     }">
+
+        <div class="fixed bottom-0  w-full text-sm z-50"
+             x-show="$store.consent.promptForUserChoice">
+
+            <div x-show="showInfo" x-transition class="bg-gray-300 text-black p-4">
+                <div class="max-w-screen-md mx-auto rich-text">
+                    {{ siteInfo.cookieConsentInfo }}
+                </div>
+            </div>
+
+            <div class="bg-black text-white p-4 flex items-center justify-center space-x-4">
+
+                <div>
+                    {{ siteInfo.cookieConsentText }}
+                </div>
+
+                <button type="button" class="underline" @click="showInfo = !showInfo">
+                    Info
+                </button>
+
+                <button class="bg-blue-600 hover:bg-blue-800 transition-colors text-white px-4 py-2"
+                        @click="$store.consent.rejectMediaCookies();">
+                    {{ 'Reject'|t }}
+                </button>
+                <button class="bg-blue-600 hover:bg-blue-800 transition-colors text-white px-4 py-2"
+                        @click="$store.consent.allowMediaCookies();">
+                    {{ 'Accept'|t }}
+                </button>
+
+                <div>
+                    <a class="underline" href="{{ siteUrl('goto-privacy') }}">{{ 'Privacy Protection Declaration'|t }}</a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+{% endif %}

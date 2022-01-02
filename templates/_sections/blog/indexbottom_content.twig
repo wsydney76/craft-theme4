@@ -1,0 +1,14 @@
+{% from '_macros/lib.twig' import img %}
+
+<div class="flex space-x-2 items-center text-base">
+    <div>
+        {% set image = entry.author.photo %}
+        {% if image %}
+            {{ img(image, {width: 50, height: 50}, 'rounded-full') }}
+        {% endif %}
+
+    </div>
+    <div class="text-muted">
+        {{ entry.author.fullName }} <br> {{ entry.postDate|date('short') }}
+    </div>
+</div>

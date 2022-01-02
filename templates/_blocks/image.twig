@@ -1,0 +1,59 @@
+{% from '_macros/lib.twig' import img %}
+
+
+{% set imgWidth = block.width == 'default' ? theme.defaultImageWidth : block.width %}
+ {# TODO: Add responsive sizes #}
+
+
+{% set image = block.image.one() %}
+{% if image %}
+
+    {% set colSpan = colSpan ?? 12 %}
+
+    {% if columnsWidth is defined and columnsWidth != 'default' %}
+        {% set width = theme.widths[columnsWidth ?? 'lg'] %}
+    {% else %}
+        {% set width = theme.widths[width ?? 'lg'] %}
+    {% endif %}
+
+    {% set width = ceil(width / 12 * colSpan) %}
+
+    {% set aspectRatio = block.aspectRatio ?? 'auto' %}
+
+    {% if aspectRatio == 'default' %}
+        {% set aspectRatio = theme.defaultAspectRatio %}
+    {% endif %}
+
+    {% if aspectRatio == 'fullwidth' %}
+        {% set transform = {width: 2500, height: theme.fullwidthImageHeight ?? 600 } %}
+    {% elseif aspectRatio != 'auto' %}
+        {% set aspectRatio = aspectRatio|split('_') %}
+        {% set height = floor(width / aspectRatio[0] * aspectRatio[1]) %}
+        {% set transform = {width: width, height: height} %}
+    {% else %}
+        {% set transform = {width: width} %}
+    {% endif %}
+
+
+    {% set transform = transform|merge({format: 'webp'}) %}
+
+    {% set caption = block.caption %}
+    {% if image.copyright %}
+        {% set caption -%}
+            {{ caption }} &copy; {{ image.copyright }}
+        {%- endset %}
+    {% endif %}
+
+    <figure class="figure">
+
+        {{ img(image, transform) }}
+
+        {% if caption %}
+            <figcaption class="text-center mt-2 text-base">
+                {{ caption }}
+            </figcaption>
+        {% endif %}
+    </figure>
+
+{% endif %}
+

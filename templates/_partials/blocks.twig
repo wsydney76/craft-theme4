@@ -1,0 +1,42 @@
+{# default / columns #}
+{% set context = context ?? 'default' %}
+
+{% set blocks = blocks ?? query.all %}
+
+<div id="blocks" class="rich-text">
+    {% for block in blocks %}
+
+        {% set backgroundColor = block.backgroundColor ?? 'default' %}
+        {% set foregroundColor = block.foregroundColor ?? 'default' %}
+
+        {% set width = block.width ?? 'default' %}
+
+        {% if width == 'default' and block.type.handle == 'image' and theme.defaultImageWidth != 'default' %}
+            {% set width = theme.defaultImageWidth %}
+        {% endif %}
+
+        {% set defaultBlockWidth = theme.defaultBlockWidth %}
+        {% set columnsWidth = width == 'default' ? defaultBlockWidth : block.width %}
+
+
+        {% if block.type.handle == 'columns' %}
+            {% set width = 'full' %}
+        {% endif %}
+
+        {% if width == 'default' %}
+            {% set width = defaultBlockWidth %}
+        {% endif %}
+
+        {% set paddingsX = width == 'full'  ? '' : 'px-block' %}
+        {% set paddingsY = backgroundColor == 'default' ? '' : 'py-block' %}
+        {% set marginsY = block.marginsY ?? 'my-block first:mt-0' %}
+
+        <div id="block-{{ block.id }}" class=" {{ "bg-#{backgroundColor}" }} {{ "text-#{foregroundColor}" }} {{ marginsY }} {{ paddingsY }}">
+            <div class="max-w-screen-{{ width }} mx-auto {{ paddingsX }}">
+                {% include ["_blocks/#{block.type}"] %}
+            </div>
+        </div>
+
+    {% endfor %}
+</div>
+

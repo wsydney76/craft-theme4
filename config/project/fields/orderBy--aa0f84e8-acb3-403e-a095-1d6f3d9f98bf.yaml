@@ -1,0 +1,10 @@
+columnSuffix: friywfkt
+contentColumnType: string
+fieldGroup: d868de82-ae37-4897-a6bb-ef08e919650b # Common
+handle: orderBy
+instructions: ''
+name: 'Order By'
+searchable: false
+translationKeyFormat: null
+translationMethod: none
+type: modules\main\fields\OrderByField

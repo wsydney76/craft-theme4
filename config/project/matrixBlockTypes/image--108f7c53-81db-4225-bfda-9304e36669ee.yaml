@@ -1,0 +1,107 @@
+field: 20f9b230-8862-4058-9cf3-7c7a78e44a13 # Column
+fieldLayouts:
+  d340f488-b27f-4e92-b9e8-f97103648c50:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 39a9436c-4a59-44ea-9c7c-5d1a4eef3609 # Image
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 32f77f20-afaa-4208-b9c5-ee0a7cbd6947 # Caption
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 9e2aef67-e059-40ff-8b1a-06707a443c2d # Aspect Ratio
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+        name: Content
+        sortOrder: 1
+fields:
+  9e2aef67-e059-40ff-8b1a-06707a443c2d: # Aspect Ratio
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: aspectRatio
+    instructions: ''
+    name: 'Aspect Ratio'
+    searchable: false
+    settings:
+      defaultAspectRatio: '1_1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: modules\main\fields\AspectRatioField
+  32f77f20-afaa-4208-b9c5-ee0a7cbd6947: # Caption
+    columnSuffix: null
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: caption
+    instructions: ''
+    name: Caption
+    searchable: true
+    settings:
+      byteLimit: 255
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  39a9436c-4a59-44ea-9c7c-5d1a4eef3609: # Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      defaultUploadLocationSubpath: images
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: image
+name: Image
+sortOrder: 3

@@ -1,0 +1,63 @@
+{# Sets a default value if not defined by the `query` input field below #}
+{% set query = query ?? '' %}
+
+{% set offset = offset ?? 0 %}
+{% set limit = limit ?? theme.entriesInSearchResults %}
+
+{# Replaces only the `#results` div on keyup or when the value is changed #}
+<label for="query">{{ 'Search Term'|t }}:
+    <input sprig s-trigger="keyup changed delay:500ms" s-replace="#results"
+           type="text" name="query" id="query" value="{{ query }}" placeholder="{{ 'Search'|t }}" autocomplete="off"
+           autofocus>
+</label>
+
+
+<div id="results" class="mt-block min-h-[200px] animate-fadein">
+    {% if query %}
+        {{ sprig.pushUrl('?query=' ~ query) }}
+
+        {% set entryQuery = craft.entries
+            .search(query)
+            .orderBy('score')
+            .offset(offset)
+            .limit(limit)
+            .type('not toc')
+            .with([
+                ['featuredImage', {withTransforms: [theme.cardImageTransform]}]
+            ]) %}
+
+        {% set entries = entryQuery.all %}
+
+        {% if entries|length %}
+
+            {% include '_partials/entry_cards.twig' with {
+                entries
+            } only %}
+
+
+            {# If the total entry count is greater than the number that has been displayed #}
+            {% if entryQuery.count() > offset + entries|length %}
+                {# Increments `offset` by the value of `limit` #}
+                <button sprig
+                        id="load-more-oob"
+                        class="btn bg-primary text-white"
+                        s-val:offset="{{ offset + limit }}"
+
+                        {# Appends all `#results h6` elements to the `#entries` element #}
+                        s-select="#entries article" s-target="#entries" s-swap="beforeend"
+
+                        {# If this button was clicked then swap it out-of-band #}
+                        {{ sprig.trigger == 'load-more-oob' ? 's-swap-oob="true"' }}>
+                    {{ 'Load more'|t }}
+                </button>
+            {% else %}
+                {# Swaps the button out-of-band with a dummy button that is hidden #}
+                <button id="load-more-oob" s-swap-oob="true" style="display: none"></button>
+            {% endif %}
+
+
+        {% else %}
+            {{ 'No results'|t }}
+        {% endif %}
+    {% endif %}
+</div>

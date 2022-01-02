@@ -1,0 +1,12 @@
+columnSuffix: uownribx
+contentColumnType: string
+fieldGroup: d868de82-ae37-4897-a6bb-ef08e919650b # Common
+handle: indexTemplate
+instructions: ''
+name: 'Index Template'
+searchable: false
+settings:
+  includeDirectory: _partials/index-templates
+translationKeyFormat: null
+translationMethod: none
+type: modules\main\fields\IncludeField

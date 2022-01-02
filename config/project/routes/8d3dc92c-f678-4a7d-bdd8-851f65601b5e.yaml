@@ -1,0 +1,9 @@
+siteUid: null
+sortOrder: 2
+template: _external/vita.twig
+uriParts:
+  - partial/vita/
+  -
+    - slug
+    - '[^\/]+'
+uriPattern: 'partial/vita/<slug:[^\/]+>'

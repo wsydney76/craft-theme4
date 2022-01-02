@@ -1,0 +1,18 @@
+{% from 'guide/macros.twig' import guideAsset %}
+
+
+Hello, {{ currentUser.name}}, here will be some help.
+
+<p>This website was built using the Craft CMS content management system (CMS). While Craft makes content management easy and intuitive, this guide is here to help get you started and to answer a few questions you may have along the way.</p>
+
+<hr>
+
+<h2 data-guide-section>Dashboard</h2>
+<div class="guide_grid guide_grid--2_column">
+    <div>
+        <p>The first thing you&rsquo;ll see when logging into Craft&rsquo;s Control Panel (CP) is the Dashboard. This page is home to helpful widgets that offer information about your website. The Dashboard is customizable for each user, so you may add, remove, and re-arrange the layout of the widgets you find most useful.</p>
+    </div>
+    {{ guideAsset('guide-index-dashboard.png') }}
+</div>
+
+

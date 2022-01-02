@@ -1,0 +1,35 @@
+columnSuffix: kamnclun
+contentColumnType: string
+fieldGroup: f15bff68-e0e6-422d-a615-9e22d733e1f0 # Global
+handle: showPrivacySettings
+instructions: 'Einschalten, um am Anfang der Datenschutzseite Einstellungsdialog anzuzeigen.'
+name: 'Show Privacy Settings'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Off'
+        -
+          - value
+          - 'off'
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Media Cookies'
+        -
+          - value
+          - mediaCookies
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

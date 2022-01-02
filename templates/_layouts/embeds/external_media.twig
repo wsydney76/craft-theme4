@@ -1,0 +1,53 @@
+{% set props = {
+    title: 'External Media'|t,
+    description: '',
+    providerName: '',
+    externalUrl: ''
+}|merge(props) %}
+
+
+<div x-data="{acceptOnce: false}">
+
+    <template x-if="$store.consent.mediaCookiesAllowed || acceptOnce">
+        {% block media %}{% endblock %}
+    </template>
+
+    <template x-if="!$store.consent.mediaCookiesAllowed  && !acceptOnce">
+        {% block consent %}
+            <div class="border border-gray-700 bg-gray-100 text-black p-8">
+                <div class="font-bold text-xl tracking-wider">
+                    {{ props.title }}
+                </div>
+                {% if props.description %}
+                    <div class="mt-2 text-sm">
+                        {{ props.description ?? '' }}
+                    </div>
+                {% endif %}
+
+                <div class="mt-4">
+                    {{ 'Your privacy settings do not allow to show external media.'|t }}
+                    {% if props.providerName %}
+                        ({{ embeddedAsset.providerName }})
+                    {% endif %}
+                </div>
+                <div class="mt-8 flex flex-wrap">
+                    <button class="bg-gray-700 text-white mb-2 mr-2 px-4 py-2" type="button"
+                            @click.stop="acceptOnce = true">{{ 'Allow this time'|t }}</button>
+
+                    <button class="bg-gray-700 text-white mb-2 mr-2 px-4 py-2" type="button"
+                            @click.stop="$store.consent.allowMediaCookies()">{{ 'Allow always'|t }}</button>
+
+                    {% if props.externalUrl %}
+                        <a class="bg-gray-700 text-white mb-2 mr-2 px-4 py-2" href="{{ props.externalUrl }}"
+                           target="_blank">{{ 'Open in new window'|t }}</a>
+                    {% endif %}
+
+                    {% block extraButtons %}{% endblock %}
+
+                </div>
+            </div>
+        {% endblock %}
+    </template>
+
+
+</div>

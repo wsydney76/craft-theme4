@@ -1,0 +1,19 @@
+columnSuffix: vutiojub
+contentColumnType: string(240)
+fieldGroup: d868de82-ae37-4897-a6bb-ef08e919650b # Common
+handle: altText
+instructions: ''
+name: 'Alt Text'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 60
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

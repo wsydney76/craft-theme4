@@ -1,0 +1,148 @@
+fieldLayouts:
+  3ab90f34-a4a8-41a1-8123-3fd957982997:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: c191286d-fa58-48a4-bba2-92c28cbf57c9 # Site Name
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2 # Featured Image
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: cc39676d-193e-4b20-a29d-f1b3d3c3c299 # Fav Icon
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 6253c3ac-a08c-48bf-986f-d4350ed611d7 # Logo
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: dc298055-236a-4bbc-9246-ae94c0e76889 # Copyright
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 07e4260f-cc8c-4e3c-8085-fa9c9077ddcb # Entries
+            instructions: ''
+            label: 'Navigation Entries'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Global
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 94e05a5e-2220-415e-89c6-398c3c22fc07 # Individual contact
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5e963153-38ea-4cd9-9282-6d08335433ff # E-Mail
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: b683b318-aee5-4bb2-a3a4-40fc6cf445cc # Phone
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 0c3f6026-fb73-4bb2-a6da-63857c5b8db4 # Fax
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 9e628a7d-eee4-4815-ba1a-502ca992f9c0 # Web Site
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+        name: Kontakt
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: 266ac6c3-03c0-40eb-8f24-c5c22ed1c5c0 # Content
+            instructions: "Leave blank to show default footer.\r\n\r\nDo not change colors here."
+            label: 'Footer Content'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Footer Content'
+        sortOrder: 3
+      -
+        elements:
+          -
+            fieldUid: 23765e34-af93-42cb-bbaf-ea8907bc7407 # Cookie Consent Text
+            instructions: 'Dieser Text wird in der Consent-Box neben den Buttons angezeigt'
+            label: ''
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0d56f12c-69da-44d0-a0d1-36e975f34020 # Cookie Consent Info
+            instructions: 'Dieser Text wird in der Info-Box der Cookie-Consent-Einstellungen angezeigt.'
+            label: ''
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Privacy
+        sortOrder: 4
+handle: siteInfo
+name: 'Site Info'
+sortOrder: 1

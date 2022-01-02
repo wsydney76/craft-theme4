@@ -1,0 +1,12 @@
+{% if entry.children %}
+    {% set entries = entry.children.all %}
+    {% if entries %}
+        <div class="max-w-screen-{{ theme.pageWidth }} mx-auto px-block mt-8">
+            {% for entry in entries %}
+                <div>
+                    <a href="{{ entry.url }}">{{ entry.title }} &gt;</a>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endif %}

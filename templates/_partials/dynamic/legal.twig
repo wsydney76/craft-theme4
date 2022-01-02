@@ -1,0 +1,10 @@
+{% set entries = craft.entries.section('legal').all %}
+{% if entries %}
+    <div class="md:flex md:space-x-4 md:justify-end">
+        {% for entry in entries %}
+            <div class="!no-underline">
+                {{ entry.link }}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}

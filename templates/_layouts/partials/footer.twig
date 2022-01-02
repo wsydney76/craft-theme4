@@ -1,0 +1,19 @@
+{% set blocks = siteInfo.bodyContent.all %}
+
+{% if blocks %}
+    {% include "_partials/blocks.twig" with {
+        entry,
+        blocks
+    } only %}
+{% else %}
+    <div class="md:flex md:justify-between z-20">
+        <div>
+            {% include '_partials/dynamic/footer-copyright.twig' %}
+        </div>
+        <div class="mt-4 md:mt-0">
+            {% include '_partials/dynamic/legal.twig' %}
+        </div>
+    </div>
+
+{% endif %}
+

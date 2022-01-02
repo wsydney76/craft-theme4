@@ -1,0 +1,72 @@
+field: 266ac6c3-03c0-40eb-8f24-c5c22ed1c5c0 # Content
+fieldLayouts:
+  c75a468a-9a8b-4f24-b86d-81d89a092e72:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: de449fa1-c503-42ac-a4cf-4c8fc3656099 # __blank__
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  de449fa1-c503-42ac-a4cf-4c8fc3656099: # __blank__
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: buttons
+    instructions: ''
+    name: __blank__
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - b49d56c6-b29b-4ac0-ba55-aa83643aedaa # Target
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - fb7af698-b5de-4042-9a4a-6f26a22c5073 # Caption
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - bde02460-053f-4ab2-8c8a-6b782b53b949 # Background
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 6126b7f5-ffb5-4ad1-958c-bc4b58a8f7d3 # Text
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_31_buttons}}'
+      fieldLayout: table
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+handle: buttons
+name: Buttons
+sortOrder: 11

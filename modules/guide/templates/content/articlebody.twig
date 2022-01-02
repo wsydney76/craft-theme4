@@ -1,0 +1,34 @@
+{% from 'guide/macros.twig' import guideAsset %}
+
+<h2 data-guide-section>Article Body</h2>
+<p>The Article Body allows for your content to be built in a modular fashion. Content blocks allow for multiple blocks of similar components&mdash;that can be mixed and matched&mdash;so you can create unique layouts for the type of content you are presenting to your audience.</p>
+<p><b>It is a good idea to collapse a block when you are finished editing it.</b></p>
+<p>You can control the position of a block by selecting the position in the dropdown control. In order to get a proper result you may need to adjust the position
+    of the following block also.</p>
+
+<div class="guide_grid guide_grid--2_column">
+    <div>
+        <h3 data-guide-section>How to use it</h3>
+        <p>To create content within the article body, start by selecting the type of content block you would like to create. A new content block will appear and you will be presented with a set of fields that are specific to that block type. In this block there may be fields that are required for the block to be displayed properly.</p>
+        <p>If you need to re-order a series of matrix blocks use the move icon (✜) in the top-right of the block to drag your content blocks up and down.</p>
+    </div>
+    {{ guideAsset('guide-content-matrix.png') }}
+</div>
+<p>Clicking on the gear in the top-right will allow you to perform bulk actions:</p>
+<table>
+    <tbody>
+    <tr>
+        <td><b>Collapse</b></td>
+        <td>Get large content blocks out of the way by collapsing them down. The content in these blocks will still appear on the page, and collapsing them only affect the how your content blocks look on the edit page. <i>NOTE: you can quickly collapse a content block by double-clicking the header of the matrix block.</i></td>
+    </tr>
+    <tr>
+        <td><b>Disable</b></td>
+        <td>Disabling a matrix block is useful in that if you don&rsquo;t want to delete a block of content but you would like to remove it from the page, disabling a block prevents the content from appearing on the page&mdash;while making it easy to bring back later.</td>
+    </tr>
+    <tr>
+        <td><b>Delete</b></td>
+        <td>Removed the content block and all of the content within it.</td>
+    </tr>
+    </tbody>
+</table>
+<p>Bulk actions can be applied to multiple content blocks at once by checking the box in the top-left corner of each content block before selecting the desired action.</p>

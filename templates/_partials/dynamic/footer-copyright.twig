@@ -1,0 +1,7 @@
+&copy; {{ siteInfo.copyright }} {{ now|date('Y') }}
+{% set image = entry.featuredImage.one %}
+{% if image and image.copyright %}
+    <div class="text-sm">
+        &copy; {{ 'Featured Image'|t }} {{ image.copyright }}
+    </div>
+{% endif %}

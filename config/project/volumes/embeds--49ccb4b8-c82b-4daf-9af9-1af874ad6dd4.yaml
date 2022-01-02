@@ -1,0 +1,40 @@
+fieldLayouts:
+  7a1382db-deeb-4b69-bc21-8dbd7676b288:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\AssetTitleField
+            warning: null
+            width: 100
+        name: Inhalt
+        sortOrder: 1
+handle: embeds
+hasUrls: false
+name: Embeds
+settings:
+  path: '@storage/volumes/embeds'
+sortOrder: 13
+titleTranslationKeyFormat: null
+titletranslationMethod: none
+type: craft\volumes\Local
+url: null

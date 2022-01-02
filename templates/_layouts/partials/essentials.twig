@@ -1,0 +1,60 @@
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+{% if localizedEntries is defined and localizedEntries %}
+
+    <link rel="alternate" href="{{ entry.url }}" hreflang="{{ entry.language }}">
+    {% for localizedEntry in localizedEntries %}
+        <link rel="alternate" href="{{ localizedEntry.url }}" hreflang="{{ localizedEntry.language }}">
+    {% endfor %}
+
+{% endif %}
+
+{# Will return null if 'npm run hot' is executed, styles will be automatically injected in this case #}
+{% set stylesheet = rev('main.css') %}
+{% if stylesheet %}
+    <link rel="stylesheet" href="{{ rev('main.css') }}{{ devMode ? "?v=#{now|datetime('YmdG')}" }}">
+{% endif %}
+
+{% if theme.fontUrl %}
+    {% if 'fonts.googleapis.com' in theme.fontUrl %}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    {% endif %}
+
+    <link href="{{ theme.fontUrl }}" rel="stylesheet">
+{% endif %}
+
+
+{% set icon = siteInfo.favIcon.one %}
+{% if icon %}
+    <link rel="icon" href="{{ icon.url }}">
+{% endif %}
+
+{% html %}
+
+    <div x-data class="fixed inset-0 flex justify-center items-center bg-black/60 z-50 w-screen h-screen"
+         x-show="$store.modalOpen"
+         @click="$store.modalOpen = false"
+         x-transition.opacity.duration.400ms>
+        <div id="modalDialog">
+
+        </div>
+    </div>
+    <script src="{{ rev('main.js') }}"></script>
+{% endhtml %}
+
+{% if craft.app.plugins.pluginEnabled('blitz') %}
+    {% do craft.blitz.options
+        .expiryDate(now|date_modify('+1day'))
+        .tags(currentSite.handle) %}
+{% endif %}
+
+{% hook 'seomateMeta' %}
+
+{% if entry is defined %}
+    {% include '_partials/ldjson.twig' with {entry} only %}
+{% endif %}
+
+{% include '_partials/scrollToTop.twig' %}

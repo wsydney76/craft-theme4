@@ -1,0 +1,17 @@
+{# @var newsGuide \craft\elements\Entry #}
+
+{# Create a guide entry with slug 'news' and create your news guides as children #}
+
+<h2>Latest News</h2>
+
+{% set newsGuide = craft.entries.section('guide').slug('news').one %}
+
+{% set entries  = newsGuide.descendants.orderBy('postDate desc').all %}
+
+{% for entry in entries %}
+    <p>
+    <a href="{{ cpUrl("guide/#{entry.slug}") }}">{{ entry.title }}</a><br/>
+    {{ entry.teaser }}<br/>
+    {{ entry.postDate|date }}
+    </p>
+{% endfor %}

@@ -1,0 +1,10 @@
+{
+  "buttons": ["formatting", "bold", "italic", "unorderedlist", "orderedlist", "link", "undo", "redo"],
+  "plugins": ["table"],
+  "pastePlainText": true,
+  "pasteImages": false,
+  "pasteLinks": false,
+  "autoparse": false,
+  "formatting": ["p","pre","blockquote"],
+  "air": false
+}

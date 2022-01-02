@@ -1,0 +1,92 @@
+field: 266ac6c3-03c0-40eb-8f24-c5c22ed1c5c0 # Content
+fieldLayouts:
+  ca61ad5a-0964-41ed-9999-68adb77f2c4a:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 1ae476f8-3a5b-4cda-8527-af3f0d8f99fb # Heading
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 118622b7-20ad-4b1d-8d78-5d49bbdbcd68 # Template
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 2cf2c737-33d2-4b15-8933-7053b22d0020 # Parameter
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  1ae476f8-3a5b-4cda-8527-af3f0d8f99fb: # Heading
+    columnSuffix: null
+    contentColumnType: string(240)
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: 60
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  2cf2c737-33d2-4b15-8933-7053b22d0020: # Parameter
+    columnSuffix: null
+    contentColumnType: string(256)
+    fieldGroup: null
+    handle: parameter
+    instructions: "Json-Format\r\n{\"section\":\"blog\",\"limit\":10}"
+    name: Parameter
+    searchable: false
+    settings:
+      byteLimit: 256
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  118622b7-20ad-4b1d-8d78-5d49bbdbcd68: # Template
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: template
+    instructions: ''
+    name: Template
+    searchable: false
+    settings:
+      includeDirectory: _partials/dynamic
+    translationKeyFormat: null
+    translationMethod: none
+    type: modules\main\fields\IncludeField
+handle: dynamicBlock
+name: 'Dynamic Block'
+sortOrder: 12

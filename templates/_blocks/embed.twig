@@ -1,0 +1,5 @@
+{% set asset = asset ?? block.asset.one() %}
+{% if asset %}
+    {% include '_partials/embed.twig' with {asset:asset} only %}
+{% endif %}
+

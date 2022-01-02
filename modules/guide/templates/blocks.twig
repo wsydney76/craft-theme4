@@ -1,0 +1,59 @@
+{% for block in blocks %}
+    <div class="guide-blocks my-3">
+    {% switch block.type %}
+
+    {% case "heading" %}
+        {% if not loop.first %}<hr>{% endif %}
+        <{{ block.tag }}>{{ block.text }}</{{ block.tag }}>
+
+    {% case "text" %}
+        {{ block.text }}
+
+    {% case "image" %}
+        {% set image = block.image.one %}
+        {% if image %}
+            <a href="{{ image.url }}" target="_blank">
+                <img class="img-fluid" src="{{ image.url({width:1400}) }}"/>
+            </a>
+        {% endif %}
+
+    {% case "grid" %}
+        {% set textHtml %}
+            {% if block.heading %}
+                <h2>{{ block.heading }}</h2>
+            {% endif %}
+            {{ block.text }}
+        {% endset %}
+        {% set imgHtml %}
+            {% for image in block.images.all %}
+                <a href="{{ image.url }}" target="_blank">
+                    <img class="img-fluid" src="{{ image.url({width:700}) }}">
+                </a>
+            {% endfor %}
+        {% endset %}
+
+        {% if block.imgWidth == 'wide' %}
+            {% set class = 'guide_grid--2_column' %}
+        {% else %}
+            {% set class = block.orientation == 'right' ? 'guide_grid--image--left' : 'guide_grid--image--right' %}
+        {% endif %}
+
+        <hr>
+        <div class="guide_grid {{ class }}">
+            <div>
+                {{ block.orientation == 'right' ? textHtml : imgHtml }}
+            </div>
+            <div>
+                {{ block.orientation == 'right' ? imgHtml : textHtml }}
+            </div>
+        </div>
+
+    {% case 'matrixhelp' %}
+        <hr>
+        <h1>Hilfe für das Feld "Inhalt"</h1>
+            {% include 'guide/content/articlebody.twig' %}
+        <hr>
+
+    {% endswitch %}
+    </div>
+{% endfor %}

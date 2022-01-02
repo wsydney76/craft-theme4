@@ -1,0 +1,91 @@
+fieldLayouts:
+  c3b8c612-fbc4-487d-b0ad-82b0776afd0e:
+    tabs:
+      -
+        elements:
+          -
+            template: _cp/help.twig
+            type: craft\fieldlayoutelements\Template
+            width: 100
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: 55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2 # Featured Image
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 75
+          -
+            fieldUid: 1eecdd2c-f9c5-4379-b304-d81774f9391e # Increase Title Contrast
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: f6ff43e3-8e77-457f-91cb-101f517889c9 # Teaser
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 266ac6c3-03c0-40eb-8f24-c5c22ed1c5c0 # Content
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Common
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: e62d63b0-c299-42ce-aeef-86a69f7e676c # Seo Fields
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: SEO
+        sortOrder: 2
+handle: page
+hasTitleField: true
+name: Page
+section: a6676538-ee52-4938-aaff-8d9d46b669af # Page
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: ''

@@ -1,0 +1,65 @@
+{% set breakpointClasses = {
+    never: 'hidden',
+    xl: 'xl:hidden',
+    lg: 'lg:hidden',
+    ml: 'ml:hidden',
+    md: 'md:hidden',
+    sm: 'sm:hidden',
+    always: 'block'
+} %}
+
+{% if navEntries %}
+
+    {% set orientationClasses = {
+        start: 'flex justify-start mt-4',
+        end: 'flex justify-end -mt-6 z-10',
+        rowLeft: 'flex justify-start',
+        rowCenter: 'flex justify-center'
+    } %}
+
+    <div class="relative {{ breakpointClasses[theme.mobileBreakpoint] }}" x-data="{mobileOpen: false}" @keyup.escape.window="mobileOpen = false"
+         @click.away="mobileOpen = false">
+
+        <div class="{{ orientationClasses[theme.headerStyle ?? 'start'] }}">
+            <button class="flex" @click="mobileOpen = !mobileOpen" aria-label="{{ 'Menu Button' }}">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     class="w-6 h-6"
+                     stroke="text-foreground"
+                     fill="text-foreground">
+                    <path x-show="!mobileOpen" d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+                    <path x-show="mobileOpen"
+                          d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"
+                          style="display: none;"></path>
+                </svg>
+                <div class="nav-link ml-1">
+                {{ 'Menu'|t }}
+                </div>
+            </button>
+        </div>
+
+        <div x-show="mobileOpen" x-transition
+             class="absolute flex justify-center top-8 w-full z-50 bg-primary text-secondary border border-foreground text-lg">
+
+            <div class="space-y-2  p-4">
+                {% for navEntry in navEntries %}
+                    <ul class="">
+                        <li><a href="{{ navEntry.url }}">{{ navEntry.navTitle }}</a> </li>
+                        {% if navEntry.children %}
+                            <ul class="ml-8">
+                                {% for child in navEntry.children %}
+                                    <li><a href="{{ child.url }}">{{ child.navTitle }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </ul>
+                {% endfor %}
+
+                {% include '_layouts/partials/siteswitcher.twig' %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endif %}

@@ -1,0 +1,8 @@
+<div class="max-w-screen-{{ theme.sidebarLayoutWidth }} mx-auto grid grid-cols-1 md:grid-cols-12 gap-4">
+    <div class="md:col-span-9">
+        {% block contentLeft %}{% endblock %}
+    </div>
+    <div class="md:col-span-3 space-y-block px-4">
+        {% block contentRight %}{% endblock %}
+    </div>
+</div>

@@ -1,0 +1,13 @@
+{% set buttons = block.buttons.with('target').all %}
+
+{% if buttons %}
+    <div class="flex space-x-4">
+        {% for button in buttons %}
+            {% set target = button.target[0] ?? null %}
+            {% if target %}
+                <a class="btn bg-{{ button.bgColor }} text-{{ button.textColor ?: 'white' }}"
+                   href="{{ target.url }}">{{ button.caption ?: target.title }}</a>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}

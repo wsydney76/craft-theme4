@@ -1,0 +1,8 @@
+{% extends "guide/modal" %}
+{% block content %}
+    {% set guide = craft.entries.section('guide').slug(guideSlug).one() %}
+    {% if not guide %}
+        {% exit 404 %}
+    {% endif %}
+    {% include 'guide/content.twig' with {entry:guide} %}
+{% endblock %}

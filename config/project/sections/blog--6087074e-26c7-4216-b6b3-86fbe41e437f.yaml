@@ -1,0 +1,35 @@
+defaultPlacement: end
+enableVersioning: true
+handle: blog
+name: Blog
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+  -
+    __assoc__:
+      -
+        - label
+        - 'Blog Index'
+      -
+        - urlFormat
+        - '{% set e = craft.entries.section(''page'').siteId(object.siteId).indexSection(''blog'').one %}{{ e ? e.url : '''' }}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  6cae2408-4e31-46df-8a5b-33f31d339176: # Deutsch
+    enabledByDefault: true
+    hasUrls: true
+    template: _sections/blog
+    uriFormat: 'blog/{slug}'
+type: channel

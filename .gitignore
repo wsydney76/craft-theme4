@@ -1,0 +1,9 @@
+/.env
+/.idea
+/vendor
+.DS_Store
+/web/cpresources
+/web/cache
+/templates/test
+node_modules
+/config/Env.php

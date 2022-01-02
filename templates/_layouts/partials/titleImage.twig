@@ -1,0 +1,61 @@
+{% from '_macros/lib.twig' import img %}
+
+{% set image = entry.featuredImage.one %}
+{% if not image and theme.useFallbackImage %}
+    {% set image = siteInfo.featuredImage.one %}
+{% endif %}
+
+{% set height = theme.titleImageHeight %}
+{% set showTeaser = themeOptions.showTeaser ?? true %}
+{% set increaseTitleContrast = entry.increaseTitleContrast.value ?? '' %}
+
+{% switch theme.titleStyle %}
+
+{% case "coverFull" or "coverContent" %}
+
+    {% if image %}
+        <div class="relative">
+            {% if theme.titleStyle == 'coverFull' %}
+                {{ img(image, {width:theme.widths['full'], height: height ?? 900}) }}
+            {% else %}
+                {{ img(image, {width: theme.widths[theme.headerWidth], height: height ?? 400}) }}
+            {% endif %}
+
+            <div class="absolute inset-0 flex items-center justify-center {{ increaseTitleContrast == 'image' ? 'backdrop-brightness-75' }}">
+                <div class="cover-text text-black py-2 md:py-8 px-8 md:px-16 max-w-screen-xl mx-auto {{ increaseTitleContrast == 'box' ? 'backdrop-brightness-50 border border-border' }} ">
+                    {% if showTeaser and entry is defined and entry.teaser %}
+                        <div class="text-center text-white text-xl">
+                            {{ entry.teaser }}
+                        </div>
+                    {% endif %}
+                    <h1 class="text-4xl text-h1 md:text-7xl text-white mb-0">{{ entry.title ?? title }}</h1>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="container max-w-screen-lg mx-auto px-8">
+            {% if  showTeaser and entry is defined and entry.teaser %}
+                <div class="">
+                    {{ entry.teaser }}
+                </div>
+            {% endif %}
+            <h1 class="mb-0">{{ entry.title ?? title }}</h1>
+        </div>
+    {% endif %}
+
+{% case "text" %}
+
+{% case "fullText" or "fullTextColor" %}
+    {% if image %}
+        <div>
+            {{ img(image, {width:theme.widths['full'], height: height ?? 900}) }}
+        </div>
+    {% endif %}
+{% default %}
+    {% if image %}
+        {{ img(image, {width: theme.widths[theme.headerWidth], height: height ?? 400}) }}
+    {% endif %}
+{% endswitch %}
+
+
+

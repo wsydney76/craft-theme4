@@ -1,0 +1,184 @@
+field: 3ac8b547-8089-43db-b7de-39c79c658368 # Audios
+fieldLayouts:
+  8013e21a-f4e5-4d2c-bbb7-a3dd5b714a43:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 82a2d82a-ecb9-4e2d-b41d-c67f2f77f73a # Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 666c8cf3-0639-4757-aefa-9490930dbf0f # Audio
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 95a20cdb-9cb3-4522-a2bf-db9721d195e8 # Titel
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: dbc263da-95a4-428a-a2eb-82d51acb4523 # Artist
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 04d14d45-3d49-4d75-9b1b-56b1cbe51772 # Dauer
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  04d14d45-3d49-4d75-9b1b-56b1cbe51772: # Dauer
+    columnSuffix: null
+    contentColumnType: string(20)
+    fieldGroup: null
+    handle: duration
+    instructions: 'Format 3:04'
+    name: Dauer
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: 5
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  82a2d82a-ecb9-4e2d-b41d-c67f2f77f73a: # Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: false
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      defaultUploadLocationSubpath: images
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  95a20cdb-9cb3-4522-a2bf-db9721d195e8: # Titel
+    columnSuffix: null
+    contentColumnType: string(240)
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Titel
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: 60
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  666c8cf3-0639-4757-aefa-9490930dbf0f: # Audio
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: audio
+    instructions: ''
+    name: Audio
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: false
+      allowedKinds:
+        - audio
+      defaultUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      defaultUploadLocationSubpath: audio
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  dbc263da-95a4-428a-a2eb-82d51acb4523: # Artist
+    columnSuffix: null
+    contentColumnType: string(240)
+    fieldGroup: null
+    handle: artist
+    instructions: ''
+    name: Artist
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: 60
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

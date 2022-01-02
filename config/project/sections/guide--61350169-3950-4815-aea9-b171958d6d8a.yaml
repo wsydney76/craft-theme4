@@ -1,0 +1,15 @@
+defaultPlacement: end
+enableVersioning: true
+handle: guide
+name: Guide
+propagationMethod: siteGroup
+siteSettings:
+  6cae2408-4e31-46df-8a5b-33f31d339176: # Deutsch
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: null
+  uid: 58be3eab-2c42-4a97-ad85-b5404f07841e
+type: structure

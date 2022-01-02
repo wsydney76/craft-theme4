@@ -1,0 +1,21 @@
+{% if block.heading %}
+    <h2 class="text-h2">{{ block.heading }}</h2>
+{% endif %}
+{% if block.text %}
+    <p>
+        {{ block.text|nl2br }}
+    </p>
+{% endif %}
+
+{% set audio = block.audioFile.one %}
+
+{# @var audio \craft\elements\Asset #}
+
+{% if audio %}
+
+    <audio controls>
+        <source src="{{ audio.url }}" type="{{ audio.mimeType  }}">
+        Your browser does not support the audio tag.
+    </audio>
+
+{% endif %}

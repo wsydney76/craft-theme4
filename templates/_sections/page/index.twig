@@ -1,0 +1,28 @@
+{% extends "_layouts/#{theme.layout}.twig" %}
+
+{% block content %}
+    {{ parent() }}
+
+    {% include '_partials/entry_children.twig' %}
+
+    {% if entry.type.handle == 'indexPage' %}
+        {% set template = entry.indexTemplate ?? 'default.twig' %}
+        {% set criteria = entry.criteria %}
+
+        {% if criteria %}
+            {% set criteria = criteria|json_decode %}
+        {% else %}
+            {% set criteria = {
+                section: entry.indexSection,
+                orderBy: entry.orderBy
+            } %}
+        {% endif %}
+
+        <div class="max-w-screen-{{ theme.pageWidth }} mx-auto px-block">
+            {% include "_partials/index-templates/#{template}" with {criteria} %}
+        </div>
+
+    {% endif %}
+
+{% endblock %}
+

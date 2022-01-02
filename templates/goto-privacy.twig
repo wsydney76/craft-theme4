@@ -1,0 +1,6 @@
+{% set privacyPage = craft.entries.section('legal').type('privacy').one %}
+{% if privacyPage %}
+    {% redirect privacyPage.url %}
+{% else %}
+    {% exit 404 %}
+{% endif %}

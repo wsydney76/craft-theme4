@@ -1,0 +1,36 @@
+field: 7384bc4c-31c8-4906-a830-d53525e01989 # Guide Inhalt
+fieldLayouts:
+  3cb0c8c3-747f-4de4-a099-e0861fbf8b86:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: f7b15040-ef01-4cf3-ab66-7facec8716bb # Hilfetext zu Matrix-Inhalten einfügen?
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  f7b15040-ef01-4cf3-ab66-7facec8716bb: # Hilfetext zu Matrix-Inhalten einfügen?
+    columnSuffix: null
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: includeMatrixhelp
+    instructions: ''
+    name: 'Hilfetext zu Matrix-Inhalten einfügen?'
+    searchable: true
+    settings:
+      default: true
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+handle: matrixhelp
+name: Matrixhilfe
+sortOrder: 5

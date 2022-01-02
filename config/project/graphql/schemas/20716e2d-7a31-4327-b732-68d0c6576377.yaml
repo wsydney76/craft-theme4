@@ -1,0 +1,36 @@
+isPublic: true
+name: 'Public Schema'
+scope:
+  - 'sections.6087074e-26c7-4216-b6b3-86fbe41e437f:read' # Blog
+  - 'entrytypes.caf9cc3a-a0d0-4c7c-8179-884546f91ac5:read' # Blog
+  - 'sections.06efe258-09bb-47f7-9079-517028c65ba0:read'
+  - 'entrytypes.6ea6da20-dcc4-4ed6-9f21-110a7651773e:read'
+  - 'sections.99431b7b-d7f6-4193-8c8d-7d54aca5d38a:read'
+  - 'entrytypes.ab1aa5bb-c620-46f4-af5c-57cfecf9292a:read'
+  - 'sections.61350169-3950-4815-aea9-b171958d6d8a:read' # Guide
+  - 'entrytypes.00413a8e-7538-46a8-8254-eef6bff21efb:read' # Guide
+  - 'sections.e0c47d2a-5626-4bc9-9ebd-589c0c556f17:read'
+  - 'entrytypes.a4ecb674-b4c7-405f-9913-c5aeb387c426:read'
+  - 'sections.1d9585db-dc36-4f62-a671-dd27b4c086a0:read'
+  - 'entrytypes.a13ef1a4-766a-40af-b82c-b14b8840974b:read'
+  - 'sections.fa00d5b9-2c6e-4df4-a384-9c598ff951c0:read'
+  - 'entrytypes.177ee993-47af-4507-b3e5-4b5afc0cde6f:read'
+  - 'entrytypes.bc8e3c2b-0070-49ef-8519-e6e06197233f:read'
+  - 'sections.dbf6c020-2fc6-46ae-999f-650093fca65d:read'
+  - 'entrytypes.d548315a-1958-454f-93bb-9fbfab555964:read'
+  - 'sections.85b2b783-daeb-493b-80f0-a5d4a94da10a:read'
+  - 'entrytypes.693d1f16-4387-44b8-a1ec-1bf08529a146:read'
+  - 'sections.cd4b4d9a-0519-4f07-93e0-5957b57a9afd:read' # Legal
+  - 'entrytypes.7eb5e1da-4c5d-4b02-b671-f50b32cdc08b:read' # Legal
+  - 'sections.a6676538-ee52-4938-aaff-8d9d46b669af:read' # Page
+  - 'entrytypes.3be67666-850d-4678-a3d7-277a52c8fa8d:read' # Page
+  - 'entrytypes.28ec7354-789a-476e-a1e2-4c35045c96a5:read'
+  - 'sections.5058c208-5bbd-4573-9c19-9d705b1d7c7a:read'
+  - 'entrytypes.622f0819-e517-41f5-80b3-cc9b369c8233:read'
+  - 'volumes.f2bd38f3-47f5-4e49-be18-fa89073255fd:read' # Media
+  - 'volumes.34dbd69d-8da1-4b48-8b5b-f747a86b7f8b:read'
+  - 'volumes.8c948b7f-8be4-41b5-80fe-3e095fdf08e7:read'
+  - 'volumes.9f46e2ca-dbf5-46d7-be27-bd5a5d4a6809:read'
+  - 'volumes.6f717aa0-5341-484c-adbe-c0b819ae2ce0:read'
+  - 'volumes.6769b461-5c24-4442-9322-8759beee5939:read'
+  - 'volumes.84cef728-ba73-43aa-8dd5-6cedb472e9ac:read'

@@ -1,0 +1,37 @@
+{% from '_macros/lib.twig' import img %}
+{# @param entry with eagerloaded featuredImage #}
+
+<article class="w-card border border-border mr-4 mb-4  bg-white hover:bg-gray-200 transition-colors shadow-lg">
+    <a class="!no-underline flex flex-col justify-between h-full"
+       href="{{ entry.url }}">
+        <div>
+            <div>
+                {% set image = entry.featuredImage[0] ?? null %}
+                {% if not image %}
+                    {% set image = siteInfo.featuredImage.one %}
+                {% endif %}
+                {% if image %}
+                    {{ img(image, theme.cardImageTransform) }}
+                {% endif %}
+            </div>
+            <div class="p-4">
+                {% if entry.teaser %}
+                    <div class="text-base mb-1">
+                        {{ entry.teaser }}
+                    </div>
+                {% endif %}
+                <div class="text-2xl">
+                    {{ entry.title }}
+                </div>
+                <div class="text-base">
+                    {% include "_sections/#{entry.section.handle}/index_content.twig" ignore missing %}
+                </div>
+
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+        <div class="p-4">
+            {% include "_sections/#{entry.section.handle}/indexbottom_content.twig" ignore missing %}
+        </div>
+    </a>
+</article>

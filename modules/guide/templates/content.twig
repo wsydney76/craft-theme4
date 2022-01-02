@@ -1,0 +1,35 @@
+<div class="guide-cp">
+    <h1>{{ entry.title }}</h1>
+
+    {% set query = entry.children.site('*') %}
+
+    {% if not currentUser.can('viewPersonalGuides') %}
+        {% do query.relatedTo(currentUser) %}
+    {% endif %}
+
+    {% set children = query.all %}
+
+    {% if children %}
+        {% for child in children %}
+            <h1>{{ child.title }}</h1>
+            <div><b>{{ child.teaser }}</b></div>
+            <div >
+                {% include 'guide/blocks.twig' with {blocks:child.guideContent.all} %}
+            </div>
+        {% endfor %}
+        <h1>General Guide</h1>
+    {% endif %}
+
+    {% if entry.guideContent.count() %}
+
+
+        <div><b>{{ entry.teaser }}</b></div>
+        <div >
+            {% include 'guide/blocks.twig' with {blocks:entry.guideContent.all} %}
+        </div>
+
+
+    {% else %}
+        {% include  ["guide/content/#{entry.slug}.twig","guide/content/#{entry.slug}.md"] %}
+    {% endif %}
+</div>

@@ -1,0 +1,17 @@
+{% set entry = craft.entries.section('profile').one %}
+
+{% if entry %}
+    {% set blocks = entry.socialMedia.all %}
+    {% if blocks %}
+        <div class="flex space-x-2">
+            {% for block in blocks %}
+                <div>
+                    <a href="{{ block.socialLink }}" title="{{ block.socialPlatform.label|t }}" target="_blank">
+                        {{ svg("@templates/_icons/#{block.socialPlatform.value}.svg") }}
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+{% endif %}

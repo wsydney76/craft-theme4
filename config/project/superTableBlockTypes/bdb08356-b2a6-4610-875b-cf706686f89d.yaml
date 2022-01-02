@@ -1,0 +1,113 @@
+field: a6f9a628-cf74-47fd-aebe-0587bea06e3c # Columns
+fieldLayouts:
+  cfb6aed6-7e10-4077-9ef3-f170be0954d0:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 57dba12d-3dba-4e01-a8e5-7ed1323f9c68 # Span
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 20f9b230-8862-4058-9cf3-7c7a78e44a13 # Column
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  20f9b230-8862-4058-9cf3-7c7a78e44a13: # Column
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: columnContent
+    instructions: ''
+    name: Column
+    searchable: true
+    settings:
+      contentTable: '{{%matrixcontent_columncontent}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationKeyFormat: null
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix
+  57dba12d-3dba-4e01-a8e5-7ed1323f9c68: # Span
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: span
+    instructions: "A col span will be assigned to colums width an explicitly set span.  \r\nThen the remaining col span  will than be split equally over all columns set to 'auto'.  \r\nThe sum of all col spans has to be 12 for a visually appealing layout."
+    name: Span
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Auto
+            -
+              - value
+              - auto
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Half (6/12)'
+            -
+              - value
+              - '6'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'One third (4/12)'
+            -
+              - value
+              - '4'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Two thirds (8/12)'
+            -
+              - value
+              - '8'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'One quarter (3/12)'
+            -
+              - value
+              - '3'
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown

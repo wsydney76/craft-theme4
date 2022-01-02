@@ -1,0 +1,25 @@
+{% from '_macros/lib.twig' import img %}
+
+<div class="flex items-center pt-4">
+
+    {% set image = entry.author.photo %}
+    {% if image %}
+        <div class="mr-2">
+            {{ img(image, {width: 50, height: 50}, 'rounded-full') }}
+        </div>
+    {% endif %}
+
+    <div class="">
+        {{ entry.postDate|date('short') }} {{ 'by'|t }} {{ entry.author.fullName }}
+    </div>
+
+    {#{% set categories = entry.categories.all %}
+    {% if categories %}
+        {% for category in categories %}
+            <div class="ml-2 font-semibold">
+                |&nbsp;{{ category.link }}
+            </div>
+        {% endfor %}
+    {% endif %}#}
+
+</div>

@@ -1,0 +1,48 @@
+{% set columns = block.columns.all %}
+
+{% set sumSpans = 0 %}
+{% set countAutoCols = columns|length %}
+{% set autoSpan = 6 %}
+
+{% for column in columns %}
+	{% if column.span ?? 'auto' != 'auto' %}
+	    {% set sumSpans = sumSpans + column.span.value %}
+        {% set countAutoCols = countAutoCols - 1 %}
+	{% endif %}
+{% endfor %}
+
+{% if countAutoCols %}
+    {% set autoSpan = floor((12 - sumSpans) / countAutoCols) %}
+{% endif %}
+
+{% set width = block.width == 'default' ? theme.defaultBlockWidth : block.width %}
+
+<div class="grid lg:grid-cols-12 gap-8 px-block max-w-screen-{{ width }} mx-auto">
+
+    {% if block.heading %}
+        <div class="columns-heading lg:col-span-12 text-center font-headings text-h2 mb-8">
+            {{ block.heading }}
+        </div>
+    {% endif %}
+
+    {% for column in columns %}
+        {% set span = column.span ?? 'auto' %}
+        {% set colSpan = span == 'auto' ? autoSpan : column.span.value %}
+
+        {% set innerBlocks = column.columnContent.all %}
+
+        <div class="space-y-4 lg:col-span-{{ colSpan }}">
+            {% for innerBlock in innerBlocks %}
+                <div>
+                    {% include ["_blocks/_columns/#{innerBlock.type}.twig","_blocks/#{innerBlock.type}.twig"] ignore missing with {
+                        block: innerBlock,
+                        index: loop.index,
+                        colSpan,
+                        columnsWidth,
+                        context: 'column'
+                    }  %}
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>

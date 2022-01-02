@@ -1,0 +1,86 @@
+field: 7384bc4c-31c8-4906-a830-d53525e01989 # Guide Inhalt
+fieldLayouts:
+  53c3d92e-7376-492e-9e12-8b048de6b637:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 3cb2606a-5d91-44a2-bbfa-8110801db82d # Text
+            instructions: null
+            label: null
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: cb3d5f40-e3f5-45a4-9c9f-47b9c515be67 # Tag
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  3cb2606a-5d91-44a2-bbfa-8110801db82d: # Text
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: text
+    instructions: ''
+    name: Text
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: '100'
+      code: ''
+      columnType: string
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  cb3d5f40-e3f5-45a4-9c9f-47b9c515be67: # Tag
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: tag
+    instructions: ''
+    name: Tag
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - H2
+            -
+              - value
+              - h2
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - H3
+            -
+              - value
+              - h3
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: heading
+name: Überschrift
+sortOrder: 1

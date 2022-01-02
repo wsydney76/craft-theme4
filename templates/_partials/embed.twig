@@ -1,0 +1,36 @@
+{% set embeddedAsset = craft.embeddedAssets.get(asset) %}
+
+{% embed '_layouts/embeds/external_media.twig' with { props:{
+    externalUrl: embeddedAsset.url,
+    title: embeddedAsset.title,
+    description: embeddedAsset.description,
+    providerName: embeddedAsset.providerName
+}} %}
+
+    {% block media %}
+        {% if not embeddedAsset.aspectRatio %}
+            {% set aspectRatioClass = '' %}
+        {% elseif embeddedAsset.aspectRatio > 90 %}
+            {% set aspectRatioClass = 'aspect-w-1 aspect-h-1' %}
+        {% elseif embeddedAsset.aspectRatio > 70 %}
+            {% set aspectRatioClass = 'aspect-w-4 aspect-h-3' %}
+        {% elseif embeddedAsset.aspectRatio > 45 %}
+            {% set aspectRatioClass = 'aspect-w-16 aspect-h-9' %}
+        {% else %}
+            {% set aspectRatioClass = 'aspect-w-21 aspect-h-9' %}
+        {% endif %}
+
+        {% if embeddedAsset.providerName != 'Instagram' %}
+            <div class="{{ aspectRatioClass }} rounded overflow-hidden">
+                {{ embeddedAsset ? embeddedAsset.html }}
+            </div>
+        {% else %}
+            {# will end up with height=0 within bootstraps tags #}
+            {{ embeddedAsset ? embeddedAsset.html }}
+        {% endif %}
+
+    {% endblock %}
+{% endembed %}
+
+
+

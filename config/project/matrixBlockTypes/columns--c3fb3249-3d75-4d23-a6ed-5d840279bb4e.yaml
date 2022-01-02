@@ -1,0 +1,175 @@
+field: 266ac6c3-03c0-40eb-8f24-c5c22ed1c5c0 # Content
+fieldLayouts:
+  10dce2c2-885b-4a43-b29b-bd3e0ad3c037:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: bf0f9db1-27b9-4a19-8e36-fc5439109d73 # Heading
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a6f9a628-cf74-47fd-aebe-0587bea06e3c # Columns
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: b9e12f8a-d90b-4458-a578-7025f7d0d90a # Width
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 7e7c06a8-5d97-4fc6-b2cb-5dd34caec986 # Margins vertical
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: ea0da518-95b9-47c2-8dec-9f2ff43ca7f4 # Background color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 06cc6bfc-a991-4aa6-99af-018de34f8bf4 # Text Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+        name: Content
+        sortOrder: 1
+fields:
+  06cc6bfc-a991-4aa6-99af-018de34f8bf4: # Text Color
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: foregroundColor
+    instructions: ''
+    name: 'Text Color'
+    searchable: false
+    settings:
+      defaultColor: default
+    translationKeyFormat: null
+    translationMethod: none
+    type: modules\main\fields\ThemeColorField
+  7e7c06a8-5d97-4fc6-b2cb-5dd34caec986: # Margins vertical
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: marginsY
+    instructions: ''
+    name: 'Margins vertical'
+    searchable: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: modules\main\fields\MarginsYField
+  a6f9a628-cf74-47fd-aebe-0587bea06e3c: # Columns
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: columns
+    instructions: ''
+    name: Columns
+    searchable: true
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 57dba12d-3dba-4e01-a8e5-7ed1323f9c68 # Span
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 20f9b230-8862-4058-9cf3-7c7a78e44a13 # Column
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_21_columns}}'
+      fieldLayout: row
+      maxRows: '3'
+      minRows: '2'
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: 'Add a column'
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  b9e12f8a-d90b-4458-a578-7025f7d0d90a: # Width
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: width
+    instructions: ''
+    name: Width
+    searchable: false
+    settings:
+      addDefaultOptions: ''
+      addMobileOptions: ''
+      defaultWidth: default
+    translationKeyFormat: null
+    translationMethod: none
+    type: modules\main\fields\WidthField
+  bf0f9db1-27b9-4a19-8e36-fc5439109d73: # Heading
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  ea0da518-95b9-47c2-8dec-9f2ff43ca7f4: # Background color
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: backgroundColor
+    instructions: ''
+    name: 'Background color'
+    searchable: false
+    settings:
+      defaultColor: default
+    translationKeyFormat: null
+    translationMethod: none
+    type: modules\main\fields\ThemeColorField
+handle: columns
+name: 'Multi Columns'
+sortOrder: 13

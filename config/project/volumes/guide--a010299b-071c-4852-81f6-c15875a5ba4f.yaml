@@ -1,0 +1,40 @@
+fieldLayouts:
+  9b1c7447-0610-4464-a01c-e7e4062e9871:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\AssetTitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: guide
+hasUrls: true
+name: Guide
+settings:
+  path: '@webroot/guide'
+sortOrder: 8
+titleTranslationKeyFormat: null
+titletranslationMethod: none
+type: craft\volumes\Local
+url: '@web/guide'

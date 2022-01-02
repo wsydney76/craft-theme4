@@ -1,0 +1,213 @@
+field: 7384bc4c-31c8-4906-a830-d53525e01989 # Guide Inhalt
+fieldLayouts:
+  73609308-c7b9-40fc-a459-200fb062e41f:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: a5f3b232-51a5-4cf6-88f2-2e1ff35fabb7 # Überschrift
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ea2cfe15-67c5-438e-9d8c-b80a905baa85 # Text
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 17bdd0b8-d122-4c81-accf-6e1470359fba # Bilder
+            instructions: null
+            label: null
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 752d79f6-0f1d-438e-91a2-f8e4cedfd23d # Ausrichtung
+            instructions: null
+            label: null
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ee360814-e45a-409a-b0df-5384fb768d19 # Bildbreite
+            instructions: null
+            label: null
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  17bdd0b8-d122-4c81-accf-6e1470359fba: # Bilder
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: images
+    instructions: ''
+    name: Bilder
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      defaultUploadLocationSubpath: ''
+      limit: ''
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: 'Bild hinzufügen'
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+      singleUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:a010299b-071c-4852-81f6-c15875a5ba4f' # Guide
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Assets
+  752d79f6-0f1d-438e-91a2-f8e4cedfd23d: # Ausrichtung
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: orientation
+    instructions: ''
+    name: Ausrichtung
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Text <-> Bild'
+            -
+              - value
+              - right
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Bild <-> Text'
+            -
+              - value
+              - left
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  a5f3b232-51a5-4cf6-88f2-2e1ff35fabb7: # Überschrift
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Überschrift
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  ea2cfe15-67c5-438e-9d8c-b80a905baa85: # Text
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: ''
+    name: Text
+    searchable: true
+    settings:
+      availableTransforms: ''
+      availableVolumes: ''
+      cleanupHtml: true
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Custom.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  ee360814-e45a-409a-b0df-5384fb768d19: # Bildbreite
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: imgWidth
+    instructions: ''
+    name: Bildbreite
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Breit
+            -
+              - value
+              - wide
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Schmal
+            -
+              - value
+              - small
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: grid
+name: Grid
+sortOrder: 4

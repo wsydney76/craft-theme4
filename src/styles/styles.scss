@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// We use a single file here, because changes in imported css files do not trigger a hot module reload
+
+@layer base {
+  h1, h2 {
+    @apply font-headings;
+  }
+
+  a {
+    @apply hover:underline;
+  }
+
+  @import "fonts/fonts.css";
+}
+
+@layer components {
+
+
+  .rich-text {
+    p:not(:first-child) {
+      @apply mt-4;
+    }
+
+    p:not(:last-child) {
+      @apply mb-4;
+    }
+
+    a {
+      @apply underline;
+    }
+
+    ul, ol {
+      @apply pl-6;
+    }
+
+    li {
+      @apply list-disc;
+    }
+
+    h2 {
+      @apply text-h2;
+    }
+  }
+
+
+  a.btn {
+    @apply no-underline;
+  }
+
+  .btn {
+    @apply transition-colors px-6 py-2 rounded no-underline  hover:bg-foreground hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black;
+  }
+
+}
+
+@layer utilities {
+  .nav-link {
+    @apply text-sm font-semibold uppercase;
+  }
+
+  .pagination {
+    @apply mt-block flex flex-wrap border-l border-primary;
+    .pagination-link {
+      @apply w-10 h-10 text-base flex items-center justify-center  border-t border-b border-r border-primary hover:bg-primary hover:text-white;
+    }
+  }
+
+  .no-scroll {
+    @apply overflow-hidden h-full;
+  }
+
+  .\? {
+    animation: \?wobble 0.5s ease-in-out alternate infinite;
+  }
+
+  @keyframes \?wobble {
+    0% {
+      box-shadow: inset 2px 2px gold, inset -2px -2px gold;
+    }
+    100% {
+      box-shadow: inset 4px 4px orange, inset -4px -4px orange;
+    }
+
+  }
+}
+
+@import '~baguettebox.js/dist/baguetteBox.min.css';

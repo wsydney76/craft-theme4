@@ -1,0 +1,16 @@
+{% set params = {
+    section: 'blog',
+    limit: 5
+}|merge(params ?? []) %}
+
+{% set entries = craft.entries.section(params.section).limit(params.limit).all %}
+
+<div class="flex flex-wrap">
+
+    {% for entry in entries %}
+        {% include '_layouts/embeds/card.twig' with {
+            entry
+        } only %}
+    {% endfor %}
+
+</div>

@@ -1,0 +1,27 @@
+{# Sets a default value if not defined by `s-val:*` on the clicked element #}
+{% set page = page ?? 1 %}
+{% set limit = limit ?? theme.entriesPerIndexPage %}
+
+{% set entryQuery = craft.entries(_criteria)
+    .limit(limit)
+    .with ([
+        ['featuredImage', {withTransforms: [theme.cardImageTransform]}]
+    ]) %}
+
+
+{# Paginates the entry query given the current page #}
+{% set sprigPageInfo = sprig.paginate(entryQuery, page) %}
+{% set entries = sprigPageInfo.pageResults %}
+
+<div id="entries" class="flex flex-wrap">
+    {% for entry in entries %}
+        {% include '_layouts/embeds/card.twig' with {
+            entry
+        } only %}
+    {% endfor %}
+</div>
+
+
+{% include '_components/paginate.twig' with {
+    sprigPageInfo
+} only %}

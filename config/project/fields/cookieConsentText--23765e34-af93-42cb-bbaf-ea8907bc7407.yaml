@@ -1,0 +1,19 @@
+columnSuffix: tblkkqub
+contentColumnType: text
+fieldGroup: f15bff68-e0e6-422d-a615-9e22d733e1f0 # Global
+handle: cookieConsentText
+instructions: ''
+name: 'Cookie Consent Text'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

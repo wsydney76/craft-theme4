@@ -1,0 +1,15 @@
+columnSuffix: null
+contentColumnType: string(255)
+fieldGroup: ec7ee471-b43b-491e-9fed-acb78c59acc4 # Kontakt
+handle: webSite
+instructions: ''
+name: 'Web Site'
+searchable: false
+settings:
+  maxLength: '255'
+  placeholder: null
+  types:
+    - url
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

@@ -1,0 +1,89 @@
+field: 10d8ae84-a8b6-489d-846d-1a7510cd9829 # Global Seo Fields
+fieldLayouts:
+  69f8429b-14be-40a0-b9d4-a006da256757:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 61c8dfb5-4ac7-420b-ad8e-5cad0d464a98 # Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 48fde250-325a-44bf-9238-66f0e831a883 # Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  48fde250-325a-44bf-9238-66f0e831a883: # Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds: null
+      defaultUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      defaultUploadLocationSubpath: seo
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: ''
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+      singleUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+        - 'volume:34dbd69d-8da1-4b48-8b5b-f747a86b7f8b'
+        - 'volume:c8a7792a-237f-4196-9f03-898f74b1582b'
+        - 'volume:6f717aa0-5341-484c-adbe-c0b819ae2ce0'
+        - 'volume:6769b461-5c24-4442-9322-8759beee5939'
+        - 'volume:84cef728-ba73-43aa-8dd5-6cedb472e9ac'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Assets
+  61c8dfb5-4ac7-420b-ad8e-5cad0d464a98: # Description
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: description
+    instructions: ''
+    name: Description
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: settings
+name: Settings
+sortOrder: 1

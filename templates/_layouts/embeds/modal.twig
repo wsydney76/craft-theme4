@@ -1,0 +1,12 @@
+{% set show = show ?? 'showModal' %}
+{% set label = lavel ?? 'Modal' %}
+
+<div class="fixed inset-0 flex justify-center items-center bg-black/60 z-50 w-screen h-screen"
+     style="display: none"
+     x-show="{{ show }}"
+     aria-model="true"
+     x-transition.opacity.duration.400ms>
+    <div>
+        {% block content %}{% endblock %}
+    </div>
+</div>

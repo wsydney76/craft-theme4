@@ -1,0 +1,64 @@
+{% from '_macros/lib.twig' import img %}
+
+{% set showMeta = entry.author and (themeOptions.showMeta ?? false) %}
+{% set showTeaser = themeOptions.showTeaser ?? true %}
+{% set teaser = themeOptions.teaser ?? entry.teaser %}
+
+ {% set image = entry.featuredImage.one %}
+{% if not image and theme.useFallbackImage %}
+    {% set image = siteInfo.featuredImage.one %}
+{% endif %}
+
+{% if showMeta %}
+    {% set metaHtml = include('_layouts/partials/entry_meta.twig' , {entry}, false) %}
+{% endif %}
+
+<header class="mb-20 text-white">
+
+    {% if image %}
+        {% set transform = {width: theme.widths['full'], height: theme.titleImageHeight} %}
+
+        <div class="hidden lg:block relative">
+
+            {{ img(image, transform) }}
+
+            <div class="absolute left-0 top-0 w-1/2 -skew-x-12 -ml-12 pl-8 bg-gradient-to-r from-primary-900 to-primary-600 opacity-95 rounded-br-3xl flex justify-center items-center">
+                <div class="skew-x-12 py-8 2xl:py-16 pl-12 pr-16">
+
+                    {% if showTeaser and teaser %}
+                        <div class="mb-2">
+                            {{ teaser }}
+                        </div>
+                    {% endif %}
+
+                    <h1 class="text-4xl xl:text-5xl 2xl:text-6xl font-light tracking-wide">
+                        {{ entry.title }}
+                    </h1>
+
+                    {% if showMeta %}
+                        {{ metaHtml|raw }}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="block {{ image ? "lg:hidden" }} bg-gradient-to-r from-primary-900 to-primary-600 p-block">
+        {% if showTeaser and teaser %}
+            <div class="text-base mb-2">
+                {{ teaser }}
+            </div>
+        {% endif %}
+
+        <h1 class="text-h1 font-light mb-0">
+            {{ entry.title }}
+        </h1>
+
+        {% if showMeta %}
+            <div class="text-base">
+                {{ metaHtml|raw }}
+            </div>
+        {% endif %}
+    </div>
+
+</header>

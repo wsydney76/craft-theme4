@@ -1,0 +1,124 @@
+field: 266ac6c3-03c0-40eb-8f24-c5c22ed1c5c0 # Content
+fieldLayouts:
+  2396ae75-bd1d-4372-9450-ea76a363f922:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: b2bec7dc-66f2-4af0-9b96-7f9994b1d2c2 # Video file
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: bc242225-cdbb-4145-9746-471878a85673 # Poster Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 80de78f1-6d38-4d79-a522-71b6e6aec241 # Show in modal
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+        name: Content
+        sortOrder: 1
+fields:
+  80de78f1-6d38-4d79-a522-71b6e6aec241: # Show in modal
+    columnSuffix: null
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: showInModal
+    instructions: ''
+    name: 'Show in modal'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  b2bec7dc-66f2-4af0-9b96-7f9994b1d2c2: # Video file
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: videoFile
+    instructions: ''
+    name: 'Video file'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: false
+      allowedKinds:
+        - video
+      defaultUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      defaultUploadLocationSubpath: video
+      limit: ''
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: 'Video auswählen'
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  bc242225-cdbb-4145-9746-471878a85673: # Poster Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: posterImage
+    instructions: ''
+    name: 'Poster Image'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: false
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: 'Bild auswählen'
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: video
+name: Video
+sortOrder: 8

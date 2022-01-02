@@ -1,0 +1,58 @@
+fieldLayouts:
+  a2ec2af6-c38e-4877-947c-787e4e135bf3:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\AssetTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: 27d258a2-a6f5-44f8-9692-e0a1b254cea4 # Alt Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: dc298055-236a-4bbc-9246-ae94c0e76889 # Copyright
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Inhalt
+        sortOrder: 1
+handle: media
+hasUrls: true
+name: Media
+settings:
+  path: '@webroot/media'
+sortOrder: 1
+titleTranslationKeyFormat: null
+titletranslationMethod: none
+type: craft\volumes\Local
+url: '@web/media'

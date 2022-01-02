@@ -1,0 +1,18 @@
+{% set entries = entries ?? query
+    .with([
+        ['featuredImage', {withTransforms: [theme.cardImageTransform]}]
+    ])
+.all %}
+
+
+<div id="entries" class="flex flex-wrap">
+    {% for entry in entries %}
+
+        {% embed '_layouts/embeds/card.twig' with {
+            entry
+        } %}
+
+        {% endembed %}
+
+    {% endfor %}
+</div>

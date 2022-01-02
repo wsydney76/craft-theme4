@@ -1,0 +1,60 @@
+fieldLayouts:
+  e205c5b7-f987-4a6e-baa7-cba8718ee35a:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7bb0cd75-a933-4105-b72c-a34605721327 # Auf der Übersichtsseite anzeigen?
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 7384bc4c-31c8-4906-a830-d53525e01989 # Guide Inhalt
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Inhalt
+        sortOrder: 2
+handle: guide
+hasTitleField: true
+name: Guide
+section: 61350169-3950-4815-aea9-b171958d6d8a # Guide
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titletranslationMethod: none

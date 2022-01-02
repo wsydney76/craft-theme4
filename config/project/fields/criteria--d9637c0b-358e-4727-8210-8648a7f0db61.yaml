@@ -1,0 +1,19 @@
+columnSuffix: drrgftqc
+contentColumnType: text
+fieldGroup: d868de82-ae37-4897-a6bb-ef08e919650b # Common
+handle: criteria
+instructions: "Criteria for entry query in json format, e.g.   \r\n{\"section\":\"post\", \"orderBy\":\"title\", \"limit\":10}\r\n\r\nWill take precedence over section/orderBy if specified."
+name: Criteria
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: '{"section":"person", "orderBy":"title", "limit":10}'
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

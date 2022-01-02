@@ -1,0 +1,32 @@
+{% from '_macros/lib.twig' import img %}
+
+{% set params = {
+    section: 'blog',
+    limit: 5
+}|merge(params ?? []) %}
+
+{% set entries = craft.entries.section(params.section).limit(params.limit).all %}
+
+<div class="space-y-6">
+    {% for entry in entries %}
+        <a class="block md:flex md:space-x-4 !no-underline border" href="{{ entry.url }}">
+            <div class="flex-shrink-0">
+                {% set image = entry.featuredImage.one %}
+                {% if image %}
+                    {{ img(image, {width: 300, height: 200}) }}
+                {% endif %}
+            </div>
+            <div class="space-y-4 p-4 md:p-0">
+                <div class="text-2xl">
+                    {{ entry.title }}
+                </div>
+                <div>
+                    {{ entry.teaser }}
+                </div>
+                <div>
+                    {{ entry.postDate|datetime('short') }}
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+</div>

@@ -1,0 +1,42 @@
+fieldLayouts:
+  c43cd6ab-60e9-49e5-abd5-f80a324860be:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            style: tip
+            tip: 'Dieser Seitentyp hat keine eigenen Inhalte, es werden nur die Kind-Seiten gezeigt.'
+            type: craft\fieldlayoutelements\Tip
+        name: Inhalt
+        sortOrder: 1
+handle: toc
+hasTitleField: true
+name: 'Table Of Contents'
+section: a6676538-ee52-4938-aaff-8d9d46b669af # Page
+sortOrder: 4
+titleFormat: null
+titleTranslationKeyFormat: null
+titletranslationMethod: none

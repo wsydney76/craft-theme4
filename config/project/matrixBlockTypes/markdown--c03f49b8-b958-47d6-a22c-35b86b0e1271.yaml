@@ -1,0 +1,41 @@
+field: 266ac6c3-03c0-40eb-8f24-c5c22ed1c5c0 # Content
+fieldLayouts:
+  97b01980-d2f7-444c-b77e-7d4c19ea6413:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 499db390-ca29-450f-8c5d-9a23d0e1e353 # Text
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  499db390-ca29-450f-8c5d-9a23d0e1e353: # Text
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: 'Hier können Markdown und Referenz-Tags verwendet werden.'
+    name: Text
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: '1'
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: markdown
+name: 'Text (Markdown)'
+sortOrder: 3

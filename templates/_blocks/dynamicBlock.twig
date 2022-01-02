@@ -1,0 +1,20 @@
+{% if block.heading %}
+    <div class="text-h2 mb-2">{{ block.heading }}</div>
+{% endif %}
+
+{% set params = block.parameter|json_decode %}
+
+<div>
+
+    {% include [
+        "#{currentSite.handle}/_partials/dynamic/#{block.template}",
+        "_partials/#{block.template}",
+        "_partials/dynamic/#{block.template}"
+        ] ignore missing with {
+        entry,
+        mode: 'default',
+        id: block.id,
+        params
+    } %}
+</div>
+

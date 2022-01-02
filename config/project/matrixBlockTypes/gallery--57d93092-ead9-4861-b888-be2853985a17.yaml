@@ -1,0 +1,80 @@
+field: 266ac6c3-03c0-40eb-8f24-c5c22ed1c5c0 # Content
+fieldLayouts:
+  6dc16733-2a61-4e79-87af-07eb7503edc7:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 143a7175-1ed7-4136-b81b-c00f6c0bb928 # Images
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 622de389-71f8-4b9f-ba40-260461f3bb7b # Width
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  143a7175-1ed7-4136-b81b-c00f6c0bb928: # Images
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: images
+    instructions: ''
+    name: Images
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      defaultUploadLocationSubpath: ''
+      limit: ''
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  622de389-71f8-4b9f-ba40-260461f3bb7b: # Width
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: width
+    instructions: ''
+    name: Width
+    searchable: false
+    settings:
+      addDefaultOptions: '1'
+      addMobileOptions: ''
+      defaultWidth: default
+    translationKeyFormat: null
+    translationMethod: none
+    type: modules\main\fields\WidthField
+handle: gallery
+name: Gallery
+sortOrder: 10

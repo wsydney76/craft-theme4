@@ -1,0 +1,12 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: ec7ee471-b43b-491e-9fed-acb78c59acc4 # Kontakt
+handle: eMail
+instructions: ''
+name: E-Mail
+searchable: false
+settings:
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Email

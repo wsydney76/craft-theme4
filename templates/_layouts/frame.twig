@@ -1,0 +1,42 @@
+{% extends "_layouts/main.twig" %}
+
+{% block page %}
+
+    <div class="py-4">
+        <div class="container max-w-screen-{{ theme.pageWidth }} mx-auto bg-background">
+            <div class="px-8 py-6">
+                {{ navbarHtml|raw }}
+            </div>
+
+            {% if theme.titleStyle == 'textImage' %}
+                <div class="px-8">
+                    {{ titleHtml|raw }}
+                </div>
+            {% endif %}
+
+            <div>
+                {{ titleImageHtml|raw }}
+            </div>
+
+            {% if theme.titleStyle != 'textImage' %}
+                <div class="px-block {{ theme.titleStyle == 'fullTextColor' ? 'bg-title-bg text-title-text' }} py-4">
+                    {{ titleHtml|raw }}
+                </div>
+            {% endif %}
+
+            <div class="py-4">
+                <div class="mt-block">
+                    {{ block('content') }}
+                </div>
+            </div>
+
+            <div class="mt-8 py-4 px-8 border-t border-border">
+                {% include '_layouts/partials/footer.twig' %}
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}
+

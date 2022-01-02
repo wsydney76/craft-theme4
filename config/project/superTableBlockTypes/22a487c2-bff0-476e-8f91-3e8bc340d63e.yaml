@@ -1,0 +1,113 @@
+field: de449fa1-c503-42ac-a4cf-4c8fc3656099 # __blank__
+fieldLayouts:
+  d15441ec-f24b-4cb0-aa32-04e8cc923f56:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: b49d56c6-b29b-4ac0-ba55-aa83643aedaa # Target
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: fb7af698-b5de-4042-9a4a-6f26a22c5073 # Caption
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: bde02460-053f-4ab2-8c8a-6b782b53b949 # Background
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 6126b7f5-ffb5-4ad1-958c-bc4b58a8f7d3 # Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  6126b7f5-ffb5-4ad1-958c-bc4b58a8f7d3: # Text
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: textColor
+    instructions: ''
+    name: Text
+    searchable: false
+    settings:
+      defaultColor: white
+    translationKeyFormat: null
+    translationMethod: none
+    type: modules\main\fields\ThemeColorField
+  b49d56c6-b29b-4ac0-ba55-aa83643aedaa: # Target
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: target
+    instructions: ''
+    name: Target
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: 'Eintrag auswählen'
+      showSiteMenu: true
+      source: null
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  bde02460-053f-4ab2-8c8a-6b782b53b949: # Background
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: bgColor
+    instructions: ''
+    name: Background
+    searchable: false
+    settings:
+      defaultColor: primary
+    translationKeyFormat: null
+    translationMethod: none
+    type: modules\main\fields\ThemeColorField
+  fb7af698-b5de-4042-9a4a-6f26a22c5073: # Caption
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: caption
+    instructions: 'Leer lassen, um den Titel des Eintrags anzuzeigen'
+    name: Caption
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

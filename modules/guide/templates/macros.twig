@@ -1,0 +1,5 @@
+{% macro guideAsset(img) %}
+    {% set url = craft.app.assetManager.getPublishedUrl('@modules/guide/assetbundles/resources/images', true, img) %}
+    <a href="{{ url }}" target="_blank"><img style="margin-top:12px;margin-bottom:12px;max-width:100%;height:auto;"
+                                             src="{{ url }}"></a>
+{% endmacro %}

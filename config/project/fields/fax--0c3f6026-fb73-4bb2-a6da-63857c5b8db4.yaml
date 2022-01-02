@@ -1,0 +1,19 @@
+columnSuffix: null
+contentColumnType: string(120)
+fieldGroup: ec7ee471-b43b-491e-9fed-acb78c59acc4 # Kontakt
+handle: fax
+instructions: ''
+name: Fax
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 30
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

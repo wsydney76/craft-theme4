@@ -1,0 +1,151 @@
+field: 266ac6c3-03c0-40eb-8f24-c5c22ed1c5c0 # Content
+fieldLayouts:
+  1ade30d6-d4fd-4ca6-8b86-7762b4e70a86:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 1df21aa9-d2ee-4afa-88ca-298f68536dfd # Image
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 4008cfb2-85a6-441c-bffb-b4d1cf5c23e0 # Caption
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 0cb800eb-b7ac-4482-b68e-1bb06dbe4ca9 # Aspect Ratio
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 6cc5489b-8b5b-4803-84e7-8520cf7b142f # Width
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 599e26fb-8feb-4096-b249-19bdc57c275a # Margins Y
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+        name: Content
+        sortOrder: 1
+fields:
+  0cb800eb-b7ac-4482-b68e-1bb06dbe4ca9: # Aspect Ratio
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: aspectRatio
+    instructions: ''
+    name: 'Aspect Ratio'
+    searchable: false
+    settings:
+      defaultAspectRatio: '16_9'
+    translationKeyFormat: null
+    translationMethod: none
+    type: modules\main\fields\AspectRatioField
+  1df21aa9-d2ee-4afa-88ca-298f68536dfd: # Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      allowUploads: false
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      defaultUploadLocationSubpath: images
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: 'Bild auswählen'
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  6cc5489b-8b5b-4803-84e7-8520cf7b142f: # Width
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: width
+    instructions: ''
+    name: Width
+    searchable: false
+    settings:
+      addDefaultOptions: '1'
+      addMobileOptions: ''
+      defaultWidth: default
+    translationKeyFormat: null
+    translationMethod: none
+    type: modules\main\fields\WidthField
+  599e26fb-8feb-4096-b249-19bdc57c275a: # Margins Y
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: marginsY
+    instructions: ''
+    name: 'Margins Y'
+    searchable: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: modules\main\fields\MarginsYField
+  4008cfb2-85a6-441c-bffb-b4d1cf5c23e0: # Caption
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: caption
+    instructions: ''
+    name: Caption
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: 40
+      code: ''
+      columnType: string
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: image
+name: Image
+sortOrder: 5

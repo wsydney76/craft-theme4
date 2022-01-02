@@ -1,0 +1,40 @@
+{% from '_macros/lib.twig' import img %}
+
+{% if criteria.limit is not defined %}
+    {% set criteria = criteria|merge({limit: theme.entriesPerIndexPage}) %}
+{% endif %}
+
+
+{% paginate craft.entries(criteria) as pageInfo, entries %}
+
+<div class="space-y-6">
+    {% for entry in entries %}
+        <a class="block flex space-x-4 !no-underline border" href="{{ entry.url }}">
+            <div class="flex-shrink-0">
+                {% set image = entry.featuredImage.one %}
+                {% if image %}
+                    {{ img(image, {width: 300, height: 200}) }}
+                {% endif %}
+            </div>
+            <div class="py-2">
+                {% if entry.teaser %}
+                    <div class="text-base mb-2">
+                        {{ entry.teaser }}
+                    </div>
+                {% endif %}
+                <div class="text-3xl">
+                    {{ entry.title }}
+                </div>
+
+               {% include "_sections/#{entry.section.handle}/index_content.twig" ignore missing %}
+            </div>
+        </a>
+    {% endfor %}
+</div>
+
+{% if pageInfo.totalPages > 1 %}
+    {% include '_layouts/partials/pagination.twig' %}
+{% endif %}
+
+
+

@@ -1,0 +1,22 @@
+{% set entries = craft.entries
+    .with([
+        ['featuredImage', {withTransforms: [theme.cardImageTransform]}]
+    ])
+    .relatedTo({element:entry, field:'entries'})
+    .orderBy('postDate desc')
+.all %}
+
+{% if entries %}
+    <div class="max-w-screen-{{ theme.defaultBlockWidth }} mx-auto px-block mt-12">
+
+        <h2 class="text-h2">{{ '{count,plural,=1{Related Entry} other{Related Entries}}'|t({count: entries|length}) }}</h2>
+
+        <div class="flex flex-wrap mt-4">
+            {% for entry in entries %}
+                {% include '_layouts/embeds/card.twig' with {
+                    entry
+                } only %}
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}

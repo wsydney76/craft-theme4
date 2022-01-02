@@ -1,0 +1,31 @@
+{% apply spaceless %}
+    {% set blitz = craft.app.plugins.pluginEnabled('blitz') ? craft.blitz : null %}
+
+    {% set localizedEntries = [] %}
+    {% if currentSite.group.sites|length > 1 %}
+        {% set localizedEntries = entry.localized.all | filter(entry => entry.site.groupId == currentSite.groupId) %}
+    {% endif %}
+
+    {% set navEntries = siteInfo.entries.with('children').all %}
+    {% if navEntries|length == 0 %}
+        {% set navEntries = craft.entries.section('page').level(1).with('children').all %}
+    {% endif %}
+
+    {% set themeOptions = themeOptions ?? {} %}
+
+    {% set siteNameHtml = include('_layouts/partials/siteName.twig', {}, false) %}
+
+    {% set navHtml = theme.mobileBreakpoint == 'always' ? '' :
+        include('_layouts/partials/nav.twig', {entry, navEntries, localizedEntries}, false ) %}
+
+    {% set mobileNavHtml = theme.mobileBreakpoint == 'never' ? '' :
+        include('_layouts/partials/nav_mobile.twig', {entry, navEntries, localizedEntries}, false ) %}
+
+    {% set navbarHtml = include('_layouts/partials/header.twig', {siteNameHtml, navHtml, mobileNavHtml}, false) %}
+
+    {% set titleImageHtml = include('_layouts/partials/titleImage.twig', {entry, themeOptions}, false) %}
+
+    {% set titleHtml = include(["_sections/#{entry.section.handle}/title.twig", '_layouts/partials/title.twig'], {entry, themeOptions}, false) %}
+
+{% endapply %}
+{% block html %}{% endblock %}
