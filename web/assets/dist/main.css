@@ -1050,6 +1050,9 @@ a.btn{
 .scroll-mt-20{
   scroll-margin-top: 5rem;
 }
+.scroll-mt-24{
+  scroll-margin-top: 6rem;
+}
 .appearance-none{
   -webkit-appearance: none;
      -moz-appearance: none;
