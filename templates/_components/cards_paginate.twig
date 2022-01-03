@@ -13,15 +13,17 @@
 {% set sprigPageInfo = sprig.paginate(entryQuery, page) %}
 {% set entries = sprigPageInfo.pageResults %}
 
-<div id="entries" class="flex flex-wrap">
-    {% for entry in entries %}
-        {% include '_layouts/embeds/card.twig' with {
-            entry
-        } only %}
-    {% endfor %}
+<div id="target" class=" {{ theme.stickyNavbar ? 'scroll-mt-24' }}">
+    <div id="entries" class="flex flex-wrap">
+        {% for entry in entries %}
+            {% include '_layouts/embeds/card.twig' with {
+                entry
+            } only %}
+        {% endfor %}
+    </div>
+
+
+    {% include '_components/paginate.twig' with {
+        sprigPageInfo
+    } only %}
 </div>
-
-
-{% include '_components/paginate.twig' with {
-    sprigPageInfo
-} only %}
