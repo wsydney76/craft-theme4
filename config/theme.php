@@ -67,7 +67,7 @@ return [
     'lightboxImageTransform' => ['height' => 800, 'format' => 'webp'],
 
     'defaultImageWidth' => 'xl',
-    'defaultAspectRatio' => '16_9',
+    'defaultAspectRatio' => '16:9',
 
     'entriesPerIndexPage' => 6,
     'entriesInSearchResults' => 6,

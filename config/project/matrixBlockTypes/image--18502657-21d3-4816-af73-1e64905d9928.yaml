@@ -61,7 +61,7 @@ fields:
     name: 'Aspect Ratio'
     searchable: false
     settings:
-      defaultAspectRatio: '16_9'
+      defaultAspectRatio: '16:9'
     translationKeyFormat: null
     translationMethod: none
     type: modules\main\fields\AspectRatioField
