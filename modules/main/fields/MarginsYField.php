@@ -2,6 +2,7 @@
 
 namespace modules\main\fields;
 
+use Craft;
 use craft\base\ElementInterface;
 use craft\base\Field;
 use craft\helpers\Cp;
@@ -46,10 +47,10 @@ class MarginsYField extends Field
             'name' => $this->handle,
             'value' => $value,
             'options' => [
-                ['label' => 'Top and Bottom', 'value' => 'my-block'],
-                ['label' => 'None', 'value' => 'my-0'],
-                ['label' => 'Top only', 'value' => 'mt-block'],
-                ['label' => 'Bottom only', 'value' => 'mb-block'],
+                ['label' => Craft::t('site', 'Top and Bottom'), 'value' => 'my-block'],
+                ['label' => Craft::t('site', 'None'), 'value' => 'my-0'],
+                ['label' => Craft::t('site', 'Top only'), 'value' => 'mt-block'],
+                ['label' => Craft::t('site', 'Bottom only'), 'value' => 'mb-block'],
             ]
         ]);
     }

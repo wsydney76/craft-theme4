@@ -2,6 +2,7 @@
 
 namespace modules\main\fields;
 
+use Craft;
 use craft\base\ElementInterface;
 use craft\base\Field;
 use craft\helpers\Cp;
@@ -10,20 +11,6 @@ class ThemeColorField extends Field
 {
 
     public $defaultColor;
-
-    protected $options = [
-        ['label' => 'Default', 'value' => 'default'],
-        ['label' => 'Primary', 'value' => 'primary'],
-        ['label' => 'Secondary', 'value' => 'secondary'],
-        ['label' => 'Light', 'value' => 'light'],
-        ['label' => 'Background', 'value' => 'background'],
-        ['label' => 'Foreground', 'value' => 'foreground'],
-        ['label' => 'Frame-Background', 'value' => 'frame-background'],
-        ['label' => 'Black', 'value' => 'black'],
-        ['label' => 'White', 'value' => 'white'],
-        ['label' => 'Three', 'value' => 'three'],
-        ['label' => 'Four', 'value' => 'four'],
-    ];
 
     /**
      * @inheritDoc
@@ -51,7 +38,6 @@ class ThemeColorField extends Field
         ];
     }
 
-
     /** @inheritdoc */
     public function getSettingsHtml()
     {
@@ -59,7 +45,7 @@ class ThemeColorField extends Field
             'label' => 'Default Color',
             'id' => 'default-color',
             'name' => 'defaultColor',
-            'options' => $this->options,
+            'options' => $this->getOptions(),
             'value' => $this->defaultColor,
             'errors' => $this->getErrors('defaultColor'),
         ]);
@@ -74,7 +60,7 @@ class ThemeColorField extends Field
         return Cp::selectHtml([
             'name' => $this->handle,
             'value' => $value,
-            'options' => $this->options
+            'options' => $this->getOptions()
         ]);
     }
 
@@ -92,5 +78,21 @@ class ThemeColorField extends Field
         return $value;
     }
 
+    protected function getOptions()
+    {
+        return [
+            ['label' => Craft::t('site', 'Default'), 'value' => 'default'],
+            ['label' => Craft::t('site', 'Primary'), 'value' => 'primary'],
+            ['label' => Craft::t('site', 'Secondary'), 'value' => 'secondary'],
+            ['label' => Craft::t('site', 'Light'), 'value' => 'light'],
+            ['label' => Craft::t('site', 'Background'), 'value' => 'background'],
+            ['label' => Craft::t('site', 'Foreground'), 'value' => 'foreground'],
+            ['label' => Craft::t('site', 'Frame-Background'), 'value' => 'frame-background'],
+            ['label' => Craft::t('site', 'Black'), 'value' => 'black'],
+            ['label' => Craft::t('site', 'White'), 'value' => 'white'],
+            ['label' => Craft::t('site', 'Color Three'), 'value' => 'three'],
+            ['label' => Craft::t('site', 'Color Four'), 'value' => 'four'],
+        ];
+}
 }
 

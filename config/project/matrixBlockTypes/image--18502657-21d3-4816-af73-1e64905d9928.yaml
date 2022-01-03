@@ -84,7 +84,7 @@ fields:
       localizeRelations: false
       previewMode: full
       restrictFiles: '1'
-      selectionLabel: 'Bild auswählen'
+      selectionLabel: 'Select image'
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
@@ -120,7 +120,7 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: marginsY
-    instructions: ''
+    instructions: 'Use to avoid gaps between colored sections or fullwidth images'
     name: 'Margins Y'
     searchable: false
     translationKeyFormat: null

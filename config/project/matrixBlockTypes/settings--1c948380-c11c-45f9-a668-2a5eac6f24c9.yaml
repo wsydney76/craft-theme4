@@ -128,7 +128,7 @@ fields:
       localizeRelations: false
       previewMode: full
       restrictFiles: ''
-      selectionLabel: ''
+      selectionLabel: 'Select image'
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
@@ -142,7 +142,7 @@ fields:
       validateRelatedElements: false
       viewMode: large
     translationKeyFormat: null
-    translationMethod: none
+    translationMethod: site
     type: craft\fields\Assets
   b0cfc7f4-d446-41bb-87ab-dc16b1481540: # Alternative Title
     columnSuffix: null

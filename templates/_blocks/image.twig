@@ -25,9 +25,9 @@
     {% endif %}
 
     {% if aspectRatio == 'fullwidth' %}
-        {% set transform = {width: 2500, height: theme.fullwidthImageHeight ?? 600 } %}
+        {% set transform = {width: theme.widths['full'], height: theme.fullwidthImageHeight} %}
     {% elseif aspectRatio != 'auto' %}
-        {% set aspectRatio = aspectRatio|split('_') %}
+        {% set aspectRatio = aspectRatio|split(':') %}
         {% set height = floor(width / aspectRatio[0] * aspectRatio[1]) %}
         {% set transform = {width: width, height: height} %}
     {% else %}

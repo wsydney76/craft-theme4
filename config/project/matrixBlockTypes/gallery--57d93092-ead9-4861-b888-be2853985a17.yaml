@@ -39,12 +39,12 @@ fields:
       allowedKinds:
         - image
       defaultUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-      defaultUploadLocationSubpath: ''
+      defaultUploadLocationSubpath: images
       limit: ''
       localizeRelations: false
       previewMode: full
       restrictFiles: '1'
-      selectionLabel: ''
+      selectionLabel: 'Add images'
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false

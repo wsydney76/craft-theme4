@@ -42,14 +42,14 @@ fields:
                   - width
                   - ''
           -
-            - bde02460-053f-4ab2-8c8a-6b782b53b949 # Background
+            - bde02460-053f-4ab2-8c8a-6b782b53b949 # Background color
             -
               __assoc__:
                 -
                   - width
                   - ''
           -
-            - 6126b7f5-ffb5-4ad1-958c-bc4b58a8f7d3 # Text
+            - 6126b7f5-ffb5-4ad1-958c-bc4b58a8f7d3 # Text color
             -
               __assoc__:
                 -
@@ -58,11 +58,11 @@ fields:
       contentTable: '{{%stc_31_buttons}}'
       fieldLayout: table
       maxRows: ''
-      minRows: ''
+      minRows: '1'
       placeholderKey: null
       propagationKeyFormat: null
       propagationMethod: all
-      selectionLabel: ''
+      selectionLabel: 'Add a button'
       staticField: ''
     translationKeyFormat: null
     translationMethod: site

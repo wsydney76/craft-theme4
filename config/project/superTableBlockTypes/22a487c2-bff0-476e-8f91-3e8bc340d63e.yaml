@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: bde02460-053f-4ab2-8c8a-6b782b53b949 # Background
+            fieldUid: bde02460-053f-4ab2-8c8a-6b782b53b949 # Background color
             instructions: null
             label: null
             required: true
@@ -32,7 +32,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 6126b7f5-ffb5-4ad1-958c-bc4b58a8f7d3 # Text
+            fieldUid: 6126b7f5-ffb5-4ad1-958c-bc4b58a8f7d3 # Text color
             instructions: null
             label: null
             required: false
@@ -43,13 +43,13 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  6126b7f5-ffb5-4ad1-958c-bc4b58a8f7d3: # Text
+  6126b7f5-ffb5-4ad1-958c-bc4b58a8f7d3: # Text color
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: textColor
     instructions: ''
-    name: Text
+    name: 'Text color'
     searchable: false
     settings:
       defaultColor: white
@@ -68,7 +68,7 @@ fields:
       allowSelfRelations: false
       limit: '1'
       localizeRelations: false
-      selectionLabel: 'Eintrag auswählen'
+      selectionLabel: 'Select entry'
       showSiteMenu: true
       source: null
       sources: '*'
@@ -78,13 +78,13 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Entries
-  bde02460-053f-4ab2-8c8a-6b782b53b949: # Background
+  bde02460-053f-4ab2-8c8a-6b782b53b949: # Background color
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: bgColor
     instructions: ''
-    name: Background
+    name: 'Background color'
     searchable: false
     settings:
       defaultColor: primary

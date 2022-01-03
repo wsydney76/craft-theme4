@@ -5,7 +5,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: b2bec7dc-66f2-4af0-9b96-7f9994b1d2c2 # Video file
+            fieldUid: b2bec7dc-66f2-4af0-9b96-7f9994b1d2c2 # Video File
             instructions: null
             label: null
             required: true
@@ -49,13 +49,13 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
-  b2bec7dc-66f2-4af0-9b96-7f9994b1d2c2: # Video file
+  b2bec7dc-66f2-4af0-9b96-7f9994b1d2c2: # Video File
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: videoFile
     instructions: ''
-    name: 'Video file'
+    name: 'Video File'
     searchable: false
     settings:
       allowSelfRelations: false
@@ -68,7 +68,7 @@ fields:
       localizeRelations: false
       previewMode: full
       restrictFiles: '1'
-      selectionLabel: 'Video auswählen'
+      selectionLabel: 'Select file'
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
@@ -98,12 +98,12 @@ fields:
       allowedKinds:
         - image
       defaultUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-      defaultUploadLocationSubpath: ''
+      defaultUploadLocationSubpath: images
       limit: '1'
       localizeRelations: false
       previewMode: full
       restrictFiles: '1'
-      selectionLabel: 'Bild auswählen'
+      selectionLabel: 'Select image'
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false

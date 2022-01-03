@@ -21,7 +21,7 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: text
-    instructions: 'Hier können Markdown und Referenz-Tags verwendet werden.'
+    instructions: 'You can use markdown and reference tags here'
     name: Text
     searchable: true
     settings:

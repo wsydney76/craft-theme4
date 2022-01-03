@@ -2,6 +2,7 @@
 
 namespace modules\main\fields;
 
+use Craft;
 use craft\base\ElementInterface;
 use craft\base\Field;
 use craft\helpers\Cp;
@@ -16,25 +17,6 @@ class WidthField extends Field
     public $defaultWidth;
     public $addDefaultOptions = false;
     public $addMobileOptions = false;
-
-    protected $options = [
-        ['label' => 'Small (640px)', 'value' => 'sm'],
-        ['label' => 'Medium (768px)', 'value' => 'md'],
-        ['label' => 'Medium Large (896px)', 'value' => 'ml'],
-        ['label' => 'Large (1024px)', 'value' => 'lg'],
-        ['label' => 'Extra Large (1280px)', 'value' => 'xl'],
-        ['label' => 'Huge (1536px)', 'value' => '2xl'],
-        ['label' => 'Full', 'value' => 'full'],
-    ];
-
-    protected $mobileOptions = [
-        ['label' => 'Always show mobile menu', 'value' => 'always'],
-        ['label' => 'Never show mobile menu', 'value' => 'never'],
-    ];
-
-    protected $defaultOptions = [
-      ['label' => 'Default', 'value' => 'default']
-    ];
 
     /**
      * @inheritDoc
@@ -116,15 +98,42 @@ class WidthField extends Field
 
     protected function getOptions($isSettings = false)
     {
-        $options = $this->options;
+        $options = $this->getMainOptions();
         if ($this->addDefaultOptions || $isSettings) {
-            $options = array_merge($this->defaultOptions, $options);
+            $options = array_merge($this->getDefaultOptions(), $options);
         }
         if ($this->addMobileOptions || $isSettings) {
-            $options = array_merge($options, $this->mobileOptions);
+            $options = array_merge($options, $this->getMobileOptions());
         }
         return $options;
     }
 
+    protected function getMainOptions()
+    {
+        return [
+            ['label' => Craft::t('site', 'Small (640px)'), 'value' => 'sm'],
+            ['label' => Craft::t('site', 'Medium (768px)'), 'value' => 'md'],
+            ['label' => Craft::t('site', 'Medium Large (896px)'), 'value' => 'ml'],
+            ['label' => Craft::t('site', 'Large (1024px)'), 'value' => 'lg'],
+            ['label' => Craft::t('site', 'Extra Large (1280px)'), 'value' => 'xl'],
+            ['label' => Craft::t('site', 'Huge (1536px)'), 'value' => '2xl'],
+            ['label' => Craft::t('site', 'Full'), 'value' => 'full'],
+        ];
+    }
+
+    protected function getDefaultOptions()
+    {
+        return [
+            ['label' => Craft::t('site','Default'), 'value' => 'default']
+        ];
+    }
+
+    protected function getMobileOptions()
+    {
+        return [
+            ['label' => Craft::t('site', 'Always show mobile menu'), 'value' => 'always'],
+            ['label' => Craft::t('site', 'Never show mobile menu'), 'value' => 'never'],
+        ];
+    }
 }
 

@@ -25,7 +25,7 @@ fields:
     name: Text
     searchable: true
     settings:
-      availableTransforms: ''
+      availableTransforms: '*'
       availableVolumes: ''
       cleanupHtml: true
       columnType: text

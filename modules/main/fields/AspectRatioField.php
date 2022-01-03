@@ -2,6 +2,7 @@
 
 namespace modules\main\fields;
 
+use Craft;
 use craft\base\ElementInterface;
 use craft\base\Field;
 use craft\helpers\Cp;
@@ -11,18 +12,6 @@ class AspectRatioField extends Field
 {
 
     public $defaultAspectRatio = 'auto';
-
-    protected $options = [
-        ['label' => 'Theme Default', 'value' => 'default'],
-        ['label' => 'Auto', 'value' => 'auto'],
-        ['label' => '1:1', 'value' => '1_1'],
-        ['label' => '4:3', 'value' => '4_3'],
-        ['label' => '16:9', 'value' => '16_9'],
-        ['label' => '21:9', 'value' => '21_9'],
-        ['label' => '3:4', 'value' => '3_4'],
-        ['label' => '1:2', 'value' => '1_2'],
-        ['label' => 'Full Width', 'value' => 'fullwidth'],
-    ];
 
     /**
      * @inheritDoc
@@ -85,6 +74,21 @@ class AspectRatioField extends Field
         }
 
         return $value;
+    }
+
+    protected function getOptions()
+    {
+        return [
+            ['label' => Craft::t('site','Theme Default'), 'value' => 'default'],
+            ['label' => Craft::t('site','Auto'), 'value' => 'auto'],
+            ['label' => '1:1', 'value' => '1:1'],
+            ['label' => '4:3', 'value' => '4:3'],
+            ['label' => '16:9', 'value' => '16:9'],
+            ['label' => '21:9', 'value' => '21:9'],
+            ['label' => '3:4', 'value' => '3:4'],
+            ['label' => '1:2', 'value' => '1:2'],
+            ['label' => Craft::t('site','Full Width'), 'value' => 'fullwidth'],
+        ];
     }
 
 }

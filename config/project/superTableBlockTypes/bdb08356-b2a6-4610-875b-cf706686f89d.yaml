@@ -47,7 +47,7 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: span
-    instructions: "A col span will be assigned to colums width an explicitly set span.  \r\nThen the remaining col span  will than be split equally over all columns set to 'auto'.  \r\nThe sum of all col spans has to be 12 for a visually appealing layout."
+    instructions: ''
     name: Span
     searchable: false
     settings:
@@ -68,7 +68,7 @@ fields:
           __assoc__:
             -
               - label
-              - 'Half (6/12)'
+              - Half
             -
               - value
               - '6'
@@ -79,7 +79,7 @@ fields:
           __assoc__:
             -
               - label
-              - 'One third (4/12)'
+              - 'One third'
             -
               - value
               - '4'
@@ -90,7 +90,7 @@ fields:
           __assoc__:
             -
               - label
-              - 'Two thirds (8/12)'
+              - 'Two thirds'
             -
               - value
               - '8'
@@ -101,7 +101,7 @@ fields:
           __assoc__:
             -
               - label
-              - 'One quarter (3/12)'
+              - 'One quarter'
             -
               - value
               - '3'

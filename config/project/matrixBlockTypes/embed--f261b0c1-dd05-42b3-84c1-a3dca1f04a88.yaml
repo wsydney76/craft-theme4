@@ -5,7 +5,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 6c68905c-e96f-42e0-bc08-1f1f9d58d19f # Asset
+            fieldUid: 6c68905c-e96f-42e0-bc08-1f1f9d58d19f # __blank__
             instructions: null
             label: null
             required: true
@@ -16,13 +16,13 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  6c68905c-e96f-42e0-bc08-1f1f9d58d19f: # Asset
+  6c68905c-e96f-42e0-bc08-1f1f9d58d19f: # __blank__
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: asset
     instructions: ''
-    name: Asset
+    name: __blank__
     searchable: false
     settings:
       allowSelfRelations: false
@@ -35,7 +35,7 @@ fields:
       localizeRelations: false
       previewMode: full
       restrictFiles: '1'
-      selectionLabel: 'Embed auswählen'
+      selectionLabel: 'Select embed'
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false

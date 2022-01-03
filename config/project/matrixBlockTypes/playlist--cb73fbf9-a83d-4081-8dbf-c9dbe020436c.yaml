@@ -5,7 +5,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 3ac8b547-8089-43db-b7de-39c79c658368 # Audios
+            fieldUid: 3ac8b547-8089-43db-b7de-39c79c658368 # Audio Files
             instructions: null
             label: null
             required: false
@@ -25,13 +25,13 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  3ac8b547-8089-43db-b7de-39c79c658368: # Audios
+  3ac8b547-8089-43db-b7de-39c79c658368: # Audio Files
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: audios
-    instructions: 'Nur eine Playlist pro Seite!'
-    name: Audios
+    instructions: 'One one playlist per page'
+    name: 'Audio Files'
     searchable: false
     settings:
       columns:
@@ -65,7 +65,7 @@ fields:
                   - width
                   - ''
           -
-            - 04d14d45-3d49-4d75-9b1b-56b1cbe51772 # Dauer
+            - 04d14d45-3d49-4d75-9b1b-56b1cbe51772 # Duration
             -
               __assoc__:
                 -
@@ -74,11 +74,11 @@ fields:
       contentTable: '{{%stc_25_audios}}'
       fieldLayout: table
       maxRows: ''
-      minRows: ''
+      minRows: '1'
       placeholderKey: null
       propagationKeyFormat: null
       propagationMethod: all
-      selectionLabel: ''
+      selectionLabel: 'Add audio'
       staticField: ''
     translationKeyFormat: null
     translationMethod: site

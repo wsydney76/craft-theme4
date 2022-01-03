@@ -86,7 +86,7 @@ fields:
       localizeRelations: false
       previewMode: full
       restrictFiles: '1'
-      selectionLabel: ''
+      selectionLabel: 'Select image'
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false

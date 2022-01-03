@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1641110437
+dateModified: 1641217374
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -37,13 +37,13 @@ meta:
     2cf2c737-33d2-4b15-8933-7053b22d0020: Parameter # Parameter
     2d84778b-a47e-4b33-b8f4-852100a4faee: Titel # Titel
     2f9f4c17-9e79-43b8-aec7-0a8353998ac8: Rahmen-Hintergrundfarbe # Rahmen-Hintergrundfarbe
-    3ac8b547-8089-43db-b7de-39c79c658368: Audios # Audios
+    3ac8b547-8089-43db-b7de-39c79c658368: 'Audio Files' # Audio Files
     3ae32dd4-67e1-47f7-a7fc-89335803d234: Image # Image
     3be67666-850d-4678-a3d7-277a52c8fa8d: Page # Page
     3cb2606a-5d91-44a2-bbfa-8110801db82d: Text # Text
     3f22fd1a-1b63-4a34-ab28-56dd59bd3e99: 'Index Template' # Index Template
     4ae84930-4a7e-455d-ab1a-2fef0f711ad8: Grid # Grid
-    04d14d45-3d49-4d75-9b1b-56b1cbe51772: Dauer # Dauer
+    04d14d45-3d49-4d75-9b1b-56b1cbe51772: Duration # Duration
     4e2c54ec-94ca-464d-9c64-8b74de116ece: Quote # Quote
     4ebb2019-cc8b-4725-892b-ea00dad0b91f: 'Bio Right Text' # Bio Right Text
     5b2a30e4-816c-4525-8089-24171db9b202: Heading # Heading
@@ -54,16 +54,16 @@ meta:
     6abf86cd-5a00-48ad-b3cf-12a3bc10d3dd: Image # Image
     6b01c4d9-9e7d-4ad0-9258-ea0cadc57b77: Rollentyp # Rollentyp
     6b5d7a3f-d142-477a-9ed7-d9cadf186dba: Default # Default
-    6c68905c-e96f-42e0-bc08-1f1f9d58d19f: Asset # Asset
+    6c68905c-e96f-42e0-bc08-1f1f9d58d19f: __blank__ # __blank__
     6cae2408-4e31-46df-8a5b-33f31d339176: Deutsch # Deutsch
-    06cc6bfc-a991-4aa6-99af-018de34f8bf4: 'Text Color' # Text Color
+    06cc6bfc-a991-4aa6-99af-018de34f8bf4: 'Text color' # Text color
     6cc5489b-8b5b-4803-84e7-8520cf7b142f: Width # Width
     6eb11e2e-b9aa-411e-aeb9-4ceb44cbabcc: Showreels # Showreels
     6f31e23d-56c9-4afe-aacf-25ec0d12b2c2: Guide # Guide
     7bb0cd75-a933-4105-b72c-a34605721327: 'Auf der Übersichtsseite anzeigen?' # Auf der Übersichtsseite anzeigen?
     7c951a3b-ff29-4728-bf34-c0f0dda3ef18: Regie # Regie
     7da1797e-2829-4330-b022-e1ba233c1ec2: Text # Text
-    7e7c06a8-5d97-4fc6-b2cb-5dd34caec986: 'Margins vertical' # Margins vertical
+    7e7c06a8-5d97-4fc6-b2cb-5dd34caec986: 'Margins Y' # Margins Y
     07e4260f-cc8c-4e3c-8085-fa9c9077ddcb: Entries # Entries
     7eb5e1da-4c5d-4b02-b671-f50b32cdc08b: Legal # Legal
     7f305dd2-4b5a-4e51-b551-a0929fe4277f: Template # Template
@@ -97,7 +97,7 @@ meta:
     42ca6f90-46f5-4a7e-8fcb-4f485ffe612c: Level # Level
     48fde250-325a-44bf-9238-66f0e831a883: Image # Image
     49ccb4b8-c82b-4daf-9af9-1af874ad6dd4: Embeds # Embeds
-    051d92e2-649b-4487-b9de-31b3c4bb7d86: 'Audio Datei' # Audio Datei
+    051d92e2-649b-4487-b9de-31b3c4bb7d86: 'Audio File' # Audio File
     55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2: 'Featured Image' # Featured Image
     55f033c8-b2b2-4609-a364-a5fcfcbfb4f8: 'Content im Rahmen anzeigen' # Content im Rahmen anzeigen
     57d93092-ead9-4861-b888-be2853985a17: Gallery # Gallery
@@ -142,7 +142,7 @@ meta:
     2080bd27-6539-42c6-ac2d-87d524c5d3d9: Typ # Typ
     4008cfb2-85a6-441c-bffb-b4d1cf5c23e0: Caption # Caption
     4834a59f-de39-47d5-9cbf-99288202b3eb: Image # Image
-    6126b7f5-ffb5-4ad1-958c-bc4b58a8f7d3: Text # Text
+    6126b7f5-ffb5-4ad1-958c-bc4b58a8f7d3: 'Text color' # Text color
     6253c3ac-a08c-48bf-986f-d4350ed611d7: Logo # Logo
     6426a7d0-06a6-49ef-8064-f8ae57a1c865: Standard-Seitenverhältnis # Standard-Seitenverhältnis
     7384bc4c-31c8-4906-a830-d53525e01989: 'Guide Inhalt' # Guide Inhalt
@@ -197,7 +197,7 @@ meta:
     b0db3726-5c93-4366-939b-42c60a697324: 'Padding vertical' # Padding vertical
     b0018629-ea59-4532-9fce-aa1fd570acd7: Privacy # Privacy
     b2a943a4-253b-4d1a-9c72-124eca420284: $SYSTEM_NAME # $SYSTEM_NAME
-    b2bec7dc-66f2-4af0-9b96-7f9994b1d2c2: 'Video file' # Video file
+    b2bec7dc-66f2-4af0-9b96-7f9994b1d2c2: 'Video File' # Video File
     b6b88aae-2e7c-44c7-9ebd-043f63c9eb3d: 'Bio Left Image' # Bio Left Image
     b9e12f8a-d90b-4458-a578-7025f7d0d90a: Width # Width
     b49d56c6-b29b-4ac0-ba55-aa83643aedaa: Target # Target
@@ -211,7 +211,7 @@ meta:
     ba191755-e5e9-46c1-b391-8b11af25d74c: Text # Text
     bb78bebb-31f2-45c2-bc3f-2baa1a83cca7: Typ # Typ
     bc242225-cdbb-4145-9746-471878a85673: 'Poster Image' # Poster Image
-    bde02460-053f-4ab2-8c8a-6b782b53b949: Background # Background
+    bde02460-053f-4ab2-8c8a-6b782b53b949: 'Background color' # Background color
     be3e6d29-7c3a-454d-8af9-59e98b97d3d9: 'Scene Gallery' # Scene Gallery
     be8dc1bd-c130-4ad1-b0bb-948257c1894f: Link # Link
     be66756f-d021-444f-ba64-1dbd3c395dc4: Target # Target

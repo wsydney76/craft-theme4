@@ -32,7 +32,7 @@ fieldLayouts:
             warning: null
             width: 25
           -
-            fieldUid: 7e7c06a8-5d97-4fc6-b2cb-5dd34caec986 # Margins vertical
+            fieldUid: 7e7c06a8-5d97-4fc6-b2cb-5dd34caec986 # Margins Y
             instructions: null
             label: null
             required: false
@@ -50,7 +50,7 @@ fieldLayouts:
             warning: null
             width: 25
           -
-            fieldUid: 06cc6bfc-a991-4aa6-99af-018de34f8bf4 # Text Color
+            fieldUid: 06cc6bfc-a991-4aa6-99af-018de34f8bf4 # Text color
             instructions: null
             label: null
             required: false
@@ -61,26 +61,26 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  06cc6bfc-a991-4aa6-99af-018de34f8bf4: # Text Color
+  06cc6bfc-a991-4aa6-99af-018de34f8bf4: # Text color
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: foregroundColor
     instructions: ''
-    name: 'Text Color'
+    name: 'Text color'
     searchable: false
     settings:
       defaultColor: default
     translationKeyFormat: null
     translationMethod: none
     type: modules\main\fields\ThemeColorField
-  7e7c06a8-5d97-4fc6-b2cb-5dd34caec986: # Margins vertical
+  7e7c06a8-5d97-4fc6-b2cb-5dd34caec986: # Margins Y
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: marginsY
     instructions: ''
-    name: 'Margins vertical'
+    name: 'Margins Y'
     searchable: false
     translationKeyFormat: null
     translationMethod: none
@@ -133,7 +133,7 @@ fields:
     settings:
       addDefaultOptions: ''
       addMobileOptions: ''
-      defaultWidth: default
+      defaultWidth: xl
     translationKeyFormat: null
     translationMethod: none
     type: modules\main\fields\WidthField

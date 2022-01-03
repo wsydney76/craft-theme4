@@ -1,4 +1,4 @@
-field: 3ac8b547-8089-43db-b7de-39c79c658368 # Audios
+field: 3ac8b547-8089-43db-b7de-39c79c658368 # Audio Files
 fieldLayouts:
   8013e21a-f4e5-4d2c-bbb7-a3dd5b714a43:
     tabs:
@@ -41,7 +41,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 04d14d45-3d49-4d75-9b1b-56b1cbe51772 # Dauer
+            fieldUid: 04d14d45-3d49-4d75-9b1b-56b1cbe51772 # Duration
             instructions: null
             label: null
             required: false
@@ -52,13 +52,13 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  04d14d45-3d49-4d75-9b1b-56b1cbe51772: # Dauer
+  04d14d45-3d49-4d75-9b1b-56b1cbe51772: # Duration
     columnSuffix: null
     contentColumnType: string(20)
     fieldGroup: null
     handle: duration
     instructions: 'Format 3:04'
-    name: Dauer
+    name: Duration
     searchable: false
     settings:
       byteLimit: null
@@ -91,7 +91,7 @@ fields:
       localizeRelations: false
       previewMode: full
       restrictFiles: '1'
-      selectionLabel: ''
+      selectionLabel: 'Select image'
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
@@ -146,7 +146,7 @@ fields:
       localizeRelations: false
       previewMode: full
       restrictFiles: '1'
-      selectionLabel: ''
+      selectionLabel: 'Select file'
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false

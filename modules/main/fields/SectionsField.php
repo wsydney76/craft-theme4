@@ -50,7 +50,7 @@ class SectionsField extends Field
             'value' => $value,
             'options' =>  array_map(
                 function($section) {
-                    return ['label' => $section->name, 'value' => $section->handle];
+                    return ['label' => Craft::t('site', $section->name), 'value' => $section->handle];
                 }, Craft::$app->sections->getAllSections()
             )
         ]);

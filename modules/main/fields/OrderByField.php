@@ -2,6 +2,7 @@
 
 namespace modules\main\fields;
 
+use Craft;
 use craft\base\ElementInterface;
 use craft\base\Field;
 use craft\helpers\Cp;
@@ -46,9 +47,9 @@ class OrderByField extends Field
             'name' => $this->handle,
             'value' => $value,
             'options' =>  [
-                ['label' => 'Default', 'value' => ''],
-                ['label' => 'PostDate desc', 'value' => 'postDate desc'],
-                ['label' => 'Title', 'value' => 'title'],
+                ['label' => Craft::t('site', 'Default'), 'value' => ''],
+                ['label' => Craft::t('site', 'PostDate desc'), 'value' => 'postDate desc'],
+                ['label' => Craft::t('site', 'Title'), 'value' => 'title'],
             ]
         ]);
     }
