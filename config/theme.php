@@ -4,48 +4,53 @@ return [
     // fullwidth frame
     'layout' => 'fullwidth',
 
-    'pageWidth' => 'lg',
-    'headerWidth' => 'xl',
-
-    'stickyNavbar' => true,
-
-    // stickyNavbar only
-    'showScrollIndicator' => true,
-
-    // full for fullwidth
-    'footerWidth' => 'full',
-    'footerInnerWidth' => '2xl',
-    'footerBorder' => false,
-
-
-    'defaultBlockWidth' => 'lg',
-    'sidebarLayoutWidth' => 'xl',
-
-
-    // coverFull (fullwidth only) coverContent coverBoxed fullText fullTextColor imageText textImage text
-    'titleStyle' => 'coverFull',
-
-    // same as max-width-header, if titleStyle != fullwidth
-    'titleImageWidth' => 'xl',
-
-    // set max-w-prose on text blocks
-    'useProse' => true,
-
-    // breakpoint for default/mobile menu can be always (always show hamburger menu) / never (never show hamburger menu)
-    'mobileBreakpoint' => 'sm',
-
     // end start rowLeft rowCenter
     'headerStyle' => 'end',
 
     // null if no logo used
     'logoTransform' => ['height' => 45],
 
+    'stickyNavbar' => true,
+
+    // stickyNavbar only
+    'showScrollIndicator' => true,
+
+    // coverFull (fullwidth only) coverContent coverBoxed fullText fullTextColor imageText textImage text
+    'titleStyle' => 'fullTextColor',
+
     // relative to width.full if cover...
     'titleImageHeight' => 750,
+
     // relative to fullWidthImageWidth
     'fullwidthImageHeight' => 600,
 
     'useFallbackImage' => true,
+
+    'pageWidth' => 'lg',
+
+    'headerWidth' => 'xl',
+
+    // breakpoint for default/mobile menu can be always (always show hamburger menu) / never (never show hamburger menu)
+    'mobileBreakpoint' => 'sm',
+
+    // same as max-width-header, if titleStyle != fullwidth
+    'titleImageWidth' => 'xl',
+
+    'defaultBlockWidth' => 'lg',
+
+    // set max-w-prose on text blocks
+    'useProse' => true,
+
+    'sidebarLayoutWidth' => 'xl',
+
+    'defaultImageWidth' => 'xl',
+
+    'defaultAspectRatio' => '16:9',
+
+    // full for fullwidth
+    'footerWidth' => 'full',
+    'footerInnerWidth' => '2xl',
+    'footerBorder' => false,
 
     'responsiveWidths' => [2500, 1800, 1280, 1024, 768, 400],
 
@@ -65,9 +70,6 @@ return [
     'galleryThumbTransform' => ['width' => 200, 'height' => 200, 'format' => 'webp'],
 
     'lightboxImageTransform' => ['height' => 800, 'format' => 'webp'],
-
-    'defaultImageWidth' => 'xl',
-    'defaultAspectRatio' => '16:9',
 
     'entriesPerIndexPage' => 6,
     'entriesInSearchResults' => 6,
