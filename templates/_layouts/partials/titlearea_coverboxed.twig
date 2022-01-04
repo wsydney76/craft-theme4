@@ -16,9 +16,10 @@
 <header class="mb-20 text-white">
 
     {% if image %}
-        {% set transform = {width: theme.widths['full'], height: theme.titleImageHeight} %}
+        {% set width = theme.layout == 'frame' ? theme.pageWidth : 'full' %}
+        {% set transform = {width: theme.widths[width], height: theme.titleImageHeight} %}
 
-        <div class="hidden lg:block relative">
+        <div class="hidden lg:block relative overflow-hidden">
 
             {{ img(image, transform, {loading: null}) }}
 

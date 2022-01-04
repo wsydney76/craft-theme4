@@ -8,21 +8,7 @@
                 {{ navbarHtml|raw }}
             </div>
 
-            {% if theme.titleStyle == 'textImage' %}
-                <div class="px-8">
-                    {{ titleHtml|raw }}
-                </div>
-            {% endif %}
-
-            <div>
-                {{ titleImageHtml|raw }}
-            </div>
-
-            {% if theme.titleStyle != 'textImage' %}
-                <div class="px-block {{ theme.titleStyle == 'fullTextColor' ? 'bg-title-bg text-title-text' }} py-4">
-                    {{ titleHtml|raw }}
-                </div>
-            {% endif %}
+            {% include '_layouts/partials/frame_titlearea.twig' %}
 
             <div class="py-4">
                 <div class="mt-block">
