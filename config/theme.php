@@ -2,7 +2,7 @@
 
 return [
     // fullwidth frame
-    'layout' => 'frame',
+    'layout' => 'fullwidth',
 
     'pageWidth' => 'lg',
     'headerWidth' => 'xl',
@@ -23,7 +23,7 @@ return [
 
 
     // coverFull (fullwidth only) coverContent coverBoxed fullText fullTextColor imageText textImage text
-    'titleStyle' => 'coverBoxed',
+    'titleStyle' => 'coverFull',
 
     // same as max-width-header, if titleStyle != fullwidth
     'titleImageWidth' => 'xl',

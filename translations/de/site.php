@@ -44,6 +44,7 @@ return [
     'Half' => 'Halb',
     'Heading' => 'Überschrift',
     'Image (darkened image)' => 'Bild (abgedunkeltes Bild)',
+    'Image (very dark image)' => 'Bild (stark abgedunkelt)',
     'Image' => 'Bild',
     'Images' => 'Bilder',
     'Increase Title Contrast' => 'Titelkontrast erhöhen',

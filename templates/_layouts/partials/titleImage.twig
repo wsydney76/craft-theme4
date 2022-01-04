@@ -21,7 +21,7 @@
                 {{ img(image, {width: theme.widths[theme.headerWidth], height: height ?? 400}, {loading: null}) }}
             {% endif %}
 
-            <div class="absolute inset-0 flex items-center justify-center {{ increaseTitleContrast == 'image' ? 'backdrop-brightness-75' }}">
+            <div class="absolute inset-0 flex items-center justify-center {{ increaseTitleContrast == 'image' ? 'backdrop-brightness-75' }} {{ increaseTitleContrast == 'imageDark' ? 'backdrop-brightness-50' }}">
                 <div class="cover-text text-black py-2 md:py-8 px-8 md:px-16 max-w-screen-xl mx-auto {{ increaseTitleContrast == 'box' ? 'backdrop-brightness-50 border border-border' }} ">
                     {% if showTeaser and entry is defined and entry.teaser %}
                         <div class="text-center text-white text-xl">
