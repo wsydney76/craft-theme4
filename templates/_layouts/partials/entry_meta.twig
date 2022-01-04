@@ -5,7 +5,7 @@
     {% set image = entry.author.photo %}
     {% if image %}
         <div class="mr-2">
-            {{ img(image, {width: 50, height: 50}, 'rounded-full') }}
+            {{ img(image, {width: 50, height: 50}, {class: 'rounded-full'}) }}
         </div>
     {% endif %}
 

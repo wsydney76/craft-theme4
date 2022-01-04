@@ -1,5 +1,4 @@
-{% macro img(image, transform, class = '') %}
-
+{% macro img(image, transform, attrs = {}) %}
     {% set srcSet = [] %}
     {% if transform.width is defined %}
         {% set srcSet = [transform.width] %}
@@ -22,7 +21,7 @@
         width: image.width,
         alt: image.altText ?: image.title,
         srcset: image.srcset(srcSet),
-        loading: 'lazy',
-        class: class
-    }) }}
+        loading: 'lazy'
+    }|merge(attrs)) }}
+
 {% endmacro %}
