@@ -22,7 +22,7 @@ class m211224_143412_create_entries extends Migration
     {
         $user = User::find()->admin()->one();
 
-        // Blog Index -------------------------------------------------------------------------------
+        // Article Index -------------------------------------------------------------------------------
 
         $section = Craft::$app->sections->getSectionByHandle('page');
         $type = ArrayHelper::firstWhere($section->getEntryTypes(), 'handle', 'indexPage');
@@ -31,15 +31,15 @@ class m211224_143412_create_entries extends Migration
             'sectionId' => $section->id,
             'typeId' => $type->id,
             'authorId' => $user->id,
-            'title' => 'Blog',
-            'slug' => 'blog',
-            'indexSection' => 'blog',
+            'title' => 'Artikel',
+            'slug' => 'artikel',
+            'indexSection' => 'article',
             'orderBy' => '',
             'indexTemplate' => 'cards.twig'
         ]);
 
         if (!Craft::$app->elements->saveElement($entry)) {
-            echo "Error saving blog index entry\n";
+            echo "Error saving article index entry\n";
         }
 
         // About page -------------------------------------------------------------------------------
@@ -127,19 +127,19 @@ class m211224_143412_create_entries extends Migration
             echo "Error saving page guide entry\n";
         }
 
-        // Blog guide -------------------------------------------------------------------------------
+        // Article guide -------------------------------------------------------------------------------
 
         $entry = new Entry([
             'sectionId' => $section->id,
             'typeId' => $type->id,
             'authorId' => $user->id,
-            'title' => 'Blog',
-            'slug' => 'blog'
+            'title' => 'Artikel',
+            'slug' => 'article'
         ]);
         $entry->setParent($guideEntry);
 
         if (!Craft::$app->elements->saveElement($entry)) {
-            echo "Error saving blog guide entry\n";
+            echo "Error saving article guide entry\n";
         }
 
         return true;

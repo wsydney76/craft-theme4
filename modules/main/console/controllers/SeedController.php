@@ -16,7 +16,7 @@ use const PHP_EOL;
 class SeedController extends Controller
 {
     public const NUM_ENTRIES = 10;
-    public const SECTIONHANDLE = 'blog';
+    public const SECTIONHANDLE = 'article';
     public $categorySlug = 'beispiele';
 
     public function actionCreateEntries(int $num = self::NUM_ENTRIES, $sectionHandle = self::SECTIONHANDLE)
@@ -56,7 +56,7 @@ class SeedController extends Controller
                 $entry->setFieldValue('featuredImage', [$image->id]);
             }
 
-//            if ($category && $sectionHandle == 'blog') {
+//            if ($category && $sectionHandle == 'article') {
 //                $entry->setFieldValue('categories', [$category->id]);
 //            }
 
@@ -181,7 +181,7 @@ class SeedController extends Controller
             $this->stderr('No example category found');
             return;
         }
-        $entries = Entry::find()->section('blog')->relatedTo($category)->anyStatus()->all();
+        $entries = Entry::find()->section('article')->relatedTo($category)->anyStatus()->all();
         if (!$entries) {
             $this->stderr('No example posts found');
             return;

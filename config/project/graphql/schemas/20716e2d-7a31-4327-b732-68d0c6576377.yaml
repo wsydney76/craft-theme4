@@ -1,8 +1,8 @@
 isPublic: true
 name: 'Public Schema'
 scope:
-  - 'sections.6087074e-26c7-4216-b6b3-86fbe41e437f:read' # Blog
-  - 'entrytypes.caf9cc3a-a0d0-4c7c-8179-884546f91ac5:read' # Blog
+  - 'sections.6087074e-26c7-4216-b6b3-86fbe41e437f:read' # Article
+  - 'entrytypes.caf9cc3a-a0d0-4c7c-8179-884546f91ac5:read' # Standard
   - 'sections.06efe258-09bb-47f7-9079-517028c65ba0:read'
   - 'entrytypes.6ea6da20-dcc4-4ed6-9f21-110a7651773e:read'
   - 'sections.99431b7b-d7f6-4193-8c8d-7d54aca5d38a:read'

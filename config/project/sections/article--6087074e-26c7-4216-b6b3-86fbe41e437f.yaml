@@ -1,7 +1,7 @@
 defaultPlacement: end
 enableVersioning: true
-handle: blog
-name: Blog
+handle: article
+name: Article
 previewTargets:
   -
     __assoc__:
@@ -18,10 +18,10 @@ previewTargets:
     __assoc__:
       -
         - label
-        - 'Blog Index'
+        - 'Article Index page'
       -
         - urlFormat
-        - '{% set e = craft.entries.section(''page'').siteId(object.siteId).indexSection(''blog'').one %}{{ e ? e.url : '''' }}'
+        - '{% set e = craft.entries.section(''page'').siteId(object.siteId).indexSection(''article'').one %}{{ e ? e.url : '''' }}'
       -
         - refresh
         - '1'
@@ -31,5 +31,5 @@ siteSettings:
     enabledByDefault: true
     hasUrls: true
     template: _sections/blog
-    uriFormat: 'blog/{slug}'
+    uriFormat: 'article/{slug}'
 type: channel

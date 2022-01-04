@@ -5,16 +5,16 @@ permissions:
   - accesssitewhensystemisoff
   - accesscpwhensystemisoff
   - accesscp
-  - 'createentries:6087074e-26c7-4216-b6b3-86fbe41e437f' # Blog
-  - 'publishentries:6087074e-26c7-4216-b6b3-86fbe41e437f' # Blog
-  - 'deleteentries:6087074e-26c7-4216-b6b3-86fbe41e437f' # Blog
-  - 'publishpeerentries:6087074e-26c7-4216-b6b3-86fbe41e437f' # Blog
-  - 'deletepeerentries:6087074e-26c7-4216-b6b3-86fbe41e437f' # Blog
-  - 'editpeerentries:6087074e-26c7-4216-b6b3-86fbe41e437f' # Blog
-  - 'publishpeerentrydrafts:6087074e-26c7-4216-b6b3-86fbe41e437f' # Blog
-  - 'deletepeerentrydrafts:6087074e-26c7-4216-b6b3-86fbe41e437f' # Blog
-  - 'editpeerentrydrafts:6087074e-26c7-4216-b6b3-86fbe41e437f' # Blog
-  - 'editentries:6087074e-26c7-4216-b6b3-86fbe41e437f' # Blog
+  - 'createentries:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
+  - 'publishentries:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
+  - 'deleteentries:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
+  - 'publishpeerentries:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
+  - 'deletepeerentries:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
+  - 'editpeerentries:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
+  - 'publishpeerentrydrafts:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
+  - 'deletepeerentrydrafts:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
+  - 'editpeerentrydrafts:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
+  - 'editentries:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
   - 'createentries:61350169-3950-4815-aea9-b171958d6d8a' # Guide
   - 'publishentries:61350169-3950-4815-aea9-b171958d6d8a' # Guide
   - 'deleteentries:61350169-3950-4815-aea9-b171958d6d8a' # Guide

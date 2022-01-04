@@ -86,10 +86,10 @@ fieldLayouts:
             width: 100
         name: SEO
         sortOrder: 2
-handle: blog
+handle: default
 hasTitleField: true
-name: Blog
-section: 6087074e-26c7-4216-b6b3-86fbe41e437f # Blog
+name: Standard
+section: 6087074e-26c7-4216-b6b3-86fbe41e437f # Article
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1641308899
+dateModified: 1641310406
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -162,7 +162,7 @@ meta:
     867104fa-7b5a-4510-a6f7-9a36bd106af0: 'Johanna Debes' # Johanna Debes
     2596765e-98d5-4ac4-9746-bcb304e697d4: 'Cookie Consent' # Cookie Consent
     3445271a-f274-4239-858d-05878b6c4f85: 'Global SEO' # Global SEO
-    6087074e-26c7-4216-b6b3-86fbe41e437f: Blog # Blog
+    6087074e-26c7-4216-b6b3-86fbe41e437f: Article # Article
     7882625d-1779-4cdb-9f39-251829364463: Summary # Summary
     11167327-b2c6-4db1-b01f-3867093255e8: Text # Text
     18502657-21d3-4816-af73-1e64905d9928: Image # Image
@@ -226,7 +226,7 @@ meta:
     c3017a29-ede2-449d-a192-78e05bdaebaa: Matrixhilfe # Matrixhilfe
     c191286d-fa58-48a4-bba2-92c28cbf57c9: 'Site Name' # Site Name
     c214425c-05e4-4470-baa0-814448c02c6a: Regie # Regie
-    caf9cc3a-a0d0-4c7c-8179-884546f91ac5: Blog # Blog
+    caf9cc3a-a0d0-4c7c-8179-884546f91ac5: Standard # Standard
     cb3d5f40-e3f5-45a4-9c9f-47b9c515be67: Tag # Tag
     cb73fbf9-a83d-4081-8dbf-c9dbe020436c: Playlist # Playlist
     cbef4b7f-43de-4ceb-b5d9-ad77705319c9: Heading # Heading

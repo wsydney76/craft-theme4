@@ -10,6 +10,7 @@ return [
     'Allow this time' => 'Dieses Mal erlauben',
     'Alternative Title' => 'Alternativer Titel',
     'Always show mobile menu' => 'Mobiles Menü immer anzeigen',
+    'Article' => 'Artikel',
     'Aspect Ratio' => 'Seitenverhältnis',
     'Attribution' => 'Quelle',
     'Audio File' => 'Audio-Datei',
@@ -111,4 +112,6 @@ return [
     '{count,plural,=1{Related Entry} other{Related Entries}}' => '{count,plural,=1{Verwandter Eintrag} other{Verwandte Einträge}}',
     '“' => '„',
     '”' => '“',
+    'Primary entry page' => 'Primäre Eintragsseite',
+    'Article Index page' => 'Artikel-Indexseite'
 ];
