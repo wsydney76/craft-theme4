@@ -144,7 +144,7 @@ fields:
     handle: heading
     instructions: ''
     name: Heading
-    searchable: false
+    searchable: true
     settings:
       byteLimit: null
       charLimit: null

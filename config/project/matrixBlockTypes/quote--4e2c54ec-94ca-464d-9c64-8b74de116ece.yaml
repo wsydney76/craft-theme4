@@ -32,7 +32,7 @@ fields:
     handle: text
     instructions: ''
     name: Text
-    searchable: false
+    searchable: true
     settings:
       byteLimit: null
       charLimit: null
@@ -52,7 +52,7 @@ fields:
     handle: attribution
     instructions: ''
     name: Attribution
-    searchable: false
+    searchable: true
     settings:
       byteLimit: null
       charLimit: 60

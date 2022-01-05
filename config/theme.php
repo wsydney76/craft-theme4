@@ -16,7 +16,7 @@ return [
     'showScrollIndicator' => true,
 
     // coverFull (fullwidth only) coverContent coverBoxed fullText fullTextColor imageText textImage text
-    'titleStyle' => 'fullTextColor',
+    'titleStyle' => 'text',
 
     // relative to width.full if cover...
     'titleImageHeight' => 750,
