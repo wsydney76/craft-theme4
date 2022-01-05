@@ -27,8 +27,8 @@
     </main>
 
     {% block footerArea %}
-        <div class="mt-8 {{ theme.footerWidth != 'full' ? "container max-w-screen-#{ theme.footerWidth } mx-auto" }} px-block bg-footer-bg text-footer-text">
-            <div class="container max-w-screen-{{ theme.footerInnerWidth }} mx-auto py-4  {{ theme.footerBorder ? 'border-t border-footer-border' }}">
+        <div class="mt-8 {{ theme.footerWidth != 'full' ? "container max-w-screen-#{ theme.footerWidth } mx-auto" }}  bg-footer-bg text-footer-text">
+            <div class="container max-w-screen-{{ theme.footerInnerWidth }} mx-auto py-4 px-block {{ theme.footerBorder ? 'border-t border-footer-border' }}">
                 {% include '_layouts/partials/footer.twig' %}
             </div>
         </div>
