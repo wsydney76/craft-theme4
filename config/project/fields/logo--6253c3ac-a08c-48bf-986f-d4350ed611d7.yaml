@@ -20,8 +20,8 @@ settings:
   showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
-  singleUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-  singleUploadLocationSubpath: images/logo
+  singleUploadLocationSource: 'volume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  singleUploadLocationSubpath: logo
   source: null
   sources:
     - 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
@@ -30,5 +30,5 @@ settings:
   validateRelatedElements: false
   viewMode: large
 translationKeyFormat: null
-translationMethod: none
+translationMethod: site
 type: craft\fields\Assets

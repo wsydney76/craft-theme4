@@ -61,17 +61,6 @@ permissions:
   - 'editpeerimagesinvolume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
   - 'viewpeerfilesinvolume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
   - 'viewvolume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-  - 'saveassetinvolume:130d4ee5-2561-45bd-8c90-5711764e49a3'
-  - 'createfoldersinvolume:130d4ee5-2561-45bd-8c90-5711764e49a3'
-  - 'deletefilesandfoldersinvolume:130d4ee5-2561-45bd-8c90-5711764e49a3'
-  - 'replacefilesinvolume:130d4ee5-2561-45bd-8c90-5711764e49a3'
-  - 'editimagesinvolume:130d4ee5-2561-45bd-8c90-5711764e49a3'
-  - 'editpeerfilesinvolume:130d4ee5-2561-45bd-8c90-5711764e49a3'
-  - 'replacepeerfilesinvolume:130d4ee5-2561-45bd-8c90-5711764e49a3'
-  - 'deletepeerfilesinvolume:130d4ee5-2561-45bd-8c90-5711764e49a3'
-  - 'editpeerimagesinvolume:130d4ee5-2561-45bd-8c90-5711764e49a3'
-  - 'viewpeerfilesinvolume:130d4ee5-2561-45bd-8c90-5711764e49a3'
-  - 'viewvolume:130d4ee5-2561-45bd-8c90-5711764e49a3'
   - 'saveassetinvolume:1d9fc6a9-72e3-404b-86a9-2ba2014002f0' # Temporary Uploads
   - 'createfoldersinvolume:1d9fc6a9-72e3-404b-86a9-2ba2014002f0' # Temporary Uploads
   - 'deletefilesandfoldersinvolume:1d9fc6a9-72e3-404b-86a9-2ba2014002f0' # Temporary Uploads
@@ -94,4 +83,15 @@ permissions:
   - 'editpeerimagesinvolume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
   - 'viewpeerfilesinvolume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
   - 'viewvolume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
+  - 'saveassetinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'createfoldersinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'deletefilesandfoldersinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'replacefilesinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'editimagesinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'editpeerfilesinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'replacepeerfilesinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'deletepeerfilesinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'editpeerimagesinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'viewpeerfilesinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'viewvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
   - accessplugin-work

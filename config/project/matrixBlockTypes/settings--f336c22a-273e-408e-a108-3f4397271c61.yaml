@@ -37,7 +37,7 @@ fields:
       allowSelfRelations: false
       allowUploads: true
       allowedKinds: null
-      defaultUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      defaultUploadLocationSource: 'volume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
       defaultUploadLocationSubpath: seo
       limit: '1'
       localizeRelations: false
@@ -47,22 +47,17 @@ fields:
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
-      singleUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-      singleUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+      singleUploadLocationSubpath: seo
       source: null
       sources:
-        - 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-        - 'volume:34dbd69d-8da1-4b48-8b5b-f747a86b7f8b'
-        - 'volume:c8a7792a-237f-4196-9f03-898f74b1582b'
-        - 'volume:6f717aa0-5341-484c-adbe-c0b819ae2ce0'
-        - 'volume:6769b461-5c24-4442-9322-8759beee5939'
-        - 'volume:84cef728-ba73-43aa-8dd5-6cedb472e9ac'
+        - 'volume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
       targetSiteId: null
       useSingleFolder: false
       validateRelatedElements: false
       viewMode: large
     translationKeyFormat: null
-    translationMethod: none
+    translationMethod: site
     type: craft\fields\Assets
   61c8dfb5-4ac7-420b-ad8e-5cad0d464a98: # Description
     columnSuffix: null

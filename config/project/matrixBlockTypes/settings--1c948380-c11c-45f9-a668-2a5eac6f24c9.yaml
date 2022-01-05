@@ -122,7 +122,7 @@ fields:
       allowSelfRelations: false
       allowUploads: true
       allowedKinds: null
-      defaultUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      defaultUploadLocationSource: 'volume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
       defaultUploadLocationSubpath: seo
       limit: '1'
       localizeRelations: false
@@ -136,7 +136,7 @@ fields:
       singleUploadLocationSubpath: ''
       source: null
       sources:
-        - 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+        - 'volume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
       targetSiteId: null
       useSingleFolder: false
       validateRelatedElements: false

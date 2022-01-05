@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1641323146
+dateModified: 1641380631
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -125,6 +125,7 @@ meta:
     185b2715-7f3d-4dd3-a538-50bfcdf796b1: Jahr # Jahr
     219ec7a0-d9bf-44d7-924a-eb2e9902da8a: Text # Text
     266ac6c3-03c0-40eb-8f24-c5c22ed1c5c0: Content # Content
+    270fd626-b08d-4f72-9383-3acdcd200225: Images # Images
     372fe1de-1ff1-4cb4-93fa-e51764a2dcc3: Parameter # Parameter
     377f6e53-9299-41b1-876a-44e39ffa3901: Bild-Position # Bild-Position
     0382c650-1ca7-4546-9397-dbc92da512a5: 'Spotlight Link' # Spotlight Link
