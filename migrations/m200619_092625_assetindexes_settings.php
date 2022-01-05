@@ -14,7 +14,8 @@ class m200619_092625_assetindexes_settings extends Migration
 
     public $sources = [
         'siteHeading' => ['type' => 'heading', 'heading' => 'Site Assets'],
-        'media' => ['type' => 'key', 'tableAttributes' => ['filename', 'imageSize', 'dateModified', 'link']],
+        'images' => ['type' => 'key', 'tableAttributes' => ['altText', 'imageSize', 'dateModified', 'link']],
+        'media' => ['type' => 'key', 'tableAttributes' => ['filename', 'dateModified', 'link']],
         'embeds' => ['type' => 'key', 'tableAttributes' => ['provider', 'filename', 'dateModified', 'link']],
         'private' => ['type' => 'key', 'tableAttributes' => ['filename', 'imageSize', 'dateModified', 'link']],
         'internalHeading' => ['type' => 'heading', 'heading' => 'Internal'],
