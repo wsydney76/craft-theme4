@@ -30,11 +30,8 @@ return [
         'sitemapConfig' => [
             'elements' => [
                 'page' => ['changefreq' => 'daily', 'priority' => 1],
-                'blog' => ['changefreq' => 'daily', 'priority' => 1],
-                'blogIndex' => ['changefreq' => 'daily', 'priority' => 1],
-                'gallery' => ['changefreq' => 'daily', 'priority' => 1],
+                'article' => ['changefreq' => 'daily', 'priority' => 1],
                 'homepage' => ['changefreq' => 'daily', 'priority' => 1],
-                'profile' => ['changefreq' => 'daily', 'priority' => 1],
                 'legal' => ['changefreq' => 'daily', 'priority' => 1],
             ],
         ],

@@ -18,6 +18,7 @@ class SeedController extends Controller
     public const NUM_ENTRIES = 10;
     public const SECTIONHANDLE = 'article';
     public $categorySlug = 'beispiele';
+    public $volume = 'images';
 
     public function actionCreateEntries(int $num = self::NUM_ENTRIES, $sectionHandle = self::SECTIONHANDLE)
     {
@@ -167,7 +168,7 @@ class SeedController extends Controller
     protected function getRandomImage($width = 1900)
     {
         return Asset::find()
-            ->volume('media')
+            ->volume($this->volume)
             ->kind('image')
             ->width('> ' . $width)
             ->orderBy(Craft::$app->db->driverName == 'mysql' ? 'RAND()' : 'RANDOM()')

@@ -31,5 +31,5 @@ siteSettings:
     enabledByDefault: true
     hasUrls: true
     template: _sections/article
-    uriFormat: 'article/{slug}'
+    uriFormat: 'artikel/{slug}'
 type: channel

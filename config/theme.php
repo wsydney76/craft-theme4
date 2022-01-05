@@ -49,7 +49,7 @@ return [
 
     // full for fullwidth
     'footerWidth' => 'full',
-    'footerInnerWidth' => '2xl',
+    'footerInnerWidth' => 'xl',
     'footerBorder' => false,
 
     'responsiveWidths' => [2500, 1800, 1280, 1024, 768, 400],
