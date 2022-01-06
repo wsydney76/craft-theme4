@@ -28,15 +28,15 @@ fieldLayouts:
             width: 100
           -
             style: tip
-            tip: 'Dieser Seitentyp hat keine eigenen Inhalte, es werden nur die Kind-Seiten gezeigt.'
+            tip: 'This page type has no content of its own, only the child pages are shown.'
             type: craft\fieldlayoutelements\Tip
         name: Inhalt
         sortOrder: 1
 handle: toc
 hasTitleField: true
-name: 'Table Of Contents'
+name: 'Table Of Content'
 section: a6676538-ee52-4938-aaff-8d9d46b669af # Page
 sortOrder: 4
 titleFormat: null
 titleTranslationKeyFormat: null
-titletranslationMethod: none
+titleTranslationMethod: ''

@@ -865,12 +865,6 @@ a.btn{
 .ml-2{
   margin-left: 0.5rem;
 }
-.mb-20{
-  margin-bottom: 5rem;
-}
-.mb-12{
-  margin-bottom: 3rem;
-}
 .ml-8{
   margin-left: 2rem;
 }
@@ -886,14 +880,20 @@ a.btn{
 .mt-1{
   margin-top: 0.25rem;
 }
-.-ml-12{
-  margin-left: -3rem;
-}
 .mb-0{
   margin-bottom: 0px;
 }
 .ml-4{
   margin-left: 1rem;
+}
+.mb-20{
+  margin-bottom: 5rem;
+}
+.-ml-12{
+  margin-left: -3rem;
+}
+.mb-12{
+  margin-bottom: 3rem;
 }
 .block{
   display: block;

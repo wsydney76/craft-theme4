@@ -2,7 +2,6 @@
 
 <a href="{{ siteUrl }}">
 
-
     {% set image = theme.logoTransform ? siteInfo.logo.one : null %}
     {% if  image %}
         {{ img(image, theme.logoTransform, {loading: null}) }}

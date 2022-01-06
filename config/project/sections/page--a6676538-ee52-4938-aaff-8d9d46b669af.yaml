@@ -20,7 +20,7 @@ siteSettings:
     enabledByDefault: true
     hasUrls: true
     template: _sections/page
-    uriFormat: '{slug}'
+    uriFormat: '{parent.uri}/{slug}'
 structure:
   maxLevels: 3
   uid: 887f7d24-1a50-4b16-8b0d-89302f5b6973

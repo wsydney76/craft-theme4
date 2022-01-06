@@ -1,18 +1,35 @@
-<div class="relative" @click.away="dropDown = 0" @keyup.escape.window="dropDown = 0">
+<div x-data="{
+        open: false,
+        toggle() {
+            if (this.open) {
+                return this.close()
+            }
 
-    <button @click.stop="dropDown = (dropDown == {{ index }} ?  0 : {{ index }});"
-            @mouseenter.debounce.100="dropDown = {{ index }}"
-            class="flex items-center">
+            this.open = true
+        },
+        close(focusAfter) {
+            this.open = false
 
-        {% if navEntry.type.handle == 'toc' %}
-            <div class="nav-link {{ craft.app.request.segment(1) == navEntry.slug ? 'underline' }}">{{ navEntry.title }}</div>
-        {% else %}
-            <a class="nav-link {{ craft.app.request.segment(1) == navEntry.slug ? 'underline' }}"
-               href="{{ navEntry.url }}">{{ navEntry.title }}</a>
-        {% endif %}
+            focusAfter && focusAfter.focus()
+        }
+    }"
+     x-on:keydown.escape.prevent.stop="close($refs.button)"
+     x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+     x-id="['dropdown-button']"
+     class="relative">
+
+    <button class="flex items-center"
+            x-ref="button"
+            x-on:click="toggle()"
+            :aria-expanded="open"
+            :aria-controls="$id('dropdown-button')"
+            type="button">
+
+        <div class="nav-link {{ craft.app.request.segment(1) == navEntry.slug ? 'underline' }}">{{ navEntry.title }}</div>
 
         <svg fill="currentColor" viewBox="0 0 20 20"
-             :class="dropDown == {{ index }} ? 'rotate-180' : 'rotate-0'"
+             aria-hidden="true"
+             :class="open ? 'rotate-180' : 'rotate-0'"
              class="inline w-4 h-4 ml-1.5 transform transition-transform">
             <path fill-rule="evenodd"
                   d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
@@ -21,14 +38,17 @@
 
     </button>
 
-    <div x-show="dropDown == {{ index }}" x-transition
-         @mouseleave="dropDown = 0"
-         style="display: none"
-         class="z-50 absolute left-auto mt-2 px-4 py-2 min-w-[150px]  max-w-xl bg-background text-foreground border border-foreground shadow-2xl">
+    <div class="z-50 absolute left-auto mt-2 px-4 py-2 min-w-[150px] max-w-xl bg-nav text-foreground border border-foreground shadow-2xl"
+         x-ref="panel"
+         x-show="open"
+         x-transition.origin.top.left
+         x-on:click.outside="close($refs.button)"
+         :id="$id('dropdown-button')"
+         style="display: none;">
 
         {% if entries is defined %}
             {% for navEntry in entries %}
-                <a class="block my-2 truncate" href="{{ navEntry.url }}">{{ navEntry.navTitle }}</a>
+                <a class="block my-2 nav-link truncate" href="{{ navEntry.url }}">{{ navEntry.navTitle }}</a>
             {% endfor %}
         {% endif %}
 
