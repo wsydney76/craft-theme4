@@ -1,45 +1,45 @@
 {% extends "_layouts/variables.twig" %}
 {% block html %}
-    <!doctype html>
-    <html lang="{{ craft.app.language[:2] }}" class="scroll-smooth">
-    <head>
-        <title>{{ entry is defined and not entry.isHomepage ? "#{entry.title} | " }}{{ siteInfo.siteName }}</title>
+<!doctype html>
+<html lang="{{ craft.app.language[:2] }}" dir="{{ craft.app.locale.orientation }}" class="scroll-smooth">
+<head>
+    <title>{{ entry is defined and not entry.isHomepage ? "#{entry.title} | " }}{{ siteInfo.siteName }}</title>
 
-        {% include '_layouts/partials/essentials.twig' %}
+    {% include '_layouts/partials/essentials.twig' %}
 
-    </head>
+</head>
 
-    {% block body %}
-        <body id="body"
-              class="text-custom font-custom {{ theme.layout == 'frame' ? 'bg-frame-background' : 'bg-background' }} text-foreground">
+{% block body %}
+    <body id="body"
+          class="text-custom font-custom {{ theme.layout == 'frame' ? 'bg-frame-background' : 'bg-background' }} text-foreground">
 
-        {% include '_partials/ie_warning.twig' %}
+    {% include '_partials/ie_warning.twig' %}
 
-        {% include '_partials/screenreader_link.twig' %}
+    {% include '_partials/screenreader_link.twig' %}
 
-        {% block page %}
+    {% block page %}
 
-            {% block content %}
-                <div id="content">
-                    {% if entry.bodyContent %}
-                        {% include "_partials/blocks.twig" with {
-                            entry,
-                            query: clone(entry.bodyContent)
-                        } only %}
-                    {% endif %}
-                </div>
-            {% endblock %}
-
+        {% block content %}
+            <div id="content">
+                {% if entry.bodyContent %}
+                    {% include "_partials/blocks.twig" with {
+                        entry,
+                        query: clone(entry.bodyContent)
+                    } only %}
+                {% endif %}
+            </div>
         {% endblock %}
 
-
-        {% if theme.cookieConsent %}
-            {% include '_partials/cookie_consent.twig' %}
-        {% endif %}
-
-        </body>
     {% endblock %}
 
-    </html>
+
+    {% if theme.cookieConsent %}
+        {% include '_partials/cookie_consent.twig' %}
+    {% endif %}
+
+    </body>
+{% endblock %}
+
+</html>
 
 {% endblock %}
