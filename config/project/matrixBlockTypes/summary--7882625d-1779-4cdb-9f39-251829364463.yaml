@@ -67,4 +67,4 @@ fields:
     type: craft\fields\PlainText
 handle: summary
 name: Summary
-sortOrder: 14
+sortOrder: 1

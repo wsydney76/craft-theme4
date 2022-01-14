@@ -830,11 +830,11 @@ a.btn{
 .mb-8{
   margin-bottom: 2rem;
 }
-.mb-2{
-  margin-bottom: 0.5rem;
-}
 .mr-2{
   margin-right: 0.5rem;
+}
+.mb-2{
+  margin-bottom: 0.5rem;
 }
 .mt-2{
   margin-top: 0.5rem;
@@ -1002,6 +1002,9 @@ a.btn{
   max-width: 36rem;
 }
 .flex-shrink-0{
+  flex-shrink: 0;
+}
+.shrink-0{
   flex-shrink: 0;
 }
 .rotate-180{

@@ -110,4 +110,4 @@ fields:
     type: craft\fields\Dropdown
 handle: playlist
 name: Playlist
-sortOrder: 7
+sortOrder: 8

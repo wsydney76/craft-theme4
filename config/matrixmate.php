@@ -5,22 +5,22 @@ return [
         'bodyContent' => [
             'groups' => [
                 [
-                    'label' => 'Medien',
-                    'types' => ['image', 'gallery', 'embed', 'audio', 'playlist', 'video'],
+                    'label' => Craft::t('site','Media'),
+                    'types' => ['gallery', 'embed', 'audio', 'playlist', 'video'],
                 ], [
-                    'label' => 'Spezial',
-                    'types' => ['columns', 'buttons', 'quote', 'markdown', 'dynamicBlock']
+                    'label' => Craft::t('site','Special'),
+                    'types' => ['summary', 'columns', 'buttons', 'quote', 'markdown', 'dynamicBlock']
                 ]
             ],
             'types' => [
                 'image' => [
                     'tabs' => [
                         [
-                            'label' => 'Content',
+                            'label' => Craft::t('site','Content'),
                             'fields' => ['image', 'caption']
                         ],
                         [
-                            'label' => 'Layout',
+                            'label' => Craft::t('site','Layout'),
                             'fields' => ['aspectRatio', 'width', 'marginsY']
                         ]
 
@@ -29,11 +29,11 @@ return [
                 'gallery' => [
                     'tabs' => [
                         [
-                            'label' => 'Content',
+                            'label' => Craft::t('site','Content'),
                             'fields' => ['images', ]
                         ],
                         [
-                            'label' => 'Layout',
+                            'label' => Craft::t('site','Layout'),
                             'fields' => ['width']
                         ]
 
@@ -42,11 +42,11 @@ return [
                 'columns' => [
                     'tabs' => [
                         [
-                            'label' => 'Content',
+                            'label' => Craft::t('site','Content'),
                             'fields' => ['heading', 'columns']
                         ],
                         [
-                            'label' => 'Layout',
+                            'label' => Craft::t('site','Layout'),
                             'fields' => ['backgroundColor', 'foregroundColor', 'width', 'marginsY']
                         ]
 

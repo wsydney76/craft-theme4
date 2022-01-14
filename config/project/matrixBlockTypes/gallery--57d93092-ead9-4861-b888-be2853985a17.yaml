@@ -77,4 +77,4 @@ fields:
     type: modules\main\fields\WidthField
 handle: gallery
 name: Gallery
-sortOrder: 10
+sortOrder: 11

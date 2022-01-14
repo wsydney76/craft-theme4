@@ -5,15 +5,6 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 1ae476f8-3a5b-4cda-8527-af3f0d8f99fb # Heading
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 25
-          -
             fieldUid: 118622b7-20ad-4b1d-8d78-5d49bbdbcd68 # Template
             instructions: null
             label: null
@@ -34,26 +25,6 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  1ae476f8-3a5b-4cda-8527-af3f0d8f99fb: # Heading
-    columnSuffix: null
-    contentColumnType: string(240)
-    fieldGroup: null
-    handle: heading
-    instructions: ''
-    name: Heading
-    searchable: false
-    settings:
-      byteLimit: null
-      charLimit: 60
-      code: ''
-      columnType: null
-      initialRows: '4'
-      multiline: ''
-      placeholder: null
-      uiMode: normal
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\PlainText
   2cf2c737-33d2-4b15-8933-7053b22d0020: # Parameter
     columnSuffix: null
     contentColumnType: string(256)
@@ -89,4 +60,4 @@ fields:
     type: modules\main\fields\IncludeField
 handle: dynamicBlock
 name: 'Dynamic Block'
-sortOrder: 12
+sortOrder: 13

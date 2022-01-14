@@ -148,4 +148,4 @@ fields:
     type: craft\fields\PlainText
 handle: image
 name: Image
-sortOrder: 5
+sortOrder: 6

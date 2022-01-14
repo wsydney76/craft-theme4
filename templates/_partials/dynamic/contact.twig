@@ -9,27 +9,27 @@
 
     {% if siteInfo.eMail %}
         <div>
-            E-Mail: {{ siteInfo.eMail }}
+            {{ 'Email' }}: {{ siteInfo.eMail }}
         </div>
     {% endif %}
 
 
     {% if siteInfo.telephone %}
         <div>
-            Telefon: {{ siteInfo.telephone }}
+            {{ 'Phone'|t }}: {{ siteInfo.telephone }}
         </div>
     {% endif %}
 
 
     {% if siteInfo.fax %}
         <div>
-            Fax: {{ siteInfo.fax }}
+            {{ 'Fax'|t }}: {{ siteInfo.fax }}
         </div>
     {% endif %}
 
     {% if siteInfo.webSite %}
         <div>
-            Website: <a href="{{ siteInfo.webSite }}">{{ siteInfo.webSite }}</a>
+            {{ 'Web Site'|t }}: <a href="{{ siteInfo.webSite }}">{{ siteInfo.webSite }}</a>
         </div>
     {% endif %}
 
