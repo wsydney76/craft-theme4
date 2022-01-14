@@ -4,8 +4,13 @@
     <div class=""
          x-data="{open: false}">
 
-        <div class="bg-white {{ theme.useProse ? 'max-w-prose' }} p-4 border border-border">
-            <button class="w-full"  @click="open = !open">
+        <div class="bg-white {{ theme.useProse ? 'max-w-prose' }} p-4 border border-border"
+             @keydown.down.prevent="$focus.next()"
+             @keydown.up.prevent="$focus.previous()">
+
+            <button class="w-full"
+                    @click="open = !open">
+
                 <div class="flex justify-between">
                     <div class=" font-semibold" type="button">
                         {{ 'Table of Content'|t }}
