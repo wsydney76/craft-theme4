@@ -1,0 +1,9 @@
+{% extends "_layouts/#{theme.layout}.twig" %}
+
+{% set themeOptions = {title: 'Offline'|t} %}
+
+{% block content %}
+    <div class="max-w-screen-{{ theme.pageWidth }} mx-auto px-block">
+        {{ 'We are currently offline for maintenance'|t }}. {{ x }}
+    </div>
+{% endblock %}

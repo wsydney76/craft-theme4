@@ -1,0 +1,9 @@
+{% extends "_layouts/#{theme.layout}.twig" %}
+
+{% set themeOptions = {title: 'Not found'|t} %}
+
+{% block content %}
+    <div class="max-w-screen-{{ theme.pageWidth }} mx-auto px-block">
+        {{ 'We could not find anything here'|t }}.
+    </div>
+{% endblock %}

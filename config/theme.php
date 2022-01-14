@@ -2,7 +2,7 @@
 
 return [
     // fullwidth frame
-    'layout' => 'fullwidth',
+    'layout' => 'frame',
 
     // end start rowLeft rowCenter
     'headerStyle' => 'end',

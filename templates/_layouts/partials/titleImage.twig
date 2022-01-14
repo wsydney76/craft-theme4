@@ -28,7 +28,7 @@
                             {{ entry.teaser }}
                         </div>
                     {% endif %}
-                    <h1 class="text-4xl text-h1 md:text-7xl text-white mb-0">{{ entry.title ?? title }}</h1>
+                    <h1 class="text-4xl text-h1 md:text-7xl text-white mb-0">{{ themeOptions.title ?? entry.title ?? title }}</h1>
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@
                     {{ entry.teaser }}
                 </div>
             {% endif %}
-            <h1 class="mb-0">{{ entry.title ?? title }}</h1>
+            <h1 class="mb-0">{{ themeOptions.title ?? entry.title ?? title }}</h1>
         </div>
     {% endif %}
 

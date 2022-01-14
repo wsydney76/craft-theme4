@@ -1,0 +1,9 @@
+{% extends "_layouts/#{theme.layout}.twig" %}
+
+{% set themeOptions = {title: 'Internal Error'|t} %}
+
+{% block content %}
+    <div class="max-w-screen-{{ theme.pageWidth }} mx-auto px-block">
+        {{ 'An internal error has occurred'|t }}. {{ x }}
+    </div>
+{% endblock %}

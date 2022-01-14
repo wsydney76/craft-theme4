@@ -7,6 +7,6 @@
                 {{ entry.teaser }}
             </div>
         {% endif %}
-        <h1 class="text-4xl text-h1 mt-1 py-2 tracking-widest">{{ entry.title ?? title }}</h1>
+        <h1 class="text-4xl text-h1 mt-1 py-2 tracking-widest">{{ themeOptions.title ?? entry.title ?? title }}</h1>
     </div>
 {% endif %}
