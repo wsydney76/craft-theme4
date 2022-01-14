@@ -7,3 +7,4 @@
 /templates/test
 node_modules
 /config/Env.php
+/config/license.key
