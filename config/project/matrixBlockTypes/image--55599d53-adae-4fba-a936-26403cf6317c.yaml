@@ -49,7 +49,7 @@ fields:
       validateRelatedElements: false
       viewMode: large
     translationKeyFormat: null
-    translationMethod: none
+    translationMethod: site
     type: craft\fields\Assets
 handle: image
 name: Bild

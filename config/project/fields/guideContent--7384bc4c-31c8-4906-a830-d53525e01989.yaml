@@ -12,5 +12,5 @@ settings:
   propagationKeyFormat: null
   propagationMethod: none
 translationKeyFormat: null
-translationMethod: none
+translationMethod: site
 type: craft\fields\Matrix

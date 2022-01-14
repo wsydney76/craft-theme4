@@ -155,7 +155,7 @@ fields:
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
-    translationMethod: none
+    translationMethod: language
     type: craft\fields\PlainText
   ea0da518-95b9-47c2-8dec-9f2ff43ca7f4: # Background color
     columnSuffix: null

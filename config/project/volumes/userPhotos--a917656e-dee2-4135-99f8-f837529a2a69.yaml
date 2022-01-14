@@ -35,6 +35,6 @@ settings:
   path: '@webroot/userphotos'
 sortOrder: 11
 titleTranslationKeyFormat: null
-titletranslationMethod: none
+titleTranslationMethod: language
 type: craft\volumes\Local
 url: '@web/userphotos'

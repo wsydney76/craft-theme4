@@ -93,4 +93,4 @@ section: e11aebc3-41ca-4730-a85b-997852702e35 # Homepage
 sortOrder: 1
 titleFormat: '{section.name|raw}'
 titleTranslationKeyFormat: null
-titletranslationMethod: none
+titleTranslationMethod: language

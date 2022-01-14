@@ -35,6 +35,6 @@ settings:
   path: '@webroot/guide'
 sortOrder: 8
 titleTranslationKeyFormat: null
-titletranslationMethod: none
+titleTranslationMethod: language
 type: craft\volumes\Local
 url: '@web/guide'

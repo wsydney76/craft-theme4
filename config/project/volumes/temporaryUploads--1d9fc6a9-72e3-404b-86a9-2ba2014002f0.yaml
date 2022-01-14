@@ -53,6 +53,6 @@ settings:
   path: '@webroot/temporaryuploads'
 sortOrder: 12
 titleTranslationKeyFormat: null
-titletranslationMethod: none
+titleTranslationMethod: language
 type: craft\volumes\Local
 url: '@web/temporaryuploads'

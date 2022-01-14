@@ -35,6 +35,6 @@ settings:
   path: '@storage/volumes/embeds'
 sortOrder: 13
 titleTranslationKeyFormat: null
-titletranslationMethod: none
+titleTranslationMethod: language
 type: craft\volumes\Local
-url: null
+url: ''

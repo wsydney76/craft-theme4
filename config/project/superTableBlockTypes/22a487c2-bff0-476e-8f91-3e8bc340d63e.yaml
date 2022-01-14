@@ -96,7 +96,7 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: caption
-    instructions: 'Leer lassen, um den Titel des Eintrags anzuzeigen'
+    instructions: ''
     name: Caption
     searchable: false
     settings:
@@ -109,5 +109,5 @@ fields:
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
-    translationMethod: none
+    translationMethod: language
     type: craft\fields\PlainText
