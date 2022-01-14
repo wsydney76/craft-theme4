@@ -7,7 +7,7 @@
 
 {% paginate craft.entries(criteria) as pageInfo, entries %}
 
-<div class="space-y-6">
+<article class="space-y-6">
     {% for entry in entries %}
         <a class="block flex space-x-4 !no-underline border border-border bg-white hover:bg-gray-200 transition-colors shadow-lg" href="{{ entry.url }}">
 
@@ -36,7 +36,7 @@
             </div>
         </a>
     {% endfor %}
-</div>
+</article>
 
 {% if pageInfo.totalPages > 1 %}
     {% include '_layouts/partials/pagination.twig' %}

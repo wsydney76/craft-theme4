@@ -37,20 +37,13 @@
 
     {% set transform = transform|merge({format: 'webp'}) %}
 
-    {% set caption = block.caption %}
-    {% if image.copyright %}
-        {% set caption -%}
-            {{ caption }} &copy; {{ image.copyright }}
-        {%- endset %}
-    {% endif %}
-
     <figure class="figure">
 
         {{ img(image, transform) }}
 
-        {% if caption %}
+        {% if block.caption %}
             <figcaption class="text-center mt-2 text-base">
-                {{ caption }}
+                {{ block.caption }}
             </figcaption>
         {% endif %}
     </figure>

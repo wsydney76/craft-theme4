@@ -1,4 +1,4 @@
-{% macro img(image, transform, attrs = {}) %}
+{% macro img(image, transform, attrs = {}, showCopyright = true) %}
     {% set srcSet = [] %}
     {% if transform.width is defined %}
         {% set srcSet = [transform.width] %}
@@ -15,13 +15,24 @@
 
     {% do image.setTransform(transform) %}
 
-    {{ tag('img', {
+    {% set imgHtml = tag('img', {
         src: image.url,
         height: image.height,
         width: image.width,
         alt: image.altText ?: image.title,
         srcset: image.srcset(srcSet),
         loading: 'lazy'
-    }|merge(attrs)) }}
+    }|merge(attrs)) %}
+
+    {% if showCopyright and image.copyright %}
+        <div class="relative">
+            {{ imgHtml|raw }}
+            <div class="absolute bottom-0 right-0 bg-black/30 rounded-tl px-1 py-0.5 text-white text-xs truncate w-full">
+                &copy; {{ image.copyright }}
+            </div>
+        </div>
+    {% else %}
+        {{ imgHtml|raw }}
+    {% endif %}
 
 {% endmacro %}

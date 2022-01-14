@@ -16,9 +16,9 @@
     {% if image %}
         <div class="relative">
             {% if theme.titleStyle == 'coverFull' %}
-                {{ img(image, {width:theme.widths['full'], height: height ?? 900}, {loading: null}) }}
+                {{ img(image, {width:theme.widths['full'], height: height ?? 900}, {loading: null}, false) }}
             {% else %}
-                {{ img(image, {width: theme.widths[theme.headerWidth], height: height ?? 400}, {loading: null}) }}
+                {{ img(image, {width: theme.widths[theme.headerWidth], height: height ?? 400}, {loading: null}, false) }}
             {% endif %}
 
             <div class="absolute inset-0 flex items-center justify-center {{ increaseTitleContrast == 'image' ? 'backdrop-brightness-75' }} {{ increaseTitleContrast == 'imageDark' ? 'backdrop-brightness-50' }}">
@@ -48,12 +48,12 @@
 {% case "fullText" or "fullTextColor" %}
     {% if image %}
         <div>
-            {{ img(image, {width:theme.widths['full'], height: height ?? 900}, {loading: null}) }}
+            {{ img(image, {width:theme.widths['full'], height: height ?? 900}, {loading: null}, false) }}
         </div>
     {% endif %}
 {% default %}
     {% if image %}
-        {{ img(image, {width: theme.widths[theme.headerWidth], height: height ?? 400}, {loading: null}) }}
+        {{ img(image, {width: theme.widths[theme.headerWidth], height: height ?? 400}, {loading: null}, false) }}
     {% endif %}
 {% endswitch %}
 
