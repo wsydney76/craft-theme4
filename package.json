@@ -37,11 +37,11 @@
     "webpack-manifest-plugin": "^2.0.4"
   },
   "dependencies": {
-    "@alpinejs/collapse": "^3.7.1",
-    "@alpinejs/trap": "^3.7.1",
+    "@alpinejs/collapse": "^3.8.0",
+    "@alpinejs/focus": "^3.8.0",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.4.0",
-    "alpinejs": "^3.7.1",
+    "alpinejs": "^3.8.0",
     "autoprefixer": "^10.4.2",
     "baguettebox.js": "^1.11.1",
     "js-cookie": "^3.0.1",

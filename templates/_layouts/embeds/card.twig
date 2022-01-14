@@ -24,14 +24,14 @@
                     {{ entry.title }}
                 </div>
                 <div class="text-base">
-                    {% include "_sections/#{entry.section.handle}/index_content.twig" ignore missing %}
+                    {% include "_sections/#{entry.section.handle}/card_content.twig" ignore missing %}
                 </div>
 
                 {% block content %}{% endblock %}
             </div>
         </div>
         <div class="p-4">
-            {% include "_sections/#{entry.section.handle}/indexbottom_content.twig" ignore missing %}
+            {% include "_sections/#{entry.section.handle}/card_bottom_content.twig" ignore missing %}
         </div>
     </a>
 </article>

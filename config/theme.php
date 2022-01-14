@@ -67,6 +67,9 @@ return [
     // should match w-card utility
     'cardImageTransform' => ['width' => 300, 'height' => 200, 'format' => 'webp'],
 
+    // default index template
+    'cardletImageTransform' => ['width' => 300, 'height' => 225, 'format' => 'webp'],
+
     'galleryThumbTransform' => ['width' => 200, 'height' => 200, 'format' => 'webp'],
 
     'lightboxImageTransform' => ['height' => 800, 'format' => 'webp'],
