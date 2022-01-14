@@ -789,17 +789,20 @@ a.btn{
 .left-0{
   left: 0px;
 }
+.z-10{
+  z-index: 10;
+}
 .z-50{
   z-index: 50;
 }
 .z-20{
   z-index: 20;
 }
+.z-40{
+  z-index: 40;
+}
 .z-30{
   z-index: 30;
-}
-.z-10{
-  z-index: 10;
 }
 .my-0{
   margin-top: 0px;
@@ -941,11 +944,17 @@ a.btn{
 .h-8{
   height: 2rem;
 }
+.h-12{
+  height: 3rem;
+}
 .h-screen{
   height: 100vh;
 }
 .min-h-\[200px\]{
   min-height: 200px;
+}
+.min-h-screen{
+  min-height: 100vh;
 }
 .w-full{
   width: 100%;
@@ -964,6 +973,9 @@ a.btn{
 }
 .w-8{
   width: 2rem;
+}
+.w-12{
+  width: 3rem;
 }
 .w-card{
   width: 300px;
@@ -998,13 +1010,13 @@ a.btn{
 .max-w-prose{
   max-width: 75ch;
 }
+.max-w-3xl{
+  max-width: 48rem;
+}
 .max-w-xl{
   max-width: 36rem;
 }
 .flex-shrink-0{
-  flex-shrink: 0;
-}
-.shrink-0{
   flex-shrink: 0;
 }
 .rotate-180{
@@ -1143,6 +1155,9 @@ a.btn{
 .overflow-hidden{
   overflow: hidden;
 }
+.overflow-y-auto{
+  overflow-y: auto;
+}
 .scroll-smooth{
   scroll-behavior: smooth;
 }
@@ -1197,6 +1212,10 @@ a.btn{
 .border-gray-700{
   --tw-border-opacity: 1;
   border-color: rgb(55 65 81 / var(--tw-border-opacity));
+}
+.border-black{
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 .border-primary{
   --tw-border-opacity: 1;
@@ -1254,6 +1273,9 @@ a.btn{
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
+.bg-black\/20{
+  background-color: rgb(0 0 0 / 0.2);
+}
 .bg-nav{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1289,12 +1311,15 @@ a.btn{
   --tw-bg-opacity: 1;
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
-.bg-black\/60{
-  background-color: rgb(0 0 0 / 0.6);
+.bg-black\/50{
+  background-color: rgb(0 0 0 / 0.5);
 }
 .bg-title-bg{
   --tw-bg-opacity: 1;
   background-color: rgb(29 78 216 / var(--tw-bg-opacity));
+}
+.bg-black\/60{
+  background-color: rgb(0 0 0 / 0.6);
 }
 .bg-primary-200{
   --tw-bg-opacity: 1;
@@ -1384,13 +1409,17 @@ a.btn{
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
-.px-3{
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
 .py-1{
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+}
+.px-2{
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.px-3{
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 .py-8{
   padding-top: 2rem;

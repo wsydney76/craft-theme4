@@ -1,25 +1,56 @@
+{% from '_macros/lib.twig' import img %}
+
 {% set video = block.videoFile.one %}
 {% set image = block.posterImage.one %}
+
 {% if video %}
 
+    {% if block.showInModal %}
 
-    {# {% if block.showInModal %}
-        <div x-data="{showVideo: false}" @click.outside="showVideo = false" @keyup.escape.window="showVideo = false">
-            <button @click="showVideo=true">Show</button>
-            {% embed '_layouts/embeds/modal.twig' with {show: 'showVideo'} %}
-                {% block content %}
-                    <div>
-                        <video src="{{ video.url }}" controls class="bg-black"
-                              ></video>
+        {% embed '_layouts/embeds/modal.twig' %}
+
+            {% block heading %}
+                {{ video.title }}
+            {% endblock %}
+
+            {% block scripts %}
+                x-effect="open ? $refs.video.play() : $refs.video.pause()"
+            {% endblock %}
+
+            {% block button %}
+
+                {% from '_macros/lib.twig' import img %}
+
+                {% if image %}
+                    <div class="relative shadow-2xl">
+                        {{ img(image, theme.cardImageTransform) }}
+
+                        <div class="absolute inset-0 text-center text-white flex items-center justify-center w-full bg-black/20 z-10">
+                            {{ svg('@templates/_icons/play.svg') }}
+                        </div>
+
                     </div>
-                {% endblock %}
-            {% endembed %}
-        </div>
-    {% endif %}#}
+                {% else %}
+                    <div class="btn bg-primary text-white">
+                        {{ 'Play Video'|t }}: {{ video.title }}
+                    </div>
+                {% endif %}
+            {% endblock %}
 
-    <div>
-        <video src="{{ video.url }}" poster="{{ image.url ?? '' }}" controls class="w-full bg-black"
-               style="opacity: 1 !important;"></video>
-    </div>
+            {% block content %}
+                <video x-ref="video" src="{{ video.url }}" controls></video>
+            {% endblock %}
+
+        {% endembed %}
+
+    {% else %}
+
+        <div>
+            <video src="{{ video.url }}" poster="{{ image.url ?? '' }}" controls></video>
+        </div>
+
+    {% endif %}
+
+
 {% endif %}
 

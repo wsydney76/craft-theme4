@@ -75,6 +75,7 @@ return [
     'Order By' => 'Sortieren nach',
     'Page' => 'Seite',
     'Phone' => 'Telefon',
+    'Play Video' => 'Video abspielen',
     'PostDate desc' => 'Veröffentlichungsdatum absteigend',
     'Poster Image' => 'Poster-Bild',
     'Previous Page' => 'Vorherige Seite',
