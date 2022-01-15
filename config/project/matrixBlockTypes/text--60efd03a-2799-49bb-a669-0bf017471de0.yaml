@@ -43,7 +43,7 @@ fields:
       showUnpermittedVolumes: true
       uiMode: enlarged
     translationKeyFormat: null
-    translationMethod: language
+    translationMethod: none
     type: craft\redactor\Field
 handle: text
 name: Text

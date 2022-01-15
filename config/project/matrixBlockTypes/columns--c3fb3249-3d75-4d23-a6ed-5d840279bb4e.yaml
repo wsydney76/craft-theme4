@@ -155,7 +155,7 @@ fields:
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
-    translationMethod: language
+    translationMethod: none
     type: craft\fields\PlainText
   ea0da518-95b9-47c2-8dec-9f2ff43ca7f4: # Background color
     columnSuffix: null
@@ -172,4 +172,4 @@ fields:
     type: modules\main\fields\ThemeColorField
 handle: columns
 name: 'Multi Columns'
-sortOrder: 14
+sortOrder: 15

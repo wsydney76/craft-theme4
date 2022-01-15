@@ -1,20 +1,20 @@
-field: 266ac6c3-03c0-40eb-8f24-c5c22ed1c5c0 # Content
+field: 512edbee-e5b1-4422-9597-eeffd72ee9e5 # __blank__
 fieldLayouts:
-  124833b8-db6c-4ee3-b676-4559422910cd:
+  93371f62-9ff6-4700-9462-571076c33835:
     tabs:
       -
         elements:
           -
-            fieldUid: cbef4b7f-43de-4ceb-b5d9-ad77705319c9 # Heading
+            fieldUid: e35ec4e7-302c-49f6-b5ae-a95120fbd4c0 # Question
             instructions: null
             label: null
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
           -
-            fieldUid: dbf29f4d-79b9-4474-b8ff-d05ff24d450e # Text
+            fieldUid: 8fb04690-63b2-4e65-bb13-def05a978110 # Answer
             instructions: null
             label: null
             required: true
@@ -25,33 +25,13 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  cbef4b7f-43de-4ceb-b5d9-ad77705319c9: # Heading
-    columnSuffix: null
-    contentColumnType: string(240)
-    fieldGroup: null
-    handle: heading
-    instructions: ''
-    name: Heading
-    searchable: true
-    settings:
-      byteLimit: null
-      charLimit: 60
-      code: ''
-      columnType: null
-      initialRows: '4'
-      multiline: ''
-      placeholder: null
-      uiMode: normal
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\PlainText
-  dbf29f4d-79b9-4474-b8ff-d05ff24d450e: # Text
+  8fb04690-63b2-4e65-bb13-def05a978110: # Answer
     columnSuffix: null
     contentColumnType: text
     fieldGroup: null
-    handle: text
+    handle: answer
     instructions: ''
-    name: Text
+    name: Answer
     searchable: true
     settings:
       byteLimit: null
@@ -65,6 +45,23 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-handle: summary
-name: Summary
-sortOrder: 1
+  e35ec4e7-302c-49f6-b5ae-a95120fbd4c0: # Question
+    columnSuffix: null
+    contentColumnType: string(240)
+    fieldGroup: null
+    handle: question
+    instructions: ''
+    name: Question
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: 60
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

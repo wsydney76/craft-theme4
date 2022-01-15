@@ -34,7 +34,7 @@ return [
         'useIframeResizer' => true,
 
         // needs php.ini max upload size and max post size set accordingly
-        'maxUploadFileSize' => '32M',
+        'maxUploadFileSize' => '512M',
 
         // Whether uploaded filenames with non-ASCII characters should be converted to ASCII
         'convertFilenamesToAscii' => true,

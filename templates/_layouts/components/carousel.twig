@@ -1,0 +1,73 @@
+{% from '_macros/lib.twig' import img %}
+
+{% set skip = skip ?? 2 %}
+{% set transform = transform ?? theme.carouselImageTransform %}
+
+<div
+        x-data="{
+        skip: {{ skip }},
+        next() {
+            this.to((current, offset) => current + (offset * this.skip))
+        },
+        prev() {
+            this.to((current, offset) => current - (offset * this.skip))
+        },
+        to(strategy) {
+            let slider = this.$refs.slider
+            let current = slider.scrollLeft
+            let offset = slider.firstElementChild.getBoundingClientRect().width
+            slider.scrollTo({ left: strategy(current, offset), behavior: 'smooth' })
+        },
+        focusableWhenVisible: {
+            'x-intersect:enter'() {
+                this.$el.removeAttribute('tabindex')
+            },
+            'x-intersect:leave'() {
+                this.$el.setAttribute('tabindex', '-1')
+            },
+        }
+    }"
+        class="flex flex-col w-full"
+>
+    <div class="flex space-x-6"
+         x-on:keydown.right="next"
+         x-on:keydown.left="prev"
+         tabindex="0"
+         role="region"
+         aria-labelledby="carousel-label">
+
+        <h2 id="carousel-label" class="sr-only" hidden>{{ 'Carousel'|t }}</h2>
+
+        <button x-on:click="prev" class="text-2xl">
+            <span aria-hidden="true">❮</span>
+            <span class="sr-only">{{ 'Skip to previous slide'|t }}</span>
+        </button>
+
+        <span id="carousel-content-label" class="sr-only" hidden>{{ 'Carousel'|t }}</span>
+
+        <ul class="flex w-full overflow-x-scroll snap-x snap-mandatory"
+            x-ref="slider"
+            tabindex="0"
+            role="listbox"
+            aria-labelledby="carousel-content-label">
+
+            {% for image in images %}
+                <li class="snap-start w-1/2 md:w-1/3 shrink-0 flex flex-col items-center justify-center p-1"
+                    role="option">
+                    {% include '_partials/scaling_image.twig' with {
+                        image,
+                        url: image.url(theme.lightboxImageTransform),
+                        transform: transform
+                    } only %}
+                    {# <button x-bind="focusableWhenVisible" class="px-4 py-2 text-sm">Do Something</button> #}
+                </li>
+            {% endfor %}
+
+        </ul>
+
+        <button x-on:click="next" class="text-2xl">
+            <span aria-hidden="true">❯</span>
+            <span class="sr-only">{{ 'Skip to next slide'|t }}</span>
+        </button>
+    </div>
+</div>

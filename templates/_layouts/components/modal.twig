@@ -4,7 +4,10 @@
 <div x-data="{ open: false }" {% block scripts %}{% endblock %}>
 
     <!-- Button -->
-    <button x-on:click="open = true" type="button" aria-label="{{ 'Play Video'|t }}">
+    <button class="focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-primary"
+            x-on:click="open = true"
+            type="button"
+            aria-label="{{ 'Play Video'|t }}">
         {% block button %}{{ 'Play Video'|t }}{% endblock %}
     </button>
 

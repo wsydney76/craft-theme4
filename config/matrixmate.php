@@ -9,7 +9,7 @@ return [
                     'types' => ['gallery', 'embed', 'audio', 'playlist', 'video'],
                 ], [
                     'label' => Craft::t('site','Special'),
-                    'types' => ['summary', 'columns', 'buttons', 'quote', 'markdown', 'dynamicBlock']
+                    'types' => ['summary', 'columns', 'buttons', 'quote', 'faq', 'markdown', 'dynamicBlock']
                 ]
             ],
             'types' => [
@@ -34,7 +34,7 @@ return [
                         ],
                         [
                             'label' => Craft::t('site','Layout'),
-                            'fields' => ['width']
+                            'fields' => ['width', 'display']
                         ]
 
                     ]
@@ -51,7 +51,20 @@ return [
                         ]
 
                     ]
-                ]
+                ],
+                'faq' => [
+                    'tabs' => [
+                        [
+                            'label' => Craft::t('site','Content'),
+                            'fields' => ['items', ]
+                        ],
+                        [
+                            'label' => Craft::t('site','Layout'),
+                            'fields' => ['display']
+                        ]
+
+                    ]
+                ],
             ]
         ]
     ]

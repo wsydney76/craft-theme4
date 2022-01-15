@@ -72,6 +72,10 @@ return [
 
     'galleryThumbTransform' => ['width' => 200, 'height' => 200, 'format' => 'webp'],
 
+    'galleryFullWidthTransform' => ['width' => 1280, 'height' => 960, 'format' => 'webp'],
+
+    'carouselImageTransform' => ['width' => 500, 'height' => 350, 'format' => 'webp'],
+
     'lightboxImageTransform' => ['height' => 800, 'format' => 'webp'],
 
     'entriesPerIndexPage' => 6,

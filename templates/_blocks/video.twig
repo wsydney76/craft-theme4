@@ -7,7 +7,7 @@
 
     {% if block.showInModal %}
 
-        {% embed '_layouts/embeds/modal.twig' %}
+        {% embed '_layouts/components/modal.twig' %}
 
             {% block heading %}
                 {{ video.title }}
@@ -18,14 +18,13 @@
             {% endblock %}
 
             {% block button %}
-
                 {% from '_macros/lib.twig' import img %}
 
                 {% if image %}
                     <div class="relative shadow-2xl">
                         {{ img(image, theme.cardImageTransform) }}
 
-                        <div class="absolute inset-0 text-center text-white flex items-center justify-center w-full bg-black/20 z-10">
+                        <div class="absolute inset-0 text-center text-white flex items-center justify-center w-full bg-black/20">
                             {{ svg('@templates/_icons/play.svg') }}
                         </div>
 

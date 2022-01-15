@@ -1,0 +1,33 @@
+{% set items = block.items.all %}
+{% set display = block.display.value ?? 'default' %}
+
+{% if items %}
+
+    {% switch display %}
+
+    {% case "accordion" %}
+
+        {% include '_layouts/components/accordion.twig' with {
+            items
+        } only %}
+
+
+    {% default %}
+
+        <div class="space-y-4">
+            {% for item in items %}
+                <div>
+                    <div class="font-bold text-xl">
+                        {{ item.question }}
+                    </div>
+                    <div class="mt-2">
+                        {{ item.answer }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    {% endswitch %}
+
+
+{% endif %}

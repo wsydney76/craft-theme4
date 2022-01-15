@@ -1,16 +1,44 @@
-<div id="gallery-{{ block.id }}" class="flex flex-wrap">
-    {% set images = block.images.all %}
-    {% for image in images %}
-        {% include '_partials/scaling_image.twig' with {
-            image,
-            url: image.url(theme.lightboxImageTransform),
-            transform: theme.galleryThumbTransform,
-            classes: 'mr-2 mb-2'
-        } only %}
-    {% endfor %}
+{% from '_macros/lib.twig' import img %}
 
-</div>
+{% set display = block.display.value ?? 'default' %}
+
+{% switch display %}
+
+{% case "carousel" %}
+    <div id="gallery-{{ block.id }}">
+        {% include '_layouts/components/carousel.twig' with {images: block.images.all} %}
+    </div>
+
+{% case "fullWidth" %}
+
+    <div class="flex flex-wrap justify-center space-y-4">
+        {% for image in block.images.all %}
+        	<div>
+                {{ img(image, theme.galleryFullWidthTransform) }}
+            </div>
+        {% endfor %}
+    </div>
+
+{% default %}
+
+    <div id="gallery-{{ block.id }}" class="flex flex-wrap">
+        {% set images = block.images.all %}
+        {% for image in images %}
+            {% include '_partials/scaling_image.twig' with {
+                image,
+                url: image.url(theme.lightboxImageTransform),
+                transform: theme.galleryThumbTransform,
+                classes: 'mr-2 mb-2'
+            } only %}
+        {% endfor %}
+
+    </div>
+
+
+
+{% endswitch %}
+
 
 {% js %}
-initLightBox('#gallery-{{ block.id }}');
+    initLightBox('#gallery-{{ block.id }}');
 {% endjs %}

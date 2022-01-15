@@ -1,4 +1,4 @@
-{% macro img(image, transform, attrs = {}, showCopyright = true) %}
+{% macro img(image, transform = {}, attrs = {}, showCopyright = true) %}
     {% set srcSet = [] %}
     {% if transform.width is defined %}
         {% set srcSet = [transform.width] %}
