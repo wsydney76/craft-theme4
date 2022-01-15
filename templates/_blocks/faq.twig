@@ -6,15 +6,15 @@
     {% switch display %}
 
     {% case "accordion" %}
-
-        {% include '_layouts/components/accordion.twig' with {
-            items
-        } only %}
-
+        <div class="{{ theme.useProse ? 'max-w-prose' }}">
+            {% include '_layouts/components/accordion.twig' with {
+                items
+            } only %}
+        </div>
 
     {% default %}
 
-        <div class="space-y-4">
+        <div class="space-y-4 {{ theme.useProse ? 'max-w-prose' }}">
             {% for item in items %}
                 <div>
                     <div class="font-bold text-xl">
