@@ -120,6 +120,14 @@ module.exports = {
         ' max-w-screen-xl',
         ' max-w-screen-2xl',
 
+        // dynamic containers
+        ' container-sm',
+        ' container-md',
+        ' container-ml',
+        ' container-lg',
+        ' container-xl',
+        ' container-2xl',
+
         // dynamic colors
         'bg-primary',
         'bg-secondary',

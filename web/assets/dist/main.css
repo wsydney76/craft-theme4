@@ -732,6 +732,48 @@ a.btn{
   --tw-ring-color: rgb(0 0 0 / var(--tw-ring-opacity));
   --tw-ring-offset-width: 2px;
 }
+.container-sm{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 640px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.container-md{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 768px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.container-ml{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 896px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.container-lg{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1024px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.container-xl{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1280px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.container-2xl{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1536px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
 .sr-only{
   position: absolute;
   width: 1px;

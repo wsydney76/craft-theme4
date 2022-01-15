@@ -2,7 +2,7 @@
 
 {% set prev = entry.prev(condition) %}
 {% set next = entry.next(condition) %}
-<div class="max-w-screen-{{ theme.pageWidth }} mx-auto px-block">
+<div class="container-{{ theme.pageWidth }}">
     <div class="border-t border-border mt-block pt-4 flex justify-between">
         <div class="col-md-6 pt-2 border-right">
             {% if prev %}

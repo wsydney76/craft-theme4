@@ -3,7 +3,7 @@
 {% set themeOptions = {title: 'Internal Error'|t} %}
 
 {% block content %}
-    <div class="max-w-screen-{{ theme.pageWidth }} mx-auto px-block">
+    <div class="container-{{ theme.pageWidth }}">
         {{ 'An internal error has occurred'|t }}. {{ x }}
     </div>
 {% endblock %}
