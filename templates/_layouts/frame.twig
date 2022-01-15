@@ -4,21 +4,23 @@
 
     <div class="py-4">
         <div class="container max-w-screen-{{ theme.pageWidth }} mx-auto bg-background">
-            <div class="px-8 py-6">
+            <header class="px-8 py-6">
                 {{ navbarHtml|raw }}
-            </div>
+            </header>
 
-            {% include '_layouts/partials/frame_titlearea.twig' %}
+            <main id="content" class="{{ theme.stickyNavbar ? 'scroll-mt-24' }}">
+                {% include '_layouts/partials/frame_titlearea.twig' %}
 
-            <div class="py-4">
-                <div class="mt-block">
-                    {{ block('content') }}
+                <div class="py-4">
+                    <div class="mt-block">
+                        {{ block('content') }}
+                    </div>
                 </div>
-            </div>
+            </main>
 
-            <div class="mt-8 py-4 px-8 border-t border-border">
+            <footer class="mt-8 py-4 px-8 border-t border-border">
                 {% include '_layouts/partials/footer.twig' %}
-            </div>
+            </footer>
 
         </div>
 
