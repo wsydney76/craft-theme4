@@ -52,7 +52,7 @@ module.exports = {
                 'footer-border': colors.slate[900],
                 border: colors.slate[300],
                 muted: colors.slate[600],
-                gray: colors.gray,
+                gray: colors.slate,
                 nav: colors.white
             },
 
