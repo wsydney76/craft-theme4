@@ -1,12 +1,9 @@
 {% extends "_layouts/#{theme.layout}.twig" %}
 
-{% block content %}
-
+{% block beforeContent %}
     {% if entry.type == 'privacy' and entry.showPrivacySettings.value != 'off' %}
         {% include '_partials/privacy_settings.twig' %}
     {% endif %}
-
-    {{ parent() }}
-
 {% endblock %}
+
 

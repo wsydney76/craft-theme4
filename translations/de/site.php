@@ -57,6 +57,7 @@ return [
     'Index Page' => 'Index Seite',
     'Individual contact' => 'Individueller Kontakt',
     'Internal Error' => 'Interner Fehler',
+    'Latest Articles' => 'Neueste Artikel',
     'Legal' => 'Rechtliches',
     'Light' => 'Helle Farbe',
     'Load more' => 'Weitere anzeigen',

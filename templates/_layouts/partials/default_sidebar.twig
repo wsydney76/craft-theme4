@@ -1,0 +1,9 @@
+<aside>
+    {% cache globally %}
+        {% include '_partials/entries_widget.twig' with {
+            heading: 'Latest Articles'|t,
+            query: craft.entries.section('article').limit(5),
+            showPostDate: true
+        } only %}
+    {% endcache %}
+</aside>

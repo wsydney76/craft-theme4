@@ -1,0 +1,21 @@
+{% set entries = query.all %}
+{% set showPostDate = showPostDate ?? false %}
+
+{% if entries %}
+    {% embed '_layouts/embeds/widget.twig' with {heading} %}
+        {% block content %}
+            <div class="text-base space-y-2">
+                {% for entry in entries %}
+                	<div class="">
+                        {{ entry.link }}
+                        {% if showPostDate %}
+                            <div class="text-sm text-gray-600">
+                                {{ entry.postDate|date('short') }}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endblock %}
+    {% endembed %}
+{% endif %}

@@ -1,0 +1,22 @@
+{% extends "_layouts/fullwidth.twig" %}
+
+{% block fullContent %}
+    <div class="max-w-screen-{{ theme.pageWidth }} mx-auto grid grid-cols-1 md:grid-cols-12 gap-block">
+        <div class="md:col-span-9">
+            {% block contentLeft %}
+
+                {% block beforeContent %}{% endblock %}
+
+                {{ block('content') }}
+
+                {% block afterContent %}{% endblock %}
+
+            {% endblock %}
+        </div>
+        <div class="md:col-span-3 space-y-block px-4">
+            {% block contentRight %}
+                {% include '_layouts/partials/default_sidebar.twig' %}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}

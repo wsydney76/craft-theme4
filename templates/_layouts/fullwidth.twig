@@ -22,7 +22,12 @@
         {% endblock %}
 
         <article>
-            {{ block('content') }}
+            {% block fullContent %}
+                {% block beforeContent %}{% endblock %}
+                {{ block('content') }}
+                {% block afterContent %}{% endblock %}
+            {% endblock %}
+
         </article>
     </main>
 

@@ -13,7 +13,9 @@
 
                 <div class="py-4">
                     <div class="mt-block">
+                        {% block beforeContent %}{% endblock %}
                         {{ block('content') }}
+                        {% block afterContent %}{% endblock %}
                     </div>
                 </div>
             </main>

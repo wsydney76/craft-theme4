@@ -1,7 +1,7 @@
 <?php
 
 return [
-    // fullwidth frame
+    // fullwidth frame sidebar
     'layout' => 'fullwidth',
 
     // end start rowLeft rowCenter

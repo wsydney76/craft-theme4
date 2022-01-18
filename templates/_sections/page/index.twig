@@ -1,8 +1,6 @@
 {% extends "_layouts/#{theme.layout}.twig" %}
 
-{% block content %}
-    {{ parent() }}
-
+{% block afterContent %}
     {% include '_partials/entry_children.twig' %}
 
     {% if entry.type.handle == 'indexPage' %}
@@ -23,6 +21,4 @@
         </div>
 
     {% endif %}
-
 {% endblock %}
-
