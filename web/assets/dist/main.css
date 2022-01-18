@@ -846,6 +846,42 @@ a.btn{
 .z-10{
   z-index: 10;
 }
+.col-span-1{
+  grid-column: span 1 / span 1;
+}
+.col-span-2{
+  grid-column: span 2 / span 2;
+}
+.col-span-3{
+  grid-column: span 3 / span 3;
+}
+.col-span-4{
+  grid-column: span 4 / span 4;
+}
+.col-span-5{
+  grid-column: span 5 / span 5;
+}
+.col-span-6{
+  grid-column: span 6 / span 6;
+}
+.col-span-7{
+  grid-column: span 7 / span 7;
+}
+.col-span-8{
+  grid-column: span 8 / span 8;
+}
+.col-span-9{
+  grid-column: span 9 / span 9;
+}
+.col-span-10{
+  grid-column: span 10 / span 10;
+}
+.col-span-11{
+  grid-column: span 11 / span 11;
+}
+.col-span-12{
+  grid-column: span 12 / span 12;
+}
 .my-0{
   margin-top: 0px;
   margin-bottom: 0px;
@@ -853,6 +889,10 @@ a.btn{
 .my-block{
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+.-my-block{
+  margin-top: -2rem;
+  margin-bottom: -2rem;
 }
 .mx-auto{
   margin-left: auto;
@@ -866,11 +906,17 @@ a.btn{
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
+.mt-block{
+  margin-top: 2rem;
+}
+.-mt-block{
+  margin-top: -2rem;
+}
 .mb-block{
   margin-bottom: 2rem;
 }
-.mt-block{
-  margin-top: 2rem;
+.-mb-block{
+  margin-bottom: -2rem;
 }
 .mb-8{
   margin-bottom: 2rem;
@@ -1037,9 +1083,6 @@ a.btn{
 .max-w-screen-md{
   max-width: 768px;
 }
-.max-w-screen-ml{
-  max-width: 896px;
-}
 .max-w-screen-lg{
   max-width: 1024px;
 }
@@ -1048,6 +1091,9 @@ a.btn{
 }
 .max-w-screen-2xl{
   max-width: 1536px;
+}
+.max-w-screen-ml{
+  max-width: 896px;
 }
 .max-w-prose{
   max-width: 75ch;
@@ -1121,11 +1167,41 @@ a.btn{
 .snap-start{
   scroll-snap-align: start;
 }
+.scroll-my-block{
+  scroll-margin-top: 2rem;
+  scroll-margin-bottom: 2rem;
+}
+.-scroll-my-block{
+  scroll-margin-top: -2rem;
+  scroll-margin-bottom: -2rem;
+}
+.scroll-mt-block{
+  scroll-margin-top: 2rem;
+}
+.-scroll-mt-block{
+  scroll-margin-top: -2rem;
+}
+.scroll-mb-block{
+  scroll-margin-bottom: 2rem;
+}
+.-scroll-mb-block{
+  scroll-margin-bottom: -2rem;
+}
 .scroll-mt-24{
   scroll-margin-top: 6rem;
 }
 .scroll-mt-20{
   scroll-margin-top: 5rem;
+}
+.scroll-py-columns{
+  scroll-padding-top: 2rem;
+  scroll-padding-bottom: 2rem;
+}
+.scroll-pt-columns{
+  scroll-padding-top: 2rem;
+}
+.scroll-pb-columns{
+  scroll-padding-bottom: 2rem;
 }
 .appearance-none{
   -webkit-appearance: none;
@@ -1291,6 +1367,54 @@ a.btn{
   --tw-border-opacity: 1;
   border-color: rgb(30 64 175 / var(--tw-border-opacity));
 }
+.bg-black{
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+.bg-white{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.bg-primary-50{
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 246 255 / var(--tw-bg-opacity));
+}
+.bg-primary-100{
+  --tw-bg-opacity: 1;
+  background-color: rgb(219 234 254 / var(--tw-bg-opacity));
+}
+.bg-primary-200{
+  --tw-bg-opacity: 1;
+  background-color: rgb(191 219 254 / var(--tw-bg-opacity));
+}
+.bg-primary-300{
+  --tw-bg-opacity: 1;
+  background-color: rgb(147 197 253 / var(--tw-bg-opacity));
+}
+.bg-primary-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
+}
+.bg-primary-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+.bg-primary-600{
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+}
+.bg-primary-700{
+  --tw-bg-opacity: 1;
+  background-color: rgb(29 78 216 / var(--tw-bg-opacity));
+}
+.bg-primary-800{
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 64 175 / var(--tw-bg-opacity));
+}
+.bg-primary-900{
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 58 138 / var(--tw-bg-opacity));
+}
 .bg-primary{
   --tw-bg-opacity: 1;
   background-color: rgb(30 64 175 / var(--tw-bg-opacity));
@@ -1310,14 +1434,6 @@ a.btn{
 .bg-frame-background{
   --tw-bg-opacity: 1;
   background-color: rgb(100 116 139 / var(--tw-bg-opacity));
-}
-.bg-black{
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
-.bg-white{
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 .bg-light{
   --tw-bg-opacity: 1;
@@ -1386,14 +1502,6 @@ a.btn{
 }
 .bg-black\/60{
   background-color: rgb(0 0 0 / 0.6);
-}
-.bg-primary-200{
-  --tw-bg-opacity: 1;
-  background-color: rgb(191 219 254 / var(--tw-bg-opacity));
-}
-.bg-primary-800{
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 64 175 / var(--tw-bg-opacity));
 }
 .bg-none{
   background-image: none;
@@ -1607,6 +1715,54 @@ a.btn{
 .tracking-widest{
   letter-spacing: 0.1em;
 }
+.text-black{
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+.text-white{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-primary-50{
+  --tw-text-opacity: 1;
+  color: rgb(239 246 255 / var(--tw-text-opacity));
+}
+.text-primary-100{
+  --tw-text-opacity: 1;
+  color: rgb(219 234 254 / var(--tw-text-opacity));
+}
+.text-primary-200{
+  --tw-text-opacity: 1;
+  color: rgb(191 219 254 / var(--tw-text-opacity));
+}
+.text-primary-300{
+  --tw-text-opacity: 1;
+  color: rgb(147 197 253 / var(--tw-text-opacity));
+}
+.text-primary-400{
+  --tw-text-opacity: 1;
+  color: rgb(96 165 250 / var(--tw-text-opacity));
+}
+.text-primary-500{
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+.text-primary-600{
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
+}
+.text-primary-700{
+  --tw-text-opacity: 1;
+  color: rgb(29 78 216 / var(--tw-text-opacity));
+}
+.text-primary-800{
+  --tw-text-opacity: 1;
+  color: rgb(30 64 175 / var(--tw-text-opacity));
+}
+.text-primary-900{
+  --tw-text-opacity: 1;
+  color: rgb(30 58 138 / var(--tw-text-opacity));
+}
 .text-primary{
   --tw-text-opacity: 1;
   color: rgb(30 64 175 / var(--tw-text-opacity));
@@ -1626,14 +1782,6 @@ a.btn{
 .text-frame-background{
   --tw-text-opacity: 1;
   color: rgb(100 116 139 / var(--tw-text-opacity));
-}
-.text-black{
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-.text-white{
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 .text-light{
   --tw-text-opacity: 1;

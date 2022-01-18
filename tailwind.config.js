@@ -112,69 +112,36 @@ module.exports = {
     },
 
     safelist: [
-        // dynamic widths
-        ' max-w-screen-sm',
-        ' max-w-screen-md',
-        ' max-w-screen-ml',
-        ' max-w-screen-lg',
-        ' max-w-screen-xl',
-        ' max-w-screen-2xl',
 
-        // dynamic containers
-        ' container-sm',
-        ' container-md',
-        ' container-ml',
-        ' container-lg',
-        ' container-xl',
-        ' container-2xl',
+        // dynamic widths
+        {
+            pattern: /(max-w-screen|container)-(sm|md|ml|lg|xl|2xl)/
+        },
 
         // dynamic colors
-        'bg-primary',
-        'bg-secondary',
-        'bg-background',
-        'bg-foreground',
-        'bg-frame-background',
-        'bg-black',
-        'bg-white',
-        'bg-light',
-        'bg-three',
-        'bg-four',
-
-        'text-primary',
-        'text-secondary',
-        'text-background',
-        'text-foreground',
-        'text-frame-background',
-        'text-black',
-        'text-white',
-        'text-light',
-        'text-three',
-        'text-four',
+        {
+            pattern: /(bg|text)-(primary|secondary|background|foreground|frame-background|black|white|light|three|four)/
+        },
 
         // dynamic col spans
-        'lg:col-span-1',
-        'lg:col-span-2',
-        'lg:col-span-3',
-        'lg:col-span-4',
-        'lg:col-span-5',
-        'lg:col-span-6',
-        'lg:col-span-7',
-        'lg:col-span-8',
-        'lg:col-span-9',
-        'lg:col-span-10',
-        'lg:col-span-11',
-        'lg:col-span-12',
+
+        {
+            pattern: /col-span-(1|2|3|4|5|6|7|8|9|10|11|12)/,
+            variants: ['lg']
+        },
+
 
         // dynamic  paddings
-        'py-columns',
-        'pt-columns',
-        'pb-columns',
+        {
+            pattern: /(py|pt|pb)-columns/
+        },
 
         // dynamic block margins
         'my-0',
-        'mb-block',
-        'mt-block',
-        'my-block'
+
+        {
+            pattern: /(mb|mt|my)-block/
+        },
 
     ],
 
