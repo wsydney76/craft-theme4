@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "2.0.0",
   "require": {
     "clubstudioltd/craft-asset-rev": "^6.0",
     "craftcms/cms": "3.7.29",
