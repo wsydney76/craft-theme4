@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8ccd517fbef530971eaa1d826a2b81bb",
+    "content-hash": "2bea6fb6e0184cf440439eb73a1a4e49",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -443,11 +443,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.7.28",
+            "version": "3.7.29",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/7b3728dd95dbdda80ebf0aa1fd84eb9d6d98f744",
-                "reference": "7b3728dd95dbdda80ebf0aa1fd84eb9d6d98f744",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/a54e725a3ad01da409d466e30369855642845a41",
+                "reference": "a54e725a3ad01da409d466e30369855642845a41",
                 "shasum": ""
             },
             "require": {
@@ -530,7 +530,7 @@
                 "docs": "https://craftcms.com/docs/3.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2022-01-05T20:16:48+00:00"
+            "time": "2022-01-18T18:58:42+00:00"
         },
         {
             "name": "craftcms/oauth2-craftid",
@@ -780,22 +780,17 @@
         },
         {
             "name": "doctrine/lexer",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/lexer/zipball/e864bbf5904cb8f5bb334f99209b48018522f042",
-                "reference": "e864bbf5904cb8f5bb334f99209b48018522f042",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/9c50f840f257bbb941e6f4a0e94ccf5db5c3f76c",
+                "reference": "9c50f840f257bbb941e6f4a0e94ccf5db5c3f76c",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.2 || ^8.0"
+                "php": "^7.1 || ^8.0"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.2.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Doctrine\\Common\\Lexer\\": "lib/Doctrine/Common/Lexer"
@@ -827,7 +822,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2020-05-25T17:44:05+00:00"
+            "time": "2022-01-12T08:27:12+00:00"
         },
         {
             "name": "doublesecretagency/craft-cpcss",
@@ -1750,11 +1745,11 @@
         },
         {
             "name": "laminas/laminas-stdlib",
-            "version": "3.6.4",
+            "version": "3.7.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-stdlib/zipball/830a36d93aeaf06e540e90ec031babb3c6eafadb",
-                "reference": "830a36d93aeaf06e540e90ec031babb3c6eafadb",
+                "url": "https://api.github.com/repos/laminas/laminas-stdlib/zipball/cba75fad2053bb5dc8d3e7f5e62b61d75eecfaf1",
+                "reference": "cba75fad2053bb5dc8d3e7f5e62b61d75eecfaf1",
                 "shasum": ""
             },
             "require": {
@@ -1778,7 +1773,7 @@
                 "laminas",
                 "stdlib"
             ],
-            "time": "2021-12-29T14:33:01+00:00"
+            "time": "2022-01-10T11:18:55+00:00"
         },
         {
             "name": "league/flysystem",
@@ -4643,11 +4638,11 @@
         },
         {
             "name": "voku/stringy",
-            "version": "6.4.4",
+            "version": "6.5.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/Stringy/zipball/b8b2ac807e99209b499a8f9b88eed7aea9649da8",
-                "reference": "b8b2ac807e99209b499a8f9b88eed7aea9649da8",
+                "url": "https://api.github.com/repos/voku/Stringy/zipball/ab6a3236369503758f851fd22f1b39f91f99d498",
+                "reference": "ab6a3236369503758f851fd22f1b39f91f99d498",
                 "shasum": ""
             },
             "require": {
@@ -4703,7 +4698,7 @@
                 "utility",
                 "utils"
             ],
-            "time": "2021-12-21T05:57:02+00:00"
+            "time": "2022-01-06T21:09:13+00:00"
         },
         {
             "name": "voku/urlify",

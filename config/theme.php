@@ -38,6 +38,8 @@ return [
 
     'defaultBlockWidth' => 'lg',
 
+    'defaultIndexWidth' => 'md',
+
     // set max-w-prose on text blocks
     'useProse' => true,
 
@@ -66,6 +68,11 @@ return [
 
     // should match w-card utility
     'cardImageTransform' => ['width' => 300, 'height' => 200, 'format' => 'webp'],
+
+    'defaultIndexImageTransform' => ['width' => 350, 'height' => 200, 'format' => 'webp'],
+
+    // set null if first image shall not be fullwidth
+    'defaultIndexFirstImageTransform' => ['width' => 768, 'height' => 432, 'format' => 'webp'],
 
     // default index template
     'cardletImageTransform' => ['width' => 300, 'height' => 225, 'format' => 'webp'],

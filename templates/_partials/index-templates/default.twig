@@ -7,40 +7,61 @@
 
 {% paginate craft.entries(criteria) as pageInfo, entries %}
 
-<article class="space-y-6">
+<div class="max-w-screen-{{ theme.defaultIndexWidth }} space-y-block">
     {% for entry in entries %}
-        <a class="block flex space-x-4 !no-underline border border-border bg-white hover:bg-gray-200 transition-colors shadow-lg" href="{{ entry.url }}">
 
-            <div class="flex-shrink-0">
-                {% set image = entry.featuredImage|one %}
+        {% set image = entry.featuredImage.one %}
+
+        <a href="{{ entry.url }}"
+           class="hover:no-underline block space-y-4 text-base pb-block border-b border-border">
+
+            {% if loop.index == 1 and theme.defaultIndexFirstImageTransform and pageInfo.currentPage == 1 %}
+
                 {% if image %}
-                    {{ img(image, theme.cardletImageTransform) }}
+                    {{ image.img(theme.defaultIndexFirstImageTransform) }}
                 {% endif %}
-            </div>
-            <div class="flex flex-col justify-between py-2 ">
-                <div class="h-full">
-                    {% if entry.teaser %}
-                        <div class="text-base mb-2">
-                            {{ entry.teaser }}
+
+                {{ _self.content(entry, true) }}
+
+            {% else %}
+                <div class="sm:flex sm:space-x-block">
+                    {% if image %}
+                        <div class="sm:shrink-0">
+                            {{ image.img(theme.defaultIndexImageTransform) }}
                         </div>
                     {% endif %}
-                    <div class="text-3xl">
-                        {{ entry.title }}
+                    <div class="mt-4 sm:my-2">
+                        {{ _self.content(entry) }}
                     </div>
-
-                    {% include "_sections/#{entry.section.handle}/card_content.twig" ignore missing %}
                 </div>
-                <div>
-                    {% include "_sections/#{entry.section.handle}/card_bottom_content.twig" ignore missing %}
-                </div>
-            </div>
+            {% endif %}
         </a>
     {% endfor %}
-</article>
+</div>
 
 {% if pageInfo.totalPages > 1 %}
     {% include '_layouts/partials/pagination.twig' %}
 {% endif %}
 
+{% macro content(entry, first = false) %}
+    <div class="flex flex-col justify-between h-full">
+        <div class="">
+            <div class="font-bold">
+                {{ entry.teaser }}
+            </div>
+            <h2 class="text-2xl font-bold mt-block mt-2">
+                {{ entry.title }}
+            </h2>
 
+            {% if first %}
+                {% include "_sections/#{entry.section.handle}/card_first_content.twig" ignore missing %}
+            {% endif %}
 
+            {% include "_sections/#{entry.section.handle}/card_content.twig" ignore missing %}
+        </div>
+
+        <div class="pt-4">
+            {% include "_sections/#{entry.section.handle}/card_bottom_content.twig" ignore missing %}
+        </div>
+    </div>
+{% endmacro %}

@@ -36,14 +36,12 @@ class MainModule extends Module
     {
         Craft::setAlias('@modules/main', $this->getBasePath());
 
-
         // Set the controllerNamespace based on whether this is a console or web request
         if (Craft::$app->getRequest()->getIsConsoleRequest()) {
             $this->controllerNamespace = 'modules\\main\\console\\controllers';
         } else {
             $this->controllerNamespace = 'modules\\main\\controllers';
         }
-
 
         // Register Behaviors
         Event::on(
@@ -57,7 +55,7 @@ class MainModule extends Module
         Event::on(
             Entry::class,
             Entry::EVENT_DEFINE_RULES, function(DefineRulesEvent $event) {
-                $event->rules[] = ['title', 'string', 'max' => 50, 'on' => Entry::SCENARIO_LIVE];
+            $event->rules[] = ['title', 'string', 'max' => 50, 'on' => Entry::SCENARIO_LIVE];
         });
 
         // Register custom field types
@@ -77,7 +75,43 @@ class MainModule extends Module
         // Register Twig extension for theme variable
         Craft::$app->view->registerTwigExtension(new TwigExtension());
 
-    }
+        // Validate entries on all sites (fixes open Craft bug)
+        Event::on(
+            Entry::class,
+            Entry::EVENT_BEFORE_SAVE, function($event) {
 
+            if (Craft::$app->sites->getTotalSites() == 1) {
+                return;
+            }
+
+            /** @var Entry $entry */
+            $entry = $event->sender;
+
+            // TODO: Check conditionals
+
+            if ($entry->resaving || $entry->propagating || $entry->scenario != Entry::STATUS_LIVE) {
+                return;
+            }
+
+            $entry->validate();
+
+            if ($entry->hasErrors()) {
+                return;
+            }
+
+            foreach ($entry->getLocalized()->all() as $localizedEntry) {
+                $localizedEntry->scenario = Entry::SCENARIO_LIVE;
+
+                if (!$localizedEntry->validate()) {
+                    $entry->addError(
+                        $entry->type->hasTitleField ? 'title' : 'slug',
+                        Craft::t('site', 'Error validating entry in') .
+                        ' "' . $localizedEntry->site->name . '". ' .
+                        implode(' ', $localizedEntry->getErrorSummary(false)));
+                    $event->isValid = false;
+                }
+            }
+        });
+    }
 
 }

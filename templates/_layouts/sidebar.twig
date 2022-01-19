@@ -1,7 +1,7 @@
 {% extends "_layouts/fullwidth.twig" %}
 
 {% block fullContent %}
-    <div class="max-w-screen-{{ theme.pageWidth }} mx-auto grid grid-cols-1 md:grid-cols-12 gap-block">
+    <div class="max-w-screen-{{ width ?? theme.pageWidth }} mx-auto grid grid-cols-1 md:grid-cols-12 gap-block">
         <div class="md:col-span-9">
             {% block contentLeft %}
 
