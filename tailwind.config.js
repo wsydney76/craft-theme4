@@ -120,7 +120,7 @@ module.exports = {
 
         // dynamic colors
         {
-            pattern: /(bg|text)-(primary|secondary|background|foreground|frame-background|black|white|light|three|four)/
+            pattern: /(bg|text)-(primary|secondary|background|foreground|frame-background|black|white|light|three|four|title-bg|title-text|footer-bg|footer-text|footer-border|border|muted)/
         },
 
         // dynamic col spans

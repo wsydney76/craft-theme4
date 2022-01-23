@@ -84,14 +84,21 @@ class ThemeColorField extends Field
             ['label' => Craft::t('site', 'Default'), 'value' => 'default'],
             ['label' => Craft::t('site', 'Primary'), 'value' => 'primary'],
             ['label' => Craft::t('site', 'Secondary'), 'value' => 'secondary'],
-            ['label' => Craft::t('site', 'Light'), 'value' => 'light'],
             ['label' => Craft::t('site', 'Background'), 'value' => 'background'],
             ['label' => Craft::t('site', 'Foreground'), 'value' => 'foreground'],
-            ['label' => Craft::t('site', 'Frame-Background'), 'value' => 'frame-background'],
+            ['label' => Craft::t('site', 'Frame Background'), 'value' => 'frame-background'],
             ['label' => Craft::t('site', 'Black'), 'value' => 'black'],
             ['label' => Craft::t('site', 'White'), 'value' => 'white'],
+            ['label' => Craft::t('site', 'Light'), 'value' => 'light'],
             ['label' => Craft::t('site', 'Color Three'), 'value' => 'three'],
             ['label' => Craft::t('site', 'Color Four'), 'value' => 'four'],
+            ['label' => Craft::t('site', 'Title Background'), 'value' => 'title-bg'],
+            ['label' => Craft::t('site', 'Title Text'), 'value' => 'title-text'],
+            ['label' => Craft::t('site', 'Footer Background'), 'value' => 'footer-bg'],
+            ['label' => Craft::t('site', 'Footer Text'), 'value' => 'footer-text'],
+            ['label' => Craft::t('site', 'Footer Border'), 'value' => 'footer-border'],
+            ['label' => Craft::t('site', 'Border'), 'value' => 'border'],
+            ['label' => Craft::t('site', 'Muted'), 'value' => 'muted'],
         ];
 }
 }
