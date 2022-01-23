@@ -9,21 +9,27 @@
         set expanded(value) {
             this.active = value ? this.id : null
         },
-    }" role="region" class="border border-black">
+    }" role="region" class="border border-border bg-white">
             <h2>
                 <button
                         x-on:click="expanded = !expanded"
                         :aria-expanded="expanded"
-                        class="flex items-center justify-between w-full font-bold text-xl px-6 py-3"
+                        class="flex items-center justify-between w-full font-bold text-custom px-4 py-3"
                 >
                     <span>{{ item.question }}</span>
-                    <span x-show="expanded" aria-hidden="true" class="ml-4">&minus;</span>
-                    <span x-show="!expanded" aria-hidden="true" class="ml-4">&plus;</span>
+                    <svg fill="currentColor" viewBox="0 0 20 20"
+                         aria-hidden="true"
+                         :class="expanded ? 'rotate-180' : 'rotate-0'"
+                         class="inline w-6 h-6 transform transition-transform">
+                        <path fill-rule="evenodd"
+                              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                              clip-rule="evenodd"></path>
+                    </svg>
                 </button>
             </h2>
 
             <div x-show="expanded" x-collapse>
-                <div class="pb-4 px-6">
+                <div class="p-4">
                     {{ item.answer|md|purify }}
                 </div>
             </div>
