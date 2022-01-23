@@ -9,6 +9,9 @@ use Twig\TwigFilter;
 
 class TwigExtension extends AbstractExtension implements GlobalsInterface
 {
+    /**
+     * @return array
+     */
     public function getGlobals(): array
     {
         return [
@@ -16,14 +19,22 @@ class TwigExtension extends AbstractExtension implements GlobalsInterface
         ];
     }
 
+    /**
+     * @return TwigFilter[]
+     */
     public function getFilters()
     {
         return [
             new TwigFilter('one', [$this, 'oneFilter']),
             new TwigFilter('all', [$this, 'allFilter']),
+            new TwigFilter('quote', [$this, 'quoteFilter']),
         ];
     }
 
+    /**
+     * @param $stuff
+     * @return mixed|null
+     */
     public function oneFilter($stuff)
     {
         if (is_null($stuff)) {
@@ -35,6 +46,10 @@ class TwigExtension extends AbstractExtension implements GlobalsInterface
         return $stuff->one();
     }
 
+    /**
+     * @param $stuff
+     * @return array
+     */
     public function allFilter($stuff)
     {
         if (is_null($stuff))
@@ -46,5 +61,14 @@ class TwigExtension extends AbstractExtension implements GlobalsInterface
             return ($stuff);
         }
         return $stuff->all();
+    }
+
+    /**
+     * @param string $text
+     * @return string
+     */
+    public function quoteFilter(string $text): string
+    {
+        return Craft::t('site', '“') . $text . Craft::t('site', '”') ;
     }
 }

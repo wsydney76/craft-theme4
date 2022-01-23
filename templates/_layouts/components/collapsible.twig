@@ -1,3 +1,5 @@
+{% set overlay = overlay ?? true %}
+
 <div
         x-data="{
         open: false,
@@ -15,14 +17,13 @@
         }
     }"
         x-on:keydown.escape.prevent.stop="close($refs.button)"
-        x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
         @keydown.down.prevent="$focus.next()"
         @keydown.up.prevent="$focus.previous()"
         x-id="['dropdown-button']"
         class="relative"
 >
     <!-- Button -->
-    <button class="block"
+    <button class="w-full block"
             x-ref="button"
             x-on:click="toggle()"
             :aria-expanded="open"
@@ -30,14 +31,14 @@
             type="button">
 
         {% block button %}
-            <div class="flex items-center justify-between">
+            <div class="flex items-center justify-between p-4">
                 <div>
                     {% block buttonText %}{{ 'Toggle'|t }}{% endblock %}
                 </div>
                 <svg fill="currentColor" viewBox="0 0 20 20"
                      aria-hidden="true"
                      :class="open ? 'rotate-180' : 'rotate-0'"
-                     class="inline ml-1.5 w-4 h-4">
+                     class="inline w-6 h-6 transform transition-transform">
                     <path fill-rule="evenodd"
                           d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
                           clip-rule="evenodd"></path>
@@ -48,14 +49,16 @@
     </button>
 
     <!-- Panel -->
-    <div class="z-50 absolute left-auto mt-2 px-4 py-2 min-w-[150px] max-w-xl bg-nav text-foreground border border-foreground shadow-2xl"
+    <div class=""
          x-ref="panel"
          x-show="open"
          x-cloak
-         x-on:click.outside.prevent.stop="close($refs.button)"
+         x-collapse
          :id="$id('dropdown-button')">
 
-        {% block panel %}{% endblock %}
+        <div class="px-4 pb-4">
+            {% block panel %}{% endblock %}
+        </div>
 
     </div>
 </div>
