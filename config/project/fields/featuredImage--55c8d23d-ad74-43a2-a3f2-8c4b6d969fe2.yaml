@@ -16,7 +16,7 @@ settings:
   localizeRelations: false
   previewMode: thumbs
   restrictFiles: '1'
-  selectionLabel: ''
+  selectionLabel: 'Select image'
   showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false

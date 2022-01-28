@@ -140,5 +140,10 @@ return [
     '{count,plural,=1{Related Entry} other{Related Entries}}' => '{count,plural,=1{Verwandter Eintrag} other{Verwandte Einträge}}',
     '“' => '„',
     '”' => '“',
+    'Image and Text' => 'Bild und Text',
+    'Image Background Color' => 'Bildhintergrundfarbe',
+    'Image align' => 'Bildausrichtung',
+    'Image Left' => 'Bild links',
+    'Image Right' => 'Bild rechts',
 
 ];

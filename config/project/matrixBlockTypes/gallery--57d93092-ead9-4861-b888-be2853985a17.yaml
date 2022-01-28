@@ -133,4 +133,4 @@ fields:
     type: craft\fields\Dropdown
 handle: gallery
 name: Gallery
-sortOrder: 11
+sortOrder: 12

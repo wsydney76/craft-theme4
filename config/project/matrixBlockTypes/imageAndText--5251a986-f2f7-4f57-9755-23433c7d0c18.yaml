@@ -1,0 +1,225 @@
+field: 266ac6c3-03c0-40eb-8f24-c5c22ed1c5c0 # Content
+fieldLayouts:
+  d70a7482-63dc-452f-8a8a-4b741b026dfc:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 85347e4c-c38c-4edd-b1b6-c19c29ca6ad4 # Image
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d7695888-b2ff-4bbe-ba19-672754ca90a3 # Heading
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: b68da9c5-b120-4d9d-aeda-909f35107532 # Text
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 30740157-2dd2-4b34-bc62-246493985a92 # Width
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 44b322dd-2b68-4cbf-ac78-a70d2d80af18 # Image Background Color
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 842e6c06-cc3a-40c7-9fdb-13b911f9602b # Image Align
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 8f7a501f-8f71-499e-925e-a2de6a443fd2 # Margins Y
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+        name: Content
+        sortOrder: 1
+fields:
+  8f7a501f-8f71-499e-925e-a2de6a443fd2: # Margins Y
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: marginsY
+    instructions: ''
+    name: 'Margins Y'
+    searchable: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: modules\main\fields\MarginsYField
+  44b322dd-2b68-4cbf-ac78-a70d2d80af18: # Image Background Color
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: imageBackgroundColor
+    instructions: ''
+    name: 'Image Background Color'
+    searchable: false
+    settings:
+      defaultColor: light
+    translationKeyFormat: null
+    translationMethod: none
+    type: modules\main\fields\ThemeColorField
+  842e6c06-cc3a-40c7-9fdb-13b911f9602b: # Image Align
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: align
+    instructions: ''
+    name: 'Image Align'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Image Left'
+            -
+              - value
+              - imageLeft
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Image Right'
+            -
+              - value
+              - imageRight
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  85347e4c-c38c-4edd-b1b6-c19c29ca6ad4: # Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: 'Select image'
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: true
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  30740157-2dd2-4b34-bc62-246493985a92: # Width
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: width
+    instructions: ''
+    name: Width
+    searchable: false
+    settings:
+      addDefaultOptions: '1'
+      addMobileOptions: ''
+      defaultWidth: default
+    translationKeyFormat: null
+    translationMethod: none
+    type: modules\main\fields\WidthField
+  b68da9c5-b120-4d9d-aeda-909f35107532: # Text
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: ''
+    name: Text
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: '1'
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  d7695888-b2ff-4bbe-ba19-672754ca90a3: # Heading
+    columnSuffix: null
+    contentColumnType: string(240)
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: 60
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: imageAndText
+name: 'Image and Text'
+sortOrder: 7

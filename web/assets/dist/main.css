@@ -1097,6 +1097,9 @@ a.btn{
 .max-w-prose{
   max-width: 75ch;
 }
+.max-w-\[600px\]{
+  max-width: 600px;
+}
 .max-w-xl{
   max-width: 36rem;
 }
@@ -1215,6 +1218,9 @@ a.btn{
 }
 .flex-wrap{
   flex-wrap: wrap;
+}
+.place-content-center{
+  place-content: center;
 }
 .items-center{
   align-items: center;
@@ -1542,6 +1548,9 @@ a.btn{
 .object-top{
   -o-object-position: top;
      object-position: top;
+}
+.p-16{
+  padding: 4rem;
 }
 .p-8{
   padding: 2rem;
@@ -2038,11 +2047,17 @@ a.btn{
   .md\:hidden{
     display: none;
   }
+  .md\:w-1\/2{
+    width: 50%;
+  }
   .md\:w-1\/3{
     width: 33.333333%;
   }
   .md\:grid-cols-12{
     grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+  .md\:flex-row-reverse{
+    flex-direction: row-reverse;
   }
   .md\:justify-end{
     justify-content: flex-end;

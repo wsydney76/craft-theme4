@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1642244028
+dateModified: 1643397922
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -77,6 +77,7 @@ meta:
     8d05e85c-30a0-4fd2-bd10-61141dcfc963: 'Cover Images' # Cover Images
     8d799a3d-9460-47c2-a12b-2dfe10eecd9a: Image # Image
     8e9ab092-37eb-4ecb-91e1-0d23a5b110cc: Roles # Roles
+    8f7a501f-8f71-499e-925e-a2de6a443fd2: 'Margins Y' # Margins Y
     8fb04690-63b2-4e65-bb13-def05a978110: Answer # Answer
     9c7e95a7-7a87-46ad-974e-8ce3846ef68b: Description # Description
     9dc36ffd-e836-4969-ba71-011e003734df: Link # Link
@@ -97,6 +98,7 @@ meta:
     36ba3b7b-ebf4-4e47-b175-8b53b1a51659: Text # Text
     39a9436c-4a59-44ea-9c7c-5d1a4eef3609: Image # Image
     42ca6f90-46f5-4a7e-8fcb-4f485ffe612c: Level # Level
+    44b322dd-2b68-4cbf-ac78-a70d2d80af18: 'Image Background Color' # Image Background Color
     48fde250-325a-44bf-9238-66f0e831a883: Image # Image
     49ccb4b8-c82b-4daf-9af9-1af874ad6dd4: Embeds # Embeds
     051d92e2-649b-4487-b9de-31b3c4bb7d86: 'Audio File' # Audio File
@@ -141,11 +143,14 @@ meta:
     666c8cf3-0639-4757-aefa-9490930dbf0f: Audio # Audio
     752d79f6-0f1d-438e-91a2-f8e4cedfd23d: Ausrichtung # Ausrichtung
     841d3e7a-19f1-440a-9576-e4cabc64eaba: Display # Display
+    842e6c06-cc3a-40c7-9fdb-13b911f9602b: 'Image Align' # Image Align
     965f2bbe-7dfb-46ed-b481-5bc4aba117e0: 'Bildhöhe für Volle Breite' # Bildhöhe für Volle Breite
     983cfd03-1fd2-49c4-9027-2599f4665b1f: Director # Director
     2080bd27-6539-42c6-ac2d-87d524c5d3d9: Typ # Typ
+    3706c730-a07b-4974-8277-510be29bf91e: 'Image Align' # Image Align
     4008cfb2-85a6-441c-bffb-b4d1cf5c23e0: Caption # Caption
     4834a59f-de39-47d5-9cbf-99288202b3eb: Image # Image
+    5251a986-f2f7-4f57-9755-23433c7d0c18: 'Image and Text' # Image and Text
     6126b7f5-ffb5-4ad1-958c-bc4b58a8f7d3: 'Text color' # Text color
     6253c3ac-a08c-48bf-986f-d4350ed611d7: Logo # Logo
     6426a7d0-06a6-49ef-8064-f8ae57a1c865: Standard-Seitenverhältnis # Standard-Seitenverhältnis
@@ -160,6 +165,7 @@ meta:
     78792bff-7415-4c05-b05b-8cd89e73abcf: Jahr # Jahr
     80122cfd-218e-4ef3-b770-e09e5e158847: Pattern # Pattern
     83973b78-a6f9-4f54-9099-e3e4b5c80fe8: 'Standard Bild-Breite' # Standard Bild-Breite
+    85347e4c-c38c-4edd-b1b6-c19c29ca6ad4: Image # Image
     90724a6b-55ad-446f-be50-7aea7e1fb067: Robots # Robots
     91350ab1-7a75-4d75-954c-aed53e2be72d: 'Helle Farbe' # Helle Farbe
     118622b7-20ad-4b1d-8d78-5d49bbdbcd68: Template # Template
@@ -173,6 +179,7 @@ meta:
     18502657-21d3-4816-af73-1e64905d9928: Image # Image
     22202105-1e1e-4c85-9c4b-8306ed7f4605: Sender/Theater # Sender/Theater
     27616229-cbad-4ba6-80b5-7cffc1af3a92: Datum # Datum
+    30740157-2dd2-4b34-bc62-246493985a92: Width # Width
     34581043-4880-49b9-b16a-cba691fa21f3: Image # Image
     61350169-3950-4815-aea9-b171958d6d8a: Guide # Guide
     a010299b-071c-4852-81f6-c15875a5ba4f: Guide # Guide
@@ -207,6 +214,7 @@ meta:
     b9e12f8a-d90b-4458-a578-7025f7d0d90a: Width # Width
     b49d56c6-b29b-4ac0-ba55-aa83643aedaa: Target # Target
     b61bea97-e4d4-4de2-9149-15f74906945a: SEO # SEO
+    b68da9c5-b120-4d9d-aeda-909f35107532: Text # Text
     b69b9f51-3329-4ff9-903f-f7014de6e7f0: Text # Text
     b81cc512-4ab0-4ed7-8d3c-6537f36d68e0: 'H1 Schriftgröße' # H1 Schriftgröße
     b683b318-aee5-4bb2-a3a4-40fc6cf445cc: Phone # Phone
@@ -248,6 +256,7 @@ meta:
     d9637c0b-358e-4727-8210-8648a7f0db61: Criteria # Criteria
     d52452b5-af79-4664-a8e4-5d9ce4cc63ea: Text # Text
     d907543b-0bd7-4a39-aced-5f543d9188a3: Typ # Typ
+    d7695888-b2ff-4bbe-ba19-672754ca90a3: Heading # Heading
     db26bc18-f34d-4da3-8488-11defd07f9e7: Ausbildungsinhalt # Ausbildungsinhalt
     dbc263da-95a4-428a-a2eb-82d51acb4523: Artist # Artist
     dbf29f4d-79b9-4474-b8ff-d05ff24d450e: Text # Text

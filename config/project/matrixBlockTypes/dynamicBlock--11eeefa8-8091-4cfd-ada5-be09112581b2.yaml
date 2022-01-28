@@ -60,4 +60,4 @@ fields:
     type: modules\main\fields\IncludeField
 handle: dynamicBlock
 name: 'Dynamic Block'
-sortOrder: 14
+sortOrder: 15
