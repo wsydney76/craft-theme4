@@ -1,0 +1,64 @@
+{% import '_members/macros/forms.twig' as forms %}
+
+
+
+{% set user = user ?? null %}
+
+<div class="mt-8 sm:w-full sm:max-w-md">
+    <div class="">
+        <form sprig s-method="post" s-action="users/save-user" s-indicator="#spinner" class="space-y-6">
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">
+                    {{ 'First Name'|t }}
+                </label>
+                <div class="mt-1">
+                    <input class="w-full" id="first-name" name="firstName" type="text" autocomplete="first-name"  required value="{{ user.firstName ?? null }}">
+                </div>
+                {{ user ? forms.errorsList(user.getErrors('firstName')) }}
+            </div>
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">
+                    {{ 'Last Name'|t }}
+                </label>
+                <div class="mt-1">
+                    <input class="w-full" id="last-name" name="lastName" type="text" autocomplete="last-name" required value="{{ user.lastName ?? null }}">
+                </div>
+                {{ user ? forms.errorsList(user.getErrors('lastName')) }}
+            </div>
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">
+                    {{ 'Email'|t }}
+                </label>
+                <div class="mt-1">
+                    <input class="w-full" id="email" name="email" type="email" autocomplete="email"  required value="{{ user.email ?? null }}">
+                </div>
+                {{ user ? forms.errorsList(user.getErrors('email')) }}
+            </div>
+
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700">
+                    {{ 'Password'|t }}
+                </label>
+                <div class="mt-1">
+                    <input class="w-full" id="password" name="password" type="password" autocomplete="current-password" required >
+                </div>
+                {{ user ? forms.errorsList(user.getErrors('password')) }}
+            </div>
+            <div>
+                {{ forms.button('Register'|t, true) }}
+
+                {% if success is defined and success %}
+                    <div class="rounded-lg bg-green-50 p-4 mt-4 border-2 border-green-100">
+                        <div class="flex">
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-green-800">
+                                    {{ 'We created your account! Please check your email to verify your email address.'|t }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+</div>

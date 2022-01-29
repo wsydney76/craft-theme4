@@ -5,10 +5,10 @@ return [
         'bodyContent' => [
             'groups' => [
                 [
-                    'label' => Craft::t('site','Media'),
-                    'types' => ['gallery', 'embed', 'audio', 'playlist', 'video'],
+                    'label' => Craft::t('site', 'Media'),
+                    'types' => ['gallery', 'imageAndText', 'embed', 'audio', 'playlist', 'video'],
                 ], [
-                    'label' => Craft::t('site','Special'),
+                    'label' => Craft::t('site', 'Special'),
                     'types' => ['summary', 'columns', 'buttons', 'quote', 'faq', 'markdown', 'dynamicBlock']
                 ]
             ],
@@ -16,11 +16,11 @@ return [
                 'image' => [
                     'tabs' => [
                         [
-                            'label' => Craft::t('site','Content'),
+                            'label' => Craft::t('site', 'Content'),
                             'fields' => ['image', 'caption']
                         ],
                         [
-                            'label' => Craft::t('site','Layout'),
+                            'label' => Craft::t('site', 'Layout'),
                             'fields' => ['aspectRatio', 'width', 'marginsY']
                         ]
 
@@ -29,12 +29,25 @@ return [
                 'gallery' => [
                     'tabs' => [
                         [
-                            'label' => Craft::t('site','Content'),
-                            'fields' => ['images', ]
+                            'label' => Craft::t('site', 'Content'),
+                            'fields' => ['images',]
                         ],
                         [
-                            'label' => Craft::t('site','Layout'),
+                            'label' => Craft::t('site', 'Layout'),
                             'fields' => ['width', 'display']
+                        ]
+
+                    ]
+                ],
+                'imageAndText' => [
+                    'tabs' => [
+                        [
+                            'label' => Craft::t('site', 'Content'),
+                            'fields' => ['image', 'heading', 'text']
+                        ],
+                        [
+                            'label' => Craft::t('site', 'Layout'),
+                            'fields' => ['width', 'imageBackgroundColor', 'align', 'marginsY']
                         ]
 
                     ]
@@ -42,11 +55,11 @@ return [
                 'columns' => [
                     'tabs' => [
                         [
-                            'label' => Craft::t('site','Content'),
+                            'label' => Craft::t('site', 'Content'),
                             'fields' => ['heading', 'columns']
                         ],
                         [
-                            'label' => Craft::t('site','Layout'),
+                            'label' => Craft::t('site', 'Layout'),
                             'fields' => ['backgroundColor', 'foregroundColor', 'width', 'marginsY']
                         ]
 
@@ -55,16 +68,17 @@ return [
                 'faq' => [
                     'tabs' => [
                         [
-                            'label' => Craft::t('site','Content'),
-                            'fields' => ['items', ]
+                            'label' => Craft::t('site', 'Content'),
+                            'fields' => ['items']
                         ],
                         [
-                            'label' => Craft::t('site','Layout'),
+                            'label' => Craft::t('site', 'Layout'),
                             'fields' => ['display']
                         ]
 
                     ]
                 ],
+
             ]
         ]
     ]

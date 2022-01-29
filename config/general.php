@@ -46,6 +46,7 @@ return [
         //Whether non-ASCII characters in auto-generated slugs should be converted to ASCII
         'limitAutoSlugsToAscii' => true,
 
+        // Max No. of revisions
         'maxRevisions' => 10,
 
         'aliases' => [
@@ -60,6 +61,18 @@ return [
             '@webroot' => dirname(__DIR__) . '/web',
 
         ],
+
+        // The URI Craft should use for user login on the front end.
+        'loginPath' => 'members/login',
+
+        // The URI or URL that Craft should use for Set Password forms on the front end.
+        'setPasswordPath' => 'members/setpassword',
+
+        // Whether users should automatically be logged in after activating their account or resetting their password.
+        'autoLoginAfterAccountActivation' => true,
+
+        // The URI that users without access to the control panel should be redirected to after activating their account.
+        'activateAccountSuccessPath' => 'members',
     ],
 
     // Dev environment settings

@@ -1,4 +1,4 @@
-{% if entry.children %}
+{% if entry.type.handle != 'members' and entry.children %}
     {% set entries = entry.children.all %}
     {% if entries %}
         <div class="container-{{ theme.pageWidth }} mt-8">
