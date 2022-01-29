@@ -25,6 +25,11 @@ Set up your dev environment:
 * Update `tailwind.config.js` and run `npm run ...`
 * By default, the main navigation reflects the structure of your Pages section, but you can override this by setting `Globals -> Site Info -> Navigation Entries`
 
+## Faker content
+
+* Upload some images into the images volume
+* Run `php craft main/seed/create-entries` to seed the system with some dummy entries.
+
 ## Setting up a membership site
 
 If you do not plan a membership site, you can safely delete templates/_members, the entry type page/members and the user group members.
@@ -40,6 +45,8 @@ Set up entries for all the relevant member actions. By default, use section=Page
 * members/register - Register new account
 * members/forgotpassword - Request password reset
 * members/setpassword - Set new password
+
+Run `php craft main/seed/create-members-entries` to generate simple starter entries.
 
 You are free to customize any of this, just include the actions in templates/_members whereever you want.
 
