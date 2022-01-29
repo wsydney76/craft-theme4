@@ -1,0 +1,10 @@
+{% requireLogin %}
+
+<div class="flex space-x-4 items-center mb-block">
+    <div>
+        {{ 'Logged in as'|t }} {{ currentUser.fullName }}.
+    </div>
+    <div>
+        <a class="btn bg-primary text-white" href="{{ logoutUrl }}">{{ 'Logout'|t }}</a>
+    </div>
+</div>

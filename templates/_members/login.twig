@@ -40,18 +40,25 @@
                 </label>
             </div>
 
+            {% set membersEntry = craft.entries.membersTemplate('forgotpassword.twig') %}
+
             <div class="flex items-center justify-between">
-                <div class="text-sm">
-                    <a href="{{ url('members/forgotpassword') }}">
-                        {{ 'Forgot your password?'|t }}
-                    </a>
-                </div>
-                <div class="text-sm">
-                    <a href="{{ url('members/register') }}">
-                        {{ 'Register account'|t }}
-                    </a>
-                </div>
+                {% set membersEntry = craft.entries.membersTemplate('forgotpassword.twig').one %}
+                {% if membersEntry %}
+                    <div class="text-sm">
+                        {{ membersEntry.link }}
+                    </div>
+                {% endif %}
+                {% set membersEntry = craft.entries.membersTemplate('register.twig').one %}
+               {% if membersEntry %}
+                    <div class="text-sm">
+                        <a href="{{ url('members/register') }}">
+                            {{ membersEntry.link }}
+                        </a>
+                    </div>
+               {% endif %}
             </div>
+
             {% if errorMessage is defined %}
                 <div class="rounded-lg bg-red-50 p-4 mt-4 border-2 border-red-100">
                     <div class="flex">

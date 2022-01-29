@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1643450973
+dateModified: 1643486519
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -275,6 +275,7 @@ meta:
     e62d63b0-c299-42ce-aeef-86a69f7e676c: 'Seo Fields' # Seo Fields
     e95a35fa-7cca-46ef-92f7-04d1b61144ae: 'Bild neben dem Block' # Bild neben dem Block
     e734f645-25d7-4111-a0bd-207d0bc77bf3: 'Mobiles Menü ausblenden' # Mobiles Menü ausblenden
+    e9781761-5a04-49d1-84ef-a9159f853e28: 'Members Template' # Members Template
     ea0da518-95b9-47c2-8dec-9f2ff43ca7f4: 'Background color' # Background color
     ea2cfe15-67c5-438e-9d8c-b80a905baa85: Text # Text
     eb8905dd-9d26-4f5f-9588-d62f5568e83d: 'H2 Schriftgröße' # H2 Schriftgröße

@@ -63,16 +63,19 @@ return [
         ],
 
         // The URI Craft should use for user login on the front end.
-        'loginPath' => 'members/login',
+        'loginPath' => ['de' => 'mitglieder/login'],
 
         // The URI or URL that Craft should use for Set Password forms on the front end.
-        'setPasswordPath' => 'members/setpassword',
+        'setPasswordPath' => ['de' => 'mitglieder/passwort-vergeben'],
 
         // Whether users should automatically be logged in after activating their account or resetting their password.
         'autoLoginAfterAccountActivation' => true,
 
         // The URI that users without access to the control panel should be redirected to after activating their account.
-        'activateAccountSuccessPath' => 'members',
+        'activateAccountSuccessPath' => ['de' => 'mitglieder'],
+
+        // The URI Craft should redirect to when user token validation fails
+        'invalidUserTokenPath' => ['de' => 'mitglieder/ungueltig'],
     ],
 
     // Dev environment settings

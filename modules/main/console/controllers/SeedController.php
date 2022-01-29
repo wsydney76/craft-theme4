@@ -45,20 +45,7 @@ class SeedController extends Controller
             'title' => 'Mitgliederbereich',
             'slug' => 'members'
         ]);
-
-        $blocks = [
-            'sortOrder' => ['new1'],
-            'blocks' => [
-                'new1' => [
-                    'type' => 'dynamicBlock',
-                    'fields' => [
-                        'template' => 'members.twig'
-                    ]
-                ]
-            ]
-        ];
-
-        $entry->setFieldValue('bodyContent', $blocks);
+        $entry->setFieldValue('membersTemplate', 'members.twig');
 
         if (Craft::$app->elements->saveElement($entry)) {
             $this->stdout('Members done, ID:' . $entry->id . PHP_EOL);
@@ -69,10 +56,11 @@ class SeedController extends Controller
 
         $parent = $entry;
         $items = [
-            ['title' => 'Login', 'slug' => 'login'],
-            ['title' => 'Registrieren', 'slug' => 'register'],
-            ['title' => 'Passwort vergessen?', 'slug' => 'forgotpassword'],
-            ['title' => 'Passwort vergeben', 'slug' => 'setpassword'],
+            ['title' => 'Login', 'slug' => 'login', 'membersTemplate' => 'login.twig'],
+            ['title' => 'Registrieren', 'slug' => 'register', 'membersTemplate' => 'register.twig'],
+            ['title' => 'Passwort vergessen?', 'slug' => 'forgotpassword', 'membersTemplate' => 'forgotpassword.twig'],
+            ['title' => 'Passwort vergeben', 'slug' => 'setpassword', 'membersTemplate' => 'setpassword.twig'],
+            ['title' => 'Ungültig', 'slug' => 'setpassword', 'membersTemplate' => 'invalidtoken.twig'],
         ];
 
         foreach ($items as $item) {
@@ -85,6 +73,7 @@ class SeedController extends Controller
                 'slug' => $item['slug'],
                 'newParentId' => $parent->id
             ]);
+            $entry->setFieldValue('membersTemplate', $item['membersTemplate']);
 
             if (Craft::$app->elements->saveElement($entry)) {
                 $this->stdout($item['title'] . ' done, ID:' . $entry->id . PHP_EOL);
