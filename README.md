@@ -1,5 +1,9 @@
 # Theme Craft Starter
 
+(Semi-) flexible Craft Starter Project.
+
+Usefull for demos and hobby projects.
+
 ##  Installation
 
 * Run `composer install`
@@ -40,3 +44,10 @@ Set up entries for all the relevant member actions. By default, use section=Page
 You are free to customize any of this, just include the actions in templates/_members whereever you want.
 
 Required Plugins: Sprig (Craft), Tailwind CSS Forms (Frontend)
+
+## TBD
+
+Some optimizations are missing
+
+* Set image sizes attributes where appropriate
+* More eager loading
