@@ -1,0 +1,9 @@
+
+{% if currentUser %} {% redirect "/" %} {% endif %}
+
+{{ sprig.script }}
+
+<div>
+    {{ sprig('_members/components/register-form') }}
+</div>
+

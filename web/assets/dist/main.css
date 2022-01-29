@@ -72,7 +72,7 @@
  * @url https://github.com/feimosi/baguetteBox.js
  */#baguetteBox-overlay{display:none;opacity:0;position:fixed;overflow:hidden;top:0;left:0;width:100%;height:100%;z-index:1000000;background-color:#222;background-color:rgba(0,0,0,.8);-webkit-transition:opacity .5s ease;transition:opacity .5s ease}#baguetteBox-overlay.visible{opacity:1}#baguetteBox-overlay .full-image{display:inline-block;position:relative;width:100%;height:100%;text-align:center}#baguetteBox-overlay .full-image figure{display:inline;margin:0;height:100%}#baguetteBox-overlay .full-image img{display:inline-block;width:auto;height:auto;max-height:100%;max-width:100%;vertical-align:middle;-webkit-box-shadow:0 0 8px rgba(0,0,0,.6);-moz-box-shadow:0 0 8px rgba(0,0,0,.6);box-shadow:0 0 8px rgba(0,0,0,.6)}#baguetteBox-overlay .full-image figcaption{display:block;position:absolute;bottom:0;width:100%;text-align:center;line-height:1.8;white-space:normal;color:#ccc;background-color:#000;background-color:rgba(0,0,0,.6);font-family:sans-serif}#baguetteBox-overlay .full-image:before{content:"";display:inline-block;height:50%;width:1px;margin-right:-1px}#baguetteBox-slider{position:absolute;left:0;top:0;height:100%;width:100%;white-space:nowrap;-webkit-transition:left .4s ease,-webkit-transform .4s ease;transition:left .4s ease,-webkit-transform .4s ease;transition:left .4s ease,transform .4s ease;transition:left .4s ease,transform .4s ease,-webkit-transform .4s ease,-moz-transform .4s ease}#baguetteBox-slider.bounce-from-right{-webkit-animation:bounceFromRight .4s ease-out;animation:bounceFromRight .4s ease-out}#baguetteBox-slider.bounce-from-left{-webkit-animation:bounceFromLeft .4s ease-out;animation:bounceFromLeft .4s ease-out}@-webkit-keyframes bounceFromRight{0%,100%{margin-left:0}50%{margin-left:-30px}}@keyframes bounceFromRight{0%,100%{margin-left:0}50%{margin-left:-30px}}@-webkit-keyframes bounceFromLeft{0%,100%{margin-left:0}50%{margin-left:30px}}@keyframes bounceFromLeft{0%,100%{margin-left:0}50%{margin-left:30px}}.baguetteBox-button#next-button,.baguetteBox-button#previous-button{top:50%;top:calc(50% - 30px);width:44px;height:60px}.baguetteBox-button{position:absolute;cursor:pointer;outline:0;padding:0;margin:0;border:0;-moz-border-radius:15%;border-radius:15%;background-color:#323232;background-color:rgba(50,50,50,.5);color:#ddd;font:1.6em sans-serif;-webkit-transition:background-color .4s ease;transition:background-color .4s ease}.baguetteBox-button:focus,.baguetteBox-button:hover{background-color:rgba(50,50,50,.9)}.baguetteBox-button#next-button{right:2%}.baguetteBox-button#previous-button{left:2%}.baguetteBox-button#close-button{top:20px;right:2%;right:calc(2% + 6px);width:30px;height:30px}.baguetteBox-button svg{position:absolute;left:0;top:0}.baguetteBox-spinner{width:40px;height:40px;display:inline-block;position:absolute;top:50%;left:50%;margin-top:-20px;margin-left:-20px}.baguetteBox-double-bounce1,.baguetteBox-double-bounce2{width:100%;height:100%;-moz-border-radius:50%;border-radius:50%;background-color:#fff;opacity:.6;position:absolute;top:0;left:0;-webkit-animation:bounce 2s infinite ease-in-out;animation:bounce 2s infinite ease-in-out}.baguetteBox-double-bounce2{-webkit-animation-delay:-1s;animation-delay:-1s}@-webkit-keyframes bounce{0%,100%{-webkit-transform:scale(0);transform:scale(0)}50%{-webkit-transform:scale(1);transform:scale(1)}}@keyframes bounce{0%,100%{-webkit-transform:scale(0);-moz-transform:scale(0);transform:scale(0)}50%{-webkit-transform:scale(1);-moz-transform:scale(1);transform:scale(1)}}
 /*
-! tailwindcss v3.0.15 | MIT License | https://tailwindcss.com
+! tailwindcss v3.0.18 | MIT License | https://tailwindcss.com
 */
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -774,6 +774,10 @@ a.btn{
   padding-left: 2rem;
   padding-right: 2rem;
 }
+.htmx-indicator {
+    display: none; }
+.htmx-request.htmx-indicator {
+    display: block; }
 [x-cloak] {
     display: none !important; }
 .sr-only{
@@ -950,6 +954,12 @@ a.btn{
 .-mb-1{
   margin-bottom: -0.25rem;
 }
+.mt-1{
+  margin-top: 0.25rem;
+}
+.ml-3{
+  margin-left: 0.75rem;
+}
 .mt-12{
   margin-top: 3rem;
 }
@@ -973,9 +983,6 @@ a.btn{
 }
 .-mt-6{
   margin-top: -1.5rem;
-}
-.mt-1{
-  margin-top: 0.25rem;
 }
 .mb-0{
   margin-bottom: 0px;
@@ -1037,6 +1044,9 @@ a.btn{
 .h-screen{
   height: 100vh;
 }
+.h-5{
+  height: 1.25rem;
+}
 .min-h-\[200px\]{
   min-height: 200px;
 }
@@ -1072,6 +1082,9 @@ a.btn{
 }
 .w-screen{
   width: 100vw;
+}
+.w-5{
+  width: 1.25rem;
 }
 .min-w-\[150px\]{
   min-width: 150px;
@@ -1155,6 +1168,20 @@ a.btn{
 .animate-fadein{
   -webkit-animation: fadeInAnimation ease 1s forwards 1;
           animation: fadeInAnimation ease 1s forwards 1;
+}
+@-webkit-keyframes spin{
+  to{
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin{
+  to{
+    transform: rotate(360deg);
+  }
+}
+.animate-spin{
+  -webkit-animation: spin 1s linear infinite;
+          animation: spin 1s linear infinite;
 }
 .cursor-pointer{
   cursor: pointer;
@@ -1316,6 +1343,9 @@ a.btn{
 .rounded-full{
   border-radius: 9999px;
 }
+.rounded-lg{
+  border-radius: 0.5rem;
+}
 .rounded{
   border-radius: 0.25rem;
 }
@@ -1327,6 +1357,9 @@ a.btn{
 }
 .border{
   border-width: 1px;
+}
+.border-2{
+  border-width: 2px;
 }
 .border-l-4{
   border-left-width: 4px;
@@ -1352,6 +1385,10 @@ a.btn{
   --tw-border-opacity: 1;
   border-color: rgb(15 23 42 / var(--tw-border-opacity));
 }
+.border-red-100{
+  --tw-border-opacity: 1;
+  border-color: rgb(254 226 226 / var(--tw-border-opacity));
+}
 .border-gray-500{
   --tw-border-opacity: 1;
   border-color: rgb(100 116 139 / var(--tw-border-opacity));
@@ -1371,6 +1408,10 @@ a.btn{
 .border-primary{
   --tw-border-opacity: 1;
   border-color: rgb(30 64 175 / var(--tw-border-opacity));
+}
+.border-green-100{
+  --tw-border-opacity: 1;
+  border-color: rgb(220 252 231 / var(--tw-border-opacity));
 }
 .bg-black{
   --tw-bg-opacity: 1;
@@ -1498,6 +1539,10 @@ a.btn{
 .bg-black\/30{
   background-color: rgb(0 0 0 / 0.3);
 }
+.bg-red-50{
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 242 242 / var(--tw-bg-opacity));
+}
 .bg-gray-300{
   --tw-bg-opacity: 1;
   background-color: rgb(203 213 225 / var(--tw-bg-opacity));
@@ -1527,6 +1572,10 @@ a.btn{
 }
 .bg-black\/60{
   background-color: rgb(0 0 0 / 0.6);
+}
+.bg-green-50{
+  --tw-bg-opacity: 1;
+  background-color: rgb(240 253 244 / var(--tw-bg-opacity));
 }
 .bg-none{
   background-image: none;
@@ -1649,6 +1698,9 @@ a.btn{
 .pb-0{
   padding-bottom: 0px;
 }
+.pr-4{
+  padding-right: 1rem;
+}
 .pb-block{
   padding-bottom: 2rem;
 }
@@ -1716,6 +1768,9 @@ a.btn{
 }
 .font-semibold{
   font-weight: 600;
+}
+.font-medium{
+  font-weight: 500;
 }
 .font-light{
   font-weight: 300;
@@ -1850,9 +1905,25 @@ a.btn{
   --tw-text-opacity: 1;
   color: rgb(100 116 139 / var(--tw-text-opacity));
 }
+.text-gray-700{
+  --tw-text-opacity: 1;
+  color: rgb(51 65 85 / var(--tw-text-opacity));
+}
+.text-red-800{
+  --tw-text-opacity: 1;
+  color: rgb(153 27 27 / var(--tw-text-opacity));
+}
 .text-gray-600{
   --tw-text-opacity: 1;
   color: rgb(71 85 105 / var(--tw-text-opacity));
+}
+.text-green-800{
+  --tw-text-opacity: 1;
+  color: rgb(22 101 52 / var(--tw-text-opacity));
+}
+.text-red-600{
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 .underline{
   -webkit-text-decoration-line: underline;
@@ -1861,6 +1932,12 @@ a.btn{
 .\!no-underline{
   -webkit-text-decoration-line: none !important;
           text-decoration-line: none !important;
+}
+.opacity-25{
+  opacity: 0.25;
+}
+.opacity-75{
+  opacity: 0.75;
 }
 .opacity-95{
   opacity: 0.95;
@@ -2021,6 +2098,12 @@ a.btn{
   }
   .sm\:hidden{
     display: none;
+  }
+  .sm\:w-full{
+    width: 100%;
+  }
+  .sm\:max-w-md{
+    max-width: 28rem;
   }
   .sm\:shrink-0{
     flex-shrink: 0;

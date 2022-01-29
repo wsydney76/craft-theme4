@@ -1,0 +1,15 @@
+{% set template = entry.indexTemplate ?? 'default.twig' %}
+{% set criteria = entry.criteria %}
+
+{% if criteria %}
+    {% set criteria = criteria|json_decode %}
+{% else %}
+    {% set criteria = {
+        section: entry.indexSection,
+        orderBy: entry.orderBy
+    } %}
+{% endif %}
+
+<div class="container-{{ theme.pageWidth }}">
+    {% include "_partials/index-templates/#{template}" with {criteria} %}
+</div>

@@ -1,0 +1,72 @@
+{% if currentUser %}
+    {% redirect "/" %}
+{% endif %}
+
+{% import '_members/macros/forms.twig' as forms %}
+
+{% set user = user ?? null %}
+{% block content %}
+    <div class="mt-8 sm:w-full sm:max-w-md">
+
+        <form method="post" class="space-y-6">
+            {{ csrfInput() }}
+            {{ actionInput('users/login') }}
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">
+                    {{ 'Email'|t }}
+                </label>
+                <div class="mt-1">
+                    <input class="w-full" id="email" name="loginName" autocomplete="email" type="text"
+                           required value="{{ user ? user.email : craft.app.user.rememberedUsername }}">
+                </div>
+                {{ user ? forms.errorsList(user.getErrors('loginName')) }}
+            </div>
+
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700">
+                    {{ 'Password'|t }}
+                </label>
+                <div class="mt-1">
+                    <input class="w-full" id="password" name="password" type="password" autocomplete="current-password"
+                           required>
+                </div>
+                {{ user ? forms.errorsList(user.getErrors('password')) }}
+            </div>
+
+            <div>
+                <label for="rememberMe" class="block text-sm font-medium text-gray-700">
+                    <input type="checkbox" name="rememberMe" id="rememberMe" value="1">
+                    {{ 'Remember me'|t }}
+                </label>
+            </div>
+
+            <div class="flex items-center justify-between">
+                <div class="text-sm">
+                    <a href="{{ url('members/forgotpassword') }}">
+                        {{ 'Forgot your password?'|t }}
+                    </a>
+                </div>
+                <div class="text-sm">
+                    <a href="{{ url('members/register') }}">
+                        {{ 'Register account'|t }}
+                    </a>
+                </div>
+            </div>
+            {% if errorMessage is defined %}
+                <div class="rounded-lg bg-red-50 p-4 mt-4 border-2 border-red-100">
+                    <div class="flex">
+                        <div class="ml-3">
+                            <p class="text-sm font-medium text-red-800">
+                                {{ errorMessage }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            <div>
+                {{ forms.button('Login'|t) }}
+            </div>
+        </form>
+
+    </div>
+{% endblock %}
