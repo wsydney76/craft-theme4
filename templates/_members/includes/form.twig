@@ -1,0 +1,30 @@
+{% set useSprig = useSprig ?? false %}
+{% set uploads = uploads ?? false %}
+
+{% if useSprig %}
+    {% set attrs = "sprig s-method=\"post\" s-action=\"#{action}\" s-indicator=\"#spinner\" " %}
+{% else %}
+    {% set attrs = 'method="post"' %}
+{% endif %}
+
+{% if uploads %}
+    {% set attrs = attrs ~ ' enctype="multipart/form-data"' %}
+{% endif %}
+
+<div class="mt-8 sm:w-full sm:max-w-md">
+    <form {{ attrs|raw }} class="space-y-6">
+
+        {% if not useSprig %}
+            {{ csrfInput() }}
+            {{ actionInput(action) }}
+        {% endif %}
+
+        {% if redirect is defined %}
+            {{ redirectInput(redirect) }}
+        {% endif %}
+
+        {% block content %}
+
+        {% endblock %}
+    </form>
+</div>

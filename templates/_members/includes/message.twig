@@ -1,0 +1,17 @@
+{% set classes = {
+    error: 'bg-red-50 border-red-100 text-red-800',
+    notice: 'bg-green-50 border-green-100 text-green-800',
+    info: 'bg-sky-50 border-sky-100 text-sky-800'
+} %}
+
+<div class="rounded p-4 mt-4 border-2 {{ classes[type] }}">
+    <div class="flex">
+        <div class="ml-3">
+            <p class="text-sm font-medium">
+                {% block message %}
+                    {{ message }}
+                {% endblock %}
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,16 +1,9 @@
 {% requireLogin %}
 
-<div class="flex space-x-4 items-center mb-block">
-    <div>
-        {{ 'Logged in as'|t }} {{ currentUser.fullName }}.
+{% include '_members/includes/loggedin_user.twig' %}
+
+{% if theme.membersTemplate %}
+    <div class="my-block">
+        {% include theme.membersTemplate %}
     </div>
-    <div>
-        <a class="btn bg-primary text-white" href="{{ logoutUrl }}">{{ 'Logout'|t }}</a>
-    </div>
-    <div>
-        {% set membersEntry = craft.entries.membersTemplate('profile.twig').one %}
-        {% if membersEntry %}
-            <a class="btn bg-primary text-white" href="{{ membersEntry.url }}">{{ membersEntry.title }}</a>
-        {% endif %}
-    </div>
-</div>
+{% endif %}

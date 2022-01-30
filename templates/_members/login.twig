@@ -2,78 +2,70 @@
     {% redirect "/" %}
 {% endif %}
 
-{% import '_members/macros/forms.twig' as forms %}
-
 {% set user = user ?? null %}
-{% block content %}
-    <div class="mt-8 sm:w-full sm:max-w-md">
 
-        <form method="post" class="space-y-6">
-            {{ csrfInput() }}
-            {{ actionInput('users/login') }}
-            <div>
-                <label for="email" class="block text-sm font-medium text-gray-700">
-                    {{ 'Email'|t }}
-                </label>
-                <div class="mt-1">
-                    <input class="w-full" id="email" name="loginName" autocomplete="email" type="text"
-                           required value="{{ user ? user.email : craft.app.user.rememberedUsername }}">
-                </div>
-                {{ user ? forms.errorsList(user.getErrors('loginName')) }}
-            </div>
+{% embed '_members/includes/form.twig' with {action: 'users/login'} %}
+    {% block content %}
 
-            <div>
-                <label for="password" class="block text-sm font-medium text-gray-700">
-                    {{ 'Password'|t }}
-                </label>
-                <div class="mt-1">
-                    <input class="w-full" id="password" name="password" type="password" autocomplete="current-password"
-                           required>
-                </div>
-                {{ user ? forms.errorsList(user.getErrors('password')) }}
-            </div>
+        {% import '_members/macros/forms.twig' as forms %}
 
-            <div>
-                <label for="rememberMe" class="block text-sm font-medium text-gray-700">
-                    <input type="checkbox" name="rememberMe" id="rememberMe" value="1">
-                    {{ 'Remember me'|t }}
-                </label>
-            </div>
+        {% if errorMessage is defined %}
+            {% include '_members/includes/message.twig' with {
+                type: 'error',
+                message: errorMessage
+            } only %}
+        {% endif %}
 
-            {% set membersEntry = craft.entries.membersTemplate('forgotpassword.twig') %}
 
-            <div class="flex items-center justify-between">
-                {% set membersEntry = craft.entries.membersTemplate('forgotpassword.twig').one %}
-                {% if membersEntry %}
-                    <div class="text-sm">
-                        {{ membersEntry.link }}
-                    </div>
-                {% endif %}
-                {% set membersEntry = craft.entries.membersTemplate('register.twig').one %}
-               {% if membersEntry %}
-                    <div class="text-sm">
-                        <a href="{{ url('members/register') }}">
-                            {{ membersEntry.link }}
-                        </a>
-                    </div>
-               {% endif %}
-            </div>
+        {{ forms.textField({
+            user: user,
+            label: craft.app.config.general.useEmailAsUsername ? 'Email'|t : 'Username or Email'|t,
+            name: 'loginName',
+            value: user.email ??  craft.app.user.rememberedUsername,
+            required: true,
+        }) }}
 
-            {% if errorMessage is defined %}
-                <div class="rounded-lg bg-red-50 p-4 mt-4 border-2 border-red-100">
-                    <div class="flex">
-                        <div class="ml-3">
-                            <p class="text-sm font-medium text-red-800">
-                                {{ errorMessage }}
-                            </p>
-                        </div>
-                    </div>
+        {{ forms.textField({
+            user: user,
+            label: 'Password'|t,
+            type: 'password',
+            name: 'password',
+            required: true
+        }) }}
+
+        {{ forms.checkbox({
+            label: 'Remember me'|t,
+            name: 'rememberMe',
+            value: 1
+        }) }}
+
+
+        {% set membersEntry = craft.entries.membersTemplate('forgotpassword.twig') %}
+
+        <div class="flex items-center justify-between">
+            {% set membersEntry = craft.entries.membersTemplate('forgotpassword.twig').one %}
+            {% if membersEntry %}
+                <div class="text-sm">
+                    {{ membersEntry.link }}
                 </div>
             {% endif %}
-            <div>
-                {{ forms.button('Login'|t) }}
-            </div>
-        </form>
+            {% set membersEntry = craft.entries.membersTemplate('register.twig').one %}
+            {% if membersEntry %}
+                <div class="text-sm">
+                    <a href="{{ url('members/register') }}">
+                        {{ membersEntry.link }}
+                    </a>
+                </div>
+            {% endif %}
+        </div>
 
-    </div>
-{% endblock %}
+
+        <div>
+            {{ forms.button('Login'|t) }}
+        </div>
+
+
+
+    {% endblock %}
+{% endembed %}
+
