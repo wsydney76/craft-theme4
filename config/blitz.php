@@ -50,6 +50,10 @@ return [
                 'siteId' => '',
                 'uriPattern' => '^dev/',
             ],
+            [
+                'siteId' => '',
+                'uriPattern' => '^members/',
+            ],
         ],
 
         // The storage type to use.

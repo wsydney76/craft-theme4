@@ -1,0 +1,9 @@
+{% requireLogin %}
+
+{% include '_members/includes/loggedin_user.twig' %}
+
+{% if theme.membersTemplate %}
+    <div class="my-block">
+        {% include theme.membersTemplate %}
+    </div>
+{% endif %}

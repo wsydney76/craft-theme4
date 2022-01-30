@@ -56,6 +56,7 @@ class FauxTwigExtension extends AbstractExtension implements GlobalsInterface
             'category' => new Category(),
             'entry' => new Entry(),
             'block' => new MatrixBlock(),
+            'user' => new User(),
             // Misc. Craft globals
             'currentUser' => new User(),
             'currentSite' => new Site(),

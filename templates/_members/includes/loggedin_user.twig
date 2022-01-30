@@ -1,0 +1,26 @@
+<div class="flex space-x-4 items-center justify-between mb-block bg-white p-4 shadow-xl">
+    <div class="flex items-center space-x-4">
+        {% if currentUser.photo %}
+            <div class="">
+                {{ currentUser.photo.getImg({width: 60, height: 60})|attr({
+                    alt: currentUser.friendlyName,
+                    class: 'rounded-full'
+                }) }}
+            </div>
+        {% endif %}
+        <div>
+            {{ 'Logged in as'|t }} {{ currentUser.fullName }}.
+        </div>
+    </div>
+    <div class="flex space-x-4">
+        <div>
+            {% set membersEntry = craft.entries.membersTemplate('profile.twig').one %}
+            {% if membersEntry %}
+                <a class="underline" href="{{ membersEntry.url }}">{{ membersEntry.title }}</a>
+            {% endif %}
+        </div>
+        <div>
+            <a class="underline" href="{{ logoutUrl }}">{{ 'Logout'|t }}</a>
+        </div>
+    </div>
+</div>

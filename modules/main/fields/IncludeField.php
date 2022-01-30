@@ -7,6 +7,7 @@ use craft\base\Field;
 use craft\elements\Entry;
 use craft\helpers\Cp;
 use Exception;
+use function is_dir;
 use function str_contains;
 use const CRAFT_TEMPLATES_PATH;
 use const DIRECTORY_SEPARATOR;
@@ -85,7 +86,7 @@ class IncludeField extends Field
             $files = array_diff($files, ['..', '.']);
 
             foreach ($files as $file) {
-                if (!str_starts_with($file, '_')) {
+                if (!str_starts_with($file, '_') && !is_dir($baseDir . DIRECTORY_SEPARATOR . $file)) {
                     $label = ucfirst(str_replace('.twig', '', $file));
                     $options[] = ['label' => $label, 'value' => $file];
                 }

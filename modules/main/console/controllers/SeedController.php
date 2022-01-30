@@ -7,6 +7,7 @@ use craft\console\Controller;
 use craft\elements\Asset;
 use craft\elements\Entry;
 use craft\elements\User;
+use craft\helpers\ArrayHelper;
 use Faker\Factory;
 use Faker\Generator;
 use yii\helpers\Console;
@@ -19,6 +20,70 @@ class SeedController extends Controller
     public const SECTIONHANDLE = 'article';
     public $categorySlug = 'beispiele';
     public $volume = 'images';
+
+    public function actionCreateMembersEntries()
+    {
+
+        $entry = Entry::find()->section('page')->type('members')->slug('members')->one();
+        if ($entry) {
+            $this->stdout('Membership Entries exist');
+            return;
+        }
+
+        if (!$this->confirm('Create Membership Entries?')) {
+            return;
+        }
+
+        $section = Craft::$app->sections->getSectionByHandle('page');
+        $type = ArrayHelper::firstWhere($section->getEntryTypes(), 'handle', 'members');
+        $user = User::find()->admin()->one();
+
+        $entry = new Entry([
+            'sectionId' => $section->id,
+            'typeId' => $type->id,
+            'authorId' => $user->id,
+            'title' => 'Mitgliederbereich',
+            'slug' => 'members'
+        ]);
+        $entry->setFieldValue('membersTemplate', 'members.twig');
+
+        if (Craft::$app->elements->saveElement($entry)) {
+            $this->stdout('Members done, ID:' . $entry->id . PHP_EOL);
+        } else {
+            $this->stderr('failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
+            return;
+        }
+
+        $parent = $entry;
+        $items = [
+            ['title' => 'Login', 'slug' => 'login', 'membersTemplate' => 'login.twig'],
+            ['title' => 'Registrieren', 'slug' => 'register', 'membersTemplate' => 'register.twig'],
+            ['title' => 'Profil', 'slug' => 'profil', 'membersTemplate' => 'profile.twig'],
+            ['title' => 'Passwort vergessen?', 'slug' => 'forgotpassword', 'membersTemplate' => 'forgotpassword.twig'],
+            ['title' => 'Passwort vergeben', 'slug' => 'setpassword', 'membersTemplate' => 'setpassword.twig'],
+            ['title' => 'Ungültig', 'slug' => 'setpassword', 'membersTemplate' => 'invalidtoken.twig'],
+        ];
+
+        foreach ($items as $item) {
+
+            $entry = new Entry([
+                'sectionId' => $section->id,
+                'typeId' => $type->id,
+                'authorId' => $user->id,
+                'title' => $item['title'],
+                'slug' => $item['slug'],
+                'newParentId' => $parent->id
+            ]);
+            $entry->setFieldValue('membersTemplate', $item['membersTemplate']);
+
+            if (Craft::$app->elements->saveElement($entry)) {
+                $this->stdout($item['title'] . ' done, ID:' . $entry->id . PHP_EOL);
+            } else {
+                $this->stderr($item['title'] . ' failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
+                return;
+            }
+        }
+    }
 
     public function actionCreateEntries(int $num = self::NUM_ENTRIES, $sectionHandle = self::SECTIONHANDLE)
     {

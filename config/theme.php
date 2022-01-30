@@ -19,7 +19,7 @@ return [
     'titleStyle' => 'fullTextColor',
 
     // relative to width.full if cover...
-    'titleImageHeight' => 750,
+    'titleImageHeight' => 650,
 
     // relative to fullWidthImageWidth
     'fullwidthImageHeight' => 600,
@@ -91,4 +91,7 @@ return [
     'cookieConsent' => true,
 
     'fontUrl' => '',
+
+    // Template for members only content
+    'membersTemplate' => '_partials/members'
 ];

@@ -1,0 +1,15 @@
+{% set notice = craft.app.session.flash('notice') %}
+{% if notice %}
+    {% include '_members/includes/message.twig' with {
+        type: 'notice',
+        message: successMessage ?? notice
+    } only %}
+{% endif %}
+
+{% set error = craft.app.session.flash('error') %}
+{% if error %}
+    {% include '_members/includes/message.twig' with {
+        type: 'error',
+        message: errorMessage ?? error
+    } only %}
+{% endif %}
