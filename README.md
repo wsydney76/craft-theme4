@@ -30,6 +30,38 @@ Set up your dev environment:
 * Upload some images into the images volume
 * Run `php craft main/seed/create-entries` to seed the system with some dummy entries.
 
+## Localization
+
+The default web site is set up for German, any starter content is only created in German.
+
+A second site is prepared for English, however it is not enabled by default.
+
+Do one of the following:
+
+### You do not plan a multi site project?
+
+* Delete the second site
+* Change the language of the primary site, if required.
+
+### You plan a multi site project?
+
+* Enable the second site
+* Change the language of the second site.
+* Translate any existing content.
+
+### You plan a third, fourth, fifth... site
+
+* Add the site and select the required language.
+* Update sections settings accordingly.
+* Translate any existing content.
+
+### You created a site other than German or English?
+* Add translations for static strings. `translations/<lang>/site.php`
+* If you run a membership sites, update the relevant paths in `config/general.php`.
+
+### You don't know what you want?
+* Do nothing. Like in real life.
+
 ## Setting up a membership site
 
 If you do not plan a membership site, you can safely delete templates/_members, the entry type page/members and the user group members.

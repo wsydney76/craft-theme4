@@ -198,7 +198,7 @@ fields:
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
-    translationMethod: none
+    translationMethod: language
     type: craft\fields\PlainText
   d7695888-b2ff-4bbe-ba19-672754ca90a3: # Heading
     columnSuffix: null
@@ -218,7 +218,7 @@ fields:
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
-    translationMethod: none
+    translationMethod: language
     type: craft\fields\PlainText
 handle: imageAndText
 name: 'Image and Text'

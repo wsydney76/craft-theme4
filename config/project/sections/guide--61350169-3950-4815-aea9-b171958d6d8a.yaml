@@ -9,6 +9,11 @@ siteSettings:
     hasUrls: false
     template: null
     uriFormat: null
+  b0f125c5-eef7-49fc-8d15-152965d0bab6: # English
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
 structure:
   maxLevels: null
   uid: 58be3eab-2c42-4a97-ad85-b5404f07841e

@@ -65,7 +65,7 @@ fields:
       defaultUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
       defaultUploadLocationSubpath: video
       limit: ''
-      localizeRelations: false
+      localizeRelations: true
       previewMode: full
       restrictFiles: '1'
       selectionLabel: 'Select file'

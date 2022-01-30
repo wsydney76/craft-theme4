@@ -21,4 +21,9 @@ siteSettings:
     hasUrls: true
     template: _sections/homepage
     uriFormat: __home__
+  b0f125c5-eef7-49fc-8d15-152965d0bab6: # English
+    enabledByDefault: true
+    hasUrls: true
+    template: _sections/homepage
+    uriFormat: __home__
 type: single
