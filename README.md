@@ -4,13 +4,45 @@
 
 Usefull for demos and hobby projects.
 
+## Prerequisits
+
+* Create a MySql database.
+* Set a web server pointing to the `web` directory of your project. Alternatively you can run `php craft serve` and use `http://localhost:8080` as your domain.
+
 ##  Installation
 
 * Run `composer install`
 * Edit `config/Env.php` with your environment specific settings
 * Run `php craft install`
+* Run `php craft migrate/all`
 
-Set up your dev environment:
+## Install with Craft Nitro
+
+Replace `project` with your project name
+
+* Open Terminal (On Windows: Open WSL2 Terminal (e.g. Ubuntu) as administrator)
+* `cd <your-dev-directory`
+* `nitro create https://github.com/wsydney76/craft-theme project`
+  * Confirm hostname `project.nitro` and webroot `web`
+  * Choose a PHP version: 8.0
+  * Add a database: Y
+  * Select MySql
+  * Enter database name: project
+* On Windows: Follow the instructions to update your hosts file from a Windows shell terminall
+* On Windows: run `sudo chmod -R 777 project` (More sensitive minds follow the 'Nitro on Windows' documentation...)
+* Edit `config/Env.php` with your environment specific settings
+  * DB_SERVER: Name of the nitro db container, typically `mysql-8.0-3306.database.nitro`
+  * DB_DATABASE: As assigned above
+  * DB_USER: nitro
+  * DB_PASSWORTD: nitro
+  * DEFAULT_SITE_URL: `https://project.nitro`
+* `cd project`
+* Run `nitro craft install`
+* Run `nitro craft migrate/all`
+
+* For creating faker content/membership entries as described below replace `php craft` with `nitro craft`
+
+## Set up your dev environment:
 
 * Run 'npm install' to enable frontend builds and IDE code completion for Tailwind. Available commands:
   * npm run dev - creates dev assets
@@ -76,6 +108,7 @@ Select a members template in order to include the required action:
 * Members - Starting point for member content
 * Login - Login page
 * Register - Register new account
+* Profile - Edit profile, incl. username, photo, email, password,
 * Forgotpassword - Request password reset
 * Setpassword - Set new password
 * Invalidtoken - Invalid or expired token message
