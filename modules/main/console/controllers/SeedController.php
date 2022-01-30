@@ -58,6 +58,7 @@ class SeedController extends Controller
         $items = [
             ['title' => 'Login', 'slug' => 'login', 'membersTemplate' => 'login.twig'],
             ['title' => 'Registrieren', 'slug' => 'register', 'membersTemplate' => 'register.twig'],
+            ['title' => 'Profil', 'slug' => 'profil', 'membersTemplate' => 'profile.twig'],
             ['title' => 'Passwort vergessen?', 'slug' => 'forgotpassword', 'membersTemplate' => 'forgotpassword.twig'],
             ['title' => 'Passwort vergeben', 'slug' => 'setpassword', 'membersTemplate' => 'setpassword.twig'],
             ['title' => 'Ungültig', 'slug' => 'setpassword', 'membersTemplate' => 'invalidtoken.twig'],

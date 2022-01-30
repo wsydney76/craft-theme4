@@ -7,4 +7,10 @@
     <div>
         <a class="btn bg-primary text-white" href="{{ logoutUrl }}">{{ 'Logout'|t }}</a>
     </div>
+    <div>
+        {% set membersEntry = craft.entries.membersTemplate('profile.twig').one %}
+        {% if membersEntry %}
+            <a class="btn bg-primary text-white" href="{{ membersEntry.url }}">{{ membersEntry.title }}</a>
+        {% endif %}
+    </div>
 </div>

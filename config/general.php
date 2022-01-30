@@ -76,6 +76,7 @@ return [
 
         // The URI Craft should redirect to when user token validation fails
         'invalidUserTokenPath' => ['de' => 'mitglieder/ungueltig'],
+
     ],
 
     // Dev environment settings

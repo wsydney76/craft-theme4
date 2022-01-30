@@ -162,5 +162,17 @@ return [
     '{count,plural,=1{Related Entry} other{Related Entries}}' => '{count,plural,=1{Verwandter Eintrag} other{Verwandte Einträge}}',
     '“' => '„',
     '”' => '“',
-
+    'Unable to save your profile.' => 'Ihr Profil konnte nicht gespeichert werden.',
+    'Photo' => 'Foto',
+    'Delete photo' => 'Foto löschen',
+    'Upload a new photo' => 'Neues Foto hochladen',
+    'Username' => 'Benutzername',
+    'New email addresses need to be verified.' => 'Eine neue E-Mail-Adresse muss bestätigt werden, bevor sie gültig wird.',
+    'A new email address needs to be verified.' => 'Eine neue E-Mail-Adresse muss noch bestätigt werden.',
+    'New Password' => 'Neues Passwort',
+    'Current Password' => 'Gegenwärtiges Passwort',
+    'Save Profile' => 'Profil speichern',
+    'Required if email is changed or new password is set' => 'Erforderlich, wenn die E-Mail-Adresse geändert oder ein neues Passwort festgelegt wird',
+    'Profile successfully saved' => 'Profil erfolgreich gespeichert',
+    'Profile could not be saved' => 'Profil konnte nicht gespeichert werden',
 ];
