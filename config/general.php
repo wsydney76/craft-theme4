@@ -28,6 +28,13 @@ return [
         'generateTransformsBeforePageLoad' => true,
 
         // List of file extensions that will be merged into the allowedFileExtensions config setting.
+
+        // Images with a URL like https://pbs.twimg.com/media/FKIjjjqXwAUE3xS?format=jpg&name=large
+        // may be saved with a '.jfif' extension when 'save image as' is selected.
+        // This can be fixed by setting the Windows registry key
+        // Computer\HKEY_CLASSES_ROOT\MIME\Database\Content Type\image/jpeg -> Extension = '.jpg'
+        // If this fix is not applied, we allow the extension here and change it in
+        // \modules\main\MainModule::init() (Asset::EVENT_AFTER_SAVE)
         'extraAllowedFileExtensions' => [
             'jfif'
         ],
