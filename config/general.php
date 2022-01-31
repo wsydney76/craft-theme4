@@ -27,6 +27,11 @@ return [
         // Whether images transforms should be generated before page load
         'generateTransformsBeforePageLoad' => true,
 
+        // List of file extensions that will be merged into the allowedFileExtensions config setting.
+        'extraAllowedFileExtensions' => [
+            'jfif'
+        ],
+
         // The secure key Craft will use for hashing and encrypting data
         'securityKey' => Env::SECURITY_KEY,
 
