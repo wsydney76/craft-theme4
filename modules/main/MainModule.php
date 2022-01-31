@@ -3,9 +3,11 @@
 namespace modules\main;
 
 use Craft;
+use craft\elements\Asset;
 use craft\elements\Entry;
 use craft\events\DefineBehaviorsEvent;
 use craft\events\DefineRulesEvent;
+use craft\events\ModelEvent;
 use craft\events\RegisterComponentTypesEvent;
 use craft\services\Fields;
 use modules\main\behaviors\EntryBehavior;
@@ -112,6 +114,27 @@ class MainModule extends Module
                 }
             }
         });
+
+        // Rename images with extension 'jfif' to 'jpg'
+        Event::on(
+            Asset::class,
+            Asset::EVENT_AFTER_SAVE, function(ModelEvent $event) {
+            /** @var Asset $asset */
+            $asset = $event->sender;
+
+            if ($asset->kind != 'image') {
+                return;
+            }
+
+            $pathInfo = pathinfo($asset->filename);
+            if ($pathInfo['extension'] != 'jfif') {
+                return;
+            }
+
+            $newFilename = $pathInfo['filename'] . '.jpg';
+            Craft::$app->assets->moveAsset($asset, $asset->folder, $newFilename);
+        }
+        );
     }
 
 }
