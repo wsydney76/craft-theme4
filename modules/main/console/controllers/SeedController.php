@@ -57,11 +57,11 @@ class SeedController extends Controller
         $parent = $entry;
         $items = [
             ['title' => 'Login', 'slug' => 'login', 'membersTemplate' => 'login.twig'],
-            ['title' => 'Registrieren', 'slug' => 'register', 'membersTemplate' => 'register.twig'],
+            ['title' => 'Registrieren', 'slug' => 'registrieren', 'membersTemplate' => 'register.twig'],
             ['title' => 'Profil', 'slug' => 'profil', 'membersTemplate' => 'profile.twig'],
-            ['title' => 'Passwort vergessen?', 'slug' => 'forgotpassword', 'membersTemplate' => 'forgotpassword.twig'],
-            ['title' => 'Passwort vergeben', 'slug' => 'setpassword', 'membersTemplate' => 'setpassword.twig'],
-            ['title' => 'Ungültig', 'slug' => 'setpassword', 'membersTemplate' => 'invalidtoken.twig'],
+            ['title' => 'Passwort vergessen?', 'slug' => 'passwort-vergessen', 'membersTemplate' => 'forgotpassword.twig'],
+            ['title' => 'Passwort vergeben', 'slug' => 'passwort-vergeben', 'membersTemplate' => 'setpassword.twig'],
+            ['title' => 'Ungültig', 'slug' => 'ungueltig', 'membersTemplate' => 'invalidtoken.twig'],
         ];
 
         foreach ($items as $item) {
