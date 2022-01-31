@@ -50,8 +50,9 @@ Replace `project` with your project name
   * npm run build - create production assets
 * PhpStorm: Enable Symfony plugin, mark `web/assets/dist` and `web/cpresources` as excluded. Invalided caches and Restart
 
-## Theme customization
+## Customization
 
+* Update user settings (name, photo, preferred language)
 * Update Globals
 * Change settings in `config/theme.php`
 * Update `tailwind.config.js` and run `npm run ...`
@@ -120,6 +121,8 @@ You are free to customize any of this, just include the actions in templates/_me
 Required Plugins: Sprig (Craft), Tailwind CSS Forms (Frontend)
 
 ## TBD
+
+Guide default content is not yet updated to match the workflow changes in Craft 3.7
 
 Some optimizations are missing
 

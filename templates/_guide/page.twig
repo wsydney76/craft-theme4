@@ -1,0 +1,33 @@
+{% from 'guide/macros.twig' import guideAsset %}
+
+
+<h2>Hello {{ currentUser.firstName }}! </h2>
+
+<p>Here is some help.</p>
+
+<h2>Available Entry Types</h2>
+
+<h3>Page</h3>
+
+<p>This is the default for pages just displaying content.</p>
+
+<h3>Table of Content</h3>
+
+<p>Select if you want this page to act only as a parent for child pages. For example as a dropdown link in the main navigation.</p>
+
+<h3>Index Page</h3>
+
+<p>Select if this page is used to display a selection of entries.</p>
+
+<p>Select the criteria to filter the displayed entries and the template to use for displaying them.</p>
+
+<p>
+    For special cases you can override these setting with your own criteria in json format. This will be passed as is to the entry query.
+    You can use this if you want to eager load related elements.
+</p>
+
+<h3>Members</h3>
+
+<p>For membership sites only</p>
+
+<p>Select the members form (e.g. login, forgot password...) to be displayed for this page</p>
