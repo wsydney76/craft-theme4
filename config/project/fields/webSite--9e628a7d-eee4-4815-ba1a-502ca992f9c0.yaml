@@ -11,5 +11,5 @@ settings:
   types:
     - url
 translationKeyFormat: null
-translationMethod: none
+translationMethod: language
 type: craft\fields\Url

@@ -21,7 +21,7 @@
             user: user,
             label: craft.app.config.general.useEmailAsUsername ? 'Email'|t : 'Username or Email'|t,
             name: 'loginName',
-            value: user.email ??  craft.app.user.rememberedUsername,
+            value: user.email ??  craft.app.user.rememberedUsername ?? '',
             required: true,
         }) }}
 

@@ -32,7 +32,7 @@ fields:
       defaultUploadLocationSource: 'volume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
       defaultUploadLocationSubpath: embeds
       limit: '1'
-      localizeRelations: false
+      localizeRelations: true
       previewMode: full
       restrictFiles: '1'
       selectionLabel: 'Select embed'

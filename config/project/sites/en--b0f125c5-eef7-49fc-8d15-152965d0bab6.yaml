@@ -1,0 +1,9 @@
+baseUrl: '@web/en'
+enabled: false
+handle: en
+hasUrls: true
+language: en-US
+name: English
+primary: false
+siteGroup: b2a943a4-253b-4d1a-9c72-124eca420284 # $SYSTEM_NAME
+sortOrder: 2

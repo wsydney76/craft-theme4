@@ -42,8 +42,8 @@ class SeedController extends Controller
             'sectionId' => $section->id,
             'typeId' => $type->id,
             'authorId' => $user->id,
-            'title' => 'Mitgliederbereich',
-            'slug' => 'members'
+            'title' => 'Mitglieder',
+            'slug' => 'mitglieder'
         ]);
         $entry->setFieldValue('membersTemplate', 'members.twig');
 

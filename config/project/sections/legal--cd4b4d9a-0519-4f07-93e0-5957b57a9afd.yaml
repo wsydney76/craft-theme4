@@ -21,6 +21,11 @@ siteSettings:
     hasUrls: true
     template: _sections/legal
     uriFormat: '{slug}'
+  b0f125c5-eef7-49fc-8d15-152965d0bab6: # English
+    enabledByDefault: true
+    hasUrls: true
+    template: _sections/legal
+    uriFormat: '{slug}'
 structure:
   maxLevels: null
   uid: b0dcea43-f2b4-42b3-9406-d846a7e08a31

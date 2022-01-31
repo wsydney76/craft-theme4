@@ -43,7 +43,7 @@ fields:
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
-    translationMethod: none
+    translationMethod: language
     type: craft\fields\PlainText
   dbf29f4d-79b9-4474-b8ff-d05ff24d450e: # Text
     columnSuffix: null
@@ -63,7 +63,7 @@ fields:
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
-    translationMethod: none
+    translationMethod: language
     type: craft\fields\PlainText
 handle: summary
 name: Summary

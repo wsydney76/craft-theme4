@@ -1,0 +1,17 @@
+{% set sections = craft.app.sections.allSections %}
+
+<p>The following sections are available:</p>
+
+<ul>
+    {% for section in sections if section.handle != 'guide' %}
+        {% set guide = craft.entries.section('guide').slug(section.handle).one %}
+        <li style="margin-top: 12px">
+            {% if guide %}
+                <a class="go" href="{{ cpUrl("guide/#{section.handle}") }}"> {{ section.name|t }}</a>
+            {% else %}
+                {{ section.name|t }}
+            {% endif %}
+
+        </li>
+    {% endfor %}
+</ul>

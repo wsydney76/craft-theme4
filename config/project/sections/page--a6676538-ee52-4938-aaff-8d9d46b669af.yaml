@@ -21,6 +21,11 @@ siteSettings:
     hasUrls: true
     template: _sections/page
     uriFormat: '{parent.uri}/{slug}'
+  b0f125c5-eef7-49fc-8d15-152965d0bab6: # English
+    enabledByDefault: true
+    hasUrls: true
+    template: _sections/page
+    uriFormat: '{parent.uri}/{slug}'
 structure:
   maxLevels: 3
   uid: 887f7d24-1a50-4b16-8b0d-89302f5b6973

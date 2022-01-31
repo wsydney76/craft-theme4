@@ -61,7 +61,7 @@ fields:
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
-    translationMethod: none
+    translationMethod: language
     type: craft\fields\PlainText
   90724a6b-55ad-446f-be50-7aea7e1fb067: # Robots
     columnSuffix: null
@@ -162,7 +162,7 @@ fields:
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
-    translationMethod: none
+    translationMethod: language
     type: craft\fields\PlainText
 handle: settings
 name: Settings

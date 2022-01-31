@@ -125,7 +125,7 @@ fields:
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
-    translationMethod: none
+    translationMethod: language
     type: craft\fields\PlainText
   666c8cf3-0639-4757-aefa-9490930dbf0f: # Audio
     columnSuffix: null

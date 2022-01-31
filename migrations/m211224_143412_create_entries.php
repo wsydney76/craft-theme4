@@ -94,54 +94,6 @@ class m211224_143412_create_entries extends Migration
             echo "Error saving privacy entry\n";
         }
 
-        // Guide -------------------------------------------------------------------------------
-
-        $section = Craft::$app->sections->getSectionByHandle('guide');
-
-        $type = ArrayHelper::firstWhere($section->getEntryTypes(), 'handle', 'guide');
-
-        $guideEntry = new Entry([
-            'sectionId' => $section->id,
-            'typeId' => $type->id,
-            'authorId' => $user->id,
-            'title' => 'Guide',
-            'slug' => 'guide'
-        ]);
-
-        if (!Craft::$app->elements->saveElement($guideEntry)) {
-            echo "Error saving guide entry\n";
-        }
-
-        // Page guide -------------------------------------------------------------------------------
-
-        $entry = new Entry([
-            'sectionId' => $section->id,
-            'typeId' => $type->id,
-            'authorId' => $user->id,
-            'title' => 'Page',
-            'slug' => 'page'
-        ]);
-        $entry->setParent($guideEntry);
-
-        if (!Craft::$app->elements->saveElement($entry)) {
-            echo "Error saving page guide entry\n";
-        }
-
-        // Article guide -------------------------------------------------------------------------------
-
-        $entry = new Entry([
-            'sectionId' => $section->id,
-            'typeId' => $type->id,
-            'authorId' => $user->id,
-            'title' => 'Artikel',
-            'slug' => 'article'
-        ]);
-        $entry->setParent($guideEntry);
-
-        if (!Craft::$app->elements->saveElement($entry)) {
-            echo "Error saving article guide entry\n";
-        }
-
         return true;
     }
 

@@ -5,8 +5,6 @@
 
 {% set entries = craft.entries.section('guide').all() %}
 
-{% set userEntries = craft.entries.section('guide').relatedTo(currentUser).ids %}
-
 {% set guide = craft.entries.section('guide').slug(guideSlug).one() %}
 {% if not guide %}
     {% exit 404 %}

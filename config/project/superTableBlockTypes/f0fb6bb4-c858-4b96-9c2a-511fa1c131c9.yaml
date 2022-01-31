@@ -43,7 +43,7 @@ fields:
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
-    translationMethod: none
+    translationMethod: language
     type: craft\fields\PlainText
   e35ec4e7-302c-49f6-b5ae-a95120fbd4c0: # Question
     columnSuffix: null
@@ -63,5 +63,5 @@ fields:
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
-    translationMethod: none
+    translationMethod: language
     type: craft\fields\PlainText
