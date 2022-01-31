@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1643550865
+dateModified: 1643622386
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -65,6 +65,7 @@ meta:
     7bb0cd75-a933-4105-b72c-a34605721327: 'Auf der Übersichtsseite anzeigen?' # Auf der Übersichtsseite anzeigen?
     7c951a3b-ff29-4728-bf34-c0f0dda3ef18: Regie # Regie
     7da1797e-2829-4330-b022-e1ba233c1ec2: Text # Text
+    7e1a9aaa-8ad3-47d5-917c-0c5b2552c7ad: 'Include Guides' # Include Guides
     7e7c06a8-5d97-4fc6-b2cb-5dd34caec986: 'Margins Y' # Margins Y
     07e4260f-cc8c-4e3c-8085-fa9c9077ddcb: Entries # Entries
     7eb5e1da-4c5d-4b02-b671-f50b32cdc08b: Legal # Legal

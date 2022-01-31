@@ -7,7 +7,7 @@
         {% do query.relatedTo(currentUser) %}
     {% endif %}
 
-    {% set children = query.all %}
+    {#{% set children = query.all %}
 
     {% if children %}
         {% for child in children %}
@@ -18,7 +18,7 @@
             </div>
         {% endfor %}
         <h1>General Guide</h1>
-    {% endif %}
+    {% endif %}#}
 
     {% if entry.guideContent.count() %}
 
@@ -30,6 +30,25 @@
 
 
     {% else %}
-        {% include  ["guide/content/#{entry.slug}.twig","guide/content/#{entry.slug}.md"] %}
+        {% include  [
+            "_guide/#{entry.slug}.twig",
+            "_guide/#{entry.slug}.md",
+            "guide/content/#{entry.slug}.twig",
+            "guide/content/#{entry.slug}.md"
+            ] ignore missing %}
+    {% endif %}
+
+    {% set guides = entry.includeGuides.all %}
+
+    {% if guides %}
+        <hr>
+        <h2>More Info</h2>
+        <ul>
+            {% for guide in guides %}
+                <li style="margin-top: 12px">
+                    <a class="go" href="{{ cpUrl("guide/#{guide.slug}") }}" target="_blank">{{ guide.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
     {% endif %}
 </div>

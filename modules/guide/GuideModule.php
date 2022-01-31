@@ -7,6 +7,7 @@ use craft\events\RegisterComponentTypesEvent;
 use craft\events\RegisterTemplateRootsEvent;
 use craft\events\RegisterUrlRulesEvent;
 use craft\events\RegisterUserPermissionsEvent;
+use craft\helpers\App;
 use craft\records\Widget;
 use craft\services\Dashboard;
 use craft\services\UserPermissions;
@@ -31,7 +32,8 @@ class GuideModule extends Module
         Event::on(
             View::class,
             View::EVENT_REGISTER_CP_TEMPLATE_ROOTS, function(RegisterTemplateRootsEvent $e) {
-            $e->roots['guide'] = $this->getBasePath() .  '/templates';;
+            $e->roots['guide'] = $this->getBasePath() .  '/templates';
+            $e->roots['_guide'] = App::parseEnv('@templates') . '/_guide';
         });
 
         // Set routes

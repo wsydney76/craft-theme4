@@ -1,5 +1,6 @@
 {% from 'guide/macros.twig' import guideAsset %}
 
+<p>For an overview on editing entries see <a href="https://craftcms.com/knowledge-base/editing-entries" target="_blank">Editing Entries in Craft 3.7</a> </p>
 
 <h2 data-guide-section>Entries</h2>
 {{ guideAsset('guide-content-section-types.png') }}
@@ -24,26 +25,9 @@
 
 <hr>
 
-<h2 data-guide-section>Content Types</h2>
-<p>Here are some examples of the various types of content found within your website:</p>
-
-{% set contentTypes = [
-    { title: 'Home', editUrl: 'entries/home/2-home', screenshot: 'guide-FPO.png' },
-    { title: 'Basic Page', editUrl: 'entries/basicPage', screenshot: 'guide-FPO.png' },
-] %}
-<div class="guide_grid guide_grid--2_column">
-    {% for item in contentTypes %}
-        <div>
-            <h3>{{ item.title ?? '' }}</h3>
-            <a href="{{ url(item.editUrl ?? '') }}">{{ guideAsset(item.screenshot ?? false) }}</a>
-        </div>
-    {% endfor %}
-</div>
-
-<hr>
-
 <div class="guide_grid guide_grid--image">
     <div>
+
         <h2 data-guide-section>Creating New Entries</h2>
         <p>Channel and Structure entries can be created from the Entries page by clicking on the "+&nbsp;New Entry" button in the top-right. If you&rsquo;re already within a Channel or Structure section, a new entry of that section type will be created. Alternatively, you may use the downward caret to the right of the "+&nbsp;New Entry" button to select the type of entry you will be creating.</p>
         <p>By selecting the new entrie&rsquo;s section, you&rsquo;ll be taken to the Create Entry page.</p>
@@ -102,6 +86,7 @@
 <div class="guide_grid guide_grid--image">
     <div>
         <h2 data-guide-section>Publishing</h2>
+
         <p>An entry is published when the "Enabled" switch in the edit page sidebar is turned on. Depending on the section type, this sidebar can contain more publishing options.</p>
         <p>In Channel entries, you will find the following options:</p>
         <table>
@@ -152,6 +137,7 @@
 <div class="guide_grid guide_grid--image">
     <div>
         <h2 data-guide-section>Drafts</h2>
+
         <p>The revision button also displays drafts that have been saved for the entry. Drafts are useful for allowing you to save changes to an entry before the changes are ready to be published. To save a draft of an entry, use the down caret next to the "Save" button and select "Save as a draft".</p>
         <p>When you are ready to publish a draft, use the down caret next to the "Save draft" button to commit or delete the current draft.</p>
     </div>
