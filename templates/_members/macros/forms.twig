@@ -3,7 +3,7 @@
     {% set name = config.name %}
     {% set id = name|id %}
     {% set type = config.type ?? 'text' %}
-    {% set value = config.value ??  user[name] %}
+    {% set value = config.value is defined ? config.value : user[name] %}
     {% if type == 'password' %}
         {% set value = '' %}
     {% endif %}
@@ -11,6 +11,7 @@
 
     {% set instructions = config.instructions ?? '' %}
     {% set required = config.required ?? false %}
+
     <div>
         <label for="{{ id }}" class="block text-base font-semibold text-gray-700">
             {{ config.label }}
