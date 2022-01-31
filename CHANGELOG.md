@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.2.2 2020-01-31
+
+* Added support for jfif file extension (will be renamed to .jpg)
+
 ## 2.2.0 2020-01-30
 
 * Prepared for multi sites
