@@ -109,6 +109,7 @@ return [
     'Primary entry page' => 'Primäre Eintragsseite',
     'Primary' => 'Primärfarbe',
     'Privacy Protection Declaration' => 'Datenschutzerklärung',
+    'Profile could not be created' => 'Profil konnte nicht angelegt werden',
     'Profile could not be saved' => 'Profil konnte nicht gespeichert werden',
     'Profile successfully saved' => 'Profil erfolgreich gespeichert',
     'Published' => 'Veröffentlicht',
