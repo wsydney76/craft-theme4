@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "20997fc4c813c417b23d5dbf77a4e611",
+    "content-hash": "4ec3ba56e13dd595ea9b37db07132aaf",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -2577,22 +2577,17 @@
         },
         {
             "name": "putyourlightson/craft-sprig",
-            "version": "1.10.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/putyourlightson/craft-sprig.git",
-                "reference": "527b84b25fe94a5c51f98db8721f9d875e5d972f"
-            },
+            "version": "1.11.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-sprig/zipball/527b84b25fe94a5c51f98db8721f9d875e5d972f",
-                "reference": "527b84b25fe94a5c51f98db8721f9d875e5d972f",
+                "url": "https://api.github.com/repos/putyourlightson/craft-sprig/zipball/90fbaacba0daacb88956e6b8ef7dfa50e037eaff",
+                "reference": "90fbaacba0daacb88956e6b8ef7dfa50e037eaff",
                 "shasum": ""
             },
             "require": {
                 "craftcms/cms": "^3.3.0",
                 "phpdocumentor/reflection-docblock": "^5.2.0",
-                "putyourlightson/craft-sprig-core": "^1.1.4"
+                "putyourlightson/craft-sprig-core": "^1.2.0"
             },
             "type": "craft-plugin",
             "extra": {
@@ -2610,46 +2605,28 @@
                     "putyourlightson\\sprig\\plugin\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "mit"
             ],
             "description": "A reactive Twig component framework for Craft.",
             "support": {
                 "docs": "https://putyourlightson.com/plugins/sprig",
-                "issues": "https://github.com/putyourlightson/craft-sprig/issues",
-                "source": "https://github.com/putyourlightson/craft-sprig"
+                "source": "https://github.com/putyourlightson/craft-sprig",
+                "issues": "https://github.com/putyourlightson/craft-sprig/issues"
             },
-            "funding": [
-                {
-                    "url": "https://github.com/bencroker",
-                    "type": "github"
-                }
-            ],
-            "time": "2021-10-22T10:18:56+00:00"
+            "time": "2022-02-01T21:50:37+00:00"
         },
         {
             "name": "putyourlightson/craft-sprig-core",
-            "version": "1.1.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/putyourlightson/craft-sprig-core.git",
-                "reference": "7a457a0a45296b4384442e64921af6cd2b4794ee"
-            },
+            "version": "1.2.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-sprig-core/zipball/7a457a0a45296b4384442e64921af6cd2b4794ee",
-                "reference": "7a457a0a45296b4384442e64921af6cd2b4794ee",
+                "url": "https://api.github.com/repos/putyourlightson/craft-sprig-core/zipball/5510dad2e122a80d987ea5f5288f53d89df91b25",
+                "reference": "5510dad2e122a80d987ea5f5288f53d89df91b25",
                 "shasum": ""
             },
             "require": {
                 "craftcms/cms": "^3.3.0"
-            },
-            "require-dev": {
-                "codeception/codeception": "^4.0.0",
-                "codeception/module-asserts": "^1.0.0",
-                "codeception/module-yii2": "^1.0.0",
-                "vlucas/phpdotenv": "^3.0"
             },
             "type": "craft-module",
             "autoload": {
@@ -2657,17 +2634,16 @@
                     "putyourlightson\\sprig\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "mit"
             ],
             "description": "A reactive Twig component framework for Craft.",
             "support": {
                 "docs": "https://github.com/putyourlightson/craft-sprig-core",
-                "issues": "https://github.com/putyourlightson/craft-sprig-core/issues",
-                "source": "https://github.com/putyourlightson/craft-sprig-core"
+                "source": "https://github.com/putyourlightson/craft-sprig-core",
+                "issues": "https://github.com/putyourlightson/craft-sprig-core/issues"
             },
-            "time": "2021-11-08T11:03:32+00:00"
+            "time": "2022-02-01T21:40:58+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
