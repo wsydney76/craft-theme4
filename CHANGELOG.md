@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.2.3 2020-02-05
+
+* Some tweaks and fixes...
+
 ## 2.2.2 2020-01-31
 
 * Added support for jfif file extension (will be renamed to .jpg)
