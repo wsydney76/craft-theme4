@@ -1,39 +1,38 @@
-{# todo: other sections than profile #}
-{% if entry.section.handle != 'profile' %}
-    {% set entry = currentSite.handle == 'agency' ? null : craft.entries.section('profile').one %}
-{% endif %}
-
-
-{% if entry %}
+{% if entry is defined and entry %}
     {% cache using key "ldjson_#{entry.site.handle}_#{entry.id}" %}
-        {% set contact = craft.contact %}
 
-        {% set image = entry.featuredImage.one %}
-
-        {% set birthDate = entry.birthday ? entry.birthday|date('Y-m-d') : '2000-01-01' %}
-
-        {% set sameAs = [] %}
-        {% set socialMedia = entry.socialMedia.all %}
-        {% if socialMedia %}
-            {% set sameAs = socialMedia|map(s => s.socialLink) %}
-        {% endif %}
-        {% if entry.links %}
-            {% set sameAs = sameAs|merge(entry.links|map(s => s.url)) %}
-        {% endif %}
+        {% set image = entry.featuredImage.one ?? siteInfo.featuredImage.one %}
 
         {% set schema = craft.schema %}
 
-        {{ schema.person
-            .name(entry.title)
-            .image(image ? image.url({width: 300, height: 300}))
-            .birthDate(birthDate)
-            .jobTitle('Actor')
-            .url(contact.webSite)
-            .email(contact.eMail)
-            .telephone(contact.telephone)
-            .sameAs(sameAs)
+
+        {% switch entry.section.handle %}
+
+        {% case "article" %}
+
+            {{ schema.article
+                .headline(entry.title)
+                .alternativeHeadline(entry.teaser ?? '')
+                .author(entry.author.fullName)
+                .datePublished(entry.postDate|date('Y-m-d'))
+                .image(image ? image.url({width: 1920, height: 1080}))
+                .publisher(schema.organization.name(siteInfo.copyright))
             |raw
-        }}
+            }}
+
+        {% default %}
+
+            {{ schema.webPage
+                .name(entry.title)
+                .description(entry.teaser ?? '')
+                .image(image ? image.url({width: 1920, height: 1080}))
+                .publisher(schema.profilePage.name(siteInfo.copyright))
+            |raw
+            }}
+
+        {% endswitch %}
+
+
 
     {% endcache %}
 

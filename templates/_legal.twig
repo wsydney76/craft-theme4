@@ -13,12 +13,5 @@
         {% include ["#{site}/_partials/blocks","_partials/blocks"] with {blocks:entry.bodyContent.all} %}
     {% endif %}
 
-    {% if entry.site.handle != 'agency' and entry.addPrimaryContent %}
-        {% set defaultEntry = craft.entries.id(entry.id).site('agency').one %}
-        {% if defaultEntry %}
-            {% include ["#{site}/_partials/blocks","_partials/blocks"] with {blocks:defaultEntry.bodyContent.all} %}
-        {% endif %}
-    {% endif %}
-
     {% include "_hooks/endcontent_#{entry.section.handle}" ignore missing %}
 {% endblock %}
