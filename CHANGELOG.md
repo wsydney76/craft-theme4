@@ -1,7 +1,9 @@
 # Changelog
 
-## 2.2.3 2020-02-05
+## 2.2.4 2020-02-05
 
+* Create a search page in content migrations
+* Cleanup jsonld generation
 * Some tweaks and fixes...
 
 ## 2.2.2 2020-01-31
@@ -15,5 +17,5 @@
 ## 2.1.0 2020-01-29
 
 * A changelog! And a readme!
-* Image and Text block
+* 'Image and Text' block
 * Front-End Registration
