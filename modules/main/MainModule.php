@@ -116,6 +116,7 @@ class MainModule extends Module
         });
 
         // Rename images with extension 'jfif' to 'jpg'
+        // see config/general.php for an explanation
         Event::on(
             Asset::class,
             Asset::EVENT_AFTER_SAVE, function(ModelEvent $event) {

@@ -18,11 +18,6 @@
 {% endif %}
 
 {% if theme.fontUrl %}
-    {% if 'fonts.googleapis.com' in theme.fontUrl %}
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    {% endif %}
-
     <link href="{{ theme.fontUrl }}" rel="stylesheet">
 {% endif %}
 

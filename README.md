@@ -13,7 +13,7 @@ Usefull for demos and hobby projects.
 
 * Run `composer install`
 * Edit `config/Env.php` with your environment specific settings
-* Run `php craft install`
+* Run `php craft install` Enter you user data and confirm the other settings.
 * Run `php craft migrate/all`
 
 ## Install with Craft Nitro
@@ -37,7 +37,7 @@ Replace `project` with your project name
   * DB_PASSWORTD: nitro
   * DEFAULT_SITE_URL: `https://project.nitro`
 * `cd project`
-* Run `nitro craft install`
+* Run `nitro craft install` Enter you user data and confirm the other settings.
 * Run `nitro craft migrate/all`
 
 * For creating faker content/membership entries as described below replace `php craft` with `nitro craft`

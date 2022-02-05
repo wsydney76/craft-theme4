@@ -1,17 +1,18 @@
 {% set useSprig = useSprig ?? false %}
 {% set uploads = uploads ?? false %}
+{% set fullWidth = fullWidth ?? false %}
 
 {% if useSprig %}
-    {% set attrs = "sprig s-method=\"post\" s-action=\"#{action}\" s-indicator=\"#spinner\" " %}
+    {% set attrs = "sprig s-method=\"post\" s-action=\"#{action}\" s-indicator=\"#spinner\" s-target=\"#target\" s-swap=\"innerHtml show:top\"" %}
 {% else %}
     {% set attrs = 'method="post"' %}
 {% endif %}
 
 {% if uploads %}
-    {% set attrs = attrs ~ ' enctype="multipart/form-data"' %}
+    {% set attrs = attrs ~ (useSprig ? ' s-encoding="multipart/form-data"' : ' enctype="multipart/form-data"') %}
 {% endif %}
 
-<div class="mt-8 sm:w-full sm:max-w-md">
+<div id="target" class="mt-8 {{ fullWidth ? 'sm:w-full sm:max-w-screen-md' : 'sm:w-full sm:max-w-md' }} {{ theme.stickyNavbar ? 'scroll-mt-24' }}">
     <form {{ attrs|raw }} class="space-y-6">
 
         {% if not useSprig %}

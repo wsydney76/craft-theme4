@@ -1,50 +1,62 @@
 {% set user = user ?? null %}
 
-{% embed '_members/includes/form.twig' with {useSprig: true, action:'users/save-user'} %}
+{% embed '_members/includes/form.twig' with {useSprig: true, action:'users/save-user', fullWidth: true} %}
     {% block content %}
 
         {% import '_members/macros/forms.twig' as forms %}
 
-        {{ forms.textField({
-            user: user,
-            label: 'First Name'|t,
-            name: 'firstName',
-            required: true
-        }) }}
+        {% include '_members/include/flash.twig' with {
+            successMessage: 'We created your account! Please check your email to verify your email address.'|t,
+            errorMessage: 'Profile could not be created'|t
+        } %}
+
+        <div class="md:flex md:space-x-block">
+            <div class="md:w-1/2">
+                {{ forms.textField({
+                    user: user,
+                    label: 'First Name'|t,
+                    name: 'firstName',
+                    required: true
+                }) }}
+            </div>
+            <div class="md:w-1/2">
+                {{ forms.textField({
+                    user: user,
+                    label: 'Last Name'|t,
+                    name: 'lastName',
+                    required: true
+                }) }}
+            </div>
+        </div>
 
 
-        {{ forms.textField({
-            user: user,
-            label: 'Last Name'|t,
-            name: 'lastName',
-            required: true
-        }) }}
 
-        {{ forms.textField({
-            user: user,
-            label: 'Email'|t,
-            name: 'email',
-            type: 'email',
-            required: true
-        }) }}
+        <div class="md:flex md:space-x-block">
+            <div class="md:w-1/2">
+                {{ forms.textField({
+                    user: user,
+                    label: 'Email'|t,
+                    name: 'email',
+                    type: 'email',
+                    required: true
+                }) }}
+            </div>
+            <div class="md:w-1/2">
+                {{ forms.textField({
+                    user: user,
+                    label: 'Password'|t,
+                    name: 'password',
+                    required: true,
+                    type: 'password'
+                }) }}
+            </div>
+        </div>
 
-        {{ forms.textField({
-            user: user,
-            label: 'Password'|t,
-            name: 'password',
-            required: true,
-            type: 'password'
-        }) }}
 
+        <div class="pt-block w-64">
+            {{ forms.button('Register'|t, true) }}
+        </div>
 
-        {{ forms.button('Register'|t, true) }}
-
-        {% if success is defined and success %}
-            {% include '_members/includes/message.twig' with {
-                type: 'notice',
-                message: 'We created your account! Please check your email to verify your email address.'|t
-            } only %}
-        {% endif %}
 
     {% endblock %}
 {% endembed %}
