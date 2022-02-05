@@ -58,6 +58,34 @@ class m211224_143412_create_entries extends Migration
             echo "Error saving about entry\n";
         }
 
+        // Search Page -------------------------------------------------------------------------------
+
+        $type = ArrayHelper::firstWhere($section->getEntryTypes(), 'handle', 'page');
+
+        $entry = new Entry([
+            'sectionId' => $section->id,
+            'typeId' => $type->id,
+            'authorId' => $user->id,
+            'title' => 'Suche',
+            'slug' => 'Suche'
+        ]);
+
+        $entry->setFieldValue('bodyContent', [
+            'sortOrder' => ['new1'],
+            'blocks' => [
+                'new1' => [
+                    'type' => 'dynamicBlock',
+                    'fields' => [
+                        'template' => 'search.twig'
+                    ]
+                ]
+            ]
+        ]);
+
+        if (!Craft::$app->elements->saveElement($entry)) {
+            echo "Error saving search entry\n";
+        }
+
 
         // Impressum  -------------------------------------------------------------------------------
 
