@@ -103,7 +103,7 @@ fields:
     translationMethod: none
     type: modules\main\fields\WidthField
   3580d155-238d-43a1-b359-9c0634e988ed: # Number of Columns
-    columnSuffix: awssxocg
+    columnSuffix: null
     contentColumnType: smallint(1)
     fieldGroup: null
     handle: numberOfColumns
@@ -124,7 +124,7 @@ fields:
     translationMethod: none
     type: craft\fields\Number
   8625d595-25d0-480e-88cd-cb7c5e9651bd: # Aspect Ratio
-    columnSuffix: wufnzttl
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: aspectRatio

@@ -98,7 +98,7 @@ fields:
           __assoc__:
             -
               - label
-              - 'Default (Big cards with images)'
+              - Default
             -
               - value
               - default

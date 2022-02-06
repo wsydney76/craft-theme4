@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.3.0 2020-02-06
+
+* Added 'Simple' style to playlist block
+* Added 'Styled' style to audio block
+* Added 'Number of Columns' and 'Aspect Ratio' settings to gallery block
+
 ## 2.2.4 2020-02-05
 
 * Create a search page in content migrations
