@@ -21,20 +21,7 @@
 
 {% default %}
 
-    <div id="gallery-{{ block.id }}" class="flex flex-wrap">
-        {% set images = block.images.all %}
-        {% for image in images %}
-            {% include '_partials/scaling_image.twig' with {
-                image,
-                url: image.url(theme.lightboxImageTransform),
-                transform: theme.galleryThumbTransform,
-                classes: 'mr-2 mb-2'
-            } only %}
-        {% endfor %}
-
-    </div>
-
-
+    {% include '_blocks/gallery_default.twig' %}
 
 {% endswitch %}
 

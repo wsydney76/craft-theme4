@@ -31,6 +31,24 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            fieldUid: 3580d155-238d-43a1-b359-9c0634e988ed # Number of Columns
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 8625d595-25d0-480e-88cd-cb7c5e9651bd # Aspect Ratio
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
         name: Content
         sortOrder: 1
 fields:
@@ -84,6 +102,40 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: modules\main\fields\WidthField
+  3580d155-238d-43a1-b359-9c0634e988ed: # Number of Columns
+    columnSuffix: awssxocg
+    contentColumnType: smallint(1)
+    fieldGroup: null
+    handle: numberOfColumns
+    instructions: 'Display = Default only'
+    name: 'Number of Columns'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: 4
+      max: 6
+      min: 2
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  8625d595-25d0-480e-88cd-cb7c5e9651bd: # Aspect Ratio
+    columnSuffix: wufnzttl
+    contentColumnType: string
+    fieldGroup: null
+    handle: aspectRatio
+    instructions: 'Display = Default only'
+    name: 'Aspect Ratio'
+    searchable: false
+    settings:
+      defaultAspectRatio: '1:1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: modules\main\fields\AspectRatioField
   d9da022d-74c8-40d1-bd79-f3a6f208e542: # Display
     columnSuffix: null
     contentColumnType: string

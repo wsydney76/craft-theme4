@@ -124,7 +124,6 @@ module.exports = {
         },
 
         // dynamic col spans
-
         {
             pattern: /col-span-(1|2|3|4|5|6|7|8|9|10|11|12)/,
             variants: ['lg']
@@ -138,11 +137,15 @@ module.exports = {
 
         // dynamic block margins
         'my-0',
-
         {
             pattern: /(mb|mt|my)-block/
         },
 
+        // gallery block columns
+        {
+            pattern: /grid-cols-(2|3|4|5|6)/,
+            variants: ['md']
+        }
     ],
 
     plugins: [
