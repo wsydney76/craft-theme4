@@ -1,0 +1,86 @@
+{% from '_macros/lib.twig' import img %}
+{% do view.registerAssetBundle('modules\\resources\\AmplitudeAssets', POS_HEAD) %}
+
+{% set audioBlocks = block.audios.all %}
+{% set songs = audioBlocks|map(audio => {
+    url: audio.audio.one.url,
+    name: audio.heading,
+    artist: audio.artist }) %}
+
+<div x-data="audioPlayer({{ songs|json_encode }})" class="py-8 space-y-6 p-4  border border-border bg-white shadow-lg">
+
+    {% for i, audio in audioBlocks %}
+        {% set image = audio.image.one %}
+
+        <div class="flex items-center space-x-4 ">
+
+            {% if image %}
+                {{ img(image, {width:120, height: 80}) }}
+            {% endif %}
+
+            <div>
+                <button class="w-6 h-6 mt-2" x-show="show({{ i }}) == 'play'" @click="play({{ i }})">
+                    {{ svg('@templates/_icons/playlist_play.svg') }}
+                </button>
+                <button class="w-6 h-6 mt-2" x-show="show({{ i }}) == 'pause'" @click="pause()">
+                    {{ svg('@templates/_icons/playlist_pause.svg') }}
+                </button>
+            </div>
+
+            <div class="truncate">{{ audio.heading }}</div>
+
+            <div>
+                <span class="amplitude-current-minutes" data-amplitude-song-index="{{ i }}"></span>:<span
+                        class="amplitude-current-seconds" data-amplitude-song-index="{{ i }}"></span>
+            </div>
+
+            <div>
+                {{ audio.duration }}
+            </div>
+
+        </div>
+
+    {% endfor %}
+
+</div>
+
+
+<div id="preload" class="hidden">
+    <img src="/assets/icons/play.svg"/>
+    <img src="/assets/icons/pause.svg"/>
+</div>
+
+{% js at head %}
+document.addEventListener('alpine:init', () => {
+    Alpine.data('audioPlayer', (initialSongs) => ({
+
+        songs: initialSongs,
+        active: -1,
+        isPlaying: false,
+
+        init() {
+            Amplitude.init({songs: this.songs})
+        },
+
+        play(i) {
+
+            this.active == i ? Amplitude.play() : Amplitude.playSongAtIndex(i)
+
+            this.active = i
+            this.isPlaying = true
+        },
+
+        pause() {
+            Amplitude.pause()
+            this.isPlaying = false
+        },
+
+        show(i) {
+            return (this.isPlaying && this.active == i) ? 'pause' : 'play'
+        }
+
+    }))
+})
+{% endjs %}
+
+

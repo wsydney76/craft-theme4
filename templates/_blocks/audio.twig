@@ -1,12 +1,42 @@
 {% set audio = block.audioFile.one %}
-
+{% set style = block.style ?? 'default' %}
 {# @var audio \craft\elements\Asset #}
 
 {% if audio %}
 
-    <audio controls>
-        <source src="{{ audio.url }}" type="{{ audio.mimeType  }}">
-        Your browser does not support the audio tag.
-    </audio>
+    {% switch style %}
+
+    {% case "styled" %}
+
+        {# Edit modules/resources/AudioPlayer/css/custom.css to customize styles #}
+
+        {% do view.registerAssetBundle('modules\\resources\\AudioPlayerAssets') %}
+
+        <div class="mb-8 flex space-x-8 items-center">
+            <div class="w-80">
+                <audio id="audio-{{ block.id }}" controls>
+                    <source src="{{ audio.url }}" type="{{ audio.mimeType }}">
+                    Your browser does not support the audio tag.
+                </audio>
+            </div>
+            <div>
+                {{ block.heading }}
+            </div>
+        </div>
+
+        {% js %}
+        $(function() {
+            $('#audio-{{ block.id }}').audioPlayer();
+        });
+        {% endjs %}
+
+    {% default %}
+        <audio controls>
+            <source src="{{ audio.url }}" type="{{ audio.mimeType }}">
+            Your browser does not support the audio tag.
+        </audio>
+    {% endswitch %}
+
+
 
 {% endif %}

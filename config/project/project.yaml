@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1643622386
+dateModified: 1644139391
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -109,6 +109,7 @@ meta:
     57d93092-ead9-4861-b888-be2853985a17: Gallery # Gallery
     57dba12d-3dba-4e01-a8e5-7ed1323f9c68: Span # Span
     060ad016-c0fb-4088-a96a-d98fbe5fbad6: Images # Images
+    60d7202b-beaa-4319-83f3-33bcef815c6d: Style # Style
     60efd03a-2799-49bb-a669-0bf017471de0: Text # Text
     60f0305f-094d-4294-9a23-e7dc62bbd7e0: User # User
     61c8dfb5-4ac7-420b-ad8e-5cad0d464a98: Description # Description
@@ -165,7 +166,7 @@ meta:
     62123c4c-ae55-484d-b69c-4940608e5e90: FAQ # FAQ
     78323fe5-c0e1-4387-b508-004102471535: Beschriftung # Beschriftung
     78792bff-7415-4c05-b05b-8cd89e73abcf: Jahr # Jahr
-    80122cfd-218e-4ef3-b770-e09e5e158847: Pattern # Pattern
+    80122cfd-218e-4ef3-b770-e09e5e158847: Style # Style
     83973b78-a6f9-4f54-9099-e3e4b5c80fe8: 'Standard Bild-Breite' # Standard Bild-Breite
     85347e4c-c38c-4edd-b1b6-c19c29ca6ad4: Image # Image
     90724a6b-55ad-446f-be50-7aea7e1fb067: Robots # Robots

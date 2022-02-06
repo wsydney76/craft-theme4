@@ -78,7 +78,32 @@ return [
 
                     ]
                 ],
+                'audio' => [
+                    'tabs' => [
+                        [
+                            'label' => Craft::t('site', 'Content'),
+                            'fields' => ['audioFile']
+                        ],
+                        [
+                            'label' => Craft::t('site', 'Layout'),
+                            'fields' => ['style']
+                        ]
 
+                    ]
+                ],
+                'playlist' => [
+                    'tabs' => [
+                        [
+                            'label' => Craft::t('site', 'Content'),
+                            'fields' => ['audios']
+                        ],
+                        [
+                            'label' => Craft::t('site', 'Layout'),
+                            'fields' => ['style']
+                        ]
+
+                    ]
+                ],
             ]
         ]
     ]

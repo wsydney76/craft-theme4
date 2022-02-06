@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 80122cfd-218e-4ef3-b770-e09e5e158847 # Pattern
+            fieldUid: 80122cfd-218e-4ef3-b770-e09e5e158847 # Style
             instructions: null
             label: null
             required: false
@@ -83,13 +83,13 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: verbb\supertable\fields\SuperTableField
-  80122cfd-218e-4ef3-b770-e09e5e158847: # Pattern
+  80122cfd-218e-4ef3-b770-e09e5e158847: # Style
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
-    handle: pattern
+    handle: style
     instructions: ''
-    name: Pattern
+    name: Style
     searchable: false
     settings:
       optgroups: true
@@ -98,13 +98,24 @@ fields:
           __assoc__:
             -
               - label
-              - 'Multiple Songs'
+              - 'Default (Big cards with images)'
             -
               - value
-              - multipleSongs
+              - default
             -
               - default
               - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Simple
+            -
+              - value
+              - simple
+            -
+              - default
+              - ''
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Dropdown
