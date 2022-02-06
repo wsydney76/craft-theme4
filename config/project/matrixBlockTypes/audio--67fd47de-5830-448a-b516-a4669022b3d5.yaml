@@ -13,6 +13,15 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            fieldUid: 60d7202b-beaa-4319-83f3-33bcef815c6d # Style
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -51,6 +60,42 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Assets
+  60d7202b-beaa-4319-83f3-33bcef815c6d: # Style
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: style
+    instructions: ''
+    name: Style
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Default
+            -
+              - value
+              - default
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Styled
+            -
+              - value
+              - styled
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
 handle: audio
 name: Audio
 sortOrder: 8
