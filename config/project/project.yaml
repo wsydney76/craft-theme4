@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1644145092
+dateModified: 1644169781
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -209,7 +209,6 @@ meta:
     ad542dfc-2d07-4de2-9875-c811ffc1be61: Title # Title
     ae127d85-61d7-419c-88be-9ba731f720f3: Caption # Caption
     ae5704ad-6ced-4348-af1e-385de7931458: Kommentar # Kommentar
-    aee70370-95f7-4a0f-a958-ac4241928aa2: 'Kirby News' # Kirby News
     b0cfc7f4-d446-41bb-87ab-dc16b1481540: 'Alternative Title' # Alternative Title
     b0db2f74-171e-4628-909e-0a02f17620ac: Text # Text
     b0db3726-5c93-4366-939b-42c60a697324: 'Padding vertical' # Padding vertical

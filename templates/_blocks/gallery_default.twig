@@ -1,14 +1,14 @@
 {% set query = block.images %}
 {% set id = id ?? block.id %}
 
-{% set numberOfColumns = numberOfColumns ?? block.numberOfColumns ?? 4 %}
+{% set numberOfColumns = numberOfColumns ?? block.numberOfColumns.value ?? 4 %}
 
 {% set aspectRatio = aspectRatio ?? block.aspectRatio ?? '1:1' %}
 {% if aspectRatio == 'default' %}
     {% set aspectRatio = '1:1' %}
 {% endif %}
 
-{% set width = block.width == 'default' ? theme.defaultImageWidth : block.width %}
+{% set width = block.width == 'default' ? theme.defaultBlockWidth : block.width %}
 
 {% set width = theme.widths[width] ?? 2500  %}
 
