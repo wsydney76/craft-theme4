@@ -1,18 +1,65 @@
-{% set class = class ?? '' %}
+<div class="btngroup" style="position: relative">
+    <button type="button" class="btn" onclick="openGuideModal('{{ url }}')">{{ caption }}</button>
 
-<a class="btn" id="{{ id }}-btn">{{ caption }}</a>
+    {% if subGuides %}
+        <button type="button" class="btn menubtn" onclick="toggleGuideMenu()"></button>
+        <div id="guidemenu" style="display:none">
+            <div>
+                {% for subGuide in subGuides %}
+                	<button type="button" onclick="openGuideModal('{{ subGuide.url }}')">{{ subGuide.label }}</button>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
 
-{% js at POS_END %}
-    var $btn = $('#{{ id }}-btn');
+</div>
 
-    $btn.on('click',function(){
-      $.get('{{ url }}')
+
+{% js %}
+
+function openGuideModal(url) {
+    $.get(url)
         .done(function(data) {
-            hud = new Garnish.Modal(  data  , {resizable: true, draggable:true} );
+            hud = new Garnish.Modal(data, {resizable: true, draggable: true});
+            document.getElementById('guidemenu').style.display = 'none';
         })
         .fail(function() {
             alert("error");
         });
-    });
+}
+
+function toggleGuideMenu() {
+    menu = document.getElementById('guidemenu');
+    menu.style.display = menu.style.display == 'none' ? '' : 'none'
+}
 {% endjs %}
 
+{% css %}
+#guidemenu {
+    position: absolute;
+    background-color: white;
+    top: 36px;
+    left: 0;
+    border: 1px solid #eeeeee;
+    padding: 16px;
+    border-radius: 4px;
+    z-index: 99999;
+}
+
+#guidemenu > div {
+    display: flex;
+    flex-direction: column;
+}
+
+#guidemenu button {
+    font-size: 14px;
+    color: black;
+    text-align: left;
+    cursor: pointer;
+}
+
+#guidemenu > div > button:not(:last-child) {
+    margin-bottom:16px;
+}
+
+{% endcss %}

@@ -29,6 +29,7 @@ class m220131_103453_create_guide_entries extends Migration
             ['title' => 'Inhalt', 'slug' => 'content'],
             ['title' => 'Dateien', 'slug' => 'assets'],
             ['title' => 'Content Builder', 'slug' => 'contentbuilder'],
+            ['title' => 'Blöcke', 'slug' => 'blocks'],
             ['title' => 'Markdown', 'slug' => 'markdown'],
             ['title' => 'Sektionen', 'slug' => 'sections'],
             ['title' => 'Artikel', 'slug' => 'article'],

@@ -1,0 +1,12 @@
+{% set text %}
+    Für die Eingabe von Text steht Ihnen ein einfacher Editor zur Verfügung.
+
+    Um ein einheitliches Erscheinungsbild zu gewährleisten, sind die Formatierungsmöglichkeiten bewusst beschränkt,
+    und werden alle Formatierungen bei per Copy & Paste eingefügten Inhalten entfernt.
+{% endset %}
+
+{% include 'guide/embeds/two_columns.twig' with {
+    heading: 'Text',
+    text,
+    image: 'blocks-text.jpg'
+} %}

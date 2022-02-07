@@ -1,0 +1,10 @@
+{% set text %}
+    Wir verwenden z.Zt. nur eine Überschriftsebene, um den Inhalt einfach zu halten
+{% endset %}
+
+{% include 'guide/embeds/two_columns.twig' with {
+    heading: 'Überschrift',
+    text,
+    image: 'blocks-heading.jpg'
+} %}
+

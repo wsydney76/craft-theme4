@@ -15,6 +15,7 @@ use craft\web\twig\variables\Cp;
 use craft\web\UrlManager;
 use craft\web\View;
 use modules\guide\assetbundles\GuideAssets;
+use modules\guide\twigextensions\TwigExtension;
 use modules\guide\widgets\GuideWidget;
 use yii\base\Event;
 use yii\base\Module;
@@ -77,13 +78,15 @@ class GuideModule extends Module
         }
 
         // Register Edit Screen extensions
-        Craft::$app->view->hook('cp.entries.edit.details', function(&$context) {
+        Craft::$app->view->hook('cp.entries.edit.meta', function(&$context) {
             if ($context['entry'] != null) {
                 return Craft::$app->view->renderTemplate('guide/editorbutton.twig', ['entry' => $context['entry']]);
             }
             return '';
         });
 
+        // Register Twig extension for theme variable
+        Craft::$app->view->registerTwigExtension(new TwigExtension());
 
         parent::init();
     }

@@ -28,13 +28,14 @@
             {% include 'guide/blocks.twig' with {blocks:entry.guideContent.all} %}
         </div>
 
-
     {% else %}
+
         {% include  [
+            "_guide/#{currentUser.preferredLanguage[:2]}/#{entry.slug}.twig",
             "_guide/#{entry.slug}.twig",
-            "_guide/#{entry.slug}.md",
+            "guide/content/#{currentUser.preferredLanguage[:2]}/#{entry.slug}.twig",
             "guide/content/#{entry.slug}.twig",
-            "guide/content/#{entry.slug}.md"
+            "guide/content/de/#{entry.slug}.twig",
             ] ignore missing %}
     {% endif %}
 
