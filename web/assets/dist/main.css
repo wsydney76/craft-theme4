@@ -1437,6 +1437,9 @@ a.btn{
   --tw-border-opacity: 1;
   border-color: rgb(30 64 175 / var(--tw-border-opacity));
 }
+.border-transparent{
+  border-color: transparent;
+}
 .border-red-400{
   --tw-border-opacity: 1;
   border-color: rgb(248 113 113 / var(--tw-border-opacity));
@@ -2045,10 +2048,17 @@ a.btn{
   transition-duration: 300ms;
 }
 .nav-link{
+  border-bottom-width: 2px;
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 600;
   text-transform: uppercase;
+}
+.nav-link:hover{
+  --tw-border-opacity: 1;
+  border-color: rgb(30 64 175 / var(--tw-border-opacity));
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
 }
 .pagination{
   margin-top: 2rem;

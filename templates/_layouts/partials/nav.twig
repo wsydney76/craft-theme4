@@ -9,7 +9,7 @@
 } %}
 
 
-<nav class="{{ breakpointClasses[theme.mobileBreakpoint] }} items-center space-y-0 space-x-4 pb-0">
+<nav class="{{ breakpointClasses[theme.mobileBreakpoint] }} items-center space-y-0  space-x-4 pb-0">
 
     {% set index = 0 %}
 
@@ -24,7 +24,7 @@
                 index: index
             } only %}
         {% else %}
-            <a class="nav-link {{ craft.app.request.segment(1) == navEntry.slug ? 'underline' }}"
+            <a class="nav-link  {{ craft.app.request.segment(1) == navEntry.slug ? 'border-primary' : 'border-transparent' }}"
                href="{{ navEntry.url }}">{{ navEntry.navTitle }}</a>
         {% endif %}
 
