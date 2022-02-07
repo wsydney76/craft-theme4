@@ -908,10 +908,6 @@ a.btn{
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-.my-2{
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
 .my-1{
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
@@ -1002,6 +998,9 @@ a.btn{
 }
 .block{
   display: block;
+}
+.inline-block{
+  display: inline-block;
 }
 .inline{
   display: inline;

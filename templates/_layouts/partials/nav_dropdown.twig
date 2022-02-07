@@ -5,9 +5,12 @@
 
     {% block panel %}
         {% if entries is defined %}
+
             {% for navEntry in entries %}
-                <a class="my-2 nav-link border-transparent truncate" href="{{ navEntry.url }}">{{ navEntry.navTitle }}</a>
+                <a class="nav-link inline-block mt-2 border-transparent truncate"
+                   href="{{ navEntry.url }}">{{ navEntry.navTitle }}</a>
             {% endfor %}
+
         {% endif %}
     {% endblock %}
 
