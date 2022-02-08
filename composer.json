@@ -27,6 +27,10 @@
     "optimize-autoloader": true,
     "platform": {
       "php": "7.4"
+    },
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true,
+      "craftcms/plugin-installer": true
     }
   },
   "scripts": {
@@ -37,7 +41,10 @@
       "@php craft off"
     ],
     "post-update-cmd": [
-      "@php craft clear-caches/all",
+      "@php craft clear-caches/compiled-templates",
+      "@php craft clear-caches/cp-resources",
+      "@php craft clear-caches/data",
+      "@php craft clear-caches/temp-files",
       "@php craft migrate/all --interactive=0",
       "@php craft on"
     ]

@@ -54,6 +54,12 @@ return [
     'footerInnerWidth' => 'xl',
     'footerBorder' => false,
 
+    // Output format for image transforms
+    'defaultImageFormat' => 'webp',
+
+    // Effects for image transforms (requires imager plugin)
+    'defaultImageEffects' => ['sharpen' => true],
+
     // Don't create srcset for images smaller than
     'minResponsiveWidth' => 400,
 

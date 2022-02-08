@@ -5,5 +5,6 @@ return [
 
     'resizeFilter ' => 'lanczos',
     'webpQuality ' => 82,
+    'jpegQuality  ' => 82,
     'useForNativeTransforms ' => false,
 ];

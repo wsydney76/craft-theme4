@@ -2,6 +2,8 @@
 
     {% if craft.app.plugins.pluginEnabled('imager') %}
 
+        {% set imager = craft.imager %}
+
         {# Use Imager transforms for (slightly) better quality and more control #}
 
         {% do image.setTransform(transform) %}
@@ -11,9 +13,9 @@
         {% set baseTransform = {
             width: image.width,
             ratio: ratio,
-            format: transform.format ?? 'webp',
+            format: transform.format ?? theme.defaultImageFormat,
             mode: transform.mode ?? 'crop',
-            effects: transform.effects ?? []
+            effects: transform.effects ?? theme.defaultImageEffects
         } %}
 
         {% if transform.width is defined and transform.width > theme.minResponsiveWidth %}
@@ -24,20 +26,21 @@
                     {% set transforms = transforms|push(baseTransform|merge({width: responsiveWidth})) %}
                 {% endif %}
             {% endfor %}
-            {% set transformedImages = craft.imager.transformImage(image, transforms) %}
+
+            {% set transformedImages = imager.transformImage(image, transforms) %}
 
             {% set imgHtml = tag('img', {
-                src: craft.imager.placeholder({ width: image.height, height: image.width }),
+                src: imager.placeholder({ width: image.height, height: image.width }),
                 height: image.height,
                 width: image.width,
                 alt: image.altText ?: image.title,
-                srcset: craft.imager.srcset(transformedImages),
+                srcset: imager.srcset(transformedImages),
                 loading: 'lazy'
             }|merge(attrs)) %}
 
         {% else %}
 
-            {% set transformedImage = craft.imager.transformImage(image, baseTransform) %}
+            {% set transformedImage = imager.transformImage(image, baseTransform) %}
 
             {% set imgHtml = tag('img', {
                 src: transformedImage.url,

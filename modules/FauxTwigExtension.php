@@ -22,6 +22,7 @@
 
 namespace nystudio107\craft;
 
+use aelvan\imager\variables\ImagerVariable;
 use craft\elements\Asset;
 use craft\elements\Category;
 use craft\elements\Entry;
@@ -64,8 +65,8 @@ class FauxTwigExtension extends AbstractExtension implements GlobalsInterface
             'view' => new view(),
             'siteInfo' => new GlobalSet(),
             'blitz' => new BlitzVariable(),
-            'themeSettings' => new SuperTableBlockElement(),
             'pageInfo' => new Paginate(),
+            'imager' => new ImagerVariable(),
 
             'schema' => new Schema(),
             // Commerce Elements
