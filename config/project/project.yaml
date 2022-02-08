@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1644169781
+dateModified: 1644311496
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -254,7 +254,7 @@ meta:
     cd4b4d9a-0519-4f07-93e0-5957b57a9afd: Legal # Legal
     cda0b80d-b767-406b-a9db-316e16db4b33: 'Video Url' # Video Url
     d5a44dcf-9ae8-4f6a-b498-ddefa0abc78c: 'Role Name' # Role Name
-    d9da022d-74c8-40d1-bd79-f3a6f208e542: Display # Display
+    d9da022d-74c8-40d1-bd79-f3a6f208e542: Style # Style
     d82cda5f-ddc5-4242-9266-d90a9944f116: 'Extra CSS' # Extra CSS
     d868de82-ae37-4897-a6bb-ef08e919650b: Common # Common
     d941c1b8-77c8-439c-9c9f-50bebd222421: Schrift-Familie # Schrift-Familie

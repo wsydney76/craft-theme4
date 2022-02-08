@@ -34,7 +34,7 @@ return [
                         ],
                         [
                             'label' => Craft::t('site', 'Layout'),
-                            'fields' => ['width', 'display', 'numberOfColumns', 'aspectRatio']
+                            'fields' => ['width', 'style', 'numberOfColumns', 'aspectRatio']
                         ]
 
                     ]

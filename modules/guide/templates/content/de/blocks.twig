@@ -28,5 +28,5 @@
         "_guide/#{currentUser.preferredLanguage[:2]}/blocks#{entry.slug}.twig",
         "_guide/blocks#{entry.slug}.twig",
         "guide/content/de/blocks/#{blockType.handle}.twig",
-        ] ignore missing %}
+        ] ignore missing with { blockType } %}
 {% endfor %}

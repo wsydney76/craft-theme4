@@ -222,4 +222,4 @@ fields:
     type: craft\fields\PlainText
 handle: imageAndText
 name: 'Image and Text'
-sortOrder: 7
+sortOrder: 5

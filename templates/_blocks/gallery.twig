@@ -1,8 +1,8 @@
 {% from '_macros/lib.twig' import img %}
 
-{% set display = block.display.value ?? 'default' %}
+{% set style = block.style.value ?? 'default' %}
 
-{% switch display %}
+{% switch style %}
 
 {% case "carousel" %}
     <div id="gallery-{{ block.id }}">

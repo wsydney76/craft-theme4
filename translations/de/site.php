@@ -69,6 +69,7 @@ return [
     'Image Background Color' => 'Bildhintergrundfarbe',
     'Image Left' => 'Bild links',
     'Image Right' => 'Bild rechts',
+    'Image Align' => 'Bildausrichtung',
     'Image' => 'Bild',
     'Images' => 'Bilder',
     'Increase Title Contrast' => 'Titelkontrast erhöhen',

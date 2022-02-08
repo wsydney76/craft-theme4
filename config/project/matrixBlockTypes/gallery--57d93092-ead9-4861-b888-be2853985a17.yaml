@@ -21,16 +21,16 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
-            width: 100
+            width: 25
           -
-            fieldUid: d9da022d-74c8-40d1-bd79-f3a6f208e542 # Display
+            fieldUid: d9da022d-74c8-40d1-bd79-f3a6f208e542 # Style
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
-            width: 100
+            width: 25
           -
             fieldUid: 3580d155-238d-43a1-b359-9c0634e988ed # Number of Columns
             instructions: null
@@ -184,13 +184,13 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: modules\main\fields\AspectRatioField
-  d9da022d-74c8-40d1-bd79-f3a6f208e542: # Display
+  d9da022d-74c8-40d1-bd79-f3a6f208e542: # Style
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
-    handle: display
+    handle: style
     instructions: ''
-    name: Display
+    name: Style
     searchable: false
     settings:
       optgroups: true
@@ -233,4 +233,4 @@ fields:
     type: craft\fields\Dropdown
 handle: gallery
 name: Gallery
-sortOrder: 12
+sortOrder: 4

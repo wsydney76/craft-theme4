@@ -1,0 +1,18 @@
+{% set text %}
+   Zweispaltiges Layout mit einem kleinen Bild vor farbigem Hintergrund und einer Textspalte mit Überschrift und Text.
+
+    Wählen Sie ein Bild aus, durch Doppelklick können Sie Fokuspunkt, Alt Text und Copyright bestimmen.
+
+    In den Layout-Optionen stellen Sie die Blockbreite, die Hintergrundfarbe und die Ausrichtung (Bild links/rechts) ein.
+
+    Wenn Sie die Vertikalen Abstände entsprechend einstellen, können Sie erreichen das mehrere Blöcke bündig ohne Zwischenabstand angezeigt werden.
+
+{% endset %}
+
+{% include 'guide/embeds/two_columns.twig' with {
+    heading: 'Bild und Text',
+    text,
+    images: ['blocks-imagetext.jpg','blocks-imagetext-layout.jpg']
+} %}
+
+

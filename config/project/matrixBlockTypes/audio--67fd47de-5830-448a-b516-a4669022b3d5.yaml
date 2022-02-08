@@ -98,4 +98,4 @@ fields:
     type: craft\fields\Dropdown
 handle: audio
 name: Audio
-sortOrder: 8
+sortOrder: 7

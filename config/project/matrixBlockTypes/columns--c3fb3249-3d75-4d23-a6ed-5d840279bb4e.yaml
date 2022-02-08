@@ -172,4 +172,4 @@ fields:
     type: modules\main\fields\ThemeColorField
 handle: columns
 name: 'Multi Columns'
-sortOrder: 16
+sortOrder: 12

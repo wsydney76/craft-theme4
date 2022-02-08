@@ -9,12 +9,14 @@
 <div class="guide_grid guide_grid--2_column">
     <div>
 
-        {% if heading  %}
+        {% if heading %}
             <h2 data-guide-section>{{ heading }}</h2>
         {% endif %}
 
         {% block left %}
-            {{ text|guideText }}
+            <div class="guide_text">
+                {{ text|guideText }}
+            </div>
         {% endblock %}
     </div>
     <div>
