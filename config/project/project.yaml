@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1644311496
+dateModified: 1644313770
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -398,6 +398,10 @@ plugins:
         - youtu.be
         - youtube.com
         - youtube-nocookie.com
+  imager:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
   matrixmate:
     edition: standard
     enabled: true

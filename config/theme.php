@@ -54,6 +54,10 @@ return [
     'footerInnerWidth' => 'xl',
     'footerBorder' => false,
 
+    // Don't create srcset for images smaller than
+    'minResponsiveWidth' => 400,
+
+    // Create srcset for this widths
     'responsiveWidths' => [2500, 1800, 1280, 1024, 768, 400],
 
     'widths' => [
