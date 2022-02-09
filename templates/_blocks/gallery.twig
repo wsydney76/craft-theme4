@@ -1,31 +1,4 @@
-{% from '_macros/lib.twig' import img %}
-
 {% set style = block.style.value ?? 'default' %}
 
-{% switch style %}
+{% include "_blocks/gallery_#{style}.twig" %}
 
-{% case "carousel" %}
-    <div id="gallery-{{ block.id }}">
-        {% include '_layouts/components/carousel.twig' with {images: block.images.all} %}
-    </div>
-
-{% case "fullWidth" %}
-
-    <div class="flex flex-wrap justify-center space-y-4">
-        {% for image in block.images.all %}
-        	<div>
-                {{ img(image, theme.galleryFullWidthTransform) }}
-            </div>
-        {% endfor %}
-    </div>
-
-{% default %}
-
-    {% include '_blocks/gallery_default.twig' %}
-
-{% endswitch %}
-
-
-{% js %}
-    initLightBox('#gallery-{{ block.id }}');
-{% endjs %}

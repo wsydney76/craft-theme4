@@ -39,6 +39,7 @@
   "dependencies": {
     "@alpinejs/collapse": "^3.8.1",
     "@alpinejs/focus": "^3.8.1",
+    "@alpinejs/intersect": "^3.8.1",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.4.0",
     "alpinejs": "^3.8.1",

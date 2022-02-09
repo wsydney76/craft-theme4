@@ -18,7 +18,7 @@
             {% if loop.index == 1 and theme.defaultIndexFirstImageTransform and pageInfo.currentPage == 1 %}
 
                 {% if image %}
-                    {{ image.img(theme.defaultIndexFirstImageTransform) }}
+                    {{ img(image, theme.defaultIndexFirstImageTransform) }}
                 {% endif %}
 
                 {{ _self.content(entry, true) }}
@@ -27,7 +27,7 @@
                 <div class="sm:flex sm:space-x-block">
                     {% if image %}
                         <div class="sm:shrink-0">
-                            {{ image.img(theme.defaultIndexImageTransform) }}
+                            {{ img(image, theme.defaultIndexImageTransform) }}
                         </div>
                     {% endif %}
                     <div class="mt-4 sm:my-2">

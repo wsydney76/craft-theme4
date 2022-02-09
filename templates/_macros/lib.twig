@@ -1,4 +1,4 @@
-{% macro img(image, transform = {}, attrs = {}, showCopyright = true) %}
+{% macro img(image, transform = {}, attrs = {}, showCopyright = true, createSrcset = true) %}
 
     {% if craft.app.plugins.pluginEnabled('imager') %}
 
@@ -18,7 +18,7 @@
             effects: transform.effects ?? theme.defaultImageEffects
         } %}
 
-        {% if transform.width is defined and transform.width > theme.minResponsiveWidth %}
+        {% if createSrcset and transform.width is defined and transform.width > theme.minResponsiveWidth %}
 
             {% set transforms = [baseTransform] %}
             {% for responsiveWidth in theme.responsiveWidths %}
