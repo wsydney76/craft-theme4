@@ -1,0 +1,119 @@
+{% from '_macros/lib.twig' import img %}
+
+{# params block, width #}
+
+{% do view.registerAssetBundle('\\modules\\resources\\SliderAssets', POS_HEAD) %}
+
+{% set width = block.width == 'default' ? theme.defaultBlockWidth : block.width %}
+
+{% set thumbTransform = {width: 260, height: 150} %}
+
+{% set images = block.images.all %}
+
+<div x-data="{
+        id: $id('slider'),
+        mainSlider: null,
+        thumbnailSlider: null,
+        mainSliderOptions: {
+            type            : 'loop',
+            perPage         : 1,
+            lazyLoad        : 'nearby',
+            autoplay        : true,
+            interval        : 5000,
+            pagination      : true,
+            arrows          : true,
+        },
+        thumbnailSliderOptions: {
+            rewind          : true,
+            perMove         : 1,
+            fixedWidth      : 180,
+            fixedHeight     : 100,
+            isNavigation    : true,
+            gap             : 10,
+            focus           : 'center',
+            pagination      : false,
+            arrows          : true,
+            cover           : true,
+            dragMinThreshold: {
+                mouse: 4,
+                touch: 10,
+            },
+            breakpoints : {
+                640: {
+                    fixedWidth  : 120,
+                    fixedHeight : 70,
+                },
+            },
+
+        },
+
+        initSlider() {
+            this.mainSlider = new Splide('#' + this.id, this.mainSliderOptions );
+            this.thumbnailsSlider = new Splide('#' + this.thumbnailSliderId, this.thumbnailSliderOptions);
+
+            this.mainSlider.sync(this.thumbnailsSlider);
+
+            this.mainSlider.mount();
+            this.thumbnailsSlider.mount();
+            console.log(this.mainSlider);
+        },
+
+        get thumbnailSliderId() {
+            return this.id + '-thumbnails';
+        },
+
+        play() {
+            if (!this.mainSlider) {
+                this.initSlider()
+            } else {
+                this.mainSlider.Components.Autoplay.play()
+            }
+
+        },
+        pause() {
+            this.mainSlider && this.mainSlider.Components.Autoplay.pause()
+        }
+}">
+
+    <div :id="id"
+         class="splide"
+         x-intersect.half="play()"
+         x-intersect:leave="pause()">
+
+        <div class="splide__track">
+            <ul class="splide__list">
+                {% for image in images %}
+                    <li class="splide__slide cursor-pointer">
+                        {% set imgWidth = theme.widths[width] %}
+                        {{ img(image, {
+                            width: imgWidth,
+                            height: (imgWidth / 16 * 9)|round,
+                        }, {loading: null}, true, false)|replace({'src="': 'data-splide-lazy="'})|raw }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div :id="thumbnailSliderId" class="splide mt-4">
+        <div class="splide__track">
+            <ul class="splide__list">
+                {% for image in images %}
+                    <li class="splide__slide grayscale opacity-80 ">
+                        {{ img(image, thumbTransform, {}, false) }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+{% css %}
+.splide__slide.grayscale.is-active {
+    filter: none;
+    opacity: 1;
+}
+{% endcss %}
+
+

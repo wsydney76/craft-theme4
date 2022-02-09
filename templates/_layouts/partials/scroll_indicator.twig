@@ -1,11 +1,11 @@
-<div class="w-full h-1.5 bg-primary-200"
+<div class="h-1.5 bg-primary-200"
      @scroll.window="scroll()"
      x-data="{
         scrolled: 0,
         scroll() {
             var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            this.scrolled = (winScroll / height) * 100;
+            this.scrolled = Math.min((winScroll / height) * 100, 100) ;
         }
      }">
 

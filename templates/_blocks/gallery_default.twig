@@ -1,3 +1,5 @@
+{% from '_macros/lib.twig' import img %}
+
 {% set query = block.images %}
 {% set id = id ?? block.id %}
 
@@ -27,20 +29,24 @@
     .withTransforms([transform, theme.lightboxImageTransform])
 .all %}
 
-
-
 {% if images %}
     <div class="gallery-{{ id }} grid grid-cols-2 md:grid-cols-{{ numberOfColumns }} gap-2">
         {% for image in images %}
 
             {% set caption = image.altText ?: image.title %}
 
+            {% if craft.app.plugins.pluginEnabled('imager') %}
+                {% set transformedImage = craft.imager.transformImage(image, theme.lightboxImageTransform) %}
+                {% set lightboxUrl = transformedImage.url %}
+            {% else %}
+                {% set lightboxUrl = image.url(theme.lightboxImageTransform) %}
+            {% endif %}
+
             <div class="relative">
                 <a class="bg-none block z-20 focus:outline-none focus:ring-4 focus:ring-black  overflow-hidden"
-                   href="{{ image.url(theme.lightboxImageTransform) }}" data-caption="{{ caption }}">
-                    {{ image.img(transform)|attr({alt: caption, class:'transform hover:scale-110 transition'}) }}
+                   href="{{ lightboxUrl }}" data-caption="{{ caption }}">
+                    {{ img(image, transform, {alt: caption, class:'transform hover:scale-110 transition'}) }}
                 </a>
-
             </div>
 
         {% endfor %}

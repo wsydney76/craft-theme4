@@ -4,6 +4,7 @@
 .DS_Store
 /web/cpresources
 /web/cache
+/web/imager
 /templates/test
 node_modules
 /config/Env.php

@@ -36,7 +36,7 @@ return [
     // same as max-width-header, if titleStyle != fullwidth
     'titleImageWidth' => 'xl',
 
-    'defaultBlockWidth' => 'lg',
+    'defaultBlockWidth' => 'xl',
 
     'defaultIndexWidth' => 'md',
 
@@ -54,6 +54,16 @@ return [
     'footerInnerWidth' => 'xl',
     'footerBorder' => false,
 
+    // Output format for image transforms
+    'defaultImageFormat' => 'webp',
+
+    // Effects for image transforms (requires imager plugin)
+    'defaultImageEffects' => ['sharpen' => true],
+
+    // Don't create srcset for images smaller than
+    'minResponsiveWidth' => 400,
+
+    // Create srcset for this widths
     'responsiveWidths' => [2500, 1800, 1280, 1024, 768, 400],
 
     'widths' => [

@@ -930,14 +930,14 @@ a.btn{
 .mt-2{
   margin-top: 0.5rem;
 }
+.mt-4{
+  margin-top: 1rem;
+}
 .mb-4{
   margin-bottom: 1rem;
 }
 .mt-8{
   margin-top: 2rem;
-}
-.mt-4{
-  margin-top: 1rem;
 }
 .mt-6{
   margin-top: 1.5rem;
@@ -1990,6 +1990,9 @@ a.btn{
   -webkit-text-decoration-line: none !important;
           text-decoration-line: none !important;
 }
+.opacity-80{
+  opacity: 0.8;
+}
 .opacity-25{
   opacity: 0.25;
 }
@@ -2013,6 +2016,10 @@ a.btn{
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.grayscale{
+  --tw-grayscale: grayscale(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .filter{
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
