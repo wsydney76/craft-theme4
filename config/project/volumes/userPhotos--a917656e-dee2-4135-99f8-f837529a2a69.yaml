@@ -33,7 +33,7 @@ hasUrls: true
 name: 'User Photos'
 settings:
   path: '@webroot/userphotos'
-sortOrder: 11
+sortOrder: 4
 titleTranslationKeyFormat: null
 titleTranslationMethod: language
 type: craft\volumes\Local

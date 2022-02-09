@@ -2,12 +2,13 @@
 {% set page = page ?? 1 %}
 {% set limit = limit ?? theme.entriesPerIndexPage %}
 
-{% set entryQuery = craft.entries(_criteria)
-    .limit(limit)
-    .with ([
+{% set entryQuery = craft.entries(_criteria).limit(limit) %}
+
+{% if not craft.app.plugins.pluginEnabled('imager-x') %}
+    {% do entryQuery.with ([
         ['featuredImage', {withTransforms: [theme.cardImageTransform]}]
     ]) %}
-
+{% endif %}
 
 {# Paginates the entry query given the current page #}
 {% set sprigPageInfo = sprig.paginate(entryQuery, page) %}

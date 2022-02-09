@@ -1,0 +1,19 @@
+columnSuffix: otbeutjf
+contentColumnType: text
+fieldGroup: 609778c1-e7ba-47fc-bd62-7f2c99f0f0ee # Assets
+handle: imageEffects
+instructions: "Effects to be applied on transformed images. See [docs](https://imager-x.spacecat.ninja/effects.html). Requires Imager X plugin.\r\n\r\nHas to be valid JSON, e.g {\"sharpen\": false}"
+name: 'Image Effects'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: '1'
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

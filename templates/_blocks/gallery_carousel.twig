@@ -4,7 +4,7 @@
 
 {% do view.registerAssetBundle('\\modules\\resources\\SliderAssets', POS_HEAD) %}
 
-{% set width = block.width == 'default' ? theme.defaultBlockWidth : block.width %}
+{% set width = block.width == 'default' ? theme.defaultImageWidth : block.width %}
 
 {% set thumbTransform = {width: 260, height: 150} %}
 

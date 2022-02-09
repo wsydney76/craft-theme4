@@ -1,66 +1,83 @@
 {% macro img(image, transform = {}, attrs = {}, showCopyright = true, createSrcset = true) %}
 
-    {% if craft.app.plugins.pluginEnabled('imager') %}
+    {% if craft.app.plugins.pluginEnabled('imager-x') %}
+        {# Use Imager transforms for (slightly) better quality and more control #}
 
         {% set imager = craft.imager %}
 
-        {# Use Imager transforms for (slightly) better quality and more control #}
+        {% if transform is string %}
+            {# named transform, all params are set in config #}
+            {% set transformedImages = imager.transformImage(image, transform) %}
 
-        {% do image.setTransform(transform) %}
-
-        {% set ratio = image.width / image.height %}
-
-        {% set baseTransform = {
-            width: image.width,
-            ratio: ratio,
-            format: transform.format ?? theme.defaultImageFormat,
-            mode: transform.mode ?? 'crop',
-            effects: transform.effects ?? theme.defaultImageEffects
-        } %}
-
-        {% if createSrcset and transform.width is defined and transform.width > theme.minResponsiveWidth %}
-
-            {% set transforms = [baseTransform] %}
-            {% for responsiveWidth in theme.responsiveWidths %}
-                {% if responsiveWidth < transform.width %}
-                    {% set transforms = transforms|push(baseTransform|merge({width: responsiveWidth})) %}
-                {% endif %}
-            {% endfor %}
-
-            {% set transformedImages = imager.transformImage(image, transforms) %}
-
-            {% set imgHtml = tag('img', {
-                src: imager.placeholder({ width: image.height, height: image.width }),
-                height: image.height,
-                width: image.width,
-                alt: image.altText ?: image.title,
-                srcset: imager.srcset(transformedImages),
-                loading: 'lazy'
-            }|merge(attrs)) %}
+            {% if transformedImages is array %}
+                {% set imgHtml = tag('img', {
+                    src: imager.placeholder({color: '#cccccc' }),
+                    alt: image.altText ?: image.title,
+                    srcset: imager.srcset(transformedImages),
+                    loading: 'lazy'
+                }|merge(attrs)) %}
+            {% else %}
+                {% set imgHtml = tag('img', {
+                    src: transformedImages.url,
+                    alt: image.altText ?: image.title,
+                    loading: 'lazy'
+                }|merge(attrs)) %}
+            {% endif %}
 
         {% else %}
+            {# on the fly transform, calculate missing parameters #}
 
-            {% set transformedImage = imager.transformImage(image, baseTransform) %}
+            {% do image.setTransform(transform) %}
 
-            {% set imgHtml = tag('img', {
-                src: transformedImage.url,
-                height: image.height,
+            {% set ratio = image.width / image.height %}
+
+            {% if image.imageEffects %}
+                {% set effects = image.imageEffects|json_decode %}
+            {% else %}
+                {% set effects = transform.effects ?? theme.defaultImageEffects %}
+            {% endif %}
+
+            {% set baseTransform = {
                 width: image.width,
-                alt: image.altText ?: image.title,
-                loading: 'lazy'
-            }|merge(attrs)) %}
+                ratio: ratio,
+                format: transform.format ?? theme.defaultImageFormat,
+                mode: transform.mode ?? 'crop',
+                effects: effects
+            } %}
 
-        {% endif %}
+            {% if createSrcset and transform.width is defined and transform.width > theme.minResponsiveWidth %}
 
-        {% if showCopyright and image.copyright %}
-            <div class="relative">
-                {{ imgHtml|raw }}
-                <div class="absolute bottom-0 right-0 bg-black/30 rounded-tl px-1 py-0.5 text-white text-xs truncate">
-                    &copy; {{ image.copyright }}
-                </div>
-            </div>
-        {% else %}
-            {{ imgHtml|raw }}
+                {% set transforms = [baseTransform] %}
+                {% for responsiveWidth in theme.responsiveWidths %}
+                    {% if responsiveWidth < transform.width %}
+                        {% set transforms = transforms|push(baseTransform|merge({width: responsiveWidth})) %}
+                    {% endif %}
+                {% endfor %}
+
+                {% set transformedImages = imager.transformImage(image, transforms) %}
+
+                {% set imgHtml = tag('img', {
+                    src: imager.placeholder({ width: image.height, height: image.width, color: '#cccccc' }),
+                    height: image.height,
+                    width: image.width,
+                    alt: image.altText ?: image.title,
+                    srcset: imager.srcset(transformedImages),
+                    loading: 'lazy'
+                }|merge(attrs)) %}
+
+            {% else %}
+
+                {% set transformedImage = imager.transformImage(image, baseTransform) %}
+
+                {% set imgHtml = tag('img', {
+                    src: transformedImage.url,
+                    height: image.height,
+                    width: image.width,
+                    alt: image.altText ?: image.title,
+                    loading: 'lazy'
+                }|merge(attrs)) %}
+
+            {% endif %}
         {% endif %}
 
 
@@ -93,16 +110,17 @@
             loading: 'lazy'
         }|merge(attrs)) %}
 
-        {% if showCopyright and image.copyright %}
-            <div class="relative">
-                {{ imgHtml|raw }}
-                <div class="absolute bottom-0 right-0 bg-black/30 rounded-tl px-1 py-0.5 text-white text-xs truncate">
-                    &copy; {{ image.copyright }}
-                </div>
-            </div>
-        {% else %}
+    {% endif %}
+
+    {% if showCopyright and image.copyright %}
+        <div class="relative">
             {{ imgHtml|raw }}
-        {% endif %}
+            <div class="absolute bottom-0 right-0 bg-black/30 rounded-tl px-1 py-0.5 text-white text-xs truncate">
+                &copy; {{ image.copyright }}
+            </div>
+        </div>
+    {% else %}
+        {{ imgHtml|raw }}
     {% endif %}
 
 {% endmacro %}

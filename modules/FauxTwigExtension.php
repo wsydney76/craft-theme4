@@ -22,7 +22,6 @@
 
 namespace nystudio107\craft;
 
-use aelvan\imager\variables\ImagerVariable;
 use craft\elements\Asset;
 use craft\elements\Category;
 use craft\elements\Entry;
@@ -34,6 +33,8 @@ use craft\web\twig\variables\CraftVariable;
 use craft\web\twig\variables\Paginate;
 use craft\web\view;
 use putyourlightson\blitz\variables\BlitzVariable;
+use spacecatninja\imagerx\models\LocalTransformedImageModel;
+use spacecatninja\imagerx\variables\ImagerVariable;
 use Spatie\SchemaOrg\Schema;
 use Twig\Extension\AbstractExtension;
 use Twig\Extension\GlobalsInterface;
@@ -67,6 +68,7 @@ class FauxTwigExtension extends AbstractExtension implements GlobalsInterface
             'blitz' => new BlitzVariable(),
             'pageInfo' => new Paginate(),
             'imager' => new ImagerVariable(),
+            'transform' => new LocalTransformedImageModel(),
 
             'schema' => new Schema(),
             // Commerce Elements

@@ -51,7 +51,7 @@ hasUrls: true
 name: 'Temporary Uploads'
 settings:
   path: '@webroot/temporaryuploads'
-sortOrder: 12
+sortOrder: 6
 titleTranslationKeyFormat: null
 titleTranslationMethod: language
 type: craft\volumes\Local

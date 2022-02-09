@@ -22,9 +22,13 @@
             .offset(offset)
             .limit(limit)
             .type('not toc')
-            .with([
+            %}
+
+        {% if not craft.app.plugins.pluginEnabled('imager-x') %}
+            {% do entryQuery.with([
                 ['featuredImage', {withTransforms: [theme.cardImageTransform]}]
             ]) %}
+        {% endif %}
 
         {% set entries = entryQuery.all %}
 
@@ -33,7 +37,6 @@
             {% include '_partials/entry_cards.twig' with {
                 entries
             } only %}
-
 
             {# If the total entry count is greater than the number that has been displayed #}
             {% if entryQuery.count() > offset + entries|length %}

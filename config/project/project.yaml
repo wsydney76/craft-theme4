@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1644405628
+dateModified: 1644482642
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -75,6 +75,7 @@ meta:
     8ad4e678-f595-4ec6-bce4-fde5e7695646: Titel # Titel
     8bdcbbd7-5199-473d-a5a8-86cb6259f921: 'Font Url' # Font Url
     8c6df9ef-ca5c-4a08-9c7b-7bbb9e11b5a3: Jahr # Jahr
+    8c9b2ed9-86a5-4843-858a-16760e0e5437: 'Image Effects' # Image Effects
     8c913048-adc1-41ba-a027-bbd703e99461: Align # Align
     8d05e85c-30a0-4fd2-bd10-61141dcfc963: 'Cover Images' # Cover Images
     8d799a3d-9460-47c2-a12b-2dfe10eecd9a: Image # Image
@@ -174,6 +175,7 @@ meta:
     90724a6b-55ad-446f-be50-7aea7e1fb067: Robots # Robots
     91350ab1-7a75-4d75-954c-aed53e2be72d: 'Helle Farbe' # Helle Farbe
     118622b7-20ad-4b1d-8d78-5d49bbdbcd68: Template # Template
+    609778c1-e7ba-47fc-bd62-7f2c99f0f0ee: Assets # Assets
     692545fb-e35e-4d52-9556-61dd2de564b0: 'Filmmakers Link' # Filmmakers Link
     867104fa-7b5a-4510-a6f7-9a36bd106af0: 'Johanna Debes' # Johanna Debes
     998578d3-ed21-4353-b626-c42440dc380f: Members # Members
@@ -398,10 +400,11 @@ plugins:
         - youtu.be
         - youtube.com
         - youtube-nocookie.com
-  imager:
-    edition: standard
+  imager-x:
+    edition: pro
     enabled: true
-    schemaVersion: 2.0.0
+    licenseKey: KM6EWK48GP7O2AW535XV8UC1
+    schemaVersion: 3.0.0
   matrixmate:
     edition: standard
     enabled: true

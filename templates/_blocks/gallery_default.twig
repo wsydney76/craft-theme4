@@ -35,7 +35,7 @@
 
             {% set caption = image.altText ?: image.title %}
 
-            {% if craft.app.plugins.pluginEnabled('imager') %}
+            {% if craft.app.plugins.pluginEnabled('imager-x') %}
                 {% set transformedImage = craft.imager.transformImage(image, theme.lightboxImageTransform) %}
                 {% set lightboxUrl = transformedImage.url %}
             {% else %}
