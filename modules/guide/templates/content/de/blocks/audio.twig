@@ -1,0 +1,12 @@
+{% set text %}
+    Ermöglicht das Abspielen selbstgehosteter Audio-Dateien.
+
+    Standardmäßig wird der Browser-eigene Player genutzt, Sie können aber unter dem Tab 'Layout'
+    auswählen, ein schöneres Layout (Gestyled) zu verwenden.
+
+{% endset %}
+{% include 'guide/embeds/two_columns.twig' with {
+    heading: 'Audio',
+    text,
+    images: ['blocks-audio.jpg', 'blocks-audio-player.jpg',]
+} %}

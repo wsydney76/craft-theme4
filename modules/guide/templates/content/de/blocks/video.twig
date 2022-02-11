@@ -1,0 +1,18 @@
+{% set text %}
+    Ermöglicht das Abspielen selbstgehosteter Video-Dateien.
+
+    Laden Sie ein Video hoch, das mit dem browsereigenen HTML5-Video-Player abgespielt werden kann.
+    [Unterstützte Formate](https://wiki.selfhtml.org/wiki/HTML/Tutorials/Multimedia/video#Unterst.C3.BCtzte_Formate).
+
+    Die Dateigröße darf das eingestellte Maximum ({{ craft.app.config.general.maxUploadFileSize|filesize(0) }}) nicht überschreiten.
+
+    Sie können auch ein Bild hochladen, das dann vor dem Starten des Videos angezeigt wird.
+
+    Sie können wählen, ob das Video in einem Fenster abgespielt werden soll.
+
+{% endset %}
+{% include 'guide/embeds/two_columns.twig' with {
+    heading: 'Video',
+    text,
+    image: 'blocks-video.jpg'
+} %}

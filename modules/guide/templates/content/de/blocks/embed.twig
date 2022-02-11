@@ -1,0 +1,26 @@
+{% set text %}
+    Fügen Sie externe Inhalte von Twitter, Vimeo und Youtube ein.
+
+    Klicken Sie im Dateiauswahl-Fenster auf 'Embed' und kopieren Sie die URL des gewünschten Eintrags in das Eingabefeld.
+
+    {% set config = craft.app.config.configFromFile('embeddedassets') %}
+    {% if config %}
+        __Erlaubte Provider:__
+
+        {% for domain in config['whitelist'] %}
+            * {{ domain }}
+        {% endfor %}
+    {% endif %}
+
+    Inhalte des 'Meta'-Universums (Facebook, Instagram) sind NICHT erlaubt. Aus Gründen.
+
+
+{% endset %}
+
+{% include 'guide/embeds/two_columns.twig' with {
+    heading: 'Embed',
+    text,
+    images: ['blocks-embed.jpg', 'blocks-embed-dialog.jpg']
+} %}
+
+
