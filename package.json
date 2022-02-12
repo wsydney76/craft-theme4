@@ -15,7 +15,7 @@
     "watch": "cross-env NODE_ENV=development webpack --watch --mode=development"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.12",
+    "@babel/core": "^7.17.2",
     "@babel/preset-env": "^7.16.11",
     "@fullhuman/postcss-purgecss": "^1.2.0",
     "babel-loader": "^8.2.3",
@@ -37,16 +37,16 @@
     "webpack-manifest-plugin": "^2.0.4"
   },
   "dependencies": {
-    "@alpinejs/collapse": "^3.8.1",
-    "@alpinejs/focus": "^3.8.1",
-    "@alpinejs/intersect": "^3.8.1",
+    "@alpinejs/collapse": "^3.9.0",
+    "@alpinejs/focus": "^3.9.0",
+    "@alpinejs/intersect": "^3.9.0",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.4.0",
-    "alpinejs": "^3.8.1",
+    "alpinejs": "^3.9.0",
     "autoprefixer": "^10.4.2",
     "baguettebox.js": "^1.11.1",
     "js-cookie": "^3.0.1",
     "postcss": "^8.4.6",
-    "tailwindcss": "^3.0.18"
+    "tailwindcss": "^3.0.22"
   }
 }
