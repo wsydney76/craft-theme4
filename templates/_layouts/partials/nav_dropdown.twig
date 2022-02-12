@@ -1,13 +1,16 @@
 {% embed '_layouts/components/dropdown.twig' %}
     {% block buttonText %}
-        <div class="nav-link {{ craft.app.request.segment(1) == navEntry.slug ? 'underline' }}">{{ navEntry.title }}</div>
+        <div class="nav-link {{ craft.app.request.segment(1) == navEntry.slug ? 'border-primary' : 'border-transparent' }}">{{ navEntry.title }}</div>
     {% endblock %}
 
     {% block panel %}
         {% if entries is defined %}
+
             {% for navEntry in entries %}
-                <a class="block my-2 nav-link truncate" href="{{ navEntry.url }}">{{ navEntry.navTitle }}</a>
+                <a class="nav-link inline-block mt-2 border-transparent truncate"
+                   href="{{ navEntry.url }}">{{ navEntry.navTitle }}</a>
             {% endfor %}
+
         {% endif %}
     {% endblock %}
 

@@ -1,5 +1,7 @@
 <?php
 
+$useImager = Craft::$app->plugins->isPluginEnabled('imager-x');
+
 return [
     // fullwidth frame sidebar
     'layout' => 'fullwidth',
@@ -28,7 +30,7 @@ return [
 
     'pageWidth' => 'lg',
 
-    'headerWidth' => 'xl',
+    'headerWidth' => 'lg',
 
     // breakpoint for default/mobile menu can be always (always show hamburger menu) / never (never show hamburger menu)
     'mobileBreakpoint' => 'sm',
@@ -54,6 +56,16 @@ return [
     'footerInnerWidth' => 'xl',
     'footerBorder' => false,
 
+    // Output format for image transforms
+    'defaultImageFormat' => 'webp',
+
+    // Effects for image transforms (requires imager plugin)
+    'defaultImageEffects' => ['sharpen' => true],
+
+    // Don't create srcset for images smaller than
+    'minResponsiveWidth' => 400,
+
+    // Create srcset for this widths
     'responsiveWidths' => [2500, 1800, 1280, 1024, 768, 400],
 
     'widths' => [
@@ -67,12 +79,12 @@ return [
     ],
 
     // should match w-card utility
-    'cardImageTransform' => ['width' => 300, 'height' => 200, 'format' => 'webp'],
+    'cardImageTransform' => $useImager ? 'cardImage' : ['width' => 300, 'height' => 200, 'format' => 'webp'],
 
-    'defaultIndexImageTransform' => ['width' => 350, 'height' => 200, 'format' => 'webp'],
+    'defaultIndexImageTransform' => $useImager ? 'defaultIndexImage' : ['width' => 350, 'height' => 200, 'format' => 'webp'],
 
     // set null if first image shall not be fullwidth
-    'defaultIndexFirstImageTransform' => ['width' => 768, 'height' => 432, 'format' => 'webp'],
+    'defaultIndexFirstImageTransform' => $useImager ? 'defaultIndexFirstImage' : ['width' => 768, 'height' => 432, 'format' => 'webp'],
 
     // default index template
     'cardletImageTransform' => ['width' => 300, 'height' => 225, 'format' => 'webp'],

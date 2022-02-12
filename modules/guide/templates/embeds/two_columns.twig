@@ -1,0 +1,31 @@
+{% set heading = heading ?? '' %}
+
+{% if image is defined %}
+    {% set images = [image] %}
+{% endif %}
+
+{% set images = images ?? [] %}
+
+<div class="guide_grid guide_grid--2_column">
+    <div>
+
+        {% if heading %}
+            <h2 data-guide-section>{{ heading }}</h2>
+        {% endif %}
+
+        {% block left %}
+            <div class="guide_text">
+                {{ text|guideText }}
+            </div>
+        {% endblock %}
+    </div>
+    <div>
+        {% block right %}
+            {% from 'guide/macros.twig' import guideAsset %}
+            {% for image in images %}
+                {{ guideAsset(image) }}
+            {% endfor %}
+        {% endblock %}
+    </div>
+
+</div>

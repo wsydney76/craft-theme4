@@ -1,0 +1,8 @@
+{% from '_macros/lib.twig' import img %}
+<div class="flex flex-wrap justify-center space-y-4">
+    {% for image in block.images.all %}
+        <div>
+            {{ img(image, theme.galleryFullWidthTransform) }}
+        </div>
+    {% endfor %}
+</div>

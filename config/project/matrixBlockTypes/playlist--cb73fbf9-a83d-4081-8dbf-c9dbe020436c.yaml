@@ -121,4 +121,4 @@ fields:
     type: craft\fields\Dropdown
 handle: playlist
 name: Playlist
-sortOrder: 9
+sortOrder: 8

@@ -27,6 +27,9 @@ return [
         // Whether images transforms should be generated before page load
         'generateTransformsBeforePageLoad' => true,
 
+        // Whether Craft should optimize images for reduced file sizes without noticeably reducing image quality.
+        'optimizeImageFilesize' => false,
+
         // List of file extensions that will be merged into the allowedFileExtensions config setting.
 
         // Images with a URL like https://pbs.twimg.com/media/FKIjjjqXwAUE3xS?format=jpg&name=large

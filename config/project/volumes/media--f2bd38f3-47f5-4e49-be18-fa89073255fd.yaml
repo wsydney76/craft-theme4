@@ -51,7 +51,7 @@ hasUrls: true
 name: Media
 settings:
   path: '@webroot/media'
-sortOrder: 1
+sortOrder: 3
 titleTranslationKeyFormat: null
 titleTranslationMethod: language
 type: craft\volumes\Local

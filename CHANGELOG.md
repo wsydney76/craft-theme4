@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.4.0 2020-02-12 (Beta, ready for testing)
+
+* Use Imager-X plugin for image handling, better quality and more control.
+* Added provisional guide content for blocks (german only)
+* Better guide content migration.
+* Craft and npm updates
+
 ## 2.3.0 2020-02-06
 
 * Added 'Simple' style to playlist block

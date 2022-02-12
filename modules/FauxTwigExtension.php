@@ -33,6 +33,8 @@ use craft\web\twig\variables\CraftVariable;
 use craft\web\twig\variables\Paginate;
 use craft\web\view;
 use putyourlightson\blitz\variables\BlitzVariable;
+use spacecatninja\imagerx\models\LocalTransformedImageModel;
+use spacecatninja\imagerx\variables\ImagerVariable;
 use Spatie\SchemaOrg\Schema;
 use Twig\Extension\AbstractExtension;
 use Twig\Extension\GlobalsInterface;
@@ -64,8 +66,9 @@ class FauxTwigExtension extends AbstractExtension implements GlobalsInterface
             'view' => new view(),
             'siteInfo' => new GlobalSet(),
             'blitz' => new BlitzVariable(),
-            'themeSettings' => new SuperTableBlockElement(),
             'pageInfo' => new Paginate(),
+            'imager' => new ImagerVariable(),
+            'transform' => new LocalTransformedImageModel(),
 
             'schema' => new Schema(),
             // Commerce Elements

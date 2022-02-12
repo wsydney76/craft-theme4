@@ -1,0 +1,13 @@
+{% set text %}
+    Hervorgehobene Zusammenfassung.
+
+    Welche Frage wird in diesem Artikel wie beantwortet?
+
+    Für jeden längeren Artikel sollte ein Block am Anfang des Inhalts platziert werden.
+
+{% endset %}
+{% include 'guide/embeds/two_columns.twig' with {
+    heading: 'Summary',
+    text,
+    images: ['blocks-summary.jpg']
+} %}

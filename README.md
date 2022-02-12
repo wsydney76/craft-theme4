@@ -6,8 +6,10 @@ Usefull for demos and hobby projects.
 
 ## Prerequisits
 
+* Check [recommended server requirements](https://craftcms.com/docs/3.x/requirements.html).
+* PHP 8 is required in `composer.json`, but you can set that to 7.4 before running `composer install` if needed.
 * Create a MySql database.
-* Set a web server pointing to the `web` directory of your project. Alternatively you can run `php craft serve` and use `http://localhost:8080` as your domain.
+* Set up a web server pointing to the `web` directory of your project. Alternatively you can run `php craft serve` and use `http://localhost:8080` as your domain.
 
 ##  Installation
 
@@ -119,6 +121,46 @@ Run `php craft main/seed/create-members-entries` to generate simple starter entr
 You are free to customize any of this, just include the actions in templates/_members whereever you want.
 
 Required Plugins: Sprig (Craft), Tailwind CSS Forms (Frontend)
+
+## License
+
+Both Craft CMS and the Imager X Plugin are paid software. However you can use both for free
+on any [non public domain.](https://craftcms.com/knowledge-base/how-craft-license-enforcement-works#how-do-we-determine-craft-is-running-on-a-public-domain).
+
+In case you can't pay for use on a public domain: (You should, the devs have to pay for their living...)
+
+* Downgrade Craft edition to 'SOLO'. You will loose all multi user ans GraphQL functionality.
+* Uninstall Imager X. Will fallback to Crafts own image handling, loosing a bit of quality and a lot of control.
+
+## Plugins
+
+The following plugins are used:
+
+### Required Craft plugins
+
+Will not work at all without those (or require some dev work to drop them)
+
+* Super Table: Workaround for missing 'matrix in matrix'. Used a lot in content modelling.
+* Redactor: Rich text editing 
+* Asset Rev: Required to match the build workflow.
+* Embedded Assets: Required for Embed block.
+* Sprig: Frontend reactivity, used in search und pagination
+
+### Other plugins
+
+These can be uninstall without breaking the site.
+
+* Control Panel CSS: Makes the CP look a bit nicer.
+* Imager X (paid): Better quality and more control for image handling. Will fallback to Crafts native functionality if uninstalled.
+* SEOMate: Can be uninstalled if you do not want to be found. Or replace with (paid) SEOMatic plugin.
+* Smith: Adds copy & paste functionality to matrix blocks.
+* MatrixMate: Adds grouping of blocks and tabs to matrix blocks.
+
+Private Plugins: 'Unofficial' plugins. Consider as beta.
+
+* Element Map: Shows reverse relationships in the Control Panel
+* Work: Proof of concept for improving the editing workflow (most useful for comparing draft content with current version)
+
 
 ## TBD
 

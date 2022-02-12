@@ -1,0 +1,33 @@
+{% from 'guide/macros.twig' import guideAsset %}
+
+<h2 data-guide-section>Übersicht</h2>
+
+<p>
+    Hier finden Sie eine Übersicht über alle Blöcke, die Sie im Content Builder verwenden können.
+    Eingabemöglichkeiten und Darstellungsdetails können sich in Ihrer Installation unterscheiden.
+</p>
+
+{% embed 'guide/embeds/two_columns.twig' with {image: 'blocks-layout.jpg'} %}
+	{% block left %}
+        {% apply guideText %}
+            Bei Blöcken, die nebem dem eigentlichen Inhalt weitere Layout-Optionen haben, erreichen Sie
+            diese rechts oben in der Kopfzeile über den Tab 'Layout'.
+
+            Hier können Sie auch den Block verschieben, löschen, oder einen neuen Block einfügen.
+        {% endapply %}
+    {% endblock %}
+{% endembed %}
+
+
+{% set field = craft.app.fields.fieldByHandle('bodyContent') %}
+
+{% for blockType in field.blockTypes %}
+    {# TODO: remove de fallback when all guides are translated into english #}
+    {% include  [
+        "guide/content/#{currentUser.preferredLanguage[:2]}/blocks/#{blockType.handle}.twig",
+        "guide/content/blocks/#{blockType.handle}.twig",
+        "_guide/#{currentUser.preferredLanguage[:2]}/blocks#{entry.slug}.twig",
+        "_guide/blocks#{entry.slug}.twig",
+        "guide/content/de/blocks/#{blockType.handle}.twig",
+        ] ignore missing with { blockType } %}
+{% endfor %}

@@ -21,16 +21,16 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
-            width: 100
+            width: 25
           -
-            fieldUid: d9da022d-74c8-40d1-bd79-f3a6f208e542 # Display
+            fieldUid: d9da022d-74c8-40d1-bd79-f3a6f208e542 # Style
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
-            width: 100
+            width: 25
           -
             fieldUid: 3580d155-238d-43a1-b359-9c0634e988ed # Number of Columns
             instructions: null
@@ -104,25 +104,73 @@ fields:
     type: modules\main\fields\WidthField
   3580d155-238d-43a1-b359-9c0634e988ed: # Number of Columns
     columnSuffix: null
-    contentColumnType: smallint(1)
+    contentColumnType: string
     fieldGroup: null
     handle: numberOfColumns
     instructions: 'Display = Default only'
     name: 'Number of Columns'
     searchable: false
     settings:
-      decimals: 0
-      defaultValue: 4
-      max: 6
-      min: 2
-      prefix: null
-      previewCurrency: ''
-      previewFormat: decimal
-      size: null
-      suffix: null
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - '2'
+            -
+              - value
+              - '2'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '3'
+            -
+              - value
+              - '3'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '4'
+            -
+              - value
+              - '4'
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - '5'
+            -
+              - value
+              - '5'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '6'
+            -
+              - value
+              - '6'
+            -
+              - default
+              - ''
     translationKeyFormat: null
     translationMethod: none
-    type: craft\fields\Number
+    type: craft\fields\Dropdown
   8625d595-25d0-480e-88cd-cb7c5e9651bd: # Aspect Ratio
     columnSuffix: null
     contentColumnType: string
@@ -136,13 +184,13 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: modules\main\fields\AspectRatioField
-  d9da022d-74c8-40d1-bd79-f3a6f208e542: # Display
+  d9da022d-74c8-40d1-bd79-f3a6f208e542: # Style
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
-    handle: display
+    handle: style
     instructions: ''
-    name: Display
+    name: Style
     searchable: false
     settings:
       optgroups: true
@@ -185,4 +233,4 @@ fields:
     type: craft\fields\Dropdown
 handle: gallery
 name: Gallery
-sortOrder: 12
+sortOrder: 4

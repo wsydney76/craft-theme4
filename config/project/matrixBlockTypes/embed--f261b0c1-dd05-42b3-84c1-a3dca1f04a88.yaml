@@ -53,4 +53,4 @@ fields:
     type: craft\fields\Assets
 handle: embed
 name: Embed
-sortOrder: 11
+sortOrder: 6

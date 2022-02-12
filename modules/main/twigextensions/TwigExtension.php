@@ -3,9 +3,12 @@
 namespace modules\main\twigextensions;
 
 use Craft;
+use craft\helpers\Template;
 use Twig\Extension\AbstractExtension;
 use Twig\Extension\GlobalsInterface;
 use Twig\TwigFilter;
+use yii\helpers\Markdown;
+use function str_replace;
 
 class TwigExtension extends AbstractExtension implements GlobalsInterface
 {
@@ -27,7 +30,7 @@ class TwigExtension extends AbstractExtension implements GlobalsInterface
         return [
             new TwigFilter('one', [$this, 'oneFilter']),
             new TwigFilter('all', [$this, 'allFilter']),
-            new TwigFilter('quote', [$this, 'quoteFilter']),
+            new TwigFilter('quote', [$this, 'quoteFilter'])
         ];
     }
 
@@ -71,4 +74,5 @@ class TwigExtension extends AbstractExtension implements GlobalsInterface
     {
         return Craft::t('site', '“') . $text . Craft::t('site', '”') ;
     }
+
 }

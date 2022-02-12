@@ -4,7 +4,13 @@
     <div class="data">
         {% set guideUrl = cpUrl("guide-ajax/#{guide.slug}") %}
 
-        {% embed 'guide/modalbutton_ajax.twig' with {id:'showguide', caption:'Guide', url: guideUrl } %}
+        {% set subGuides = guide.includeGuides.all %}
+
+        {% embed 'guide/modalbutton_ajax.twig' with {
+            caption:'Guide',
+            url: guideUrl,
+            subGuides: subGuides|map(g => {label: g.title, url: cpUrl("guide-ajax/#{g.slug}")})
+        } %}
             {% block content %}
                 Loading...
             {% endblock %}

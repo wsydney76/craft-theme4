@@ -21,7 +21,7 @@ class AssetsController extends Controller
 {
 // This is an example, better call a service method in real live.
     //
-    // .\craft main/assets/clear-image-transform-directories
+    // php craft main/assets/clear-image-transform-directories
     //
 
     /**

@@ -86,7 +86,7 @@
 
 @layer utilities {
   .nav-link {
-    @apply text-sm font-semibold uppercase;
+    @apply text-sm font-semibold uppercase hover:no-underline border-b-2 hover:border-primary;
   }
 
   .pagination {

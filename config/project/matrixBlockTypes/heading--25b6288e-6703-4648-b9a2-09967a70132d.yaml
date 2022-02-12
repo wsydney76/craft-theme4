@@ -38,4 +38,4 @@ fields:
     type: craft\fields\PlainText
 handle: heading
 name: Heading
-sortOrder: 2
+sortOrder: 1

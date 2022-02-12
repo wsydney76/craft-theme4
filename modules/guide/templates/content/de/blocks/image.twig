@@ -1,0 +1,21 @@
+{% set text %}
+    Wählen Sie ein Bild aus und geben Sie eine Beschriftung ein.
+
+    Durch einen Doppelklick auf das Bild wird der Bild-Editor geöffnet, hier können sie einen Fokuspunkt auswählen
+    und einen Alt-Text sowie das Copyright eingeben.
+
+    Beide Angaben sind Pflicht, es ist nicht möglich einen Eintrag zu speichern, wenn in den zugeordneten Bildern diese Angaben fehlen.
+
+    Breite und Seitenverhältnis des Bilds werden standardmäßig in den im Theme festgelegten Werten angezeigt, Sie können
+    dies unter dem Tab 'Layout' verändern.
+
+    Innerhalb eines Eintrags sollten nicht übermaßig viele verschiedene Breiten/Seitenverhältnisse verwendet werden.
+{% endset %}
+
+{% include 'guide/embeds/two_columns.twig' with {
+    heading: 'Bild',
+    text,
+    images: ['blocks-image.jpg','blocks-image-layout.jpg']
+} %}
+
+

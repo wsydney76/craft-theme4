@@ -1,0 +1,28 @@
+{% set text %}
+    Wählen Sie Bilder aus, die gemeinsam dargestellt werden sollen.
+
+    Neben der Blockbreite können Sie im Tab Layout folgende Einstellungen treffen:
+
+    **Stil**
+
+    * Default: Die Bilder werden im einem Gitter angeordnet, bei Auswahl öffnet sich eine Lightbox mit dem Bild im größerem Format.
+    * Karusell (experimental): Die Bilder werden in eimen horizontalen Slider dargestellt.
+    * Volle Breite: Die Bilder werden in voller Größe untereinander angezeigt.
+
+    **Anzahl Spalten**
+
+    In wie vielen Spalten die Bilder im Default-Stil auf größeren Bildschirmen angezeigt werden sollen. Auf die Blockbreite anpassen!
+
+    **Seitenverhältnis**
+
+    Auf welches Seitenverhältnis die Bilder im Default-Stil zugeschnitten werden sollen.
+
+{% endset %}
+
+{% include 'guide/embeds/two_columns.twig' with {
+    heading: 'Gallerie',
+    text,
+    images: ['blocks-gallery.jpg','blocks-gallery-layout.jpg','blocks-gallery-default.jpg']
+} %}
+
+

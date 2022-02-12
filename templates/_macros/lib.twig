@@ -1,28 +1,116 @@
-{% macro img(image, transform = {}, attrs = {}, showCopyright = true) %}
-    {% set srcSet = [] %}
-    {% if transform.width is defined %}
-        {% set srcSet = [transform.width] %}
-        {% for responsiveWidth in theme.responsiveWidths %}
-            {% if responsiveWidth < transform.width %}
-                {% set srcSet = srcSet|push(responsiveWidth) %}
+{% macro img(image, transform = {}, attrs = {}, showCopyright = true, createSrcset = true) %}
+
+    {% if craft.app.plugins.pluginEnabled('imager-x') %}
+        {# Use Imager transforms for (slightly) better quality and more control #}
+
+        {% set imager = craft.imager %}
+
+        {% if transform is string %}
+            {# named transform, all params are set in config #}
+            {% set transformedImages = imager.transformImage(image, transform) %}
+
+            {% if transformedImages is array %}
+                {% set imgHtml = tag('img', {
+                    src: imager.placeholder({color: '#cccccc' }),
+                    alt: image.altText ?: image.title,
+                    srcset: imager.srcset(transformedImages),
+                    loading: 'lazy'
+                }|merge(attrs)) %}
+            {% else %}
+                {% set imgHtml = tag('img', {
+                    src: transformedImages.url,
+                    alt: image.altText ?: image.title,
+                    loading: 'lazy'
+                }|merge(attrs)) %}
             {% endif %}
-        {% endfor %}
+
+        {% else %}
+            {# on the fly transform, calculate missing parameters #}
+
+            {% do image.setTransform(transform) %}
+
+            {% set ratio = image.width / image.height %}
+
+            {% if image.imageEffects %}
+                {% set effects = image.imageEffects|json_decode %}
+            {% else %}
+                {% set effects = transform.effects ?? theme.defaultImageEffects %}
+            {% endif %}
+
+            {% set baseTransform = {
+                width: image.width,
+                ratio: ratio,
+                format: transform.format ?? theme.defaultImageFormat,
+                mode: transform.mode ?? 'crop',
+                effects: effects
+            } %}
+
+            {% if createSrcset and transform.width is defined and transform.width > theme.minResponsiveWidth %}
+
+                {% set transforms = [baseTransform] %}
+                {% for responsiveWidth in theme.responsiveWidths %}
+                    {% if responsiveWidth < transform.width %}
+                        {% set transforms = transforms|push(baseTransform|merge({width: responsiveWidth})) %}
+                    {% endif %}
+                {% endfor %}
+
+                {% set transformedImages = imager.transformImage(image, transforms) %}
+
+                {% set imgHtml = tag('img', {
+                    src: imager.placeholder({ width: image.height, height: image.width, color: '#cccccc' }),
+                    height: image.height,
+                    width: image.width,
+                    alt: image.altText ?: image.title,
+                    srcset: imager.srcset(transformedImages),
+                    loading: 'lazy'
+                }|merge(attrs)) %}
+
+            {% else %}
+
+                {% set transformedImage = imager.transformImage(image, baseTransform) %}
+
+                {% set imgHtml = tag('img', {
+                    src: transformedImage.url,
+                    height: image.height,
+                    width: image.width,
+                    alt: image.altText ?: image.title,
+                    loading: 'lazy'
+                }|merge(attrs)) %}
+
+            {% endif %}
+        {% endif %}
+
+
+    {% else %}
+
+        {# Use native Craft transforms #}
+
+        {% set srcSet = [] %}
+        {% if transform.width is defined %}
+            {% set srcSet = [transform.width] %}
+            {% for responsiveWidth in theme.responsiveWidths %}
+                {% if responsiveWidth < transform.width %}
+                    {% set srcSet = srcSet|push(responsiveWidth) %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
+        {% if transform.format is not defined %}
+            {% set transform = transform|merge({format: 'webp'}) %}
+        {% endif %}
+
+        {% do image.setTransform(transform) %}
+
+        {% set imgHtml = tag('img', {
+            src: image.url,
+            height: image.height,
+            width: image.width,
+            alt: image.altText ?: image.title,
+            srcset: image.srcset(srcSet),
+            loading: 'lazy'
+        }|merge(attrs)) %}
+
     {% endif %}
-
-    {% if transform.format is not defined %}
-        {% set transform = transform|merge({format: 'webp'}) %}
-    {% endif %}
-
-    {% do image.setTransform(transform) %}
-
-    {% set imgHtml = tag('img', {
-        src: image.url,
-        height: image.height,
-        width: image.width,
-        alt: image.altText ?: image.title,
-        srcset: image.srcset(srcSet),
-        loading: 'lazy'
-    }|merge(attrs)) %}
 
     {% if showCopyright and image.copyright %}
         <div class="relative">

@@ -1,0 +1,19 @@
+{% set text %}
+    Playlist selbstgehosteter Audio-Dateien.
+
+    Legen Sie für jeden Song eine Zeile an:
+
+    * Bild
+    * Audio-Datei
+    * Titel
+    * Interpret
+    * Dauer
+
+    Im Tab 'Layout' können Sie zwischen dem Standard-Layout und einem vereinfachten Layout wählen.
+
+{% endset %}
+{% include 'guide/embeds/two_columns.twig' with {
+    heading: 'Playlist',
+    text,
+    images: ['blocks-playlist.jpg', 'blocks-playlist-default.jpg', 'blocks-playlist-simple.jpg']
+} %}
