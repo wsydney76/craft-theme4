@@ -21,7 +21,7 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
-            width: 100
+            width: 75
         name: Content
         sortOrder: 1
 fields:
@@ -30,7 +30,7 @@ fields:
     contentColumnType: string(256)
     fieldGroup: null
     handle: parameter
-    instructions: "Json-Format\r\n{\"section\":\"blog\",\"limit\":10}"
+    instructions: "Json-Format\r\n{\"section\":\"article\",\"limit\":3}"
     name: Parameter
     searchable: false
     settings:
@@ -60,4 +60,4 @@ fields:
     type: modules\main\fields\IncludeField
 handle: dynamicBlock
 name: 'Dynamic Block'
-sortOrder: 11
+sortOrder: 15

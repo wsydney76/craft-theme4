@@ -1,0 +1,21 @@
+{% set text %}
+    Einfache Möglichkeit, mehrspaltige Layouts in einen Eintrag einzubauen.
+
+    Für jede Spalte kann unter "Spanne" die relative Spaltenbreite eingestellt werden, "automatisch" verteilt eine
+    verbleibende Breite gleichmäßig.
+
+    Für den Spalteninhalt steht eine vereinfachte Auswahl an Blöcken zur Verfügung.
+
+    Tab "Layout":
+
+    * Breite: Breite des Inhalts für breitere Bildschirme, bei schmalen Bildschirmen werden die Spalten immer untereinander dargestellt.
+    * Vertikale Abstände: Sollen mehrere Spaltenblöcke oder Bilder mit voller Breite ohne Abstand angezeigt werden, können hier die Standardabstände abgeschaltet werden.
+    * Hintergrundfarbe: Immer über volle Breite
+    * Textfarbe: Auf ausreichenden Kontrast zur Hintergrundfarbe achten.
+
+{% endset %}
+{% include 'guide/embeds/two_columns.twig' with {
+    heading: 'Mehrspaltig',
+    text,
+    images: ['blocks-columns.jpg', 'blocks-columns-layout.jpg']
+} %}

@@ -10,9 +10,10 @@
     {% set aspectRatio = '1:1' %}
 {% endif %}
 
-{% set width = block.width == 'default' ? theme.defaultBlockWidth : block.width %}
+{% set width = block.width == 'default' ? theme.defaultImageWidth : block.width %}
 
 {% set width = theme.widths[width] ?? 2500  %}
+
 
 {% set imgWidth = (width / numberOfColumns) %}
 

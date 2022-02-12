@@ -1,0 +1,8 @@
+{% set text %}
+   Zitat mit Text und Quelle
+{% endset %}
+{% include 'guide/embeds/two_columns.twig' with {
+    heading: 'Zitat',
+    text,
+    images: ['blocks-quote.jpg']
+} %}

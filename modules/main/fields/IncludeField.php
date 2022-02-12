@@ -2,6 +2,7 @@
 
 namespace modules\main\fields;
 
+use Craft;
 use craft\base\ElementInterface;
 use craft\base\Field;
 use craft\elements\Entry;
@@ -88,7 +89,7 @@ class IncludeField extends Field
             foreach ($files as $file) {
                 if (!str_starts_with($file, '_') && !is_dir($baseDir . DIRECTORY_SEPARATOR . $file)) {
                     $label = ucfirst(str_replace('.twig', '', $file));
-                    $options[] = ['label' => $label, 'value' => $file];
+                    $options[] = ['label' => Craft::t('site', $label), 'value' => $file];
                 }
             }
         } catch (Exception $e) {

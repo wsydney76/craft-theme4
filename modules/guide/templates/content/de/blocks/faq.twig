@@ -1,0 +1,14 @@
+{% set text %}
+    Fragen und Antworten.
+
+    Im Tab 'Layout' können Sie zwischen zwei Darstellungsvarianten wählen:
+
+    * Standard: Fragen und Antworten werden in Textform ohne besondere Formatierung untereinander dargestellt.
+    * Accordion: Fragen werden in Blöcken dargestellt, von denen jeweils eine aufgeklappt werden kann.
+
+{% endset %}
+{% include 'guide/embeds/two_columns.twig' with {
+    heading: 'FAQ',
+    text,
+    images: ['blocks-faq.jpg']
+} %}

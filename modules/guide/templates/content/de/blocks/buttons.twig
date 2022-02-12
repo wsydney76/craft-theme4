@@ -1,0 +1,15 @@
+{% set text %}
+    Buttons mit Verlinkungen auf andere Einträge.
+
+    Fügen Sie für jeden Button eine Zeile hinzu:
+
+    * Zu verlinkenden Eintrag auswählen
+    * Beschriftung eingeben, wenn der Titel des Eintrags überschrieben werden soll.
+    * Button-Farben. Bitte beachten, dass sich ein hinreichender Kontrast zwischen Text- und Hintergrundfarbe ergibt.
+
+{% endset %}
+{% include 'guide/embeds/two_columns.twig' with {
+    heading: 'Buttons',
+    text,
+    images: ['blocks-buttons.jpg', 'blocks-buttons-frontend.jpg']
+} %}

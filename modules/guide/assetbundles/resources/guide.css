@@ -18,6 +18,10 @@
     --guide-max-width: 1000px
 }
 
+.guide-cp h2 {
+    font-size: 18px;
+}
+
 .guide_button:not(.submit) {
     background-color: var(--guide-color-button-bg);
     background-image: none;

@@ -1,0 +1,12 @@
+{% set text %}
+    Text als Markdown erfassen, als Alternative zum Text-Block, der einen Rich-Text-Editor verwendet.
+
+    <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown Cheatsheet</a>
+
+    <a href="https://docs.craftcms.com/v3/reference-tags.html">Reference tags Dokumentation</a>
+{% endset %}
+{% include 'guide/embeds/two_columns.twig' with {
+    heading: 'Text (Markdown)',
+    text,
+    images: ['blocks-markdown.jpg']
+} %}

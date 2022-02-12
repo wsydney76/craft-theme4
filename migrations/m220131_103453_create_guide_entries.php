@@ -30,7 +30,6 @@ class m220131_103453_create_guide_entries extends Migration
             ['title' => 'Dateien', 'slug' => 'assets'],
             ['title' => 'Content Builder', 'slug' => 'contentbuilder'],
             ['title' => 'Blöcke', 'slug' => 'blocks'],
-            ['title' => 'Markdown', 'slug' => 'markdown'],
             ['title' => 'Sektionen', 'slug' => 'sections'],
             ['title' => 'Artikel', 'slug' => 'article'],
             ['title' => 'Seite', 'slug' => 'page'],
@@ -51,7 +50,7 @@ class m220131_103453_create_guide_entries extends Migration
             }
         }
 
-        $this->setParent('content', ['contentbuilder', 'blocks', 'markdown']);
+        $this->setParent('content', ['contentbuilder', 'blocks']);
         $this->setParent('sections', ['article', 'page', 'legal']);
 
         $this->setIncludeGuides(['article', 'page', 'legal'], ['contentBuilder', 'blocks']);

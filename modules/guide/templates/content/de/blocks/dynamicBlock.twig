@@ -1,0 +1,20 @@
+{% set text %}
+    Mit diesem Block können zur Laufzeit erstellte Inhalte angezeigt werden.
+
+    Die Auswahl ist von Ihrer Installation abhängig.
+
+    Wählen Sie das gewünsche Template (Programmbaustein) aus:
+
+    * Inhaltsverzeichnis: Zeigt eine aufklappbare Liste mit Links zu allen Überschriften des aktuellen Eintrags an.
+    * Karten: Es wird eine Auswahl von Einträgen als "Karten" angezeigt. Mit dem Parameter können Sie die Auswahl-Kriterien festlegen.
+    * Kontakt: Anzeige der unter "Globals" -> "Site Info" eingegebenen Kontakt-Informationen
+    * Suche: Suchfunktion, kann auf einer "Suche"-Seite verwendet werden.
+    * Rechtliches/Footer Copyright: Kann im "Footer-Content" unter "Globals" -> "Site Info" verwendet werden.
+
+{% endset %}
+
+{% include 'guide/embeds/two_columns.twig' with {
+    heading: 'Dynamischer Block',
+    text,
+    image: 'blocks-dynamic.jpg'
+} %}
