@@ -7,11 +7,17 @@ use craft\console\Controller;
 use craft\elements\Asset;
 use craft\elements\Entry;
 use craft\elements\User;
+use craft\helpers\App;
 use craft\helpers\ArrayHelper;
+use craft\helpers\FileHelper;
+use craft\volumes\Local;
+use Exception;
 use Faker\Factory;
 use Faker\Generator;
 use yii\helpers\Console;
 use function implode;
+use function is_dir;
+use const DIRECTORY_SEPARATOR;
 use const PHP_EOL;
 
 class SeedController extends Controller
@@ -96,6 +102,8 @@ class SeedController extends Controller
         if (!$this->confirm("Create {$num} entries of type '{$section->name}'?")) {
             return;
         }
+
+        $this->actionCreateImages();
 
         $faker = Factory::create();
 
@@ -301,5 +309,56 @@ class SeedController extends Controller
             }
         }
         return $entry;
+    }
+
+    // php craft main/seed/create-images
+    public function actionCreateImages($num = 30)
+    {
+
+        if (!$this->confirm("Download $num example images from Unsplash?")) {
+            return;
+        }
+
+        $client = Craft::createGuzzleClient();
+
+        /** @var Local $volume */
+        $volume = Craft::$app->volumes->getVolumeByHandle('images');
+        $path = App::parseEnv($volume->path) . DIRECTORY_SEPARATOR . 'examples';
+        if (!is_dir($path)) {
+            FileHelper::createDirectory($path);
+        }
+
+        // Don't overwrite existing images, ensure sequence number is unique
+        $folders = Craft::$app->assets->findFolders(['volumeId' => $volume->id, 'path' => 'examples/']);
+        if ($folders) {
+            $count = Asset::find()->folderId(ArrayHelper::firstValue($folders)->id)->count();
+        } else {
+            $count = 0;
+        }
+
+        $start = $count + 1;
+        $end = $count + $num;
+
+        for ($i = $start; $i <= $end; $i++) {
+
+            $filename = "example_{$i}.jpg";
+
+            $this->stdout($filename . "...");
+
+            $url = "https://picsum.photos/2000/1280";
+
+            try {
+                $client->get($url, ['sink' => $path . DIRECTORY_SEPARATOR . $filename, 'timeout' => 10]);
+            } catch (Exception $e) {
+                $this->stdout(" failed\n");
+                continue;
+            }
+
+            $asset = Craft::$app->assetIndexer->indexFile($volume, 'examples/' . $filename);
+            $asset->setFieldValue('copyright', 'Unsplash via picsum.photos');
+            Craft::$app->elements->saveElement($asset);
+
+            $this->stdout(" created\n");
+        }
     }
 }
