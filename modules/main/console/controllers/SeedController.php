@@ -54,7 +54,7 @@ class SeedController extends Controller
         $entry->setFieldValue('membersTemplate', 'members.twig');
 
         if (Craft::$app->elements->saveElement($entry)) {
-            $this->stdout('Members done, ID:' . $entry->id . PHP_EOL);
+            $this->stdout('Members created, ID:' . $entry->id . PHP_EOL);
         } else {
             $this->stderr('failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
             return;
@@ -83,7 +83,7 @@ class SeedController extends Controller
             $entry->setFieldValue('membersTemplate', $item['membersTemplate']);
 
             if (Craft::$app->elements->saveElement($entry)) {
-                $this->stdout($item['title'] . ' done, ID:' . $entry->id . PHP_EOL);
+                $this->stdout($item['title'] . ' created, ID:' . $entry->id . PHP_EOL);
             } else {
                 $this->stderr($item['title'] . ' failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
                 return;
@@ -137,7 +137,7 @@ class SeedController extends Controller
             $entry->setFieldValue('bodyContent', $this->getBodyContent($faker));
 
             if (Craft::$app->elements->saveElement($entry)) {
-                $this->stdout('done, ID:' . $entry->id . PHP_EOL);
+                $this->stdout('created, ID:' . $entry->id . PHP_EOL);
             } else {
                 $this->stderr('failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
             }
@@ -169,10 +169,14 @@ class SeedController extends Controller
 
             switch ($blockType) {
                 case 'text':
+                    $paragraphs = '';
+                    foreach ($faker->paragraphs($faker->numberBetween(1, 5)) as $paragraph) {
+                        $paragraphs .= '<p>' . $paragraph . '</p>';
+                    }
                     $block = [
                         'type' => 'text',
                         'fields' => [
-                            'text' => $faker->paragraphs($faker->numberBetween(1, 5), true)
+                            'text' => $paragraphs
                         ]
                     ];
                     break;
@@ -196,12 +200,13 @@ class SeedController extends Controller
                     break;
                 case 'gallery':
                     $imageIds = [];
-                    for ($img = 0; $img < 6; $img++) {
+                    foreach (range(1,8) as $img) {
                         $image = $this->getRandomImage(500);
                         if ($image) {
                             $imageIds[] = $image->id;
                         }
                     }
+
                     $block = [
                         'type' => 'gallery',
                         'fields' => [
@@ -305,7 +310,7 @@ class SeedController extends Controller
                     $localEntry->setFieldValue('teaser', 'Sammlung von automatisch generierten Beispielen');
                     Craft::$app->elements->saveElement($localEntry);
                 }
-                $this->stdout('done' . PHP_EOL);
+                $this->stdout('created' . PHP_EOL);
             }
         }
         return $entry;

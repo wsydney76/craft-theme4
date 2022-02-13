@@ -54,6 +54,24 @@ class m211224_143412_create_entries extends Migration
             'slug' => 'ueber-uns'
         ]);
 
+        $entry->setFieldValue('bodyContent', [
+            'sortOrder' => ['new1','new2'],
+            'blocks' => [
+                'new1' => [
+                    'type' => 'heading',
+                    'fields' => [
+                        'heading' => 'Kontakt'
+                    ]
+                ],
+                'new2' => [
+                    'type' => 'dynamicBlock',
+                    'fields' => [
+                        'template' => 'contact.twig'
+                    ]
+                ]
+            ]
+        ]);
+
         if (!Craft::$app->elements->saveElement($entry)) {
             echo "Error saving about entry\n";
         }
@@ -99,6 +117,24 @@ class m211224_143412_create_entries extends Migration
             'authorId' => $user->id,
             'title' => 'Impressum',
             'slug' => 'impressum'
+        ]);
+
+        $entry->setFieldValue('bodyContent', [
+            'sortOrder' => ['new1','new2'],
+            'blocks' => [
+                'new1' => [
+                    'type' => 'heading',
+                    'fields' => [
+                        'heading' => 'Kontakt'
+                    ]
+                ],
+                'new2' => [
+                    'type' => 'dynamicBlock',
+                    'fields' => [
+                        'template' => 'contact.twig'
+                    ]
+                ]
+            ]
         ]);
 
         if (!Craft::$app->elements->saveElement($entry)) {
