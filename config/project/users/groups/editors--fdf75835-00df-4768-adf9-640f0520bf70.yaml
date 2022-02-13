@@ -5,6 +5,8 @@ permissions:
   - accesssitewhensystemisoff
   - accesscpwhensystemisoff
   - accesscp
+  - 'editsite:6cae2408-4e31-46df-8a5b-33f31d339176' # Deutsch
+  - 'editsite:b0f125c5-eef7-49fc-8d15-152965d0bab6' # English
   - 'createentries:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
   - 'publishentries:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
   - 'deleteentries:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
@@ -50,6 +52,28 @@ permissions:
   - 'deletepeerentrydrafts:a6676538-ee52-4938-aaff-8d9d46b669af' # Page
   - 'editpeerentrydrafts:a6676538-ee52-4938-aaff-8d9d46b669af' # Page
   - 'editentries:a6676538-ee52-4938-aaff-8d9d46b669af' # Page
+  - 'saveassetinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'createfoldersinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'deletefilesandfoldersinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'replacefilesinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'editimagesinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'editpeerfilesinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'replacepeerfilesinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'deletepeerfilesinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'editpeerimagesinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'viewpeerfilesinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'viewvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'saveassetinvolume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
+  - 'createfoldersinvolume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
+  - 'deletefilesandfoldersinvolume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
+  - 'replacefilesinvolume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
+  - 'editimagesinvolume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
+  - 'editpeerfilesinvolume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
+  - 'replacepeerfilesinvolume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
+  - 'deletepeerfilesinvolume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
+  - 'editpeerimagesinvolume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
+  - 'viewpeerfilesinvolume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
+  - 'viewvolume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
   - 'saveassetinvolume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
   - 'createfoldersinvolume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
   - 'deletefilesandfoldersinvolume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
@@ -72,26 +96,4 @@ permissions:
   - 'editpeerimagesinvolume:1d9fc6a9-72e3-404b-86a9-2ba2014002f0' # Temporary Uploads
   - 'viewpeerfilesinvolume:1d9fc6a9-72e3-404b-86a9-2ba2014002f0' # Temporary Uploads
   - 'viewvolume:1d9fc6a9-72e3-404b-86a9-2ba2014002f0' # Temporary Uploads
-  - 'saveassetinvolume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
-  - 'createfoldersinvolume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
-  - 'deletefilesandfoldersinvolume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
-  - 'replacefilesinvolume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
-  - 'editimagesinvolume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
-  - 'editpeerfilesinvolume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
-  - 'replacepeerfilesinvolume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
-  - 'deletepeerfilesinvolume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
-  - 'editpeerimagesinvolume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
-  - 'viewpeerfilesinvolume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
-  - 'viewvolume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
-  - 'saveassetinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
-  - 'createfoldersinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
-  - 'deletefilesandfoldersinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
-  - 'replacefilesinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
-  - 'editimagesinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
-  - 'editpeerfilesinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
-  - 'replacepeerfilesinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
-  - 'deletepeerfilesinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
-  - 'editpeerimagesinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
-  - 'viewpeerfilesinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
-  - 'viewvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
   - accessplugin-work
