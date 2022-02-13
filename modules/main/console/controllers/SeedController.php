@@ -7,11 +7,17 @@ use craft\console\Controller;
 use craft\elements\Asset;
 use craft\elements\Entry;
 use craft\elements\User;
+use craft\helpers\App;
 use craft\helpers\ArrayHelper;
+use craft\helpers\FileHelper;
+use craft\volumes\Local;
+use Exception;
 use Faker\Factory;
 use Faker\Generator;
 use yii\helpers\Console;
 use function implode;
+use function is_dir;
+use const DIRECTORY_SEPARATOR;
 use const PHP_EOL;
 
 class SeedController extends Controller
@@ -48,7 +54,7 @@ class SeedController extends Controller
         $entry->setFieldValue('membersTemplate', 'members.twig');
 
         if (Craft::$app->elements->saveElement($entry)) {
-            $this->stdout('Members done, ID:' . $entry->id . PHP_EOL);
+            $this->stdout('Members created, ID:' . $entry->id . PHP_EOL);
         } else {
             $this->stderr('failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
             return;
@@ -77,7 +83,7 @@ class SeedController extends Controller
             $entry->setFieldValue('membersTemplate', $item['membersTemplate']);
 
             if (Craft::$app->elements->saveElement($entry)) {
-                $this->stdout($item['title'] . ' done, ID:' . $entry->id . PHP_EOL);
+                $this->stdout($item['title'] . ' created, ID:' . $entry->id . PHP_EOL);
             } else {
                 $this->stderr($item['title'] . ' failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
                 return;
@@ -96,6 +102,8 @@ class SeedController extends Controller
         if (!$this->confirm("Create {$num} entries of type '{$section->name}'?")) {
             return;
         }
+
+        $this->actionCreateImages();
 
         $faker = Factory::create();
 
@@ -129,7 +137,7 @@ class SeedController extends Controller
             $entry->setFieldValue('bodyContent', $this->getBodyContent($faker));
 
             if (Craft::$app->elements->saveElement($entry)) {
-                $this->stdout('done, ID:' . $entry->id . PHP_EOL);
+                $this->stdout('created, ID:' . $entry->id . PHP_EOL);
             } else {
                 $this->stderr('failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
             }
@@ -161,10 +169,14 @@ class SeedController extends Controller
 
             switch ($blockType) {
                 case 'text':
+                    $paragraphs = '';
+                    foreach ($faker->paragraphs($faker->numberBetween(1, 5)) as $paragraph) {
+                        $paragraphs .= '<p>' . $paragraph . '</p>';
+                    }
                     $block = [
                         'type' => 'text',
                         'fields' => [
-                            'text' => $faker->paragraphs($faker->numberBetween(1, 5), true)
+                            'text' => $paragraphs
                         ]
                     ];
                     break;
@@ -188,12 +200,13 @@ class SeedController extends Controller
                     break;
                 case 'gallery':
                     $imageIds = [];
-                    for ($img = 0; $img < 6; $img++) {
+                    foreach (range(1,8) as $img) {
                         $image = $this->getRandomImage(500);
                         if ($image) {
                             $imageIds[] = $image->id;
                         }
                     }
+
                     $block = [
                         'type' => 'gallery',
                         'fields' => [
@@ -297,9 +310,60 @@ class SeedController extends Controller
                     $localEntry->setFieldValue('teaser', 'Sammlung von automatisch generierten Beispielen');
                     Craft::$app->elements->saveElement($localEntry);
                 }
-                $this->stdout('done' . PHP_EOL);
+                $this->stdout('created' . PHP_EOL);
             }
         }
         return $entry;
+    }
+
+    // php craft main/seed/create-images
+    public function actionCreateImages($num = 30)
+    {
+
+        if (!$this->confirm("Download $num example images from Unsplash?")) {
+            return;
+        }
+
+        $client = Craft::createGuzzleClient();
+
+        /** @var Local $volume */
+        $volume = Craft::$app->volumes->getVolumeByHandle('images');
+        $path = App::parseEnv($volume->path) . DIRECTORY_SEPARATOR . 'examples';
+        if (!is_dir($path)) {
+            FileHelper::createDirectory($path);
+        }
+
+        // Don't overwrite existing images, ensure sequence number is unique
+        $folders = Craft::$app->assets->findFolders(['volumeId' => $volume->id, 'path' => 'examples/']);
+        if ($folders) {
+            $count = Asset::find()->folderId(ArrayHelper::firstValue($folders)->id)->count();
+        } else {
+            $count = 0;
+        }
+
+        $start = $count + 1;
+        $end = $count + $num;
+
+        for ($i = $start; $i <= $end; $i++) {
+
+            $filename = "example_{$i}.jpg";
+
+            $this->stdout($filename . "...");
+
+            $url = "https://picsum.photos/2000/1280";
+
+            try {
+                $client->get($url, ['sink' => $path . DIRECTORY_SEPARATOR . $filename, 'timeout' => 10]);
+            } catch (Exception $e) {
+                $this->stdout(" failed\n");
+                continue;
+            }
+
+            $asset = Craft::$app->assetIndexer->indexFile($volume, 'examples/' . $filename);
+            $asset->setFieldValue('copyright', 'Unsplash via picsum.photos');
+            Craft::$app->elements->saveElement($asset);
+
+            $this->stdout(" created\n");
+        }
     }
 }
