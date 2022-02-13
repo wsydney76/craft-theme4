@@ -14,7 +14,7 @@ Usefull for demos and hobby projects.
 ##  Installation
 
 * Run `composer install`
-* Edit `config/Env.php` with your environment specific settings
+* Edit `config/Env.php` with your environment specific settings.
 * Run `php craft install` Enter you user data and confirm the other settings.
 * Run `php craft migrate/all`
 
@@ -62,8 +62,9 @@ Replace `project` with your project name
 
 ## Faker content
 
-* Upload some images into the images volume
-* Run `php craft main/seed/create-entries` to seed the system with some dummy entries.
+* Upload some images into the images volume, if you want to use your own images for faked content.
+* Run `php craft main/seed/create-entries` to seed the system with some dummy entries. Offers the possibility to download random images from Unsplash.
+* Run `php craft main/seed/create-images` at any time to download random images.
 
 ## Localization
 
@@ -129,7 +130,7 @@ on any [non public domain.](https://craftcms.com/knowledge-base/how-craft-licens
 
 In case you can't pay for use on a public domain: (You should, the devs have to pay for their living...)
 
-* Downgrade Craft edition to 'SOLO'. You will loose all multi user ans GraphQL functionality.
+* Downgrade Craft edition to 'SOLO'. You will loose all multi user and GraphQL functionality.
 * Uninstall Imager X. Will fallback to Crafts own image handling, loosing a bit of quality and a lot of control.
 
 ## Plugins
@@ -161,6 +162,9 @@ Private Plugins: 'Unofficial' plugins. Consider as beta.
 * Element Map: Shows reverse relationships in the Control Panel
 * Work: Proof of concept for improving the editing workflow (most useful for comparing draft content with current version)
 
+Not installed, but recommended
+
+* Blitz:  Paid caching plugin. A `config/blitz.php` settings file is provided.
 
 ## TBD
 
