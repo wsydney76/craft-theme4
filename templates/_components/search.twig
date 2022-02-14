@@ -22,6 +22,7 @@
             .offset(offset)
             .limit(limit)
             .type('not toc')
+            .uri(':notempty:')
             %}
 
         {% if not craft.app.plugins.pluginEnabled('imager-x') %}
