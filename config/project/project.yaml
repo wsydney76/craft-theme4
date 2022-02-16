@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1644746201
+dateModified: 1645008922
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -42,6 +42,7 @@ meta:
     3be67666-850d-4678-a3d7-277a52c8fa8d: Page # Page
     3cb2606a-5d91-44a2-bbfa-8110801db82d: Text # Text
     3f22fd1a-1b63-4a34-ab28-56dd59bd3e99: 'Index Template' # Index Template
+    4ad59136-a89e-41ea-8aff-d5383b3a11e0: 'Social Links' # Social Links
     4ae84930-4a7e-455d-ab1a-2fef0f711ad8: Grid # Grid
     04d14d45-3d49-4d75-9b1b-56b1cbe51772: Duration # Duration
     4e2c54ec-94ca-464d-9c64-8b74de116ece: Quote # Quote
@@ -438,5 +439,5 @@ system:
   live: true
   name: $SYSTEM_NAME
   retryDuration: null
-  schemaVersion: 3.7.32
+  schemaVersion: 3.7.33
   timeZone: $SYSTEM_TIMEZONE
