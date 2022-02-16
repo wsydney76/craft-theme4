@@ -317,10 +317,10 @@ class SeedController extends Controller
     }
 
     // php craft main/seed/create-images
-    public function actionCreateImages($num = 30)
+    public function actionCreateImages($num = 30, $timeout = 10)
     {
 
-        if (!$this->confirm("Download $num example images from Unsplash?")) {
+        if (!$this->confirm("Download $num example images from Unsplash? (Timeout $timeout sec.)")) {
             return;
         }
 
@@ -353,9 +353,9 @@ class SeedController extends Controller
             $url = "https://picsum.photos/2000/1280";
 
             try {
-                $client->get($url, ['sink' => $path . DIRECTORY_SEPARATOR . $filename, 'timeout' => 10]);
+                $client->get($url, ['sink' => $path . DIRECTORY_SEPARATOR . $filename, 'timeout' => $timeout]);
             } catch (Exception $e) {
-                $this->stdout(" failed\n");
+                $this->stdout(" failed: {$e->getMessage()} \n");
                 continue;
             }
 

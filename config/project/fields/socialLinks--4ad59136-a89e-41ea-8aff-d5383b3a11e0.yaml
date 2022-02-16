@@ -1,0 +1,96 @@
+columnSuffix: tqsvgabc
+contentColumnType: text
+fieldGroup: f15bff68-e0e6-422d-a615-9e22d733e1f0 # Global
+handle: socialLinks
+instructions: ''
+name: 'Social Links'
+searchable: false
+settings:
+  addRowLabel: 'Zeile hinzufügen'
+  columnType: text
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - Platform
+            -
+              - handle
+              - socialPlatform
+            -
+              - width
+              - 100px
+            -
+              - type
+              - select
+            -
+              - options
+              -
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - Instagram
+                    -
+                      - value
+                      - instagram
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - Facebook
+                    -
+                      - value
+                      - facebook
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - Twitter
+                    -
+                      - value
+                      - twitter
+                    -
+                      - default
+                      - false
+                -
+                  __assoc__:
+                    -
+                      - label
+                      - Youtube
+                    -
+                      - value
+                      - youtube
+                    -
+                      - default
+                      - false
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - Link
+            -
+              - handle
+              - socialLink
+            -
+              - width
+              - ''
+            -
+              - type
+              - url
+  maxRows: ''
+  minRows: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table
