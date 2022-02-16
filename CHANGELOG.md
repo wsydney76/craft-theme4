@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.4.2 2020-02-16
+
+* Craft Update
+* Added Social Links
+
 ## 2.4.1 2020-02-13
 
 * Fixes
