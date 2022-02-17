@@ -189,4 +189,12 @@ return [
     '{count,plural,=1{Related Entry} other{Related Entries}}' => '{count,plural,=1{Verwandter Eintrag} other{Verwandte Einträge}}',
     '“' => '„',
     '”' => '“',
+    'Topic' => 'Thema',
+    'Topics' => 'Themen',
+    'Default Highlightfirst' => 'Standard, erster hervorgehoben',
+    'Add a topic' => 'Thema hinzufügen',
+    'Newest Entries' => 'Neueste Einträge',
+    'and' => 'und',
+    '{c,plural,=1{more entry} other{more entries}}' => '{c,plural,=1{weiterer Eintrag} other{weitere Einträge}}',
+    'No entries yet' => 'Noch keine Einträge',
 ];

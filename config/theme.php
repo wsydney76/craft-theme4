@@ -26,7 +26,7 @@ return [
     // relative to fullWidthImageWidth
     'fullwidthImageHeight' => 600,
 
-    'useFallbackImage' => true,
+    'useFallbackImage' => false,
 
     'pageWidth' => 'lg',
 

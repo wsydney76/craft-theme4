@@ -1,0 +1,7 @@
+<div class="container-{{ theme.pageWidth }}">
+    {% include "_partials/index-templates/cards.twig" with {
+       criteria: {
+            relatedTo: {targetElement: entry.id, field: 'topics'}
+        }
+    } %}
+</div>

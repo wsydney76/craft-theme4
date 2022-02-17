@@ -42,6 +42,26 @@ class m211224_143412_create_entries extends Migration
             echo "Error saving article index entry\n";
         }
 
+        // Topics Index -------------------------------------------------------------------------------
+
+        $section = Craft::$app->sections->getSectionByHandle('page');
+        $type = ArrayHelper::firstWhere($section->getEntryTypes(), 'handle', 'indexPage');
+
+        $entry = new Entry([
+            'sectionId' => $section->id,
+            'typeId' => $type->id,
+            'authorId' => $user->id,
+            'title' => 'Themen',
+            'slug' => 'themen',
+            'indexSection' => 'topic',
+            'orderBy' => 'title',
+            'indexTemplate' => 'default.twig'
+        ]);
+
+        if (!Craft::$app->elements->saveElement($entry)) {
+            echo "Error saving topic index entry\n";
+        }
+
         // About page -------------------------------------------------------------------------------
 
         $type = ArrayHelper::firstWhere($section->getEntryTypes(), 'handle', 'page');
