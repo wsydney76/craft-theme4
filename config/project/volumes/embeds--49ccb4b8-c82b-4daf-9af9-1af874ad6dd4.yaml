@@ -37,4 +37,4 @@ sortOrder: 2
 titleTranslationKeyFormat: null
 titleTranslationMethod: language
 type: craft\volumes\Local
-url: ''
+url: null
