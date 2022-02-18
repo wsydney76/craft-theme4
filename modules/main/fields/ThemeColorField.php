@@ -99,6 +99,7 @@ class ThemeColorField extends Field
             ['label' => Craft::t('site', 'Footer Border'), 'value' => 'footer-border'],
             ['label' => Craft::t('site', 'Border'), 'value' => 'border'],
             ['label' => Craft::t('site', 'Muted'), 'value' => 'muted'],
+            ['label' => Craft::t('site', 'Teaser'), 'value' => 'teaser'],
         ];
 }
 }

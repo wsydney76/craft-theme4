@@ -1,0 +1,74 @@
+field: 20f9b230-8862-4058-9cf3-7c7a78e44a13 # Column
+fieldLayouts:
+  997357be-7a87-4639-ae10-d5ee4afdc403:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: e55e1c63-45fc-4606-85d4-1fb90401c0a3 # Topic
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 47f1b645-3900-4ecc-93d2-d2a218a0bf9a # Limit
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  47f1b645-3900-4ecc-93d2-d2a218a0bf9a: # Limit
+    columnSuffix: sqbkcryf
+    contentColumnType: smallint(2)
+    fieldGroup: null
+    handle: limit
+    instructions: ''
+    name: Limit
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: 10
+      max: 20
+      min: 1
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  e55e1c63-45fc-4606-85d4-1fb90401c0a3: # Topic
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: topic
+    instructions: 'List entries related to this topic'
+    name: Topic
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: ''
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: false
+      source: null
+      sources:
+        - 'section:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+handle: entriesList
+name: 'Entries List'
+sortOrder: 6

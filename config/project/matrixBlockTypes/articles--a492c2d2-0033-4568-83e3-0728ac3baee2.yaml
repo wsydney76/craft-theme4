@@ -53,7 +53,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   3cf774ef-1913-42fe-893f-35e693837468: # Heading
-    columnSuffix: uxzjvjuo
+    columnSuffix: null
     contentColumnType: string(240)
     fieldGroup: null
     handle: heading
@@ -73,7 +73,7 @@ fields:
     translationMethod: language
     type: craft\fields\PlainText
   4cbc8de9-52d8-4f78-8a28-8d46a7f76dea: # Style
-    columnSuffix: yruyjtho
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: style
@@ -167,7 +167,7 @@ fields:
     translationMethod: site
     type: craft\fields\Entries
   545503ea-c13e-4d00-b7b4-048402b77c79: # Show Author and Date
-    columnSuffix: lqmdnwpu
+    columnSuffix: null
     contentColumnType: boolean
     fieldGroup: null
     handle: showAuthorAndDate

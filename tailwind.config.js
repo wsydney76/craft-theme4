@@ -53,7 +53,8 @@ module.exports = {
                 border: colors.slate[300],
                 muted: colors.slate[600],
                 gray: colors.slate,
-                nav: colors.white
+                nav: colors.white,
+                teaser: colors.red[700]
             },
 
             width: {
@@ -120,7 +121,7 @@ module.exports = {
 
         // dynamic colors
         {
-            pattern: /(bg|text)-(primary|secondary|background|foreground|frame-background|black|white|light|three|four|title-bg|title-text|footer-bg|footer-text|footer-border|border|muted)/
+            pattern: /(bg|text)-(primary|secondary|background|foreground|frame-background|black|white|light|three|four|title-bg|title-text|footer-bg|footer-text|footer-border|border|muted|teaser)/
         },
 
         // dynamic col spans

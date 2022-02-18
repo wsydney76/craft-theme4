@@ -927,6 +927,9 @@ a.btn{
 .mb-4{
   margin-bottom: 1rem;
 }
+.mb-2{
+  margin-bottom: 0.5rem;
+}
 .mt-2{
   margin-top: 0.5rem;
 }
@@ -935,6 +938,9 @@ a.btn{
 }
 .mb-8{
   margin-bottom: 2rem;
+}
+.mb-1{
+  margin-bottom: 0.25rem;
 }
 .mt-8{
   margin-top: 2rem;
@@ -962,12 +968,6 @@ a.btn{
 }
 .mr-4{
   margin-right: 1rem;
-}
-.mb-1{
-  margin-bottom: 0.25rem;
-}
-.mb-2{
-  margin-bottom: 0.5rem;
 }
 .mr-2{
   margin-right: 0.5rem;
@@ -1303,11 +1303,6 @@ a.btn{
 .gap-4{
   gap: 1rem;
 }
-.space-y-4 > :not([hidden]) ~ :not([hidden]){
-  --tw-space-y-reverse: 0;
-  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
-}
 .space-x-8 > :not([hidden]) ~ :not([hidden]){
   --tw-space-x-reverse: 0;
   margin-right: calc(2rem * var(--tw-space-x-reverse));
@@ -1318,15 +1313,20 @@ a.btn{
   margin-right: calc(1rem * var(--tw-space-x-reverse));
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
-.space-x-12 > :not([hidden]) ~ :not([hidden]){
-  --tw-space-x-reverse: 0;
-  margin-right: calc(3rem * var(--tw-space-x-reverse));
-  margin-left: calc(3rem * calc(1 - var(--tw-space-x-reverse)));
+.space-y-4 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 .space-y-6 > :not([hidden]) ~ :not([hidden]){
   --tw-space-y-reverse: 0;
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+.space-x-12 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(3rem * var(--tw-space-x-reverse));
+  margin-left: calc(3rem * calc(1 - var(--tw-space-x-reverse)));
 }
 .space-y-block > :not([hidden]) ~ :not([hidden]){
   --tw-space-y-reverse: 0;
@@ -1579,6 +1579,10 @@ a.btn{
 .bg-muted{
   --tw-bg-opacity: 1;
   background-color: rgb(71 85 105 / var(--tw-bg-opacity));
+}
+.bg-teaser{
+  --tw-bg-opacity: 1;
+  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
 }
 .bg-\[\#43434C\]{
   --tw-bg-opacity: 1;
@@ -1970,6 +1974,10 @@ a.btn{
 .text-muted{
   --tw-text-opacity: 1;
   color: rgb(71 85 105 / var(--tw-text-opacity));
+}
+.text-teaser{
+  --tw-text-opacity: 1;
+  color: rgb(185 28 28 / var(--tw-text-opacity));
 }
 .text-gray-500{
   --tw-text-opacity: 1;

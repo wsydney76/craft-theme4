@@ -31,18 +31,20 @@
                 {% case "featured" %}
 
                     <a href="{{ entry.url }}"
-                       class="!no-underline hover:no-underline block space-y-4 text-base py-block }}">
+                       class="!no-underline hover:no-underline block text-base py-block }}">
 
                         {% if entry.teaser %}
-                            <div class="text-base">
+                            <div class="text-base font-semibold text-teaser mb-2">
                                 {{ entry.teaser }}
                             </div>
                         {% endif %}
 
-                        <h2 class="text-6xl font-semibold">{{ entry.title }}</h2>
+                        <h2 class="text-6xl font-semibold mb-4">{{ entry.title }}</h2>
 
                         {% if image %}
-                            {{ img(image, theme.featuredArticleTransform) }}
+                            <div class="mb-4">
+                                {{ img(image, theme.featuredArticleTransform) }}
+                            </div>
                         {% endif %}
 
                         {{ _self.intro(entry) }}
@@ -73,7 +75,7 @@
                 {% default %}
 
                     <a href="{{ entry.url }}"
-                       class="!no-underline hover:no-underline block space-y-4 text-base {{ not loop.first or block.addTopBorder ? 'pt-block' }} {{ not loop.last ? 'pb-block' }} {{ style != 'boxed' or not loop.last ? 'pb-block' }}">
+                       class="!no-underline hover:no-underline block text-base {{ not loop.first or block.addTopBorder ? 'pt-block' }} {{ not loop.last ? 'pb-block' }} {{ style != 'boxed' or not loop.last ? 'pb-block' }}">
 
                         <div class="sm:flex sm:space-x-block">
                             {% if image %}
@@ -82,14 +84,14 @@
                                 </div>
                             {% endif %}
                             <div class="mt-4 sm:my-2 md:w-2/3">
-                                <div class="space-y-4">
+                                <div class="">
 
                                     {% if entry.teaser %}
-                                        <div class="font-bold">
+                                        <div class="font-bold text-teaser">
                                             {{ entry.teaser }}
                                         </div>
                                     {% endif %}
-                                    <h2 class="text-2xl font-bold mt-block mt-2">
+                                    <h2 class="text-2xl font-bold mt-block mt-2 mb-4">
                                         {{ entry.title }}
                                     </h2>
 
@@ -123,13 +125,13 @@
 
 {% macro intro(entry) %}
     {% if entry.intro %}
-        <div>
+        <div class="">
             {{ entry.intro }}
         </div>
     {% else %}
         {% set textBlock = entry.bodyContent.type('text').one %}
         {% if textBlock %}
-            <div>
+            <div class="">
                 {{ textBlock.text|striptags|truncate(150) }}
             </div>
         {% endif %}
@@ -137,7 +139,7 @@
 {% endmacro %}
 
 {% macro meta(entry) %}
-    <div>
+    <div class="mt-4">
         {{ entry.postDate|date('short') }} {{ 'by'|t }} {{ entry.author.fullName }}
     </div>
 {% endmacro %}
