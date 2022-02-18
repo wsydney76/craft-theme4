@@ -1,10 +1,12 @@
 # Changelog
 
-## 3.0.0 2020-02-18 (Beta, ready for testing)
+## 3.0.1 2020-02-18 (Beta, ready for testing)
 
 * Added section type 'Topic'
-* Added block type 'articles' for building (simple) magazine-like layouts
+* Added block type 'Articles' for building (simple) magazine-like layouts
 * Added author archive pages
+* Added block type 'Entries List' to multi columns layouts for displaying newest entries belonging to a topic.
+* Added 'teaser' color
 
 ## 2.4.2 2020-02-16
 
