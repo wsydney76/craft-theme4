@@ -1,6 +1,6 @@
 {% from '_macros/lib.twig' import img %}
+{% from '_macros/lib.twig' import img %}
 
-{% set author = entry.author %}
 
 <div class="container-{{ theme.pageWidth }} mb-block">
 
@@ -15,7 +15,7 @@
             {% endif %}
             <div class="space-y-1">
                 <div class="text-2xl font-semibold">
-                    <a href="{{ siteUrl("#{'authors'|t}/#{author.username}") }}">{{ author.fullName }}</a>
+                    {{ author.fullName }}
                 </div>
                 {% if author.teaser %}
                     <div class="text-base">
@@ -27,9 +27,6 @@
                         <a href="mailto:{{ author.email }}">{{ author.email }}</a>
                     </div>
                 {% endif %}
-                <div class="text-base">
-                    {{ 'Published'|t }}: {{ entry.postDate|date('short') }}
-                </div>
             </div>
         </div>
     </div>

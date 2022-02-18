@@ -1,0 +1,9 @@
+siteUid: b0f125c5-eef7-49fc-8d15-152965d0bab6 # English
+sortOrder: 2
+template: _sections/author
+uriParts:
+  - authors/
+  -
+    - slug
+    - '[^\/]+'
+uriPattern: 'authors/<slug:[^\/]+>'

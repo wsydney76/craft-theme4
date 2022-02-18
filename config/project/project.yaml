@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1645117180
+dateModified: 1645172175
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -41,6 +41,7 @@ meta:
     3ac8b547-8089-43db-b7de-39c79c658368: 'Audio Files' # Audio Files
     3ae32dd4-67e1-47f7-a7fc-89335803d234: Image # Image
     3be67666-850d-4678-a3d7-277a52c8fa8d: Page # Page
+    3c2fafd2-4f15-437b-a8a3-01330d1b78f7: Archiv # Archiv
     3cb2606a-5d91-44a2-bbfa-8110801db82d: Text # Text
     3f22fd1a-1b63-4a34-ab28-56dd59bd3e99: 'Index Template' # Index Template
     4ad59136-a89e-41ea-8aff-d5383b3a11e0: 'Social Links' # Social Links
@@ -285,6 +286,7 @@ meta:
     e62d63b0-c299-42ce-aeef-86a69f7e676c: 'Seo Fields' # Seo Fields
     e95a35fa-7cca-46ef-92f7-04d1b61144ae: 'Bild neben dem Block' # Bild neben dem Block
     e734f645-25d7-4111-a0bd-207d0bc77bf3: 'Mobiles Menü ausblenden' # Mobiles Menü ausblenden
+    e1065708-fc97-4194-99c4-f62e3149cfef: Archiv # Archiv
     e9781761-5a04-49d1-84ef-a9159f853e28: 'Members Template' # Members Template
     ea0da518-95b9-47c2-8dec-9f2ff43ca7f4: 'Background color' # Background color
     ea2cfe15-67c5-438e-9d8c-b80a905baa85: Text # Text
