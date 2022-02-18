@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1645187068
+dateModified: 1645193245
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -101,6 +101,7 @@ meta:
     14b97a17-1192-45ff-a041-b14cc2b7fdcd: 'Show Author and Date' # Show Author and Date
     14cabfdc-d6d2-4d33-8603-3f4ba05ec5cf: Articles # Articles
     17bdd0b8-d122-4c81-accf-6e1470359fba: Bilder # Bilder
+    20b966be-8d58-4b50-ada5-822c7229d4ae: 'Entries List' # Entries List
     20f9b230-8862-4058-9cf3-7c7a78e44a13: Column # Column
     25b6288e-6703-4648-b9a2-09967a70132d: Heading # Heading
     27d258a2-a6f5-44f8-9692-e0a1b254cea4: 'Alt Text' # Alt Text
@@ -112,6 +113,7 @@ meta:
     42c099ce-f401-404a-9884-34b24e55168a: 'Add top border' # Add top border
     42ca6f90-46f5-4a7e-8fcb-4f485ffe612c: Level # Level
     44b322dd-2b68-4cbf-ac78-a70d2d80af18: 'Image Background Color' # Image Background Color
+    47f1b645-3900-4ecc-93d2-d2a218a0bf9a: Limit # Limit
     48fde250-325a-44bf-9238-66f0e831a883: Image # Image
     49ccb4b8-c82b-4daf-9af9-1af874ad6dd4: Embeds # Embeds
     051d92e2-649b-4487-b9de-31b3c4bb7d86: 'Audio File' # Audio File
@@ -299,6 +301,7 @@ meta:
     e11aebc3-41ca-4730-a85b-997852702e35: Homepage # Homepage
     e26bccc0-5f6e-465a-bc53-ca518d9a70d8: Articles # Articles
     e35ec4e7-302c-49f6-b5ae-a95120fbd4c0: Question # Question
+    e55e1c63-45fc-4606-85d4-1fb90401c0a3: Topic # Topic
     e62d63b0-c299-42ce-aeef-86a69f7e676c: 'Seo Fields' # Seo Fields
     e95a35fa-7cca-46ef-92f7-04d1b61144ae: 'Bild neben dem Block' # Bild neben dem Block
     e734f645-25d7-4111-a0bd-207d0bc77bf3: 'Mobiles Menü ausblenden' # Mobiles Menü ausblenden

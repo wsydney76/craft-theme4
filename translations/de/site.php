@@ -61,6 +61,7 @@ return [
     'Dynamic Block' => 'Dynamischer Block',
     'Email' => 'E-Mail',
     'Entries' => 'Einträge',
+    'Entries List' => 'Eintragsliste',
     'Featured' => 'Hervorgehoben',
     'Featured Image' => 'Beitragsbild',
     'First Name' => 'Vorname',
