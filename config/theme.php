@@ -40,6 +40,12 @@ return [
 
     'defaultBlockWidth' => 'lg',
 
+    // Required for image/gallery, add other block types as needed
+    'defaultBlockTypeWidth' => [
+        'image' => 'xl',
+        'gallery' => 'xl'
+    ],
+
     'defaultIndexWidth' => 'md',
 
     // set max-w-prose on text blocks
@@ -47,7 +53,6 @@ return [
 
     'sidebarLayoutWidth' => 'xl',
 
-    'defaultImageWidth' => 'xl',
 
     'defaultAspectRatio' => '16:9',
 

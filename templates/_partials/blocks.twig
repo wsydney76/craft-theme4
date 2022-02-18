@@ -11,8 +11,8 @@
 
         {% set width = block.width ?? 'default' %}
 
-        {% if width == 'default' and block.type.handle in ['image','gallery'] and theme.defaultImageWidth != 'default' %}
-            {% set width = theme.defaultImageWidth %}
+        {% if width == 'default' and theme.defaultBlockTypeWidth[block.type.handle] is defined %}
+            {% set width = theme.defaultBlockTypeWidth[block.type.handle] %}
         {% endif %}
 
         {% set defaultBlockWidth = theme.defaultBlockWidth %}
