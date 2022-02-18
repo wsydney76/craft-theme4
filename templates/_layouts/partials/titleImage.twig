@@ -7,6 +7,9 @@
 
 {% set height = theme.titleImageHeight %}
 {% set showTeaser = themeOptions.showTeaser ?? true %}
+{% set teaser = themeOptions.teaser ?? entry.teaser ?? '' %}
+{% set title = themeOptions.title ?? entry.title %}
+
 {% set increaseTitleContrast = entry.increaseTitleContrast.value ?? '' %}
 
 {% switch theme.titleStyle %}
@@ -23,23 +26,23 @@
 
             <div class="absolute inset-0 flex items-center justify-center {{ increaseTitleContrast == 'image' ? 'backdrop-brightness-75' }} {{ increaseTitleContrast == 'imageDark' ? 'backdrop-brightness-50' }}">
                 <div class="cover-text text-black py-2 md:py-8 px-8 md:px-16 max-w-screen-xl mx-auto {{ increaseTitleContrast == 'box' ? 'backdrop-brightness-50 border border-border' }} ">
-                    {% if showTeaser and entry is defined and entry.teaser %}
+                    {% if showTeaser and teaser %}
                         <div class="text-center text-white text-xl">
-                            {{ entry.teaser }}
+                            {{ teaser }}
                         </div>
                     {% endif %}
-                    <h1 class="text-4xl text-h1 md:text-7xl text-white mb-0">{{ themeOptions.title ?? entry.title ?? title }}</h1>
+                    <h1 class="text-4xl text-h1 md:text-7xl text-white mb-0">{{ title }}</h1>
                 </div>
             </div>
         </div>
     {% else %}
         <div class="container max-w-screen-lg mx-auto px-8">
-            {% if  showTeaser and entry is defined and entry.teaser %}
+            {% if  showTeaser and teaser %}
                 <div class="">
-                    {{ entry.teaser }}
+                    {{ teaser }}
                 </div>
             {% endif %}
-            <h1 class="mb-0">{{ themeOptions.title ?? entry.title ?? title }}</h1>
+            <h1 class="mb-0">{{ title }}</h1>
         </div>
     {% endif %}
 

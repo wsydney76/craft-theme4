@@ -38,6 +38,7 @@ class m200501_120937_elementindexes_settings extends Migration
                 ['key', 'singles'],
                 ['key', $s['page']],
                 ['key', $s['article']],
+                ['key', $s['topic']],
                 ['key', $s['legal']],
                 ['heading', 'Intern'],
                 ['key', $s['guide']]
@@ -47,6 +48,7 @@ class m200501_120937_elementindexes_settings extends Migration
                 'singles' => ['tableAttributes' => ['drafts', $f['featuredImage'], 'link']],
                 $s['page'] => ['tableAttributes' => ['drafts', 'hasProvisionalDraft', 'type', $f['featuredImage'], 'postDate', 'link']],
                 $s['article'] => ['tableAttributes' => ['drafts', 'hasProvisionalDraft', $f['featuredImage'], $f['teaser'], 'author', 'postDate', 'link']],
+                $s['topic'] => ['tableAttributes' => ['drafts', 'hasProvisionalDraft', $f['featuredImage'], $f['teaser'], 'author', 'postDate', 'link']],
                 $s['legal'] => ['tableAttributes' => ['drafts', 'hasProvisionalDraft', $f['featuredImage'], $f['teaser'], 'postDate', 'link']],
                 $s['guide'] => ['tableAttributes' => ['drafts', 'author', 'postDate']]
 

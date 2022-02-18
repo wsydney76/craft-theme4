@@ -24,6 +24,7 @@ class SeedController extends Controller
 {
     public const NUM_ENTRIES = 10;
     public const SECTIONHANDLE = 'article';
+    public const CATEGORY_SECTIONHANDLE = 'topic';
     public $categorySlug = 'beispiele';
     public $volume = 'images';
 
@@ -110,7 +111,7 @@ class SeedController extends Controller
         $type = $section->getEntryTypes()[0];
         $user = User::find()->admin()->one();
 
-        // $category = $this->getCategory();
+        $category = $this->getCategory();
 
         for ($i = 1; $i <= $num; $i++) {
             $entry = new Entry();
@@ -130,9 +131,9 @@ class SeedController extends Controller
                 $entry->setFieldValue('featuredImage', [$image->id]);
             }
 
-//            if ($category && $sectionHandle == 'article') {
-//                $entry->setFieldValue('categories', [$category->id]);
-//            }
+            if ($category && $sectionHandle == self::SECTIONHANDLE) {
+                $entry->setFieldValue('topics', [$category->id]);
+            }
 
             $entry->setFieldValue('bodyContent', $this->getBodyContent($faker));
 
@@ -255,12 +256,12 @@ class SeedController extends Controller
 
     public function actionDeleteFakedEntries()
     {
-        $category = Entry::find()->section('category')->slug($this->categorySlug)->one();
+        $category = Entry::find()->section(self::CATEGORY_SECTIONHANDLE)->slug($this->categorySlug)->one();
         if (!$category) {
             $this->stderr('No example category found');
             return;
         }
-        $entries = Entry::find()->section('article')->relatedTo($category)->anyStatus()->all();
+        $entries = Entry::find()->section(self::SECTIONHANDLE)->relatedTo($category)->anyStatus()->all();
         if (!$entries) {
             $this->stderr('No example posts found');
             return;
@@ -283,9 +284,9 @@ class SeedController extends Controller
 
     protected function getCategory()
     {
-        $entry = Entry::find()->section('category')->slug($this->categorySlug)->one();
+        $entry = Entry::find()->section(self::CATEGORY_SECTIONHANDLE)->slug($this->categorySlug)->one();
         if (!$entry) {
-            $section = Craft::$app->sections->getSectionByHandle('category');
+            $section = Craft::$app->sections->getSectionByHandle(self::CATEGORY_SECTIONHANDLE);
             if (!$section) {
                 return $entry;
             }
@@ -297,19 +298,19 @@ class SeedController extends Controller
             $entry->authorId = $user->id;
             $entry->title = 'Beispiele';
             $entry->slug = $this->categorySlug;
-            $entry->setFieldValue('teaser', 'Collection of auto-generated examples');
+            $entry->setFieldValue('teaser', 'Sammlung von automatisch generierten Beispielen');
             $this->stdout('Creating Example Content Category ... ');
 
             if (!Craft::$app->elements->saveElement($entry)) {
                 $this->stderr('failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
             } else {
-                $localEntry = $entry->getLocalized()->one();
+                /*$localEntry = $entry->getLocalized()->one();
                 if ($localEntry) {
                     $localEntry->title = 'Examples';
                     $localEntry->slug = 'examples';
                     $localEntry->setFieldValue('teaser', 'Sammlung von automatisch generierten Beispielen');
                     Craft::$app->elements->saveElement($localEntry);
-                }
+                }*/
                 $this->stdout('created' . PHP_EOL);
             }
         }

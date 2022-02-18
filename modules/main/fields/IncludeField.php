@@ -10,6 +10,8 @@ use craft\helpers\Cp;
 use Exception;
 use function is_dir;
 use function str_contains;
+use function str_replace;
+use function ucwords;
 use const CRAFT_TEMPLATES_PATH;
 use const DIRECTORY_SEPARATOR;
 
@@ -88,8 +90,8 @@ class IncludeField extends Field
 
             foreach ($files as $file) {
                 if (!str_starts_with($file, '_') && !is_dir($baseDir . DIRECTORY_SEPARATOR . $file)) {
-                    $label = ucfirst(str_replace('.twig', '', $file));
-                    $options[] = ['label' => Craft::t('site', $label), 'value' => $file];
+                    $label = str_replace(['-','_','.twig'], [' ', ' ',''], $file);
+                    $options[] = ['label' => Craft::t('site', ucwords($label)), 'value' => $file];
                 }
             }
         } catch (Exception $e) {

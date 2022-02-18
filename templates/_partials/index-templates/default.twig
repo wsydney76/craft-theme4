@@ -1,5 +1,7 @@
 {% from '_macros/lib.twig' import img %}
 
+{% set highlightFirst = highlightFirst ?? false %}
+
 {% if criteria.limit is not defined %}
     {% set criteria = criteria|merge({limit: theme.entriesPerIndexPage}) %}
 {% endif %}
@@ -10,12 +12,12 @@
 <div class="max-w-screen-{{ theme.defaultIndexWidth }} space-y-block">
     {% for entry in entries %}
 
-        {% set image = entry.featuredImage.one %}
+        {% set image = entry.featuredImage.one ?? siteInfo.featuredImage.one %}
 
         <a href="{{ entry.url }}"
            class="hover:no-underline block space-y-4 text-base pb-block border-b border-border">
 
-            {% if loop.index == 1 and theme.defaultIndexFirstImageTransform and pageInfo.currentPage == 1 %}
+            {% if highlightFirst and loop.index == 1 and theme.defaultIndexFirstImageTransform and pageInfo.currentPage == 1 %}
 
                 {% if image %}
                     {{ img(image, theme.defaultIndexFirstImageTransform) }}

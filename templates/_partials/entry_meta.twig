@@ -15,7 +15,7 @@
             {% endif %}
             <div class="space-y-1">
                 <div class="text-2xl font-semibold">
-                    {{ author.fullName }}
+                    <a href="{{ siteUrl("#{'authors'|t}/#{author.username}") }}">{{ author.fullName }}</a>
                 </div>
                 {% if author.teaser %}
                     <div class="text-base">

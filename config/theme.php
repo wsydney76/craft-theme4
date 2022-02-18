@@ -26,7 +26,7 @@ return [
     // relative to fullWidthImageWidth
     'fullwidthImageHeight' => 600,
 
-    'useFallbackImage' => true,
+    'useFallbackImage' => false,
 
     'pageWidth' => 'lg',
 
@@ -40,6 +40,12 @@ return [
 
     'defaultBlockWidth' => 'lg',
 
+    // Required for image/gallery, add other block types as needed
+    'defaultBlockTypeWidth' => [
+        'image' => 'xl',
+        'gallery' => 'xl'
+    ],
+
     'defaultIndexWidth' => 'md',
 
     // set max-w-prose on text blocks
@@ -47,7 +53,6 @@ return [
 
     'sidebarLayoutWidth' => 'xl',
 
-    'defaultImageWidth' => 'xl',
 
     'defaultAspectRatio' => '16:9',
 
@@ -96,6 +101,10 @@ return [
     'carouselImageTransform' => ['width' => 500, 'height' => 350, 'format' => 'webp'],
 
     'lightboxImageTransform' => ['height' => 800, 'format' => 'webp'],
+
+    'featuredArticleTransform' => ['width' => 1280, 'height' => 700, 'format' => 'webp'],
+
+    'defaultArticleTransform' => ['width' => 400, 'height' => 250, 'format' => 'webp'],
 
     'entriesPerIndexPage' => 6,
     'entriesInSearchResults' => 6,

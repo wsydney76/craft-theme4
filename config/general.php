@@ -62,7 +62,7 @@ return [
         'limitAutoSlugsToAscii' => true,
 
         // Max No. of revisions
-        'maxRevisions' => 10,
+        'maxRevisions' => 3,
 
         'aliases' => [
 

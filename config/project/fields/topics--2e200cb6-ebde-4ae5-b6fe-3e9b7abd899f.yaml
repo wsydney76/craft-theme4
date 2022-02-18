@@ -1,0 +1,22 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: d868de82-ae37-4897-a6bb-ef08e919650b # Common
+handle: topics
+instructions: ''
+name: Topics
+searchable: true
+settings:
+  allowSelfRelations: false
+  limit: ''
+  localizeRelations: false
+  selectionLabel: 'Add a topic'
+  showSiteMenu: false
+  source: null
+  sources:
+    - 'section:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

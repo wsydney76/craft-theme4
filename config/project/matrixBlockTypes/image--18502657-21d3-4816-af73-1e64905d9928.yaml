@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 25
           -
-            fieldUid: 0cb800eb-b7ac-4482-b68e-1bb06dbe4ca9 # Aspect Ratio
+            fieldUid: 6cc5489b-8b5b-4803-84e7-8520cf7b142f # Width
             instructions: null
             label: null
             required: true
@@ -32,7 +32,7 @@ fieldLayouts:
             warning: null
             width: 25
           -
-            fieldUid: 6cc5489b-8b5b-4803-84e7-8520cf7b142f # Width
+            fieldUid: 0cb800eb-b7ac-4482-b68e-1bb06dbe4ca9 # Aspect Ratio
             instructions: null
             label: null
             required: true

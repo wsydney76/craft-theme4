@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1645008922
+dateModified: 1645187068
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -22,6 +22,7 @@ meta:
     0cc70760-0163-43ed-b61c-224b6f32981c: 'Site Info' # Site Info
     0d56f12c-69da-44d0-a0d1-36e975f34020: 'Cookie Consent Info' # Cookie Consent Info
     0f531b1b-706f-44be-aee1-30794da8590f: Video # Video
+    1a4c4f22-b6ec-4dc8-8b67-ef9d928180d0: Topic # Topic
     1a44354f-d18f-498e-8cd1-7384892353a8: 'Farbe 3' # Farbe 3
     1ae476f8-3a5b-4cda-8527-af3f0d8f99fb: Heading # Heading
     1b00f7c7-cc83-4705-bddb-0bf5da88d73f: 'Farbe 4' # Farbe 4
@@ -36,14 +37,18 @@ meta:
     2c714018-e241-4b81-9797-7a0a8f643f76: 'Link Caption' # Link Caption
     2cf2c737-33d2-4b15-8933-7053b22d0020: Parameter # Parameter
     2d84778b-a47e-4b33-b8f4-852100a4faee: Titel # Titel
+    2e200cb6-ebde-4ae5-b6fe-3e9b7abd899f: Topics # Topics
     2f9f4c17-9e79-43b8-aec7-0a8353998ac8: Rahmen-Hintergrundfarbe # Rahmen-Hintergrundfarbe
     3ac8b547-8089-43db-b7de-39c79c658368: 'Audio Files' # Audio Files
     3ae32dd4-67e1-47f7-a7fc-89335803d234: Image # Image
     3be67666-850d-4678-a3d7-277a52c8fa8d: Page # Page
+    3c2fafd2-4f15-437b-a8a3-01330d1b78f7: Archiv # Archiv
     3cb2606a-5d91-44a2-bbfa-8110801db82d: Text # Text
+    3cf774ef-1913-42fe-893f-35e693837468: Heading # Heading
     3f22fd1a-1b63-4a34-ab28-56dd59bd3e99: 'Index Template' # Index Template
     4ad59136-a89e-41ea-8aff-d5383b3a11e0: 'Social Links' # Social Links
     4ae84930-4a7e-455d-ab1a-2fef0f711ad8: Grid # Grid
+    4cbc8de9-52d8-4f78-8a28-8d46a7f76dea: Style # Style
     04d14d45-3d49-4d75-9b1b-56b1cbe51772: Duration # Duration
     4e2c54ec-94ca-464d-9c64-8b74de116ece: Quote # Quote
     4ebb2019-cc8b-4725-892b-ea00dad0b91f: 'Bio Right Text' # Bio Right Text
@@ -84,6 +89,7 @@ meta:
     8f7a501f-8f71-499e-925e-a2de6a443fd2: 'Margins Y' # Margins Y
     8fb04690-63b2-4e65-bb13-def05a978110: Answer # Answer
     9c7e95a7-7a87-46ad-974e-8ce3846ef68b: Description # Description
+    9c9d5cca-e9b2-48e2-911d-21f139d26fed: Intro # Intro
     9dc36ffd-e836-4969-ba71-011e003734df: Link # Link
     9e2aef67-e059-40ff-8b1a-06707a443c2d: 'Aspect Ratio' # Aspect Ratio
     9e628a7d-eee4-4815-ba1a-502ca992f9c0: 'Web Site' # Web Site
@@ -92,6 +98,8 @@ meta:
     10d8ae84-a8b6-489d-846d-1a7510cd9829: 'Global Seo Fields' # Global Seo Fields
     11b69207-d542-4b25-b583-c6444cf7573e: 'Show Privacy Settings' # Show Privacy Settings
     11eeefa8-8091-4cfd-ada5-be09112581b2: 'Dynamic Block' # Dynamic Block
+    14b97a17-1192-45ff-a041-b14cc2b7fdcd: 'Show Author and Date' # Show Author and Date
+    14cabfdc-d6d2-4d33-8603-3f4ba05ec5cf: Articles # Articles
     17bdd0b8-d122-4c81-accf-6e1470359fba: Bilder # Bilder
     20f9b230-8862-4058-9cf3-7c7a78e44a13: Column # Column
     25b6288e-6703-4648-b9a2-09967a70132d: Heading # Heading
@@ -101,11 +109,13 @@ meta:
     34bf1fd9-c32a-4685-8ec4-1bcfd5bf136a: 'Fallback Image benutzen?' # Fallback Image benutzen?
     36ba3b7b-ebf4-4e47-b175-8b53b1a51659: Text # Text
     39a9436c-4a59-44ea-9c7c-5d1a4eef3609: Image # Image
+    42c099ce-f401-404a-9884-34b24e55168a: 'Add top border' # Add top border
     42ca6f90-46f5-4a7e-8fcb-4f485ffe612c: Level # Level
     44b322dd-2b68-4cbf-ac78-a70d2d80af18: 'Image Background Color' # Image Background Color
     48fde250-325a-44bf-9238-66f0e831a883: Image # Image
     49ccb4b8-c82b-4daf-9af9-1af874ad6dd4: Embeds # Embeds
     051d92e2-649b-4487-b9de-31b3c4bb7d86: 'Audio File' # Audio File
+    52e2410d-b8f0-4a26-8ee4-4991e1030be2: Topic # Topic
     55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2: 'Featured Image' # Featured Image
     55f033c8-b2b2-4609-a364-a5fcfcbfb4f8: 'Content im Rahmen anzeigen' # Content im Rahmen anzeigen
     57d93092-ead9-4861-b888-be2853985a17: Gallery # Gallery
@@ -117,6 +127,7 @@ meta:
     61c8dfb5-4ac7-420b-ad8e-5cad0d464a98: Description # Description
     67fd47de-5830-448a-b516-a4669022b3d5: Audio # Audio
     71c7b62d-598c-4107-adbc-c2b4825fc9f2: Überschrift # Überschrift
+    073bb589-e25f-4852-95c5-3aa6126e13b0: Width # Width
     73e93dbc-918a-456d-a318-73b140994f93: Video # Video
     78fa937f-6888-42b2-be19-0d82aeff862c: 'Block Inhalt' # Block Inhalt
     80de78f1-6d38-4d79-a522-71b6e6aec241: 'Show in modal' # Show in modal
@@ -139,6 +150,7 @@ meta:
     377f6e53-9299-41b1-876a-44e39ffa3901: Bild-Position # Bild-Position
     0382c650-1ca7-4546-9397-dbc92da512a5: 'Spotlight Link' # Spotlight Link
     00413a8e-7538-46a8-8254-eef6bff21efb: Guide # Guide
+    484ad434-775d-49da-ba41-8fef629fdf05: Heading # Heading
     490eba08-64fd-4e1e-96fd-e726efe3aa99: Institution # Institution
     499db390-ca29-450f-8c5d-9a23d0e1e353: Text # Text
     512edbee-e5b1-4422-9597-eeffd72ee9e5: __blank__ # __blank__
@@ -152,6 +164,7 @@ meta:
     965f2bbe-7dfb-46ed-b481-5bc4aba117e0: 'Bildhöhe für Volle Breite' # Bildhöhe für Volle Breite
     983cfd03-1fd2-49c4-9027-2599f4665b1f: Director # Director
     2080bd27-6539-42c6-ac2d-87d524c5d3d9: Typ # Typ
+    02218d8a-3949-46f1-a82d-3bdaaaee7db3: Articles # Articles
     3580d155-238d-43a1-b359-9c0634e988ed: 'Number of Columns' # Number of Columns
     3706c730-a07b-4974-8277-510be29bf91e: 'Image Align' # Image Align
     4008cfb2-85a6-441c-bffb-b4d1cf5c23e0: Caption # Caption
@@ -176,9 +189,12 @@ meta:
     90724a6b-55ad-446f-be50-7aea7e1fb067: Robots # Robots
     91350ab1-7a75-4d75-954c-aed53e2be72d: 'Helle Farbe' # Helle Farbe
     118622b7-20ad-4b1d-8d78-5d49bbdbcd68: Template # Template
+    159884ef-f683-429b-9644-09e5960b49c1: Standard # Standard
+    545503ea-c13e-4d00-b7b4-048402b77c79: 'Show Author and Date' # Show Author and Date
     609778c1-e7ba-47fc-bd62-7f2c99f0f0ee: Assets # Assets
     692545fb-e35e-4d52-9556-61dd2de564b0: 'Filmmakers Link' # Filmmakers Link
     867104fa-7b5a-4510-a6f7-9a36bd106af0: 'Johanna Debes' # Johanna Debes
+    887375f5-bfaf-4f50-9a8b-6aaccf29efe2: Width # Width
     998578d3-ed21-4353-b626-c42440dc380f: Members # Members
     2596765e-98d5-4ac4-9746-bcb304e697d4: 'Cookie Consent' # Cookie Consent
     3445271a-f274-4239-858d-05878b6c4f85: 'Global SEO' # Global SEO
@@ -194,12 +210,14 @@ meta:
     a010299b-071c-4852-81f6-c15875a5ba4f: Guide # Guide
     a1daf45f-2aea-4d06-bcf5-cb8644fe3a83: Breite # Breite
     a2c29852-b972-45b2-bfc6-1089bf926e4e: Offset # Offset
+    a3a00a5e-73ba-4e8a-9800-375c9be802a9: Topic # Topic
     a3b308d7-b2e2-43e0-9005-968181409250: Year # Year
     a5b4be95-4f2c-4cfd-8103-58a31f1d0329: Attribution # Attribution
     a5f3b232-51a5-4cf6-88f2-2e1ff35fabb7: Überschrift # Überschrift
     a6f9a628-cf74-47fd-aebe-0587bea06e3c: Columns # Columns
     a63b171c-7ffe-4e62-b067-ebf8a62f881d: Video # Video
     a65dba5f-9068-455d-9b50-95963423d5d4: Buttons # Buttons
+    a492c2d2-0033-4568-83e3-0728ac3baee2: Articles # Articles
     a7306e8e-7667-4349-81d0-c498aea76080: 'zu sehen' # zu sehen
     a639162a-3b14-43b9-8988-50e42f80a86b: 'Table of Content' # Table of Content
     a917656e-dee2-4135-99f8-f837529a2a69: 'User Photos' # User Photos
@@ -229,6 +247,7 @@ meta:
     b683b318-aee5-4bb2-a3a4-40fc6cf445cc: Phone # Phone
     b737eb71-7008-4ed8-a37a-512e534cbd8d: Hintergrundfarbe # Hintergrundfarbe
     b982e525-fb92-43d1-ad97-579ae41d9baf: Für # Für
+    b8473c9e-0759-45e7-bc02-b5e00a31c275: Style # Style
     b694572e-93ad-4c26-a1ed-c71ea2ec47be: Platform # Platform
     ba191755-e5e9-46c1-b391-8b11af25d74c: Text # Text
     bb78bebb-31f2-45c2-bc3f-2baa1a83cca7: Typ # Typ
@@ -278,10 +297,12 @@ meta:
     e7e06f09-a933-47dd-8110-4119015fcf02: 'Julia Koschitz' # Julia Koschitz
     e8aeeeb6-0012-4e3c-bb2f-e5c616a7f73b: Sekundärfarbe # Sekundärfarbe
     e11aebc3-41ca-4730-a85b-997852702e35: Homepage # Homepage
+    e26bccc0-5f6e-465a-bc53-ca518d9a70d8: Articles # Articles
     e35ec4e7-302c-49f6-b5ae-a95120fbd4c0: Question # Question
     e62d63b0-c299-42ce-aeef-86a69f7e676c: 'Seo Fields' # Seo Fields
     e95a35fa-7cca-46ef-92f7-04d1b61144ae: 'Bild neben dem Block' # Bild neben dem Block
     e734f645-25d7-4111-a0bd-207d0bc77bf3: 'Mobiles Menü ausblenden' # Mobiles Menü ausblenden
+    e1065708-fc97-4194-99c4-f62e3149cfef: Archiv # Archiv
     e9781761-5a04-49d1-84ef-a9159f853e28: 'Members Template' # Members Template
     ea0da518-95b9-47c2-8dec-9f2ff43ca7f4: 'Background color' # Background color
     ea2cfe15-67c5-438e-9d8c-b80a905baa85: Text # Text

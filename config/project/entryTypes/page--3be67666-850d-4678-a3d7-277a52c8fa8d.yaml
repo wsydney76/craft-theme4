@@ -58,6 +58,15 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            fieldUid: 9c9d5cca-e9b2-48e2-911d-21f139d26fed # Intro
+            instructions: 'Used in Article block, e.g. for the home page'
+            label: ''
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             fieldUid: 266ac6c3-03c0-40eb-8f24-c5c22ed1c5c0 # Content
             instructions: null
             label: null

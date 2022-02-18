@@ -59,6 +59,7 @@ Replace `project` with your project name
 * Change settings in `config/theme.php`
 * Update `tailwind.config.js` and run `npm run ...`
 * By default, the main navigation reflects the structure of your Pages section, but you can override this by setting `Globals -> Site Info -> Navigation Entries`
+* By default, versioning of entries is not enabled. (We have never seen this used in the wild...) Goto settings -> section to enable versioning if needed. 
 
 ## Faker content
 

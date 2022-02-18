@@ -1,0 +1,30 @@
+{# param slug from route #}
+
+{% extends "_layouts/#{theme.layout}.twig" %}
+
+{% set entry = craft.entries.section('archive').one %}
+{% set author = craft.users.username(slug).one %}
+{% if not entry or not author %}
+    {% exit 404 %}
+{% endif %}
+
+{% set themeOptions = {
+    title: "#{'Entries'|t} #{'by'|t} #{author.fullName}",
+    teaser: 'Archive'|t,
+    featuredImage: author.featuredImage.one
+} %}
+
+{% block afterContent %}
+
+   {% include '_sections/author/profile.twig' %}
+
+    <div class="container-{{ theme.pageWidth }}">
+        {% include "_partials/index-templates/cards.twig" with {
+            criteria: {
+                authorId: author.id
+            }
+        } %}
+    </div>
+
+
+{% endblock %}

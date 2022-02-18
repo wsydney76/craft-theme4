@@ -1,0 +1,145 @@
+{% from '_macros/lib.twig' import img %}
+{% set entries = block.articles.all %}
+
+{% set style = block.style.value ?? 'default' %}
+
+{% set blockClasses = {
+    boxed: 'border-4 border-light p-8',
+} %}
+
+{% set headingClasses = {
+    boxed: 'text-center'
+} %}
+
+{% set entriesClasses = {
+    cards: 'flex flex-wrap'
+} %}
+
+{% if entries %}
+    <div class="{{ blockClasses[style] ?? '' }} {{ block.addTopBorder ? 'border-t-2 border-light' }}">
+        {% if block.heading %}
+            <h2 class="text-h2 {{ headingClasses[style] ?? '' }} mb-4">{{ block.heading }}</h2>
+        {% endif %}
+
+        <div class="{{ entriesClasses[style] ?? '' }}">
+            {% for entry in entries %}
+                {% set image = entry.featuredImage.one ?? siteInfo.featuredImage.one %}
+
+
+                {% switch style %}
+
+                {% case "featured" %}
+
+                    <a href="{{ entry.url }}"
+                       class="!no-underline hover:no-underline block space-y-4 text-base py-block }}">
+
+                        {% if entry.teaser %}
+                            <div class="text-base">
+                                {{ entry.teaser }}
+                            </div>
+                        {% endif %}
+
+                        <h2 class="text-6xl font-semibold">{{ entry.title }}</h2>
+
+                        {% if image %}
+                            {{ img(image, theme.featuredArticleTransform) }}
+                        {% endif %}
+
+                        {{ _self.intro(entry) }}
+
+                        {% if block.showAuthorAndDate %}
+                            {{ _self.meta(entry) }}
+                        {% endif %}
+                    </a>
+                {% case "cards" %}
+
+                    {% embed '_layouts/embeds/card.twig' with {
+                        entry,
+                        self: _self
+                    }  %}
+                        {% from self import intro %}
+                        {% block sectionContent  %}
+                            <div class="mt-2 text-sm">
+                                {{ intro(entry) }}
+                            </div>
+                        {% endblock %}
+                        {% block sectionBottomContent %}
+                            {% if block.showAuthorAndDate %}
+                                {{ parent() }}
+                            {% endif %}
+                        {% endblock %}
+                    {% endembed %}
+
+                {% default %}
+
+                    <a href="{{ entry.url }}"
+                       class="!no-underline hover:no-underline block space-y-4 text-base {{ not loop.first or block.addTopBorder ? 'pt-block' }} {{ not loop.last ? 'pb-block' }} {{ style != 'boxed' or not loop.last ? 'pb-block' }}">
+
+                        <div class="sm:flex sm:space-x-block">
+                            {% if image %}
+                                <div class="md:w-1/3">
+                                    {{ img(image, theme.defaultArticleTransform) }}
+                                </div>
+                            {% endif %}
+                            <div class="mt-4 sm:my-2 md:w-2/3">
+                                <div class="space-y-4">
+
+                                    {% if entry.teaser %}
+                                        <div class="font-bold">
+                                            {{ entry.teaser }}
+                                        </div>
+                                    {% endif %}
+                                    <h2 class="text-2xl font-bold mt-block mt-2">
+                                        {{ entry.title }}
+                                    </h2>
+
+                                    {{ _self.intro(entry) }}
+
+                                    {% if block.showAuthorAndDate %}
+                                        {{ _self.meta(entry) }}
+                                    {% endif %}
+
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                {% endswitch %}
+
+
+            {% endfor %}
+        </div>
+
+        {% set topic = block.topic.one %}
+        {% if topic %}
+            <div class="my-block">
+                <a class="btn bg-primary text-white" href="{{ topic.url }}">{{ 'All articles on the topic'|t }} {{ topic.title }}</a>
+            </div>
+        {% endif %}
+
+    </div>
+
+
+{% endif %}
+
+{% macro intro(entry) %}
+    {% if entry.intro %}
+        <div>
+            {{ entry.intro }}
+        </div>
+    {% else %}
+        {% set textBlock = entry.bodyContent.type('text').one %}
+        {% if textBlock %}
+            <div>
+                {{ textBlock.text|striptags|truncate(150) }}
+            </div>
+        {% endif %}
+    {% endif %}
+{% endmacro %}
+
+{% macro meta(entry) %}
+    <div>
+        {{ entry.postDate|date('short') }} {{ 'by'|t }} {{ entry.author.fullName }}
+    </div>
+{% endmacro %}
+
+

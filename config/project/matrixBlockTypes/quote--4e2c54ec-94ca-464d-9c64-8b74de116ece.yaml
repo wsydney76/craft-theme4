@@ -67,4 +67,4 @@ fields:
     type: craft\fields\PlainText
 handle: quote
 name: Quote
-sortOrder: 12
+sortOrder: 13

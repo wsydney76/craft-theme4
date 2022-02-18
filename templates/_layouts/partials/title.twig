@@ -1,12 +1,14 @@
 {% set showTeaser = themeOptions.showTeaser ?? true %}
+{% set teaser = themeOptions.teaser ?? entry.teaser ?? '' %}
+{% set title = themeOptions.title ?? entry.title %}
 
 {% if 'text' in theme.titleStyle|lower %}
     <div class="">
-        {% if showTeaser and entry is defined and entry.teaser %}
+        {% if showTeaser and teaser %}
             <div class="mt-2 text-base">
-                {{ entry.teaser }}
+                {{ teaser }}
             </div>
         {% endif %}
-        <h1 class="text-4xl text-h1 mt-1 py-2 tracking-widest">{{ themeOptions.title ?? entry.title ?? title }}</h1>
+        <h1 class="text-4xl text-h1 mt-1 py-2 tracking-widest">{{ title }}</h1>
     </div>
 {% endif %}
