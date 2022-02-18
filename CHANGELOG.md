@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.0.0 2020-02-18 (Beta, ready for testing)
+
+* Added section type 'Topic'
+* Added block type 'articles' for building (simple) magazine-like layouts
+* Added author archive pages
+
 ## 2.4.2 2020-02-16
 
 * Craft Update
