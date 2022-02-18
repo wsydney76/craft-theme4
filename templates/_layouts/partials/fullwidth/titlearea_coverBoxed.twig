@@ -3,8 +3,9 @@
 {% set showMeta = entry.author and (themeOptions.showMeta ?? false) %}
 {% set showTeaser = themeOptions.showTeaser ?? true %}
 {% set teaser = themeOptions.teaser ?? entry.teaser %}
+{% set title = themeOptions.title ?? entry.title %}
 
- {% set image = entry.featuredImage.one %}
+{% set image = themeOptions.featuredImage ?? entry.featuredImage.one %}
 {% if not image and theme.useFallbackImage %}
     {% set image = siteInfo.featuredImage.one %}
 {% endif %}
@@ -33,7 +34,7 @@
                     {% endif %}
 
                     <h1 class="text-4xl xl:text-5xl 2xl:text-6xl font-light tracking-wide">
-                        {{ entry.title }}
+                        {{ title }}
                     </h1>
 
                     {% if showMeta %}

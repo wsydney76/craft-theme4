@@ -17,6 +17,7 @@ return [
     'An internal error has occurred' => 'Es ist ein interner Fehler aufgetreten',
     'and' => 'und',
     'Answer' => 'Antwort',
+    'Archive' => 'Archiv',
     'Article Index page' => 'Artikel-Indexseite',
     'Article' => 'Artikel',
     'Aspect Ratio' => 'Seitenverhältnis',

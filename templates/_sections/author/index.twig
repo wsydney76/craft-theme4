@@ -6,7 +6,10 @@
     {% exit 404 %}
 {% endif %}
 
-{% set themeOptions = {teaser: 'Einträge von ' ~ author.fullName} %}
+{% set themeOptions = {
+    title: "#{'Entries'|t} #{'by'|t} #{author.fullName}",
+    teaser: 'Archive'|t
+} %}
 
 {% block afterContent %}
 
