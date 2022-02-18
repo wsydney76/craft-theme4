@@ -2,6 +2,15 @@ tabs:
   -
     elements:
       -
+        fieldUid: 55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2 # Featured Image
+        instructions: 'Will be used on archive pages'
+        label: ''
+        required: ''
+        tip: null
+        type: craft\fieldlayoutelements\CustomField
+        warning: null
+        width: 100
+      -
         fieldUid: f6ff43e3-8e77-457f-91cb-101f517889c9 # Teaser
         instructions: ''
         label: Kurzbeschreibung

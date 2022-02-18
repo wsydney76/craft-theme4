@@ -1,3 +1,5 @@
+{# param slug from route #}
+
 {% extends "_layouts/#{theme.layout}.twig" %}
 
 {% set entry = craft.entries.section('archive').one %}
@@ -8,7 +10,8 @@
 
 {% set themeOptions = {
     title: "#{'Entries'|t} #{'by'|t} #{author.fullName}",
-    teaser: 'Archive'|t
+    teaser: 'Archive'|t,
+    featuredImage: author.featuredImage.one
 } %}
 
 {% block afterContent %}
