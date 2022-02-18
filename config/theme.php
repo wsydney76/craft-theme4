@@ -102,6 +102,10 @@ return [
 
     'lightboxImageTransform' => ['height' => 800, 'format' => 'webp'],
 
+    'featuredArticleTransform' => ['width' => 1280, 'height' => 700, 'format' => 'webp'],
+
+    'defaultArticleTransform' => ['width' => 400, 'height' => 250, 'format' => 'webp'],
+
     'entriesPerIndexPage' => 6,
     'entriesInSearchResults' => 6,
 

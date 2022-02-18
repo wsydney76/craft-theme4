@@ -1,0 +1,186 @@
+field: 20f9b230-8862-4058-9cf3-7c7a78e44a13 # Column
+fieldLayouts:
+  3a5134c5-c51e-46fc-bbc0-589a0ce04e92:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 3cf774ef-1913-42fe-893f-35e693837468 # Heading
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 02218d8a-3949-46f1-a82d-3bdaaaee7db3 # Articles
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 52e2410d-b8f0-4a26-8ee4-4991e1030be2 # Topic
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 4cbc8de9-52d8-4f78-8a28-8d46a7f76dea # Style
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 545503ea-c13e-4d00-b7b4-048402b77c79 # Show Author and Date
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+        name: Content
+        sortOrder: 1
+fields:
+  3cf774ef-1913-42fe-893f-35e693837468: # Heading
+    columnSuffix: uxzjvjuo
+    contentColumnType: string(240)
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: 60
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: language
+    type: craft\fields\PlainText
+  4cbc8de9-52d8-4f78-8a28-8d46a7f76dea: # Style
+    columnSuffix: yruyjtho
+    contentColumnType: string
+    fieldGroup: null
+    handle: style
+    instructions: ''
+    name: Style
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Default
+            -
+              - value
+              - default
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Featured
+            -
+              - value
+              - featured
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Cards
+            -
+              - value
+              - cards
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  52e2410d-b8f0-4a26-8ee4-4991e1030be2: # Topic
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: topic
+    instructions: ''
+    name: Topic
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: 'Add a topic'
+      showSiteMenu: false
+      source: null
+      sources:
+        - 'section:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  02218d8a-3949-46f1-a82d-3bdaaaee7db3: # Articles
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: articles
+    instructions: ''
+    name: Articles
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      limit: ''
+      localizeRelations: false
+      selectionLabel: 'Add article'
+      showSiteMenu: false
+      source: null
+      sources:
+        - 'section:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
+        - 'section:a6676538-ee52-4938-aaff-8d9d46b669af' # Page
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  545503ea-c13e-4d00-b7b4-048402b77c79: # Show Author and Date
+    columnSuffix: lqmdnwpu
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: showAuthorAndDate
+    instructions: ''
+    name: 'Show Author and Date'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+handle: articles
+name: Articles
+sortOrder: 5

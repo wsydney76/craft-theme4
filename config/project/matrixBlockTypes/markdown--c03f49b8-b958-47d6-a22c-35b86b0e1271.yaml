@@ -38,4 +38,4 @@ fields:
     type: craft\fields\PlainText
 handle: markdown
 name: 'Text (Markdown)'
-sortOrder: 14
+sortOrder: 15

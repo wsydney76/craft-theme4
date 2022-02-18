@@ -1,0 +1,25 @@
+{% set text %}
+    Dieser Block kann verwendet werden um ein (einfaches) Magazinlayout zu erzeugen.
+
+    * Geben Sie eine Überschrift für den Abschnitt ein (optional)
+    * Wählen Sie die anzuzeigenden Artikel/Seiten aus
+    * Stellen Sie sicher, dass für diese Enträge ein Beitragsbild ausgewählt ist und das Feld 'Intro' gefüllt ist.
+    * Fehlen diese Angaben, wird das globale Fallback-Bild und der Beginn des ersten Text-Blocks verwendet.
+    * Wählen Sie ein Thema aus, wenn ein Link 'Alle Artikel zum Thema...' hinzugefügt werden soll.
+
+    Im Tab 'Layout' können Sie folgende Einstellungen treffen:
+
+    * Breite: Eine gräßere Breite bietet sich für den ersten Abschnitt mit den wichtigsten Einträgen an.
+    * Stil 'Standard': Spaltenlayout mit Bild links und Text rechts
+    * Stil 'Hervorgehoben': Bild über die gesamte Breite. Für diesen Stil sollte nur ein Eintrag ausgewählt werden.
+    * Stil 'Gerahmt': Um den gesamten Abschnitt wird ein Rahmen angezeit, die Einträge werden im Stil 'Standard' angezeigt. Nützlich, um zusammen gehörige Artikel deutlich zu gruppieren.
+    * Stil 'Karten': Die Einträgen werden im Kartenlayout nebeneinander dargestellt.
+    * Trennlinie oberhalb: Setzt einen Abschnitt deutlicher vom Inhalt davor ab.
+    * Autor und Datum anzeigen: Bestimmt, ob diese Meta-Daten angezeigt werden sollen.
+
+{% endset %}
+{% include 'guide/embeds/two_columns.twig' with {
+    heading: 'Artikel',
+    text,
+    images: ['blocks-articles.jpg', 'blocks-articles-layout.jpg',]
+} %}

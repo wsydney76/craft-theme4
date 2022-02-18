@@ -23,15 +23,21 @@
                 <div class="text-2xl">
                     {{ entry.title }}
                 </div>
-                <div class="text-base">
-                    {% include "_sections/#{entry.section.handle}/card_content.twig" ignore missing %}
-                </div>
+
+                {% block sectionContent %}
+                    <div class="text-base">
+                        {% include "_sections/#{entry.section.handle}/card_content.twig" ignore missing %}
+                    </div>
+                {% endblock %}
 
                 {% block content %}{% endblock %}
             </div>
         </div>
-        <div class="p-4">
-            {% include "_sections/#{entry.section.handle}/card_bottom_content.twig" ignore missing %}
-        </div>
+
+        {% block sectionBottomContent %}
+            <div class="p-4">
+                {% include "_sections/#{entry.section.handle}/card_bottom_content.twig" ignore missing %}
+            </div>
+        {% endblock %}
     </a>
 </article>
