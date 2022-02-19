@@ -33,7 +33,7 @@
 
         <div id="block-{{ block.id }}" class="{{ theme.stickyNavbar ? 'scroll-mt-24' }}  {{ "bg-#{backgroundColor}" }} {{ "text-#{foregroundColor}" }} {{ marginsY }} {{ paddingsY }}">
             <div class="max-w-screen-{{ width }} mx-auto {{ paddingsX }}">
-                {% include ["_blocks/#{block.type}"] %}
+                {% include ["_blocks/#{block.type}"] with {index: loop.index} %}
             </div>
         </div>
 

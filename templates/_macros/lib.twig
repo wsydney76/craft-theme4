@@ -55,19 +55,22 @@
 
             {% if createSrcset and transform.width is defined and transform.width > theme.minResponsiveWidth %}
 
+                {% set ratio = transform.width / transform.height %}
+
                 {% set transforms = [baseTransform] %}
-                {% for responsiveWidth in theme.responsiveWidths %}
+                {% for responsiveWidth in responsiveWidths ?? theme.responsiveWidths %}
                     {% if responsiveWidth < transform.width %}
-                        {% set transforms = transforms|push(baseTransform|merge({width: responsiveWidth})) %}
+                        {% set transforms = transforms|push(baseTransform|merge({width: responsiveWidth, height: (responsiveWidth / ratio)|round(0)})) %}
                     {% endif %}
                 {% endfor %}
+
 
                 {% set transformedImages = imager.transformImage(image, transforms) %}
 
                 {% set imgHtml = tag('img', {
-                    src: imager.placeholder({ width: image.height, height: image.width, color: '#cccccc' }),
-                    height: image.height,
-                    width: image.width,
+                    src: imager.placeholder({ width: transform.height, height: transform.width, color: '#cccccc' }),
+                    height: transform.height,
+                    width: transform.width,
                     alt: image.altText ?: image.title,
                     srcset: imager.srcset(transformedImages),
                     loading: 'lazy'

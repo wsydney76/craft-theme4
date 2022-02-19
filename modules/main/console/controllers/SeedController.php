@@ -471,6 +471,7 @@ class SeedController extends Controller
 
         $entries = Entry::find()
             ->uri(':notempty:')
+            ->orderBy('id')
             ->all();
 
         $c = count($entries);
