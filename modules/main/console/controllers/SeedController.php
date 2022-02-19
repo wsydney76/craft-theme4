@@ -145,6 +145,8 @@ class SeedController extends Controller
         }
 
         $this->actionResetHomepage();
+
+        $this->actionCreateTransforms();
     }
 
     protected function getBodyContent(Generator $faker)
@@ -352,11 +354,15 @@ class SeedController extends Controller
         $start = $count + 1;
         $end = $count + $num;
 
+        $loop = 0;
+
         for ($i = $start; $i <= $end; $i++) {
+
+            $loop++;
 
             $filename = "example_{$i}.jpg";
 
-            $this->stdout($filename . "...");
+            $this->stdout( "[{$loop}/{$num}] ". $filename . "...");
 
             $url = "https://picsum.photos/2000/1280";
 
@@ -391,14 +397,14 @@ class SeedController extends Controller
             return;
         }
 
-        $title = $this->prompt('New title:', ['default' => $entry->title, 'required' => true]);
+        $title = $this->prompt('New title: ', ['default' => $entry->title, 'required' => true]);
 
         if ($entry->title != $title) {
             $entry->title = $title;
         }
 
         $entry->setFieldValue('bodyContent', [
-            'sortOrder' => ['new1','new2','new3'],
+            'sortOrder' => ['new1', 'new2', 'new3'],
             'blocks' => [
                 'new1' => [
                     'type' => 'articles',
@@ -429,7 +435,7 @@ class SeedController extends Controller
             ]
         ]);
 
-        if(!Craft::$app->elements->saveElement($entry)) {
+        if (!Craft::$app->elements->saveElement($entry)) {
             $this->stdout("Could not save homepage\n");
         }
 
@@ -450,13 +456,13 @@ class SeedController extends Controller
 
         foreach ($entries as $entry) {
             if (!$entry->intro) {
-                $entry->setFieldValue('intro', $faker->text(250) );
+                $entry->setFieldValue('intro', $faker->text(250));
                 Craft::$app->elements->saveElement($entry);
                 $this->stdout("Added intro text to {$entry->title}\n");
             }
         }
 
-        return ArrayHelper::getColumn($entries,'id');
+        return ArrayHelper::getColumn($entries, 'id');
     }
 
     /**
@@ -490,8 +496,8 @@ class SeedController extends Controller
             try {
                 $result = $client->get($entry->url);
                 $this->stdout($result->getStatusCode());
-            } catch (GuzzleException $e) {
-                $this->stdout("Error {$e->getCode()}");
+            } catch (Exception $e) {
+                $this->stdout("Error {$e->getMessage()}");
             }
 
             $this->stdout("\n");

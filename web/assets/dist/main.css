@@ -928,11 +928,11 @@ a.btn{
 .-mb-block{
   margin-bottom: -2rem;
 }
-.mb-4{
-  margin-bottom: 1rem;
-}
 .mb-2{
   margin-bottom: 0.5rem;
+}
+.mb-4{
+  margin-bottom: 1rem;
 }
 .mt-2{
   margin-top: 0.5rem;
@@ -984,6 +984,12 @@ a.btn{
 }
 .-mt-6{
   margin-top: -1.5rem;
+}
+.-mt-0\.5{
+  margin-top: -0.125rem;
+}
+.-mt-0{
+  margin-top: -0px;
 }
 .mt-1{
   margin-top: 0.25rem;

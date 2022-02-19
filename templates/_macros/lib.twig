@@ -27,9 +27,17 @@
         {% else %}
             {# on the fly transform, calculate missing parameters #}
 
-            {% do image.setTransform(transform) %}
-
-            {% set ratio = image.width / image.height %}
+            {% if transform.width is defined and transform.height is defined %}
+                {# noop #}
+            {% elseif transform.width is defined %}
+                {% set ratio = image.width / image.height %}
+                {% set transform = transform|merge({height: (transform.width / ratio)|round(0) }) %}
+            {% elseif transform.height is defined %}
+                {% set ratio = image.width / image.height %}
+                {% set transform = transform|merge({width: (transform.width * ratio)|round(0) }) %}
+            {% else %}
+                {% set transform = transform|merge({width: image.width, height: image.height }) %}
+            {% endif %}
 
             {% if image.imageEffects %}
                 {% set effects = image.imageEffects|json_decode %}
@@ -38,8 +46,8 @@
             {% endif %}
 
             {% set baseTransform = {
-                width: image.width,
-                ratio: ratio,
+                width: transform.width,
+                height: transform.height,
                 format: transform.format ?? theme.defaultImageFormat,
                 mode: transform.mode ?? 'crop',
                 effects: effects
@@ -71,8 +79,8 @@
 
                 {% set imgHtml = tag('img', {
                     src: transformedImage.url,
-                    height: image.height,
-                    width: image.width,
+                    height: transform.height,
+                    width: transform.width,
                     alt: image.altText ?: image.title,
                     loading: 'lazy'
                 }|merge(attrs)) %}
@@ -103,8 +111,8 @@
 
         {% set imgHtml = tag('img', {
             src: image.url,
-            height: image.height,
-            width: image.width,
+            height: transform.height,
+            width: transform.width,
             alt: image.altText ?: image.title,
             srcset: image.srcset(srcSet),
             loading: 'lazy'
