@@ -6,6 +6,7 @@ use Craft;
 use craft\console\Controller;
 use craft\elements\Asset;
 use craft\elements\Entry;
+use craft\elements\GlobalSet;
 use craft\elements\User;
 use craft\helpers\App;
 use craft\helpers\ArrayHelper;
@@ -17,78 +18,114 @@ use Faker\Generator;
 use yii\helpers\Console;
 use function implode;
 use function is_dir;
+use function utf8_encode;
 use const DIRECTORY_SEPARATOR;
 use const PHP_EOL;
 
 class SeedController extends Controller
 {
-    public const NUM_ENTRIES = 10;
-    public const SECTIONHANDLE = 'article';
+// Constants
     public const CATEGORY_SECTIONHANDLE = 'topic';
+    public const NUM_ENTRIES = 30;
+    public const SECTIONHANDLE = 'article';
     public $categorySlug = 'beispiele';
     public $volume = 'images';
 
-    public function actionCreateMembersEntries()
+    public function actionDeleteFakedEntries()
+    {
+        $category = Entry::find()->section(self::CATEGORY_SECTIONHANDLE)->slug($this->categorySlug)->one();
+        if (!$category) {
+            $this->stderr('No example category found');
+            return;
+        }
+        $entries = Entry::find()->section(self::SECTIONHANDLE)->relatedTo($category)->anyStatus()->all();
+        if (!$entries) {
+            $this->stderr('No example posts found');
+            return;
+        }
+        $count = count($entries);
+        if (!$this->confirm("Delete {$count} posts related to category {$category->title}?")) {
+            return;
+        }
+        foreach ($entries as $entry) {
+            $this->stdout("Deleting {$entry->title}" . PHP_EOL);
+            Craft::$app->elements->deleteElement($entry);
+        }
+        if (!$this->confirm("Delete example category?")) {
+            return;
+        }
+        Craft::$app->elements->deleteElement($category);
+
+        $this->stdout('The entries have been soft-deleted, they can be restored from the entries index.' . PHP_EOL);
+    }
+
+    public function actionSeedContent()
     {
 
-        $entry = Entry::find()->section('page')->type('members')->slug('members')->one();
-        if ($entry) {
-            $this->stdout('Membership Entries exist');
+        $this->actionCreateImages();
+
+        $this->actionCreateEntries();
+
+        $this->actionResetHomepage();
+
+        $this->actionResetSiteInfo();
+
+        $this->actionCreateTransforms();
+
+        $this->actionCreateMembersEntries();
+    }
+
+    public function actionCreateImages($num = 30, $timeout = 10)
+    {
+
+        if (!$this->confirm("Download $num example images from Unsplash? (Timeout $timeout sec.)")) {
             return;
         }
 
-        if (!$this->confirm('Create Membership Entries?')) {
-            return;
+        $client = Craft::createGuzzleClient();
+
+        /** @var Local $volume */
+        $volume = Craft::$app->volumes->getVolumeByHandle('images');
+        $path = App::parseEnv($volume->path) . DIRECTORY_SEPARATOR . 'examples';
+        if (!is_dir($path)) {
+            FileHelper::createDirectory($path);
         }
 
-        $section = Craft::$app->sections->getSectionByHandle('page');
-        $type = ArrayHelper::firstWhere($section->getEntryTypes(), 'handle', 'members');
-        $user = User::find()->admin()->one();
-
-        $entry = new Entry([
-            'sectionId' => $section->id,
-            'typeId' => $type->id,
-            'authorId' => $user->id,
-            'title' => 'Mitglieder',
-            'slug' => 'mitglieder'
-        ]);
-        $entry->setFieldValue('membersTemplate', 'members.twig');
-
-        if (Craft::$app->elements->saveElement($entry)) {
-            $this->stdout('Members created, ID:' . $entry->id . PHP_EOL);
+        // Don't overwrite existing images, ensure sequence number is unique
+        $folders = Craft::$app->assets->findFolders(['volumeId' => $volume->id, 'path' => 'examples/']);
+        if ($folders) {
+            $count = Asset::find()->folderId(ArrayHelper::firstValue($folders)->id)->count();
         } else {
-            $this->stderr('failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
-            return;
+            $count = 0;
         }
 
-        $parent = $entry;
-        $items = [
-            ['title' => 'Login', 'slug' => 'login', 'membersTemplate' => 'login.twig'],
-            ['title' => 'Registrieren', 'slug' => 'registrieren', 'membersTemplate' => 'register.twig'],
-            ['title' => 'Profil', 'slug' => 'profil', 'membersTemplate' => 'profile.twig'],
-            ['title' => 'Passwort vergessen?', 'slug' => 'passwort-vergessen', 'membersTemplate' => 'forgotpassword.twig'],
-            ['title' => 'Passwort vergeben', 'slug' => 'passwort-vergeben', 'membersTemplate' => 'setpassword.twig'],
-            ['title' => 'Ungültig', 'slug' => 'ungueltig', 'membersTemplate' => 'invalidtoken.twig'],
-        ];
+        $start = $count + 1;
+        $end = $count + $num;
 
-        foreach ($items as $item) {
+        $loop = 0;
 
-            $entry = new Entry([
-                'sectionId' => $section->id,
-                'typeId' => $type->id,
-                'authorId' => $user->id,
-                'title' => $item['title'],
-                'slug' => $item['slug'],
-                'newParentId' => $parent->id
-            ]);
-            $entry->setFieldValue('membersTemplate', $item['membersTemplate']);
+        for ($i = $start; $i <= $end; $i++) {
 
-            if (Craft::$app->elements->saveElement($entry)) {
-                $this->stdout($item['title'] . ' created, ID:' . $entry->id . PHP_EOL);
-            } else {
-                $this->stderr($item['title'] . ' failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
-                return;
+            $loop++;
+
+            $filename = "example_{$i}.jpg";
+
+            $this->stdout("[{$loop}/{$num}] " . $filename . "...");
+
+            $url = "https://picsum.photos/2000/1280";
+
+            try {
+                $client->get($url, ['sink' => $path . DIRECTORY_SEPARATOR . $filename, 'timeout' => $timeout]);
+            } catch (Exception $e) {
+                $this->stdout(" failed: {$e->getMessage()} \n");
+                continue;
             }
+
+            $asset = Craft::$app->assetIndexer->indexFile($volume, 'examples/' . $filename);
+            $asset->setFieldValue('copyright', 'Unsplash via picsum.photos');
+            Craft::$app->elements->saveElement($asset);
+
+            $this->stdout(" created\n");
         }
     }
 
@@ -103,8 +140,6 @@ class SeedController extends Controller
         if (!$this->confirm("Create {$num} entries of type '{$section->name}'?")) {
             return;
         }
-
-        $this->actionCreateImages();
 
         $faker = Factory::create();
 
@@ -143,10 +178,56 @@ class SeedController extends Controller
                 $this->stderr('failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
             }
         }
+    }
 
-        $this->actionResetHomepage();
+    protected function getCategory()
+    {
+        $entry = Entry::find()->section(self::CATEGORY_SECTIONHANDLE)->slug($this->categorySlug)->one();
+        if (!$entry) {
+            $section = Craft::$app->sections->getSectionByHandle(self::CATEGORY_SECTIONHANDLE);
+            if (!$section) {
+                return $entry;
+            }
+            $type = $section->getEntryTypes()[0];
+            $user = User::find()->admin()->one();
+            $entry = new Entry();
+            $entry->sectionId = $section->id;
+            $entry->typeId = $type->id;
+            $entry->authorId = $user->id;
+            $entry->title = 'Beispiele';
+            $entry->slug = $this->categorySlug;
+            $entry->setFieldValue('teaser', 'Sammlung von automatisch generierten Beispielen');
+            $image = Asset::find()->kind('image')->width('> 1500')->orderBy('rand()')->one();
+            if ($image) {
+                $entry->setFieldValue('featuredImage', [$image->id]);
+            }
 
-        $this->actionCreateTransforms();
+            $this->stdout('Creating Example Content Category ... ');
+
+            if (!Craft::$app->elements->saveElement($entry)) {
+                $this->stderr('failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
+            } else {
+                /*$localEntry = $entry->getLocalized()->one();
+                if ($localEntry) {
+                    $localEntry->title = 'Examples';
+                    $localEntry->slug = 'examples';
+                    $localEntry->setFieldValue('teaser', 'Sammlung von automatisch generierten Beispielen');
+                    Craft::$app->elements->saveElement($localEntry);
+                }*/
+                $this->stdout('created' . PHP_EOL);
+            }
+        }
+        return $entry;
+    }
+
+    protected function getRandomImage($width = 1900)
+    {
+        return Asset::find()
+            ->volume($this->volume)
+            ->kind('image')
+            ->width('> ' . $width)
+            ->orderBy(Craft::$app->db->driverName == 'mysql' ? 'RAND()' : 'RANDOM()')
+            ->one();
     }
 
     protected function getBodyContent(Generator $faker)
@@ -248,140 +329,8 @@ class SeedController extends Controller
         return $content;
     }
 
-    protected function getRandomImage($width = 1900)
-    {
-        return Asset::find()
-            ->volume($this->volume)
-            ->kind('image')
-            ->width('> ' . $width)
-            ->orderBy(Craft::$app->db->driverName == 'mysql' ? 'RAND()' : 'RANDOM()')
-            ->one();
-    }
-
-    public function actionDeleteFakedEntries()
-    {
-        $category = Entry::find()->section(self::CATEGORY_SECTIONHANDLE)->slug($this->categorySlug)->one();
-        if (!$category) {
-            $this->stderr('No example category found');
-            return;
-        }
-        $entries = Entry::find()->section(self::SECTIONHANDLE)->relatedTo($category)->anyStatus()->all();
-        if (!$entries) {
-            $this->stderr('No example posts found');
-            return;
-        }
-        $count = count($entries);
-        if (!$this->confirm("Delete {$count} posts related to category {$category->title}?")) {
-            return;
-        }
-        foreach ($entries as $entry) {
-            $this->stdout("Deleting {$entry->title}" . PHP_EOL);
-            Craft::$app->elements->deleteElement($entry);
-        }
-        if (!$this->confirm("Delete example category?")) {
-            return;
-        }
-        Craft::$app->elements->deleteElement($category);
-
-        $this->stdout('The entries have been soft-deleted, they can be restored from the entries index.' . PHP_EOL);
-    }
-
-    protected function getCategory()
-    {
-        $entry = Entry::find()->section(self::CATEGORY_SECTIONHANDLE)->slug($this->categorySlug)->one();
-        if (!$entry) {
-            $section = Craft::$app->sections->getSectionByHandle(self::CATEGORY_SECTIONHANDLE);
-            if (!$section) {
-                return $entry;
-            }
-            $type = $section->getEntryTypes()[0];
-            $user = User::find()->admin()->one();
-            $entry = new Entry();
-            $entry->sectionId = $section->id;
-            $entry->typeId = $type->id;
-            $entry->authorId = $user->id;
-            $entry->title = 'Beispiele';
-            $entry->slug = $this->categorySlug;
-            $entry->setFieldValue('teaser', 'Sammlung von automatisch generierten Beispielen');
-            $image = Asset::find()->kind('image')->width('> 1500')->orderBy('rand()')->one();
-            if ($image) {
-                $entry->setFieldValue('featuredImage', [$image->id]);
-            }
-
-            $this->stdout('Creating Example Content Category ... ');
-
-            if (!Craft::$app->elements->saveElement($entry)) {
-                $this->stderr('failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
-            } else {
-                /*$localEntry = $entry->getLocalized()->one();
-                if ($localEntry) {
-                    $localEntry->title = 'Examples';
-                    $localEntry->slug = 'examples';
-                    $localEntry->setFieldValue('teaser', 'Sammlung von automatisch generierten Beispielen');
-                    Craft::$app->elements->saveElement($localEntry);
-                }*/
-                $this->stdout('created' . PHP_EOL);
-            }
-        }
-        return $entry;
-    }
-
     // php craft main/seed/create-images
-    public function actionCreateImages($num = 30, $timeout = 10)
-    {
 
-        if (!$this->confirm("Download $num example images from Unsplash? (Timeout $timeout sec.)")) {
-            return;
-        }
-
-        $client = Craft::createGuzzleClient();
-
-        /** @var Local $volume */
-        $volume = Craft::$app->volumes->getVolumeByHandle('images');
-        $path = App::parseEnv($volume->path) . DIRECTORY_SEPARATOR . 'examples';
-        if (!is_dir($path)) {
-            FileHelper::createDirectory($path);
-        }
-
-        // Don't overwrite existing images, ensure sequence number is unique
-        $folders = Craft::$app->assets->findFolders(['volumeId' => $volume->id, 'path' => 'examples/']);
-        if ($folders) {
-            $count = Asset::find()->folderId(ArrayHelper::firstValue($folders)->id)->count();
-        } else {
-            $count = 0;
-        }
-
-        $start = $count + 1;
-        $end = $count + $num;
-
-        $loop = 0;
-
-        for ($i = $start; $i <= $end; $i++) {
-
-            $loop++;
-
-            $filename = "example_{$i}.jpg";
-
-            $this->stdout( "[{$loop}/{$num}] ". $filename . "...");
-
-            $url = "https://picsum.photos/2000/1280";
-
-            try {
-                $client->get($url, ['sink' => $path . DIRECTORY_SEPARATOR . $filename, 'timeout' => $timeout]);
-            } catch (Exception $e) {
-                $this->stdout(" failed: {$e->getMessage()} \n");
-                continue;
-            }
-
-            $asset = Craft::$app->assetIndexer->indexFile($volume, 'examples/' . $filename);
-            $asset->setFieldValue('copyright', 'Unsplash via picsum.photos');
-            Craft::$app->elements->saveElement($asset);
-
-            $this->stdout(" created\n");
-        }
-    }
-
-    // php craft main/seed/reset-homepage
     public function actionResetHomepage()
     {
 
@@ -443,6 +392,8 @@ class SeedController extends Controller
         return;
     }
 
+    // php craft main/seed/reset-homepage
+
     protected function getArticleIds($num = 3)
     {
         $faker = Factory::create();
@@ -463,6 +414,42 @@ class SeedController extends Controller
         }
 
         return ArrayHelper::getColumn($entries, 'id');
+    }
+
+    public function actionResetSiteInfo()
+    {
+
+        if (!$this->confirm('Update Site Info?')) {
+            return;
+        }
+
+        $global = GlobalSet::find()->handle('siteInfo')->one();
+        if (!$global) {
+            $this->stdout("Global not found\n");
+            return;
+        }
+
+        $siteName = $this->prompt('Site Name: ', ['default' => $global->siteName]);
+        $copyright = $this->prompt('Copyright: ', ['default' => $global->copyright]);
+        $setFeaturedImage = $this->confirm('Set fallback image?');
+
+
+        $global->setFieldValue('siteName', $siteName);
+        $global->setFieldValue('copyright', $copyright);
+
+        if ($setFeaturedImage) {
+            $image = $this->getRandomImage();
+            if ($image) {
+                $global->setFieldValue('featuredImage', [$image->id]);
+            }
+        }
+
+        if (!Craft::$app->elements->saveElement($global)) {
+            $this->stdout("Could not update Global Set\n");
+            return;
+        }
+
+        $this->stdout("Updated\n");
     }
 
     /**
@@ -504,5 +491,71 @@ class SeedController extends Controller
         }
 
         $this->stdout("Done\n");
+    }
+
+    // php craft main/seed/reset-site-info
+
+    public function actionCreateMembersEntries()
+    {
+
+        $entry = Entry::find()->section('page')->type('members')->slug('members')->one();
+        if ($entry) {
+            $this->stdout('Membership Entries exist');
+            return;
+        }
+
+        if (!$this->confirm('Create Membership Entries?')) {
+            return;
+        }
+
+        $section = Craft::$app->sections->getSectionByHandle('page');
+        $type = ArrayHelper::firstWhere($section->getEntryTypes(), 'handle', 'members');
+        $user = User::find()->admin()->one();
+
+        $entry = new Entry([
+            'sectionId' => $section->id,
+            'typeId' => $type->id,
+            'authorId' => $user->id,
+            'title' => 'Mitglieder',
+            'slug' => 'mitglieder'
+        ]);
+        $entry->setFieldValue('membersTemplate', 'members.twig');
+
+        if (Craft::$app->elements->saveElement($entry)) {
+            $this->stdout('Members created, ID:' . $entry->id . PHP_EOL);
+        } else {
+            $this->stderr('failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
+            return;
+        }
+
+        $parent = $entry;
+        $items = [
+            ['title' => 'Login', 'slug' => 'login', 'membersTemplate' => 'login.twig'],
+            ['title' => 'Registrieren', 'slug' => 'registrieren', 'membersTemplate' => 'register.twig'],
+            ['title' => 'Profil', 'slug' => 'profil', 'membersTemplate' => 'profile.twig'],
+            ['title' => 'Passwort vergessen?', 'slug' => 'passwort-vergessen', 'membersTemplate' => 'forgotpassword.twig'],
+            ['title' => 'Passwort vergeben', 'slug' => 'passwort-vergeben', 'membersTemplate' => 'setpassword.twig'],
+            ['title' => 'Ungültig', 'slug' => 'ungueltig', 'membersTemplate' => 'invalidtoken.twig'],
+        ];
+
+        foreach ($items as $item) {
+
+            $entry = new Entry([
+                'sectionId' => $section->id,
+                'typeId' => $type->id,
+                'authorId' => $user->id,
+                'title' => $item['title'],
+                'slug' => $item['slug'],
+                'newParentId' => $parent->id
+            ]);
+            $entry->setFieldValue('membersTemplate', $item['membersTemplate']);
+
+            if (Craft::$app->elements->saveElement($entry)) {
+                $this->stdout($item['title'] . ' created, ID:' . $entry->id . PHP_EOL);
+            } else {
+                $this->stderr($item['title'] . ' failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
+                return;
+            }
+        }
     }
 }

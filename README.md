@@ -64,8 +64,11 @@ Replace `project` with your project name
 ## Faker content
 
 * Upload some images into the images volume, if you want to use your own images for faked content.
-* Run `php craft main/seed/create-entries` to seed the system with some dummy entries. Offers the possibility to download random images from Unsplash.
+* Run `php craft main/seed/seed-content` to seed the system with some images and dummy entries, update Homepage and global Site Info, and create image transforms.
+* Run `php craft main/seed/create-entries` at any time to create more random entries.
 * Run `php craft main/seed/create-images` at any time to download random images.
+* Run `php craft main/seed/create-transform` at any time to create missing image transforms.
+* Run `php craft main/seed/reset-homepage` at any time populate the homepage with some random article blocks.
 
 ## Localization
 

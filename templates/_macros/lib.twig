@@ -34,7 +34,7 @@
                 {% set transform = transform|merge({height: (transform.width / ratio)|round(0) }) %}
             {% elseif transform.height is defined %}
                 {% set ratio = image.width / image.height %}
-                {% set transform = transform|merge({width: (transform.width * ratio)|round(0) }) %}
+                {% set transform = transform|merge({width: (transform.height * ratio)|round(0) }) %}
             {% else %}
                 {% set transform = transform|merge({width: image.width, height: image.height }) %}
             {% endif %}
