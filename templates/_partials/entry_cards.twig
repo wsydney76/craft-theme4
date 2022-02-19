@@ -1,9 +1,17 @@
-{% set entries = entries ?? query
-    .with([
-        ['featuredImage', {withTransforms: [theme.cardImageTransform]}]
-    ])
-.all %}
+{% if entries is not defined %}
+    {% set query = craft.entries
+        .relatedTo({element:entry, field:'entries'})
+        .orderBy('postDate desc')
+    %}
 
+    {% if not craft.app.plugins.pluginEnabled('imager-x') %}
+        {% do query.with([
+            ['featuredImage', {withTransforms: [theme.cardImageTransform]}]
+        ]) %}
+    {% endif %}
+
+    {% set entries = query.all %}
+{% endif %}
 
 <div id="entries" class="flex flex-wrap">
     {% for entry in entries %}

@@ -113,7 +113,7 @@
     {% endif %}
 
     {% if showCopyright and image.copyright %}
-        <div class="relative">
+        <div class="relative inline-block">
             {{ imgHtml|raw }}
             <div class="absolute bottom-0 right-0 bg-black/30 rounded-tl px-1 py-0.5 text-white text-xs truncate">
                 &copy; {{ image.copyright }}
