@@ -143,6 +143,8 @@ class SeedController extends Controller
                 $this->stderr('failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
             }
         }
+
+        $this->actionResetHomepage();
     }
 
     protected function getBodyContent(Generator $faker)
@@ -201,7 +203,7 @@ class SeedController extends Controller
                     break;
                 case 'gallery':
                     $imageIds = [];
-                    foreach (range(1,8) as $img) {
+                    foreach (range(1, 8) as $img) {
                         $image = $this->getRandomImage(500);
                         if ($image) {
                             $imageIds[] = $image->id;
@@ -299,6 +301,11 @@ class SeedController extends Controller
             $entry->title = 'Beispiele';
             $entry->slug = $this->categorySlug;
             $entry->setFieldValue('teaser', 'Sammlung von automatisch generierten Beispielen');
+            $image = Asset::find()->kind('image')->width('> 1500')->orderBy('rand()')->one();
+            if ($image) {
+                $entry->setFieldValue('featuredImage', [$image->id]);
+            }
+
             $this->stdout('Creating Example Content Category ... ');
 
             if (!Craft::$app->elements->saveElement($entry)) {
@@ -366,5 +373,130 @@ class SeedController extends Controller
 
             $this->stdout(" created\n");
         }
+    }
+
+    // php craft main/seed/reset-homepage
+    public function actionResetHomepage()
+    {
+
+        if (!$this->confirm('Reset homepage content to random articles?')) {
+            return;
+        }
+
+        $faker = Factory::create();
+
+        $entry = Entry::find()->section('homepage')->one();
+        if (!$entry) {
+            $this->stdout("Homepage not found\n");
+            return;
+        }
+
+        $title = $this->prompt('New title:', ['default' => $entry->title, 'required' => true]);
+
+        if ($entry->title != $title) {
+            $entry->title = $title;
+        }
+
+        $entry->setFieldValue('bodyContent', [
+            'sortOrder' => ['new1','new2','new3'],
+            'blocks' => [
+                'new1' => [
+                    'type' => 'articles',
+                    'fields' => [
+                        'width' => 'xl',
+                        'style' => 'featured',
+                        'articles' => $this->getArticleIds(1)
+                    ]
+                ],
+                'new2' => [
+                    'type' => 'articles',
+                    'fields' => [
+                        'width' => 'default',
+                        'style' => 'default',
+                        'articles' => $this->getArticleIds(4),
+                        'topic' => Entry::find()->section('topic')->orderBy('rand()')->limit(1)->ids()
+                    ]
+                ],
+                'new3' => [
+                    'type' => 'articles',
+                    'fields' => [
+                        'heading' => $faker->text(60),
+                        'width' => 'xl',
+                        'style' => 'boxed',
+                        'articles' => $this->getArticleIds(3)
+                    ]
+                ]
+            ]
+        ]);
+
+        if(!Craft::$app->elements->saveElement($entry)) {
+            $this->stdout("Could not save homepage\n");
+        }
+
+        $this->stdout("Done\n");
+        return;
+    }
+
+    protected function getArticleIds($num = 3)
+    {
+        $faker = Factory::create();
+
+        $entries = Entry::find()
+            ->section('article')
+            ->featuredImage(':notempty:')
+            ->limit($num)
+            ->orderBy('rand()')
+            ->all();
+
+        foreach ($entries as $entry) {
+            if (!$entry->intro) {
+                $entry->setFieldValue('intro', $faker->text(250) );
+                Craft::$app->elements->saveElement($entry);
+                $this->stdout("Added intro text to {$entry->title}\n");
+            }
+        }
+
+        return ArrayHelper::getColumn($entries,'id');
+    }
+
+    /**
+     * Creates images transforms by requesting each entry
+     *
+     * php craft main/seed/create-transforms
+     *
+     * @return void
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function actionCreateTransforms()
+    {
+
+        if (!$this->confirm('Retrieve each page to create missing image sizes? This may take some time.')) {
+            return;
+        }
+
+        $client = Craft::createGuzzleClient();
+
+        $entries = Entry::find()
+            ->uri(':notempty:')
+            ->all();
+
+        $c = count($entries);
+        $i = 0;
+
+        foreach ($entries as $entry) {
+            $i++;
+            $this->stdout("[{$i}/{$c}] Id: {$entry->id} {$entry->title} {$entry->uri}... ");
+
+            try {
+                $result = $client->get($entry->url);
+                $this->stdout($result->getStatusCode());
+            } catch (GuzzleException $e) {
+                $this->stdout("Error {$e->getCode()}");
+            }
+
+            $this->stdout("\n");
+        }
+
+        $this->stdout("Done\n");
     }
 }

@@ -900,6 +900,10 @@ a.btn{
   margin-top: -2rem;
   margin-bottom: -2rem;
 }
+.my-16{
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
