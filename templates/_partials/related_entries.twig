@@ -1,10 +1,15 @@
-{% set entries = craft.entries
-    .with([
-        ['featuredImage', {withTransforms: [theme.cardImageTransform]}]
-    ])
+{% set query = craft.entries
     .relatedTo({element:entry, field:'entries'})
     .orderBy('postDate desc')
-.all %}
+%}
+
+{% if not craft.app.plugins.pluginEnabled('imager-x') %}
+    {% do query.with([
+        ['featuredImage', {withTransforms: [theme.cardImageTransform]}]
+    ]) %}
+{% endif %}
+
+{% set entries = query.all %}
 
 {% if entries %}
     <div class="max-w-screen-{{ theme.defaultBlockWidth }} mx-auto px-block mt-12">

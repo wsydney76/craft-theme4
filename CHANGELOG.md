@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.0.2 2020-02-20
+
+* Fixes, cleanup
+* Drop migrations, replaced by `php craft main/init` controller action
+* Added cp resources bundle with scripts and styles, replacing CP CSS plugin
+
 ## 3.0.1 2020-02-18 (Beta, ready for testing)
 
 * Added section type 'Topic'

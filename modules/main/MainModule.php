@@ -10,6 +10,7 @@ use craft\events\DefineRulesEvent;
 use craft\events\ModelEvent;
 use craft\events\RegisterComponentTypesEvent;
 use craft\services\Fields;
+use craft\web\View;
 use modules\main\behaviors\EntryBehavior;
 use modules\main\fields\AspectRatioField;
 use modules\main\fields\IncludeField;
@@ -19,6 +20,7 @@ use modules\main\fields\SectionsField;
 use modules\main\fields\ThemeColorField;
 use modules\main\fields\WidthField;
 use modules\main\twigextensions\TwigExtension;
+use modules\resources\cp\CpAssets;
 use yii\base\Event;
 use yii\base\Module;
 
@@ -50,8 +52,7 @@ class MainModule extends Module
             Entry::class,
             Entry::EVENT_DEFINE_BEHAVIORS, function(DefineBehaviorsEvent $event) {
             $event->behaviors[] = EntryBehavior::class;
-        }
-        );
+        });
 
         // Register Rules
         Event::on(
@@ -71,11 +72,21 @@ class MainModule extends Module
             $event->types[] = SectionsField::class;
             $event->types[] = OrderByField::class;
             $event->types[] = AspectRatioField::class;
-        }
-        );
+        });
 
         // Register Twig extension for theme variable
         Craft::$app->view->registerTwigExtension(new TwigExtension());
+
+        // Register CP assets
+        if (Craft::$app->request->isCpRequest) {
+            Event::on(
+                View::class,
+                View::EVENT_BEFORE_RENDER_TEMPLATE, function() {
+                Craft::$app->view->registerAssetBundle(CpAssets::class);
+            }
+            );
+        }
+
 
         // Validate entries on all sites (fixes open Craft bug)
         Event::on(
@@ -134,8 +145,7 @@ class MainModule extends Module
 
             $newFilename = $pathInfo['filename'] . '.jpg';
             Craft::$app->assets->moveAsset($asset, $asset->folder, $newFilename);
-        }
-        );
+        });
     }
 
 }

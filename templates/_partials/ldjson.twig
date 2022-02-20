@@ -2,6 +2,16 @@
     {% cache using key "ldjson_#{entry.site.handle}_#{entry.id}" %}
 
         {% set image = entry.featuredImage.one ?? siteInfo.featuredImage.one %}
+        {% set imageUrl = '' %}
+
+        {% if image %}
+            {% if craft.app.plugins.pluginEnabled('imager-x') %}
+                {% set transformedImage = craft.imager.transformImage(image, {width: 1920, height: 1080}) %}
+                {% set imageUrl = transformedImage.url %}
+            {% else %}
+                {% set imageUrl = image.url({width: 1920, height: 1080}) %}
+            {% endif %}
+        {% endif %}
 
         {% set schema = craft.schema %}
 
@@ -15,7 +25,7 @@
                 .alternativeHeadline(entry.teaser ?? '')
                 .author(entry.author.fullName)
                 .datePublished(entry.postDate|date('Y-m-d'))
-                .image(image ? image.url({width: 1920, height: 1080}))
+                .image(imageUrl)
                 .publisher(schema.organization.name(siteInfo.copyright))
             |raw
             }}
@@ -25,7 +35,7 @@
             {{ schema.webPage
                 .name(entry.title)
                 .description(entry.teaser ?? '')
-                .image(image ? image.url({width: 1920, height: 1080}))
+                .image(imageUrl)
                 .publisher(schema.profilePage.name(siteInfo.copyright))
             |raw
             }}

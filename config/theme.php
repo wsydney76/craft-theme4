@@ -26,6 +26,7 @@ return [
     // relative to fullWidthImageWidth
     'fullwidthImageHeight' => 600,
 
+    // use global featured Image on page headers if no individual featured image is set
     'useFallbackImage' => false,
 
     'pageWidth' => 'lg',

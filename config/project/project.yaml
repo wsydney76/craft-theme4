@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1645193245
+dateModified: 1645354143
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -337,14 +337,6 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
-  cp-css:
-    edition: standard
-    enabled: true
-    schemaVersion: 2.0.0
-    settings:
-      additionalCss: "html, body {\r\n    background-color: #f7fafc;\r\n    font-size: 16px\r\n}\r\n\r\n.field > .heading > .instructions, .checkboxfield.has-instructions .instructions {\r\n    color: #666\r\n}\r\n\r\ninput.text, textarea.text, .text > input, .text > textarea, table.editable textarea, .selectize-text > .selectize-control > .selectize-input {\r\n    font-size: 16px\r\n}\r\n\r\n#global-sidebar {\r\n    background-color: #265077\r\n}\r\n\r\n.sidebar .heading span {\r\n    color: #264a6c;\r\n    font-size: 13px;\r\n    letter-spacing: 1px\r\n}\r\n\r\n#sidebar nav li a.sel {\r\n    background-color: #fff\r\n}\r\n\r\n#fields .heading {\r\n    padding-bottom: 8px\r\n}\r\n\r\n.blocks {\r\n    margin-left: 12px\r\n}\r\n\r\n.matrixblock > .titlebar {\r\n    background-color: #e4edf6\r\n}\r\n\r\n.matrixblock > .titlebar > .blocktype {\r\n    font-weight: bold;\r\n    color: #666\r\n}\r\n\r\n.matrixblock.collapsed > .titlebar > .blocktype {\r\n    font-weight: normal\r\n}\r\n\r\ntable.data thead th, table.data thead td {\r\n    padding: 8px 12px\r\n}\r\n\r\nbody.ltr table.data thead th.ordered.desc, body.ltr table.data thead th.ordered.asc {\r\n    background-position-y: -27px\r\n}\r\n\r\nbody.ltr table.data thead th.ordered:not(.desc) {\r\n    background-position-y: 4px\r\n}\r\n\r\n.details-textarea {\r\n    border: 1px solid #cdd8e4 !important;\r\n    margin: 6px 0px !important;\r\n    padding: 4px !important\r\n}\r\n\r\n\r\n\r\n.btn.dashed {\r\n    background-color: #f7fafc !important;\r\n    margin-top: 6px\r\n}\r\n\r\n\r\ndiv[id$=\"fields-columns\"] .superTable-layout-row-new {\r\n \tborder: 2px solid #94a3b8;   \r\n}\r\n"
-      cacheBusting: true
-      cssFile: ''
   elementmap:
     edition: standard
     enabled: true

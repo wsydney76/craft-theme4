@@ -18,12 +18,12 @@ propagationMethod: all
 siteSettings:
   6cae2408-4e31-46df-8a5b-33f31d339176: # Deutsch
     enabledByDefault: true
-    hasUrls: true
+    hasUrls: false
     template: null
-    uriFormat: archiv
+    uriFormat: null
   b0f125c5-eef7-49fc-8d15-152965d0bab6: # English
     enabledByDefault: true
-    hasUrls: true
+    hasUrls: false
     template: null
-    uriFormat: archiv
+    uriFormat: null
 type: single

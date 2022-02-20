@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cd558a36a644ee0230971ff18558c202",
+    "content-hash": "5277375391cb37b4b0afbe3d0255a2c1",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -58,16 +58,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.209.26",
+            "version": "3.209.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "bf29058fc637e4949ec42281e9572b9c968b38cc"
+                "reference": "4a0ded3a5f380f7654da5dc194161588a87d9d3b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/bf29058fc637e4949ec42281e9572b9c968b38cc",
-                "reference": "bf29058fc637e4949ec42281e9572b9c968b38cc",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/4a0ded3a5f380f7654da5dc194161588a87d9d3b",
+                "reference": "4a0ded3a5f380f7654da5dc194161588a87d9d3b",
                 "shasum": ""
             },
             "require": {
@@ -143,9 +143,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.209.26"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.209.27"
             },
-            "time": "2022-02-17T19:15:52+00:00"
+            "time": "2022-02-18T19:19:17+00:00"
         },
         {
             "name": "cebe/markdown",
@@ -1352,62 +1352,6 @@
                 }
             ],
             "time": "2022-01-12T08:27:12+00:00"
-        },
-        {
-            "name": "doublesecretagency/craft-cpcss",
-            "version": "2.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doublesecretagency/craft-cpcss.git",
-                "reference": "e056e16ed6ff762a15bd52fc3cd080411c548699"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doublesecretagency/craft-cpcss/zipball/e056e16ed6ff762a15bd52fc3cd080411c548699",
-                "reference": "e056e16ed6ff762a15bd52fc3cd080411c548699",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^3.1.5"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Control Panel CSS",
-                "handle": "cp-css",
-                "schemaVersion": "2.0.0",
-                "changelogUrl": "https://raw.githubusercontent.com/doublesecretagency/craft-cpcss/v2/CHANGELOG.md",
-                "class": "doublesecretagency\\cpcss\\CpCss"
-            },
-            "autoload": {
-                "psr-4": {
-                    "doublesecretagency\\cpcss\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Double Secret Agency",
-                    "homepage": "https://www.doublesecretagency.com/plugins"
-                }
-            ],
-            "description": "Add custom CSS to your Control Panel.",
-            "keywords": [
-                "Craft",
-                "cms",
-                "cp-css",
-                "craft-plugin",
-                "craftcms",
-                "css"
-            ],
-            "support": {
-                "docs": "https://github.com/doublesecretagency/craft-cpcss/blob/v2/README.md",
-                "issues": "https://github.com/doublesecretagency/craft-cpcss/issues",
-                "source": "https://github.com/doublesecretagency/craft-cpcss/tree/2.4.0"
-            },
-            "time": "2021-09-22T06:14:06+00:00"
         },
         {
             "name": "egulias/email-validator",
