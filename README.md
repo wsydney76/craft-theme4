@@ -16,7 +16,7 @@ Usefull for demos and hobby projects.
 * Run `composer install`
 * Edit `config/Env.php` with your environment specific settings.
 * Run `php craft install` Enter you user data and confirm the other settings.
-* Run `php craft migrate/all`
+* Run `php craft main/init` Sets up thing you will always need.
 
 ## Install with Craft Nitro
 
@@ -59,7 +59,8 @@ Replace `project` with your project name
 * Change settings in `config/theme.php`
 * Update `tailwind.config.js` and run `npm run ...`
 * By default, the main navigation reflects the structure of your Pages section, but you can override this by setting `Globals -> Site Info -> Navigation Entries`
-* By default, versioning of entries is not enabled. (We have never seen this used in the wild...) Goto settings -> section to enable versioning if needed. 
+* By default, versioning of entries is not enabled. (We have never seen this used in the wild...) Goto settings -> section to enable versioning if needed.
+* CP styles can be customized in `modules/resources/cp/dist/cp_styles.css`
 
 ## Faker content
 
@@ -155,7 +156,6 @@ Will not work at all without those (or require some dev work to drop them)
 
 These can be uninstall without breaking the site.
 
-* Control Panel CSS: Makes the CP look a bit nicer.
 * Imager X (paid): Better quality and more control for image handling. Will fallback to Crafts native functionality if uninstalled.
 * SEOMate: Can be uninstalled if you do not want to be found. Or replace with (paid) SEOMatic plugin.
 * Smith: Adds copy & paste functionality to matrix blocks.
