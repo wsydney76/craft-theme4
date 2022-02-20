@@ -16,7 +16,7 @@ Usefull for demos and hobby projects.
 * Run `composer install`
 * Edit `config/Env.php` with your environment specific settings.
 * Run `php craft install` Enter you user data and confirm the other settings.
-* Run `php craft main/init` Sets up thing you will always need.
+* Run `php craft main/init` Sets up things you will always need.
 
 ## Install with Craft Nitro
 

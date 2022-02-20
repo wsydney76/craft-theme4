@@ -36,7 +36,7 @@ class InitController extends Controller
 
     public function actionAll()
     {
-        if (!$this->confirm('Run all init actions? This should only be done once, immediatly after installing.')) {
+        if (!$this->confirm('Run all init actions? This should only be done once, immediately after installing.')) {
             return;
         }
 
