@@ -4,7 +4,7 @@ fieldGroup: 6f31e23d-56c9-4afe-aacf-25ec0d12b2c2 # Guide
 handle: showInDashboard
 instructions: ''
 name: 'Auf der Übersichtsseite anzeigen?'
-searchable: true
+searchable: false
 settings:
   default: false
   offLabel: null

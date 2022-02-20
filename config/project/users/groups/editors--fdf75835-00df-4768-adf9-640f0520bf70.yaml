@@ -52,6 +52,16 @@ permissions:
   - 'deletepeerentrydrafts:a6676538-ee52-4938-aaff-8d9d46b669af' # Page
   - 'editpeerentrydrafts:a6676538-ee52-4938-aaff-8d9d46b669af' # Page
   - 'editentries:a6676538-ee52-4938-aaff-8d9d46b669af' # Page
+  - 'createentries:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
+  - 'publishentries:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
+  - 'deleteentries:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
+  - 'publishpeerentries:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
+  - 'deletepeerentries:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
+  - 'editpeerentries:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
+  - 'publishpeerentrydrafts:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
+  - 'deletepeerentrydrafts:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
+  - 'editpeerentrydrafts:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
+  - 'editentries:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
   - 'saveassetinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
   - 'createfoldersinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
   - 'deletefilesandfoldersinvolume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
