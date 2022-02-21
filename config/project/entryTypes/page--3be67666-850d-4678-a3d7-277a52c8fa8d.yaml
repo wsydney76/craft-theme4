@@ -29,7 +29,7 @@ fieldLayouts:
             title: null
             type: craft\fieldlayoutelements\EntryTitleField
             warning: null
-            width: 100
+            width: 75
           -
             fieldUid: 1eecdd2c-f9c5-4379-b304-d81774f9391e # Increase Title Contrast
             instructions: null

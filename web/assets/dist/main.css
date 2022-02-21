@@ -914,6 +914,10 @@ a.btn{
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+.my-2{
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
 .my-1{
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
@@ -1952,9 +1956,6 @@ a.btn{
 .tracking-wide{
   letter-spacing: 0.025em;
 }
-.tracking-widest{
-  letter-spacing: 0.1em;
-}
 .text-black{
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -2787,8 +2788,8 @@ a.btn{
     padding-left: 4rem;
     padding-right: 4rem;
   }
-  .md\:text-7xl{
-    font-size: 4.5rem;
+  .md\:text-5xl{
+    font-size: 3rem;
     line-height: 1;
   }
 }
@@ -2846,6 +2847,10 @@ a.btn{
   }
   .lg\:grid-cols-12{
     grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+  .lg\:text-7xl{
+    font-size: 4.5rem;
+    line-height: 1;
   }
 }
 @media (min-width: 1280px){

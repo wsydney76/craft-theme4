@@ -17,21 +17,21 @@
 {% case "coverFull" or "coverContent" %}
 
     {% if image %}
-        <div class="relative">
+        <div class="relative {{ theme.titleStyle == 'coverContent' ? 'max-w-screen-{{ theme.titleImageWidth }} mx-auto' }}">
             {% if theme.titleStyle == 'coverFull' %}
                 {{ img(image, {width:theme.widths['full'], height: height ?? 900}, {loading: null}, false) }}
             {% else %}
-                {{ img(image, {width: theme.widths[theme.headerWidth], height: height ?? 400}, {loading: null}, false) }}
+                {{ img(image, {width: theme.widths[theme.titleImageWidth], height: height ?? 400}, {loading: null}, false) }}
             {% endif %}
 
             <div class="absolute inset-0 flex items-center justify-center {{ increaseTitleContrast == 'image' ? 'backdrop-brightness-75' }} {{ increaseTitleContrast == 'imageDark' ? 'backdrop-brightness-50' }}">
-                <div class="cover-text text-black py-2 md:py-8 px-8 md:px-16 max-w-screen-xl mx-auto {{ increaseTitleContrast == 'box' ? 'backdrop-brightness-50 border border-border' }} ">
+                <div class="cover-text text-black py-2 md:py-8 px-8 md:px-16 max-w-screen-{{ theme.titleWidth }} mx-auto  {{ increaseTitleContrast == 'box' ? 'backdrop-brightness-50 border border-border' }} ">
                     {% if showTeaser and teaser %}
                         <div class="text-center text-white text-xl">
                             {{ teaser }}
                         </div>
                     {% endif %}
-                    <h1 class="text-4xl text-h1 md:text-7xl text-white mb-0">{{ title }}</h1>
+                    <h1 class="text-4xl text-h1 md:text-5xl lg:text-7xl text-white mb-0">{{ title }}</h1>
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@
     {% endif %}
 {% default %}
     {% if image %}
-        {{ img(image, {width: theme.widths[theme.headerWidth], height: height ?? 400}, {loading: null}, false) }}
+        {{ img(image, {width: theme.widths[theme.titleImageWidth], height: height ?? 400}, {loading: null}, false) }}
     {% endif %}
 {% endswitch %}
 

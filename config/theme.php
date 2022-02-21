@@ -33,15 +33,17 @@ return [
     // use global featured Image on page headers if no individual featured image is set
     'useFallbackImage' => false,
 
-    'pageWidth' => 'lg',
-
     'headerWidth' => 'xl',
-
-    // breakpoint for default/mobile menu can be always (always show hamburger menu) / never (never show hamburger menu)
-    'mobileBreakpoint' => 'sm',
 
     // same as max-width-header, if titleStyle != fullwidth
     'titleImageWidth' => 'xl',
+
+    'titleWidth' => 'xl',
+
+    'pageWidth' => 'lg',
+
+    // breakpoint for default/mobile menu can be always (always show hamburger menu) / never (never show hamburger menu)
+    'mobileBreakpoint' => 'sm',
 
     'defaultBlockWidth' => 'lg',
 
@@ -50,8 +52,6 @@ return [
         'image' => 'xl',
         'gallery' => 'xl'
     ],
-
-    'defaultIndexWidth' => 'md',
 
     // set max-w-prose on text blocks
     'useProse' => true,

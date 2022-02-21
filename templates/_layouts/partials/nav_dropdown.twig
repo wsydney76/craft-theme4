@@ -7,8 +7,10 @@
         {% if entries is defined %}
 
             {% for navEntry in entries %}
-                <a class="nav-link inline-block mt-2 border-transparent truncate"
-                   href="{{ navEntry.url }}">{{ navEntry.navTitle }}</a>
+                <div class="my-2">
+                    <a class="nav-link border-transparent truncate"
+                       href="{{ navEntry.url }}">{{ navEntry.navTitle }}</a>
+                </div>
             {% endfor %}
 
         {% endif %}
