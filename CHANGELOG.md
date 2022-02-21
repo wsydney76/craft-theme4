@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.1.0 2020-02-21
+
+* Added dark mode
+
 ## 3.0.2 2020-02-20
 
 * Fixes, cleanup
