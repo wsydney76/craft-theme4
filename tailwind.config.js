@@ -1,5 +1,7 @@
 const colors = require('tailwindcss/colors')
 
+const colorMode = 'dark'
+
 module.exports = {
 
     content: [
@@ -33,28 +35,56 @@ module.exports = {
                 'h2': '2rem',
             },
 
-            colors: {
-                primary: {
+            colors: colorMode == 'light' ? {
+                'primary': {
                     DEFAULT: colors.blue[800],
                     ...colors.blue
                 },
-                secondary: colors.white,
-                background: colors.slate[50],
-                foreground: colors.slate[900],
+                'secondary': colors.white,
+                'background': colors.slate[50],
+                'foreground': colors.slate[900],
                 'frame-background': colors.slate[500],
-                light: colors.slate[300],
-                three: colors.red[800],
-                four: colors.orange[700],
+                'light': colors.slate[300],
+                'three': colors.red[800],
+                'four': colors.orange[700],
                 'title-bg': colors.blue[700],
                 'title-text': colors.white,
                 'footer-bg': colors.slate[700],
                 'footer-text': colors.white,
                 'footer-border': colors.slate[900],
-                border: colors.slate[300],
-                muted: colors.slate[600],
-                gray: colors.slate,
-                nav: colors.white,
-                teaser: colors.red[700]
+                'border': colors.slate[300],
+                'muted': colors.slate[600],
+                'gray': colors.slate,
+                'nav': colors.white,
+                'teaser': colors.red[700],
+                'card': colors.white,
+                'card-text': colors.slate[900],
+                'card-hover': colors.gray[200]
+            } : {
+                'primary': {
+                    DEFAULT: colors.sky[50],
+                    ...colors.sky
+                },
+                'secondary': colors.sky[900],
+                'background': colors.sky[900],
+                'foreground': colors.slate[50],
+                'frame-background': colors.white,
+                'light': colors.slate[300],
+                'three': colors.red[800],
+                'four': colors.sky[700],
+                'title-bg': colors.slate[900],
+                'title-text': colors.slate[100],
+                'footer-bg': colors.sky[900],
+                'footer-text': colors.white,
+                'footer-border': colors.sky[100],
+                'border': colors.sky[400],
+                'muted': colors.slate[100],
+                'gray': colors.slate,
+                'nav': colors.sky[900],
+                'teaser': colors.sky[100],
+                'card': colors.sky[800],
+                'card-text': colors.slate[50],
+                'card-hover': colors.slate[800]
             },
 
             width: {
