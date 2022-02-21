@@ -3,7 +3,7 @@
 {% block page %}
 
     <div class="py-4">
-        <div class="container max-w-screen-{{ theme.pageWidth }} mx-auto bg-background">
+        <div class="container max-w-screen-{{ theme.pageWidth }} mx-auto bg-background dark:bg-background-dark">
             <header class="px-8 py-6">
                 {{ navbarHtml|raw }}
             </header>
@@ -20,7 +20,7 @@
                 </div>
             </main>
 
-            <footer class="mt-8 py-4 px-8 border-t border-border">
+            <footer class="mt-8 py-4 px-8 border-t border-border dark:border-border-dark bg-footer-bg dark:bg-footer-bg-dark text-footer-text dark:text-footer-text-dark">
                 {% include '_layouts/partials/footer.twig' %}
             </footer>
 

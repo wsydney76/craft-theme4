@@ -12,7 +12,7 @@
         <div class="space-y-6">
             {% for entry in entries %}
                 <div>
-                    <div class="text-sm text-muted mb-1">
+                    <div class="text-sm text-muted dark:text-muted-dark mb-1">
                         {{ craft.app.formatter.asRelativeTime(entry.postDate) }}
                     </div>
                     {% if entry.teaser %}
