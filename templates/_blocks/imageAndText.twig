@@ -5,7 +5,7 @@
 
 <div class="md:flex {{ imgAlign == 'imageRight' ? 'md:flex-row-reverse' }} ">
 
-    <div class="md:w-1/2 bg-{{ bgColor }} grid place-content-center p-16">
+    <div class="md:w-1/2 bg-{{ bgColor }} dark:bg-{{ bgColor }}-dark grid place-content-center p-16">
         {% set image = block.image.one %}
         {% if image %}
             <div class="">

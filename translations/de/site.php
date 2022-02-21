@@ -210,4 +210,7 @@ return [
     '{count,plural,=1{Related Entry} other{Related Entries}}' => '{count,plural,=1{Verwandter Eintrag} other{Verwandte Einträge}}',
     '“' => '„',
     '”' => '“',
+    'System color mode' => 'System-Farbmodus',
+    'Light color mode' => 'Heller Farbmodus',
+    'Dark color mode' => 'Dunkler Farbmodus',
 ];

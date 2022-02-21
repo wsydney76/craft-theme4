@@ -5,7 +5,7 @@
         {% for button in buttons %}
             {% set target = button.target|one %}
             {% if target %}
-                <a class="btn bg-{{ button.bgColor }} text-{{ button.textColor ?: 'white' }}"
+                <a class="btn bg-{{ button.bgColor }} dark:bg-{{ button.bgColor }}-dark text-{{ button.textColor ?: 'white' }} dark:text-{{ button.textColor ?: 'black' }}-dark"
                    href="{{ target.url }}">{{ button.caption ?: target.title }}</a>
             {% endif %}
         {% endfor %}

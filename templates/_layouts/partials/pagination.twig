@@ -20,7 +20,7 @@
         {% endfor %}
 
 
-        <a class="pagination-link bg-primary text-secondary" href="#">{{ pageInfo.currentPage }}</a>
+        <a class="pagination-link bg-primary text-secondary dark:bg-primary-dark dark:text-secondary-dark" href="#">{{ pageInfo.currentPage }}</a>
 
 
         {% for page, url in pageInfo.getNextUrls(3) %}

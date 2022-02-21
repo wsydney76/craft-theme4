@@ -50,7 +50,7 @@
   }
 
   .btn {
-    @apply transition-colors px-6 py-2 rounded no-underline  hover:bg-foreground hover:text-background focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black;
+    @apply transition-colors px-6 py-2 rounded no-underline  hover:bg-foreground hover:text-background dark:hover:bg-foreground-dark dark:hover:text-background-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black;
   }
 
   .container-sm {
@@ -86,13 +86,13 @@
 
 @layer utilities {
   .nav-link {
-    @apply text-sm font-semibold uppercase hover:no-underline border-b-2 hover:border-primary;
+    @apply text-sm font-semibold uppercase hover:no-underline border-b-2 hover:border-primary dark:hover:border-primary-dark;
   }
 
   .pagination {
     @apply mt-block flex flex-wrap border-l border-primary;
     .pagination-link {
-      @apply w-10 h-10 text-base flex items-center justify-center  border-t border-b border-r border-primary hover:bg-primary hover:text-white;
+      @apply w-10 h-10 text-base flex items-center justify-center border-t border-b border-r border-primary dark:border-primary-dark hover:bg-primary dark:hover:bg-primary-dark hover:text-white dark:hover:text-secondary-dark;
     }
   }
 

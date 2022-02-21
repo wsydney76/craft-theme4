@@ -3,6 +3,10 @@
 $useImager = Craft::$app->plugins->isPluginEnabled('imager-x');
 
 return [
+
+    // on, off, media, user
+    'darkMode' => 'user',
+
     // fullwidth frame sidebar
     'layout' => 'fullwidth',
 
@@ -31,7 +35,7 @@ return [
 
     'pageWidth' => 'lg',
 
-    'headerWidth' => 'lg',
+    'headerWidth' => 'xl',
 
     // breakpoint for default/mobile menu can be always (always show hamburger menu) / never (never show hamburger menu)
     'mobileBreakpoint' => 'sm',
