@@ -1,6 +1,6 @@
 {% embed '_layouts/components/dropdown.twig' %}
     {% block buttonText %}
-        <div class="nav-link {{ craft.app.request.segment(1) == navEntry.slug ? 'border-primary' : 'border-transparent' }}">{{ navEntry.title }}</div>
+        <div class="nav-link {{ craft.app.request.segment(1) == navEntry.slug ? 'border-primary dark:border-primary-dark' : 'border-transparent' }}">{{ navEntry.title }}</div>
     {% endblock %}
 
     {% block panel %}

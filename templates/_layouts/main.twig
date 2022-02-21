@@ -1,7 +1,7 @@
 {% extends "_layouts/variables.twig" %}
 {% block html %}
 <!doctype html>
-<html lang="{{ craft.app.language[:2] }}" dir="{{ craft.app.locale.orientation }}" class="scroll-smooth">
+<html lang="{{ craft.app.language[:2] }}" dir="{{ craft.app.locale.orientation }}" class="scroll-smooth {{ theme.darkMode == 'on' ? 'dark' }}">
 <head>
     <title>{{ entry is defined and not entry.isHomepage ? "#{entry.title} | " }}{{ siteInfo.siteName }}</title>
 
@@ -11,7 +11,7 @@
 
 {% block body %}
     <body id="body"
-          class="text-custom font-custom {{ theme.layout == 'frame' ? 'bg-frame-background' : 'bg-background' }} text-foreground">
+          class="dark:bg-background-dark text-custom font-custom  {{ theme.layout == 'frame' ? 'bg-frame-background dark:bg-frame-background-dark' : 'bg-background dark:bg-background-dark' }} text-foreground dark:text-foreground-dark">
 
     {% include '_partials/ie_warning.twig' %}
 

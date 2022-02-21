@@ -4,7 +4,7 @@
 
 
     {% block navbarArea %}
-        <div class="{{ theme.stickyNavbar ? 'sticky top-0 z-50' }} bg-nav">
+        <div class="{{ theme.stickyNavbar ? 'sticky top-0 z-50' }} bg-nav dark:bg-nav-dark text-nav-text dark:text-nav-text-dark">
             <div class="container max-w-screen-{{ theme.headerWidth }} mx-auto  px-8">
                 <div class="py-4">
                     {{ navbarHtml|raw }}
@@ -32,8 +32,8 @@
     </main>
 
     {% block footerArea %}
-        <div class="mt-8 {{ theme.footerWidth != 'full' ? "container max-w-screen-#{ theme.footerWidth } mx-auto" }}  bg-footer-bg text-footer-text">
-            <div class="container max-w-screen-{{ theme.footerInnerWidth }} mx-auto py-4 px-block {{ theme.footerBorder ? 'border-t border-footer-border' }}">
+        <div class="mt-8 {{ theme.footerWidth != 'full' ? "container max-w-screen-#{ theme.footerWidth } mx-auto" }}  bg-footer-bg dark:bg-footer-bg-dark text-footer-text dark:text-footer-text-dark">
+            <div class="container max-w-screen-{{ theme.footerInnerWidth }} mx-auto py-4 px-block {{ theme.footerBorder ? 'border-t border-footer-border dark:border-footer-border-dark' }}">
                 {% include '_layouts/partials/footer.twig' %}
             </div>
         </div>

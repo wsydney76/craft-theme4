@@ -1,12 +1,12 @@
 {% from '_macros/lib.twig' import img %}
 
-<a href="{{ siteUrl }}">
+<a class="!no-underline" href="{{ siteUrl }}">
 
     {% set image = theme.logoTransform ? siteInfo.logo.one : null %}
     {% if  image %}
         {{ img(image, theme.logoTransform, {loading: null}, false) }}
     {% else %}
-        <div class="font-semibold">
+        <div class="font-semibold text-2xl">
             {{ siteInfo.siteName }}
         </div>
     {% endif %}

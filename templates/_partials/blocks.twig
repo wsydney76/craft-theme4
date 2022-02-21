@@ -31,7 +31,7 @@
         {% set paddingsY = backgroundColor == 'default' ? '' : 'py-block' %}
         {% set marginsY = block.marginsY ?? 'my-block first:mt-0' %}
 
-        <div id="block-{{ block.id }}" class="{{ theme.stickyNavbar ? 'scroll-mt-24' }}  {{ "bg-#{backgroundColor}" }} {{ "text-#{foregroundColor}" }} {{ marginsY }} {{ paddingsY }}">
+        <div id="block-{{ block.id }}" class="{{ theme.stickyNavbar ? 'scroll-mt-24' }}  {{ "bg-#{backgroundColor}" }} {{ "dark:bg-#{backgroundColor}-dark" }} {{ "text-#{foregroundColor}" }} {{ "dark:text-#{foregroundColor}-dark" }} {{ marginsY }} {{ paddingsY }}">
             <div class="max-w-screen-{{ width }} mx-auto {{ paddingsX }}">
                 {% include ["_blocks/#{block.type}"] with {index: loop.index} %}
             </div>
