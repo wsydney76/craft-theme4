@@ -4,8 +4,8 @@ $useImager = Craft::$app->plugins->isPluginEnabled('imager-x');
 
 return [
 
-    // on, off, user
-    'darkMode' => 'on',
+    // on, off, media, user
+    'darkMode' => 'user',
 
     // fullwidth frame sidebar
     'layout' => 'fullwidth',

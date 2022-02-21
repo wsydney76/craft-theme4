@@ -1,7 +1,7 @@
 {% extends "_layouts/variables.twig" %}
 {% block html %}
 <!doctype html>
-<html lang="{{ craft.app.language[:2] }}" dir="{{ craft.app.locale.orientation }}" class="scroll-smooth {{ theme.darkMode == 'on' ? 'dark' }}">
+<html lang="{{ craft.app.language[:2] }}" dir="{{ craft.app.locale.orientation }}" class="scroll-smooth">
 <head>
     <title>{{ entry is defined and not entry.isHomepage ? "#{entry.title} | " }}{{ siteInfo.siteName }}</title>
 
