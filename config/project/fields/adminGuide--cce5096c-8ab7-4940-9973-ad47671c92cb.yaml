@@ -1,14 +1,14 @@
-columnSuffix: null
+columnSuffix: mnvmrnmj
 contentColumnType: boolean
 fieldGroup: 6f31e23d-56c9-4afe-aacf-25ec0d12b2c2 # Guide
-handle: showInDashboard
+handle: adminGuide
 instructions: ''
-name: 'Auf der Übersichtsseite anzeigen?'
+name: 'Admin Guide'
 searchable: false
 settings:
   default: false
   offLabel: null
-  onLabel: null
+  onLabel: 'Show this guide only to admins'
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Lightswitch

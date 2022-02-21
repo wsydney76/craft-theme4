@@ -1,6 +1,10 @@
 const colors = require('tailwindcss/colors')
 
+const colorMode = 'dark'
+
 module.exports = {
+
+    darkMode: 'class',
 
     content: [
         './templates/**/*.twig',
@@ -33,28 +37,94 @@ module.exports = {
                 'h2': '2rem',
             },
 
-            colors: {
-                primary: {
+            colors:  {
+                'primary': {
                     DEFAULT: colors.blue[800],
+                    dark: colors.blue[500],
                     ...colors.blue
                 },
-                secondary: colors.white,
-                background: colors.slate[50],
-                foreground: colors.slate[900],
-                'frame-background': colors.slate[500],
-                light: colors.slate[300],
-                three: colors.red[800],
-                four: colors.orange[700],
-                'title-bg': colors.blue[700],
-                'title-text': colors.white,
-                'footer-bg': colors.slate[700],
-                'footer-text': colors.white,
-                'footer-border': colors.slate[900],
-                border: colors.slate[300],
-                muted: colors.slate[600],
-                gray: colors.slate,
-                nav: colors.white,
-                teaser: colors.red[700]
+                'secondary': {
+                    DEFAULT: colors.white,
+                    dark: colors.slate[900]
+                },
+                'background': {
+                    DEFAULT: colors.slate[50],
+                    dark: colors.slate[900]
+                },
+                'foreground': {
+                    DEFAULT:  colors.slate[900],
+                    dark: colors.slate[50]
+                },
+                'frame-background': {
+                    DEFAULT: colors.slate[500],
+                    dark: colors.slate[500]
+                },
+                'light': {
+                    DEFAULT: colors.slate[300],
+                    dark: colors.slate[600]
+                },
+                'three': {
+                    DEFAULT: colors.red[800],
+                    dark: colors.red[800]
+                },
+                'four': {
+                    DEFAULT: colors.orange[700],
+                    dark: colors.orange[700]
+                },
+                'title-bg': {
+                    DEFAULT: colors.blue[700],
+                    dark: colors.slate[700]
+                },
+                'title-text': {
+                    DEFAULT: colors.white,
+                    dark: colors.white
+                },
+                'footer-bg': {
+                    DEFAULT: colors.slate[700],
+                    dark:colors.slate[700]
+                },
+                'footer-text': {
+                    DEFAULT: colors.white,
+                    dark: colors.white
+                },
+                'footer-border': {
+                    DEFAULT: colors.slate[900],
+                    dark:  colors.slate[100]
+                },
+                'border': {
+                    DEFAULT: colors.slate[300],
+                    dark: colors.slate[400]
+                },
+                'muted': {
+                    DEFAULT: colors.slate[600],
+                    dark: colors.slate[200]
+                },
+                'gray': colors.slate,
+                'dark': colors.slate,
+                'nav': {
+                    DEFAULT: colors.white,
+                    dark: colors.slate[900]
+                },
+                'nav-text': {
+                    DEFAULT: colors.slate[900],
+                    dark: colors.white
+                },
+                'teaser': {
+                    DEFAULT: colors.red[700],
+                    dark: colors.red[500]
+                },
+                'card': {
+                    DEFAULT: colors.white,
+                    dark: colors.slate[800]
+                },
+                'card-text': {
+                    DEFAULT: colors.slate[900],
+                    dark: colors.slate[50]
+                },
+                'card-hover': {
+                    DEFAULT: colors.gray[200],
+                    dark: colors.slate[700]
+                }
             },
 
             width: {
@@ -123,8 +193,12 @@ module.exports = {
         {
             pattern: /(bg|text)-(primary|secondary|background|foreground|frame-background|black|white|light|three|four|title-bg|title-text|footer-bg|footer-text|footer-border|border|muted|teaser)/
         },
+        {
+            pattern: /(bg|text)-(primary-dark|secondary-dark|background-dark|foreground-dark|frame-background-dark|black|white|light-dark|three-dark|four-dark|title-bg-dark|title-text-dark|footer-bg-dark|footer-text-dark|footer-border-dark|border-dark|muted-dark|teaser-dark)/,
+            variants: ['dark']
+        },
 
-        // dynamic col spans
+        // dynamic col spans-dark
         {
             pattern: /col-span-(1|2|3|4|5|6|7|8|9|10|11|12)/,
             variants: ['lg']

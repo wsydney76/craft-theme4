@@ -1,7 +1,7 @@
 {% set headings = blocks|filter(b => b.type.handle == 'heading') %}
 
 {% if headings %}
-    <div class="bg-white {{ theme.useProse ? 'max-w-prose' }} border border-border">
+    <div class="bg-background dark:bg-background-dark {{ theme.useProse ? 'max-w-prose' }} border border-border">
         {% embed '_layouts/components/collapsible.twig' with {buttonFullWidth: true, overlay: false} %}
 
             {% block buttonText %}

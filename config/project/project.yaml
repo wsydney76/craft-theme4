@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1645354143
+dateModified: 1645365446
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -275,6 +275,7 @@ meta:
     cbef4b7f-43de-4ceb-b5d9-ad77705319c9: Heading # Heading
     cc71fadd-b22e-472b-858e-9390e7b57dfc: 'Mobiler Breakpoint' # Mobiler Breakpoint
     cc39676d-193e-4b20-a29d-f1b3d3c3c299: 'Fav Icon' # Fav Icon
+    cce5096c-8ab7-4940-9973-ad47671c92cb: 'Admin Guide' # Admin Guide
     cd4b4d9a-0519-4f07-93e0-5957b57a9afd: Legal # Legal
     cda0b80d-b767-406b-a9db-316e16db4b33: 'Video Url' # Video Url
     d5a44dcf-9ae8-4f6a-b498-ddefa0abc78c: 'Role Name' # Role Name

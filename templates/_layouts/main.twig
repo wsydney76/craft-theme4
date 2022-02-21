@@ -11,7 +11,7 @@
 
 {% block body %}
     <body id="body"
-          class="text-custom font-custom {{ theme.layout == 'frame' ? 'bg-frame-background' : 'bg-background' }} text-foreground">
+          class="dark:bg-background-dark text-custom font-custom  {{ theme.layout == 'frame' ? 'bg-frame-background dark:bg-frame-background-dark' : 'bg-background dark:bg-background-dark' }} text-foreground dark:text-foreground-dark">
 
     {% include '_partials/ie_warning.twig' %}
 

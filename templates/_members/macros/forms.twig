@@ -13,10 +13,10 @@
     {% set required = config.required ?? false %}
 
     <div>
-        <label for="{{ id }}" class="block text-base font-semibold text-gray-700">
+        <label for="{{ id }}" class="block text-base text-foreground dark:text-foreground-dark font-semibold">
             {{ config.label }}
             {% if required %}
-                <span class="text-red-600">*</span>
+                <span class="text-red-600 dark:text-red-400">*</span>
             {% endif %}
         </label>
         <div class="mt-1">
@@ -25,12 +25,12 @@
                 id: id,
                 autocomplete: id,
                 required: required,
-                class: "w-full #{ errors ? 'border border-red-500' }"
+                class: "w-full text-black #{ errors ? 'border border-red-500 dark:border-red-300' }"
             }) }}
 
 
             {% if instructions %}
-                <div class="my-1 text-sm text-gray-700">{{ instructions }}</div>
+                <div class="my-1 text-sm text-foreground dark:text-foreground-dark">{{ instructions }}</div>
             {% endif %}
 
         </div>
@@ -46,17 +46,17 @@
 
     <div>
         <label for="{{ name|id }}"
-               class="block text-base font-semibold text-gray-700">{{ 'Upload a new photo'|t }}</label>
+               class="block text-base font-semibold text-foreground dark:text-foreground-dark">{{ 'Upload a new photo'|t }}</label>
         <div class="mt-4">
             {{ input('file', name, null, {
                 id: 'name|id',
-                class: 'block w-full text-base text-gray-800
+                class: 'block w-full text-base text-foreground
                           file:mr-2 file:py-2 file:px-4
                           file:rounded file:border-0
                           file:text-base
-                          file:bg-primary file:text-white
+                          file:bg-primary file:text-secondary
                           file:cursor-pointer
-                          hover:file:bg-black file:transition',
+                          hover:file:bg-black dark:hover:file:bg-foreground-dark hover:file:text-white dark:hover:file:text-background-dark file:transition',
                 accept: accept,
             }) }}
         </div>
@@ -68,7 +68,7 @@
 
 {% macro checkbox(config) %}
     <div>
-        <label for="{{ config.name }}" class="block text-sm font-medium text-gray-700">
+        <label for="{{ config.name }}" class="block text-sm font-medium text-foreground dark:text-foreground-dark">
             <input class="mr-2"
                    type="checkbox"
                    name="{{ config.name }}"
@@ -98,6 +98,6 @@
 
 {% macro errorsList(errors) %}
     {% if errors %}
-        {{ ul(errors, {class: 'mt-2 text-sm text-red-600'}) }}
+        {{ ul(errors, {class: 'mt-2 text-sm text-red-600 dark:text-red-200'}) }}
     {% endif %}
 {% endmacro %}

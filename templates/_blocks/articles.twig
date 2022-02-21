@@ -4,7 +4,7 @@
 {% set style = block.style.value ?? 'default' %}
 
 {% set blockClasses = {
-    boxed: 'border-4 border-light p-8',
+    boxed: 'border-4 border-light dark:border-light-dark p-8',
 } %}
 
 {% set headingClasses = {
@@ -36,7 +36,7 @@
                        class="!no-underline hover:no-underline block text-base">
 
                         {% if entry.teaser %}
-                            <div class="text-base font-semibold text-teaser mb-2">
+                            <div class="text-base font-semibold text-teaser dark:text-teaser-dark mb-2">
                                 {{ entry.teaser }}
                             </div>
                         {% endif %}
@@ -90,7 +90,7 @@
                                 <div class="">
 
                                     {% if entry.teaser %}
-                                        <div class="font-bold text-teaser">
+                                        <div class="font-bold text-teaser dark:text-teaser-dark">
                                             {{ entry.teaser }}
                                         </div>
                                     {% endif %}
@@ -116,7 +116,7 @@
         {% set topic = block.topic.one %}
         {% if topic %}
             <div class="mt-12 mb-block">
-                <a class="btn bg-primary text-secondary text-base"
+                <a class="btn bg-primary dark:bg-primary-dark text-secondary dark:text-secondary-dark text-base"
                    href="{{ topic.url }}">{{ 'All articles on the topic'|t }} {{ topic.title }}</a>
             </div>
         {% endif %}

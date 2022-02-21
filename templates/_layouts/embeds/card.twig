@@ -1,7 +1,7 @@
 {% from '_macros/lib.twig' import img %}
 
 
-<article class="w-card border border-border mr-4 mb-4  bg-white text-foreground hover:bg-gray-200 transition-colors shadow-lg">
+<article class="w-card border border-border mr-4 mb-4  bg-card dark:bg-card-dark text-foreground dark:text-foreground-dark hover:bg-card-hover dark:hover:bg-card-hover-dark transition-colors shadow-lg">
     <a class="!no-underline flex flex-col justify-between h-full"
        href="{{ entry.url }}">
         <div>
@@ -16,7 +16,7 @@
             </div>
             <div class="p-4">
                 {% if entry.teaser %}
-                    <div class="text-sm text-teaser font-semibold mb-1">
+                    <div class="text-sm text-teaser dark:text-teaser-dark font-semibold mb-1">
                         {{ entry.teaser }}
                     </div>
                 {% endif %}

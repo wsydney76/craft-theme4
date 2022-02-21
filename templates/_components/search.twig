@@ -6,7 +6,7 @@
 
 {# Replaces only the `#results` div on keyup or when the value is changed #}
 <label for="query">{{ 'Search Term'|t }}:
-    <input sprig s-trigger="keyup changed delay:500ms" s-replace="#results"
+    <input sprig s-trigger="keyup changed delay:500ms" s-replace="#results" class="text-black"
            type="text" name="query" id="query" value="{{ query }}" placeholder="{{ 'Search'|t }}" autocomplete="off"
            autofocus>
 </label>

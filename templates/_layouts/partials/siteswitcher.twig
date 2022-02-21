@@ -1,7 +1,7 @@
 {% if localizedEntries ?? [] %}
     {% for entry in localizedEntries %}
         <div>
-            <a class="block -mt-0.5 bg-primary text-secondary px-3 py-1 text-sm font-semibold rounded uppercase" href="{{ entry.url }}">{{ entry.site.language[:2] }}</a>
+            <a class="block -mt-0.5 bg-primary dark:bg-primary-dark text-secondary dark:text-secondary-dark px-3 py-1 text-sm font-semibold rounded uppercase" href="{{ entry.url }}">{{ entry.site.language[:2] }}</a>
         </div>
     {% endfor %}
 {% endif %}

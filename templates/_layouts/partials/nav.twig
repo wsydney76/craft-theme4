@@ -24,7 +24,7 @@
                 index: index
             } only %}
         {% else %}
-            <a class="nav-link  {{ craft.app.request.segment(1) == navEntry.slug ? 'border-primary' : 'border-transparent' }}"
+            <a class="nav-link  {{ craft.app.request.segment(1) == navEntry.slug ? 'border-primary dark:border-primary-dark' : 'border-transparent' }}"
                href="{{ navEntry.url }}">{{ navEntry.navTitle }}</a>
         {% endif %}
 

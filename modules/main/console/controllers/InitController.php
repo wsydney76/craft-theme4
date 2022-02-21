@@ -36,7 +36,7 @@ class InitController extends Controller
 
     public function actionAll()
     {
-        if (!$this->confirm('Run all init actions? This should only be done once, immediatly after installing.')) {
+        if (!$this->confirm('Run all init actions? This should only be done once, immediately after installing.')) {
             return;
         }
 
@@ -372,15 +372,17 @@ class InitController extends Controller
         $user = User::find()->admin()->one();
 
         $guides = [
-            ['title' => 'Guide', 'slug' => 'guide'],
-            ['title' => 'Inhalt', 'slug' => 'content'],
-            ['title' => 'Dateien', 'slug' => 'assets'],
-            ['title' => 'Content Builder', 'slug' => 'contentbuilder'],
-            ['title' => 'Blöcke', 'slug' => 'blocks'],
-            ['title' => 'Sektionen', 'slug' => 'sections'],
-            ['title' => 'Artikel', 'slug' => 'article'],
-            ['title' => 'Seite', 'slug' => 'page'],
-            ['title' => 'Rechtliches', 'slug' => 'legal'],
+            ['title' => 'Guide', 'slug' => 'guide', 'admin' => 0],
+            ['title' => 'Inhalt', 'slug' => 'content', 'admin' => 0],
+            ['title' => 'Dateien', 'slug' => 'assets', 'admin' => 0],
+            ['title' => 'Content Builder', 'slug' => 'contentbuilder', 'admin' => 0],
+            ['title' => 'Blöcke', 'slug' => 'blocks', 'admin' => 0],
+            ['title' => 'Sektionen', 'slug' => 'sections', 'admin' => 0],
+            ['title' => 'Artikel', 'slug' => 'article', 'admin' => 0],
+            ['title' => 'Seite', 'slug' => 'page', 'admin' => 0],
+            ['title' => 'Rechtliches', 'slug' => 'legal', 'admin' => 0],
+            ['title' => 'Developer', 'slug' => 'admin', 'admin' => 1],
+            ['title' => 'Farben', 'slug' => 'colors', 'admin' => 1],
         ];
 
         foreach ($guides as $guide) {
@@ -392,6 +394,8 @@ class InitController extends Controller
                 'slug' => $guide['slug']
             ]);
 
+            $guideEntry->setFieldValue('adminGuide', $guide['admin']);
+
             if (!Craft::$app->elements->saveElement($guideEntry)) {
                 echo "Error saving guide entry #{guide['title']}  \n";
             }
@@ -399,6 +403,7 @@ class InitController extends Controller
 
         $this->setGuideParent('content', ['contentbuilder', 'blocks']);
         $this->setGuideParent('sections', ['article', 'page', 'legal']);
+        $this->setGuideParent('admin', ['colors']);
 
         $this->setIncludeGuides(['article', 'page', 'legal'], ['contentBuilder', 'blocks']);
     }
