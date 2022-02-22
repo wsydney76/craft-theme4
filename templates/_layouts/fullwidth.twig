@@ -18,7 +18,7 @@
 
     <main id="content" class="{{ theme.stickyNavbar ? 'scroll-mt-24' }}">
         {% block titleArea %}
-            {% include "_layouts/partials/fullwidth/titlearea_#{theme.titleStyle}.twig" %}
+            {% include "_layouts/partials/fullwidth/titlearea_#{themeOptions.titleStyle ?? theme.titleStyle}.twig" %}
         {% endblock %}
 
         <article>

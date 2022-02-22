@@ -46,7 +46,8 @@
         </div>
     {% endif %}
 
-{% case "text" %}
+{% case "text" or "introImage" %}
+    {# no image or image will be handled in title template #}
 
 {% case "fullText" or "fullTextColor" %}
     {% if image %}

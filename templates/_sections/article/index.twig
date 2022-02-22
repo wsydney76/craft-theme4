@@ -1,13 +1,17 @@
 {% extends "_layouts/#{theme.layout}.twig" %}
 
 {% set themeOptions = {
-    showMeta: theme.titleStyle == 'coverBoxed'
+    showMeta: theme.titleStyle in ['coverBoxed','introImage']
 }%}
 
 {% block content %}
 
-    {% if theme.titleStyle != 'coverBoxed' %}
+    {% if theme.titleStyle not in ['coverBoxed','introImage'] %}
         {% include '_partials/entry_meta.twig' %}
+    {% endif %}
+
+    {% if theme.showArticleIntro and theme.titleStyle != 'introImage' and entry.intro %}
+        {% include '_partials/intro.twig' with {text: entry.intro} only %}
     {% endif %}
 
     {{ parent() }}

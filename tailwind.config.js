@@ -29,6 +29,7 @@ module.exports = {
             fontFamily: {
                 custom: ['"Open Sans"', 'sans-serif'],
                 headings: ['Raleway', 'sans-serif'],
+                serif: ['"PT Serif"', 'serif']
             },
 
             fontSize: {

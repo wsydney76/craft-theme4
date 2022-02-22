@@ -64,6 +64,24 @@
     url('/assets/fonts/open-sans-v27-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
     url('/assets/fonts/open-sans-v27-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+/* pt-serif-regular - latin */
+@font-face {
+    font-family: 'PT Serif';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+    url('/assets/fonts/pt-serif-v16-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('/assets/fonts/pt-serif-v16-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* pt-serif-italic - latin */
+@font-face {
+    font-family: 'PT Serif';
+    font-style: italic;
+    font-weight: 400;
+    src: local(''),
+    url('/assets/fonts/pt-serif-v16-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('/assets/fonts/pt-serif-v16-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
 
 /*!
  * baguetteBox.js
@@ -1021,6 +1039,9 @@ a.btn{
 .mb-12{
   margin-bottom: 3rem;
 }
+.-mt-44{
+  margin-top: -11rem;
+}
 .block{
   display: block;
 }
@@ -1493,6 +1514,10 @@ a.btn{
   --tw-border-opacity: 1;
   border-color: rgb(239 68 68 / var(--tw-border-opacity));
 }
+.border-primary-500{
+  --tw-border-opacity: 1;
+  border-color: rgb(59 130 246 / var(--tw-border-opacity));
+}
 .bg-black{
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
@@ -1875,6 +1900,12 @@ a.btn{
 .pr-16{
   padding-right: 4rem;
 }
+.pt-20{
+  padding-top: 5rem;
+}
+.pb-60{
+  padding-bottom: 15rem;
+}
 .text-center{
   text-align: center;
 }
@@ -1886,6 +1917,9 @@ a.btn{
 }
 .font-custom{
   font-family: "Open Sans", sans-serif;
+}
+.font-serif{
+  font-family: "PT Serif", serif;
 }
 .text-h2{
   font-size: 2rem;
@@ -1929,6 +1963,10 @@ a.btn{
   font-size: 2.5rem;
   line-height: 3rem;
 }
+.text-3xl{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
 .font-semibold{
   font-weight: 600;
 }
@@ -1949,6 +1987,9 @@ a.btn{
 }
 .not-italic{
   font-style: normal;
+}
+.leading-loose{
+  line-height: 2;
 }
 .tracking-wider{
   letter-spacing: 0.05em;
@@ -2483,6 +2524,10 @@ a.btn{
   --tw-border-opacity: 1;
   border-color: rgb(252 165 165 / var(--tw-border-opacity));
 }
+.dark .dark\:border-primary-300{
+  --tw-border-opacity: 1;
+  border-color: rgb(147 197 253 / var(--tw-border-opacity));
+}
 .dark .dark\:bg-black{
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
@@ -2706,10 +2751,21 @@ a.btn{
   .sm\:shrink-0{
     flex-shrink: 0;
   }
+  .sm\:flex-row{
+    flex-direction: row;
+  }
   .sm\:space-x-block > :not([hidden]) ~ :not([hidden]){
     --tw-space-x-reverse: 0;
     margin-right: calc(2rem * var(--tw-space-x-reverse));
     margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+  .sm\:text-4xl{
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+  .sm\:text-2xl{
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 @media (min-width: 768px){
