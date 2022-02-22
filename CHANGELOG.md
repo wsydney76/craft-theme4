@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.2.0 2020-02-22
+
+* Added 'introImage' title style
+* Added 'Overlap' style to 'ImageAndText' Block
+* Added Background image to 'frame' layout
+
 ## 3.1.0 2020-02-21
 
 * Added dark mode

@@ -1,0 +1,56 @@
+{% from '_macros/lib.twig' import img %}
+
+{% set image = entry.featuredImage.one %}
+{% if not image and theme.useFallbackImage %}
+    {% set image = siteInfo.featuredImage.one %}
+{% endif %}
+
+<div class="{{ image ? 'pt-20 pb-60' : 'py-8 mb-8' }} bg-title-bg dark:bg-title-bg-dark text-title-text dark:text-title-text-dark">
+    <div class="container-{{ themeOptions.titleWidth ?? theme.titleWidth }}">
+        {% if themeOptions.showMeta ?? false %}
+            <div class="mb-12 flex flex-col sm:flex-row sm:space-x-block text-base uppercase">
+                <div>
+                    {{ entry.postDate|date('long') }}
+                </div>
+                <div class="border-b-2 border-primary-400 dark:border-primary-300">
+                    <a class="!no-underline"
+                       href="{{ siteUrl("#{'authors'|t}/#{entry.author.username}") }}">{{ 'by'|t }} {{ entry.author.fullName }}</a>
+                </div>
+                {% if entry.topics %}
+                    {% set topics = entry.topics.all %}
+                    {% if topics %}
+                        {% for topic in topics %}
+                            <div class="border-b-2 border-primary-400 dark:border-primary-300">
+                                <a class="!no-underline" href="{{ topic.url }}">{{ topic.title }}</a>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endif %}
+            </div>
+        {% endif %}
+
+        {% if entry.teaser %}
+            <div class="mb-2 font-serif italic">
+                {{ entry.teaser }}
+            </div>
+        {% endif %}
+
+        <div class=" max-w-screen-lg">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-wider">{{ entry.title }}</h1>
+        </div>
+
+        {% if entry.intro %}
+            <div class="mt-12 max-w-screen-md italic font-serif text-xl sm:text-2xl leading-loose">
+                {{ entry.intro }}
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+
+{% if image %}
+    <div class="container-{{ themeOptions.titleWidth ?? theme.titleWidth }} -mt-44 mb-20">
+        {{ img(image, theme.introImageTransform, {}, false) }}
+    </div>
+{% endif %}
+

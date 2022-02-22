@@ -41,7 +41,7 @@ fieldLayouts:
             warning: null
             width: 25
           -
-            fieldUid: 44b322dd-2b68-4cbf-ac78-a70d2d80af18 # Image Background Color
+            fieldUid: 842e6c06-cc3a-40c7-9fdb-13b911f9602b # Image Align
             instructions: null
             label: null
             required: true
@@ -50,10 +50,10 @@ fieldLayouts:
             warning: null
             width: 25
           -
-            fieldUid: 842e6c06-cc3a-40c7-9fdb-13b911f9602b # Image Align
+            fieldUid: f7d4d3ce-88ca-46e0-a39d-135eb2c82efd # Style
             instructions: null
             label: null
-            required: true
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -67,9 +67,40 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 25
+          -
+            fieldUid: 2e7a2b78-1f15-4193-ab59-950736957ac4 # Aspect Ratio
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 44b322dd-2b68-4cbf-ac78-a70d2d80af18 # Image Background Color
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
         name: Content
         sortOrder: 1
 fields:
+  2e7a2b78-1f15-4193-ab59-950736957ac4: # Aspect Ratio
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: aspectRatio
+    instructions: 'Style = Overlap'
+    name: 'Aspect Ratio'
+    searchable: false
+    settings:
+      defaultAspectRatio: '16:9'
+    translationKeyFormat: null
+    translationMethod: none
+    type: modules\main\fields\AspectRatioField
   8f7a501f-8f71-499e-925e-a2de6a443fd2: # Margins Y
     columnSuffix: null
     contentColumnType: string
@@ -86,7 +117,7 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: imageBackgroundColor
-    instructions: ''
+    instructions: 'Style = Colored'
     name: 'Image Background Color'
     searchable: false
     settings:
@@ -220,6 +251,42 @@ fields:
     translationKeyFormat: null
     translationMethod: language
     type: craft\fields\PlainText
+  f7d4d3ce-88ca-46e0-a39d-135eb2c82efd: # Style
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: style
+    instructions: ''
+    name: Style
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Colored
+            -
+              - value
+              - colored
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Overlap
+            -
+              - value
+              - overlap
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
 handle: imageAndText
 name: 'Image and Text'
 sortOrder: 5

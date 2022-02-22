@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1645365446
+dateModified: 1645539267
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -37,6 +37,7 @@ meta:
     2c714018-e241-4b81-9797-7a0a8f643f76: 'Link Caption' # Link Caption
     2cf2c737-33d2-4b15-8933-7053b22d0020: Parameter # Parameter
     2d84778b-a47e-4b33-b8f4-852100a4faee: Titel # Titel
+    2e7a2b78-1f15-4193-ab59-950736957ac4: 'Aspect Ratio' # Aspect Ratio
     2e200cb6-ebde-4ae5-b6fe-3e9b7abd899f: Topics # Topics
     2f9f4c17-9e79-43b8-aec7-0a8353998ac8: Rahmen-Hintergrundfarbe # Rahmen-Hintergrundfarbe
     3ac8b547-8089-43db-b7de-39c79c658368: 'Audio Files' # Audio Files
@@ -122,6 +123,7 @@ meta:
     55f033c8-b2b2-4609-a364-a5fcfcbfb4f8: 'Content im Rahmen anzeigen' # Content im Rahmen anzeigen
     57d93092-ead9-4861-b888-be2853985a17: Gallery # Gallery
     57dba12d-3dba-4e01-a8e5-7ed1323f9c68: Span # Span
+    60a84778-fbac-4fcb-9adc-67569899fb55: 'Background Image' # Background Image
     060ad016-c0fb-4088-a96a-d98fbe5fbad6: Images # Images
     60d7202b-beaa-4319-83f3-33bcef815c6d: Style # Style
     60efd03a-2799-49bb-a669-0bf017471de0: Text # Text
@@ -320,6 +322,7 @@ meta:
     f2bd38f3-47f5-4e49-be18-fa89073255fd: Media # Media
     f6ff43e3-8e77-457f-91cb-101f517889c9: Teaser # Teaser
     f7b15040-ef01-4cf3-ab66-7facec8716bb: 'Hilfetext zu Matrix-Inhalten einfügen?' # Hilfetext zu Matrix-Inhalten einfügen?
+    f7d4d3ce-88ca-46e0-a39d-135eb2c82efd: Style # Style
     f7ec9fdc-29dc-438b-9776-556bb06dbca6: Text # Text
     f8e37e01-9b1e-40bc-8186-b7653efb4040: Titelbild-Höhe # Titelbild-Höhe
     f15bff68-e0e6-422d-a615-9e22d733e1f0: Global # Global

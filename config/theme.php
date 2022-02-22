@@ -21,7 +21,7 @@ return [
     // stickyNavbar only
     'showScrollIndicator' => true,
 
-    // coverFull (fullwidth only) coverContent coverBoxed fullText fullTextColor imageText textImage text
+    // coverFull (fullwidth only) coverContent coverBoxed fullText fullTextColor imageText textImage text introImage
     'titleStyle' => 'fullTextColor',
 
     // relative to width.full if cover...
@@ -30,18 +30,21 @@ return [
     // relative to fullWidthImageWidth
     'fullwidthImageHeight' => 600,
 
-    // use global featured Image on page headers if no individual featured image is set
+    // Use global featured Image on page headers if no individual featured image is set
+    // Should be on and a global featured image should be set if 'titleStyle' places the title on the image
     'useFallbackImage' => false,
-
-    'pageWidth' => 'lg',
 
     'headerWidth' => 'xl',
 
-    // breakpoint for default/mobile menu can be always (always show hamburger menu) / never (never show hamburger menu)
-    'mobileBreakpoint' => 'sm',
-
     // same as max-width-header, if titleStyle != fullwidth
     'titleImageWidth' => 'xl',
+
+    'titleWidth' => 'lg',
+
+    'pageWidth' => 'lg',
+
+    // breakpoint for default/mobile menu can be always (always show hamburger menu) / never (never show hamburger menu)
+    'mobileBreakpoint' => 'sm',
 
     'defaultBlockWidth' => 'lg',
 
@@ -51,7 +54,7 @@ return [
         'gallery' => 'xl'
     ],
 
-    'defaultIndexWidth' => 'md',
+    'defaultIndexWidth' => 'xl',
 
     // set max-w-prose on text blocks
     'useProse' => true,
@@ -111,6 +114,9 @@ return [
 
     'defaultArticleTransform' => ['width' => 400, 'height' => 250, 'format' => 'webp'],
 
+    // titleStyle = introImage
+    'introImageTransform' => ['width' => 640],
+
     'entriesPerIndexPage' => 6,
     'entriesInSearchResults' => 6,
 
@@ -119,5 +125,8 @@ return [
     'fontUrl' => '',
 
     // Template for members only content
-    'membersTemplate' => '_partials/members'
+    'membersTemplate' => '_partials/members',
+
+    // Show intro text on article pages
+    'showArticleIntro' => true,
 ];

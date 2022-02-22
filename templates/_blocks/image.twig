@@ -1,11 +1,11 @@
 {% from '_macros/lib.twig' import img %}
 
 
-{% set imgWidth = block.width == 'default' ? theme.defaultBlockTypeWidth['image'] : block.width %}
+{% set imgWidth = imgWidth ?? (block.width == 'default' ? theme.defaultBlockTypeWidth['image'] : block.width) %}
  {# TODO: Add responsive sizes #}
 
 
-{% set image = block.image.one() %}
+{% set image = image ?? block.image.one() %}
 {% if image %}
 
     {% set colSpan = colSpan ?? 12 %}
@@ -18,7 +18,7 @@
 
     {% set width = ceil(width / 12 * colSpan) %}
 
-    {% set aspectRatio = block.aspectRatio ?? 'auto' %}
+    {% set aspectRatio = aspectRatio ?? (block.aspectRatio ?? 'auto') %}
 
     {% if aspectRatio == 'default' %}
         {% set aspectRatio = theme.defaultAspectRatio %}
@@ -41,9 +41,11 @@
 
         {{ img(image, transform) }}
 
-        {% if block.caption %}
+        {% set caption = caption ?? block.caption %}
+
+        {% if caption %}
             <figcaption class="text-center mt-2 text-base">
-                {{ block.caption }}
+                {{ caption }}
             </figcaption>
         {% endif %}
     </figure>

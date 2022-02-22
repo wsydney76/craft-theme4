@@ -1,7 +1,21 @@
 {% extends "_layouts/main.twig" %}
 
-{% block page %}
+{% set bgImage = siteInfo.backgroundImage.one %}
+{% if bgImage %}
+    {% set bodyClasses = 'bg-image bg-center bg-no-repeat bg-cover bg-fixed backdrop-blur' %}
 
+    {# TODO: Add responsive sizes #}
+    {% css %}
+    .bg-image {
+        background-image: url("{{ bgImage.url }}");
+        }
+    {% endcss %}
+{% else %}
+    {% set bodyClasses = 'bg-frame-background dark:bg-frame-background-dark' %}
+{% endif %}
+
+
+{% block page %}
     <div class="py-4">
         <div class="container max-w-screen-{{ theme.pageWidth }} mx-auto bg-background dark:bg-background-dark">
             <header class="px-8 py-6">
