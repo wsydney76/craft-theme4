@@ -41,10 +41,10 @@ fieldLayouts:
             warning: null
             width: 25
           -
-            fieldUid: 44b322dd-2b68-4cbf-ac78-a70d2d80af18 # Image Background Color
+            fieldUid: f7d4d3ce-88ca-46e0-a39d-135eb2c82efd # Style
             instructions: null
             label: null
-            required: true
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -63,6 +63,15 @@ fieldLayouts:
             instructions: null
             label: null
             required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 44b322dd-2b68-4cbf-ac78-a70d2d80af18 # Image Background Color
+            instructions: null
+            label: null
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -86,7 +95,7 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: imageBackgroundColor
-    instructions: ''
+    instructions: 'Style = Colored'
     name: 'Image Background Color'
     searchable: false
     settings:
@@ -220,6 +229,42 @@ fields:
     translationKeyFormat: null
     translationMethod: language
     type: craft\fields\PlainText
+  f7d4d3ce-88ca-46e0-a39d-135eb2c82efd: # Style
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: style
+    instructions: ''
+    name: Style
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Colored
+            -
+              - value
+              - colored
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Overlap
+            -
+              - value
+              - overlap
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
 handle: imageAndText
 name: 'Image and Text'
 sortOrder: 5

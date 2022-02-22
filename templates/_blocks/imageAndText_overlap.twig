@@ -1,0 +1,26 @@
+{% from '_macros/lib.twig' import img %}
+
+{% set imgAlign = block.align.value ?? 'imageLeft' %}
+
+<div class="lg:flex {{ imgAlign == 'imageRight' ? 'ml:flex-row-reverse' }}">
+    <div class="lg:w-1/2">
+        {% set image = block.image.one %}
+        {% if image %}
+            <div class="">
+                {{ img(image, {width: 800, height: 600}) }}
+            </div>
+        {% endif %}
+    </div>
+    <div class="lg:w-1/2 mt-block  lg:mt-0 grid place-content-center">
+        <div class="p-block {{ imgAlign == 'imageLeft' ? 'lg:-ml-48 border-l-8' : 'lg:-mr-48 border-r-8' }} border-primary z-10 bg-white dark:bg-dark-700">
+            {% if block.heading %}
+                <div class="text-xl font-bold mb-8">
+                    {{ block.heading }}
+                </div>
+            {% endif %}
+            <div>
+                {{ block.text|md }}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1645463498
+dateModified: 1645527862
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -320,6 +320,7 @@ meta:
     f2bd38f3-47f5-4e49-be18-fa89073255fd: Media # Media
     f6ff43e3-8e77-457f-91cb-101f517889c9: Teaser # Teaser
     f7b15040-ef01-4cf3-ab66-7facec8716bb: 'Hilfetext zu Matrix-Inhalten einfügen?' # Hilfetext zu Matrix-Inhalten einfügen?
+    f7d4d3ce-88ca-46e0-a39d-135eb2c82efd: Style # Style
     f7ec9fdc-29dc-438b-9776-556bb06dbca6: Text # Text
     f8e37e01-9b1e-40bc-8186-b7653efb4040: Titelbild-Höhe # Titelbild-Höhe
     f15bff68-e0e6-422d-a615-9e22d733e1f0: Global # Global

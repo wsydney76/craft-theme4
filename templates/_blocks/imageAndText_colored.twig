@@ -1,0 +1,29 @@
+{% from '_macros/lib.twig' import img %}
+
+{% set bgColor = block.imageBackgroundColor ?? 'light' %}
+{% set imgAlign = block.align.value ?? 'imageLeft' %}
+
+<div class="md:flex {{ imgAlign == 'imageRight' ? 'md:flex-row-reverse' }} ">
+
+    <div class="md:w-1/2 bg-{{ bgColor }} dark:bg-{{ bgColor }}-dark grid place-content-center p-16">
+        {% set image = block.image.one %}
+        {% if image %}
+            <div class="">
+                {{ img(image, {width: 250, height: 300}) }}
+            </div>
+        {% endif %}
+    </div>
+    <div class="md:w-1/2 grid place-content-center">
+        <div class="p-8 max-w-[600px]">
+            {% if block.heading %}
+                <div class="text-xl font-bold mb-8">
+                    {{ block.heading }}
+                </div>
+            {% endif %}
+            <div>
+                {{ block.text|md }}
+            </div>
+        </div>
+    </div>
+
+</div>

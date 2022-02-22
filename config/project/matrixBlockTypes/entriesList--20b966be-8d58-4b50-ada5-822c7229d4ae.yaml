@@ -26,7 +26,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   47f1b645-3900-4ecc-93d2-d2a218a0bf9a: # Limit
-    columnSuffix: sqbkcryf
+    columnSuffix: null
     contentColumnType: smallint(2)
     fieldGroup: null
     handle: limit
