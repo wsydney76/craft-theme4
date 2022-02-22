@@ -41,15 +41,6 @@ fieldLayouts:
             warning: null
             width: 25
           -
-            fieldUid: f7d4d3ce-88ca-46e0-a39d-135eb2c82efd # Style
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 25
-          -
             fieldUid: 842e6c06-cc3a-40c7-9fdb-13b911f9602b # Image Align
             instructions: null
             label: null
@@ -59,7 +50,25 @@ fieldLayouts:
             warning: null
             width: 25
           -
+            fieldUid: f7d4d3ce-88ca-46e0-a39d-135eb2c82efd # Style
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
             fieldUid: 8f7a501f-8f71-499e-925e-a2de6a443fd2 # Margins Y
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 2e7a2b78-1f15-4193-ab59-950736957ac4 # Aspect Ratio
             instructions: null
             label: null
             required: false
@@ -79,6 +88,19 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
+  2e7a2b78-1f15-4193-ab59-950736957ac4: # Aspect Ratio
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: aspectRatio
+    instructions: 'Style = Overlap'
+    name: 'Aspect Ratio'
+    searchable: false
+    settings:
+      defaultAspectRatio: '16:9'
+    translationKeyFormat: null
+    translationMethod: none
+    type: modules\main\fields\AspectRatioField
   8f7a501f-8f71-499e-925e-a2de6a443fd2: # Margins Y
     columnSuffix: null
     contentColumnType: string

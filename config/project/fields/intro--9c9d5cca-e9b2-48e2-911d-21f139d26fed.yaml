@@ -1,15 +1,15 @@
 columnSuffix: ljsesmqn
-contentColumnType: string
+contentColumnType: text
 fieldGroup: d868de82-ae37-4897-a6bb-ef08e919650b # Common
 handle: intro
 instructions: ''
 name: Intro
 searchable: true
 settings:
-  byteLimit: 255
+  byteLimit: null
   charLimit: null
   code: ''
-  columnType: string
+  columnType: text
   initialRows: '2'
   multiline: '1'
   placeholder: null

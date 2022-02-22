@@ -1,2 +1,2 @@
-{% set style = block.style ?? 'colored' %}
+{% set style = block.style.value ?? 'colored' %}
 {% include "_blocks/imageAndText_#{style}.twig" %}

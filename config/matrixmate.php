@@ -47,7 +47,7 @@ return [
                         ],
                         [
                             'label' => Craft::t('site', 'Layout'),
-                            'fields' => ['width', 'style', 'imageBackgroundColor', 'align', 'marginsY']
+                            'fields' => ['width', 'style', 'aspectRatio', 'imageBackgroundColor', 'align', 'marginsY']
                         ]
 
                     ]

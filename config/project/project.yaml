@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1645527862
+dateModified: 1645539050
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -37,6 +37,7 @@ meta:
     2c714018-e241-4b81-9797-7a0a8f643f76: 'Link Caption' # Link Caption
     2cf2c737-33d2-4b15-8933-7053b22d0020: Parameter # Parameter
     2d84778b-a47e-4b33-b8f4-852100a4faee: Titel # Titel
+    2e7a2b78-1f15-4193-ab59-950736957ac4: 'Aspect Ratio' # Aspect Ratio
     2e200cb6-ebde-4ae5-b6fe-3e9b7abd899f: Topics # Topics
     2f9f4c17-9e79-43b8-aec7-0a8353998ac8: Rahmen-Hintergrundfarbe # Rahmen-Hintergrundfarbe
     3ac8b547-8089-43db-b7de-39c79c658368: 'Audio Files' # Audio Files
