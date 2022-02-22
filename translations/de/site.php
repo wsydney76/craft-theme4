@@ -32,6 +32,7 @@ return [
     'authors' => 'autoren', // first segment of routing for author archive
     'Auto' => 'Automatisch',
     'Background color' => 'Hintergrundfarbe',
+    'Background Image' => 'Hintergrundbild',
     'Background' => 'Hintergrundfarbe',
     'Black' => 'Schwarz',
     'Border' => 'Rahmenfarbe',

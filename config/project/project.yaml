@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1645539050
+dateModified: 1645539267
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -123,6 +123,7 @@ meta:
     55f033c8-b2b2-4609-a364-a5fcfcbfb4f8: 'Content im Rahmen anzeigen' # Content im Rahmen anzeigen
     57d93092-ead9-4861-b888-be2853985a17: Gallery # Gallery
     57dba12d-3dba-4e01-a8e5-7ed1323f9c68: Span # Span
+    60a84778-fbac-4fcb-9adc-67569899fb55: 'Background Image' # Background Image
     060ad016-c0fb-4088-a96a-d98fbe5fbad6: Images # Images
     60d7202b-beaa-4319-83f3-33bcef815c6d: Style # Style
     60efd03a-2799-49bb-a669-0bf017471de0: Text # Text
