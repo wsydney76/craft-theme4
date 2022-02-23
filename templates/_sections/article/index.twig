@@ -1,12 +1,12 @@
 {% extends "_layouts/#{theme.layout}.twig" %}
 
 {% set themeOptions = {
-    showMeta: theme.titleStyle in ['coverBoxed','introImage']
+    showMeta: theme.titleStyle in ['coverBoxed','introImage','imageOverlapText']
 }%}
 
 {% block content %}
 
-    {% if theme.titleStyle not in ['coverBoxed','introImage'] %}
+    {% if theme.titleStyle not in ['coverBoxed','introImage','imageOverlapText'] %}
         {% include '_partials/entry_meta.twig' %}
     {% endif %}
 

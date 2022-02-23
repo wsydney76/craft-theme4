@@ -1,0 +1,21 @@
+{% if themeOptions.showMeta ?? false %}
+    <div class="mb-12 flex flex-col sm:flex-row sm:space-x-block text-base uppercase">
+        <div>
+            {{ entry.postDate|date('long') }}
+        </div>
+        <div class="border-b-2 border-primary-400 dark:border-primary-300">
+            <a class="!no-underline"
+               href="{{ siteUrl("#{'authors'|t}/#{entry.author.username}") }}">{{ 'by'|t }} {{ entry.author.fullName }}</a>
+        </div>
+        {% if entry.topics %}
+            {% set topics = entry.topics.all %}
+            {% if topics %}
+                {% for topic in topics %}
+                    <div class="border-b-2 border-primary-400 dark:border-primary-300">
+                        <a class="!no-underline" href="{{ topic.url }}">{{ topic.title }}</a>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endif %}
+    </div>
+{% endif %}
