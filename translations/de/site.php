@@ -196,6 +196,7 @@ return [
     'Username or Email' => 'Profilname oder E-Mail',
     'Username' => 'Profilname',
     'Video File' => 'Video-Datei',
+    'of' => 'von',
     'We are currently offline for maintenance' => 'Wir sind derzeit wegen Wartungsarbeiten offline',
     'We could not find anything here' => 'Wir konnten unter dieser URL nichts finden',
     'We created your account! Please check your email to verify your email address.' => 'Wir haben Ihr Konto erstellt! Bitte überprüfen Sie Ihre E-Mail, um Ihre E-Mail-Adresse zu verifizieren.',

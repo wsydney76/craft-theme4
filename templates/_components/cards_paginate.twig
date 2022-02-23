@@ -15,6 +15,13 @@
 {% set entries = sprigPageInfo.pageResults %}
 
 <div id="target" class=" {{ theme.stickyNavbar ? 'scroll-mt-24' }}">
+
+    {% if sprigPageInfo.totalPages > 1 %}
+        <div class="mb-4 font-semibold">
+            {{ 'Page'|t }} {{ sprigPageInfo.currentPage }} {{ 'of'|t }} {{ sprigPageInfo.totalPages }}
+        </div>
+    {% endif %}
+
     <div id="entries" class="flex flex-wrap">
         {% for entry in entries %}
             {% include '_layouts/embeds/card.twig' with {

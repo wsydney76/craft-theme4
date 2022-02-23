@@ -33,6 +33,7 @@ use craft\web\twig\variables\CraftVariable;
 use craft\web\twig\variables\Paginate;
 use craft\web\view;
 use putyourlightson\blitz\variables\BlitzVariable;
+use putyourlightson\sprig\variables\PaginateVariable;
 use spacecatninja\imagerx\models\LocalTransformedImageModel;
 use spacecatninja\imagerx\variables\ImagerVariable;
 use Spatie\SchemaOrg\Schema;
@@ -67,6 +68,7 @@ class FauxTwigExtension extends AbstractExtension implements GlobalsInterface
             'siteInfo' => new GlobalSet(),
             'blitz' => new BlitzVariable(),
             'pageInfo' => new Paginate(),
+            'sprigPageInfo' => new PaginateVariable(),
             'imager' => new ImagerVariable(),
             'transform' => new LocalTransformedImageModel(),
 

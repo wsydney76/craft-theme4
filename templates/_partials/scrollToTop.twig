@@ -10,6 +10,7 @@
     }" @scroll.window="scroll()">
 
     <button class="fixed px-4 py-2 z-50 {{ btnClasses }}"
+            style="display: none"
             x-show="show" x-transition
             @click="top()" title="Go to top" accesskey="t">
         {{ svg('@templates/_icons/chevron-up.svg') }}
