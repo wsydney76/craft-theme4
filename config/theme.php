@@ -21,8 +21,17 @@ return [
     // stickyNavbar only
     'showScrollIndicator' => true,
 
-    // coverFull (fullwidth only) coverContent coverBoxed fullText fullTextColor imageText textImage text introImage
+    // coverFull (fullwidth only) coverContent coverBoxed fullText fullTextColor imageText textImage text introImage imageOverlapText
     'titleStyle' => 'fullTextColor',
+
+    // Title Styles that show meta data in title area
+    'showMetaInTitleArea' => ['coverBoxed','introImage','imageOverlapText'],
+
+    // Title Styles that show intro text in title area
+    'showIntroInTitleArea' => ['introImage'],
+
+    // Title Styles that apply special styles to teaser
+    'applyTeaserStyles' => ['fullText','imageText','textImage','text','imageOverlapText'],
 
     // relative to width.full if cover...
     'titleImageHeight' => 650,

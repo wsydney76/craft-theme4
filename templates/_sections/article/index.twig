@@ -1,12 +1,12 @@
 {% extends "_layouts/#{theme.layout}.twig" %}
 
 {% set themeOptions = {
-    showMeta: theme.titleStyle in ['coverBoxed','introImage','imageOverlapText']
+    showMeta: theme.titleStyle in theme.showMetaInTitleArea
 }%}
 
 {% block content %}
 
-    {% if theme.titleStyle not in ['coverBoxed','introImage','imageOverlapText'] %}
+    {% if theme.titleStyle not in theme.showMetaInTitleArea %}
         {% include '_partials/entry_meta.twig' %}
     {% endif %}
 
@@ -16,7 +16,7 @@
 
     {{ parent() }}
 
-    {% if theme.titleStyle != 'introImage' %}
+    {% if theme.titleStyle not in theme.showIntroInTitleArea %}
         {% include '_partials/topics.twig' with {query: entry.topics} %}
     {% endif %}
 

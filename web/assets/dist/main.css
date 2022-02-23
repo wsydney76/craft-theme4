@@ -940,6 +940,10 @@ a.btn{
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
 }
+.mx-block{
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
 .mt-block{
   margin-top: 2rem;
 }
@@ -1458,6 +1462,9 @@ a.btn{
 }
 .border-b{
   border-bottom-width: 1px;
+}
+.border-t-8{
+  border-top-width: 8px;
 }
 .border-light{
   --tw-border-opacity: 1;
@@ -2230,6 +2237,9 @@ a.btn{
 .opacity-95{
   opacity: 0.95;
 }
+.opacity-\[\.99\]{
+  opacity: .99;
+}
 .shadow-lg{
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
@@ -2912,6 +2922,9 @@ a.btn{
   }
   .lg\:-mr-48{
     margin-right: -12rem;
+  }
+  .lg\:-mt-20{
+    margin-top: -5rem;
   }
   .lg\:block{
     display: block;
