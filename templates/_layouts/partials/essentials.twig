@@ -29,15 +29,6 @@
 {% endif %}
 
 {% html %}
-
-    <div x-data class="fixed inset-0 flex justify-center items-center bg-black/60 z-50 w-screen h-screen"
-         x-show="$store.modalOpen"
-         @click="$store.modalOpen = false"
-         x-transition.opacity.duration.400ms>
-        <div id="modalDialog">
-
-        </div>
-    </div>
     <script src="{{ rev('main.js') }}"></script>
 {% endhtml %}
 

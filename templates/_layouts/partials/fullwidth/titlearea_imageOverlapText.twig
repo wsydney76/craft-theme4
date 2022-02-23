@@ -1,0 +1,13 @@
+<header class="mt-8 mb-12">
+    <div class="container-{{ theme.headerWidth }} z-10">
+        {{ titleImageHtml|raw }}
+    </div>
+    <div class="mx-block  mx-auto">
+        <div class="container-{{ theme.titleWidth }} lg:-mt-20 opacity-[.99] border-t-8 border-primary p-block z-20 bg-title-bg dark:bg-title-bg-dark text-title-text dark:text-title-text-dark">
+
+            {% include '_layouts/partials/fullwidth/includes/meta.twig' %}
+
+            {{ titleHtml|raw }}
+        </div>
+    </div>
+</header>
