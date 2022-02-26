@@ -1,5 +1,5 @@
 {
-  "version": "3.2.1",
+  "version": "3.2.2",
   "require": {
     "clubstudioltd/craft-asset-rev": "^6.0",
     "craftcms/cms": "3.7.33",
@@ -26,7 +26,7 @@
     "sort-packages": true,
     "optimize-autoloader": true,
     "platform": {
-      "php": "8.0"
+      "php": "8.0.2"
     },
     "allow-plugins": {
       "yiisoft/yii2-composer": true,
