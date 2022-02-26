@@ -53,7 +53,7 @@ return [
     'pageWidth' => 'lg',
 
     // breakpoint for default/mobile menu can be always (always show hamburger menu) / never (never show hamburger menu)
-    'mobileBreakpoint' => 'sm',
+    'mobileBreakpoint' => 'md',
 
     'defaultBlockWidth' => 'lg',
 
@@ -126,7 +126,7 @@ return [
     // titleStyle = introImage
     'introImageTransform' => ['width' => 640],
 
-    'entriesPerIndexPage' => 6,
+    'entriesPerIndexPage' => 12,
     'entriesInSearchResults' => 6,
 
     'cookieConsent' => true,

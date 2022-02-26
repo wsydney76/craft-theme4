@@ -17,8 +17,10 @@
 
      x-effect="setTheme(theme)">
 
-    <select id="darkModeSelector" class="h-10 bg-footer-bg dark:bg-footer-bg-dark text-footer-text dark:text-footer-text-dark text-sm" x-model="theme">
-        <option value="media">{{ 'System color mode'|t }}</option>
+    <select id="darkModeSelector"
+            class="h-10 border border-border dark:border-border-dark bg-footer-bg dark:bg-footer-bg-dark text-footer-text dark:text-footer-text-dark text-sm focus:ring-border focus:border-border dark:focus:ring-offset-2"
+            x-model="theme">
+        <option class="hover:bg-primary" value="media">{{ 'System color mode'|t }}</option>
         <option value="light">{{ 'Light color mode'|t }}</option>
         <option value="dark">{{ 'Dark color mode'|t }}</option>
     </select>
