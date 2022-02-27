@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a0f830db94c363d94bb46ad0637615be",
+    "content-hash": "111c8269fa769b31f832db3a4f2df336",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -805,16 +805,16 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.7.33",
+            "version": "3.7.34",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/cms.git",
-                "reference": "06933a80b3b1cfd32555c4a13dd9186aaf309404"
+                "reference": "5176602f4ad33769dcee05ccafc0d4d8b894f80a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/06933a80b3b1cfd32555c4a13dd9186aaf309404",
-                "reference": "06933a80b3b1cfd32555c4a13dd9186aaf309404",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/5176602f4ad33769dcee05ccafc0d4d8b894f80a",
+                "reference": "5176602f4ad33769dcee05ccafc0d4d8b894f80a",
                 "shasum": ""
             },
             "require": {
@@ -910,7 +910,7 @@
                 "rss": "https://github.com/craftcms/cms/releases.atom",
                 "source": "https://github.com/craftcms/cms"
             },
-            "time": "2022-02-15T18:04:11+00:00"
+            "time": "2022-02-22T18:34:09+00:00"
         },
         {
             "name": "craftcms/html-field",
@@ -1068,16 +1068,16 @@
         },
         {
             "name": "craftcms/redactor",
-            "version": "2.10.3",
+            "version": "2.10.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/redactor.git",
-                "reference": "d77630362e415ee95cbf7aa95b746bbfe8c30232"
+                "reference": "b4d5d8e9b034e8f0018c560505022d0b8f5750ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/redactor/zipball/d77630362e415ee95cbf7aa95b746bbfe8c30232",
-                "reference": "d77630362e415ee95cbf7aa95b746bbfe8c30232",
+                "url": "https://api.github.com/repos/craftcms/redactor/zipball/b4d5d8e9b034e8f0018c560505022d0b8f5750ce",
+                "reference": "b4d5d8e9b034e8f0018c560505022d0b8f5750ce",
                 "shasum": ""
             },
             "require": {
@@ -1123,7 +1123,7 @@
                 "rss": "https://github.com/craftcms/redactor/commits/v2.atom",
                 "source": "https://github.com/craftcms/redactor"
             },
-            "time": "2022-02-18T07:29:48+00:00"
+            "time": "2022-02-25T08:14:08+00:00"
         },
         {
             "name": "craftcms/server-check",
@@ -3482,12 +3482,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Opis\\Closure\\": "src/"
-                },
                 "files": [
                     "functions.php"
-                ]
+                ],
+                "psr-4": {
+                    "Opis\\Closure\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -4179,22 +4179,22 @@
         },
         {
             "name": "putyourlightson/craft-sprig",
-            "version": "1.11.0",
+            "version": "1.11.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/putyourlightson/craft-sprig.git",
-                "reference": "90fbaacba0daacb88956e6b8ef7dfa50e037eaff"
+                "reference": "614fb4d71146e79db0e5fb9460ed6c1f73568327"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-sprig/zipball/90fbaacba0daacb88956e6b8ef7dfa50e037eaff",
-                "reference": "90fbaacba0daacb88956e6b8ef7dfa50e037eaff",
+                "url": "https://api.github.com/repos/putyourlightson/craft-sprig/zipball/614fb4d71146e79db0e5fb9460ed6c1f73568327",
+                "reference": "614fb4d71146e79db0e5fb9460ed6c1f73568327",
                 "shasum": ""
             },
             "require": {
                 "craftcms/cms": "^3.3.0",
                 "phpdocumentor/reflection-docblock": "^5.2.0",
-                "putyourlightson/craft-sprig-core": "^1.2.0"
+                "putyourlightson/craft-sprig-core": "^1.2.1"
             },
             "type": "craft-plugin",
             "extra": {
@@ -4228,7 +4228,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-02-01T21:50:37+00:00"
+            "time": "2022-02-22T20:56:07+00:00"
         },
         {
             "name": "putyourlightson/craft-sprig-core",

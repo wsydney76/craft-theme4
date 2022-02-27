@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.0
+
+* Added Reverse relations field (Proof of concept)
+
 ## 3.2.1 2020-02-23
 
 * Added 'introImage' and 'imageOverlapText' title styles
