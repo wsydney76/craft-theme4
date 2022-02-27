@@ -9,6 +9,7 @@ use craft\events\DefineBehaviorsEvent;
 use craft\events\DefineRulesEvent;
 use craft\events\ModelEvent;
 use craft\events\RegisterComponentTypesEvent;
+use craft\events\RegisterTemplateRootsEvent;
 use craft\services\Fields;
 use craft\web\View;
 use modules\main\behaviors\EntryBehavior;
@@ -16,6 +17,7 @@ use modules\main\fields\AspectRatioField;
 use modules\main\fields\IncludeField;
 use modules\main\fields\MarginsYField;
 use modules\main\fields\OrderByField;
+use modules\main\fields\ReverseRelationField;
 use modules\main\fields\SectionsField;
 use modules\main\fields\ThemeColorField;
 use modules\main\fields\WidthField;
@@ -72,6 +74,7 @@ class MainModule extends Module
             $event->types[] = SectionsField::class;
             $event->types[] = OrderByField::class;
             $event->types[] = AspectRatioField::class;
+            $event->types[] = ReverseRelationField::class;
         });
 
         // Register Twig extension for theme variable
@@ -87,6 +90,12 @@ class MainModule extends Module
             );
         }
 
+        // Register Templates directory
+        Event::on(
+            View::class,
+            View::EVENT_REGISTER_CP_TEMPLATE_ROOTS, function(RegisterTemplateRootsEvent $e) {
+            $e->roots['main'] = $this->getBasePath() . DIRECTORY_SEPARATOR . 'templates';
+        });
 
         // Validate entries on all sites (fixes open Craft bug)
         Event::on(
