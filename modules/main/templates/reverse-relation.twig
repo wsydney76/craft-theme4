@@ -1,15 +1,6 @@
-{% set section = craft.app.sections.sectionByHandle(section) %}
-{% set types = section.getEntryTypes() %}
-{% if type %}
-    {% set type = types|filter(t => t.handle == type)[0] %}
-{% else %}
-    {% set type = types[0] %}
-{% endif %}
-
-
 {% set entries = craft.entries
     .siteId(element.siteId)
-    .relatedTo({targetElement: element, field: field})
+    .relatedTo({targetElement: element, field: field.handle})
     .orderBy(orderBy)
 .all %}
 
@@ -29,17 +20,12 @@
 <button class="btn dashed add icon"
         style="margin-top:24px"
         type="button"
-        onclick="createRelatedEntry({{ element.siteId }}, {{ section.id }}, {{ type.id }}, {{ element.canonicalId }}, {{ currentUser.id }})">
+        onclick="createRelatedEntry({{ element.siteId }}, {{ section.id }}, {{ type.id }}, '{{ field.handle }}', {{ element.canonicalId }}, {{ currentUser.id }})">
     {{ caption|t }}
 </button>
 
-{# Use separate js block to avoid messing up code formatting by PhpStorm #}
 {% js %}
-field = '{{ field }}'
-{% endjs %}
-
-{% js %}
-function createRelatedEntry(siteId, sectionId, typeId, eventId, authorId) {
+function createRelatedEntry(siteId, sectionId, typeId, field, entryId, authorId) {
     Craft.createElementEditor('craft\\elements\\Entry', {
         siteId: siteId,
         attributes: {
@@ -47,7 +33,7 @@ function createRelatedEntry(siteId, sectionId, typeId, eventId, authorId) {
             typeId: typeId,
             authorId: authorId,
             enabled: 1,
-            [field]: [eventId]
+            [field]: [entryId]
         },
         onHideHud: () => {
             location.reload()

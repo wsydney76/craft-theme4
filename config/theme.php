@@ -10,6 +10,9 @@ return [
     // fullwidth frame sidebar
     'layout' => 'fullwidth',
 
+    // layout = frame only (global/entry/none)
+    'hasBackgroundImage' => 'entry',
+
     // end start rowLeft rowCenter
     'headerStyle' => 'end',
 

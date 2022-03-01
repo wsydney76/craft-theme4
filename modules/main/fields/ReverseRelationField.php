@@ -5,17 +5,21 @@ namespace modules\main\fields;
 use Craft;
 use craft\base\ElementInterface;
 use craft\base\Field;
+use craft\errors\EntryTypeNotFoundException;
+use craft\errors\InvalidFieldException;
+use craft\errors\SectionNotFoundException;
 use craft\fields\Entries;
 use craft\helpers\ArrayHelper;
 use craft\helpers\Cp;
-use craft\models\EntryType;
-use craft\models\FieldLayout;
 use craft\models\Section;
+use yii\base\InvalidConfigException;
+use function explode;
 
 /**
+ * Handle relationships on the target side
+ *
  * TODOS:
  * - Allow multiple sections/types
- * - Use (dynamic) select fields instead of plaintext for section/type/field
  * - hide on fresh entries
  * - open existing related entries in slideout, remove relationship like in relation fields
  * - refresh entries list via ajax after a new entry was created
@@ -24,14 +28,13 @@ use craft\models\Section;
  */
 class ReverseRelationField extends Field
 {
+    /**
+     * @var string section-uid/entrytype-uid/field-uid
+     */
+    public string $source = '';
 
     public string $caption = 'Create new';
-    public string $field = '';
     public string $orderBy = 'title';
-    public string $section = '';
-    public string $type = '';
-
-    private FieldLayout|null $fieldLayout = null;
 
     /**
      * @inheritDoc
@@ -60,73 +63,12 @@ class ReverseRelationField extends Field
     /**
      * @inheritdoc
      */
-    public static function supportedTranslationMethods(): array
-    {
-        // Don't ever automatically propagate values to other sites.
-        return [
-            self::TRANSLATION_METHOD_NONE,
-        ];
-    }
-
     public function rules(): array
     {
         $rules = parent::rules();
-        $rules[] = [['section', 'caption', 'field'], 'required'];
-        $rules[] = ['section', 'checkSection'];
-        $rules[] = ['field', 'checkField'];
+        $rules[] = [['source', 'caption'], 'required'];
 
         return $rules;
-    }
-
-    public function checkField(): void
-    {
-        $field = Craft::$app->fields->getFieldByHandle($this->field);
-        if (!$field) {
-            $this->addError('field', 'Invalid field handle');
-            return;
-        }
-        if (!$field instanceof Entries) {
-            $this->addError('field', 'Field is not an entries field');
-        }
-
-        if (!$this->fieldLayout) {
-            return;
-        }
-
-        $fields = $this->fieldLayout->getFields();
-        $found = ArrayHelper::firstWhere($fields, 'handle', $this->field);
-        if (!$found) {
-            $this->addError('field', 'Field is not part of the field layout');
-        }
-    }
-
-    public function checkSection(): void
-    {
-        $section = Craft::$app->sections->getSectionByHandle($this->section);
-        if (!$section) {
-            $this->addError('section', 'Invalid section handle');
-            return;
-        }
-
-        if ($section->type == Section::TYPE_SINGLE) {
-            $this->addError('section', 'Section cannot be a single');
-            return;
-        }
-
-        $types = $section->getEntryTypes();
-        /** @var EntryType $type */
-
-        if ($this->type) {
-            $type = ArrayHelper::firstWhere($types, 'handle', $this->type);
-            if (!$type) {
-                $this->addError('type', 'Invalid type handle');
-                return;
-            }
-        } else {
-            $type = $types[0];
-        }
-
-        $this->fieldLayout = $type->fieldLayout;
     }
 
     /**
@@ -135,45 +77,52 @@ class ReverseRelationField extends Field
     public function getInputHtml($value, ElementInterface $element = null): string
     {
 
+        $uids = explode('/', $this->source);
+        if (count($uids) != 3) {
+            throw new InvalidConfigException('Source config is not in the format sectionUid/typeUid/fieldUid');
+        }
+
+        $section = Craft::$app->sections->getSectionByUid($uids[0]);
+        if (!$section) {
+            throw new SectionNotFoundException("Section with uid:$uids[0] not found");
+        }
+
+        $types = $section->getEntryTypes();
+        $type = ArrayHelper::firstWhere($types, 'uid', $uids[1]);
+        if (!$type) {
+            throw new EntryTypeNotFoundException("Type with uid:$uids[1] not found");
+        }
+
+        $field = Craft::$app->fields->getFieldByUid($uids[2]);
+        if (!$field) {
+            throw new InvalidFieldException("Field with uid:$uids[2] not found");
+        }
+
         return Craft::$app->view->renderTemplate('main/reverse-relation.twig', [
             'element' => $element,
-            'section' => $this->section,
-            'type' => $this->type,
-            'field' => $this->field,
+            'section' => $section,
+            'type' => $type,
+            'field' => $field,
             'caption' => $this->caption,
             'orderBy' => $this->orderBy,
         ]);
     }
 
-    /** @inheritdoc */
+    /**
+     * @inheritdoc
+     * @throws InvalidConfigException
+     */
     public function getSettingsHtml(): ?string
     {
-        return Cp::textFieldHtml([
-                'label' => 'Section handle',
-                'id' => 'section',
-                'name' => 'section',
-                'value' => $this->section,
+        return Cp::selectFieldHtml([
+                'label' => 'Relationship Source',
+                'id' => 'source',
+                'name' => 'source',
+                'value' => $this->source,
                 'required' => true,
-                'size' => 30,
-                'errors' => $this->getErrors('section'),
-            ]) .
-            Cp::textFieldHtml([
-                'label' => 'Type handle',
-                'id' => 'type',
-                'name' => 'type',
-                'value' => $this->type,
-                'size' => 30,
-                'instructions' => 'Leave blank to use the first type of the section',
-                'errors' => $this->getErrors('type'),
-            ]) .
-            Cp::textFieldHtml([
-                'label' => 'Field handle',
-                'id' => 'field',
-                'name' => 'field',
-                'value' => $this->field,
-                'required' => true,
-                'size' => 30,
-                'errors' => $this->getErrors('field'),
+                'instructions' => 'Handle relations from this source, having the currently edited entry as a target',
+                'options' => $this->_getSourceOptions(),
+                'errors' => $this->getErrors('source'),
             ]) .
             Cp::textFieldHtml([
                 'label' => 'Order By',
@@ -193,5 +142,35 @@ class ReverseRelationField extends Field
                 'size' => 30,
                 'errors' => $this->getErrors('caption'),
             ]);
+    }
+
+    /**
+     * @return array
+     * @throws \yii\base\InvalidConfigException
+     */
+    protected function _getSourceOptions(): array
+    {
+        $options = [];
+
+        $sections = Craft::$app->sections->getAllSections();
+        foreach ($sections as $section) {
+            if ($section->type == Section::TYPE_SINGLE) {
+                continue;
+            }
+            $types = $section->getEntryTypes();
+            foreach ($types as $type) {
+                $fields = $type->getFieldLayout()->getFields();
+                foreach ($fields as $field) {
+                    if ($field instanceof Entries) {
+                        $options[] = [
+                            'label' => "Section: $section->name ($type->name) -> Field: $field->name",
+                            'value' => "$section->uid/$type->uid/$field->uid"
+                        ];
+                    }
+                }
+            }
+        }
+
+        return $options;
     }
 }
