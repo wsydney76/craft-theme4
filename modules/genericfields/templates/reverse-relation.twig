@@ -1,15 +1,6 @@
-{% set entries = craft.entries
-    .siteId(element.siteId)
-    .relatedTo({targetElement: element, field: field.handle})
-    .orderBy(orderBy)
-.all %}
-
-
-{% for entry in entries %}
-    <div style="margin-bottom: 12px">
-        <a class="go" href="{{ entry.cpEditUrl }}" target="_blank">{{ entry.title }}</a>
-    </div>
-{% endfor %}
+<div id="{{ htmlId }}">
+    {% include 'genericfields/reverse-relation-entries-list.twig' with {element, field: field.handle, orderBy: 'orderBy', titleTemplate} only %}
+</div>
 
 {# <a class="btn submit add icon"
    style="margin-top:48px"
@@ -36,8 +27,55 @@ function createRelatedEntry(siteId, sectionId, typeId, field, entryId, authorId)
             [field]: [entryId]
         },
         onHideHud: () => {
-            location.reload()
+            refreshRelatedEntriesList()
         },
     })
+}
+
+function removeEntry(sourceId, targetId, siteId, field) {
+    if (!confirm('Remove relationship?')) {
+        return
+    }
+
+    element = {
+        sourceId: sourceId,
+        targetId: targetId,
+        siteId: siteId,
+        field: field
+    }
+
+    Craft.sendActionRequest('POST', 'genericfields/elements/remove-relationship', {
+        data: element,
+    }).then(ev => {
+        console.log(ev)
+        if (ev.data.success) {
+            Craft.cp.displayNotice('Relationship removed');
+            refreshRelatedEntriesList(targetId, siteId, field)
+        }
+
+    });
+
+}
+
+function _refreshRelatedEntriesList(elementId, siteId, field, orderBy, titleTemplate, htmlId) {
+    Craft.sendActionRequest('POST', 'genericfields/elements/get-related-entries-list-html', {
+        data: {
+            elementId: elementId,
+            siteId: siteId,
+            field: field,
+            orderBy: orderBy,
+            titleTemplate: titleTemplate
+        },
+    }).then(ev => {
+        console.log(ev)
+        document.getElementById('fields-' + htmlId).innerHTML = ev.data
+    });
+}
+
+{% endjs %}
+
+{% js %}
+function refreshRelatedEntriesList() {
+    _refreshRelatedEntriesList({{ element.id }}, {{ element.siteId }}, '{{ field.handle }}', '{{ orderBy }}', '{{ titleTemplate }}', '{{ htmlId }}')
 }
 {% endjs %}

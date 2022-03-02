@@ -9,6 +9,7 @@ settings:
   caption: 'Create article'
   orderBy: 'postDate desc'
   source: 6087074e-26c7-4216-b6b3-86fbe41e437f/caf9cc3a-a0d0-4c7c-8179-884546f91ac5/2e200cb6-ebde-4ae5-b6fe-3e9b7abd899f # Topics # Article # Standard
+  titleTemplate: _cp/related_articles_titles.twig
 translationKeyFormat: null
 translationMethod: none
-type:  modules\genericfields\fields\ReverseRelationField
+type: modules\genericfields\fields\ReverseRelationField

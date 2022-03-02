@@ -14,6 +14,7 @@ use craft\helpers\Cp;
 use craft\models\Section;
 use yii\base\InvalidConfigException;
 use function explode;
+use function strtolower;
 
 /**
  * Handle relationships on the target side
@@ -35,6 +36,7 @@ class ReverseRelationField extends Field
 
     public string $caption = 'Create new';
     public string $orderBy = 'title';
+    public string $titleTemplate = '';
 
     /**
      * @inheritDoc
@@ -105,6 +107,8 @@ class ReverseRelationField extends Field
             'field' => $field,
             'caption' => $this->caption,
             'orderBy' => $this->orderBy,
+            'titleTemplate' => $this->titleTemplate,
+            'htmlId' => strtolower("reverse-relation-list-$this->handle")
         ]);
     }
 
@@ -141,6 +145,14 @@ class ReverseRelationField extends Field
                 'required' => true,
                 'size' => 30,
                 'errors' => $this->getErrors('caption'),
+            ]) .
+            Cp::textFieldHtml([
+                'label' => 'Title Template',
+                'id' => 'title-template',
+                'name' => 'titleTemplate',
+                'value' => $this->titleTemplate,
+                'size' => 30,
+                'errors' => $this->getErrors('titleTemplate'),
             ]);
     }
 

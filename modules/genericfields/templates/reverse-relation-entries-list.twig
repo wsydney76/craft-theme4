@@ -1,0 +1,23 @@
+{% set entries = craft.entries
+    .siteId(element.siteId)
+    .relatedTo({targetElement: element, field: field})
+    .orderBy(orderBy)
+.all %}
+{% for entry in entries %}
+    <div>
+        <div class="element small removable hasstatus">
+            <button onclick="removeEntry({{ entry.id }}, {{ element.canonicalId }}, {{ element.siteId }}, '{{ field }}')"
+                    type="button" class="delete icon" title="Remove" aria-label="Remove {{ entry.title }}"></button>
+            <span class="status {{ entry.enabled ? 'enabled' : 'disabled' }}"></span>
+            <div class="label">
+                <a class="go" href="{{ entry.cpEditUrl }}" target="_blank">
+                    {% if titleTemplate %}
+                        {{ view.renderTemplate(titleTemplate, {element: entry}, 'site')|raw }}
+                    {% else %}
+                        {{ entry.title }}
+                    {% endif %}
+                </a>
+            </div>
+        </div>
+    </div>
+{% endfor %}
