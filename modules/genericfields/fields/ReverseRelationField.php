@@ -101,14 +101,18 @@ class ReverseRelationField extends Field
         }
 
         return Craft::$app->view->renderTemplate('genericfields/reverse-relation.twig', [
-            'element' => $element,
-            'section' => $section,
-            'type' => $type,
-            'field' => $field,
-            'caption' => $this->caption,
-            'orderBy' => $this->orderBy,
-            'titleTemplate' => $this->titleTemplate,
-            'htmlId' => strtolower("reverse-relation-list-$this->handle")
+            'props' => [
+                'elementId' => $element->canonicalId,
+                'siteId' => $element->siteId,
+                'sectionId' => (int)$section->id,
+                'typeId' => (int)$type->id,
+                'userId' => Craft::$app->user->identity->id,
+                'fieldHandle' => $field->handle,
+                'caption' => $this->caption,
+                'orderBy' => $this->orderBy,
+                'titleTemplate' => $this->titleTemplate,
+                'htmlId' => strtolower("reverse-relation-list-$this->handle")
+            ]
         ]);
     }
 

@@ -7,6 +7,7 @@ use craft\base\Element;
 use craft\base\ElementInterface;
 use craft\elements\Entry;
 use craft\helpers\ElementHelper;
+use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
 use yii\web\Response;
 use yii\web\ServerErrorHttpException;
@@ -43,6 +44,7 @@ class ElementsController extends \craft\controllers\ElementsController
 
     public function actionRemoveRelationship(): Response
     {
+
         $data = $this->request->getBodyParams();
 
         $element = Entry::find()->id($data['sourceId'])->siteId($data['siteId'])->status(null)->one();
@@ -50,37 +52,61 @@ class ElementsController extends \craft\controllers\ElementsController
             throw new NotFoundHttpException();
         }
 
-        $ids = $element->getFieldValue($data['field'])->ids();
-
-        if (($key = array_search($data['targetId'], $ids)) !== false) {
-            unset($ids[$key]);
+        if (!$element->getIsEditable()) {
+            throw new ForbiddenHttpException();
         }
 
-        $element->setFieldValue($data['field'], $ids);
+        $msg = [
+            'remove-relationship' => 'Relationship removed',
+            'disable-entry' => 'Entry disabled',
+            'enable-entry' => 'Entry enabled',
+            'delete-entry' => 'Entry deleted'
 
-        $element->scenario = Element::SCENARIO_ESSENTIALS;
-        if (!Craft::$app->elements->saveElement($element)) {
-            throw new ServerErrorHttpException(sprintf('Unable to save entry: %s', implode(', ', $element->getErrorSummary(true))));
+        ];
+
+        if ($data['action'] == 'remove-relationship') {
+            $ids = $element->getFieldValue($data['field'])->ids();
+            if (($key = array_search($data['targetId'], $ids)) !== false) {
+                unset($ids[$key]);
+            }
+            $element->setFieldValue($data['field'], $ids);
         }
 
-        return $this->asJson(['success' => true]);
+        if($data['action'] == 'disable-entry') {
+            $element->enabled = false;
+        }
+
+        if($data['action'] == 'enable-entry') {
+            $element->enabled = true;
+        }
+
+        if($data['action'] == 'delete-entry') {
+            if (!Craft::$app->elements->deleteElement($element)) {
+                throw new ServerErrorHttpException('Unable to delete entry');
+            }
+        } else {
+            $element->scenario = Element::SCENARIO_ESSENTIALS;
+            if (!Craft::$app->elements->saveElement($element)) {
+                throw new ServerErrorHttpException(sprintf('Unable to save entry: %s', implode(', ', $element->getErrorSummary(true))));
+            }
+        }
+
+        return $this->asJson(['success' => true, 'msg' => $msg[$data['action']]]);
     }
 
     public function actionGetRelatedEntriesListHtml()
     {
 
         $data = $this->request->getBodyParams();
+        $props = $data['props'];
 
-        $element = Entry::find()->id($data['elementId'])->siteId($data['siteId'])->status(null)->one();
+        $element = Entry::find()->id($props['elementId'])->siteId($props['siteId'])->status(null)->one();
         if (!$element) {
             throw new NotFoundHttpException();
         }
 
         return $this->view->renderTemplate('genericfields/reverse-relation-entries-list', [
-            'element' => $element,
-            'field' => $data['field'],
-            'orderBy' => $data['orderBy'],
-            'titleTemplate' => $data['titleTemplate']
+            'props' => $props
         ]);
 
     }

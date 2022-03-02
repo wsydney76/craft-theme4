@@ -1,5 +1,5 @@
-<div id="{{ htmlId }}">
-    {% include 'genericfields/reverse-relation-entries-list.twig' with {element, field: field.handle, orderBy: 'orderBy', titleTemplate} only %}
+<div id="{{ props.htmlId }}">
+    {% include 'genericfields/reverse-relation-entries-list.twig' with {props} only %}
 </div>
 
 {# <a class="btn submit add icon"
@@ -11,37 +11,41 @@
 <button class="btn dashed add icon"
         style="margin-top:24px"
         type="button"
-        onclick="createRelatedEntry({{ element.siteId }}, {{ section.id }}, {{ type.id }}, '{{ field.handle }}', {{ element.canonicalId }}, {{ currentUser.id }})">
-    {{ caption|t }}
+        onclick="createRelatedEntry({{ props|json_encode }})">
+    {{ props.caption|t }}
 </button>
 
 {% js %}
-function createRelatedEntry(siteId, sectionId, typeId, field, entryId, authorId) {
+function createRelatedEntry(props) {
+
+    console.log(props)
+
     Craft.createElementEditor('craft\\elements\\Entry', {
-        siteId: siteId,
+        siteId: props.siteId,
         attributes: {
-            sectionId: sectionId,
-            typeId: typeId,
-            authorId: authorId,
+            sectionId: props.sectionId,
+            typeId: props.typeId,
+            authorId: props.userId,
             enabled: 1,
-            [field]: [entryId]
+            [props.fieldHandle]: [props.elementId]
         },
         onHideHud: () => {
-            refreshRelatedEntriesList()
+            refreshRelatedEntriesList(props)
         },
     })
 }
 
-function removeEntry(sourceId, targetId, siteId, field) {
-    if (!confirm('Remove relationship?')) {
+function removeEntry(sourceId, action, props) {
+    if (!confirm('Proceed with this action? ' + action)) {
         return
     }
 
     element = {
+        action: action,
         sourceId: sourceId,
-        targetId: targetId,
-        siteId: siteId,
-        field: field
+        targetId: props.elementId,
+        siteId: props.siteId,
+        field: props.fieldHandle
     }
 
     Craft.sendActionRequest('POST', 'genericfields/elements/remove-relationship', {
@@ -49,33 +53,23 @@ function removeEntry(sourceId, targetId, siteId, field) {
     }).then(ev => {
         console.log(ev)
         if (ev.data.success) {
-            Craft.cp.displayNotice('Relationship removed');
-            refreshRelatedEntriesList(targetId, siteId, field)
+            Craft.cp.displayNotice(ev.data.msg);
+            refreshRelatedEntriesList(props)
         }
 
     });
 
 }
 
-function _refreshRelatedEntriesList(elementId, siteId, field, orderBy, titleTemplate, htmlId) {
+function refreshRelatedEntriesList(props) {
     Craft.sendActionRequest('POST', 'genericfields/elements/get-related-entries-list-html', {
         data: {
-            elementId: elementId,
-            siteId: siteId,
-            field: field,
-            orderBy: orderBy,
-            titleTemplate: titleTemplate
+            props: props
         },
     }).then(ev => {
         console.log(ev)
-        document.getElementById('fields-' + htmlId).innerHTML = ev.data
+        document.getElementById('fields-' + props.htmlId).innerHTML = ev.data
     });
 }
-
 {% endjs %}
 
-{% js %}
-function refreshRelatedEntriesList() {
-    _refreshRelatedEntriesList({{ element.id }}, {{ element.siteId }}, '{{ field.handle }}', '{{ orderBy }}', '{{ titleTemplate }}', '{{ htmlId }}')
-}
-{% endjs %}
