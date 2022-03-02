@@ -18,6 +18,7 @@
  */
 
 use config\Env;
+use modules\genericfields\GenericFieldsModule;
 use modules\guide\GuideModule;
 use modules\main\MainModule;
 
@@ -26,8 +27,10 @@ return [
     'modules' => [
         'main' => MainModule::class,
         'guide' => GuideModule::class,
+        'genericfields' => GenericFieldsModule::class,
     ],
     'bootstrap' => [
         'main',
-        'guide']
+        'guide',
+        'genericfields']
 ];

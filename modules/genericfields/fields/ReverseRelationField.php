@@ -1,6 +1,6 @@
 <?php
 
-namespace modules\main\fields;
+namespace modules\genericfields\fields;
 
 use Craft;
 use craft\base\ElementInterface;
@@ -98,7 +98,7 @@ class ReverseRelationField extends Field
             throw new InvalidFieldException("Field with uid:$uids[2] not found");
         }
 
-        return Craft::$app->view->renderTemplate('main/reverse-relation.twig', [
+        return Craft::$app->view->renderTemplate('genericfields/reverse-relation.twig', [
             'element' => $element,
             'section' => $section,
             'type' => $type,
