@@ -21,9 +21,6 @@ class AspectRatioField extends Field
         return 'Aspect Ratio';
     }
 
-    /**
-     * @return string|null
-     */
     public function getHandle(): ?string
     {
         return $this->handle;

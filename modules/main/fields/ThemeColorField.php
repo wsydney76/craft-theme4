@@ -20,9 +20,6 @@ class ThemeColorField extends Field
         return 'Theme Color';
     }
 
-    /**
-     * @return string|null
-     */
     public function getHandle(): ?string
     {
         return $this->handle;

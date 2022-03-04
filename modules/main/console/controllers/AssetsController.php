@@ -61,7 +61,6 @@ class AssetsController extends Controller
 
     /**
      * @param $path
-     * @return array
      */
     private function _getTransFormDirs($path): array
     {
@@ -69,7 +68,7 @@ class AssetsController extends Controller
 
         $dirs = [];
         foreach ($rii as $dir) {
-            if ($dir->isDir() && strpos($dir->getPathname(), DIRECTORY_SEPARATOR . '_') &&
+            if ($dir->isDir() && strpos($dir->getPathname(), (string) (DIRECTORY_SEPARATOR . '_')) &&
                 !strpos($dir->getPathname(), '..')) {
                 $dirs[] = $dir->getPathname();
             }

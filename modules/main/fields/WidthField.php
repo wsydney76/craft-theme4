@@ -26,9 +26,6 @@ class WidthField extends Field
         return 'Width';
     }
 
-    /**
-     * @return string|null
-     */
     public function getHandle(): ?string
     {
         return $this->handle;

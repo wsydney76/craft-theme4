@@ -12,10 +12,9 @@ class ContentController extends Controller
     /**
      * Requires 'generateTransformsBeforePageLoad' => true
      *
-     * @return \craft\web\Response|string|\yii\console\Response
      * @throws \yii\web\BadRequestHttpException
      */
-    public function actionPrivateImage()
+    public function actionPrivateImage(): \craft\web\Response|string|\yii\console\Response
     {
         $path = Craft::$app->request->getRequiredParam('path');
 

@@ -28,9 +28,6 @@ class IncludeField extends Field
         return 'Include Template';
     }
 
-    /**
-     * @return string|null
-     */
     public function getHandle(): ?string
     {
         return $this->handle;
@@ -94,7 +91,7 @@ class IncludeField extends Field
                     $options[] = ['label' => Craft::t('site', ucwords($label)), 'value' => $file];
                 }
             }
-        } catch (Exception $e) {
+        } catch (Exception) {
             if ($value) {
                 $options[] = ['label' => $value, 'value' => $value];
             }

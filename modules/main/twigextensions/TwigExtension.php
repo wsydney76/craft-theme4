@@ -12,9 +12,6 @@ use function str_replace;
 
 class TwigExtension extends AbstractExtension implements GlobalsInterface
 {
-    /**
-     * @return array
-     */
     public function getGlobals(): array
     {
         return [
@@ -66,10 +63,6 @@ class TwigExtension extends AbstractExtension implements GlobalsInterface
         return $stuff->all();
     }
 
-    /**
-     * @param string $text
-     * @return string
-     */
     public function quoteFilter(string $text): string
     {
         return Craft::t('site', '“') . $text . Craft::t('site', '”') ;

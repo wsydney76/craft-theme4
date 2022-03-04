@@ -7,11 +7,17 @@ use Rector\Php74\Rector\Property\TypedPropertyRector;
 use Rector\Set\ValueObject\LevelSetList;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
+use Rector\Php55\Rector\String_\StringClassNameToClassConstantRector;
+
 return static function (ContainerConfigurator $containerConfigurator): void {
     // get parameters
     $parameters = $containerConfigurator->parameters();
     $parameters->set(Option::PATHS, [
         __DIR__ . '/src'
+    ]);
+
+    $parameters->set(Option::SKIP, [
+        StringClassNameToClassConstantRector::class
     ]);
 
     // Define what rule sets will be applied
