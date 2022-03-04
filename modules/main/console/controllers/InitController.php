@@ -444,7 +444,7 @@ class InitController extends Controller
             $includeIds[] = $entry->id;
         }
 
-        if (!$includeIds) {
+        if ($includeIds === []) {
             return;
         }
 
@@ -483,13 +483,13 @@ class InitController extends Controller
         $user->telephone = $faker->phoneNumber();
         $user->teaser = 'Editor';
 
-        $user->scenario = User::SCENARIO_LIVE;
+        $user->setScenario(User::SCENARIO_LIVE);
 
         if (Craft::$app->elements->saveElement($user)) {
             $group = Craft::$app->userGroups->getGroupByHandle('editors');
 
             if ($group) {
-                Craft::$app->users->assignUserToGroups($user->id, [$group->id]);
+                Craft::$app->users->assignUserToGroups($user->getId(), [$group->id]);
             }
         }
 

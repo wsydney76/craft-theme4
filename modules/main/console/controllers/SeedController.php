@@ -40,7 +40,7 @@ class SeedController extends Controller
             return;
         }
         $entries = Entry::find()->section(self::SECTIONHANDLE)->relatedTo($category)->anyStatus()->all();
-        if (!$entries) {
+        if ($entries === []) {
             $this->stderr('No example posts found');
             return;
         }
@@ -174,7 +174,7 @@ class SeedController extends Controller
             $entry->setFieldValue('bodyContent', $this->getBodyContent($faker));
 
             if (Craft::$app->elements->saveElement($entry)) {
-                $this->stdout('created, ID:' . $entry->id . PHP_EOL);
+                $this->stdout('created, ID:' . $entry->getId() . PHP_EOL);
             } else {
                 $this->stderr('failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
             }
@@ -480,10 +480,10 @@ class SeedController extends Controller
 
         foreach ($entries as $entry) {
             $i++;
-            $this->stdout("[{$i}/{$c}] Id: {$entry->id} {$entry->title} {$entry->uri}... ");
+            $this->stdout("[{$i}/{$c}] Id: {$entry->getId()} {$entry->title} {$entry->uri}... ");
 
             try {
-                $result = $client->get($entry->url);
+                $result = $client->get($entry->getUrl());
                 $this->stdout($result->getStatusCode());
             } catch (Exception $e) {
                 $this->stdout("Error {$e->getMessage()}");
@@ -524,7 +524,7 @@ class SeedController extends Controller
         $entry->setFieldValue('membersTemplate', 'members.twig');
 
         if (Craft::$app->elements->saveElement($entry)) {
-            $this->stdout('Members created, ID:' . $entry->id . PHP_EOL);
+            $this->stdout('Members created, ID:' . $entry->getId() . PHP_EOL);
         } else {
             $this->stderr('failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
             return;
@@ -548,12 +548,12 @@ class SeedController extends Controller
                 'authorId' => $user->id,
                 'title' => $item['title'],
                 'slug' => $item['slug'],
-                'newParentId' => $parent->id
+                'newParentId' => $parent->getId()
             ]);
             $entry->setFieldValue('membersTemplate', $item['membersTemplate']);
 
             if (Craft::$app->elements->saveElement($entry)) {
-                $this->stdout($item['title'] . ' created, ID:' . $entry->id . PHP_EOL);
+                $this->stdout($item['title'] . ' created, ID:' . $entry->getId() . PHP_EOL);
             } else {
                 $this->stderr($item['title'] . ' failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
                 return;

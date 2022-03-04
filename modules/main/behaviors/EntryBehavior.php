@@ -24,7 +24,7 @@ class EntryBehavior extends Behavior
         /** @var Entry $entry */
         $entry = $this->owner;
 
-        if ($entry->scenario != Entry::SCENARIO_LIVE) {
+        if ($entry->getScenario() != Entry::SCENARIO_LIVE) {
             return;
         }
     }

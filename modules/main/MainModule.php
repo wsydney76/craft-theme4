@@ -103,7 +103,7 @@ class MainModule extends Module
 
             // TODO: Check conditionals
 
-            if ($entry->resaving || $entry->propagating || $entry->scenario != Entry::STATUS_LIVE) {
+            if ($entry->resaving || $entry->propagating || $entry->getScenario() != Entry::STATUS_LIVE) {
                 return;
             }
 
@@ -118,7 +118,7 @@ class MainModule extends Module
 
                 if (!$localizedEntry->validate()) {
                     $entry->addError(
-                        $entry->type->hasTitleField ? 'title' : 'slug',
+                        $entry->getType()->hasTitleField ? 'title' : 'slug',
                         Craft::t('site', 'Error validating entry in') .
                         ' "' . $localizedEntry->site->name . '". ' .
                         implode(' ', $localizedEntry->getErrorSummary(false)));
@@ -139,13 +139,13 @@ class MainModule extends Module
                 return;
             }
 
-            $pathInfo = pathinfo($asset->filename);
+            $pathInfo = pathinfo($asset->getFilename());
             if ($pathInfo['extension'] != 'jfif') {
                 return;
             }
 
             $newFilename = $pathInfo['filename'] . '.jpg';
-            Craft::$app->assets->moveAsset($asset, $asset->folder, $newFilename);
+            Craft::$app->assets->moveAsset($asset, $asset->getFolder(), $newFilename);
         });
     }
 

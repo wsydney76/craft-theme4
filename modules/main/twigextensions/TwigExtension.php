@@ -25,9 +25,15 @@ class TwigExtension extends AbstractExtension implements GlobalsInterface
     public function getFilters()
     {
         return [
-            new TwigFilter('one', [$this, 'oneFilter']),
-            new TwigFilter('all', [$this, 'allFilter']),
-            new TwigFilter('quote', [$this, 'quoteFilter'])
+            new TwigFilter('one', function ($stuff) {
+                return $this->oneFilter($stuff);
+            }),
+            new TwigFilter('all', function ($stuff) : array {
+                return $this->allFilter($stuff);
+            }),
+            new TwigFilter('quote', function (string $text) : string {
+                return $this->quoteFilter($text);
+            })
         ];
     }
 
