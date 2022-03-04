@@ -46,9 +46,6 @@ class ReverseRelationField extends Field
         return 'Reverse Relations';
     }
 
-    /**
-     * @return string|null
-     */
     public function getHandle(): ?string
     {
         return $this->handle;
@@ -161,7 +158,6 @@ class ReverseRelationField extends Field
     }
 
     /**
-     * @return array
      * @throws \yii\base\InvalidConfigException
      */
     protected function _getSourceOptions(): array

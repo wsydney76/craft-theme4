@@ -25,9 +25,7 @@ class TwigExtension extends AbstractExtension
     /**
      * Don't format leading spaces as code
      *
-     * @param string $text
      * @param $flavor
-     * @return \Twig\Markup
      */
     public function guideTextFilter(string $text, $flavor = null): Markup
     {
