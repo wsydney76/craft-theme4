@@ -37,7 +37,7 @@ class MainModule extends Module
 
     public static $app;
 
-    public function init()
+    public function init(): void
     {
         Craft::setAlias('@modules/main', $this->getBasePath());
 
@@ -51,21 +51,21 @@ class MainModule extends Module
         // Register Behaviors
         Event::on(
             Entry::class,
-            Entry::EVENT_DEFINE_BEHAVIORS, function(DefineBehaviorsEvent $event) {
+            Entry::EVENT_DEFINE_BEHAVIORS, function(DefineBehaviorsEvent $event): void {
             $event->behaviors[] = EntryBehavior::class;
         });
 
         // Register Rules
         Event::on(
             Entry::class,
-            Entry::EVENT_DEFINE_RULES, function(DefineRulesEvent $event) {
+            Entry::EVENT_DEFINE_RULES, function(DefineRulesEvent $event): void {
             $event->rules[] = ['title', 'string', 'max' => 50, 'on' => Entry::SCENARIO_LIVE];
         });
 
         // Register custom field types
         Event::on(
             Fields::class,
-            Fields::EVENT_REGISTER_FIELD_TYPES, function(RegisterComponentTypesEvent $event) {
+            Fields::EVENT_REGISTER_FIELD_TYPES, function(RegisterComponentTypesEvent $event): void {
             $event->types[] = IncludeField::class;
             $event->types[] = WidthField::class;
             $event->types[] = ThemeColorField::class;
@@ -82,7 +82,7 @@ class MainModule extends Module
         if (Craft::$app->request->isCpRequest) {
             Event::on(
                 View::class,
-                View::EVENT_BEFORE_RENDER_TEMPLATE, function() {
+                View::EVENT_BEFORE_RENDER_TEMPLATE, function(): void {
                 Craft::$app->view->registerAssetBundle(CpAssets::class);
             }
             );
@@ -92,7 +92,7 @@ class MainModule extends Module
         // Validate entries on all sites (fixes open Craft bug)
         Event::on(
             Entry::class,
-            Entry::EVENT_BEFORE_SAVE, function($event) {
+            Entry::EVENT_BEFORE_SAVE, function($event): void {
 
             if (Craft::$app->sites->getTotalSites() == 1) {
                 return;
@@ -131,7 +131,7 @@ class MainModule extends Module
         // see config/general.php for an explanation
         Event::on(
             Asset::class,
-            Asset::EVENT_AFTER_SAVE, function(ModelEvent $event) {
+            Asset::EVENT_AFTER_SAVE, function(ModelEvent $event): void {
             /** @var Asset $asset */
             $asset = $event->sender;
 

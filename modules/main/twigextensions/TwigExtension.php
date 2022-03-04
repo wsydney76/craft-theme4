@@ -12,6 +12,9 @@ use function str_replace;
 
 class TwigExtension extends AbstractExtension implements GlobalsInterface
 {
+    /**
+     * @return array<string, mixed>
+     */
     public function getGlobals(): array
     {
         return [
@@ -22,7 +25,7 @@ class TwigExtension extends AbstractExtension implements GlobalsInterface
     /**
      * @return TwigFilter[]
      */
-    public function getFilters()
+    public function getFilters(): array
     {
         return [
             new TwigFilter('one', fn($stuff) => $this->oneFilter($stuff)),
@@ -40,9 +43,11 @@ class TwigExtension extends AbstractExtension implements GlobalsInterface
         if (is_null($stuff)) {
             return null;
         }
+
         if (is_array($stuff)) {
             return (count($stuff) ? $stuff[0] : null);
         }
+
         return $stuff->one();
     }
 
@@ -56,10 +61,12 @@ class TwigExtension extends AbstractExtension implements GlobalsInterface
         {
             return [];
         }
+
         if (is_array($stuff))
         {
             return ($stuff);
         }
+
         return $stuff->all();
     }
 

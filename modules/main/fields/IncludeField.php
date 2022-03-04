@@ -18,7 +18,7 @@ use const DIRECTORY_SEPARATOR;
 class IncludeField extends Field
 {
 
-    public $includeDirectory = '';
+    public string $includeDirectory = '';
 
     /**
      * @inheritDoc
@@ -45,6 +45,9 @@ class IncludeField extends Field
         ];
     }
 
+    /**
+     * @return mixed[]
+     */
     protected function defineRules(): array
     {
         $rules = parent::defineRules();
@@ -53,7 +56,7 @@ class IncludeField extends Field
         return $rules;
     }
 
-    public function getSettingsHtml()
+    public function getSettingsHtml(): string
     {
 
         return Cp::textFieldHtml([
@@ -104,12 +107,13 @@ class IncludeField extends Field
         ]);
     }
 
-    protected function getBaseDirectory($entry, $includeDirectory)
+    protected function getBaseDirectory($entry, $includeDirectory): string
     {
 
         if (str_contains($includeDirectory, '%SITE%')) {
             $includeDirectory = str_replace('%SITE%', $entry->site->handle, $includeDirectory);
         }
+
         if (str_contains($includeDirectory, '%SITEGROUP%')) {
             // get first site in sitegroup, where the templates live
             $siteHandle = $entry->site->getGroup()->getSites()[0]->handle;
