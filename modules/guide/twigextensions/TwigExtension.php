@@ -15,7 +15,7 @@ class TwigExtension extends AbstractExtension
     /**
      * @return TwigFilter[]
      */
-    public function getFilters()
+    public function getFilters(): array
     {
         return [
             new TwigFilter('guideText', fn(string $text, $flavor): \Twig\Markup => $this->guideTextFilter($text, $flavor)),
