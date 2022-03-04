@@ -47,14 +47,13 @@ class ElementsController extends \craft\controllers\ElementsController
 
         $data = $this->request->getBodyParams();
 
+        $task = $data['task'];
+
         $element = Entry::find()->id($data['sourceId'])->siteId($data['siteId'])->status(null)->one();
         if (!$element) {
             throw new NotFoundHttpException();
         }
 
-        if (!$element->getIsEditable()) {
-            throw new ForbiddenHttpException();
-        }
 
         $msg = [
             'remove-relationship' => 'Relationship removed',
@@ -64,7 +63,7 @@ class ElementsController extends \craft\controllers\ElementsController
 
         ];
 
-        if ($data['action'] == 'remove-relationship') {
+        if ($task == 'remove-relationship') {
             $ids = $element->getFieldValue($data['field'])->ids();
             if (($key = array_search($data['targetId'], $ids)) !== false) {
                 unset($ids[$key]);
@@ -72,15 +71,15 @@ class ElementsController extends \craft\controllers\ElementsController
             $element->setFieldValue($data['field'], $ids);
         }
 
-        if($data['action'] == 'disable-entry') {
+        if($task == 'disable-entry') {
             $element->enabled = false;
         }
 
-        if($data['action'] == 'enable-entry') {
+        if($task == 'enable-entry') {
             $element->enabled = true;
         }
 
-        if($data['action'] == 'delete-entry') {
+        if($task == 'delete-entry') {
             if (!Craft::$app->elements->deleteElement($element)) {
                 throw new ServerErrorHttpException('Unable to delete entry');
             }
@@ -91,7 +90,7 @@ class ElementsController extends \craft\controllers\ElementsController
             }
         }
 
-        return $this->asJson(['success' => true, 'msg' => $msg[$data['action']]]);
+        return $this->asJson(['success' => true, 'msg' => $msg[$task]]);
     }
 
     public function actionGetRelatedEntriesListHtml()

@@ -35,13 +35,14 @@ function createRelatedEntry(props) {
     })
 }
 
-function removeEntry(sourceId, action, props) {
-    if (!confirm('Proceed with this action? ' + action)) {
+
+function removeEntry(sourceId, task, props) {
+    if (!confirm('Proceed with this action? ' + task)) {
         return
     }
 
     element = {
-        action: action,
+        task: task,
         sourceId: sourceId,
         targetId: props.elementId,
         siteId: props.siteId,

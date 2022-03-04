@@ -37,16 +37,16 @@
     "webpack-manifest-plugin": "^2.0.4"
   },
   "dependencies": {
-    "@alpinejs/collapse": "^3.9.0",
-    "@alpinejs/focus": "^3.9.0",
-    "@alpinejs/intersect": "^3.9.0",
+    "@alpinejs/collapse": "^3.9.1",
+    "@alpinejs/focus": "^3.9.1",
+    "@alpinejs/intersect": "^3.9.1",
     "@tailwindcss/aspect-ratio": "^0.4.0",
-    "@tailwindcss/forms": "^0.4.0",
-    "alpinejs": "^3.9.0",
+    "@tailwindcss/forms": "^0.4.1",
+    "alpinejs": "^3.9.1",
     "autoprefixer": "^10.4.2",
     "baguettebox.js": "^1.11.1",
     "js-cookie": "^3.0.1",
-    "postcss": "^8.4.6",
+    "postcss": "^8.4.7",
     "tailwindcss": "^3.0.23"
   }
 }
