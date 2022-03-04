@@ -15,6 +15,7 @@ use craft\volumes\Local;
 use Exception;
 use Faker\Factory;
 use Faker\Generator;
+use GuzzleHttp\Exception\GuzzleException;
 use yii\helpers\Console;
 use function implode;
 use function is_dir;
@@ -458,7 +459,7 @@ class SeedController extends Controller
      * php craft main/seed/create-transforms
      *
      * @return void
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      */
     public function actionCreateTransforms()
     {
