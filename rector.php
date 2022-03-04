@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use Rector\CodingStyle\Rector\ClassConst\RemoveFinalFromConstRector;
+use Rector\CodingStyle\Rector\Encapsed\EncapsedStringsToSprintfRector;
 use Rector\Core\Configuration\Option;
 use Rector\Php74\Rector\Property\TypedPropertyRector;
 use Rector\Set\ValueObject\LevelSetList;
@@ -18,12 +20,18 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     ]);
 
     $parameters->set(Option::SKIP, [
-        StringClassNameToClassConstantRector::class
+        StringClassNameToClassConstantRector::class,
+        EncapsedStringsToSprintfRector::class,
+        RemoveFinalFromConstRector::class // requires PHP 8.1
     ]);
 
     // Define what rule sets will be applied
 
     $containerConfigurator->import(SetList::CODE_QUALITY);
+
+    $containerConfigurator->import(SetList::CODING_STYLE);
+
+    $containerConfigurator->import(SetList::TYPE_DECLARATION);
 
     $containerConfigurator->import(LevelSetList::UP_TO_PHP_80);
 

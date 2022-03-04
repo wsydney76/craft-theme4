@@ -35,7 +35,9 @@ class ReverseRelationField extends Field
     public string $source = '';
 
     public string $caption = 'Create new';
+
     public string $orderBy = 'title';
+
     public string $titleTemplate = '';
 
     /**
@@ -117,7 +119,7 @@ class ReverseRelationField extends Field
      * @inheritdoc
      * @throws InvalidConfigException
      */
-    public function getSettingsHtml(): ?string
+    public function getSettingsHtml(): string
     {
         return Cp::selectFieldHtml([
                 'label' => 'Relationship Source',
@@ -159,6 +161,7 @@ class ReverseRelationField extends Field
 
     /**
      * @throws \yii\base\InvalidConfigException
+     * @return array<int, array<string, string>>
      */
     protected function _getSourceOptions(): array
     {
@@ -169,6 +172,7 @@ class ReverseRelationField extends Field
             if ($section->type == Section::TYPE_SINGLE) {
                 continue;
             }
+
             $types = $section->getEntryTypes();
             foreach ($types as $type) {
                 $fields = $type->getFieldLayout()->getFields();
