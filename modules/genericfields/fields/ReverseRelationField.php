@@ -160,7 +160,7 @@ class ReverseRelationField extends Field
     }
 
     /**
-     * @throws \yii\base\InvalidConfigException
+     * @throws InvalidConfigException
      * @return array<int, array<string, string>>
      */
     protected function _getSourceOptions(): array

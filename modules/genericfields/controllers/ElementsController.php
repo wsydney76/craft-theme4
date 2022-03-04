@@ -16,7 +16,7 @@ use function sprintf;
 
 class ElementsController extends \craft\controllers\ElementsController
 {
-    public function actionCreate(): \yii\web\Response
+    public function actionCreate(): Response
     {
         $data = $this->request->getBodyParams();
 

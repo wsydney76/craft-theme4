@@ -72,7 +72,7 @@ class GuideModule extends Module
             Event::on(
                 View::class,
                 View::EVENT_BEFORE_RENDER_TEMPLATE, function(): void {
-                Craft::$app->view->registerAssetBundle(GuideAssets::class);;
+                Craft::$app->view->registerAssetBundle(GuideAssets::class);
             }
             );
         }
