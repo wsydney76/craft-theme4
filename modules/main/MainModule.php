@@ -6,13 +6,15 @@ use Craft;
 use craft\elements\Asset;
 use craft\elements\Entry;
 use craft\events\DefineBehaviorsEvent;
+use craft\events\DefineFieldLayoutElementsEvent;
 use craft\events\DefineRulesEvent;
 use craft\events\ModelEvent;
 use craft\events\RegisterComponentTypesEvent;
-use craft\events\RegisterTemplateRootsEvent;
+use craft\models\FieldLayout;
 use craft\services\Fields;
 use craft\web\View;
 use modules\main\behaviors\EntryBehavior;
+use modules\main\fieldlayoutelements\NewRow;
 use modules\main\fields\AspectRatioField;
 use modules\main\fields\IncludeField;
 use modules\main\fields\MarginsYField;
@@ -35,6 +37,7 @@ use yii\base\Module;
 class MainModule extends Module
 {
 
+// Fields
     public static $app;
 
     public function init(): void
@@ -88,6 +91,15 @@ class MainModule extends Module
             );
         }
 
+        // Add New row to UI Elements
+        Event::on(
+            FieldLayout::class,
+            FieldLayout::EVENT_DEFINE_UI_ELEMENTS, function(DefineFieldLayoutElementsEvent $event) {
+            if ($event->sender->type == 'craft\\elements\\Entry') {
+                $event->elements[] = new NewRow();
+            }
+        }
+        );
 
         // Validate entries on all sites (fixes open Craft bug)
         Event::on(

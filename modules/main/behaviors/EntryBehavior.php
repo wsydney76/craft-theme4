@@ -2,8 +2,10 @@
 
 namespace modules\main\behaviors;
 
+use craft\base\Element;
 use craft\elements\Entry;
 use yii\base\Behavior;
+use yii\base\Model;
 
 /**
  *
@@ -18,7 +20,7 @@ class EntryBehavior extends Behavior
     public function events(): array
     {
         return [
-            Entry::EVENT_BEFORE_VALIDATE => '_validate'
+            Model::EVENT_BEFORE_VALIDATE => '_validate'
         ];
     }
 
@@ -27,12 +29,12 @@ class EntryBehavior extends Behavior
         /** @var Entry $entry */
         $entry = $this->owner;
 
-        if ($entry->getScenario() != Entry::SCENARIO_LIVE) {
+        if ($entry->getScenario() != Element::SCENARIO_LIVE) {
             return;
         }
     }
 
-    public function getNavTitle()
+    public function getNavTitle(): ?string
     {
         /** @var Entry $entry */
         $entry = $this->owner;
