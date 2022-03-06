@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.4.0 2020-03-06
+
+* Added theme.skipSrcsetInDevMode setting, to speed up development/testing
+* Added New Row UI Element
+* Updated Craft to 3.7.36
+* Internal: Improve code quality and code styling via rector rules
+* Internal: Improve Reverse relations field and move it into its own module
+
 ## 3.3.0
 
 * Added Reverse relations field (Proof of concept)
