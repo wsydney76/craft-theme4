@@ -13,7 +13,7 @@ Usefull for demos and hobby projects.
 
 ##  Installation
 
-* Run `composer install`
+* Run `composer install --no-dev`
 * Edit `config/Env.php` with your environment specific settings.
 * Run `php craft install` Enter you user data and confirm the other settings.
 * Run `php craft main/init` Sets up things you will always need.
