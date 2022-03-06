@@ -18,9 +18,6 @@ class MarginsYField extends Field
         return 'Margins Y';
     }
 
-    /**
-     * @return string|null
-     */
     public function getHandle(): ?string
     {
         return $this->handle;

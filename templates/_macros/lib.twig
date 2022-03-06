@@ -1,5 +1,9 @@
 {% macro img(image, transform = {}, attrs = {}, showCopyright = true, createSrcset = true) %}
 
+    {% if theme.skipSrcsetInDevMode and devMode %}
+        {% set createSrcset = false %}
+    {% endif %}
+
     {% if craft.app.plugins.pluginEnabled('imager-x') %}
         {# Use Imager transforms for (slightly) better quality and more control #}
 

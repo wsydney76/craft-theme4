@@ -1,8 +1,17 @@
 {% extends "_layouts/main.twig" %}
 
-{% set bgImage = siteInfo.backgroundImage.one %}
+{% set bgImage = null %}
+
+{% if theme.hasBackgroundImage == 'entry' %}
+    {% set bgImage = entry.featuredImage.one %}
+{% endif %}
+
+{% if theme.hasBackgroundImage in ['global','entry'] and not bgImage %}
+    {% set bgImage = siteInfo.backgroundImage.one %}
+{% endif %}
+
 {% if bgImage %}
-    {% set bodyClasses = 'bg-image bg-center bg-no-repeat bg-cover bg-fixed backdrop-blur' %}
+    {% set bodyClasses = 'bg-image bg-center bg-no-repeat bg-cover bg-fixed bg-frame-background/80 dark:bg-frame-background-dark bg-blend-darken backdrop-blur' %}
 
     {# TODO: Add responsive sizes #}
     {% css %}
@@ -16,8 +25,8 @@
 
 
 {% block page %}
-    <div class="py-4">
-        <div class="container max-w-screen-{{ theme.pageWidth }} mx-auto bg-background dark:bg-background-dark">
+    <div class="py-4 ">
+        <div class="container max-w-screen-{{ theme.pageWidth }} mx-auto {{ bgImage ? 'bg-background/80  dark:bg-background-dark/80  bg-blend-darken backdrop-blur' : 'bg-background dark:bg-background-dark'}}">
             <header class="px-8 py-6">
                 {{ navbarHtml|raw }}
             </header>

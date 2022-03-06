@@ -22,7 +22,7 @@ use const PHP_EOL;
 class InitController extends Controller
 {
 
-    public $assetSources = [
+    public array $assetSources = [
         'siteHeading' => ['type' => 'heading', 'heading' => 'Site Assets'],
         'images' => ['type' => 'key', 'tableAttributes' => ['altText', 'imageSize', 'dateModified', 'link']],
         'media' => ['type' => 'key', 'tableAttributes' => ['filename', 'dateModified', 'link']],
@@ -32,9 +32,13 @@ class InitController extends Controller
         'guide' => ['type' => 'key', 'tableAttributes' => ['filename', 'imageSize', 'dateModified', 'link']],
         'userPhotos' => ['type' => 'key', 'tableAttributes' => ['filename', 'imageSize', 'dateModified', 'link']],
     ];
+
+    /**
+     * @var string
+     */
     public $defaultAction = 'all';
 
-    public function actionAll()
+    public function actionAll(): void
     {
         if (!$this->confirm('Run all init actions? This should only be done once, immediately after installing.')) {
             return;
@@ -65,7 +69,7 @@ class InitController extends Controller
         $this->stdout(PHP_EOL);
     }
 
-    public function actionSetup()
+    public function actionSetup(): bool
     {
         $faker = Factory::create();
 
@@ -130,7 +134,7 @@ class InitController extends Controller
         return true;
     }
 
-    public function actionSetElementIndexes()
+    public function actionSetElementIndexes(): void
     {
         $sections = Craft::$app->sections->getAllSections();
         $s = [];
@@ -173,7 +177,7 @@ class InitController extends Controller
         Craft::$app->elementIndexes->saveSettings('craft\\elements\\Entry', $entrySettings);
     }
 
-    public function actionSetAssetIndexes()
+    public function actionSetAssetIndexes(): void
     {
         $assetSettings = [
             'sources' => [],
@@ -193,6 +197,7 @@ class InitController extends Controller
                     }
                 }
             }
+
             if ($source['type'] == 'heading') {
                 $assetSettings['sourceOrder'][] = ['heading', $source['heading']];
             }
@@ -201,7 +206,7 @@ class InitController extends Controller
         Craft::$app->elementIndexes->saveSettings('craft\\elements\\Asset', $assetSettings);
     }
 
-    public function actionCreateEntries()
+    public function actionCreateEntries(): bool
     {
         $user = User::find()->admin()->one();
 
@@ -363,7 +368,7 @@ class InitController extends Controller
         return true;
     }
 
-    public function actionCreateGuideEntries()
+    public function actionCreateGuideEntries(): void
     {
         // Guide -------------------------------------------------------------------------------
 
@@ -408,7 +413,7 @@ class InitController extends Controller
         $this->setIncludeGuides(['article', 'page', 'legal'], ['contentBuilder', 'blocks']);
     }
 
-    protected function setGuideParent($parentSlug, $childrenSlugs)
+    protected function setGuideParent($parentSlug, $childrenSlugs): void
     {
         $parent = $this->getGuideBySlug($parentSlug);
         if (!$parent) {
@@ -422,6 +427,7 @@ class InitController extends Controller
             if (!$entry) {
                 continue;
             }
+
             $entry->newParentId = $parent->id;
             Craft::$app->elements->saveElement($entry);
         }
@@ -432,7 +438,7 @@ class InitController extends Controller
         return Entry::find()->section('guide')->slug($slug)->one();
     }
 
-    protected function setIncludeGuides($sectionSlugs, $includeSlugs)
+    protected function setIncludeGuides($sectionSlugs, $includeSlugs): void
     {
         $includeIds = [];
         foreach ($includeSlugs as $includeSlug) {
@@ -441,10 +447,11 @@ class InitController extends Controller
             if (!$entry) {
                 continue;
             }
+
             $includeIds[] = $entry->id;
         }
 
-        if (!$includeIds) {
+        if ($includeIds === []) {
             return;
         }
 
@@ -460,7 +467,7 @@ class InitController extends Controller
         }
     }
 
-    public function actionSetUsers()
+    public function actionSetUsers(): void
     {
         $faker = Factory::create();
 
@@ -483,13 +490,13 @@ class InitController extends Controller
         $user->telephone = $faker->phoneNumber();
         $user->teaser = 'Editor';
 
-        $user->scenario = User::SCENARIO_LIVE;
+        $user->setScenario(User::SCENARIO_LIVE);
 
         if (Craft::$app->elements->saveElement($user)) {
             $group = Craft::$app->userGroups->getGroupByHandle('editors');
 
             if ($group) {
-                Craft::$app->users->assignUserToGroups($user->id, [$group->id]);
+                Craft::$app->users->assignUserToGroups($user->getId(), [$group->id]);
             }
         }
 

@@ -11,7 +11,7 @@ use function opcache_compile_file;
 class AspectRatioField extends Field
 {
 
-    public $defaultAspectRatio = 'auto';
+    public string $defaultAspectRatio = 'auto';
 
     /**
      * @inheritDoc
@@ -21,9 +21,6 @@ class AspectRatioField extends Field
         return 'Aspect Ratio';
     }
 
-    /**
-     * @return string|null
-     */
     public function getHandle(): ?string
     {
         return $this->handle;
@@ -40,7 +37,7 @@ class AspectRatioField extends Field
     }
 
 
-    public function getSettingsHtml()
+    public function getSettingsHtml(): string
     {
         return Cp::selectFieldHtml([
                 'label' => 'Default Aspect Ratio',
@@ -76,7 +73,10 @@ class AspectRatioField extends Field
         return $value;
     }
 
-    protected function getOptions()
+    /**
+     * @return array<int, array<string, mixed>>
+     */
+    protected function getOptions(): array
     {
         return [
             ['label' => Craft::t('site','Theme Default'), 'value' => 'default'],

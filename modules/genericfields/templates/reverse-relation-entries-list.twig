@@ -1,0 +1,44 @@
+{% set entries = craft.entries
+    .siteId(props.siteId)
+    .relatedTo({targetElement: props.elementId, field: props.fieldHandle})
+    .status(null)
+    .orderBy(props.orderBy)
+.all %}
+
+{% for entry in entries %}
+    <div>
+        <div class="element small removable hasstatus">
+            <button onclick="removeEntry({{ entry.id }}, 'remove-relationship', {{ props|json_encode }})"
+                    type="button" class="delete icon" title="Remove" aria-label="Remove {{ entry.title }}"></button>
+            <span class="status {{ entry.enabled ? 'enabled' : 'disabled' }}"></span>
+            <div class="label">
+                <a  href="{{ entry.cpEditUrl }}" target="_blank">
+                    {% if props.titleTemplate %}
+                        {{ view.renderTemplate(props.titleTemplate, {element: entry}, 'site')|raw }}
+                    {% else %}
+                        {{ entry.title }}
+                    {% endif %}
+                </a>
+                <div>
+                    <button type="button" style="font-size: 14px; cursor: pointer"
+                            onclick="removeEntry({{ entry.id }}, 'delete-entry', {{ props|json_encode }})">
+                        [Delete]
+                    </button>
+                    {% if entry.enabled %}
+                        <button type="button" style="font-size: 14px; cursor: pointer"
+                                onclick="removeEntry({{ entry.id }}, 'disable-entry', {{ props|json_encode }})">
+                            [Disable]
+                        </button>
+                    {% else %}
+                        <button type="button" style="font-size: 14px; cursor: pointer"
+                                onclick="removeEntry({{ entry.id }}, 'enable-entry', {{ props|json_encode }})">
+                            [Enable]
+                        </button>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endfor %}
+

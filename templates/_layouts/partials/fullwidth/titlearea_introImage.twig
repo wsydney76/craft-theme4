@@ -1,6 +1,6 @@
 {% from '_macros/lib.twig' import img %}
 
-{% set image = entry.featuredImage.one %}
+{% set image = themeOptions.featuredImage ?? entry.featuredImage.one %}
 {% if not image and theme.useFallbackImage %}
     {% set image = siteInfo.featuredImage.one %}
 {% endif %}
@@ -10,14 +10,15 @@
 
         {% include '_layouts/partials/fullwidth/includes/meta.twig' %}
 
-        {% if entry.teaser %}
+        {% set teaser = themeOptions.teaser ?? entry.teaser %}
+        {% if teaser %}
             <div class="mb-2 font-serif italic text-teaser dark:text-teaser-dark font-semibold">
-                {{ entry.teaser }}
+                {{ teaser }}
             </div>
         {% endif %}
 
         <div class=" max-w-screen-lg">
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-wider">{{ entry.title }}</h1>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-wider">{{ themeOptions.title ?? entry.title }}</h1>
         </div>
 
         {% if entry.intro %}

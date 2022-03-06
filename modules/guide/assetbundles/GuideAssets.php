@@ -6,7 +6,7 @@ use craft\web\assets\cp\CpAsset;
 
 class GuideAssets extends AssetBundle
 {
-    public function init()
+    public function init(): void
     {
         parent::init();
 
