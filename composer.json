@@ -49,8 +49,5 @@
       "@php craft migrate/all --interactive=0",
       "@php craft on"
     ]
-  },
-  "require-dev": {
-    "rector/rector": "^0.12.17"
   }
 }
