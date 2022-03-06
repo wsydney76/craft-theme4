@@ -6,14 +6,14 @@ Usefull for demos and hobby projects.
 
 ## Prerequisits
 
-* Check [recommended server requirements](https://craftcms.com/docs/3.x/requirements.html).
-* PHP 8 is required in `composer.json`, but you can set that to 7.4 before running `composer install` if needed.
+* Check [Craft's recommended server requirements](https://craftcms.com/docs/3.x/requirements.html).
+* This project requires PHP 8.0.2
 * Create a MySql database.
 * Set up a web server pointing to the `web` directory of your project. Alternatively you can run `php craft serve` and use `http://localhost:8080` as your domain.
 
 ##  Installation
 
-* Run `composer install`
+* Run `composer install --no-dev`
 * Edit `config/Env.php` with your environment specific settings.
 * Run `php craft install` Enter you user data and confirm the other settings.
 * Run `php craft main/init` Sets up things you will always need.

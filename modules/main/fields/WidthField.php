@@ -95,15 +95,18 @@ class WidthField extends Field
         return $value;
     }
 
-    protected function getOptions($isSettings = false)
+    /**
+     * @return array<int, array<string, mixed>>
+     */
+    protected function getOptions($isSettings = false): array
     {
         $options = $this->getMainOptions();
         if ($this->addDefaultOptions || $isSettings) {
-            $options = array_merge($this->getDefaultOptions(), $options);
+            $options = [...$this->getDefaultOptions(), ...$options];
         }
 
         if ($this->addMobileOptions || $isSettings) {
-            $options = array_merge($options, $this->getMobileOptions());
+            $options = [...$options, ...$this->getMobileOptions()];
         }
 
         return $options;

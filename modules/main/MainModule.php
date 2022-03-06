@@ -94,7 +94,7 @@ class MainModule extends Module
         // Add New row to UI Elements
         Event::on(
             FieldLayout::class,
-            FieldLayout::EVENT_DEFINE_UI_ELEMENTS, function(DefineFieldLayoutElementsEvent $event) {
+            FieldLayout::EVENT_DEFINE_UI_ELEMENTS, function(DefineFieldLayoutElementsEvent $event): void {
             if ($event->sender->type == 'craft\\elements\\Entry') {
                 $event->elements[] = new NewRow();
             }
