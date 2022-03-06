@@ -18,9 +18,6 @@ class OrderByField extends Field
         return 'Order By';
     }
 
-    /**
-     * @return string|null
-     */
     public function getHandle(): ?string
     {
         return $this->handle;

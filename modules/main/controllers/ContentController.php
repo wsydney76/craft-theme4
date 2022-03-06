@@ -3,7 +3,11 @@
 namespace modules\main\controllers;
 
 use Craft;
+use craft\helpers\App;
 use craft\web\Controller;
+
+use craft\web\Response;
+use yii\web\BadRequestHttpException;
 use function Arrayy\array_last;
 use function explode;
 
@@ -12,10 +16,9 @@ class ContentController extends Controller
     /**
      * Requires 'generateTransformsBeforePageLoad' => true
      *
-     * @return \craft\web\Response|string|\yii\console\Response
-     * @throws \yii\web\BadRequestHttpException
+     * @throws BadRequestHttpException
      */
-    public function actionPrivateImage()
+    public function actionPrivateImage(): string|Response
     {
         $path = Craft::$app->request->getRequiredParam('path');
 
@@ -26,7 +29,7 @@ class ContentController extends Controller
             return '';
         }
 
-        $basePath = Craft::parseEnv($volume->path);
+        $basePath = App::parseEnv($volume->path);
         $filePath = $basePath . $path;
 
 

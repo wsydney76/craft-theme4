@@ -13,7 +13,7 @@ use function str_replace;
 class TwigExtension extends AbstractExtension implements GlobalsInterface
 {
     /**
-     * @return array
+     * @return array<string, mixed>
      */
     public function getGlobals(): array
     {
@@ -25,12 +25,12 @@ class TwigExtension extends AbstractExtension implements GlobalsInterface
     /**
      * @return TwigFilter[]
      */
-    public function getFilters()
+    public function getFilters(): array
     {
         return [
-            new TwigFilter('one', [$this, 'oneFilter']),
-            new TwigFilter('all', [$this, 'allFilter']),
-            new TwigFilter('quote', [$this, 'quoteFilter'])
+            new TwigFilter('one', fn($stuff) => $this->oneFilter($stuff)),
+            new TwigFilter('all', fn($stuff): array => $this->allFilter($stuff)),
+            new TwigFilter('quote', fn(string $text): string => $this->quoteFilter($text))
         ];
     }
 
@@ -43,9 +43,11 @@ class TwigExtension extends AbstractExtension implements GlobalsInterface
         if (is_null($stuff)) {
             return null;
         }
+
         if (is_array($stuff)) {
             return (count($stuff) ? $stuff[0] : null);
         }
+
         return $stuff->one();
     }
 
@@ -59,17 +61,15 @@ class TwigExtension extends AbstractExtension implements GlobalsInterface
         {
             return [];
         }
+
         if (is_array($stuff))
         {
             return ($stuff);
         }
+
         return $stuff->all();
     }
 
-    /**
-     * @param string $text
-     * @return string
-     */
     public function quoteFilter(string $text): string
     {
         return Craft::t('site', '“') . $text . Craft::t('site', '”') ;

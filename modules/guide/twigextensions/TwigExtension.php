@@ -15,19 +15,17 @@ class TwigExtension extends AbstractExtension
     /**
      * @return TwigFilter[]
      */
-    public function getFilters()
+    public function getFilters(): array
     {
         return [
-            new TwigFilter('guideText', [$this, 'guideTextFilter']),
+            new TwigFilter('guideText', fn(string $text, $flavor): Markup => $this->guideTextFilter($text, $flavor)),
         ];
     }
 
     /**
      * Don't format leading spaces as code
      *
-     * @param string $text
      * @param $flavor
-     * @return \Twig\Markup
      */
     public function guideTextFilter(string $text, $flavor = null): Markup
     {

@@ -29,12 +29,13 @@ class AssetsController extends Controller
      *
      * @throws Exception
      */
-    public function actionClearImageTransformDirectories()
+    public function actionClearImageTransformDirectories(): int
     {
 
         if (!$this->confirm('This will delete all image transform data', true)) {
             return ExitCode::OK;
         }
+
         Craft::$app->getDb()->createCommand()
             ->truncateTable(Table::ASSETTRANSFORMINDEX)
             ->execute();
@@ -50,7 +51,7 @@ class AssetsController extends Controller
         return ExitCode::OK;
     }
 
-    private function _clearVolume(Local $volume)
+    private function _clearVolume(Local $volume): void
     {
         $root = Craft::parseEnv($volume->path);
         $dirs = $this->_getTransFormDirs($root);
@@ -61,7 +62,7 @@ class AssetsController extends Controller
 
     /**
      * @param $path
-     * @return array
+     * @return mixed[]
      */
     private function _getTransFormDirs($path): array
     {
@@ -69,7 +70,7 @@ class AssetsController extends Controller
 
         $dirs = [];
         foreach ($rii as $dir) {
-            if ($dir->isDir() && strpos($dir->getPathname(), DIRECTORY_SEPARATOR . '_') &&
+            if ($dir->isDir() && strpos($dir->getPathname(), (string) (DIRECTORY_SEPARATOR . '_')) &&
                 !strpos($dir->getPathname(), '..')) {
                 $dirs[] = $dir->getPathname();
             }
@@ -78,15 +79,15 @@ class AssetsController extends Controller
         return $dirs;
     }
 
-    private function _deleteDir($dir)
+    private function _deleteDir($dir): void
     {
         if (is_dir($dir)) {
             try {
                 echo "Deleting {$dir}\n";
                 FileHelper::clearDirectory($dir);
                 rmdir($dir);
-            } catch (ErrorException $e) {
-                echo 'Error deleting ' . $dir . ': ' . $e->getMessage() . PHP_EOL;
+            } catch (ErrorException $errorException) {
+                echo 'Error deleting ' . $dir . ': ' . $errorException->getMessage() . PHP_EOL;
             }
         }
     }

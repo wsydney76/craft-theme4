@@ -23,7 +23,7 @@ use yii\web\User;
 
 class GuideModule extends Module
 {
-    public function init()
+    public function init(): void
     {
 
 
@@ -32,7 +32,7 @@ class GuideModule extends Module
         // Base template directory
         Event::on(
             View::class,
-            View::EVENT_REGISTER_CP_TEMPLATE_ROOTS, function(RegisterTemplateRootsEvent $e) {
+            View::EVENT_REGISTER_CP_TEMPLATE_ROOTS, function(RegisterTemplateRootsEvent $e): void {
             $e->roots['guide'] = $this->getBasePath() .  '/templates';
             $e->roots['_guide'] = App::parseEnv('@templates') . '/_guide';
         });
@@ -40,7 +40,7 @@ class GuideModule extends Module
         // Set routes
         Event::on(
             UrlManager::class,
-            UrlManager::EVENT_REGISTER_CP_URL_RULES, function(RegisterUrlRulesEvent $event) {
+            UrlManager::EVENT_REGISTER_CP_URL_RULES, function(RegisterUrlRulesEvent $event): void {
             $event->rules['guide/<guideSlug:.*>'] = ['template' => 'guide/guide'];
             $event->rules['guide-ajax/<guideSlug:.*>'] = ['template' => 'guide/guideajax'];
         });
@@ -48,14 +48,14 @@ class GuideModule extends Module
         // Set Nav
         Event::on(
             Cp::class,
-            Cp::EVENT_REGISTER_CP_NAV_ITEMS, function($event) {
+            Cp::EVENT_REGISTER_CP_NAV_ITEMS, function($event): void {
             $event->navItems[] = ['url' => 'guide/guide', 'label' => 'Guide', 'icon' => '@app/icons/routes.svg'];
         });
 
         // Register Widget
         Event::on(
             Dashboard::class,
-            Dashboard::EVENT_REGISTER_WIDGET_TYPES, function(RegisterComponentTypesEvent $event) {
+            Dashboard::EVENT_REGISTER_WIDGET_TYPES, function(RegisterComponentTypesEvent $event): void {
             $event->types[] = GuideWidget::class;
         }
         );
@@ -63,7 +63,7 @@ class GuideModule extends Module
         // Control user widgets
         Event::on(
             User::class,
-            User::EVENT_AFTER_LOGIN, function() {
+            User::EVENT_AFTER_LOGIN, function(): void {
                 $this->_afterUserLogin();
         });
 
@@ -71,8 +71,8 @@ class GuideModule extends Module
         if (Craft::$app->request->isCpRequest) {
             Event::on(
                 View::class,
-                View::EVENT_BEFORE_RENDER_TEMPLATE, function() {
-                Craft::$app->view->registerAssetBundle(GuideAssets::class);;
+                View::EVENT_BEFORE_RENDER_TEMPLATE, function(): void {
+                Craft::$app->view->registerAssetBundle(GuideAssets::class);
             }
             );
         }
@@ -82,6 +82,7 @@ class GuideModule extends Module
             if ($context['entry'] != null) {
                 return Craft::$app->view->renderTemplate('guide/editorbutton.twig', ['entry' => $context['entry']]);
             }
+
             return '';
         });
 
@@ -91,7 +92,7 @@ class GuideModule extends Module
         parent::init();
     }
 
-    private function _afterUserLogin()
+    private function _afterUserLogin(): void
     {
         $user = Craft::$app->user->identity;
         $widgetType = GuideWidget::class;

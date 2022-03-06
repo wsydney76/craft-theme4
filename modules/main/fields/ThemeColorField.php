@@ -20,9 +20,6 @@ class ThemeColorField extends Field
         return 'Theme Color';
     }
 
-    /**
-     * @return string|null
-     */
     public function getHandle(): ?string
     {
         return $this->handle;
@@ -39,7 +36,7 @@ class ThemeColorField extends Field
     }
 
     /** @inheritdoc */
-    public function getSettingsHtml()
+    public function getSettingsHtml(): string
     {
         return Cp::selectFieldHtml([
             'label' => 'Default Color',
@@ -78,7 +75,10 @@ class ThemeColorField extends Field
         return $value;
     }
 
-    protected function getOptions()
+    /**
+     * @return array<int, array<string, mixed>>
+     */
+    protected function getOptions(): array
     {
         return [
             ['label' => Craft::t('site', 'Default'), 'value' => 'default'],

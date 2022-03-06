@@ -28,13 +28,13 @@ return [
     'titleStyle' => 'fullTextColor',
 
     // Title Styles that show meta data in title area
-    'showMetaInTitleArea' => ['coverBoxed','introImage','imageOverlapText'],
+    'showMetaInTitleArea' => ['coverBoxed', 'introImage', 'imageOverlapText'],
 
     // Title Styles that show intro text in title area
     'showIntroInTitleArea' => ['introImage'],
 
     // Title Styles that apply special styles to teaser
-    'applyTeaserStyles' => ['fullText','imageText','textImage','text','imageOverlapText'],
+    'applyTeaserStyles' => ['fullText', 'imageText', 'textImage', 'text', 'imageOverlapText'],
 
     // relative to width.full if cover...
     'titleImageHeight' => 650,
@@ -73,7 +73,6 @@ return [
 
     'sidebarLayoutWidth' => 'xl',
 
-
     'defaultAspectRatio' => '16:9',
 
     // full for fullwidth
@@ -89,6 +88,9 @@ return [
 
     // Don't create srcset for images smaller than
     'minResponsiveWidth' => 400,
+
+    // Do not create responsive images in devMode?
+    'skipSrcsetInDevMode' => true,
 
     // Create srcset for this widths
     'responsiveWidths' => [2500, 1800, 1280, 1024, 768, 400],

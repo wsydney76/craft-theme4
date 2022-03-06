@@ -6,13 +6,15 @@ use Craft;
 use craft\elements\Asset;
 use craft\elements\Entry;
 use craft\events\DefineBehaviorsEvent;
+use craft\events\DefineFieldLayoutElementsEvent;
 use craft\events\DefineRulesEvent;
 use craft\events\ModelEvent;
 use craft\events\RegisterComponentTypesEvent;
-use craft\events\RegisterTemplateRootsEvent;
+use craft\models\FieldLayout;
 use craft\services\Fields;
 use craft\web\View;
 use modules\main\behaviors\EntryBehavior;
+use modules\main\fieldlayoutelements\NewRow;
 use modules\main\fields\AspectRatioField;
 use modules\main\fields\IncludeField;
 use modules\main\fields\MarginsYField;
@@ -35,9 +37,10 @@ use yii\base\Module;
 class MainModule extends Module
 {
 
+// Fields
     public static $app;
 
-    public function init()
+    public function init(): void
     {
         Craft::setAlias('@modules/main', $this->getBasePath());
 
@@ -51,21 +54,21 @@ class MainModule extends Module
         // Register Behaviors
         Event::on(
             Entry::class,
-            Entry::EVENT_DEFINE_BEHAVIORS, function(DefineBehaviorsEvent $event) {
+            Entry::EVENT_DEFINE_BEHAVIORS, function(DefineBehaviorsEvent $event): void {
             $event->behaviors[] = EntryBehavior::class;
         });
 
         // Register Rules
         Event::on(
             Entry::class,
-            Entry::EVENT_DEFINE_RULES, function(DefineRulesEvent $event) {
+            Entry::EVENT_DEFINE_RULES, function(DefineRulesEvent $event): void {
             $event->rules[] = ['title', 'string', 'max' => 50, 'on' => Entry::SCENARIO_LIVE];
         });
 
         // Register custom field types
         Event::on(
             Fields::class,
-            Fields::EVENT_REGISTER_FIELD_TYPES, function(RegisterComponentTypesEvent $event) {
+            Fields::EVENT_REGISTER_FIELD_TYPES, function(RegisterComponentTypesEvent $event): void {
             $event->types[] = IncludeField::class;
             $event->types[] = WidthField::class;
             $event->types[] = ThemeColorField::class;
@@ -82,17 +85,26 @@ class MainModule extends Module
         if (Craft::$app->request->isCpRequest) {
             Event::on(
                 View::class,
-                View::EVENT_BEFORE_RENDER_TEMPLATE, function() {
+                View::EVENT_BEFORE_RENDER_TEMPLATE, function(): void {
                 Craft::$app->view->registerAssetBundle(CpAssets::class);
             }
             );
         }
 
+        // Add New row to UI Elements
+        Event::on(
+            FieldLayout::class,
+            FieldLayout::EVENT_DEFINE_UI_ELEMENTS, function(DefineFieldLayoutElementsEvent $event) {
+            if ($event->sender->type == 'craft\\elements\\Entry') {
+                $event->elements[] = new NewRow();
+            }
+        }
+        );
 
         // Validate entries on all sites (fixes open Craft bug)
         Event::on(
             Entry::class,
-            Entry::EVENT_BEFORE_SAVE, function($event) {
+            Entry::EVENT_BEFORE_SAVE, function($event): void {
 
             if (Craft::$app->sites->getTotalSites() == 1) {
                 return;
@@ -103,7 +115,7 @@ class MainModule extends Module
 
             // TODO: Check conditionals
 
-            if ($entry->resaving || $entry->propagating || $entry->scenario != Entry::STATUS_LIVE) {
+            if ($entry->resaving || $entry->propagating || $entry->getScenario() != Entry::STATUS_LIVE) {
                 return;
             }
 
@@ -118,7 +130,7 @@ class MainModule extends Module
 
                 if (!$localizedEntry->validate()) {
                     $entry->addError(
-                        $entry->type->hasTitleField ? 'title' : 'slug',
+                        $entry->getType()->hasTitleField ? 'title' : 'slug',
                         Craft::t('site', 'Error validating entry in') .
                         ' "' . $localizedEntry->site->name . '". ' .
                         implode(' ', $localizedEntry->getErrorSummary(false)));
@@ -131,7 +143,7 @@ class MainModule extends Module
         // see config/general.php for an explanation
         Event::on(
             Asset::class,
-            Asset::EVENT_AFTER_SAVE, function(ModelEvent $event) {
+            Asset::EVENT_AFTER_SAVE, function(ModelEvent $event): void {
             /** @var Asset $asset */
             $asset = $event->sender;
 
@@ -139,13 +151,13 @@ class MainModule extends Module
                 return;
             }
 
-            $pathInfo = pathinfo($asset->filename);
+            $pathInfo = pathinfo($asset->getFilename());
             if ($pathInfo['extension'] != 'jfif') {
                 return;
             }
 
             $newFilename = $pathInfo['filename'] . '.jpg';
-            Craft::$app->assets->moveAsset($asset, $asset->folder, $newFilename);
+            Craft::$app->assets->moveAsset($asset, $asset->getFolder(), $newFilename);
         });
     }
 

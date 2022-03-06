@@ -16,7 +16,7 @@ use function sprintf;
 
 class ElementsController extends \craft\controllers\ElementsController
 {
-    public function actionCreate(): \yii\web\Response
+    public function actionCreate(): Response
     {
         $data = $this->request->getBodyParams();
 
@@ -68,6 +68,7 @@ class ElementsController extends \craft\controllers\ElementsController
             if (($key = array_search($data['targetId'], $ids)) !== false) {
                 unset($ids[$key]);
             }
+
             $element->setFieldValue($data['field'], $ids);
         }
 
@@ -93,7 +94,7 @@ class ElementsController extends \craft\controllers\ElementsController
         return $this->asJson(['success' => true, 'msg' => $msg[$task]]);
     }
 
-    public function actionGetRelatedEntriesListHtml()
+    public function actionGetRelatedEntriesListHtml(): string
     {
 
         $data = $this->request->getBodyParams();

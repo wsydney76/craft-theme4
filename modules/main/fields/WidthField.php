@@ -15,8 +15,10 @@ class WidthField extends Field
      * @var string|null The default width
      */
     public $defaultWidth;
-    public $addDefaultOptions = false;
-    public $addMobileOptions = false;
+
+    public bool $addDefaultOptions = false;
+
+    public bool $addMobileOptions = false;
 
     /**
      * @inheritDoc
@@ -26,9 +28,6 @@ class WidthField extends Field
         return 'Width';
     }
 
-    /**
-     * @return string|null
-     */
     public function getHandle(): ?string
     {
         return $this->handle;
@@ -45,7 +44,7 @@ class WidthField extends Field
     }
 
     /** @inheritdoc */
-    public function getSettingsHtml()
+    public function getSettingsHtml(): string
     {
         return Cp::selectFieldHtml([
                 'label' => 'Default Width',
@@ -102,13 +101,18 @@ class WidthField extends Field
         if ($this->addDefaultOptions || $isSettings) {
             $options = array_merge($this->getDefaultOptions(), $options);
         }
+
         if ($this->addMobileOptions || $isSettings) {
             $options = array_merge($options, $this->getMobileOptions());
         }
+
         return $options;
     }
 
-    protected function getMainOptions()
+    /**
+     * @return array<int, array<string, mixed>>
+     */
+    protected function getMainOptions(): array
     {
         return [
             ['label' => Craft::t('site', 'Small (640px)'), 'value' => 'sm'],
@@ -121,14 +125,20 @@ class WidthField extends Field
         ];
     }
 
-    protected function getDefaultOptions()
+    /**
+     * @return array<int, array<string, mixed>>
+     */
+    protected function getDefaultOptions(): array
     {
         return [
             ['label' => Craft::t('site','Default'), 'value' => 'default']
         ];
     }
 
-    protected function getMobileOptions()
+    /**
+     * @return array<int, array<string, mixed>>
+     */
+    protected function getMobileOptions(): array
     {
         return [
             ['label' => Craft::t('site', 'Always show mobile menu'), 'value' => 'always'],

@@ -15,6 +15,7 @@ use craft\volumes\Local;
 use Exception;
 use Faker\Factory;
 use Faker\Generator;
+use GuzzleHttp\Exception\GuzzleException;
 use yii\helpers\Console;
 use function implode;
 use function is_dir;
@@ -25,41 +26,59 @@ use const PHP_EOL;
 class SeedController extends Controller
 {
 // Constants
+    /**
+     * @var string
+     */
     public const CATEGORY_SECTIONHANDLE = 'topic';
-    public const NUM_ENTRIES = 30;
-    public const SECTIONHANDLE = 'article';
-    public $categorySlug = 'beispiele';
-    public $volume = 'images';
 
-    public function actionDeleteFakedEntries()
+    /**
+     * @var int
+     */
+    public const NUM_ENTRIES = 30;
+
+    /**
+     * @var string
+     */
+    public const SECTIONHANDLE = 'article';
+
+    public string $categorySlug = 'beispiele';
+
+    public string $volume = 'images';
+
+    public function actionDeleteFakedEntries(): void
     {
         $category = Entry::find()->section(self::CATEGORY_SECTIONHANDLE)->slug($this->categorySlug)->one();
         if (!$category) {
             $this->stderr('No example category found');
             return;
         }
+
         $entries = Entry::find()->section(self::SECTIONHANDLE)->relatedTo($category)->anyStatus()->all();
-        if (!$entries) {
+        if ($entries === []) {
             $this->stderr('No example posts found');
             return;
         }
+
         $count = count($entries);
         if (!$this->confirm("Delete {$count} posts related to category {$category->title}?")) {
             return;
         }
+
         foreach ($entries as $entry) {
             $this->stdout("Deleting {$entry->title}" . PHP_EOL);
             Craft::$app->elements->deleteElement($entry);
         }
+
         if (!$this->confirm("Delete example category?")) {
             return;
         }
+
         Craft::$app->elements->deleteElement($category);
 
         $this->stdout('The entries have been soft-deleted, they can be restored from the entries index.' . PHP_EOL);
     }
 
-    public function actionSeedContent()
+    public function actionSeedContent(): void
     {
 
         $this->actionCreateImages();
@@ -75,10 +94,10 @@ class SeedController extends Controller
         $this->actionCreateMembersEntries();
     }
 
-    public function actionCreateImages($num = 30, $timeout = 10)
+    public function actionCreateImages($num = 30, $timeout = 10): void
     {
 
-        if (!$this->confirm("Download $num example images from Unsplash? (Timeout $timeout sec.)")) {
+        if (!$this->confirm("Download {$num} example images from Unsplash? (Timeout {$timeout} sec.)")) {
             return;
         }
 
@@ -104,9 +123,9 @@ class SeedController extends Controller
 
         $loop = 0;
 
-        for ($i = $start; $i <= $end; $i++) {
+        for ($i = $start; $i <= $end; ++$i) {
 
-            $loop++;
+            ++$loop;
 
             $filename = "example_{$i}.jpg";
 
@@ -116,8 +135,8 @@ class SeedController extends Controller
 
             try {
                 $client->get($url, ['sink' => $path . DIRECTORY_SEPARATOR . $filename, 'timeout' => $timeout]);
-            } catch (Exception $e) {
-                $this->stdout(" failed: {$e->getMessage()} \n");
+            } catch (Exception $exception) {
+                $this->stdout(" failed: {$exception->getMessage()} \n");
                 continue;
             }
 
@@ -129,7 +148,7 @@ class SeedController extends Controller
         }
     }
 
-    public function actionCreateEntries(int $num = self::NUM_ENTRIES, $sectionHandle = self::SECTIONHANDLE)
+    public function actionCreateEntries(int $num = self::NUM_ENTRIES, $sectionHandle = self::SECTIONHANDLE): void
     {
         $section = Craft::$app->sections->getSectionByHandle($sectionHandle);
         if (!$section) {
@@ -148,7 +167,7 @@ class SeedController extends Controller
 
         $category = $this->getCategory();
 
-        for ($i = 1; $i <= $num; $i++) {
+        for ($i = 1; $i <= $num; ++$i) {
             $entry = new Entry();
             $entry->sectionId = $section->id;
             $entry->typeId = $type->id;
@@ -173,7 +192,7 @@ class SeedController extends Controller
             $entry->setFieldValue('bodyContent', $this->getBodyContent($faker));
 
             if (Craft::$app->elements->saveElement($entry)) {
-                $this->stdout('created, ID:' . $entry->id . PHP_EOL);
+                $this->stdout('created, ID:' . $entry->getId() . PHP_EOL);
             } else {
                 $this->stderr('failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
             }
@@ -188,6 +207,7 @@ class SeedController extends Controller
             if (!$section) {
                 return $entry;
             }
+
             $type = $section->getEntryTypes()[0];
             $user = User::find()->admin()->one();
             $entry = new Entry();
@@ -217,6 +237,7 @@ class SeedController extends Controller
                 $this->stdout('created' . PHP_EOL);
             }
         }
+
         return $entry;
     }
 
@@ -230,7 +251,10 @@ class SeedController extends Controller
             ->one();
     }
 
-    protected function getBodyContent(Generator $faker)
+    /**
+     * @return array<string, array<array<string, string|array<string, string>|array<string, mixed[]|string|null>|array<string, mixed[]>>|string>>
+     */
+    protected function getBodyContent(Generator $faker): array
     {
 
         $content = [
@@ -259,6 +283,7 @@ class SeedController extends Controller
                     foreach ($faker->paragraphs($faker->numberBetween(1, 5)) as $paragraph) {
                         $paragraphs .= '<p>' . $paragraph . '</p>';
                     }
+
                     $block = [
                         'type' => 'text',
                         'fields' => [
@@ -311,7 +336,7 @@ class SeedController extends Controller
                     break;
             }
 
-            $i++;
+            ++$i;
             $id = "new{$i}";
             $content['sortOrder'][] = $id;
             $content['blocks'][$id] = $block;
@@ -331,7 +356,7 @@ class SeedController extends Controller
 
     // php craft main/seed/create-images
 
-    public function actionResetHomepage()
+    public function actionResetHomepage(): void
     {
 
         if (!$this->confirm('Reset homepage content to random articles?')) {
@@ -393,8 +418,10 @@ class SeedController extends Controller
     }
 
     // php craft main/seed/reset-homepage
-
-    protected function getArticleIds($num = 3)
+    /**
+     * @return mixed[]
+     */
+    protected function getArticleIds($num = 3): array
     {
         $faker = Factory::create();
 
@@ -416,7 +443,7 @@ class SeedController extends Controller
         return ArrayHelper::getColumn($entries, 'id');
     }
 
-    public function actionResetSiteInfo()
+    public function actionResetSiteInfo(): void
     {
 
         if (!$this->confirm('Update Site Info?')) {
@@ -457,10 +484,9 @@ class SeedController extends Controller
      *
      * php craft main/seed/create-transforms
      *
-     * @return void
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      */
-    public function actionCreateTransforms()
+    public function actionCreateTransforms(): void
     {
 
         if (!$this->confirm('Retrieve each page to create missing image sizes? This may take some time.')) {
@@ -478,14 +504,14 @@ class SeedController extends Controller
         $i = 0;
 
         foreach ($entries as $entry) {
-            $i++;
-            $this->stdout("[{$i}/{$c}] Id: {$entry->id} {$entry->title} {$entry->uri}... ");
+            ++$i;
+            $this->stdout("[{$i}/{$c}] Id: {$entry->getId()} {$entry->title} {$entry->uri}... ");
 
             try {
-                $result = $client->get($entry->url);
+                $result = $client->get($entry->getUrl());
                 $this->stdout($result->getStatusCode());
-            } catch (Exception $e) {
-                $this->stdout("Error {$e->getMessage()}");
+            } catch (Exception $exception) {
+                $this->stdout("Error {$exception->getMessage()}");
             }
 
             $this->stdout("\n");
@@ -496,7 +522,7 @@ class SeedController extends Controller
 
     // php craft main/seed/reset-site-info
 
-    public function actionCreateMembersEntries()
+    public function actionCreateMembersEntries(): void
     {
 
         $entry = Entry::find()->section('page')->type('members')->slug('members')->one();
@@ -523,7 +549,7 @@ class SeedController extends Controller
         $entry->setFieldValue('membersTemplate', 'members.twig');
 
         if (Craft::$app->elements->saveElement($entry)) {
-            $this->stdout('Members created, ID:' . $entry->id . PHP_EOL);
+            $this->stdout('Members created, ID:' . $entry->getId() . PHP_EOL);
         } else {
             $this->stderr('failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
             return;
@@ -547,12 +573,12 @@ class SeedController extends Controller
                 'authorId' => $user->id,
                 'title' => $item['title'],
                 'slug' => $item['slug'],
-                'newParentId' => $parent->id
+                'newParentId' => $parent->getId()
             ]);
             $entry->setFieldValue('membersTemplate', $item['membersTemplate']);
 
             if (Craft::$app->elements->saveElement($entry)) {
-                $this->stdout($item['title'] . ' created, ID:' . $entry->id . PHP_EOL);
+                $this->stdout($item['title'] . ' created, ID:' . $entry->getId() . PHP_EOL);
             } else {
                 $this->stderr($item['title'] . ' failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
                 return;
