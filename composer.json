@@ -1,5 +1,5 @@
 {
-  "version": "3.4.1",
+  "version": "3.4.2",
   "description": "Flexible Theme Starter",
   "require": {
     "clubstudioltd/craft-asset-rev": "^6.0",
