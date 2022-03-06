@@ -1,6 +1,6 @@
 # Changelog
 
-## 3.4.1 2020-03-06
+## 3.4.2 2020-03-06
 
 * Added theme.skipSrcsetInDevMode setting, to speed up development/testing
 * Added New Row UI Element

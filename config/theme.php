@@ -34,7 +34,7 @@ return [
     'showIntroInTitleArea' => ['introImage'],
 
     // Title Styles that apply special styles to teaser
-    'applyTeaserStyles' => ['fullText', 'imageText', 'textImage', 'text', 'imageOverlapText'],
+    'applyTeaserStyles' => ['fullText', 'imageText', 'textImage', 'text'],
 
     // relative to width.full if cover...
     'titleImageHeight' => 650,

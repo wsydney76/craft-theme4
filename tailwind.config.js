@@ -1,5 +1,14 @@
 const colors = require('tailwindcss/colors')
 
+// Default Theme color
+color = 'blue'
+
+// Theme gray scale
+gray = 'slate'
+
+// Darkmode color palette
+dark = 'slate'
+
 module.exports = {
 
     presets: [
@@ -21,7 +30,7 @@ module.exports = {
                 'sh': {'raw': '(max-height: 450px)'}
             },
 
-            colors: require('./src/styles/presets/colors-default')('blue', 'slate', 'slate'),
+            colors: require('./src/styles/presets/colors-default')(color, gray, dark),
 
             fontFamily: {
                 custom: ['"Open Sans"', 'sans-serif'],
