@@ -9,9 +9,10 @@ Usefull for demos and hobby projects.
 * Check [Craft's recommended server requirements](https://craftcms.com/docs/3.x/requirements.html).
 * This project requires PHP 8.0.2
 * Create a MySql database.
-* Set up a web server pointing to the `web` directory of your project. Alternatively you can run `php craft serve` and use `http://localhost:8080` as your domain.
+* Set up a web server pointing to the `web` directory of your project. Alternatively you can run `php craft serve` and
+  use `http://localhost:8080` as your domain.
 
-##  Installation
+## Installation
 
 * Run `composer install --no-dev`
 * Edit `config/Env.php` with your environment specific settings.
@@ -25,19 +26,19 @@ Replace `project` with your project name
 * Open Terminal (On Windows: Open WSL2 Terminal (e.g. Ubuntu) as administrator)
 * `cd <your-dev-directory`
 * `nitro create https://github.com/wsydney76/craft-theme project`
-  * Confirm hostname `project.nitro` and webroot `web`
-  * Choose a PHP version: 8.0
-  * Add a database: Y
-  * Select MySql
-  * Enter database name: project
+    * Confirm hostname `project.nitro` and webroot `web`
+    * Choose a PHP version: 8.0
+    * Add a database: Y
+    * Select MySql
+    * Enter database name: project
 * On Windows: Follow the instructions to update your hosts file from a Windows shell terminall
 * On Windows: run `sudo chmod -R 777 project` (More sensitive minds follow the 'Nitro on Windows' documentation...)
 * Edit `config/Env.php` with your environment specific settings
-  * DB_SERVER: Name of the nitro db container, typically `mysql-8.0-3306.database.nitro`
-  * DB_DATABASE: As assigned above
-  * DB_USER: nitro
-  * DB_PASSWORTD: nitro
-  * DEFAULT_SITE_URL: `https://project.nitro`
+    * DB_SERVER: Name of the nitro db container, typically `mysql-8.0-3306.database.nitro`
+    * DB_DATABASE: As assigned above
+    * DB_USER: nitro
+    * DB_PASSWORTD: nitro
+    * DEFAULT_SITE_URL: `https://project.nitro`
 * `cd project`
 * Run `nitro craft install` Enter you user data and confirm the other settings.
 * Run `nitro craft migrate/all`
@@ -47,10 +48,11 @@ Replace `project` with your project name
 ## Set up your dev environment:
 
 * Run 'npm install' to enable frontend builds and IDE code completion for Tailwind. Available commands:
-  * npm run dev - creates dev assets
-  * npm run hot - enable hot module reload
-  * npm run build - create production assets
-* PhpStorm: Enable Symfony plugin, mark `web/assets/dist` and `web/cpresources` as excluded. Invalided caches and Restart
+    * npm run dev - creates dev assets
+    * npm run hot - enable hot module reload
+    * npm run build - create production assets
+* PhpStorm: Enable Symfony plugin, mark `web/assets/dist` and `web/cpresources` as excluded. Invalided caches and
+  Restart
 
 ## Customization
 
@@ -58,14 +60,17 @@ Replace `project` with your project name
 * Update Globals
 * Change settings in `config/theme.php`
 * Update `tailwind.config.js` and run `npm run ...`
-* By default, the main navigation reflects the structure of your Pages section, but you can override this by setting `Globals -> Site Info -> Navigation Entries`
-* By default, versioning of entries is not enabled. (We have never seen this used in the wild...) Goto settings -> section to enable versioning if needed.
+* By default, the main navigation reflects the structure of your Pages section, but you can override this by
+  setting `Globals -> Site Info -> Navigation Entries`
+* By default, versioning of entries is not enabled. (We have never seen this used in the wild...) Goto settings ->
+  section to enable versioning if needed.
 * CP styles can be customized in `modules/resources/cp/dist/cp_styles.css`
 
 ## Faker content
 
 * Upload some images into the images volume, if you want to use your own images for faked content.
-* Run `php craft main/seed/seed-content` to seed the system with some images and dummy entries, update Homepage and global Site Info, and create image transforms.
+* Run `php craft main/seed/seed-content` to seed the system with some images and dummy entries, update Homepage and
+  global Site Info, and create image transforms.
 * Run `php craft main/seed/create-entries` at any time to create more random entries.
 * Run `php craft main/seed/create-images` at any time to download random images.
 * Run `php craft main/seed/create-transform` at any time to create missing image transforms.
@@ -73,7 +78,7 @@ Replace `project` with your project name
 
 ## Localization
 
-The default web site is set up for German, any starter content is only created in German.
+The default web site is set up for German.
 
 A second site is prepared for English, however it is not enabled by default.
 
@@ -97,22 +102,28 @@ Do one of the following:
 * Translate any existing content.
 
 ### You created a site other than German or English?
+
 * Add translations for static strings. `translations/<lang>/site.php`
 * If you run a membership sites, update the relevant paths in `config/general.php`.
 
 ### You don't know what you want?
+
 * Do nothing. Like in real life.
 
 ## Setting up a membership site
 
-If you do not plan a membership site, you can safely delete templates/_members, the entry type page/members and the user group members.
+If you do not plan a membership site, you can safely delete templates/_members, the entry type page/members and the user
+group members.
 
-Theme comes with preconfigured settings using 'members', you can change that to anything you want, but we will stick to that naming for this instructions.
+Theme comes with preconfigured settings using 'members', you can change that to anything you want, but we will stick to
+that naming for this instructions.
 
-We do not want to use boring default forms, therefore you can create pages with matching titles, teasers, featured images and add some helping content. 
+We do not want to use boring default forms, therefore you can create pages with matching titles, teasers, featured
+images and add some helping content.
 
-Set up entries for all the relevant member actions. By default, use section=Page, type=Members. Make sure the URIs match the corresponding settings in `config/general.php` for all sites.
-Select a members template in order to include the required action: 
+Set up entries for all the relevant member actions. By default, use section=Page, type=Members. Make sure the URIs match
+the corresponding settings in `config/general.php` for all sites. Select a members template in order to include the
+required action:
 
 * Members - Starting point for member content
 * Login - Login page
@@ -130,8 +141,9 @@ Required Plugins: Sprig (Craft), Tailwind CSS Forms (Frontend)
 
 ## License
 
-Both Craft CMS and the Imager X Plugin are paid software. However you can use both for free
-on any [non public domain.](https://craftcms.com/knowledge-base/how-craft-license-enforcement-works#how-do-we-determine-craft-is-running-on-a-public-domain).
+Both Craft CMS and the Imager X Plugin are paid software. However you can use both for free on
+any [non public domain.](https://craftcms.com/knowledge-base/how-craft-license-enforcement-works#how-do-we-determine-craft-is-running-on-a-public-domain)
+.
 
 In case you can't pay for use on a public domain: (You should, the devs have to pay for their living...)
 
@@ -147,7 +159,7 @@ The following plugins are used:
 Will not work at all without those (or require some dev work to drop them)
 
 * Super Table: Workaround for missing 'matrix in matrix'. Used a lot in content modelling.
-* Redactor: Rich text editing 
+* Redactor: Rich text editing
 * Asset Rev: Required to match the build workflow.
 * Embedded Assets: Required for Embed block.
 * Sprig: Frontend reactivity, used in search und pagination
@@ -156,7 +168,8 @@ Will not work at all without those (or require some dev work to drop them)
 
 These can be uninstall without breaking the site.
 
-* Imager X (paid): Better quality and more control for image handling. Will fallback to Crafts native functionality if uninstalled.
+* Imager X (paid): Better quality and more control for image handling. Will fallback to Crafts native functionality if
+  uninstalled.
 * SEOMate: Can be uninstalled if you do not want to be found. Or replace with (paid) SEOMatic plugin.
 * Smith: Adds copy & paste functionality to matrix blocks.
 * MatrixMate: Adds grouping of blocks and tabs to matrix blocks.
@@ -164,7 +177,8 @@ These can be uninstall without breaking the site.
 Private Plugins: 'Unofficial' plugins. Consider as beta.
 
 * Element Map: Shows reverse relationships in the Control Panel
-* Work: Proof of concept for improving the editing workflow (most useful for comparing draft content with current version)
+* Work: Proof of concept for improving the editing workflow (most useful for comparing draft content with current
+  version)
 
 Not installed, but recommended
 

@@ -1,6 +1,5 @@
 <?php
 return [
-
     'A new email address needs to be verified.' => 'Eine neue E-Mail-Adresse muss noch bestätigt werden.',
     'Accept' => 'Annehmen',
     'Access the site with your account' => 'Zugriff auf die Website mit Ihrem Konto',
@@ -24,6 +23,7 @@ return [
     'Archive' => 'Archiv',
     'Article Index page' => 'Artikel-Indexseite',
     'Article' => 'Artikel',
+    'Articles Limit' => 'Artikelanzahl',
     'Articles' => 'Artikel',
     'Aspect Ratio' => 'Seitenverhältnis',
     'Attribution' => 'Quelle',
@@ -83,6 +83,7 @@ return [
     'Global Seo Fields' => 'Globale SEO Felder',
     'Half' => 'Halb',
     'Heading' => 'Überschrift',
+    'How many new articles to show if no articles are selected' => 'Wie viele neue Artikel angezeigt werden sollen, wenn keine Artikel ausgewählt sind',
     'Image (darkened image)' => 'Bild (abgedunkeltes Bild)',
     'Image (very dark image)' => 'Bild (stark abgedunkelt)',
     'Image align' => 'Bildausrichtung',
@@ -99,6 +100,7 @@ return [
     'Internal Error' => 'Interner Fehler',
     'Last Name' => 'Nachname',
     'Latest Articles' => 'Neueste Artikel',
+    'Leave blank to show the newest articles.' => 'Leer lassen, um die neuesten Artikel anzuzeigen.',
     'Legal' => 'Rechtliches',
     'Light color mode' => 'Heller Farbmodus',
     'Light' => 'Helle Farbe',
@@ -125,6 +127,7 @@ return [
     'One one playlist per page' => 'Nur eine Playlist je Seite',
     'One quarter' => 'Ein Viertel',
     'One third' => 'Ein Drittel',
+    'Only show newest articles from selected topic' => 'Nur neueste Artikel aus dem ausgewählten Thema anzeigen',
     'Open in new window' => 'In neuem Fenster öffnen',
     'Order By' => 'Sortieren nach',
     'Overlap' => 'Überlappend',
@@ -153,6 +156,7 @@ return [
     'Remember me' => 'Angemeldet bleiben',
     'Request Password Reset' => 'Passwort zurücksetzen anfordern',
     'Required if email is changed or new password is set' => 'Erforderlich, wenn die E-Mail-Adresse geändert oder ein neues Passwort festgelegt wird',
+    'Restrict to topic' => 'Auf Thema einschränken',
     'Save Profile' => 'Profil speichern',
     'Search Term' => 'Suchbegriff',
     'Search' => 'Suche',

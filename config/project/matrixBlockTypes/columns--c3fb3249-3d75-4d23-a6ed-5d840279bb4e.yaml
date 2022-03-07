@@ -131,8 +131,8 @@ fields:
     name: Width
     searchable: false
     settings:
-      addDefaultOptions: ''
-      addMobileOptions: ''
+      addDefaultOptions: false
+      addMobileOptions: false
       defaultWidth: xl
     translationKeyFormat: null
     translationMethod: none

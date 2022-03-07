@@ -142,7 +142,14 @@ class SeedController extends Controller
 
             $asset = Craft::$app->assetIndexer->indexFile($volume, 'examples/' . $filename);
             $asset->setFieldValue('copyright', 'Unsplash via picsum.photos');
+            $asset->setFieldValue('altText', 'Platzhaltertext');
             Craft::$app->elements->saveElement($asset);
+
+            $localizedAsset = $asset->getLocalized()->site('en')->one();
+            if ($localizedAsset) {
+                $localizedAsset->setFieldValue('altText', 'Placeholder text');
+                Craft::$app->elements->saveElement($localizedAsset);
+            }
 
             $this->stdout(" created\n");
         }
@@ -385,7 +392,8 @@ class SeedController extends Controller
                     'fields' => [
                         'width' => 'xl',
                         'style' => 'featured',
-                        'articles' => $this->getArticleIds(1)
+                        'articles' => [],
+                        'articlesLimit' => 1
                     ]
                 ],
                 'new2' => [
@@ -418,6 +426,7 @@ class SeedController extends Controller
     }
 
     // php craft main/seed/reset-homepage
+
     /**
      * @return mixed[]
      */
@@ -459,7 +468,6 @@ class SeedController extends Controller
         $siteName = $this->prompt('Site Name: ', ['default' => $global->siteName]);
         $copyright = $this->prompt('Copyright: ', ['default' => $global->copyright]);
         $setFeaturedImage = $this->confirm('Set fallback image?');
-
 
         $global->setFieldValue('siteName', $siteName);
         $global->setFieldValue('copyright', $copyright);
@@ -520,7 +528,7 @@ class SeedController extends Controller
         $this->stdout("Done\n");
     }
 
-    // php craft main/seed/reset-site-info
+    // php craft main/seed/create-members-entries
 
     public function actionCreateMembersEntries(): void
     {
@@ -550,6 +558,7 @@ class SeedController extends Controller
 
         if (Craft::$app->elements->saveElement($entry)) {
             $this->stdout('Members created, ID:' . $entry->getId() . PHP_EOL);
+            $this->localize($entry, 'Members', 'members');
         } else {
             $this->stderr('failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
             return;
@@ -557,12 +566,43 @@ class SeedController extends Controller
 
         $parent = $entry;
         $items = [
-            ['title' => 'Login', 'slug' => 'login', 'membersTemplate' => 'login.twig'],
-            ['title' => 'Registrieren', 'slug' => 'registrieren', 'membersTemplate' => 'register.twig'],
-            ['title' => 'Profil', 'slug' => 'profil', 'membersTemplate' => 'profile.twig'],
-            ['title' => 'Passwort vergessen?', 'slug' => 'passwort-vergessen', 'membersTemplate' => 'forgotpassword.twig'],
-            ['title' => 'Passwort vergeben', 'slug' => 'passwort-vergeben', 'membersTemplate' => 'setpassword.twig'],
-            ['title' => 'Ungültig', 'slug' => 'ungueltig', 'membersTemplate' => 'invalidtoken.twig'],
+            [
+                'title' => 'Login',
+                'slug' => 'login',
+                'title_en' => 'Login',
+                'slug_en' => 'login',
+                'membersTemplate' => 'login.twig'
+            ], [
+                'title' => 'Registrieren',
+                'slug' => 'registrieren',
+                'title_en' => 'Register',
+                'slug_en' => 'register',
+                'membersTemplate' => 'register.twig'
+            ], [
+                'title' => 'Profil',
+                'slug' => 'profil',
+                'title_en' => 'Profile',
+                'slug_en' => 'profile',
+                'membersTemplate' => 'profile.twig'
+            ], [
+                'title' => 'Passwort vergessen?',
+                'slug' => 'passwort-vergessen',
+                'title_en' => 'Forgot password?',
+                'slug_en' => 'forgot-password',
+                'membersTemplate' => 'forgotpassword.twig'
+            ], [
+                'title' => 'Passwort vergeben',
+                'slug' => 'passwort-vergeben',
+                'title_en' => 'Set password',
+                'slug_en' => 'set-password',
+                'membersTemplate' => 'setpassword.twig'
+            ], [
+                'title' => 'Ungültig',
+                'slug' => 'ungueltig',
+                'title_en' => 'Invalid',
+                'slug_en' => 'invalid',
+                'membersTemplate' => 'invalidtoken.twig'
+            ],
         ];
 
         foreach ($items as $item) {
@@ -579,10 +619,21 @@ class SeedController extends Controller
 
             if (Craft::$app->elements->saveElement($entry)) {
                 $this->stdout($item['title'] . ' created, ID:' . $entry->getId() . PHP_EOL);
+                $this->localize($entry, $item['title_en'], $item['slug_en']);
             } else {
                 $this->stderr($item['title'] . ' failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
                 return;
             }
+        }
+    }
+
+    protected function localize($entry, $title, $slug)
+    {
+        $localizedEntry = $entry->getLocalized()->site('en')->one();
+        if ($localizedEntry) {
+            $localizedEntry->title = $title;
+            $localizedEntry->slug = $slug;
+            Craft::$app->elements->saveElement($localizedEntry);
         }
     }
 }

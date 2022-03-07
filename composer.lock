@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5700a34937a7047eabf5682e19f0451b",
+    "content-hash": "abe6c509bca0eb876471d3f18c5e82de",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -2386,16 +2386,16 @@
         },
         {
             "name": "jfcherng/php-diff",
-            "version": "6.11.3",
+            "version": "6.11.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jfcherng/php-diff.git",
-                "reference": "cac1690253050f101f3710a07d744b36695973dd"
+                "reference": "4ce13e9ad2acc02a75753ba6fa50fce33e03dd97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jfcherng/php-diff/zipball/cac1690253050f101f3710a07d744b36695973dd",
-                "reference": "cac1690253050f101f3710a07d744b36695973dd",
+                "url": "https://api.github.com/repos/jfcherng/php-diff/zipball/4ce13e9ad2acc02a75753ba6fa50fce33e03dd97",
+                "reference": "4ce13e9ad2acc02a75753ba6fa50fce33e03dd97",
                 "shasum": ""
             },
             "require": {
@@ -2440,7 +2440,7 @@
             ],
             "support": {
                 "issues": "https://github.com/jfcherng/php-diff/issues",
-                "source": "https://github.com/jfcherng/php-diff/tree/6.11.3"
+                "source": "https://github.com/jfcherng/php-diff/tree/6.11.4"
             },
             "funding": [
                 {
@@ -2448,7 +2448,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2022-02-28T16:23:03+00:00"
+            "time": "2022-03-07T11:24:32+00:00"
         },
         {
             "name": "jfcherng/php-mb-string",
@@ -6872,16 +6872,16 @@
         },
         {
             "name": "voku/anti-xss",
-            "version": "4.1.37",
+            "version": "4.1.38",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/anti-xss.git",
-                "reference": "728e158427a263917f33b0a29eb75d866bd18d17"
+                "reference": "a659a2a502998146b5024cdf9d76a37f0d1b2492"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/anti-xss/zipball/728e158427a263917f33b0a29eb75d866bd18d17",
-                "reference": "728e158427a263917f33b0a29eb75d866bd18d17",
+                "url": "https://api.github.com/repos/voku/anti-xss/zipball/a659a2a502998146b5024cdf9d76a37f0d1b2492",
+                "reference": "a659a2a502998146b5024cdf9d76a37f0d1b2492",
                 "shasum": ""
             },
             "require": {
@@ -6927,7 +6927,7 @@
             ],
             "support": {
                 "issues": "https://github.com/voku/anti-xss/issues",
-                "source": "https://github.com/voku/anti-xss/tree/4.1.37"
+                "source": "https://github.com/voku/anti-xss/tree/4.1.38"
             },
             "funding": [
                 {
@@ -6951,7 +6951,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-02-15T01:57:51+00:00"
+            "time": "2022-03-07T10:26:59+00:00"
         },
         {
             "name": "voku/arrayy",

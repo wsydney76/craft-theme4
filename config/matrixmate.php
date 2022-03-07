@@ -9,7 +9,7 @@ return [
                     'types' => ['gallery', 'imageAndText', 'embed', 'audio', 'playlist', 'video'],
                 ], [
                     'label' => Craft::t('site', 'Special'),
-                    'types' => ['articles','summary', 'columns', 'buttons', 'quote', 'faq', 'markdown', 'dynamicBlock']
+                    'types' => ['articles', 'summary', 'columns', 'buttons', 'quote', 'faq', 'markdown', 'dynamicBlock']
                 ]
             ],
             'types' => [
@@ -108,11 +108,11 @@ return [
                     'tabs' => [
                         [
                             'label' => Craft::t('site', 'Content'),
-                            'fields' => ['heading', 'articles','topic']
+                            'fields' => ['heading', 'articles', 'topic', 'articlesLimit', 'restrictToTopic']
                         ],
                         [
                             'label' => Craft::t('site', 'Layout'),
-                            'fields' => ['width', 'style', 'showAuthorAndDate','addTopBorder']
+                            'fields' => ['width', 'style', 'showAuthorAndDate', 'addTopBorder']
                         ]
 
                     ]
