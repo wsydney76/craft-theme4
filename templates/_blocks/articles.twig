@@ -1,5 +1,18 @@
 {% from '_macros/lib.twig' import img %}
+
 {% set entries = block.articles.all %}
+{% set topic = block.topic.one %}
+
+{% if not entries %}
+    {% set articlesLimit = block.articlesLimit ?? 1 %}
+    {% set query = craft.entries.section('article').limit(articlesLimit) %}
+
+    {% if topic %}
+        {% do query.relatedTo(topic) %}
+    {% endif %}
+
+    {% set entries = query.all %}
+{% endif %}
 
 {% set style = block.style.value ?? 'default' %}
 
@@ -113,8 +126,8 @@
             {% endfor %}
         </div>
 
-        {% set topic = block.topic.one %}
-        {% if topic %}
+
+        {% if topic and not block.restrictToTopic %}
             <div class="mt-12 mb-block">
                 <a class="btn bg-primary dark:bg-primary-dark text-secondary dark:text-secondary-dark text-base"
                    href="{{ topic.url }}">{{ 'All articles on the topic'|t }} {{ topic.title }}</a>

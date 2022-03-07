@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1646410621
+dateModified: 1646653805
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -80,6 +80,7 @@ meta:
     7f57273c-29f2-499e-9929-6a4937a6ec33: Primarfarbe # Primarfarbe
     7fca7d9d-e5a7-4a44-83de-90776b3a7316: Breite # Breite
     8ad4e678-f595-4ec6-bce4-fde5e7695646: Titel # Titel
+    8b780bbf-5c14-4590-9eac-dda4a4fb6dcd: 'Restrict to topic' # Restrict to topic
     8bdcbbd7-5199-473d-a5a8-86cb6259f921: 'Font Url' # Font Url
     8c6df9ef-ca5c-4a08-9c7b-7bbb9e11b5a3: Jahr # Jahr
     8c9b2ed9-86a5-4843-858a-16760e0e5437: 'Image Effects' # Image Effects
@@ -281,6 +282,7 @@ meta:
     cce5096c-8ab7-4940-9973-ad47671c92cb: 'Admin Guide' # Admin Guide
     cd4b4d9a-0519-4f07-93e0-5957b57a9afd: Legal # Legal
     cda0b80d-b767-406b-a9db-316e16db4b33: 'Video Url' # Video Url
+    d2bff817-c170-4c81-81c8-715894d6795d: 'Articles Limit' # Articles Limit
     d5a44dcf-9ae8-4f6a-b498-ddefa0abc78c: 'Role Name' # Role Name
     d9da022d-74c8-40d1-bd79-f3a6f208e542: Style # Style
     d82cda5f-ddc5-4242-9266-d90a9944f116: 'Extra CSS' # Extra CSS

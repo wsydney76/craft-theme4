@@ -17,11 +17,20 @@ fieldLayouts:
             fieldUid: e26bccc0-5f6e-465a-bc53-ca518d9a70d8 # Articles
             instructions: null
             label: null
-            required: true
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
-            width: 100
+            width: 50
+          -
+            fieldUid: d2bff817-c170-4c81-81c8-715894d6795d # Articles Limit
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
           -
             fieldUid: 1a4c4f22-b6ec-4dc8-8b67-ef9d928180d0 # Topic
             instructions: null
@@ -30,7 +39,16 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
-            width: 100
+            width: 50
+          -
+            fieldUid: 8b780bbf-5c14-4590-9eac-dda4a4fb6dcd # Restrict to topic
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
           -
             fieldUid: 073bb589-e25f-4852-95c5-3aa6126e13b0 # Width
             instructions: null
@@ -93,6 +111,21 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Entries
+  8b780bbf-5c14-4590-9eac-dda4a4fb6dcd: # Restrict to topic
+    columnSuffix: null
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: restrictToTopic
+    instructions: 'Only show newest articles from selected topic'
+    name: 'Restrict to topic'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
   14b97a17-1192-45ff-a041-b14cc2b7fdcd: # Show Author and Date
     columnSuffix: null
     contentColumnType: boolean
@@ -132,8 +165,8 @@ fields:
     name: Width
     searchable: false
     settings:
-      addDefaultOptions: '1'
-      addMobileOptions: ''
+      addDefaultOptions: true
+      addMobileOptions: false
       defaultWidth: default
     translationKeyFormat: null
     translationMethod: none
@@ -216,12 +249,33 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Dropdown
+  d2bff817-c170-4c81-81c8-715894d6795d: # Articles Limit
+    columnSuffix: null
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: articlesLimit
+    instructions: 'How many new articles to show if no articles are selected'
+    name: 'Articles Limit'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: 1
+      max: null
+      min: 1
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
   e26bccc0-5f6e-465a-bc53-ca518d9a70d8: # Articles
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: articles
-    instructions: ''
+    instructions: 'Leave blank to show the newest articles.'
     name: Articles
     searchable: true
     settings:

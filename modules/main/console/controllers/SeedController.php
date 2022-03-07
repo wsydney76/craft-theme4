@@ -392,7 +392,8 @@ class SeedController extends Controller
                     'fields' => [
                         'width' => 'xl',
                         'style' => 'featured',
-                        'articles' => $this->getArticleIds(1)
+                        'articles' => [],
+                        'articlesLimit' => 1
                     ]
                 ],
                 'new2' => [

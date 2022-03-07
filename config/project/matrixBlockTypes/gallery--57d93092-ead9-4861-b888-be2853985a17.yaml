@@ -96,8 +96,8 @@ fields:
     name: Width
     searchable: false
     settings:
-      addDefaultOptions: '1'
-      addMobileOptions: ''
+      addDefaultOptions: true
+      addMobileOptions: false
       defaultWidth: default
     translationKeyFormat: null
     translationMethod: none
