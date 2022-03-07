@@ -566,12 +566,43 @@ class SeedController extends Controller
 
         $parent = $entry;
         $items = [
-            ['title' => 'Login', 'slug' => 'login', 'title_en' => 'Login', 'slug_en' => 'login', 'membersTemplate' => 'login.twig'],
-            ['title' => 'Registrieren', 'slug' => 'registrieren', 'title_en' => 'Register', 'slug_en' => 'register', 'membersTemplate' => 'register.twig'],
-            ['title' => 'Profil', 'slug' => 'profil', 'title_en' => 'Profile', 'slug_en' => 'profile', 'membersTemplate' => 'profile.twig'],
-            ['title' => 'Passwort vergessen?', 'slug' => 'passwort-vergessen', 'title_en' => 'Forgot password?', 'slug_en' => 'forgot-password', 'membersTemplate' => 'forgotpassword.twig'],
-            ['title' => 'Passwort vergeben', 'slug' => 'passwort-vergeben', 'title_en' => 'Set password', 'slug_en' => 'set-password', 'membersTemplate' => 'setpassword.twig'],
-            ['title' => 'Ungültig', 'slug' => 'ungueltig', 'title_en' => 'Invalid', 'slug_en' => 'invalid', 'membersTemplate' => 'invalidtoken.twig'],
+            [
+                'title' => 'Login',
+                'slug' => 'login',
+                'title_en' => 'Login',
+                'slug_en' => 'login',
+                'membersTemplate' => 'login.twig'
+            ], [
+                'title' => 'Registrieren',
+                'slug' => 'registrieren',
+                'title_en' => 'Register',
+                'slug_en' => 'register',
+                'membersTemplate' => 'register.twig'
+            ], [
+                'title' => 'Profil',
+                'slug' => 'profil',
+                'title_en' => 'Profile',
+                'slug_en' => 'profile',
+                'membersTemplate' => 'profile.twig'
+            ], [
+                'title' => 'Passwort vergessen?',
+                'slug' => 'passwort-vergessen',
+                'title_en' => 'Forgot password?',
+                'slug_en' => 'forgot-password',
+                'membersTemplate' => 'forgotpassword.twig'
+            ], [
+                'title' => 'Passwort vergeben',
+                'slug' => 'passwort-vergeben',
+                'title_en' => 'Set password',
+                'slug_en' => 'set-password',
+                'membersTemplate' => 'setpassword.twig'
+            ], [
+                'title' => 'Ungültig',
+                'slug' => 'ungueltig',
+                'title_en' => 'Invalid',
+                'slug_en' => 'invalid',
+                'membersTemplate' => 'invalidtoken.twig'
+            ],
         ];
 
         foreach ($items as $item) {
