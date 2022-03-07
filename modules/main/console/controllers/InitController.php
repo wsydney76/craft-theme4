@@ -228,6 +228,8 @@ class InitController extends Controller
 
         if (!Craft::$app->elements->saveElement($entry)) {
             echo "Error saving article index entry\n";
+        } else {
+            $this->localize($entry, 'Articles', 'articles');
         }
 
         // Topics Index -------------------------------------------------------------------------------
@@ -248,6 +250,8 @@ class InitController extends Controller
 
         if (!Craft::$app->elements->saveElement($entry)) {
             echo "Error saving topic index entry\n";
+        }else {
+            $this->localize($entry, 'Topics', 'topics');
         }
 
         // About page -------------------------------------------------------------------------------
@@ -282,6 +286,8 @@ class InitController extends Controller
 
         if (!Craft::$app->elements->saveElement($entry)) {
             echo "Error saving about entry\n";
+        } else {
+            $this->localize($entry, 'Contact', 'contact');
         }
 
         // Search Page -------------------------------------------------------------------------------
@@ -310,6 +316,8 @@ class InitController extends Controller
 
         if (!Craft::$app->elements->saveElement($entry)) {
             echo "Error saving search entry\n";
+        } else {
+            $this->localize($entry, 'Search', 'search');
         }
 
         // Impressum  -------------------------------------------------------------------------------
@@ -346,6 +354,8 @@ class InitController extends Controller
 
         if (!Craft::$app->elements->saveElement($entry)) {
             echo "Error saving impressum entry\n";
+        } else {
+            $this->localize($entry, 'Impressum', 'impressum');
         }
 
         // Privacy page -------------------------------------------------------------------------------
@@ -363,9 +373,20 @@ class InitController extends Controller
 
         if (!Craft::$app->elements->saveElement($entry)) {
             echo "Error saving privacy entry\n";
+        } else {
+            $this->localize($entry, 'Privacy policy', 'privacy');
         }
 
         return true;
+    }
+
+    protected function localize($entry, $title, $slug) {
+        $localizedEntry = $entry->getLocalized()->site('en')->one();
+        if ($localizedEntry) {
+            $localizedEntry->title = $title;
+            $localizedEntry->slug = $slug;
+            Craft::$app->elements->saveElement($localizedEntry);
+        }
     }
 
     public function actionCreateGuideEntries(): void
