@@ -18,9 +18,12 @@
  */
 
 use config\Env;
+use craft\db\Table;
+use craft\helpers\App;
 use modules\genericfields\GenericFieldsModule;
 use modules\guide\GuideModule;
 use modules\main\MainModule;
+use yii\web\DbSession;
 
 return [
     'id' => Env::APP_ID,
@@ -32,5 +35,21 @@ return [
     'bootstrap' => [
         'main',
         'guide',
-        'genericfields']
+        'genericfields'
+    ],
+    'components' => [
+        'session' => function() {
+            // Get the default component config
+            $config = App::sessionConfig();
+
+            // Override the class to use DB session class
+            $config['class'] = DbSession::class;
+
+            // Set the session table name
+            $config['sessionTable'] = Table::PHPSESSIONS;
+
+            // Instantiate and return it
+            return Craft::createObject($config);
+        },
+    ],
 ];
