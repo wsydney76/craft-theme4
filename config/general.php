@@ -58,6 +58,9 @@ return [
         // 'revAssetUrls' => true breaks audio player
         'revAssetUrls' => true,
 
+        // Whether to enable Craft’s template {% cache %} tag on a global basis.
+        'enableTemplateCaching' => false,
+
         //Whether non-ASCII characters in auto-generated slugs should be converted to ASCII
         'limitAutoSlugsToAscii' => true,
 
@@ -110,7 +113,6 @@ return [
     'dev' => [
         // Dev Mode (see https://craftcms.com/guides/what-dev-mode-does)
         'devMode' => true,
-        'enableTemplateCaching' => false,
     ],
 
     // Staging environment settings
@@ -123,5 +125,6 @@ return [
     'production' => [
         // Set this to `false` to prevent administrative changes from being made on production
         'allowAdminChanges' => false,
+        'enableTemplateCaching' => true,
     ],
 ];
