@@ -1,61 +1,61 @@
 html, body {
-    background-color: #f7fafc;
-    font-size: 16px
+    background-color: #f7fafc !important;
+    font-size: 16px !important;
 }
 
 .field > .heading > .instructions, .checkboxfield.has-instructions .instructions {
-    color: #666
+    color: #666 !important;
 }
 
 input.text, textarea.text, .text > input, .text > textarea, table.editable textarea, .selectize-text > .selectize-control > .selectize-input {
-    font-size: 16px
+    font-size: 16px !important;
 }
 
 #global-sidebar {
-    background-color: #265077
+    background-color: #265077 !important;
 }
 
 .sidebar .heading span {
-    color: #264a6c;
-    font-size: 13px;
-    letter-spacing: 1px
+    color: #264a6c !important;
+    font-size: 13px !important;
+    letter-spacing: 1px !important
 }
 
 #sidebar nav li a.sel {
-    background-color: #fff
+    background-color: #fff !important
 }
 
 #fields .heading {
-    padding-bottom: 8px
+    padding-bottom: 8px !important
 }
 
 .blocks {
-    margin-left: 12px
+    margin-left: 12px !important
 }
 
 .matrixblock > .titlebar {
-    background-color: #e4edf6
+    background-color: #e4edf6 !important
 }
 
 .matrixblock > .titlebar > .blocktype {
-    font-weight: bold;
-    color: #666
+    font-weight: bold !important;
+    color: #666 !important
 }
 
 .matrixblock.collapsed > .titlebar > .blocktype {
-    font-weight: normal
+    font-weight: normal !important
 }
 
 table.data thead th, table.data thead td {
-    padding: 8px 12px
+    padding: 8px 12px !important
 }
 
 body.ltr table.data thead th.ordered.desc, body.ltr table.data thead th.ordered.asc {
-    background-position-y: -27px
+    background-position-y: -27px !important
 }
 
 body.ltr table.data thead th.ordered:not(.desc) {
-    background-position-y: 4px
+    background-position-y: 4px !important
 }
 
 .details-textarea {
@@ -65,7 +65,6 @@ body.ltr table.data thead th.ordered:not(.desc) {
 }
 
 
-
 .btn.dashed {
     background-color: #f7fafc !important;
     margin-top: 6px
@@ -73,10 +72,10 @@ body.ltr table.data thead th.ordered:not(.desc) {
 
 
 div[id$="fields-columns"] .superTable-layout-row-new {
-    border: 2px solid #94a3b8;
+    border: 2px solid #94a3b8 !important;
 }
 
 #sidebar .heading {
-    cursor: pointer;
+    cursor: pointer !important;
 }
 
