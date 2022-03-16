@@ -12,7 +12,11 @@
 <div class="max-w-screen-{{ theme.defaultIndexWidth }} space-y-block">
     {% for entry in entries %}
 
-        {% set image = entry.featuredImage.one ?? siteInfo.featuredImage.one %}
+        {% set image = entry.featuredImage|one  %}
+        {% if not image %}
+            {% set image = siteInfo.featuredImage.one %}
+        {% endif %}
+
 
         <a href="{{ entry.url }}"
            class="hover:no-underline block space-y-4 text-base pb-block border-b border-border">

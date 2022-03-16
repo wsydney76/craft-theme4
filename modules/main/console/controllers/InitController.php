@@ -223,7 +223,8 @@ class InitController extends Controller
             'slug' => 'artikel',
             'indexSection' => 'article',
             'orderBy' => '',
-            'indexTemplate' => 'cards.twig'
+            'indexTemplate' => 'cards.twig',
+            'criteria' => '{"section":"article", "orderBy":"postDate desc", "limit":12, "with": [["featuredImage"],["author"]]}'
         ]);
 
         if (!Craft::$app->elements->saveElement($entry)) {
@@ -245,12 +246,13 @@ class InitController extends Controller
             'slug' => 'themen',
             'indexSection' => 'topic',
             'orderBy' => 'title',
-            'indexTemplate' => 'default.twig'
+            'indexTemplate' => 'default.twig',
+            'criteria' => '{"section":"topic", "orderBy":"postDate desc", "limit":12, "with": [["featuredImage"]]}'
         ]);
 
         if (!Craft::$app->elements->saveElement($entry)) {
             echo "Error saving topic index entry\n";
-        }else {
+        } else {
             $this->localize($entry, 'Topics', 'topics');
         }
 
@@ -380,7 +382,8 @@ class InitController extends Controller
         return true;
     }
 
-    protected function localize($entry, $title, $slug) {
+    protected function localize($entry, $title, $slug)
+    {
         $localizedEntry = $entry->getLocalized()->site('en')->one();
         if ($localizedEntry) {
             $localizedEntry->title = $title;
