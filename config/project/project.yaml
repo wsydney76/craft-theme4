@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1647535976
+dateModified: 1647858837
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -46,6 +46,7 @@ meta:
     3c2fafd2-4f15-437b-a8a3-01330d1b78f7: Archiv # Archiv
     3cb2606a-5d91-44a2-bbfa-8110801db82d: Text # Text
     3cf774ef-1913-42fe-893f-35e693837468: Heading # Heading
+    3ee41ff4-51f5-4328-ad70-3cbc85c71b44: Text # Text
     3f22fd1a-1b63-4a34-ab28-56dd59bd3e99: 'Index Template' # Index Template
     4ad59136-a89e-41ea-8aff-d5383b3a11e0: 'Social Links' # Social Links
     4ae84930-4a7e-455d-ab1a-2fef0f711ad8: Grid # Grid
@@ -315,6 +316,7 @@ meta:
     e9781761-5a04-49d1-84ef-a9159f853e28: 'Members Template' # Members Template
     ea0da518-95b9-47c2-8dec-9f2ff43ca7f4: 'Background color' # Background color
     ea2cfe15-67c5-438e-9d8c-b80a905baa85: Text # Text
+    eb22c52e-ea4f-4137-b1f8-b7176ad99a31: Key # Key
     eb8905dd-9d26-4f5f-9588-d62f5568e83d: 'H2 Schriftgröße' # H2 Schriftgröße
     ec7ee471-b43b-491e-9fed-acb78c59acc4: Kontakt # Kontakt
     eca2026c-d018-4e4d-9a89-014404095d52: 'Index Page' # Index Page
