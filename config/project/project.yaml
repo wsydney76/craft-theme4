@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1647858837
+dateModified: 1647864778
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -259,6 +259,7 @@ meta:
     bb78bebb-31f2-45c2-bc3f-2baa1a83cca7: Typ # Typ
     bc242225-cdbb-4145-9746-471878a85673: 'Poster Image' # Poster Image
     bde02460-053f-4ab2-8c8a-6b782b53b949: 'Background color' # Background color
+    bdee801b-a2bb-4d03-8550-44d3e88f0e05: Text # Text
     be3e6d29-7c3a-454d-8af9-59e98b97d3d9: 'Scene Gallery' # Scene Gallery
     be8dc1bd-c130-4ad1-b0bb-948257c1894f: Link # Link
     be66756f-d021-444f-ba64-1dbd3c395dc4: Target # Target
@@ -283,6 +284,7 @@ meta:
     cce5096c-8ab7-4940-9973-ad47671c92cb: 'Admin Guide' # Admin Guide
     cd4b4d9a-0519-4f07-93e0-5957b57a9afd: Legal # Legal
     cda0b80d-b767-406b-a9db-316e16db4b33: 'Video Url' # Video Url
+    cfdab62f-bde4-48ec-8132-1adfd0ab0bc2: Key # Key
     d2bff817-c170-4c81-81c8-715894d6795d: 'Articles Limit' # Articles Limit
     d5a44dcf-9ae8-4f6a-b498-ddefa0abc78c: 'Role Name' # Role Name
     d9da022d-74c8-40d1-bd79-f3a6f208e542: Style # Style
