@@ -1318,6 +1318,9 @@ a.btn{
 .flex-col{
   flex-direction: column;
 }
+.flex-col-reverse{
+  flex-direction: column-reverse;
+}
 .flex-wrap{
   flex-wrap: wrap;
 }
@@ -1886,6 +1889,10 @@ a.btn{
 .px-3{
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+.px-12{
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 .pt-columns{
   padding-top: 2rem;
@@ -2994,9 +3001,25 @@ a.btn{
   .lg\:grid-cols-12{
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }
+  .lg\:flex-row{
+    flex-direction: row;
+  }
+  .lg\:flex-col{
+    flex-direction: column;
+  }
+  .lg\:justify-end{
+    justify-content: flex-end;
+  }
+  .lg\:pb-12{
+    padding-bottom: 3rem;
+  }
   .lg\:text-7xl{
     font-size: 4.5rem;
     line-height: 1;
+  }
+  .lg\:text-3xl{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 }
 @media (min-width: 1280px){
@@ -3006,9 +3029,16 @@ a.btn{
   .xl\:hidden{
     display: none;
   }
+  .xl\:pb-24{
+    padding-bottom: 6rem;
+  }
   .xl\:text-5xl{
     font-size: 3rem;
     line-height: 1;
+  }
+  .xl\:text-4xl{
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 }
 @media (min-width: 1536px){

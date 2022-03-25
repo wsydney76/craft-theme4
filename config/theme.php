@@ -24,11 +24,11 @@ return [
     // stickyNavbar only
     'showScrollIndicator' => true,
 
-    // coverFull (fullwidth only) coverContent coverBoxed fullText fullTextColor imageText textImage text introImage imageOverlapText
+    // coverFull (fullwidth only) coverContent coverBoxed fullText fullTextColor imageText textImage text introImage imageOverlapText halfedTextImage
     'titleStyle' => 'fullTextColor',
 
     // Title Styles that show meta data in title area
-    'showMetaInTitleArea' => ['coverBoxed', 'introImage', 'imageOverlapText'],
+    'showMetaInTitleArea' => ['coverBoxed', 'introImage', 'imageOverlapText', 'halfedTextImage'],
 
     // Title Styles that show intro text in title area
     'showIntroInTitleArea' => ['introImage'],
