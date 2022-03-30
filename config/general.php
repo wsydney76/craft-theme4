@@ -80,6 +80,10 @@ return [
 
         ],
 
+        // Whether Craft should run pending queue jobs automatically when someone visits the control panel.
+        // Run php craft queue/listen if set to false
+        'runQueueAutomatically' => Env::RUN_QUEUE_AUTOMATICALLY,
+
         // The URI Craft should use for user login on the front end.
         'loginPath' => [
             'de' => 'mitglieder/login',
