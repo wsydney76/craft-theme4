@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.4.5 2020-03-31
+
+* Craft/plugin/npm updates
+* Added halfedTextImage title style
+* Added RUN_QUEUE_AUTOMATICALLY env setting
+* Better members message handling
+
 ## 3.4.2 2020-03-06
 
 * Added theme.skipSrcsetInDevMode setting, to speed up development/testing
