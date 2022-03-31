@@ -10,52 +10,54 @@
             errorMessage: 'Profile could not be created'|t
         } %}
 
-        <div class="md:flex md:space-x-block">
-            <div class="md:w-1/2">
-                {{ forms.textField({
-                    user: user,
-                    label: 'First Name'|t,
-                    name: 'firstName',
-                    required: true
-                }) }}
+        {% if not (success is defined and success) %}
+            <div class="md:flex md:space-x-block">
+                <div class="md:w-1/2">
+                    {{ forms.textField({
+                        user: user,
+                        label: 'First Name'|t,
+                        name: 'firstName',
+                        required: true
+                    }) }}
+                </div>
+                <div class="md:w-1/2">
+                    {{ forms.textField({
+                        user: user,
+                        label: 'Last Name'|t,
+                        name: 'lastName',
+                        required: true
+                    }) }}
+                </div>
             </div>
-            <div class="md:w-1/2">
-                {{ forms.textField({
-                    user: user,
-                    label: 'Last Name'|t,
-                    name: 'lastName',
-                    required: true
-                }) }}
+
+
+
+            <div class="md:flex md:space-x-block">
+                <div class="md:w-1/2">
+                    {{ forms.textField({
+                        user: user,
+                        label: 'Email'|t,
+                        name: 'email',
+                        type: 'email',
+                        required: true
+                    }) }}
+                </div>
+                <div class="md:w-1/2">
+                    {{ forms.textField({
+                        user: user,
+                        label: 'Password'|t,
+                        name: 'password',
+                        required: true,
+                        type: 'password'
+                    }) }}
+                </div>
             </div>
-        </div>
 
 
-
-        <div class="md:flex md:space-x-block">
-            <div class="md:w-1/2">
-                {{ forms.textField({
-                    user: user,
-                    label: 'Email'|t,
-                    name: 'email',
-                    type: 'email',
-                    required: true
-                }) }}
+            <div class="pt-block w-64">
+                {{ forms.button('Register'|t, true) }}
             </div>
-            <div class="md:w-1/2">
-                {{ forms.textField({
-                    user: user,
-                    label: 'Password'|t,
-                    name: 'password',
-                    required: true,
-                    type: 'password'
-                }) }}
-            </div>
-        </div>
-
-
-        <div class="pt-block w-64">
-            {{ forms.button('Register'|t, true) }}
-        </div>
+        {% endif %}
 
 
     {% endblock %}

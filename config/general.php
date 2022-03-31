@@ -80,6 +80,10 @@ return [
 
         ],
 
+        // Whether Craft should run pending queue jobs automatically when someone visits the control panel.
+        // Run php craft queue/listen if set to false
+        'runQueueAutomatically' => Env::RUN_QUEUE_AUTOMATICALLY,
+
         // The URI Craft should use for user login on the front end.
         'loginPath' => [
             'de' => 'mitglieder/login',
@@ -89,7 +93,7 @@ return [
         // The URI or URL that Craft should use for Set Password forms on the front end.
         'setPasswordPath' => [
             'de' => 'mitglieder/passwort-vergeben',
-            'en' => 'mitglieder/set-password',
+            'en' => 'members/set-password',
         ],
 
         // Whether users should automatically be logged in after activating their account or resetting their password.
