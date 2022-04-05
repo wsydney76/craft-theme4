@@ -1,34 +1,42 @@
 {% from '_macros/lib.twig' import img %}
 
 {% set author = entry.author %}
+{% set person = craft.entries
+    .section('person')
+    .relatedTo(author)
+    .one
+%}
 
 <div class="container-{{ theme.pageWidth }} mb-block">
 
     <div class="border-b-2 pb-4 border-border">
-        {% set image = author.photo %}
+        {% set image = person.photo.one ?? author.photo %}
 
         <div class="mt-4 flex space-x-4">
             {% if image %}
                 <div>
-                    {{ img(image, {width: 120, height: 120}, {}, false) }}
+                    {{ img(image, {width: 120, height: 120}, {class: 'rounded-full'}, false) }}
                 </div>
             {% endif %}
-            <div class="space-y-1">
-                <div class="text-2xl font-semibold">
-                    <a href="{{ siteUrl("#{'authors'|t}/#{author.username}") }}">{{ author.fullName }}</a>
-                </div>
-                {% if author.teaser %}
-                    <div class="text-base">
-                        {{ author.teaser }}
+
+            <div class="flex items-center">
+                <div class="space-y-2">
+                    <div class="text-2xl font-semibold">
+                        {{ entry.authorPersonLink }}
                     </div>
-                {% endif %}
-                {% if author.email  %}
+                    {% if person.teaser %}
+                        <div class="text-base">
+                            {{ person.teaser }}
+                        </div>
+                    {% endif %}
+                    {% if person.eMail %}
+                        <div class="text-base">
+                            <a href="mailto:{{ person.eMail }}">{{ person.eMail }}</a>
+                        </div>
+                    {% endif %}
                     <div class="text-base">
-                        <a href="mailto:{{ author.email }}">{{ author.email }}</a>
+                        {{ 'Published'|t }}: {{ entry.postDate|date('short') }}
                     </div>
-                {% endif %}
-                <div class="text-base">
-                    {{ 'Published'|t }}: {{ entry.postDate|date('short') }}
                 </div>
             </div>
         </div>

@@ -160,6 +160,7 @@ class InitController extends Controller
                 ['key', $s['page']],
                 ['key', $s['legal']],
                 ['heading', 'Intern'],
+                ['key', $s['person']],
                 ['key', $s['guide']]
             ],
             'sources' => [
@@ -169,6 +170,7 @@ class InitController extends Controller
                 $s['article'] => ['tableAttributes' => ['drafts', 'hasProvisionalDraft', $f['featuredImage'], $f['teaser'], 'author', 'postDate', 'link']],
                 $s['topic'] => ['tableAttributes' => ['drafts', 'hasProvisionalDraft', $f['featuredImage'], $f['teaser'], 'author', 'postDate', 'link']],
                 $s['legal'] => ['tableAttributes' => ['drafts', 'hasProvisionalDraft', $f['featuredImage'], $f['teaser'], 'postDate', 'link']],
+                $s['person'] => ['tableAttributes' => ['drafts', 'author', 'postDate']],
                 $s['guide'] => ['tableAttributes' => ['drafts', 'author', 'postDate']]
 
             ]
@@ -499,20 +501,15 @@ class InitController extends Controller
         $user = User::find()->one();
         $user->firstName = 'Sabine';
         $user->lastName = 'Mustermann';
-        $user->email = 'sabine@mustermann.com';
-        $user->telephone = $faker->phoneNumber();
-        $user->teaser = 'Editor in Chief';
 
         Craft::$app->elements->saveElement($user);
 
         // Add new user
         $user = new User();
         $user->username = 'erna';
-        $user->email = 'erna@klawuppke.com';
         $user->firstName = 'Erna';
         $user->lastName = 'Klawuppke';
-        $user->telephone = $faker->phoneNumber();
-        $user->teaser = 'Editor';
+        $user->email = 'erna.klawuppke@example.com';
 
         $user->setScenario(User::SCENARIO_LIVE);
 
@@ -521,6 +518,31 @@ class InitController extends Controller
 
             if ($group) {
                 Craft::$app->users->assignUserToGroups($user->getId(), [$group->id]);
+            }
+        } else {
+            echo "Error saving user";
+        }
+
+        // Create related person entries
+        $section = Craft::$app->sections->getSectionByHandle('person');
+        $type = ArrayHelper::firstWhere($section->getEntryTypes(), 'handle', 'default');
+
+        $users = User::find()->all();
+        foreach ($users as $user) {
+            $entry = new Entry([
+                'sectionId' => $section->id,
+                'typeId' => $type->id,
+                'authorId' => $user->id,
+                'firstName' => $user->firstName,
+                'lastName' => $user->lastName,
+                'bio' => $faker->text(120),
+                'eMail' => $user->email
+            ]);
+
+            $entry->setFieldValue('user', [$user->id]);
+
+            if (!Craft::$app->elements->saveElement($entry)) {
+                echo "Error saving person entry\n";
             }
         }
 

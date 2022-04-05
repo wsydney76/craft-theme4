@@ -170,11 +170,13 @@ class SeedController extends Controller
         $faker = Factory::create();
 
         $type = $section->getEntryTypes()[0];
-        $user = User::find()->admin()->one();
 
         $category = $this->getCategory();
 
         for ($i = 1; $i <= $num; ++$i) {
+
+            $user = User::find()->orderBy('rand()')->one();
+
             $entry = new Entry();
             $entry->sectionId = $section->id;
             $entry->typeId = $type->id;

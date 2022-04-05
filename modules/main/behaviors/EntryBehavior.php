@@ -2,8 +2,11 @@
 
 namespace modules\main\behaviors;
 
+use Craft;
 use craft\base\Element;
 use craft\elements\Entry;
+use craft\helpers\Template;
+use Twig\Markup;
 use yii\base\Behavior;
 use yii\base\Model;
 
@@ -40,5 +43,36 @@ class EntryBehavior extends Behavior
         $entry = $this->owner;
 
         return $entry->alternativeTitle ?? $entry->title;
+    }
+
+    public function getAuthorPersonUrl(): string
+    {
+       $person = $this->getAuthorPerson();
+
+        return $person ? $person->url : '';
+    }
+
+    public function getAuthorPersonLink(): string|Markup
+    {
+        $person = $this->getAuthorPerson();
+
+        if (!$person) {
+            /** @var Entry $entry */
+            $entry = $this->owner;
+            return $entry->author->fullName;
+        }
+
+        return Template::raw($person->link);
+    }
+
+    protected function getAuthorPerson(): Entry|null
+    {
+        /** @var Entry $entry */
+        $entry = $this->owner;
+
+        return Entry::find()
+            ->section('person')
+            ->relatedTo($entry->author)
+            ->one();
     }
 }

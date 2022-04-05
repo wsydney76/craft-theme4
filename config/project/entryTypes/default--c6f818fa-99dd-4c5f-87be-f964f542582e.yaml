@@ -1,0 +1,137 @@
+fieldLayouts:
+  5c6605e5-a89b-42c2-9f30-38f97bb5854a:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: c4ede7fe-f873-4466-8bbc-73ee9e0c54fa # User
+            instructions: 'Assign the user whose entries will be shown'
+            label: ''
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2 # Featured Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: bafbd664-0b38-44ce-93b6-d271eabc05a8 # Photo
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: f6ff43e3-8e77-457f-91cb-101f517889c9 # Teaser
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e64a3324-79da-4987-b10d-08126fedca89 # First Name
+            instructions: ''
+            label: ''
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: f4f2b6fc-3280-4a7f-9b66-5e79d3d86cee # Name Prefix
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: ab267fdb-cdb7-4562-b137-c8bba765fe57 # Last Name
+            instructions: ''
+            label: ''
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 1eecdd2c-f9c5-4379-b304-d81774f9391e # Increase Title Contrast
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 7a27d1b6-f8c9-4b63-947e-cc535c5082c8 # Bio
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5e963153-38ea-4cd9-9282-6d08335433ff # E-Mail
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 266ac6c3-03c0-40eb-8f24-c5c22ed1c5c0 # Content
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Inhalt
+        sortOrder: 1
+handle: default
+hasTitleField: false
+name: Standard
+section: d798b89b-cb00-4853-ac5a-c69bffe3ca76 # Person
+sortOrder: 1
+titleFormat: '{firstName}{{object.namePrefix ? " #{object.namePrefix}" }} {lastName}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
