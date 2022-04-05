@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.5.0 2020-04-05
+
+* Added 'person' section that holds translatable infos for a linked user.
+* Dropped provisional 'author' template stuff in favor of the new 'person' section
+
 ## 3.4.5 2020-03-31
 
 * Craft/plugin/npm updates
