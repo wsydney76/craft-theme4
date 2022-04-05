@@ -1,0 +1,19 @@
+columnSuffix: amwkihju
+contentColumnType: string(120)
+fieldGroup: bb94c9b2-f8e4-4729-97b4-9367ffd54772 # Person
+handle: firstName
+instructions: ''
+name: 'First Name'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: 30
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

@@ -1,0 +1,30 @@
+{% extends "_layouts/#{theme.layout}.twig" %}
+
+{% set author = entry.user.one %}
+
+{% if author %}
+    {% set themeOptions = {
+        title: "#{'Entries'|t} #{'by'|t} #{entry.title}",
+        teaser: 'Archive'|t
+    } %}
+{% endif %}
+
+{% block afterContent %}
+
+    {% include '_sections/person/profile.twig' with {
+        entry,
+        author
+    } only %}
+
+    {% if author %}
+        <div class="container-{{ theme.pageWidth }}">
+            {% include "_partials/index-templates/cards.twig" with {
+                criteria: {
+                    authorId: author.id,
+                    section: 'not person'
+                }
+            } %}
+        </div>
+    {% endif %}
+
+{% endblock %}

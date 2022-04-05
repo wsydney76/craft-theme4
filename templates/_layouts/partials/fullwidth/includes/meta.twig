@@ -4,8 +4,9 @@
             {{ entry.postDate|date('long') }}
         </div>
         <div class="border-b-2 border-primary-400 dark:border-primary-300">
+
             <a class="!no-underline"
-               href="{{ siteUrl("#{'authors'|t}/#{entry.author.username}") }}">{{ 'by'|t }} {{ entry.author.fullName }}</a>
+               href="{{ entry.authorPersonUrl }}">{{ 'by'|t }} {{ entry.author.fullName }}</a>
         </div>
         {% if entry.topics %}
             {% set topics = entry.topics.all %}

@@ -1,0 +1,43 @@
+{% from '_macros/lib.twig' import img %}
+
+<div class="container-{{ theme.pageWidth }} mb-block">
+
+    <div class="border-b-2 pb-4 border-border">
+        {% set image = entry.photo.one %}
+        {% if not image and author %}
+            {% set image = author.photo %}
+        {% endif %}
+
+        <div class="mt-4 flex space-x-4">
+            {% if image %}
+                <div>
+                    {{ img(image, {width: 120, height: 120}, {class: 'rounded-full'}, false) }}
+                </div>
+            {% endif %}
+
+            <div class="flex items-center">
+                <div class="space-y-4">
+                    {% if entry.teaser %}
+                        <div class="text-base">
+                            {{ entry.teaser }}
+                        </div>
+                    {% endif %}
+
+                    {% if entry.bio %}
+                        <div class="text-base  font-semibold">
+                            {{ entry.bio|md|purify }}
+                        </div>
+                    {% endif %}
+
+                    {% if entry.eMail %}
+                        <div class="text-base">
+                            <a href="mailto:{{ entry.eMail }}">{{ entry.eMail }}</a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

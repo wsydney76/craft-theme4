@@ -10,7 +10,7 @@
     {% endif %}
 
     <div class="">
-        {{ entry.postDate|date('short') }} {{ 'by'|t }} {{ entry.author.fullName }}
+        {{ entry.postDate|date('short') }} {{ 'by'|t }} {{ entry.authorPersonLink }}
     </div>
 
     {#{% set categories = entry.categories.all %}

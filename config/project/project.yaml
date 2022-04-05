@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1647864778
+dateModified: 1649156936
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -70,6 +70,7 @@ meta:
     6cc5489b-8b5b-4803-84e7-8520cf7b142f: Width # Width
     6eb11e2e-b9aa-411e-aeb9-4ceb44cbabcc: Showreels # Showreels
     6f31e23d-56c9-4afe-aacf-25ec0d12b2c2: Guide # Guide
+    7a27d1b6-f8c9-4b63-947e-cc535c5082c8: Bio # Bio
     7bb0cd75-a933-4105-b72c-a34605721327: 'Auf der Übersichtsseite anzeigen?' # Auf der Übersichtsseite anzeigen?
     7c951a3b-ff29-4728-bf34-c0f0dda3ef18: Regie # Regie
     7da1797e-2829-4330-b022-e1ba233c1ec2: Text # Text
@@ -232,6 +233,7 @@ meta:
     aa0f84e8-acb3-403e-a095-1d6f3d9f98bf: 'Order By' # Order By
     aa3b68c2-fde3-44da-82d3-67eaea103410: Schriftgröße # Schriftgröße
     ab00702f-9546-47d8-87e4-fd7a1db2fd56: Rollenname # Rollenname
+    ab267fdb-cdb7-4562-b137-c8bba765fe57: 'Last Name' # Last Name
     ab573eaf-f476-4196-8c96-75284a053014: 'Showreel Images' # Showreel Images
     ad542dfc-2d07-4de2-9875-c811ffc1be61: Title # Title
     ae127d85-61d7-419c-88be-9ba731f720f3: Caption # Caption
@@ -256,7 +258,9 @@ meta:
     b8473c9e-0759-45e7-bc02-b5e00a31c275: Style # Style
     b694572e-93ad-4c26-a1ed-c71ea2ec47be: Platform # Platform
     ba191755-e5e9-46c1-b391-8b11af25d74c: Text # Text
+    bafbd664-0b38-44ce-93b6-d271eabc05a8: Photo # Photo
     bb78bebb-31f2-45c2-bc3f-2baa1a83cca7: Typ # Typ
+    bb94c9b2-f8e4-4729-97b4-9367ffd54772: Person # Person
     bc242225-cdbb-4145-9746-471878a85673: 'Poster Image' # Poster Image
     bde02460-053f-4ab2-8c8a-6b782b53b949: 'Background color' # Background color
     bdee801b-a2bb-4d03-8550-44d3e88f0e05: Text # Text
@@ -270,6 +274,8 @@ meta:
     c03a2ca4-d99b-4e6c-b255-573b366ea90c: Organisation/Festival # Organisation/Festival
     c03f49b8-b958-47d6-a22c-35b86b0e1271: 'Text (Markdown)' # Text (Markdown)
     c3fb3249-3d75-4d23-a6ed-5d840279bb4e: 'Multi Columns' # Multi Columns
+    c4ede7fe-f873-4466-8bbc-73ee9e0c54fa: User # User
+    c6f818fa-99dd-4c5f-87be-f964f542582e: Standard # Standard
     c301f202-52bb-477a-b6b7-2b4ee598bf4c: Section # Section
     c489cff1-6bbd-4ee2-88f9-aa3cc92d9efb: Text # Text
     c3017a29-ede2-449d-a192-78e05bdaebaa: Matrixhilfe # Matrixhilfe
@@ -289,6 +295,7 @@ meta:
     d5a44dcf-9ae8-4f6a-b498-ddefa0abc78c: 'Role Name' # Role Name
     d9da022d-74c8-40d1-bd79-f3a6f208e542: Style # Style
     d82cda5f-ddc5-4242-9266-d90a9944f116: 'Extra CSS' # Extra CSS
+    d798b89b-cb00-4853-ac5a-c69bffe3ca76: Person # Person
     d868de82-ae37-4897-a6bb-ef08e919650b: Common # Common
     d941c1b8-77c8-439c-9c9f-50bebd222421: Schrift-Familie # Schrift-Familie
     d9127cbf-fef1-4f56-9497-93201449705d: Attribution # Attribution
@@ -312,6 +319,7 @@ meta:
     e35ec4e7-302c-49f6-b5ae-a95120fbd4c0: Question # Question
     e55e1c63-45fc-4606-85d4-1fb90401c0a3: Topic # Topic
     e62d63b0-c299-42ce-aeef-86a69f7e676c: 'Seo Fields' # Seo Fields
+    e64a3324-79da-4987-b10d-08126fedca89: 'First Name' # First Name
     e95a35fa-7cca-46ef-92f7-04d1b61144ae: 'Bild neben dem Block' # Bild neben dem Block
     e734f645-25d7-4111-a0bd-207d0bc77bf3: 'Mobiles Menü ausblenden' # Mobiles Menü ausblenden
     e1065708-fc97-4194-99c4-f62e3149cfef: Archiv # Archiv
@@ -327,6 +335,7 @@ meta:
     eed99e0f-2dd3-4f3c-b14a-7e2a0bfd9cc5: 'FIlm Title' # FIlm Title
     f00f24b8-d3b8-42ba-8ab2-937c507b30d5: 'Bio Right Image' # Bio Right Image
     f2bd38f3-47f5-4e49-be18-fa89073255fd: Media # Media
+    f4f2b6fc-3280-4a7f-9b66-5e79d3d86cee: 'Name Prefix' # Name Prefix
     f6ff43e3-8e77-457f-91cb-101f517889c9: Teaser # Teaser
     f7b15040-ef01-4cf3-ab66-7facec8716bb: 'Hilfetext zu Matrix-Inhalten einfügen?' # Hilfetext zu Matrix-Inhalten einfügen?
     f7d4d3ce-88ca-46e0-a39d-135eb2c82efd: Style # Style
