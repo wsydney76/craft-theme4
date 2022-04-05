@@ -1,5 +1,7 @@
 allowPublicRegistration: true
 defaultGroup: 5a1766e4-7075-4071-994a-80df73bb0912 # Members
+fieldLayouts:
+  4fab3cec-346b-43da-8916-0fc028814d46: null
 photoSubpath: null
 photoVolumeUid: a917656e-dee2-4135-99f8-f837529a2a69 # User Photos
 requireEmailVerification: true

@@ -1,7 +1,61 @@
-{% set entry = craft.entries.section('person').relatedTo(element).one %}
+{% if user.id %}
+    <div style="margin-top: 32px">
+        {% set entry = craft.entries.section('person').relatedTo(user).one %}
 
-{% if entry %}
-    <a class="btn submit" href="{{ entry.cpEditUrl }}">Edit Person Entry {{ entry.title }}</a>
+        {% if entry %}
+            <a class="btn" href="{{ entry.cpEditUrl }}" target="_blank">{{ 'Edit Person Entry'|t }}
+                "{{ entry.title }}"</a>
+        {% else %}
+
+            {% set section = craft.app.sections.sectionByHandle('person') %}
+            {% set type = section.getEntryTypes()[0] %}
+            {% set site = craft.app.sites.allSites[0] %}
+
+            {% set props =  {
+                sectionId: section.id,
+                typeId: type.id,
+                siteId: site.id,
+                authorId: currentUser.id,
+                userId: user.id,
+                enabled: 1,
+                eMail: user.email,
+                firstName: user.firstName,
+                lastName: user.lastName
+            } %}
+
+            <button class="btn dashed add icon"
+                    type="button"
+                    onclick="createAuthorPersonEntry({{ props|json_encode }})">
+                {{ 'Create Person Entry'|t }}
+            </button>
+
+        {% endif %}
+    </div>
 {% else %}
-    <a class="btn submit" href="{{ cpUrl('entries/person/new') }}">Create Person Entry</a>
+    <h2>
+        {{ 'Save user to enable create/edit related person entry.'|t }}
+    </h2>
 {% endif %}
+
+
+{% js %}
+    function createAuthorPersonEntry(props)
+    {
+        Craft.createElementEditor('craft\\elements\\Entry', {
+            siteId: props.siteId,
+            attributes: {
+                sectionId: props.sectionId,
+                typeId: props.typeId,
+                authorId: props.authorId,
+                enabled: 1,
+                user: [props.userId],
+                eMail: props.eMail,
+                firstName: props.firstName,
+                lastName: props.lastName
+            },
+            onHideHud: () => {
+                window.location.reload()
+            },
+        })
+    }
+{% endjs %}

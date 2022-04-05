@@ -159,6 +159,16 @@ class MainModule extends Module
             $newFilename = $pathInfo['filename'] . '.jpg';
             Craft::$app->assets->moveAsset($asset, $asset->getFolder(), $newFilename);
         });
+
+        if (Craft::$app->request->isCpRequest) {
+            Craft::$app->view->hook('cp.users.edit.details', function(array $context) {
+                return Craft::$app->view->renderTemplate(
+                    '_cp/user_person.twig',
+                    ['user' => $context['user']],
+                    View::TEMPLATE_MODE_SITE
+                );
+            });
+        }
     }
 
 }
