@@ -1,0 +1,9 @@
+tabs:
+  -
+    elements:
+      -
+        template: _cp/user_person.twig
+        type: craft\fieldlayoutelements\Template
+        width: 100
+    name: Person
+    sortOrder: 1
