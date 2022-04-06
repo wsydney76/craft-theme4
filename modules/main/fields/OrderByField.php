@@ -47,6 +47,7 @@ class OrderByField extends Field
                 ['label' => Craft::t('site', 'Default'), 'value' => ''],
                 ['label' => Craft::t('site', 'PostDate desc'), 'value' => 'postDate desc'],
                 ['label' => Craft::t('site', 'Title'), 'value' => 'title'],
+                ['label' => Craft::t('site', 'Name'), 'value' => 'lastName, firstName'],
             ]
         ]);
     }
