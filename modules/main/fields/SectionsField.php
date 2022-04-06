@@ -46,7 +46,11 @@ class SectionsField extends Field
             'name' => $this->handle,
             'value' => $value,
             'options' =>  array_map(
-                fn($section) => ['label' => Craft::t('site', $section->name), 'value' => $section->handle], Craft::$app->sections->getAllSections()
+                fn($section) => [
+                    'label' => Craft::t('site', $section->name),
+                    'value' => $section->handle
+                ],
+                Craft::$app->sections->getAllSections()
             )
         ]);
     }

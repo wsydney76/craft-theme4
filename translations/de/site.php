@@ -211,7 +211,7 @@ return [
     'We are currently offline for maintenance' => 'Wir sind derzeit wegen Wartungsarbeiten offline',
     'We could not find anything here' => 'Wir konnten unter dieser URL nichts finden',
     'We created your account! Please check your email to verify your email address.' => 'Wir haben Ihr Profil erstellt! Bitte überprüfen Sie Ihre E-Mail, um Ihre E-Mail-Adresse zu verifizieren.',
-    'We just sent an email to your account email address. Use the link in the email to reset your password.' => 'Wir haben soeben eine E-Mail an Ihre Profil-E-Mail-Adresse gesendet. Verwenden Sie den Link in der E-Mail, um Ihr Passwort zurückzusetzen.',
+    'We just sent an email to your account email address. Use the link in the email to reset your password. If you do not receive an email, please check that you entered the correct profile name or email address' => 'Wir haben soeben eine E-Mail an Ihre Konto-E-Mail-Adresse gesendet. Verwenden Sie den Link in der E-Mail, um Ihr Passwort zurückzusetzen. Wenn Sie keine E-Mail erhalten, überprüfen Sie bitte, ob Sie den richtigen Profilnamen oder die richtige E-Mail-Adresse eingegeben haben.',
     'Web Site' => 'Website',
     'White' => 'Weiß',
     'Width' => 'Breite',
