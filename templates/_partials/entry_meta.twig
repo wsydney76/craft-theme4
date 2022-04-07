@@ -4,43 +4,12 @@
 {% set person = craft.entries
     .section('person')
     .relatedTo(author)
-    .one
-%}
+.one %}
 
-<div class="container-{{ theme.pageWidth }} mb-block">
-
-    <div class="border-b-2 pb-4 border-border">
-        {% set image = person.photo.one ?? author.photo %}
-
-        <div class="mt-4 flex space-x-4">
-            {% if image %}
-                <div>
-                    {{ img(image, {width: 120, height: 120}, {class: 'rounded-full'}, false) }}
-                </div>
-            {% endif %}
-
-            <div class="flex items-center">
-                <div class="space-y-2">
-                    <div class="text-2xl font-semibold">
-                        {{ entry.authorPersonLink }}
-                    </div>
-                    {% if person.teaser %}
-                        <div class="text-base">
-                            {{ person.teaser }}
-                        </div>
-                    {% endif %}
-                    {% if person.eMail %}
-                        <div class="text-base">
-                            <a href="mailto:{{ person.eMail }}">{{ person.eMail }}</a>
-                        </div>
-                    {% endif %}
-                    <div class="text-base">
-                        {{ 'Published'|t }}: {{ entry.postDate|date('short') }}
-                    </div>
-                </div>
-            </div>
+{% embed '_sections/person/profile.twig' with {person, showTitle: true} %}
+    {% block content %}
+        <div class="text-base">
+            {{ 'Published'|t }}: {{ entry.postDate|date('short') }}
         </div>
-    </div>
-
-
-</div>
+    {% endblock %}
+{% endembed %}

@@ -1,9 +1,9 @@
 columnSuffix: null
 contentColumnType: string
 fieldGroup: bb94c9b2-f8e4-4729-97b4-9367ffd54772 # Person
-handle: eMail
+handle: email
 instructions: ''
-name: E-Mail
+name: Email
 searchable: false
 settings:
   placeholder: ''

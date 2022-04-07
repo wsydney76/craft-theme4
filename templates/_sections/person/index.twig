@@ -12,7 +12,7 @@
 {% block afterContent %}
 
     {% include '_sections/person/profile.twig' with {
-        entry,
+        person: entry,
         author
     } only %}
 

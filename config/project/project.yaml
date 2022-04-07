@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1649175940
+dateModified: 1649318748
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -59,7 +59,7 @@ meta:
     5cc78695-cf9e-4492-af63-2f65b4b8c1aa: Display # Display
     5d4f9380-f4dd-4776-8b66-559ef81b11e1: Seitenbreite # Seitenbreite
     5d9ffd34-921a-46e9-a478-fe7e6f0109c5: Text # Text
-    5e963153-38ea-4cd9-9282-6d08335433ff: E-Mail # E-Mail
+    5e963153-38ea-4cd9-9282-6d08335433ff: Email # Email
     5ef9942e-26aa-4150-b3ca-10e00ed74c52: 'Titel Stil' # Titel Stil
     6abf86cd-5a00-48ad-b3cf-12a3bc10d3dd: Image # Image
     6b01c4d9-9e7d-4ad0-9258-ea0cadc57b77: Rollentyp # Rollentyp
@@ -175,6 +175,7 @@ meta:
     3580d155-238d-43a1-b359-9c0634e988ed: 'Number of Columns' # Number of Columns
     3706c730-a07b-4974-8277-510be29bf91e: 'Image Align' # Image Align
     4008cfb2-85a6-441c-bffb-b4d1cf5c23e0: Caption # Caption
+    4465ee79-e806-40e4-a08f-e6ed7981d72f: Message # Message
     4834a59f-de39-47d5-9cbf-99288202b3eb: Image # Image
     5251a986-f2f7-4f57-9755-23433c7d0c18: 'Image and Text' # Image and Text
     6126b7f5-ffb5-4ad1-958c-bc4b58a8f7d3: 'Text color' # Text color
@@ -345,6 +346,7 @@ meta:
     f253e5ad-f162-44c0-8901-e41e111d242c: 'Info / News' # Info / News
     f261b0c1-dd05-42b3-84c1-a3dca1f04a88: Embed # Embed
     f336c22a-273e-408e-a108-3f4397271c61: Settings # Settings
+    f839af84-5d1a-4830-9993-f126c2fe2e41: Message # Message
     f5277f26-1f5c-4b05-b6c2-2e04f89878e8: Hintergrundfarbe # Hintergrundfarbe
     f78019a1-6d4d-4232-a543-7775d1c397a3: Name # Name
     fb7af698-b5de-4042-9a4a-6f26a22c5073: Caption # Caption

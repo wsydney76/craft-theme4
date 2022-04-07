@@ -1,0 +1,29 @@
+defaultPlacement: end
+enableVersioning: true
+handle: message
+name: Message
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primäre eintrag Seite'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  6cae2408-4e31-46df-8a5b-33f31d339176: # Deutsch
+    enabledByDefault: true
+    hasUrls: true
+    template: _sections/message
+    uriFormat: nachricht
+  b0f125c5-eef7-49fc-8d15-152965d0bab6: # English
+    enabledByDefault: true
+    hasUrls: true
+    template: _sections/message
+    uriFormat: message
+type: single

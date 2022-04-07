@@ -72,7 +72,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            fieldUid: 5e963153-38ea-4cd9-9282-6d08335433ff # E-Mail
+            fieldUid: 5e963153-38ea-4cd9-9282-6d08335433ff # Email
             instructions: null
             label: null
             required: false

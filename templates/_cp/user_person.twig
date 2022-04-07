@@ -18,7 +18,7 @@
                 authorId: currentUser.id,
                 userId: user.id,
                 enabled: 1,
-                eMail: user.email,
+                email: user.email,
                 firstName: user.firstName,
                 lastName: user.lastName
             } %}
@@ -39,23 +39,22 @@
 
 
 {% js %}
-    function createAuthorPersonEntry(props)
-    {
-        Craft.createElementEditor('craft\\elements\\Entry', {
-            siteId: props.siteId,
-            attributes: {
-                sectionId: props.sectionId,
-                typeId: props.typeId,
-                authorId: props.authorId,
-                enabled: 1,
-                user: [props.userId],
-                eMail: props.eMail,
-                firstName: props.firstName,
-                lastName: props.lastName
-            },
-            onHideHud: () => {
-                window.location.reload()
-            },
-        })
-    }
+function createAuthorPersonEntry(props) {
+    Craft.createElementEditor('craft\\elements\\Entry', {
+        siteId: props.siteId,
+        attributes: {
+            sectionId: props.sectionId,
+            typeId: props.typeId,
+            authorId: props.authorId,
+            enabled: 1,
+            user: [props.userId],
+            email: props.email,
+            firstName: props.firstName,
+            lastName: props.lastName
+        },
+        onHideHud: () => {
+            window.location.reload()
+        },
+    })
+}
 {% endjs %}
