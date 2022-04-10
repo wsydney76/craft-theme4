@@ -61,6 +61,24 @@
 
 {% endmacro %}
 
+{% macro checkboxField(config) %}
+    {% set name = config.name %}
+    {% set label = config.label %}
+    {% set id = name|id %}
+    {% set value = config.value ?? '' %}
+    {% set errors = config.errors ?? [] %}
+    <div>
+        <label for="{{ id }}" class="flex space-x-4 items-center text-base text-foreground dark:text-foreground-dark">
+            <input id="{{ id }}" type="checkbox" name="{{ name }}" value="1" {{ value ? 'checked' }}>
+            <div>
+                {{ config.label }}
+            </div>
+        </label>
+        {{ _self.errorsList(errors) }}
+    </div>
+{% endmacro %}
+
+
 {% macro submitButton(caption) %}
     <button x-data="{active:false}"
             x-on:click="active=true"

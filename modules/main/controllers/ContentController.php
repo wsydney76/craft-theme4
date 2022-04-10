@@ -8,6 +8,7 @@ use craft\elements\GlobalSet;
 use craft\helpers\App;
 use craft\web\Controller;
 use craft\web\Response;
+use modules\main\MainModule;
 use modules\main\models\MessageModel;
 use yii\web\BadRequestHttpException;
 use function Arrayy\array_last;
@@ -54,29 +55,17 @@ class ContentController extends Controller
         }
 
         $id = Craft::$app->request->getBodyParam('id');
+
         if ($id) {
-            $recipientId = Craft::$app->security->validateData($id);
-            if (!$recipientId) {
+            $validatedId = Craft::$app->security->validateData($id);
+            if (!$validatedId) {
                 throw new BadRequestHttpException();
             }
-
-            $recipient = Entry::find()->id($recipientId)->one();
-            if (!$recipient) {
-                throw new BadRequestHttpException();
-            }
-
-            $email = $recipient->email ?? $recipient->author->email;
         } else {
-            $siteInfo = GlobalSet::find()->handle('siteInfo')->one();
-            $email = $siteInfo->email;
+            $validatedId = null;
         }
 
-        if (!Craft::$app->mailer->compose()
-            ->setFrom([$message->email => $message->name])
-            ->setTo($email)
-            ->setSubject($message->subject)
-            ->setTextBody($message->message)
-            ->send()) {
+        if (!MainModule::getInstance()->content->sendMessage($message, $validatedId)) {
             Craft::$app->session->setError('System error sending message');
             Craft::$app->urlManager->setRouteParams(['message' => $message]);
             return null;

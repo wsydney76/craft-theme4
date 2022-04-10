@@ -22,6 +22,7 @@ use modules\main\fields\OrderByField;
 use modules\main\fields\SectionsField;
 use modules\main\fields\ThemeColorField;
 use modules\main\fields\WidthField;
+use modules\main\services\ContentService;
 use modules\main\twigextensions\TwigExtension;
 use modules\resources\cp\CpAssets;
 use yii\base\Event;
@@ -50,6 +51,11 @@ class MainModule extends Module
         } else {
             $this->controllerNamespace = 'modules\\main\\controllers';
         }
+
+        // Register Services
+        $this->setComponents([
+            'content' => ContentService::class
+        ]);
 
         // Register Behaviors
         Event::on(

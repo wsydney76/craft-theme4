@@ -234,4 +234,6 @@ return [
     '{count,plural,=1{Related Entry} other{Related Entries}}' => '{count,plural,=1{Verwandter Eintrag} other{Verwandte Einträge}}',
     '“' => '„',
     '”' => '“',
+    'You have to confirm to proceed' => 'Sie müssen bestätigen, um fortzufahren',
+    'I agree to the processing of this message according to privacy information' => 'Ich stimme der Verarbeitung dieser Nachricht gemäß Datenschutzinformationen zu',
 ];

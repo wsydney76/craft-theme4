@@ -37,11 +37,18 @@
 
             {{ forms.modelTextField(message, 'name', 'message', {required: true}) }}
 
-            {{ forms.modelTextField(message, 'email', 'message', {required: true}) }}
+            {{ forms.modelTextField(message, 'emailFrom', 'message', {required: true}) }}
 
             {{ forms.modelTextField(message, 'subject',  'message', {required: true}) }}
 
             {{ forms.modelTextField(message, 'message', 'message', {type: 'textarea', required: true}) }}
+
+            {{ forms.checkboxField({
+                label: 'I agree to the processing of this message according to privacy information'|t,
+                name: 'confirmed',
+                value: message.confirmed,
+                errors: message.errors('confirmed')
+            }) }}
 
         {% endnamespace %}
 
