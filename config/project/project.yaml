@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1649318748
+dateModified: 1649586531
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -31,6 +31,7 @@ meta:
     1cdefde0-d4a1-47d6-987b-e2c7ff237693: 'Volle Höhe (deprecated)' # Volle Höhe (deprecated)
     1d9fc6a9-72e3-404b-86a9-2ba2014002f0: 'Temporary Uploads' # Temporary Uploads
     1df21aa9-d2ee-4afa-88ca-298f68536dfd: Image # Image
+    1e572ace-db73-446d-bc4f-0c5cae3d58e7: 'Contact Message' # Contact Message
     1eecdd2c-f9c5-4379-b304-d81774f9391e: 'Increase Title Contrast' # Increase Title Contrast
     1fc061ff-fd49-417e-9b31-c3b863d4ae65: Vordergrundfarbe # Vordergrundfarbe
     2c61b8e3-c158-4334-a6fa-dd4b378079f1: 'Role Name' # Role Name
@@ -182,6 +183,7 @@ meta:
     6253c3ac-a08c-48bf-986f-d4350ed611d7: Logo # Logo
     6426a7d0-06a6-49ef-8064-f8ae57a1c865: Standard-Seitenverhältnis # Standard-Seitenverhältnis
     7384bc4c-31c8-4906-a830-d53525e01989: 'Guide Inhalt' # Guide Inhalt
+    8119f30e-d8cb-42c9-9697-c2e21e0efcaa: Standard # Standard
     8386f0bb-a6ef-4cd7-9fb8-5b5a530a65dd: Heading # Heading
     8625d595-25d0-480e-88cd-cb7c5e9651bd: 'Aspect Ratio' # Aspect Ratio
     9992f3e0-d44a-4f56-aec4-08125ae1d26a: Headerbreite # Headerbreite
@@ -282,6 +284,7 @@ meta:
     c3017a29-ede2-449d-a192-78e05bdaebaa: Matrixhilfe # Matrixhilfe
     c191286d-fa58-48a4-bba2-92c28cbf57c9: 'Site Name' # Site Name
     c214425c-05e4-4470-baa0-814448c02c6a: Regie # Regie
+    ca83549a-9120-4edc-879c-5d1f843cd4a2: Snapshot # Snapshot
     caf9cc3a-a0d0-4c7c-8179-884546f91ac5: Standard # Standard
     cb3d5f40-e3f5-45a4-9c9f-47b9c515be67: Tag # Tag
     cb73fbf9-a83d-4081-8dbf-c9dbe020436c: Playlist # Playlist

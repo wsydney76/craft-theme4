@@ -49,7 +49,7 @@ class InitController extends Controller
         $this->stdout(PHP_EOL);
 
         $this->stdout('Set Element Index sources...');
-        $this->actionSetElementIndexes();
+        $this->actionEntryIndexes();
         $this->stdout(PHP_EOL);
 
         $this->stdout('Set Asset Index sources...');
@@ -117,6 +117,16 @@ class InitController extends Controller
             echo "Error saving homepage entry\n";
         }
 
+        // Translate Message Entry
+        $entry = Entry::find()->section('message')->site('de')->one();
+        if ($entry) {
+            $entry->title = 'Nachricht';
+            $entry->slug = 'nachricht';
+            if (!Craft::$app->elements->saveElement($entry)) {
+                echo "Error saving message entry\n";
+            }
+        }
+
         // Set Globals
         $global = GlobalSet::find()->handle('siteInfo')->one();
         if ($global) {
@@ -125,7 +135,7 @@ class InitController extends Controller
             $global->setFieldValue('cookieConsentText', 'Wir verwenden manchmal Cookies');
             $global->setFieldValue('cookieConsentInfo', $faker->paragraphs($faker->numberBetween(2, 5), true));
             $global->setFieldValue('individualContact', $faker->paragraphs($faker->numberBetween(2, 3), true));
-            $global->setFieldValue('eMail', $faker->email());
+            $global->setFieldValue('email', $faker->email());
             $global->setFieldValue('telephone', $faker->phoneNumber());
             $global->setFieldValue('fax', $faker->phoneNumber());
             Craft::$app->elements->saveElement($global);
@@ -134,7 +144,7 @@ class InitController extends Controller
         return true;
     }
 
-    public function actionSetElementIndexes(): void
+    public function actionEntryIndexes(): void
     {
         $sections = Craft::$app->sections->getAllSections();
         $s = [];
@@ -161,7 +171,8 @@ class InitController extends Controller
                 ['key', $s['legal']],
                 ['heading', 'Intern'],
                 ['key', $s['person']],
-                ['key', $s['guide']]
+                ['key', $s['guide']],
+                ['key', $s['contactMessage']],
             ],
             'sources' => [
                 '*' => ['tableAttributes' => ['section', 'postDate', 'link']],
@@ -171,7 +182,8 @@ class InitController extends Controller
                 $s['topic'] => ['tableAttributes' => ['drafts', 'hasProvisionalDraft', $f['featuredImage'], $f['teaser'], 'author', 'postDate', 'link']],
                 $s['legal'] => ['tableAttributes' => ['drafts', 'hasProvisionalDraft', $f['featuredImage'], $f['teaser'], 'postDate', 'link']],
                 $s['person'] => ['tableAttributes' => ['drafts', 'author', 'postDate']],
-                $s['guide'] => ['tableAttributes' => ['drafts', 'author', 'postDate']]
+                $s['guide'] => ['tableAttributes' => ['drafts', 'author', 'postDate']],
+                $s['contactMessage'] => ['tableAttributes' => ['postDate']]
 
             ]
         ];
@@ -536,7 +548,7 @@ class InitController extends Controller
                 'firstName' => $user->firstName,
                 'lastName' => $user->lastName,
                 'bio' => $faker->text(120),
-                'eMail' => $user->email
+                'email' => $user->email
             ]);
 
             $entry->setFieldValue('user', [$user->id]);

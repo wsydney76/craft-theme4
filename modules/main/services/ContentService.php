@@ -6,7 +6,9 @@ use Craft;
 use craft\base\Component;
 use craft\elements\Entry;
 use craft\elements\GlobalSet;
+use craft\elements\User;
 use craft\helpers\Json;
+use craft\helpers\StringHelper;
 use modules\main\models\MessageModel;
 
 class ContentService extends Component
@@ -25,6 +27,8 @@ class ContentService extends Component
             $message->emailTo = $siteInfo->email;
         }
 
+        $this->saveMessage($message);
+
         $sent = Craft::$app->mailer->compose()
             ->setFrom([$message->emailFrom => $message->name])
             ->setTo($message->emailTo)
@@ -37,5 +41,27 @@ class ContentService extends Component
         }
 
         return true;
+    }
+
+    protected function saveMessage(MessageModel $message): void
+    {
+        $section = Craft::$app->sections->getSectionByHandle('contactMessage');
+        $type = $section->getEntryTypes()[0];
+        $site = Craft::$app->sites->getSiteByHandle('de');
+        $user = User::find()->admin(1)->one();
+
+        $title = $message->name . ': ' . $message->subject;
+
+        $entry = new Entry([
+            'sectionId' => $section->id,
+            'typeId' => $type->id,
+            'siteId' => $site->id,
+            'authorId' => $user->id,
+            'title' => $title,
+            'slug' => StringHelper::slugify($title),
+            'snapshot' => Json::encode($message->getAttributes())
+        ]);
+
+        Craft::$app->elements->saveElement($entry);
     }
 }
