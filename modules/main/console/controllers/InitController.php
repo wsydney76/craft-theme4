@@ -171,8 +171,7 @@ class InitController extends Controller
                 ['key', $s['legal']],
                 ['heading', 'Intern'],
                 ['key', $s['person']],
-                ['key', $s['guide']],
-                ['key', $s['contactMessage']],
+                ['key', $s['guide']]
             ],
             'sources' => [
                 '*' => ['tableAttributes' => ['section', 'postDate', 'link']],
@@ -182,9 +181,7 @@ class InitController extends Controller
                 $s['topic'] => ['tableAttributes' => ['drafts', 'hasProvisionalDraft', $f['featuredImage'], $f['teaser'], 'author', 'postDate', 'link']],
                 $s['legal'] => ['tableAttributes' => ['drafts', 'hasProvisionalDraft', $f['featuredImage'], $f['teaser'], 'postDate', 'link']],
                 $s['person'] => ['tableAttributes' => ['drafts', 'author', 'postDate']],
-                $s['guide'] => ['tableAttributes' => ['drafts', 'author', 'postDate']],
-                $s['contactMessage'] => ['tableAttributes' => ['postDate']]
-
+                $s['guide'] => ['tableAttributes' => ['drafts', 'author', 'postDate']]
             ]
         ];
 

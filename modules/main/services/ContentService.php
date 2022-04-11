@@ -27,41 +27,12 @@ class ContentService extends Component
             $message->emailTo = $siteInfo->email;
         }
 
-        $this->saveMessage($message);
-
-        $sent = Craft::$app->mailer->compose()
+        return Craft::$app->mailer->compose()
             ->setFrom([$message->emailFrom => $message->name])
             ->setTo($message->emailTo)
             ->setSubject($message->subject)
             ->setTextBody($message->message)
             ->send();
-
-        if (!$sent) {
-            return false;
-        }
-
-        return true;
     }
 
-    protected function saveMessage(MessageModel $message): void
-    {
-        $section = Craft::$app->sections->getSectionByHandle('contactMessage');
-        $type = $section->getEntryTypes()[0];
-        $site = Craft::$app->sites->getSiteByHandle('de');
-        $user = User::find()->admin(1)->one();
-
-        $title = $message->name . ': ' . $message->subject;
-
-        $entry = new Entry([
-            'sectionId' => $section->id,
-            'typeId' => $type->id,
-            'siteId' => $site->id,
-            'authorId' => $user->id,
-            'title' => $title,
-            'slug' => StringHelper::slugify($title),
-            'snapshot' => Json::encode($message->getAttributes())
-        ]);
-
-        Craft::$app->elements->saveElement($entry);
-    }
 }
