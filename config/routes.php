@@ -19,6 +19,5 @@
  */
 
 return [
-    'portfolio/<slug:[^\/]+>/pdf' => 'main/pdf/download-vita',
     'graphql' => 'graphql/api'
 ];

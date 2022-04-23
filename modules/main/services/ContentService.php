@@ -6,9 +6,6 @@ use Craft;
 use craft\base\Component;
 use craft\elements\Entry;
 use craft\elements\GlobalSet;
-use craft\elements\User;
-use craft\helpers\Json;
-use craft\helpers\StringHelper;
 use modules\main\models\MessageModel;
 
 class ContentService extends Component
