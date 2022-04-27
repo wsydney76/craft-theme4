@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1649664928
+dateModified: 1651048455
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -165,6 +165,7 @@ meta:
     622de389-71f8-4b9f-ba40-260461f3bb7b: Width # Width
     657bf940-e9fd-441b-9f9a-53b0a755c121: 'Header Stil' # Header Stil
     666c8cf3-0639-4757-aefa-9490930dbf0f: Audio # Audio
+    695a4b42-15e1-4ea6-acdf-a19587641da5: Styles # Styles
     752d79f6-0f1d-438e-91a2-f8e4cedfd23d: Ausrichtung # Ausrichtung
     841d3e7a-19f1-440a-9576-e4cabc64eaba: Display # Display
     842e6c06-cc3a-40c7-9fdb-13b911f9602b: 'Image Align' # Image Align
