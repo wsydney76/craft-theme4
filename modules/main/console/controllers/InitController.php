@@ -368,7 +368,7 @@ class InitController extends Controller
         if (!Craft::$app->elements->saveElement($entry)) {
             echo "Error saving impressum entry\n";
         } else {
-            $this->localize($entry, 'Impressum', 'impressum');
+            $this->localize($entry, 'Imprint', 'imprint');
         }
 
         // Privacy page -------------------------------------------------------------------------------

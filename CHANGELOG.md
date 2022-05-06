@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+* Added styles to image block (boxed, caption right)
+
 ## 3.5.0 2020-04-05
 
 * Added 'person' section that holds translatable infos for a linked user.

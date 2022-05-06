@@ -10,8 +10,6 @@
 
 use config\Env;
 
-Env::setCpVars();
-
 return [
     // Global settings
     '*' => [
