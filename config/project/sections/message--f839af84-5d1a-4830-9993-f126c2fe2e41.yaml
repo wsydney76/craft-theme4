@@ -1,7 +1,7 @@
 defaultPlacement: end
-enableVersioning: false
-handle: topic
-name: Topic
+enableVersioning: true
+handle: message
+name: Message
 previewTargets:
   -
     __assoc__:
@@ -19,14 +19,11 @@ siteSettings:
   6cae2408-4e31-46df-8a5b-33f31d339176: # Deutsch
     enabledByDefault: true
     hasUrls: true
-    template: _sections/topic
-    uriFormat: '{parent.uri ?? ''themen''}/{slug}'
+    template: _sections/message
+    uriFormat: nachricht
   b0f125c5-eef7-49fc-8d15-152965d0bab6: # English
     enabledByDefault: true
     hasUrls: true
-    template: _sections/topic
-    uriFormat: '{parent.uri ?? ''topics''}/{slug}'
-structure:
-  maxLevels: 3
-  uid: abadbc49-c394-4a5a-a000-91c37ccb7b4d
-type: structure
+    template: _sections/message
+    uriFormat: message
+type: single

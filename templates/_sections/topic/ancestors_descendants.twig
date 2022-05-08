@@ -1,0 +1,21 @@
+{% set ancestors = entry.ancestors.all %}
+
+{% if ancestors %}
+    <div class="container-{{ theme.pageWidth }} flex space-x-4 mt-8">
+        {% for ancestor in ancestors %}
+            <a class="btn border border-gray-800 dark:border-gray-200 text-gray-800 dark:text-gray-200 text-base"
+               href="{{ ancestor.url }}">{{ 'Topic'|t }}: {{ ancestor.title }}</a>
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% set descendants = entry.children.all %}
+
+{% if descendants %}
+    <div class="container-{{ theme.pageWidth }} flex space-x-4 mt-8">
+        {% for descendant in descendants %}
+            <a class="btn border border-gray-800 dark:border-gray-200 text-gray-800 dark:text-gray-200 text-base"
+               href="{{ descendant.url }}">{{ 'Topic'|t }}: {{ descendant.title }}</a>
+        {% endfor %}
+    </div>
+{% endif %}

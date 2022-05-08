@@ -7,10 +7,16 @@
     {% endif %}
 
 
-    {% if siteInfo.eMail %}
-        <div>
-            {{ 'Email' }}: {{ siteInfo.eMail }}
-        </div>
+    {% if siteInfo.email %}
+        {% set messageEntry = craft.entries.section('message').one %}
+
+        {% if messageEntry %}
+            <div>
+                ✉
+                <a href="{{ url(messageEntry.url) }}">{{ 'Message to'|t }} {{ siteInfo.siteName }}</a>
+            </div>
+        {% endif %}
+
     {% endif %}
 
 

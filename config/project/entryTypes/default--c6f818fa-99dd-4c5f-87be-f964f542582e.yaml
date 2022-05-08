@@ -27,42 +27,6 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: c4ede7fe-f873-4466-8bbc-73ee9e0c54fa # User
-            instructions: 'Assign the user whose entries will be shown'
-            label: ''
-            required: ''
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2 # Featured Image
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 50
-          -
-            fieldUid: bafbd664-0b38-44ce-93b6-d271eabc05a8 # Photo
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 50
-          -
-            fieldUid: f6ff43e3-8e77-457f-91cb-101f517889c9 # Teaser
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
             fieldUid: e64a3324-79da-4987-b10d-08126fedca89 # First Name
             instructions: ''
             label: ''
@@ -99,7 +63,43 @@ fieldLayouts:
             warning: null
             width: 25
           -
-            fieldUid: 7a27d1b6-f8c9-4b63-947e-cc535c5082c8 # Bio
+            fieldUid: c4ede7fe-f873-4466-8bbc-73ee9e0c54fa # User
+            instructions: 'Assign the user whose entries will be shown'
+            label: ''
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 5e963153-38ea-4cd9-9282-6d08335433ff # Email
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2 # Featured Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: bafbd664-0b38-44ce-93b6-d271eabc05a8 # Photo
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: f6ff43e3-8e77-457f-91cb-101f517889c9 # Teaser
             instructions: null
             label: null
             required: false
@@ -108,7 +108,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 5e963153-38ea-4cd9-9282-6d08335433ff # E-Mail
+            fieldUid: 7a27d1b6-f8c9-4b63-947e-cc535c5082c8 # Bio
             instructions: null
             label: null
             required: false

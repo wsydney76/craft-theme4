@@ -49,6 +49,15 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 25
+          -
+            fieldUid: 695a4b42-15e1-4ea6-acdf-a19587641da5 # Styles
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
         name: Content
         sortOrder: 1
 fields:
@@ -126,6 +135,42 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: modules\main\fields\MarginsYField
+  695a4b42-15e1-4ea6-acdf-a19587641da5: # Styles
+    columnSuffix: pzwdxxeh
+    contentColumnType: string
+    fieldGroup: null
+    handle: styles
+    instructions: ''
+    name: Styles
+    searchable: false
+    settings:
+      multi: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Boxed
+            -
+              - value
+              - boxed
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Caption right'
+            -
+              - value
+              - captionRight
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Checkboxes
   4008cfb2-85a6-441c-bffb-b4d1cf5c23e0: # Caption
     columnSuffix: null
     contentColumnType: string

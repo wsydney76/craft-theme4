@@ -1,0 +1,19 @@
+{# @var messageElement \craft\elements\Entry #}
+{% extends "_layouts/#{theme.layout}.twig" %}
+
+{% set messageElement = null %}
+{% set email = siteInfo.email %}
+
+{% set id = craft.app.request.param('id') %}
+
+
+{% block content %}
+    {{ parent() }}
+
+    <div class="container-{{ theme.pageWidth }}">
+        {% include '_sections/message/message.twig' with {
+            id: id
+        } %}
+    </div>
+
+{% endblock %}

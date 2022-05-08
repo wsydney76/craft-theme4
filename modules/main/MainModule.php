@@ -22,6 +22,7 @@ use modules\main\fields\OrderByField;
 use modules\main\fields\SectionsField;
 use modules\main\fields\ThemeColorField;
 use modules\main\fields\WidthField;
+use modules\main\services\ContentService;
 use modules\main\twigextensions\TwigExtension;
 use modules\resources\cp\CpAssets;
 use yii\base\Event;
@@ -50,6 +51,11 @@ class MainModule extends Module
         } else {
             $this->controllerNamespace = 'modules\\main\\controllers';
         }
+
+        // Register Services
+        $this->setComponents([
+            'content' => ContentService::class
+        ]);
 
         // Register Behaviors
         Event::on(
@@ -159,6 +165,16 @@ class MainModule extends Module
             $newFilename = $pathInfo['filename'] . '.jpg';
             Craft::$app->assets->moveAsset($asset, $asset->getFolder(), $newFilename);
         });
+
+        if (Craft::$app->request->isCpRequest) {
+            Craft::$app->view->hook('cp.users.edit.details', function(array $context) {
+                return Craft::$app->view->renderTemplate(
+                    '_cp/user_person.twig',
+                    ['user' => $context['user']],
+                    View::TEMPLATE_MODE_SITE
+                );
+            });
+        }
     }
 
 }

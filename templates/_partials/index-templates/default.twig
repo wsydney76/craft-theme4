@@ -12,14 +12,23 @@
 <div class="max-w-screen-{{ theme.defaultIndexWidth }} space-y-block">
     {% for entry in entries %}
 
-        {% set image = entry.featuredImage|one  %}
+        {% set image = entry.featuredImage|one %}
         {% if not image %}
             {% set image = siteInfo.featuredImage.one %}
         {% endif %}
 
+        {% set paddingLeft = '' %}
+        {% if entry.level is defined and entry.level %}
+            {% switch entry.level %}
+            {% case 2 %}
+                {% set paddingLeft = 'ml-12' %}
+            {% case 3 %}
+                {% set paddingLeft = 'ml-24' %}
+            {% endswitch %}
+        {% endif %}
 
         <a href="{{ entry.url }}"
-           class="hover:no-underline block space-y-4 text-base pb-block border-b border-border">
+           class="hover:no-underline block space-y-4 text-base pb-block border-b border-border {{ paddingLeft }}">
 
             {% if highlightFirst and loop.index == 1 and theme.defaultIndexFirstImageTransform and pageInfo.currentPage == 1 %}
 

@@ -1,0 +1,120 @@
+{% macro modelTextField(model, attribute, modelName = '', config = []) %}
+
+    {% set config = {
+        label: model.attributeLabel(attribute),
+        name: attribute,
+        value: model.attributes[attribute],
+        errors: model.errors(attribute),
+        type: 'text'
+    }|merge(config) %}
+
+    {{ _self.textField(config) }}
+{% endmacro %}
+
+
+{% macro textField(config) %}
+    {% set name = config.name %}
+    {% set id = name|id %}
+    {% set type = config.type ?? 'text' %}
+    {% set value = config.value ?? '' %}
+    {% if type == 'password' %}
+        {% set value = '' %}
+    {% endif %}
+    {% set errors = config.errors ?? [] %}
+
+    {% set instructions = config.instructions ?? '' %}
+    {% set required = config.required ?? false %}
+
+    <div>
+        <label for="{{ id }}" class="block text-base text-foreground dark:text-foreground-dark font-semibold">
+            {{ config.label }}
+            {% if required %}
+                <span class="text-red-600 dark:text-red-400">*</span>
+            {% endif %}
+        </label>
+        <div class="mt-1">
+
+            {% set class = "w-full text-black focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-offset-2 #{ errors ? 'border border-red-500 dark:border-red-300' }" %}
+
+            {% if type == 'textarea' %}
+                <textarea
+                        class="{{ class }}"
+                        name="{{ name }}"
+                        id="{{ id }}"
+                        rows="6">{{ value }}</textarea>
+            {% else %}
+                {{ input(type, name, value , {
+                    id: id,
+                    autocomplete: id,
+                    class: class
+                }) }}
+            {% endif %}
+
+
+            {% if instructions %}
+                <div class="my-1 text-sm text-foreground dark:text-foreground-dark">{{ instructions }}</div>
+            {% endif %}
+
+        </div>
+        {{ _self.errorsList(errors) }}
+    </div>
+
+{% endmacro %}
+
+{% macro checkboxField(config) %}
+    {% set name = config.name %}
+    {% set label = config.label %}
+    {% set id = name|id %}
+    {% set value = config.value ?? '' %}
+    {% set errors = config.errors ?? [] %}
+    <div>
+        <label for="{{ id }}" class="flex space-x-4 items-center text-base text-foreground dark:text-foreground-dark">
+            <input id="{{ id }}" type="checkbox" name="{{ name }}" value="1" {{ value ? 'checked' }}>
+            <div>
+                {{ config.label }}
+            </div>
+        </label>
+        {{ _self.errorsList(errors) }}
+    </div>
+{% endmacro %}
+
+
+{% macro submitButton(caption) %}
+    <button x-data="{active:false}"
+            x-on:click="active=true"
+            type="submit"
+            class="btn bg-primary text-secondary w-full flex justify-center">
+        <div id="spinner" class="pr-4">
+            <svg x-show="active" class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                 viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+        </div>
+        {{ caption }}
+    </button>
+{% endmacro %}
+
+
+{% macro errorsList(errors) %}
+    {% if errors %}
+        {{ ul(errors, {class: 'mt-2 text-sm text-red-600 dark:text-red-200'}) }}
+    {% endif %}
+{% endmacro %}
+
+{% macro flash(params) %}
+    {% set notice = craft.app.session.flash('notice') %}
+    {% if notice %}
+        <div class="text-green-600 dark:text-green-200 text-base mb-4">
+            {{ notice }}
+        </div>
+    {% endif %}
+
+    {% set error = craft.app.session.flash('error') %}
+    {% if error %}
+        <div class="text-red-600 dark:text-red-300  text-base mb-4">
+            {{ error }}
+        </div>
+    {% endif %}
+{% endmacro %}

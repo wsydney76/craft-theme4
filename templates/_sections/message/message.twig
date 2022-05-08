@@ -1,0 +1,58 @@
+{% import '_macros/forms.twig' as forms %}
+
+{% if id %}
+    {% set recipientId = craft.app.security.validateData(id) %}
+    {% if not recipientId %}
+        {% exit 400 %}
+    {% endif %}
+{% endif %}
+
+{% set messageElement = id ? craft.entries.id(recipientId).one : null %}
+{% if messageElement %}
+    {% set recipientName = messageElement.title %}
+{% else %}
+    {% set recipientName = siteInfo.siteName %}
+{% endif %}
+
+{# @var message \modules\main\models\MessageModel #}
+{% set message = message ?? create('\\modules\\main\\models\\MessageModel') %}
+
+<div>
+    <h2 class="text-2xl">
+        {{ 'Message to'|t }} {{ recipientName }}
+    </h2>
+
+
+    <form class="mt-4 lg:w-1/2 space-y-4" method="post">
+        {{ actionInput('main/content/send-message') }}
+        {{ hiddenInput('id', id) }}
+        {{ csrfInput() }}
+        {{ redirectInput(entry.url ~ '?id={id}') }}
+        {{ failMessageInput('Email could not be sent'|t) }}
+        {{ successMessageInput('Your message was sent'|t) }}
+
+        {{ forms.flash }}
+
+        {% namespace 'message' %}
+
+            {{ forms.modelTextField(message, 'name', 'message', {required: true}) }}
+
+            {{ forms.modelTextField(message, 'emailFrom', 'message', {required: true}) }}
+
+            {{ forms.modelTextField(message, 'subject',  'message', {required: true}) }}
+
+            {{ forms.modelTextField(message, 'message', 'message', {type: 'textarea', required: true}) }}
+
+            {{ forms.checkboxField({
+                label: 'I agree to the processing of this message according to privacy information'|t,
+                name: 'confirmed',
+                value: message.confirmed,
+                errors: message.errors('confirmed')
+            }) }}
+
+        {% endnamespace %}
+
+        {{ forms.submitButton('Send'|t) }}
+
+    </form>
+</div>

@@ -10,8 +10,6 @@
 
 use config\Env;
 
-Env::setCpVars();
-
 return [
     // Global settings
     '*' => [
@@ -83,6 +81,9 @@ return [
         // Whether Craft should run pending queue jobs automatically when someone visits the control panel.
         // Run php craft queue/listen if set to false
         'runQueueAutomatically' => Env::RUN_QUEUE_AUTOMATICALLY,
+
+        // When true, Craft will always return a successful response in the “forgot password” flow, making it difficult to enumerate users.
+        'preventUserEnumeration' => true,
 
         // The URI Craft should use for user login on the front end.
         'loginPath' => [

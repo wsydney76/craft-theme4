@@ -12,6 +12,11 @@
             {% set topics = entry.topics.all %}
             {% if topics %}
                 {% for topic in topics %}
+                    {% for ancestor in topic.ancestors.all %}
+                        <div class="border-b-2 border-primary-400 dark:border-primary-300">
+                            <a class="!no-underline" href="{{ ancestor.url }}">{{ ancestor.title }}</a>
+                        </div>
+                    {% endfor %}
                     <div class="border-b-2 border-primary-400 dark:border-primary-300">
                         <a class="!no-underline" href="{{ topic.url }}">{{ topic.title }}</a>
                     </div>

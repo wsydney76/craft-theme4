@@ -21,7 +21,7 @@ return [
                         ],
                         [
                             'label' => Craft::t('site', 'Layout'),
-                            'fields' => ['aspectRatio', 'width', 'marginsY']
+                            'fields' => ['aspectRatio', 'width', 'marginsY', 'styles']
                         ]
 
                     ]

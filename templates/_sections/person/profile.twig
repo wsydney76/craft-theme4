@@ -1,14 +1,25 @@
+{# param person #}
+{# @var person craft\elements\Entry #}
+
 {% from '_macros/lib.twig' import img %}
+
+{% set author = author ?? person.user.one %}
+{% set showTitle = showTitle ?? false %}
+
+{% set email = person.email %}
+{% if not email and author %}
+    {% set email = author.email %}
+{% endif %}
 
 <div class="container-{{ theme.pageWidth }} mb-block">
 
     <div class="border-b-2 pb-4 border-border">
-        {% set image = entry.photo.one %}
+        {% set image = person.photo.one %}
         {% if not image and author %}
             {% set image = author.photo %}
         {% endif %}
 
-        <div class="mt-4 flex space-x-4">
+        <div class="mt-4 flex items-center space-x-4">
             {% if image %}
                 <div>
                     {{ img(image, {width: 120, height: 120}, {class: 'rounded-full'}, false) }}
@@ -16,24 +27,36 @@
             {% endif %}
 
             <div class="flex items-center">
-                <div class="space-y-4">
-                    {% if entry.teaser %}
+                <div class="space-y-2">
+                    {% if showTitle %}
+                        <div class="text-2xl font-semibold">
+                            {{ person.authorPersonLink }}
+                        </div>
+                    {% endif %}
+                    {% if person.teaser %}
                         <div class="text-base">
-                            {{ entry.teaser }}
+                            {{ person.teaser }}
                         </div>
                     {% endif %}
 
-                    {% if entry.bio %}
+                    {% if person.bio %}
                         <div class="text-base  font-semibold">
-                            {{ entry.bio|md|purify }}
+                            {{ person.bio|md|purify }}
                         </div>
                     {% endif %}
 
-                    {% if entry.eMail %}
-                        <div class="text-base">
-                            <a href="mailto:{{ entry.eMail }}">{{ entry.eMail }}</a>
-                        </div>
+                    {% if email %}
+                        {% set messageEntry = craft.entries.section('message').one %}
+
+                        {% if messageEntry %}
+                            <div class="text-base">
+                                ✉
+                                <a href="{{ url(messageEntry.url, {id: person.id|hash}) }}">{{ 'Message to'|t }} {{ person.title }}</a>
+                            </div>
+                        {% endif %}
                     {% endif %}
+
+                    {% block content %}{% endblock %}
                 </div>
             </div>
         </div>

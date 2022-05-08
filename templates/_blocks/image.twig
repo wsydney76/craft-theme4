@@ -37,14 +37,18 @@
 
     {% set transform = transform|merge({format: 'webp'}) %}
 
-    <figure class="figure">
+    {% set captionRight = block.styles.contains('captionRight') ?? false %}
+    {% set boxed = block.styles.contains('boxed') ?? false %}
+
+    <figure class="{{ boxed ? 'border-2 border-border dark:border-gray-600 p-4 bg-white dark:bg-gray-800 shadow-lg' }} {{ captionRight ? 'md:flow-root ' }}">
 
         {{ img(image, transform) }}
 
         {% set caption = caption ?? block.caption %}
 
         {% if caption %}
-            <figcaption class="text-center mt-2 text-base">
+            <figcaption
+                    class="text-base {{ captionRight ? 'md:float-right md:w-1/2 mt-4 border-t-4 border-border pt-2' : 'mt-2 text-center ' }}">
                 {{ caption }}
             </figcaption>
         {% endif %}
