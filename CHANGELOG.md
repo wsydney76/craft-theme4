@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+* Topics sections is now structure
+* Added forms to send messages to team, individual person
 * Added styles to image block (boxed, caption right)
 
 ## 3.5.0 2020-04-05

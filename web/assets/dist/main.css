@@ -1042,6 +1042,12 @@ a.btn{
 .ml-3{
   margin-left: 0.75rem;
 }
+.ml-12{
+  margin-left: 3rem;
+}
+.ml-24{
+  margin-left: 6rem;
+}
 .mb-20{
   margin-bottom: 5rem;
 }

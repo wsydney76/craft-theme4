@@ -20,10 +20,13 @@ siteSettings:
     enabledByDefault: true
     hasUrls: true
     template: _sections/topic
-    uriFormat: 'themen/{slug}'
+    uriFormat: '{parent.uri ?? ''themen''}/{slug}'
   b0f125c5-eef7-49fc-8d15-152965d0bab6: # English
     enabledByDefault: true
     hasUrls: true
     template: _sections/topic
-    uriFormat: 'topics/{slug}'
-type: channel
+    uriFormat: '{parent.uri ?? ''topics''}/{slug}'
+structure:
+  maxLevels: 3
+  uid: abadbc49-c394-4a5a-a000-91c37ccb7b4d
+type: structure
