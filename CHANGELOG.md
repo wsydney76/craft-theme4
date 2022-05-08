@@ -1,24 +1,25 @@
 # Changelog
 
-## Unreleased
+## 3.6.0 2022-05-08
 
-* Topics sections is now structure
+* Topics sections is now `structure`.
 * Added forms to send messages to team, individual person
 * Added styles to image block (boxed, caption right)
+* Craft / npm updates
 
-## 3.5.0 2020-04-05
+## 3.5.0 2022-04-05
 
 * Added 'person' section that holds translatable infos for a linked user.
 * Dropped provisional 'author' template stuff in favor of the new 'person' section
 
-## 3.4.5 2020-03-31
+## 3.4.5 2022-03-31
 
 * Craft/plugin/npm updates
 * Added halfedTextImage title style
 * Added RUN_QUEUE_AUTOMATICALLY env setting
 * Better members message handling
 
-## 3.4.2 2020-03-06
+## 3.4.2 2022-03-06
 
 * Added theme.skipSrcsetInDevMode setting, to speed up development/testing
 * Added New Row UI Element
@@ -30,24 +31,24 @@
 
 * Added Reverse relations field (Proof of concept)
 
-## 3.2.1 2020-02-23
+## 3.2.1 2022-02-23
 
 * Added 'introImage' and 'imageOverlapText' title styles
 * Added 'Overlap' style to 'ImageAndText' Block
 * Added Background image to 'frame' layout
 * (Hopefully) fixed a bug where horizontal flickering could randomly appear on page load
 
-## 3.1.0 2020-02-21
+## 3.1.0 2022-02-21
 
 * Added dark mode
 
-## 3.0.2 2020-02-20
+## 3.0.2 2022-02-20
 
 * Fixes, cleanup
 * Drop migrations, replaced by `php craft main/init` controller action
 * Added cp resources bundle with scripts and styles, replacing CP CSS plugin
 
-## 3.0.1 2020-02-18 (Beta, ready for testing)
+## 3.0.1 2022-02-18 (Beta, ready for testing)
 
 * Added section type 'Topic'
 * Added block type 'Articles' for building (simple) magazine-like layouts
@@ -55,7 +56,7 @@
 * Added block type 'Entries List' to multi columns layouts for displaying newest entries belonging to a topic.
 * Added 'teaser' color
 
-## 2.4.2 2020-02-16
+## 2.4.2 2022-02-16
 
 * Craft Update
 * Added Social Links
