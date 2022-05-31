@@ -2,16 +2,16 @@ columnSuffix: null
 contentColumnType: string(120)
 fieldGroup: ec7ee471-b43b-491e-9fed-acb78c59acc4 # Kontakt
 handle: fax
-instructions: ''
+instructions: null
 name: Fax
 searchable: false
 settings:
   byteLimit: null
   charLimit: 30
-  code: ''
+  code: false
   columnType: null
-  initialRows: '4'
-  multiline: ''
+  initialRows: 4
+  multiline: false
   placeholder: null
   uiMode: normal
 translationKeyFormat: null

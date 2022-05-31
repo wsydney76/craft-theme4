@@ -11,6 +11,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 0cc69ceb-ef99-4bf5-9cdd-fc3db6b11e06
             warning: null
             width: 100
           -
@@ -20,10 +21,11 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 0676a5b1-d42b-4868-a848-f02195f3037d
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: e5a06ddf-679e-479a-896f-24870a4278fa
 fields:
   3ac8b547-8089-43db-b7de-39c79c658368: # Audio Files
     columnSuffix: null
@@ -73,13 +75,12 @@ fields:
                   - ''
       contentTable: '{{%stc_25_audios}}'
       fieldLayout: table
-      maxRows: ''
-      minRows: '1'
-      placeholderKey: null
+      maxRows: null
+      minRows: 1
       propagationKeyFormat: null
       propagationMethod: all
       selectionLabel: 'Add audio'
-      staticField: ''
+      staticField: null
     translationKeyFormat: null
     translationMethod: site
     type: verbb\supertable\fields\SuperTableField
@@ -88,11 +89,10 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: style
-    instructions: ''
+    instructions: null
     name: Style
     searchable: false
     settings:
-      optgroups: true
       options:
         -
           __assoc__:

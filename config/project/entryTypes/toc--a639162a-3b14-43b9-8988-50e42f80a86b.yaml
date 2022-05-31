@@ -24,14 +24,16 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 97927e3f-816c-485c-9dab-7c5c4bb0e2f4
             warning: null
             width: 100
           -
             style: tip
             tip: 'This page type has no content of its own, only the child pages are shown.'
             type: craft\fieldlayoutelements\Tip
+            uid: 69e75a3c-1076-403e-8695-0fd809327291
         name: Inhalt
-        sortOrder: 1
+        uid: 9b34a6fb-7984-49f2-8acf-46344a403d1e
 handle: toc
 hasTitleField: true
 name: 'Table of Content'

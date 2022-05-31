@@ -8,44 +8,48 @@ fieldLayouts:
             fieldUid: e3acce1b-3e44-4216-bb4f-95d5ee8ce6e7 # Bild
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: c3f8b600-d328-403e-8474-5a1d63d02ad4
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 86da2234-bf23-48f3-b71e-a32a156cf630
 fields:
   e3acce1b-3e44-4216-bb4f-95d5ee8ce6e7: # Bild
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: image
-    instructions: ''
+    instructions: null
     name: Bild
     searchable: true
     settings:
       allowSelfRelations: false
+      allowSubfolders: false
       allowUploads: true
       allowedKinds:
         - image
       defaultUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-      defaultUploadLocationSubpath: ''
-      limit: '1'
+      defaultUploadLocationSubpath: null
       localizeRelations: false
+      maxRelations: 1
+      minRelations: null
       previewMode: full
-      restrictFiles: '1'
+      restrictFiles: true
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      restrictedLocationSubpath: null
       selectionLabel: 'Bild auswählen'
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
-      singleUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-      singleUploadLocationSubpath: ''
       source: null
       sources:
         - 'volume:a010299b-071c-4852-81f6-c15875a5ba4f' # Guide
       targetSiteId: null
-      useSingleFolder: false
       validateRelatedElements: false
       viewMode: large
     translationKeyFormat: null

@@ -11,6 +11,7 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 0108539e-cc88-401e-a745-1a5805a6bc68
             warning: null
             width: 100
           -
@@ -20,6 +21,7 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 6fe8298b-10b0-4371-8744-d132721bae90
             warning: null
             width: 100
           -
@@ -29,6 +31,7 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: d96da507-f86e-492f-b710-12ffa2708a22
             warning: null
             width: 100
           -
@@ -38,6 +41,7 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: bfbadf29-4d8b-471c-b3a5-d203e531d539
             warning: null
             width: 25
           -
@@ -47,6 +51,7 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: b728a4d3-d8b3-4dd4-ae33-f069e0c55b1a
             warning: null
             width: 25
           -
@@ -56,6 +61,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 39231f3a-b962-4001-9cbe-5af16db6c9d9
             warning: null
             width: 25
           -
@@ -65,6 +71,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 299673eb-c04f-44ae-8df1-2c597354efac
             warning: null
             width: 25
           -
@@ -74,6 +81,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: ef9d104c-2bb4-4c22-93e0-3658b960b35e
             warning: null
             width: 25
           -
@@ -83,10 +91,11 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 90f9af80-3d25-4135-a634-10c05d3430a9
             warning: null
             width: 25
         name: Content
-        sortOrder: 1
+        uid: 5d560b22-ebe9-4ddb-9c3d-e0f1a4ca2cd5
 fields:
   2e7a2b78-1f15-4193-ab59-950736957ac4: # Aspect Ratio
     columnSuffix: null
@@ -106,7 +115,7 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: marginsY
-    instructions: ''
+    instructions: null
     name: 'Margins Y'
     searchable: false
     translationKeyFormat: null
@@ -130,11 +139,10 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: align
-    instructions: ''
+    instructions: null
     name: 'Image Align'
     searchable: false
     settings:
-      optgroups: true
       options:
         -
           __assoc__:
@@ -166,31 +174,34 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: image
-    instructions: ''
+    instructions: null
     name: Image
     searchable: false
     settings:
       allowSelfRelations: false
+      allowSubfolders: false
       allowUploads: true
       allowedKinds:
         - image
       defaultUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-      defaultUploadLocationSubpath: ''
-      limit: '1'
+      defaultUploadLocationSubpath: null
       localizeRelations: false
+      maxRelations: 1
+      minRelations: null
       previewMode: full
-      restrictFiles: '1'
+      restrictFiles: true
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      restrictedLocationSubpath: null
       selectionLabel: 'Select image'
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-      singleUploadLocationSubpath: ''
       source: null
       sources:
         - 'volume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
       targetSiteId: null
-      useSingleFolder: false
       validateRelatedElements: true
       viewMode: large
     translationKeyFormat: null
@@ -201,7 +212,7 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: width
-    instructions: ''
+    instructions: null
     name: Width
     searchable: false
     settings:
@@ -216,16 +227,16 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: text
-    instructions: ''
+    instructions: null
     name: Text
     searchable: true
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: '1'
+      initialRows: 4
+      multiline: true
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -236,16 +247,16 @@ fields:
     contentColumnType: string(240)
     fieldGroup: null
     handle: heading
-    instructions: ''
+    instructions: null
     name: Heading
     searchable: true
     settings:
       byteLimit: null
       charLimit: 60
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -256,11 +267,10 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: style
-    instructions: ''
+    instructions: null
     name: Style
     searchable: false
     settings:
-      optgroups: true
       options:
         -
           __assoc__:

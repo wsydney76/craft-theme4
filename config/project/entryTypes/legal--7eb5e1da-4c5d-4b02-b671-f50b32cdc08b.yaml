@@ -7,6 +7,7 @@ fieldLayouts:
             style: tip
             tip: 'Select the entry type ''Privacy'' for the page to be linked as privacy policy in the cookie consent dialog!'
             type: craft\fieldlayoutelements\Tip
+            uid: 2e15cb66-7449-43cf-a893-c0577084c174
           -
             autocapitalize: true
             autocomplete: false
@@ -28,6 +29,7 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: e407d67b-3265-4ac6-8ddd-0fb51900e107
             warning: null
             width: 75
           -
@@ -37,15 +39,17 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: ea3bdd1d-b971-43ef-9361-d21ee8126c32
             warning: null
             width: 25
           -
             fieldUid: 55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2 # Featured Image
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 302ef5d8-8d34-49fe-a4d6-2e4b193c524a
             warning: null
             width: 100
           -
@@ -55,19 +59,21 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 2509a727-22fb-4b94-85b0-6266b35cab8d
             warning: null
             width: 100
           -
             fieldUid: 266ac6c3-03c0-40eb-8f24-c5c22ed1c5c0 # Content
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 971ab2cc-f8aa-4501-87b8-bd074e2502b3
             warning: null
             width: 100
         name: Inhalt
-        sortOrder: 1
+        uid: e84f1ab1-d817-4a84-bf5d-9b5c97223016
 handle: legal
 hasTitleField: true
 name: Legal

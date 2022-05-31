@@ -24,6 +24,7 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: d3c78fc7-06cb-4b7d-888d-4e91f667b810
             warning: null
             width: 100
           -
@@ -33,6 +34,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 599d0f85-b7a0-4113-8df2-3f88bce23dab
             warning: null
             width: 100
           -
@@ -42,10 +44,11 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: a76b8256-0864-443d-9636-11209932cf8e
             warning: null
             width: 100
         name: Inhalt
-        sortOrder: 1
+        uid: 0a9c1935-5945-499c-b69a-f0d0d5c010cb
 handle: archive
 hasTitleField: false
 name: Archiv

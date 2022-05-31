@@ -11,6 +11,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 5500a1f8-e73a-413d-b88f-a51e9132597a
             warning: null
             width: 100
           -
@@ -20,6 +21,7 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: acdf30d4-21db-4c4e-971c-fbb33659fe89
             warning: null
             width: 50
           -
@@ -29,6 +31,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: c8193387-0952-4e4f-a88a-fce86bb843f7
             warning: null
             width: 50
           -
@@ -38,6 +41,7 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 232498de-9e6e-4b14-89dc-a5c0d2fbfd9d
             warning: null
             width: 25
           -
@@ -47,26 +51,27 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 7f81f92e-202f-4d38-8615-27f12ce1c9e7
             warning: null
             width: 25
         name: Content
-        sortOrder: 1
+        uid: 3a6fb47e-e6ab-4e1d-a094-21d973be07be
 fields:
   3cf774ef-1913-42fe-893f-35e693837468: # Heading
     columnSuffix: null
     contentColumnType: string(240)
     fieldGroup: null
     handle: heading
-    instructions: ''
+    instructions: null
     name: Heading
     searchable: false
     settings:
       byteLimit: null
       charLimit: 60
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -77,11 +82,10 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: style
-    instructions: ''
+    instructions: null
     name: Style
     searchable: false
     settings:
-      optgroups: true
       options:
         -
           __assoc__:
@@ -124,13 +128,14 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: topic
-    instructions: ''
+    instructions: null
     name: Topic
     searchable: false
     settings:
       allowSelfRelations: false
-      limit: '1'
       localizeRelations: false
+      maxRelations: 1
+      minRelations: null
       selectionLabel: 'Add a topic'
       showSiteMenu: false
       source: null
@@ -147,13 +152,14 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: articles
-    instructions: ''
+    instructions: null
     name: Articles
     searchable: true
     settings:
       allowSelfRelations: false
-      limit: ''
       localizeRelations: false
+      maxRelations: null
+      minRelations: null
       selectionLabel: 'Add article'
       showSiteMenu: false
       source: null
@@ -171,7 +177,7 @@ fields:
     contentColumnType: boolean
     fieldGroup: null
     handle: showAuthorAndDate
-    instructions: ''
+    instructions: null
     name: 'Show Author and Date'
     searchable: false
     settings:

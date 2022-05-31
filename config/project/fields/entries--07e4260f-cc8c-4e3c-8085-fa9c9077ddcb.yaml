@@ -2,14 +2,15 @@ columnSuffix: null
 contentColumnType: string
 fieldGroup: d868de82-ae37-4897-a6bb-ef08e919650b # Common
 handle: entries
-instructions: ''
+instructions: null
 name: Entries
 searchable: false
 settings:
   allowSelfRelations: false
-  limit: ''
   localizeRelations: true
-  selectionLabel: ''
+  maxRelations: null
+  minRelations: null
+  selectionLabel: null
   showSiteMenu: true
   source: null
   sources: '*'

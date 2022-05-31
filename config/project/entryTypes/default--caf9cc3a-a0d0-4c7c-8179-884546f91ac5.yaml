@@ -24,6 +24,7 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 606062d0-e78d-45a6-a255-ad081abf5ba0
             warning: null
             width: 75
           -
@@ -33,15 +34,17 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 07eda942-f519-48ae-a0f2-9c3c07d03b08
             warning: null
             width: 25
           -
             fieldUid: 55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2 # Featured Image
             instructions: null
             label: null
-            required: '1'
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 653a5a61-122e-47b8-94d4-78bfc6e0b613
             warning: null
             width: 50
           -
@@ -51,46 +54,51 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 3603d1b9-b00d-4038-9ee5-12ee81342875
             warning: null
             width: 50
           -
             fieldUid: f6ff43e3-8e77-457f-91cb-101f517889c9 # Teaser
             instructions: null
             label: null
-            required: '1'
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 302c4262-ff32-4fb8-aaed-5b578cef1567
             warning: null
             width: 100
           -
             fieldUid: 9c9d5cca-e9b2-48e2-911d-21f139d26fed # Intro
             instructions: 'Used in Article block, e.g. for the home page'
-            label: ''
-            required: ''
+            label: null
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 731e1d7d-a637-4a29-aef8-78deafd90335
             warning: null
             width: 100
           -
             fieldUid: 266ac6c3-03c0-40eb-8f24-c5c22ed1c5c0 # Content
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 53ed57e7-09c3-4ddb-adfb-99b89147de33
             warning: null
             width: 100
           -
             fieldUid: 07e4260f-cc8c-4e3c-8085-fa9c9077ddcb # Entries
-            instructions: ''
+            instructions: null
             label: 'Verwandte Einträge'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: fb172686-cdaa-402f-a776-8a85d742ce69
             warning: null
             width: 100
         name: Common
-        sortOrder: 1
+        uid: daac735c-16f0-4e46-a1a0-8ac74717f1f8
       -
         elements:
           -
@@ -100,10 +108,11 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: d98f7aa9-7a8f-4f42-b9c3-89ac937db01f
             warning: null
             width: 100
         name: SEO
-        sortOrder: 2
+        uid: f8118665-2816-4041-a251-580002bb1846
 handle: default
 hasTitleField: true
 name: Standard

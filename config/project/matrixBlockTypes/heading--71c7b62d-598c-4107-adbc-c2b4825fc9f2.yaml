@@ -8,38 +8,40 @@ fieldLayouts:
             fieldUid: 3cb2606a-5d91-44a2-bbfa-8110801db82d # Text
             instructions: null
             label: null
-            required: '1'
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 225a84e2-8b69-420f-bd10-54e6ad8a9642
             warning: null
             width: 100
           -
             fieldUid: cb3d5f40-e3f5-45a4-9c9f-47b9c515be67 # Tag
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 7d53218d-d61a-4a2b-9c6c-1f8d853103c9
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 5fa0ed66-6eef-4af8-ac30-fdff17e06a07
 fields:
   3cb2606a-5d91-44a2-bbfa-8110801db82d: # Text
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: text
-    instructions: ''
+    instructions: null
     name: Text
     searchable: true
     settings:
       byteLimit: null
-      charLimit: '100'
-      code: ''
+      charLimit: 100
+      code: false
       columnType: string
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -50,11 +52,10 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: tag
-    instructions: ''
+    instructions: null
     name: Tag
     searchable: true
     settings:
-      optgroups: true
       options:
         -
           __assoc__:

@@ -11,10 +11,11 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 70fc2c7d-8dc6-41a4-b74c-4731d6fc5d8f
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 29e22732-c4a5-4810-82b8-68182df19ad1
 fields:
   499db390-ca29-450f-8c5d-9a23d0e1e353: # Text
     columnSuffix: null
@@ -27,10 +28,10 @@ fields:
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: text
-      initialRows: '4'
-      multiline: '1'
+      initialRows: 4
+      multiline: true
       placeholder: null
       uiMode: normal
     translationKeyFormat: null

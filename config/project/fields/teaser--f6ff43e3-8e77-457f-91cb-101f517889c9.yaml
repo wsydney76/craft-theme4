@@ -2,16 +2,16 @@ columnSuffix: null
 contentColumnType: text
 fieldGroup: d868de82-ae37-4897-a6bb-ef08e919650b # Common
 handle: teaser
-instructions: ''
+instructions: null
 name: Teaser
 searchable: true
 settings:
   byteLimit: null
   charLimit: null
-  code: ''
+  code: false
   columnType: text
-  initialRows: '4'
-  multiline: ''
+  initialRows: 4
+  multiline: false
   placeholder: null
   uiMode: normal
 translationKeyFormat: null

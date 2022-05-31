@@ -2,7 +2,7 @@ columnSuffix: mnvmrnmj
 contentColumnType: boolean
 fieldGroup: 6f31e23d-56c9-4afe-aacf-25ec0d12b2c2 # Guide
 handle: adminGuide
-instructions: ''
+instructions: null
 name: 'Admin Guide'
 searchable: false
 settings:

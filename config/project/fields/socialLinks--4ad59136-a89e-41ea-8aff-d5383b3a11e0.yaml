@@ -2,7 +2,7 @@ columnSuffix: tqsvgabc
 contentColumnType: text
 fieldGroup: f15bff68-e0e6-422d-a615-9e22d733e1f0 # Global
 handle: socialLinks
-instructions: ''
+instructions: null
 name: 'Social Links'
 searchable: false
 settings:
@@ -89,8 +89,9 @@ settings:
             -
               - type
               - url
-  maxRows: ''
-  minRows: ''
+  defaults: null
+  maxRows: null
+  minRows: null
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Table

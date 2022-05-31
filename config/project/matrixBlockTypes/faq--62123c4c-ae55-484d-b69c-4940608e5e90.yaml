@@ -11,6 +11,7 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 260ff83c-f05c-4f68-8bd0-b71637be1542
             warning: null
             width: 100
           -
@@ -20,21 +21,21 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 1fd789d8-3938-4ad8-bce5-917e7634adb0
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: aa9610c7-3164-40fc-b309-0d4fe176344f
 fields:
   5cc78695-cf9e-4492-af63-2f65b4b8c1aa: # Display
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: display
-    instructions: ''
+    instructions: null
     name: Display
     searchable: false
     settings:
-      optgroups: true
       options:
         -
           __assoc__:
@@ -66,7 +67,7 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: items
-    instructions: ''
+    instructions: null
     name: __blank__
     searchable: true
     settings:
@@ -88,13 +89,12 @@ fields:
                   - ''
       contentTable: '{{%stc_34_items}}'
       fieldLayout: row
-      maxRows: ''
-      minRows: '1'
-      placeholderKey: null
+      maxRows: null
+      minRows: 1
       propagationKeyFormat: null
       propagationMethod: all
       selectionLabel: 'Add question/answer'
-      staticField: ''
+      staticField: null
     translationKeyFormat: null
     translationMethod: site
     type: verbb\supertable\fields\SuperTableField

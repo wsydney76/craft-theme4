@@ -11,6 +11,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: a2881bf4-491e-4d77-a982-fac82dd3f106
             warning: null
             width: 100
           -
@@ -20,6 +21,7 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 2864f7bb-3396-49c9-8ce3-881d46d84dc0
             warning: null
             width: 100
           -
@@ -29,6 +31,7 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 29cc69d9-17ba-432d-b9e9-2cbb3385c524
             warning: null
             width: 100
           -
@@ -38,6 +41,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 2e3f8b42-c483-448a-879d-d94afea69721
             warning: null
             width: 100
           -
@@ -47,10 +51,11 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 3f865f14-ffa1-408d-bd06-9bcff417b675
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: fac15c96-97d1-4434-82c7-dfa6ccaaf587
 fields:
   04d14d45-3d49-4d75-9b1b-56b1cbe51772: # Duration
     columnSuffix: null
@@ -63,10 +68,10 @@ fields:
     settings:
       byteLimit: null
       charLimit: 5
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -77,31 +82,34 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: image
-    instructions: ''
+    instructions: null
     name: Image
     searchable: false
     settings:
       allowSelfRelations: false
+      allowSubfolders: false
       allowUploads: false
       allowedKinds:
         - image
       defaultUploadLocationSource: 'volume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
-      defaultUploadLocationSubpath: ''
-      limit: '1'
+      defaultUploadLocationSubpath: null
       localizeRelations: false
+      maxRelations: 1
+      minRelations: null
       previewMode: full
-      restrictFiles: '1'
+      restrictFiles: true
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      restrictedLocationSubpath: null
       selectionLabel: 'Select image'
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-      singleUploadLocationSubpath: ''
       source: null
       sources:
         - 'volume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
       targetSiteId: null
-      useSingleFolder: false
       validateRelatedElements: false
       viewMode: large
     translationKeyFormat: null
@@ -112,16 +120,16 @@ fields:
     contentColumnType: string(240)
     fieldGroup: null
     handle: heading
-    instructions: ''
+    instructions: null
     name: Titel
     searchable: true
     settings:
       byteLimit: null
       charLimit: 60
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -132,31 +140,34 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: audio
-    instructions: ''
+    instructions: null
     name: Audio
     searchable: false
     settings:
       allowSelfRelations: false
+      allowSubfolders: false
       allowUploads: false
       allowedKinds:
         - audio
       defaultUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
       defaultUploadLocationSubpath: audio
-      limit: '1'
       localizeRelations: false
+      maxRelations: 1
+      minRelations: null
       previewMode: full
-      restrictFiles: '1'
+      restrictFiles: true
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      restrictedLocationSubpath: null
       selectionLabel: 'Select file'
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-      singleUploadLocationSubpath: ''
       source: null
       sources:
         - 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
       targetSiteId: null
-      useSingleFolder: false
       validateRelatedElements: false
       viewMode: list
     translationKeyFormat: null
@@ -167,16 +178,16 @@ fields:
     contentColumnType: string(240)
     fieldGroup: null
     handle: artist
-    instructions: ''
+    instructions: null
     name: Artist
     searchable: true
     settings:
       byteLimit: null
       charLimit: 60
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null

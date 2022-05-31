@@ -8,80 +8,88 @@ fieldLayouts:
             fieldUid: a5f3b232-51a5-4cf6-88f2-2e1ff35fabb7 # Überschrift
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 51bf4f0b-5b07-48e9-b92b-f9e9309439f3
             warning: null
             width: 100
           -
             fieldUid: ea2cfe15-67c5-438e-9d8c-b80a905baa85 # Text
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: d41cb9d3-1f01-48d4-9cd9-ee71f3e1afb8
             warning: null
             width: 100
           -
             fieldUid: 17bdd0b8-d122-4c81-accf-6e1470359fba # Bilder
             instructions: null
             label: null
-            required: '1'
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 03d0c64b-573f-451f-835b-bdfc6fbe0842
             warning: null
             width: 100
           -
             fieldUid: 752d79f6-0f1d-438e-91a2-f8e4cedfd23d # Ausrichtung
             instructions: null
             label: null
-            required: '1'
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: a3351c80-e322-44c4-b5b1-7d707ac903ce
             warning: null
             width: 100
           -
             fieldUid: ee360814-e45a-409a-b0df-5384fb768d19 # Bildbreite
             instructions: null
             label: null
-            required: '1'
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 4b9bb63d-e53d-44d5-ba0e-5d931bd5b040
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: e43005be-5177-4738-b739-e3bdaf079733
 fields:
   17bdd0b8-d122-4c81-accf-6e1470359fba: # Bilder
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: images
-    instructions: ''
+    instructions: null
     name: Bilder
     searchable: true
     settings:
       allowSelfRelations: false
+      allowSubfolders: false
       allowUploads: true
       allowedKinds:
         - image
       defaultUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-      defaultUploadLocationSubpath: ''
-      limit: ''
+      defaultUploadLocationSubpath: null
       localizeRelations: false
+      maxRelations: null
+      minRelations: null
       previewMode: full
-      restrictFiles: '1'
+      restrictFiles: true
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      restrictedLocationSubpath: null
       selectionLabel: 'Bild hinzufügen'
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
-      singleUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-      singleUploadLocationSubpath: ''
       source: null
       sources:
         - 'volume:a010299b-071c-4852-81f6-c15875a5ba4f' # Guide
       targetSiteId: null
-      useSingleFolder: false
       validateRelatedElements: false
       viewMode: list
     translationKeyFormat: null
@@ -92,11 +100,10 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: orientation
-    instructions: ''
+    instructions: null
     name: Ausrichtung
     searchable: true
     settings:
-      optgroups: true
       options:
         -
           __assoc__:
@@ -128,16 +135,16 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: heading
-    instructions: ''
+    instructions: null
     name: Überschrift
     searchable: true
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: text
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -148,7 +155,7 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: text
-    instructions: ''
+    instructions: null
     name: Text
     searchable: true
     settings:
@@ -158,12 +165,12 @@ fields:
       configSelectionMode: choose
       defaultTransform: ''
       manualConfig: ''
-      purifierConfig: ''
-      purifyHtml: '1'
+      purifierConfig: null
+      purifyHtml: true
       redactorConfig: Custom.json
-      removeEmptyTags: '1'
-      removeInlineStyles: '1'
-      removeNbsp: '1'
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
       showHtmlButtonForNonAdmins: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
@@ -176,11 +183,10 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: imgWidth
-    instructions: ''
+    instructions: null
     name: Bildbreite
     searchable: true
     settings:
-      optgroups: true
       options:
         -
           __assoc__:

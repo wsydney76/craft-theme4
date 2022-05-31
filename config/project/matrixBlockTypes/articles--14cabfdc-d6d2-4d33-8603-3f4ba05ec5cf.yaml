@@ -11,6 +11,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 4fcbda06-ad69-4051-a078-f4a920cf1278
             warning: null
             width: 100
           -
@@ -20,6 +21,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 63af6627-7664-4bc0-b5aa-e1d844a3ce63
             warning: null
             width: 50
           -
@@ -29,6 +31,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: f557a29c-6091-4b0c-8b0f-d4981f540255
             warning: null
             width: 25
           -
@@ -38,6 +41,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: f4160bb5-4a29-4c3d-80f9-0ea47ba4d264
             warning: null
             width: 50
           -
@@ -47,6 +51,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: d71b9389-8b08-492e-85bd-57a507bacb5e
             warning: null
             width: 25
           -
@@ -56,6 +61,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: f953c711-65b4-49d4-96f5-7ca9659cb813
             warning: null
             width: 25
           -
@@ -65,6 +71,7 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: a262dd36-647b-479e-a2a2-5d9c06805f0a
             warning: null
             width: 25
           -
@@ -74,6 +81,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: b8c568a4-b3c8-41e1-a329-bc2a7136ab78
             warning: null
             width: 25
           -
@@ -83,10 +91,11 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: e6560461-08f6-4f97-a101-23d7741e1c85
             warning: null
             width: 25
         name: Content
-        sortOrder: 1
+        uid: 41660015-9759-4d64-8e07-842c7b9bd715
 fields:
   1a4c4f22-b6ec-4dc8-8b67-ef9d928180d0: # Topic
     columnSuffix: null
@@ -98,9 +107,10 @@ fields:
     searchable: false
     settings:
       allowSelfRelations: false
-      limit: '1'
       localizeRelations: false
-      selectionLabel: ''
+      maxRelations: 1
+      minRelations: null
+      selectionLabel: null
       showSiteMenu: false
       source: null
       sources:
@@ -131,7 +141,7 @@ fields:
     contentColumnType: boolean
     fieldGroup: null
     handle: showAuthorAndDate
-    instructions: ''
+    instructions: null
     name: 'Show Author and Date'
     searchable: false
     settings:
@@ -146,7 +156,7 @@ fields:
     contentColumnType: boolean
     fieldGroup: null
     handle: addTopBorder
-    instructions: ''
+    instructions: null
     name: 'Add top border'
     searchable: false
     settings:
@@ -161,7 +171,7 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: width
-    instructions: ''
+    instructions: null
     name: Width
     searchable: false
     settings:
@@ -176,16 +186,16 @@ fields:
     contentColumnType: string(240)
     fieldGroup: null
     handle: heading
-    instructions: ''
+    instructions: null
     name: Heading
     searchable: true
     settings:
       byteLimit: null
       charLimit: 60
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -196,11 +206,10 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: style
-    instructions: ''
+    instructions: null
     name: Style
     searchable: false
     settings:
-      optgroups: true
       options:
         -
           __assoc__:
@@ -263,7 +272,7 @@ fields:
       max: null
       min: 1
       prefix: null
-      previewCurrency: ''
+      previewCurrency: null
       previewFormat: decimal
       size: null
       suffix: null
@@ -280,8 +289,9 @@ fields:
     searchable: true
     settings:
       allowSelfRelations: false
-      limit: ''
       localizeRelations: false
+      maxRelations: null
+      minRelations: null
       selectionLabel: 'Add article'
       showSiteMenu: false
       source: null

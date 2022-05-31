@@ -24,6 +24,7 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: c960e5a6-33c8-485c-b0ca-6cb387ee025f
             warning: null
             width: 75
           -
@@ -33,6 +34,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 2c49c21b-566d-4350-bf0d-e9b1bbe08bbf
             warning: null
             width: 25
           -
@@ -42,6 +44,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: fd9685e8-4193-4db5-abd3-bb97ca91512e
             warning: null
             width: 100
           -
@@ -51,6 +54,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: fccc6fa7-20ad-4c86-963f-62be3b9552dc
             warning: null
             width: 100
           -
@@ -60,19 +64,21 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: b08276ba-5cdc-4be4-a24a-35a8935e8ea6
             warning: null
             width: 100
           -
             fieldUid: e9781761-5a04-49d1-84ef-a9159f853e28 # Members Template
-            instructions: ''
-            label: ''
-            required: '1'
+            instructions: null
+            label: null
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 4ad1b760-22af-43b6-99d1-259dabb01acb
             warning: null
             width: 100
         name: Inhalt
-        sortOrder: 1
+        uid: 0747c98f-7a7c-4dba-b878-67c960d13bdf
 handle: members
 hasTitleField: true
 name: Members

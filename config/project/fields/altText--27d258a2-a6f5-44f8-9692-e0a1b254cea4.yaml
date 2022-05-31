@@ -2,16 +2,16 @@ columnSuffix: vutiojub
 contentColumnType: string(240)
 fieldGroup: 609778c1-e7ba-47fc-bd62-7f2c99f0f0ee # Assets
 handle: altText
-instructions: ''
+instructions: null
 name: 'Alt Text'
 searchable: true
 settings:
   byteLimit: null
   charLimit: 60
-  code: ''
+  code: false
   columnType: null
-  initialRows: '4'
-  multiline: ''
+  initialRows: 4
+  multiline: false
   placeholder: null
   uiMode: normal
 translationKeyFormat: null

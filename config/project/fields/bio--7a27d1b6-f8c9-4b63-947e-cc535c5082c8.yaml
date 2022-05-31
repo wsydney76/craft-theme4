@@ -2,16 +2,16 @@ columnSuffix: eugbysut
 contentColumnType: text
 fieldGroup: bb94c9b2-f8e4-4729-97b4-9367ffd54772 # Person
 handle: bio
-instructions: ''
+instructions: null
 name: Bio
 searchable: true
 settings:
   byteLimit: null
   charLimit: null
-  code: ''
+  code: false
   columnType: null
-  initialRows: '2'
-  multiline: '1'
+  initialRows: 2
+  multiline: true
   placeholder: null
   uiMode: normal
 translationKeyFormat: null

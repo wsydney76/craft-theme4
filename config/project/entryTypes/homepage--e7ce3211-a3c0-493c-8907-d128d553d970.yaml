@@ -24,6 +24,7 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 549069a1-d94a-4792-a56e-97906f74b368
             warning: null
             width: 100
           -
@@ -33,6 +34,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: b2123988-27b2-4141-a733-09f60b8dae50
             warning: null
             width: 25
           -
@@ -42,6 +44,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 709d33c1-8648-45b4-abba-ac8577e14cf1
             warning: null
             width: 25
           -
@@ -51,6 +54,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 82a4920a-5fdb-4f30-856a-61c45c9f8964
             warning: null
             width: 100
           -
@@ -60,19 +64,21 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 131c1580-eedf-4012-9c37-421706a3f67e
             warning: null
             width: 100
           -
             fieldUid: 07e4260f-cc8c-4e3c-8085-fa9c9077ddcb # Entries
-            instructions: ''
+            instructions: null
             label: 'Featured Entries'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: a6f8c354-cb66-495f-9d28-e623c33376fe
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 05709ad7-e046-44e9-9685-e125281338e6
       -
         elements:
           -
@@ -82,10 +88,11 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 71d57783-92f4-4241-b23d-5a338d60ac10
             warning: null
             width: 100
         name: SEO
-        sortOrder: 2
+        uid: 239f6ddd-ee2d-4630-b4f6-cc1d8096390a
 handle: homepage
 hasTitleField: true
 name: Homepage

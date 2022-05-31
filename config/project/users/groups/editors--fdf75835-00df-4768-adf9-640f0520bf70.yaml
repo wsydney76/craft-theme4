@@ -1,4 +1,4 @@
-description: ''
+description: null
 handle: editors
 name: Editors
 permissions:
@@ -6,16 +6,29 @@ permissions:
   - accesscpwhensystemisoff
   - accessplugin-work
   - accesssitewhensystemisoff
+  - 'assignusergroup:fdf75835-00df-4768-adf9-640f0520bf70' # Editors
   - 'createentries:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
   - 'createentries:61350169-3950-4815-aea9-b171958d6d8a' # Guide
   - 'createentries:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
   - 'createentries:a6676538-ee52-4938-aaff-8d9d46b669af' # Page
   - 'createentries:cd4b4d9a-0519-4f07-93e0-5957b57a9afd' # Legal
+  - 'createfolders:1d9fc6a9-72e3-404b-86a9-2ba2014002f0' # Temporary Uploads
+  - 'createfolders:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'createfolders:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
+  - 'createfolders:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+  - 'deleteassets:1d9fc6a9-72e3-404b-86a9-2ba2014002f0' # Temporary Uploads
+  - 'deleteassets:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'deleteassets:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
+  - 'deleteassets:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
   - 'deleteentries:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
   - 'deleteentries:61350169-3950-4815-aea9-b171958d6d8a' # Guide
   - 'deleteentries:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
   - 'deleteentries:a6676538-ee52-4938-aaff-8d9d46b669af' # Page
   - 'deleteentries:cd4b4d9a-0519-4f07-93e0-5957b57a9afd' # Legal
+  - 'deletepeerassets:1d9fc6a9-72e3-404b-86a9-2ba2014002f0' # Temporary Uploads
+  - 'deletepeerassets:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'deletepeerassets:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
+  - 'deletepeerassets:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
   - 'deletepeerentries:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
   - 'deletepeerentries:61350169-3950-4815-aea9-b171958d6d8a' # Guide
   - 'deletepeerentries:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
@@ -27,84 +40,71 @@ permissions:
   - 'deletepeerentrydrafts:a6676538-ee52-4938-aaff-8d9d46b669af' # Page
   - 'deletepeerentrydrafts:cd4b4d9a-0519-4f07-93e0-5957b57a9afd' # Legal
   - 'deletepeerentrydrafts:e11aebc3-41ca-4730-a85b-997852702e35' # Homepage
+  - 'editimages:1d9fc6a9-72e3-404b-86a9-2ba2014002f0' # Temporary Uploads
+  - 'editimages:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'editimages:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
+  - 'editimages:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+  - 'editpeerimages:1d9fc6a9-72e3-404b-86a9-2ba2014002f0' # Temporary Uploads
+  - 'editpeerimages:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'editpeerimages:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
+  - 'editpeerimages:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
   - 'editsite:6cae2408-4e31-46df-8a5b-33f31d339176' # Deutsch
   - 'editsite:b0f125c5-eef7-49fc-8d15-152965d0bab6' # English
-  - 'viewassets:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
-  - 'saveassets:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
-  - 'deleteassets:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
-  - 'replacefiles:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
-  - 'editimages:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
-  - 'viewpeerassets:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
-  - 'savepeerassets:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
-  - 'replacepeerfiles:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
-  - 'deletepeerassets:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
-  - 'editpeerimages:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
-  - 'createfolders:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
-  - 'viewassets:270fd626-b08d-4f72-9383-3acdcd200225' # Images
-  - 'saveassets:270fd626-b08d-4f72-9383-3acdcd200225' # Images
-  - 'deleteassets:270fd626-b08d-4f72-9383-3acdcd200225' # Images
-  - 'replacefiles:270fd626-b08d-4f72-9383-3acdcd200225' # Images
-  - 'editimages:270fd626-b08d-4f72-9383-3acdcd200225' # Images
-  - 'viewpeerassets:270fd626-b08d-4f72-9383-3acdcd200225' # Images
-  - 'savepeerassets:270fd626-b08d-4f72-9383-3acdcd200225' # Images
-  - 'replacepeerfiles:270fd626-b08d-4f72-9383-3acdcd200225' # Images
-  - 'deletepeerassets:270fd626-b08d-4f72-9383-3acdcd200225' # Images
-  - 'editpeerimages:270fd626-b08d-4f72-9383-3acdcd200225' # Images
-  - 'createfolders:270fd626-b08d-4f72-9383-3acdcd200225' # Images
-  - 'viewassets:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-  - 'saveassets:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-  - 'deleteassets:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-  - 'replacefiles:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-  - 'editimages:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-  - 'viewpeerassets:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-  - 'savepeerassets:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-  - 'replacepeerfiles:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-  - 'deletepeerassets:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-  - 'editpeerimages:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-  - 'createfolders:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-  - 'viewassets:1d9fc6a9-72e3-404b-86a9-2ba2014002f0' # Temporary Uploads
-  - 'saveassets:1d9fc6a9-72e3-404b-86a9-2ba2014002f0' # Temporary Uploads
-  - 'deleteassets:1d9fc6a9-72e3-404b-86a9-2ba2014002f0' # Temporary Uploads
   - 'replacefiles:1d9fc6a9-72e3-404b-86a9-2ba2014002f0' # Temporary Uploads
-  - 'editimages:1d9fc6a9-72e3-404b-86a9-2ba2014002f0' # Temporary Uploads
-  - 'viewpeerassets:1d9fc6a9-72e3-404b-86a9-2ba2014002f0' # Temporary Uploads
-  - 'savepeerassets:1d9fc6a9-72e3-404b-86a9-2ba2014002f0' # Temporary Uploads
+  - 'replacefiles:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'replacefiles:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
+  - 'replacefiles:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
   - 'replacepeerfiles:1d9fc6a9-72e3-404b-86a9-2ba2014002f0' # Temporary Uploads
-  - 'deletepeerassets:1d9fc6a9-72e3-404b-86a9-2ba2014002f0' # Temporary Uploads
-  - 'editpeerimages:1d9fc6a9-72e3-404b-86a9-2ba2014002f0' # Temporary Uploads
-  - 'createfolders:1d9fc6a9-72e3-404b-86a9-2ba2014002f0' # Temporary Uploads
-  - 'viewentries:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
+  - 'replacepeerfiles:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'replacepeerfiles:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
+  - 'replacepeerfiles:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+  - 'saveassets:1d9fc6a9-72e3-404b-86a9-2ba2014002f0' # Temporary Uploads
+  - 'saveassets:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'saveassets:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
+  - 'saveassets:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
   - 'saveentries:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
-  - 'viewpeerentrydrafts:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
-  - 'savepeerentrydrafts:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
-  - 'viewpeerentries:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
-  - 'savepeerentries:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
-  - 'viewentries:61350169-3950-4815-aea9-b171958d6d8a' # Guide
   - 'saveentries:61350169-3950-4815-aea9-b171958d6d8a' # Guide
-  - 'viewpeerentrydrafts:61350169-3950-4815-aea9-b171958d6d8a' # Guide
-  - 'savepeerentrydrafts:61350169-3950-4815-aea9-b171958d6d8a' # Guide
-  - 'viewpeerentries:61350169-3950-4815-aea9-b171958d6d8a' # Guide
-  - 'savepeerentries:61350169-3950-4815-aea9-b171958d6d8a' # Guide
-  - 'viewentries:e11aebc3-41ca-4730-a85b-997852702e35' # Homepage
-  - 'saveentries:e11aebc3-41ca-4730-a85b-997852702e35' # Homepage
-  - 'viewpeerentrydrafts:e11aebc3-41ca-4730-a85b-997852702e35' # Homepage
-  - 'savepeerentrydrafts:e11aebc3-41ca-4730-a85b-997852702e35' # Homepage
-  - 'viewentries:cd4b4d9a-0519-4f07-93e0-5957b57a9afd' # Legal
-  - 'saveentries:cd4b4d9a-0519-4f07-93e0-5957b57a9afd' # Legal
-  - 'viewpeerentrydrafts:cd4b4d9a-0519-4f07-93e0-5957b57a9afd' # Legal
-  - 'savepeerentrydrafts:cd4b4d9a-0519-4f07-93e0-5957b57a9afd' # Legal
-  - 'viewpeerentries:cd4b4d9a-0519-4f07-93e0-5957b57a9afd' # Legal
-  - 'savepeerentries:cd4b4d9a-0519-4f07-93e0-5957b57a9afd' # Legal
-  - 'viewentries:a6676538-ee52-4938-aaff-8d9d46b669af' # Page
-  - 'saveentries:a6676538-ee52-4938-aaff-8d9d46b669af' # Page
-  - 'viewpeerentrydrafts:a6676538-ee52-4938-aaff-8d9d46b669af' # Page
-  - 'savepeerentrydrafts:a6676538-ee52-4938-aaff-8d9d46b669af' # Page
-  - 'viewpeerentries:a6676538-ee52-4938-aaff-8d9d46b669af' # Page
-  - 'savepeerentries:a6676538-ee52-4938-aaff-8d9d46b669af' # Page
-  - 'viewentries:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
   - 'saveentries:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
-  - 'viewpeerentrydrafts:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
-  - 'savepeerentrydrafts:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
-  - 'viewpeerentries:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
+  - 'saveentries:a6676538-ee52-4938-aaff-8d9d46b669af' # Page
+  - 'saveentries:cd4b4d9a-0519-4f07-93e0-5957b57a9afd' # Legal
+  - 'saveentries:e11aebc3-41ca-4730-a85b-997852702e35' # Homepage
+  - 'savepeerassets:1d9fc6a9-72e3-404b-86a9-2ba2014002f0' # Temporary Uploads
+  - 'savepeerassets:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'savepeerassets:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
+  - 'savepeerassets:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+  - 'savepeerentries:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
+  - 'savepeerentries:61350169-3950-4815-aea9-b171958d6d8a' # Guide
   - 'savepeerentries:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
-  - 'assignusergroup:fdf75835-00df-4768-adf9-640f0520bf70' # Editors
+  - 'savepeerentries:a6676538-ee52-4938-aaff-8d9d46b669af' # Page
+  - 'savepeerentries:cd4b4d9a-0519-4f07-93e0-5957b57a9afd' # Legal
+  - 'savepeerentrydrafts:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
+  - 'savepeerentrydrafts:61350169-3950-4815-aea9-b171958d6d8a' # Guide
+  - 'savepeerentrydrafts:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
+  - 'savepeerentrydrafts:a6676538-ee52-4938-aaff-8d9d46b669af' # Page
+  - 'savepeerentrydrafts:cd4b4d9a-0519-4f07-93e0-5957b57a9afd' # Legal
+  - 'savepeerentrydrafts:e11aebc3-41ca-4730-a85b-997852702e35' # Homepage
+  - 'viewassets:1d9fc6a9-72e3-404b-86a9-2ba2014002f0' # Temporary Uploads
+  - 'viewassets:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'viewassets:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
+  - 'viewassets:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+  - 'viewentries:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
+  - 'viewentries:61350169-3950-4815-aea9-b171958d6d8a' # Guide
+  - 'viewentries:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
+  - 'viewentries:a6676538-ee52-4938-aaff-8d9d46b669af' # Page
+  - 'viewentries:cd4b4d9a-0519-4f07-93e0-5957b57a9afd' # Legal
+  - 'viewentries:e11aebc3-41ca-4730-a85b-997852702e35' # Homepage
+  - 'viewpeerassets:1d9fc6a9-72e3-404b-86a9-2ba2014002f0' # Temporary Uploads
+  - 'viewpeerassets:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  - 'viewpeerassets:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
+  - 'viewpeerassets:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+  - 'viewpeerentries:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
+  - 'viewpeerentries:61350169-3950-4815-aea9-b171958d6d8a' # Guide
+  - 'viewpeerentries:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
+  - 'viewpeerentries:a6676538-ee52-4938-aaff-8d9d46b669af' # Page
+  - 'viewpeerentries:cd4b4d9a-0519-4f07-93e0-5957b57a9afd' # Legal
+  - 'viewpeerentrydrafts:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
+  - 'viewpeerentrydrafts:61350169-3950-4815-aea9-b171958d6d8a' # Guide
+  - 'viewpeerentrydrafts:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
+  - 'viewpeerentrydrafts:a6676538-ee52-4938-aaff-8d9d46b669af' # Page
+  - 'viewpeerentrydrafts:cd4b4d9a-0519-4f07-93e0-5957b57a9afd' # Legal
+  - 'viewpeerentrydrafts:e11aebc3-41ca-4730-a85b-997852702e35' # Homepage

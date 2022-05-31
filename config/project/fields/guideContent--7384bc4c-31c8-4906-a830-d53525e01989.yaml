@@ -7,8 +7,8 @@ name: 'Guide Inhalt'
 searchable: false
 settings:
   contentTable: '{{%matrixcontent_guidecontent}}'
-  maxBlocks: ''
-  minBlocks: ''
+  maxBlocks: null
+  minBlocks: null
   propagationKeyFormat: null
   propagationMethod: none
 translationKeyFormat: null

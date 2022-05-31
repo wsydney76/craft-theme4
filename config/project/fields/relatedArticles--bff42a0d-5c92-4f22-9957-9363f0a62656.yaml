@@ -2,7 +2,7 @@ columnSuffix: null
 contentColumnType: string
 fieldGroup: d868de82-ae37-4897-a6bb-ef08e919650b # Common
 handle: relatedArticles
-instructions: ''
+instructions: null
 name: 'Related articles'
 searchable: false
 settings:

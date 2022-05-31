@@ -24,6 +24,7 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: 279b003d-8718-49e8-a431-ba06d16f1681
             warning: null
             width: 100
           -
@@ -33,6 +34,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: ce34c2fa-82f1-4532-9f27-35c4ad3721d7
             warning: null
             width: 100
           -
@@ -42,15 +44,16 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 321e3314-15e9-43da-8d1d-1ff2eb632b83
             warning: null
             width: 100
         name: Inhalt
-        sortOrder: 1
+        uid: 12cb4b58-2834-4c8c-8308-aebd17ae976c
 fs: temporaryUploads
 handle: temporaryUploads
-hasUrls: true
 name: 'Temporary Uploads'
 sortOrder: 6
 titleTranslationKeyFormat: null
 titleTranslationMethod: language
-url: '@web/temporaryuploads'
+transformFs: null
+transformSubpath: ''

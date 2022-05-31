@@ -24,6 +24,7 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 8ba610da-a786-467d-8d41-7df5e65ff8f0
             warning: null
             width: 75
           -
@@ -33,6 +34,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 4386dc55-1d37-415b-8f97-6f791727287b
             warning: null
             width: 25
           -
@@ -42,6 +44,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 481b70bb-0098-4302-95b1-3a225a03391e
             warning: null
             width: 100
           -
@@ -51,6 +54,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: f5fd3d4d-26ab-4474-8319-ab7fda37432d
             warning: null
             width: 100
           -
@@ -60,6 +64,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 3a858baf-62cd-479c-b9c3-3b61d2e5c088
             warning: null
             width: 100
           -
@@ -69,10 +74,11 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 7bca876f-0b70-41e8-b0a1-722303eb155b
             warning: null
             width: 100
         name: Inhalt
-        sortOrder: 1
+        uid: f772543e-14c2-44d2-9024-fe0af1a2d64d
 handle: privacy
 hasTitleField: true
 name: Privacy

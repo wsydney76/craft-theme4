@@ -7,13 +7,14 @@ fieldLayouts:
             fieldUid: 10d8ae84-a8b6-489d-846d-1a7510cd9829 # Global Seo Fields
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 74c85ed6-ab20-4cd3-ab38-6c07bfc11ab6
             warning: null
             width: 100
         name: SEO
-        sortOrder: 1
+        uid: 76e96dc4-5310-4e57-b4cd-8fe38fd5e482
 handle: globalSeo
 name: 'Global SEO'
 sortOrder: 2

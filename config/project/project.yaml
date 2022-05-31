@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1654015264
+dateModified: 1654033421
 elementSources:
   craft\elements\Asset:
     -
@@ -57,6 +57,7 @@ elementSources:
       type: native
   craft\elements\Entry:
     -
+      disabled: false
       key: '*'
       tableAttributes:
         - section
@@ -108,6 +109,7 @@ elementSources:
         - link
       type: native
     -
+      disabled: false
       key: 'section:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
       tableAttributes:
         - drafts
@@ -133,11 +135,6 @@ elementSources:
         - drafts
         - 'field:cce5096c-8ab7-4940-9973-ad47671c92cb' # Admin Guide
         - author
-        - postDate
-      type: native
-    -
-      key: 'section:1e572ace-db73-446d-bc4f-0c5cae3d58e7'
-      tableAttributes:
         - postDate
       type: native
 email:
@@ -657,7 +654,7 @@ plugins:
     schemaVersion: 1.0.0
 system:
   edition: pro
-  live: false
+  live: true
   name: $SYSTEM_NAME
   retryDuration: null
   schemaVersion: 4.0.0.9

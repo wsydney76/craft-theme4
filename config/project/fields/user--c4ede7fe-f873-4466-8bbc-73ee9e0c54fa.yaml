@@ -2,14 +2,15 @@ columnSuffix: null
 contentColumnType: string
 fieldGroup: bb94c9b2-f8e4-4729-97b4-9367ffd54772 # Person
 handle: user
-instructions: ''
+instructions: null
 name: User
 searchable: false
 settings:
   allowSelfRelations: false
-  limit: '1'
   localizeRelations: false
-  selectionLabel: ''
+  maxRelations: 1
+  minRelations: null
+  selectionLabel: null
   showSiteMenu: false
   source: null
   sources: '*'

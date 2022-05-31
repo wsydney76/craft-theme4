@@ -2,31 +2,34 @@ columnSuffix: null
 contentColumnType: string
 fieldGroup: f15bff68-e0e6-422d-a615-9e22d733e1f0 # Global
 handle: logo
-instructions: ''
+instructions: null
 name: Logo
 searchable: false
 settings:
   allowSelfRelations: false
+  allowSubfolders: false
   allowUploads: false
   allowedKinds:
     - image
   defaultUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-  defaultUploadLocationSubpath: ''
-  limit: '1'
+  defaultUploadLocationSubpath: null
   localizeRelations: false
+  maxRelations: 1
+  minRelations: null
   previewMode: full
-  restrictFiles: '1'
-  selectionLabel: ''
+  restrictFiles: true
+  restrictLocation: true
+  restrictedDefaultUploadSubpath: null
+  restrictedLocationSource: 'volume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  restrictedLocationSubpath: logo
+  selectionLabel: null
   showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
-  singleUploadLocationSource: 'volume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
-  singleUploadLocationSubpath: logo
   source: null
   sources:
     - 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
   targetSiteId: null
-  useSingleFolder: true
   validateRelatedElements: false
   viewMode: large
 translationKeyFormat: null

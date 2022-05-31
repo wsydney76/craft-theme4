@@ -24,6 +24,7 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: fe34b95e-b492-4a34-aba2-5a5590f4ab9c
             warning: null
             width: 100
           -
@@ -33,24 +34,26 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 721bb091-e585-4a29-a230-6083b1c33e73
             warning: null
             width: 100
           -
             fieldUid: dc298055-236a-4bbc-9246-ae94c0e76889 # Copyright
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 2b1a6e99-9fc6-4b8a-a152-b6983a2bba6b
             warning: null
             width: 100
         name: Inhalt
-        sortOrder: 1
+        uid: c026b1ff-3a17-4fac-a991-4cb0fc0c04b6
 fs: media
 handle: media
-hasUrls: true
 name: Media
 sortOrder: 3
 titleTranslationKeyFormat: null
 titleTranslationMethod: language
-url: '@web/media'
+transformFs: null
+transformSubpath: ''
