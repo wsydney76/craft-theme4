@@ -19,7 +19,7 @@ return [
         'fieldProfiles' => [
             'standard' => [
                 'title' => ['seoFields:settings.alternativeTitle', 'title'],
-                'description' => ['bodyContent:summary.text','seoFields:settings.description', 'teaser'],
+                'description' => ['bodyContent:summary.text', 'seoFields:settings.description', 'teaser'],
                 'image' => ['seoFields:settings.image', 'featuredImage'],
                 'robots' => ['seoFields:settings.robots'],
             ],
@@ -36,13 +36,13 @@ return [
             ],
         ],
 
-        'siteName' =>Env::ENVIRONMENT . ' ' . Craft::$app->sites->currentSite->name,
+        'siteName' => Env::ENVIRONMENT . ' ' . Craft::$app->getSystemName(),
         'sitenameSeparator' => ' - '
     ],
 
     'production' => [
         'cacheEnabled' => true,
-        'siteName' => Craft::$app->sites->currentSite->name,
+        'siteName' => Craft::$app->getSystemName(),
     ]
 
 ];
