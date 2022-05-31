@@ -8,9 +8,12 @@ use craft\elements\Entry;
 use craft\events\DefineBehaviorsEvent;
 use craft\events\DefineFieldLayoutElementsEvent;
 use craft\events\DefineRulesEvent;
+use craft\events\ElementEvent;
 use craft\events\ModelEvent;
 use craft\events\RegisterComponentTypesEvent;
+use craft\helpers\ElementHelper;
 use craft\models\FieldLayout;
+use craft\services\Elements;
 use craft\services\Fields;
 use craft\web\View;
 use Illuminate\Support\Collection;
@@ -176,6 +179,22 @@ class MainModule extends Module
                 );
             });
         }
+
+        // Don't update search index for drafts
+        Event::on(
+            Elements::class,
+            Elements::EVENT_BEFORE_UPDATE_SEARCH_INDEX,
+            function(ElementEvent $event) {
+                if (ElementHelper::isDraft($event->element)) {
+                    $event->isValid = false;
+                }
+            }
+        );
+
+        // Prevent password managers like Bitdefender Wallet from falsely inserting credentials into user form
+        Craft::$app->view->hook('cp.users.edit.content', function(array &$context) {
+            return '<input type="text" name="dummy-first-name" value="wtf" style="display: none">';
+        });
 
         // Register Collection::one() as an alias of first(), for consistency with yii\db\Query.
         // TODO: Remove when upgrading to 4.1
