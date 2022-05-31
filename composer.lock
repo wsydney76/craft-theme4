@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2bd481ab4d7fcce9273a0944e540f2e3",
+    "content-hash": "d8d0a6cd6b53b4acc1bf6b4d7569d315",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -6516,6 +6516,46 @@
     ],
     "packages-dev": [
         {
+            "name": "craftcms/rector",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/craftcms/rector.git",
+                "reference": "27514d0bd1b8554f2e0396f1373876a3755c7f07"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/craftcms/rector/zipball/27514d0bd1b8554f2e0396f1373876a3755c7f07",
+                "reference": "27514d0bd1b8554f2e0396f1373876a3755c7f07",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0.2",
+                "rector/rector": "^0.12.23"
+            },
+            "require-dev": {
+                "craftcms/cms": "^4.0.0-alpha",
+                "craftcms/ecs": "dev-main",
+                "phpstan/phpstan": "^1.6.8",
+                "phpunit/phpunit": "^9.5",
+                "symfony/var-exporter": "^6.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "craft\\rector\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Rector sets to automate Craft CMS upgrades",
+            "support": {
+                "issues": "https://github.com/craftcms/rector/issues",
+                "source": "https://github.com/craftcms/rector/tree/main"
+            },
+            "time": "2022-05-14T20:04:21+00:00"
+        },
+        {
             "name": "phpstan/phpstan",
             "version": "1.6.7",
             "source": {
@@ -6636,14 +6676,16 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
-    "prefer-stable": false,
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "craftcms/rector": 20
+    },
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
     "platform-overrides": {
         "php": "8.0.2"
     },
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
