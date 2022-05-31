@@ -1,25 +1,33 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1654033421
+dateModified: 1654033914
 elementSources:
   craft\elements\Asset:
     -
       heading: 'Site Assets'
       type: heading
     -
-      key: 'folder:d05306c7-16fc-48ed-a392-6ad77d4d5409'
+      disabled: false
+      key: 'volume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
       tableAttributes:
-        - 'field:27d258a2-a6f5-44f8-9692-e0a1b254cea4' # Alt Text
         - imageSize
-        - size
+        - dateModified
         - link
-        - elementMap_incomingReferenceCount
       type: native
     -
-      key: 'folder:8ea0eea4-3148-40c0-aa20-333163e26869'
+      disabled: false
+      key: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
       tableAttributes:
         - filename
         - imageSize
+        - dateModified
+        - link
+      type: native
+    -
+      disabled: false
+      key: 'volume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
+      tableAttributes:
+        - provider
         - dateModified
         - link
       type: native
@@ -27,7 +35,8 @@ elementSources:
       heading: Internal
       type: heading
     -
-      key: 'folder:99936dcc-85af-4193-827b-ad85685c77ff'
+      disabled: false
+      key: 'volume:a917656e-dee2-4135-99f8-f837529a2a69' # User Photos
       tableAttributes:
         - filename
         - imageSize
@@ -35,25 +44,23 @@ elementSources:
         - link
       type: native
     -
-      key: 'folder:e6739c7a-9ed9-4ebe-ad65-ceb5d692462f'
+      disabled: false
+      key: 'volume:a010299b-071c-4852-81f6-c15875a5ba4f' # Guide
+      tableAttributes:
+        - filename
+        - imageSize
+        - dateModified
+        - uploader
+        - link
+      type: native
+    -
+      disabled: false
+      key: 'volume:1d9fc6a9-72e3-404b-86a9-2ba2014002f0' # Temporary Uploads
       tableAttributes:
         - filename
         - imageSize
         - dateModified
         - link
-      type: native
-    -
-      heading: ''
-      type: heading
-    -
-      key: 'folder:8697532c-5fef-4a7b-8293-5e9e4601795a'
-      tableAttributes:
-        - filename
-        - imageSize
-        - dateModified
-      type: native
-    -
-      key: 'folder:7622e5f3-908d-424a-b474-45c51a4ade65'
       type: native
   craft\elements\Entry:
     -
