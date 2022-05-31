@@ -5,7 +5,9 @@ namespace modules\main\console\controllers;
 use Craft;
 use craft\console\Controller;
 use craft\db\Table;
+use craft\helpers\App;
 use craft\helpers\FileHelper;
+use craft\models\Volume;
 use craft\volumes\Local;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
@@ -37,12 +39,11 @@ class AssetsController extends Controller
         }
 
         Craft::$app->getDb()->createCommand()
-            ->truncateTable(Table::ASSETTRANSFORMINDEX)
+            ->truncateTable(Table::IMAGETRANSFORMINDEX)
             ->execute();
 
         $volumes = Craft::$app->volumes->getAllVolumes();
 
-        /** @var Local $volume */
         foreach ($volumes as $volume) {
             $this->_clearVolume($volume);
         }
@@ -51,9 +52,9 @@ class AssetsController extends Controller
         return ExitCode::OK;
     }
 
-    private function _clearVolume(Local $volume): void
+    private function _clearVolume(Volume $volume): void
     {
-        $root = Craft::parseEnv($volume->path);
+        $root = App::parseEnv($volume->getTransformFs()->path);
         $dirs = $this->_getTransFormDirs($root);
         foreach ($dirs as $dir) {
             $this->_deleteDir($dir);
@@ -70,7 +71,7 @@ class AssetsController extends Controller
 
         $dirs = [];
         foreach ($rii as $dir) {
-            if ($dir->isDir() && strpos($dir->getPathname(), (string) (DIRECTORY_SEPARATOR . '_')) &&
+            if ($dir->isDir() && strpos($dir->getPathname(), (string)(DIRECTORY_SEPARATOR . '_')) &&
                 !strpos($dir->getPathname(), '..')) {
                 $dirs[] = $dir->getPathname();
             }
