@@ -55,5 +55,5 @@ name: Media
 sortOrder: 3
 titleTranslationKeyFormat: null
 titleTranslationMethod: language
-transformFs: null
-transformSubpath: ''
+transformFs: transforms
+transformSubpath: media

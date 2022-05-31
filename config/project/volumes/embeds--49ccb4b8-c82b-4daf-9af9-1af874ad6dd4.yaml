@@ -35,5 +35,5 @@ name: Embeds
 sortOrder: 2
 titleTranslationKeyFormat: null
 titleTranslationMethod: language
-transformFs: null
-transformSubpath: ''
+transformFs: transforms
+transformSubpath: embeds

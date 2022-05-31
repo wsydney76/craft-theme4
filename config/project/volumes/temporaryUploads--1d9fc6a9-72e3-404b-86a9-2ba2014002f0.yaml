@@ -55,5 +55,5 @@ name: 'Temporary Uploads'
 sortOrder: 6
 titleTranslationKeyFormat: null
 titleTranslationMethod: language
-transformFs: null
-transformSubpath: ''
+transformFs: transforms
+transformSubpath: temporaryUploads

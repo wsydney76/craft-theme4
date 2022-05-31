@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1654033914
+dateModified: 1654034602
 elementSources:
   craft\elements\Asset:
     -
@@ -194,6 +194,13 @@ fs:
       path: '@webroot/temporaryuploads'
     type: craft\fs\Local
     url: '@web/temporaryuploads'
+  transforms:
+    hasUrls: true
+    name: Transforms
+    settings:
+      path: '@webroot/assets/transforms'
+    type: craft\fs\Local
+    url: '@web/assets/transforms'
   userPhotos:
     hasUrls: true
     name: 'User Photos'

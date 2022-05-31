@@ -69,5 +69,5 @@ name: Images
 sortOrder: 1
 titleTranslationKeyFormat: null
 titleTranslationMethod: language
-transformFs: null
-transformSubpath: ''
+transformFs: transforms
+transformSubpath: images

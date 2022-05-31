@@ -35,5 +35,5 @@ name: Guide
 sortOrder: 5
 titleTranslationKeyFormat: null
 titleTranslationMethod: language
-transformFs: null
-transformSubpath: ''
+transformFs: transforms
+transformSubpath: guide
