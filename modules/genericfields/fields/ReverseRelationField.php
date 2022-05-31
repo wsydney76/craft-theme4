@@ -75,7 +75,7 @@ class ReverseRelationField extends Field
     /**
      * @inheritDoc
      */
-    public function getInputHtml($value, ElementInterface $element = null): string
+    public function getInputHtml(mixed $value, ?\craft\base\ElementInterface $element = null): string
     {
 
         $uids = explode('/', $this->source);
@@ -119,7 +119,7 @@ class ReverseRelationField extends Field
      * @inheritdoc
      * @throws InvalidConfigException
      */
-    public function getSettingsHtml(): string
+    public function getSettingsHtml(): ?string
     {
         return Cp::selectFieldHtml([
                 'label' => 'Relationship Source',

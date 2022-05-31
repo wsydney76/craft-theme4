@@ -24,7 +24,7 @@ class MessageModel extends Model
         ];
     }
 
-    public function init()
+    public function init(): void
     {
         $user = Craft::$app->user->identity;
         if ($user) {

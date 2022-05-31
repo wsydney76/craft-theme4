@@ -19,11 +19,11 @@ class GuideWidget extends Widget
         return 'Guides Widgets';
     }
 
-    public function getTitle(): string {
+    public function getTitle(): ?string {
         return 'Neue Guides';
     }
 
-    public function getBodyHtml()
+    public function getBodyHtml(): ?string
     {
         $app = Craft::$app;
 

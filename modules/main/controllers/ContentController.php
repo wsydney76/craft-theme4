@@ -16,7 +16,7 @@ use function explode;
 
 class ContentController extends Controller
 {
-    protected $allowAnonymous = ['send-message'];
+    protected array|int|bool $allowAnonymous = ['send-message'];
 
     /**
      * Requires 'generateTransformsBeforePageLoad' => true

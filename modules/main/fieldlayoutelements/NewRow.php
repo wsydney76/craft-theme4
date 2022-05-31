@@ -20,7 +20,7 @@ class NewRow extends BaseUiElement
     /**
      * @inheritdoc
      */
-    public function formHtml(ElementInterface $element = null, bool $static = false): string
+    public function formHtml(ElementInterface $element = null, bool $static = false): ?string
     {
         return Html::tag('div', '', ['class' => 'width-100']);
     }

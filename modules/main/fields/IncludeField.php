@@ -56,7 +56,7 @@ class IncludeField extends Field
         return $rules;
     }
 
-    public function getSettingsHtml(): string
+    public function getSettingsHtml(): ?string
     {
 
         return Cp::textFieldHtml([
@@ -72,7 +72,7 @@ class IncludeField extends Field
     /**
      * @inheritDoc
      */
-    public function getInputHtml($value, ElementInterface $element = null): string
+    public function getInputHtml(mixed $value, ?\craft\base\ElementInterface $element = null): string
     {
 
         /** @var Entry $entry */
