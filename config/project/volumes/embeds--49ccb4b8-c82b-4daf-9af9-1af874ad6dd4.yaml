@@ -23,18 +23,16 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\AssetTitleField
+            type: craft\fieldlayoutelements\assets\AssetTitleField
             warning: null
             width: 100
         name: Inhalt
         sortOrder: 1
+fs: embeds
 handle: embeds
 hasUrls: false
 name: Embeds
-settings:
-  path: '@storage/volumes/embeds'
 sortOrder: 2
 titleTranslationKeyFormat: null
 titleTranslationMethod: language
-type: craft\volumes\Local
 url: null

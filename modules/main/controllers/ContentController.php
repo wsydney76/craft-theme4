@@ -3,8 +3,6 @@
 namespace modules\main\controllers;
 
 use Craft;
-use craft\elements\Entry;
-use craft\elements\GlobalSet;
 use craft\helpers\App;
 use craft\web\Controller;
 use craft\web\Response;
@@ -72,6 +70,6 @@ class ContentController extends Controller
         }
 
         $this->setSuccessFlash(Craft::t('site', 'Message sent'));
-        return $this->redirectToPostedUrl(['id' => $id]);
+        return $this->redirectToPostedUrl((object)['id' => $id]);
     }
 }

@@ -17,7 +17,6 @@
  * you do for 'general.php'
  */
 
-use modules\main\MainModule;
 use putyourlightson\blitz\models\SiteUriModel;
 
 return [
@@ -27,6 +26,9 @@ return [
 
         // With this setting enabled, Blitz will begin caching pages according to the included/excluded URI patterns. Disable this setting to prevent Blitz from caching any new pages.
         // 'cachingEnabled' => true,
+
+        // With this setting enabled, Blitz will provide template performance hints in a utility.
+        'hintsEnabled' => false,
 
         // The URI patterns to include in caching. Set `siteId` to a blank string to indicate all sites.
         'includedUriPatterns' => [
@@ -83,7 +85,6 @@ return [
 //        'customSiteUris' => [
 //            new SiteUriModel(['siteId' => 3, 'uri' => 'fetchpage/home.json']),
 //        ],
-
 
         // The purger type to use.
         //'cachePurgerType' => 'putyourlightson\blitz\drivers\purgers\CloudflarePurger',
@@ -173,9 +174,9 @@ return [
 
         // The integrations to initialise.
         'integrations' => [
-    // 'putyourlightson\blitz\drivers\integrations\FeedMeIntegration',
-    // 'putyourlightson\blitz\drivers\integrations\SeomaticIntegration',
-],
+            // 'putyourlightson\blitz\drivers\integrations\FeedMeIntegration',
+            // 'putyourlightson\blitz\drivers\integrations\SeomaticIntegration',
+        ],
 
         // The value to send in the cache control header.
         'cacheControlHeader' => 'public, s-maxage=31536000, max-age=0',
@@ -204,11 +205,11 @@ return [
         //'injectScriptEvent' => 'DOMContentLoaded',
     ],
     'dev' => [
-    // With this setting enabled, Blitz will log detailed messages to `storage/logs/blitz.log`.
-    'debug' => true,
-],
+        // With this setting enabled, Blitz will log detailed messages to `storage/logs/blitz.log`.
+        'debug' => true,
+    ],
     'production' => [
-    // With this setting enabled, Blitz will begin caching pages according to the included/excluded URI patterns. Disable this setting to prevent Blitz from caching any new pages.
-    'cachingEnabled' => true,
-]
+        // With this setting enabled, Blitz will begin caching pages according to the included/excluded URI patterns. Disable this setting to prevent Blitz from caching any new pages.
+        'cachingEnabled' => true,
+    ]
 ];

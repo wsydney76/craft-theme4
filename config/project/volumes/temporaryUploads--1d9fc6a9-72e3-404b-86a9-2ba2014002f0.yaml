@@ -23,7 +23,7 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\AssetTitleField
+            type: craft\fieldlayoutelements\assets\AssetTitleField
             warning: null
             width: 100
           -
@@ -46,13 +46,11 @@ fieldLayouts:
             width: 100
         name: Inhalt
         sortOrder: 1
+fs: temporaryUploads
 handle: temporaryUploads
 hasUrls: true
 name: 'Temporary Uploads'
-settings:
-  path: '@webroot/temporaryuploads'
 sortOrder: 6
 titleTranslationKeyFormat: null
 titleTranslationMethod: language
-type: craft\volumes\Local
 url: '@web/temporaryuploads'

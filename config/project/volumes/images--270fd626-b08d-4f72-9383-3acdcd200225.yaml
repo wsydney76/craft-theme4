@@ -23,7 +23,7 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\AssetTitleField
+            type: craft\fieldlayoutelements\assets\AssetTitleField
             warning: null
             width: 100
           -
@@ -59,13 +59,11 @@ fieldLayouts:
             width: 100
         name: 'Transform Settings'
         sortOrder: 2
+fs: images
 handle: images
 hasUrls: true
 name: Images
-settings:
-  path: '@webroot/images'
 sortOrder: 1
 titleTranslationKeyFormat: null
 titleTranslationMethod: language
-type: craft\volumes\Local
 url: '@web/images'

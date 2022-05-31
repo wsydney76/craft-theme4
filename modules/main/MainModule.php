@@ -13,6 +13,7 @@ use craft\events\RegisterComponentTypesEvent;
 use craft\models\FieldLayout;
 use craft\services\Fields;
 use craft\web\View;
+use Illuminate\Support\Collection;
 use modules\main\behaviors\EntryBehavior;
 use modules\main\fieldlayoutelements\NewRow;
 use modules\main\fields\AspectRatioField;
@@ -175,6 +176,13 @@ class MainModule extends Module
                 );
             });
         }
+
+        // Register Collection::one() as an alias of first(), for consistency with yii\db\Query.
+        // TODO: Remove when upgrading to 4.1
+        Collection::macro('one', function() {
+            /** @var Collection $this */
+            return $this->first(...func_get_args());
+        });
     }
 
 }

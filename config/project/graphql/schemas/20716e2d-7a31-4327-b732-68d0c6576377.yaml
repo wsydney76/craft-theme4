@@ -18,3 +18,5 @@ scope:
   - 'volumes.270fd626-b08d-4f72-9383-3acdcd200225:read' # Images
   - 'globalsets.0cc70760-0163-43ed-b61c-224b6f32981c:read' # Site Info
   - 'globalsets.3445271a-f274-4239-858d-05878b6c4f85:read' # Global SEO
+  - 'sites.6cae2408-4e31-46df-8a5b-33f31d339176:read' # Deutsch
+  - 'sites.b0f125c5-eef7-49fc-8d15-152965d0bab6:read' # English

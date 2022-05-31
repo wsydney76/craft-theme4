@@ -1,6 +1,145 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1654013791
+dateModified: 1654015264
+elementSources:
+  craft\elements\Asset:
+    -
+      heading: 'Site Assets'
+      type: heading
+    -
+      key: 'folder:d05306c7-16fc-48ed-a392-6ad77d4d5409'
+      tableAttributes:
+        - 'field:27d258a2-a6f5-44f8-9692-e0a1b254cea4' # Alt Text
+        - imageSize
+        - size
+        - link
+        - elementMap_incomingReferenceCount
+      type: native
+    -
+      key: 'folder:8ea0eea4-3148-40c0-aa20-333163e26869'
+      tableAttributes:
+        - filename
+        - imageSize
+        - dateModified
+        - link
+      type: native
+    -
+      heading: Internal
+      type: heading
+    -
+      key: 'folder:99936dcc-85af-4193-827b-ad85685c77ff'
+      tableAttributes:
+        - filename
+        - imageSize
+        - dateModified
+        - link
+      type: native
+    -
+      key: 'folder:e6739c7a-9ed9-4ebe-ad65-ceb5d692462f'
+      tableAttributes:
+        - filename
+        - imageSize
+        - dateModified
+        - link
+      type: native
+    -
+      heading: ''
+      type: heading
+    -
+      key: 'folder:8697532c-5fef-4a7b-8293-5e9e4601795a'
+      tableAttributes:
+        - filename
+        - imageSize
+        - dateModified
+      type: native
+    -
+      key: 'folder:7622e5f3-908d-424a-b474-45c51a4ade65'
+      type: native
+  craft\elements\Entry:
+    -
+      key: '*'
+      tableAttributes:
+        - section
+        - postDate
+        - link
+      type: native
+    -
+      heading: Site
+      type: heading
+    -
+      key: singles
+      tableAttributes:
+        - drafts
+        - 'field:55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2' # Featured Image
+        - link
+      type: native
+    -
+      key: 'section:a6676538-ee52-4938-aaff-8d9d46b669af' # Page
+      tableAttributes:
+        - drafts
+        - hasProvisionalDraft
+        - type
+        - 'field:55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2' # Featured Image
+        - postDate
+        - link
+      type: native
+    -
+      key: 'section:cd4b4d9a-0519-4f07-93e0-5957b57a9afd' # Legal
+      tableAttributes:
+        - drafts
+        - hasProvisionalDraft
+        - 'field:55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2' # Featured Image
+        - 'field:f6ff43e3-8e77-457f-91cb-101f517889c9' # Teaser
+        - postDate
+        - link
+      type: native
+    -
+      heading: Articles
+      type: heading
+    -
+      key: 'section:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
+      tableAttributes:
+        - drafts
+        - hasProvisionalDraft
+        - 'field:55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2' # Featured Image
+        - 'field:f6ff43e3-8e77-457f-91cb-101f517889c9' # Teaser
+        - author
+        - postDate
+        - link
+      type: native
+    -
+      key: 'section:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
+      tableAttributes:
+        - drafts
+        - hasProvisionalDraft
+        - 'field:55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2' # Featured Image
+        - 'field:f6ff43e3-8e77-457f-91cb-101f517889c9' # Teaser
+        - author
+        - postDate
+        - link
+      type: native
+    -
+      heading: Intern
+      type: heading
+    -
+      key: 'section:d798b89b-cb00-4853-ac5a-c69bffe3ca76' # Person
+      tableAttributes:
+        - postDate
+        - link
+      type: native
+    -
+      key: 'section:61350169-3950-4815-aea9-b171958d6d8a' # Guide
+      tableAttributes:
+        - drafts
+        - 'field:cce5096c-8ab7-4940-9973-ad47671c92cb' # Admin Guide
+        - author
+        - postDate
+      type: native
+    -
+      key: 'section:1e572ace-db73-446d-bc4f-0c5cae3d58e7'
+      tableAttributes:
+        - postDate
+      type: native
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -15,6 +154,49 @@ email:
     useAuthentication: $SMTP_AUTHENTICATION
     username: $SMTP_USER
   transportType: craft\mail\transportadapters\Smtp
+fs:
+  embeds:
+    hasUrls: false
+    name: Embeds
+    settings:
+      path: '@storage/volumes/embeds'
+    type: craft\fs\Local
+    url: null
+  guide:
+    hasUrls: true
+    name: Guide
+    settings:
+      path: '@webroot/guide'
+    type: craft\fs\Local
+    url: '@web/guide'
+  images:
+    hasUrls: true
+    name: Images
+    settings:
+      path: '@webroot/images'
+    type: craft\fs\Local
+    url: '@web/images'
+  media:
+    hasUrls: true
+    name: Media
+    settings:
+      path: '@webroot/media'
+    type: craft\fs\Local
+    url: '@web/media'
+  temporaryUploads:
+    hasUrls: true
+    name: 'Temporary Uploads'
+    settings:
+      path: '@webroot/temporaryuploads'
+    type: craft\fs\Local
+    url: '@web/temporaryuploads'
+  userPhotos:
+    hasUrls: true
+    name: 'User Photos'
+    settings:
+      path: '@webroot/userphotos'
+    type: craft\fs\Local
+    url: '@web/userphotos'
 meta:
   __names__:
     0c3f6026-fb73-4bb2-a6da-63857c5b8db4: Fax # Fax
@@ -444,7 +626,7 @@ plugins:
     edition: pro
     enabled: true
     licenseKey: KM6EWK48GP7O2AW535XV8UC1
-    schemaVersion: 3.0.0
+    schemaVersion: 4.0.0
   matrixmate:
     edition: standard
     enabled: true
@@ -468,15 +650,15 @@ plugins:
   super-table:
     edition: standard
     enabled: true
-    schemaVersion: 2.2.1
+    schemaVersion: 3.0.0
   work:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
 system:
   edition: pro
-  live: true
+  live: false
   name: $SYSTEM_NAME
   retryDuration: null
-  schemaVersion: 3.7.33
+  schemaVersion: 4.0.0.9
   timeZone: $SYSTEM_TIMEZONE
