@@ -37,17 +37,6 @@
   "scripts": {
     "post-install-cmd": [
       "@php -r \"file_exists('config/Env.php') || copy('config/Env.php.example', 'config/Env.php');\""
-    ],
-    "pre-update-cmd": [
-      "@php craft off"
-    ],
-    "post-update-cmd": [
-      "@php craft clear-caches/compiled-templates",
-      "@php craft clear-caches/cp-resources",
-      "@php craft clear-caches/data",
-      "@php craft clear-caches/temp-files",
-      "@php craft migrate/all --interactive=0",
-      "@php craft on"
     ]
   },
   "require-dev": {
