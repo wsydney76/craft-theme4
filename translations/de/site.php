@@ -237,4 +237,5 @@ return [
     '{count,plural,=1{Related Entry} other{Related Entries}}' => '{count,plural,=1{Verwandter Eintrag} other{Verwandte Einträge}}',
     '“' => '„',
     '”' => '“',
+    'Full Name' => 'Vollständiger Name',
 ];
