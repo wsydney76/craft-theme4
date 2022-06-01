@@ -12,6 +12,7 @@ use craft\helpers\App;
 use craft\helpers\ArrayHelper;
 use craft\helpers\Assets;
 use Faker\Factory;
+use yii\console\ExitCode;
 use function array_diff;
 use function copy;
 use function pathinfo;
@@ -38,21 +39,21 @@ class InitController extends Controller
      */
     public $defaultAction = 'all';
 
-    public function actionAll(): void
+    public function actionAll(): int
     {
         if (!$this->confirm('Run all init actions? This should only be done once, immediately after installing.')) {
-            return;
+            return ExitCode::UNSPECIFIED_ERROR;
         }
 
         $this->stdout('Setting some global content...');
         $this->actionSetup();
         $this->stdout(PHP_EOL);
 
-        $this->stdout('Set Element Index sources...');
+        $this->stdout('Set Entries Index sources...');
         // $this->actionEntryIndexes();
         $this->stdout(PHP_EOL);
 
-        $this->stdout('Set Asset Index sources...');
+        $this->stdout('Set Assets Index sources...');
         // $this->actionSetAssetIndexes();
         $this->stdout(PHP_EOL);
 
@@ -67,9 +68,11 @@ class InitController extends Controller
         $this->stdout('Update Users...');
         $this->actionSetUsers();
         $this->stdout(PHP_EOL);
+
+        return ExitCode::OK;
     }
 
-    public function actionSetup(): bool
+    public function actionSetup(): int
     {
         $faker = Factory::create();
 
@@ -141,10 +144,10 @@ class InitController extends Controller
             Craft::$app->elements->saveElement($global);
         }
 
-        return true;
+        return ExitCode::OK;
     }
 
-    public function actionEntryIndexes(): void
+    public function actionEntryIndexes(): int
     {
         $sections = Craft::$app->sections->getAllSections();
         $s = [];
@@ -186,9 +189,10 @@ class InitController extends Controller
         ];
 
         Craft::$app->elementIndexes->saveSettings('craft\\elements\\Entry', $entrySettings);
+        return ExitCode::OK;
     }
 
-    public function actionSetAssetIndexes(): void
+    public function actionSetAssetIndexes(): int
     {
         $assetSettings = [
             'sources' => [],
@@ -215,9 +219,10 @@ class InitController extends Controller
         }
 
         Craft::$app->elementIndexes->saveSettings('craft\\elements\\Asset', $assetSettings);
+        return ExitCode::OK;
     }
 
-    public function actionCreateEntries(): bool
+    public function actionCreateEntries(): int
     {
         $user = User::find()->admin()->one();
 
@@ -390,7 +395,7 @@ class InitController extends Controller
             $this->localize($entry, 'Privacy policy', 'privacy');
         }
 
-        return true;
+        return ExitCode::OK;
     }
 
     protected function localize($entry, $title, $slug)
@@ -403,7 +408,7 @@ class InitController extends Controller
         }
     }
 
-    public function actionCreateGuideEntries(): void
+    public function actionCreateGuideEntries(): int
     {
         // Guide -------------------------------------------------------------------------------
 
@@ -446,6 +451,8 @@ class InitController extends Controller
         $this->setGuideParent('admin', ['colors']);
 
         $this->setIncludeGuides(['article', 'page', 'legal'], ['contentBuilder', 'blocks']);
+
+        return ExitCode::OK;
     }
 
     protected function setGuideParent($parentSlug, $childrenSlugs): void
@@ -463,7 +470,8 @@ class InitController extends Controller
                 continue;
             }
 
-            $entry->newParentId = $parent->id;
+            // $entry->newParentId = $parent->id;
+            $entry->setParentId($parent->id);
             Craft::$app->elements->saveElement($entry);
         }
     }
@@ -502,7 +510,7 @@ class InitController extends Controller
         }
     }
 
-    public function actionSetUsers(): void
+    public function actionSetUsers(): int
     {
         $faker = Factory::create();
 
@@ -574,5 +582,6 @@ class InitController extends Controller
                 Craft::$app->users->saveUserPhoto($tempPath, $user);
             }
         }
+        return ExitCode::OK;
     }
 }
