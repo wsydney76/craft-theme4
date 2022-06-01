@@ -49,11 +49,11 @@ class InitController extends Controller
         $this->stdout(PHP_EOL);
 
         $this->stdout('Set Element Index sources...');
-        $this->actionEntryIndexes();
+        // $this->actionEntryIndexes();
         $this->stdout(PHP_EOL);
 
         $this->stdout('Set Asset Index sources...');
-        $this->actionSetAssetIndexes();
+        // $this->actionSetAssetIndexes();
         $this->stdout(PHP_EOL);
 
         $this->stdout('Create one-off pages...');
