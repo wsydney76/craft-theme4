@@ -12,7 +12,6 @@ use craft\helpers\App;
 use craft\helpers\ArrayHelper;
 use craft\helpers\FileHelper;
 use craft\models\FsListing;
-use craft\volumes\Local;
 use Exception;
 use Faker\Factory;
 use Faker\Generator;
@@ -29,6 +28,9 @@ use const PHP_EOL;
 
 class SeedController extends Controller
 {
+
+    public $defaultAction = 'seed-content';
+
 // Constants
     /**
      * @var string

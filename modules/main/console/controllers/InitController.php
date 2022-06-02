@@ -3,7 +3,6 @@
 namespace modules\main\console\controllers;
 
 use Craft;
-use craft\base\Field;
 use craft\console\Controller;
 use craft\elements\Entry;
 use craft\elements\GlobalSet;
@@ -23,17 +22,6 @@ use const PHP_EOL;
 class InitController extends Controller
 {
 
-    public array $assetSources = [
-        'siteHeading' => ['type' => 'heading', 'heading' => 'Site Assets'],
-        'images' => ['type' => 'key', 'tableAttributes' => ['altText', 'imageSize', 'dateModified', 'link']],
-        'media' => ['type' => 'key', 'tableAttributes' => ['filename', 'dateModified', 'link']],
-        'embeds' => ['type' => 'key', 'tableAttributes' => ['provider', 'filename', 'dateModified', 'link']],
-        'private' => ['type' => 'key', 'tableAttributes' => ['filename', 'imageSize', 'dateModified', 'link']],
-        'internalHeading' => ['type' => 'heading', 'heading' => 'Internal'],
-        'guide' => ['type' => 'key', 'tableAttributes' => ['filename', 'imageSize', 'dateModified', 'link']],
-        'userPhotos' => ['type' => 'key', 'tableAttributes' => ['filename', 'imageSize', 'dateModified', 'link']],
-    ];
-
     /**
      * @var string
      */
@@ -47,14 +35,6 @@ class InitController extends Controller
 
         $this->stdout('Setting some global content...');
         $this->actionSetup();
-        $this->stdout(PHP_EOL);
-
-        $this->stdout('Set Entries Index sources...');
-        // $this->actionEntryIndexes();
-        $this->stdout(PHP_EOL);
-
-        $this->stdout('Set Assets Index sources...');
-        // $this->actionSetAssetIndexes();
         $this->stdout(PHP_EOL);
 
         $this->stdout('Create one-off pages...');
@@ -144,81 +124,6 @@ class InitController extends Controller
             Craft::$app->elements->saveElement($global);
         }
 
-        return ExitCode::OK;
-    }
-
-    public function actionEntryIndexes(): int
-    {
-        $sections = Craft::$app->sections->getAllSections();
-        $s = [];
-        foreach ($sections as $section) {
-            $s[$section->handle] = 'section:' . $section->uid;
-        }
-
-        $f = [];
-        $fields = Craft::$app->fields->getAllFields();
-        foreach ($fields as $field) {
-            /** @var Field $field */
-            $f[$field->handle] = 'field:' . $field->id;
-        }
-
-        $entrySettings = [
-            'sourceOrder' => [
-                ['key', '*'],
-                ['heading', 'Articles'],
-                ['key', $s['article']],
-                ['key', $s['topic']],
-                ['heading', 'Site'],
-                ['key', 'singles'],
-                ['key', $s['page']],
-                ['key', $s['legal']],
-                ['heading', 'Intern'],
-                ['key', $s['person']],
-                ['key', $s['guide']]
-            ],
-            'sources' => [
-                '*' => ['tableAttributes' => ['section', 'postDate', 'link']],
-                'singles' => ['tableAttributes' => ['drafts', $f['featuredImage'], 'link']],
-                $s['page'] => ['tableAttributes' => ['drafts', 'hasProvisionalDraft', 'type', $f['featuredImage'], 'postDate', 'link']],
-                $s['article'] => ['tableAttributes' => ['drafts', 'hasProvisionalDraft', $f['featuredImage'], $f['teaser'], 'author', 'postDate', 'link']],
-                $s['topic'] => ['tableAttributes' => ['drafts', 'hasProvisionalDraft', $f['featuredImage'], $f['teaser'], 'author', 'postDate', 'link']],
-                $s['legal'] => ['tableAttributes' => ['drafts', 'hasProvisionalDraft', $f['featuredImage'], $f['teaser'], 'postDate', 'link']],
-                $s['person'] => ['tableAttributes' => ['drafts', 'author', 'postDate']],
-                $s['guide'] => ['tableAttributes' => ['drafts', 'author', 'postDate']]
-            ]
-        ];
-
-        Craft::$app->elementIndexes->saveSettings('craft\\elements\\Entry', $entrySettings);
-        return ExitCode::OK;
-    }
-
-    public function actionSetAssetIndexes(): int
-    {
-        $assetSettings = [
-            'sources' => [],
-            'sourceOrder' => []
-        ];
-
-        foreach ($this->assetSources as $handle => $source) {
-            if ($source['type'] == 'key') {
-                $volume = Craft::$app->volumes->getVolumeByHandle($handle);
-                if ($volume) {
-                    $rootFolder = Craft::$app->assets->getRootFolderByVolumeId($volume->id);
-                    if ($rootFolder) {
-                        $assetSettings['sources']['folder:' . $rootFolder->uid] = [
-                            'tableAttributes' => $source['tableAttributes'],
-                        ];
-                        $assetSettings['sourceOrder'][] = ['key', 'folder:' . $rootFolder->uid];
-                    }
-                }
-            }
-
-            if ($source['type'] == 'heading') {
-                $assetSettings['sourceOrder'][] = ['heading', $source['heading']];
-            }
-        }
-
-        Craft::$app->elementIndexes->saveSettings('craft\\elements\\Asset', $assetSettings);
         return ExitCode::OK;
     }
 
