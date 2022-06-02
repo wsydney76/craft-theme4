@@ -238,4 +238,5 @@ return [
     '“' => '„',
     '”' => '“',
     'Full Name' => 'Vollständiger Name',
+    'My Drafts' => 'Meine Entwürfe',
 ];

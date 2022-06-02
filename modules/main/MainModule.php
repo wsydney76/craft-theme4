@@ -3,6 +3,7 @@
 namespace modules\main;
 
 use Craft;
+use craft\base\conditions\BaseCondition;
 use craft\elements\Asset;
 use craft\elements\Entry;
 use craft\events\DefineBehaviorsEvent;
@@ -11,6 +12,7 @@ use craft\events\DefineRulesEvent;
 use craft\events\ElementEvent;
 use craft\events\ModelEvent;
 use craft\events\RegisterComponentTypesEvent;
+use craft\events\RegisterConditionRuleTypesEvent;
 use craft\helpers\ElementHelper;
 use craft\models\FieldLayout;
 use craft\services\Elements;
@@ -18,6 +20,9 @@ use craft\services\Fields;
 use craft\web\View;
 use Illuminate\Support\Collection;
 use modules\main\behaviors\EntryBehavior;
+use modules\main\conditions\HasDraftsConditionRule;
+use modules\main\conditions\HasEmptyAltTextConditionRule;
+use modules\main\conditions\HasEmptyCopyrightConditionRule;
 use modules\main\fieldlayoutelements\NewRow;
 use modules\main\fields\AspectRatioField;
 use modules\main\fields\IncludeField;
@@ -188,6 +193,16 @@ class MainModule extends Module
                 if (ElementHelper::isDraft($event->element)) {
                     $event->isValid = false;
                 }
+            }
+        );
+
+        Event::on(
+            BaseCondition::class,
+            BaseCondition::EVENT_REGISTER_CONDITION_RULE_TYPES,
+            function(RegisterConditionRuleTypesEvent $event) {
+                $event->conditionRuleTypes[] = HasEmptyCopyrightConditionRule::class;
+                $event->conditionRuleTypes[] = HasEmptyAltTextConditionRule::class;
+                $event->conditionRuleTypes[] = HasDraftsConditionRule::class;
             }
         );
 

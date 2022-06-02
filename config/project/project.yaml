@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1654034602
+dateModified: 1654158095
 elementSources:
   craft\elements\Asset:
     -
@@ -31,6 +31,48 @@ elementSources:
         - dateModified
         - link
       type: native
+    -
+      heading: Quality
+      type: heading
+    -
+      condition:
+        class: craft\elements\conditions\assets\AssetCondition
+        conditionRules:
+          -
+            class: modules\main\conditions\HasEmptyAltTextConditionRule
+            uid: be1ac796-4735-40ec-840d-7027e689421e
+            value: true
+        elementType: craft\elements\Asset
+        fieldContext: global
+      key: 'custom:e1a679f1-d1f3-414b-a171-930377cf259b'
+      label: 'Empty Alt Text'
+      tableAttributes:
+        - imageSize
+        - uploader
+        - id
+      type: custom
+      userGroups:
+        - fdf75835-00df-4768-adf9-640f0520bf70 # Editors
+    -
+      condition:
+        class: craft\elements\conditions\assets\AssetCondition
+        conditionRules:
+          -
+            class: modules\main\conditions\HasEmptyCopyrightConditionRule
+            uid: 25431ec8-47a3-47fa-8abc-52dacf2847bc
+            value: true
+        elementType: craft\elements\Asset
+        fieldContext: global
+      key: 'custom:4ee1f15a-964f-4f7a-911f-89f38710ec8f'
+      label: 'Empty Copyright'
+      tableAttributes:
+        - filename
+        - imageSize
+        - uploader
+        - link
+      type: custom
+      userGroups:
+        - fdf75835-00df-4768-adf9-640f0520bf70 # Editors
     -
       heading: Internal
       type: heading
@@ -105,6 +147,7 @@ elementSources:
       heading: Articles
       type: heading
     -
+      disabled: false
       key: 'section:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
       tableAttributes:
         - drafts
@@ -144,6 +187,30 @@ elementSources:
         - author
         - postDate
       type: native
+    -
+      heading: Quality
+      type: heading
+    -
+      condition:
+        class: craft\elements\conditions\entries\EntryCondition
+        conditionRules:
+          -
+            class: modules\main\conditions\HasDraftsConditionRule
+            uid: 01eaa9da-205e-4ca2-ba19-0ad920f7b2ac
+            value: true
+        elementType: craft\elements\Entry
+        fieldContext: global
+      key: 'custom:e2731e8b-67b0-4c6a-8082-d7e8407f9192'
+      label: 'My Drafts'
+      tableAttributes:
+        - drafts
+        - hasProvisionalDraft
+        - section
+        - type
+        - link
+        - dateCreated
+        - dateUpdated
+      type: custom
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
