@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1bf987c5c519c07303986e35ba329ea6",
+    "content-hash": "92b2652c5dc5651ca4cd2277466fd78e",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -7405,22 +7405,22 @@
         },
         {
             "name": "verbb/smith",
-            "version": "2.0.0-beta.1",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/verbb/smith.git",
-                "reference": "aed1e49e436814ea9c9d8220207096392062d6fe"
+                "reference": "0d24c48d37b49de7a591c556cafb1eb3f5f2cfe4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/smith/zipball/aed1e49e436814ea9c9d8220207096392062d6fe",
-                "reference": "aed1e49e436814ea9c9d8220207096392062d6fe",
+                "url": "https://api.github.com/repos/verbb/smith/zipball/0d24c48d37b49de7a591c556cafb1eb3f5f2cfe4",
+                "reference": "0d24c48d37b49de7a591c556cafb1eb3f5f2cfe4",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "^4.0.0-beta.1",
+                "craftcms/cms": "^4.0.0",
                 "php": "^8.0.2",
-                "verbb/base": "^2.0.0-beta"
+                "verbb/base": "^2.0.0"
             },
             "type": "craft-plugin",
             "extra": {
@@ -7465,7 +7465,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-03-09T21:30:26+00:00"
+            "time": "2022-06-03T02:00:59+00:00"
         },
         {
             "name": "verbb/super-table",

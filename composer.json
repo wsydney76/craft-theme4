@@ -11,7 +11,7 @@
     "spicyweb/craft-embedded-assets": "3.0.2",
     "vaersaagod/matrixmate": "2.0.1",
     "vaersaagod/seomate": "2.0.1",
-    "verbb/smith": "2.0.0-beta.1",
+    "verbb/smith": "2.0.0",
     "verbb/super-table": "3.0.0-beta.4",
     "wsydney76/elementmap": "^4.0.0",
     "wsydney76/work": "^4.0.0",
@@ -42,10 +42,7 @@
       "@php craft off"
     ],
     "post-update-cmd": [
-      "@php craft clear-caches/compiled-templates",
-      "@php craft clear-caches/cp-resources",
-      "@php craft clear-caches/data",
-      "@php craft clear-caches/temp-files",
+      "@php craft clear-caches/all",
       "@php craft migrate/all --interactive=0",
       "@php craft on"
     ]
