@@ -1,9 +1,5 @@
 {% apply spaceless %}
 
-    {% if craft.app.request.absoluteUrl != entry.url %}
-        {% redirect entry.url %}
-    {% endif %}
-
     {% set blitz = craft.app.plugins.pluginEnabled('blitz') ? craft.blitz : null %}
 
     {% set localizedEntries = [] %}

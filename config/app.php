@@ -20,7 +20,6 @@
 use config\Env;
 use craft\db\Table;
 use craft\helpers\App;
-use modules\genericfields\GenericFieldsModule;
 use modules\guide\GuideModule;
 use modules\main\MainModule;
 use yii\web\DbSession;
@@ -29,13 +28,11 @@ return [
     'id' => Env::APP_ID,
     'modules' => [
         'main' => MainModule::class,
-        'guide' => GuideModule::class,
-        'genericfields' => GenericFieldsModule::class,
+        'guide' => GuideModule::class
     ],
     'bootstrap' => [
         'main',
-        'guide',
-        'genericfields'
+        'guide'
     ],
     'components' => [
         'session' => function() {

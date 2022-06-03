@@ -11,6 +11,7 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 62986ce0-05bc-4b98-8bb8-684b4e7eaa2c
             warning: null
             width: 100
           -
@@ -20,17 +21,18 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 34adfcf4-c3d8-484d-8592-c480737f1e85
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: f265d685-9eeb-4844-a5d6-cba71fee6637
 fields:
   47f1b645-3900-4ecc-93d2-d2a218a0bf9a: # Limit
     columnSuffix: null
     contentColumnType: smallint(2)
     fieldGroup: null
     handle: limit
-    instructions: ''
+    instructions: null
     name: Limit
     searchable: false
     settings:
@@ -39,7 +41,7 @@ fields:
       max: 20
       min: 1
       prefix: null
-      previewCurrency: ''
+      previewCurrency: null
       previewFormat: decimal
       size: null
       suffix: null
@@ -56,9 +58,10 @@ fields:
     searchable: false
     settings:
       allowSelfRelations: false
-      limit: ''
       localizeRelations: false
-      selectionLabel: ''
+      maxRelations: null
+      minRelations: null
+      selectionLabel: null
       showSiteMenu: false
       source: null
       sources:

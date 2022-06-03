@@ -36,7 +36,7 @@ class ThemeColorField extends Field
     }
 
     /** @inheritdoc */
-    public function getSettingsHtml(): string
+    public function getSettingsHtml(): ?string
     {
         return Cp::selectFieldHtml([
             'label' => 'Default Color',
@@ -51,7 +51,7 @@ class ThemeColorField extends Field
     /**
      * @inheritDoc
      */
-    public function getInputHtml($value, ElementInterface $element = null): string
+    public function getInputHtml(mixed $value, ?\craft\base\ElementInterface $element = null): string
     {
 
         return Cp::selectHtml([
@@ -64,7 +64,7 @@ class ThemeColorField extends Field
     /**
      * @inheritdoc
      */
-    public function normalizeValue($value, ElementInterface $element = null)
+    public function normalizeValue(mixed $value, ?\craft\base\ElementInterface $element = null): mixed
     {
 
         // If this is a new entry, look for any default options

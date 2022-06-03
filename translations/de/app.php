@@ -18,4 +18,6 @@ return [
     'Username or Email' => 'Profilname oder E-Mail',
     'Username or email is required.' => 'Es wird ein Profilname oder eine E-Mail-Adresse benötigt.',
     'Username' => 'Profilname',
+    
+    'My Drafts' => 'Meine Entwürfe',
 ];

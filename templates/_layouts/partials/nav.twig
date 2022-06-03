@@ -15,7 +15,7 @@
 
     {% for navEntry in navEntries %}
 
-        {% set children = navEntry.children|all %}
+        {% set children = navEntry.children.all %}
         {% if children and navEntry.type.handle != 'members' %}
             {% set index = index + 1 %}
             {% include '_layouts/partials/nav_dropdown.twig' with {

@@ -12,16 +12,16 @@ return [
         'outputAlternate' => false,
 
         'defaultMeta' => [
-            'description' => ['globalSeo.globalseofields:settings.description'],
-            'image' => ['globalSeo.globalseofields:settings.image'],
+            'description' => ['globalSeo.globalseofields:settings:description'],
+            'image' => ['globalSeo.globalseofields:settings:image'],
         ],
 
         'fieldProfiles' => [
             'standard' => [
-                'title' => ['seoFields:settings.alternativeTitle', 'title'],
-                'description' => ['bodyContent:summary.text', 'seoFields:settings.description', 'teaser'],
-                'image' => ['seoFields:settings.image', 'featuredImage'],
-                'robots' => ['seoFields:settings.robots'],
+                'title' => ['seoFields.settings:alternativeTitle', 'title'],
+                'description' => ['bodyContent.summary:text', 'seoFields.settings:description', 'teaser'],
+                'image' => ['seoFields.settings:image', 'featuredImage'],
+                'robots' => ['seoFields.settings:robots'],
             ],
         ],
 

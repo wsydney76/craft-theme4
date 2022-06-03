@@ -2,12 +2,11 @@ columnSuffix: null
 contentColumnType: string(255)
 fieldGroup: ec7ee471-b43b-491e-9fed-acb78c59acc4 # Kontakt
 handle: webSite
-instructions: ''
+instructions: null
 name: 'Web Site'
 searchable: false
 settings:
-  maxLength: '255'
-  placeholder: null
+  maxLength: 255
   types:
     - url
 translationKeyFormat: null

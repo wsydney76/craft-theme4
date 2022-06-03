@@ -11,6 +11,7 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: bbfd3b83-eec1-4c29-8eaa-61dba1490ecb
             warning: null
             width: 25
           -
@@ -20,6 +21,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 6702219f-7c10-4daa-9114-b901090cd42e
             warning: null
             width: 25
           -
@@ -29,6 +31,7 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 6e02d9fd-7b2c-48ab-a0ab-3769a20b39cf
             warning: null
             width: 25
           -
@@ -38,6 +41,7 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: f4229a76-1136-44bd-adf0-3fd596d53216
             warning: null
             width: 25
           -
@@ -47,6 +51,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 6fc083f3-f8a3-47c6-b99a-f82e59f82898
             warning: null
             width: 25
           -
@@ -56,17 +61,18 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 866119fe-6c65-4857-b731-8dddbc6d867a
             warning: null
             width: 25
         name: Content
-        sortOrder: 1
+        uid: 73e8b164-ecae-478e-a26f-46a6485e3087
 fields:
   0cb800eb-b7ac-4482-b68e-1bb06dbe4ca9: # Aspect Ratio
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: aspectRatio
-    instructions: ''
+    instructions: null
     name: 'Aspect Ratio'
     searchable: false
     settings:
@@ -79,31 +85,34 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: image
-    instructions: ''
+    instructions: null
     name: Image
     searchable: true
     settings:
       allowSelfRelations: false
+      allowSubfolders: false
       allowUploads: false
       allowedKinds:
         - image
       defaultUploadLocationSource: 'volume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
-      defaultUploadLocationSubpath: ''
-      limit: '1'
+      defaultUploadLocationSubpath: null
       localizeRelations: false
+      maxRelations: 1
+      minRelations: null
       previewMode: full
-      restrictFiles: '1'
+      restrictFiles: true
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      restrictedLocationSubpath: null
       selectionLabel: 'Select image'
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-      singleUploadLocationSubpath: ''
       source: null
       sources:
         - 'volume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
       targetSiteId: null
-      useSingleFolder: false
       validateRelatedElements: true
       viewMode: large
     translationKeyFormat: null
@@ -114,7 +123,7 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: width
-    instructions: ''
+    instructions: null
     name: Width
     searchable: false
     settings:
@@ -140,11 +149,10 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: styles
-    instructions: ''
+    instructions: null
     name: Styles
     searchable: false
     settings:
-      multi: true
       options:
         -
           __assoc__:
@@ -176,16 +184,16 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: caption
-    instructions: ''
+    instructions: null
     name: Caption
     searchable: true
     settings:
       byteLimit: null
       charLimit: 40
-      code: ''
+      code: false
       columnType: string
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null

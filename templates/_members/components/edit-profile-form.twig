@@ -23,20 +23,13 @@
 
         {{ hiddenInput('userId', user.id) }}
 
+
         <div class="md:flex md:space-x-block">
-            <div class="md:w-1/2">
+            <div class="w-full">
                 {{ forms.textField({
                     user: user,
-                    label: 'First Name'|t,
-                    name: 'firstName',
-                    required: true
-                }) }}
-            </div>
-            <div class="md:w-1/2">
-                {{ forms.textField({
-                    user: user,
-                    label: 'Last Name'|t,
-                    name: 'lastName',
+                    label: 'Full Name'|t,
+                    name: 'fullName',
                     required: true
                 }) }}
             </div>

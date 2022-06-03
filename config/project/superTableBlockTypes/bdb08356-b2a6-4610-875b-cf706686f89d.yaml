@@ -11,6 +11,7 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 5d933943-22ed-42f1-8f68-c62c944459a4
             warning: null
             width: 100
           -
@@ -20,23 +21,24 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 88d8a5f2-5634-4f25-82a1-d2edda3ed02f
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: ec9230ed-bb54-4511-b031-21ade785e0f5
 fields:
   20f9b230-8862-4058-9cf3-7c7a78e44a13: # Column
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: columnContent
-    instructions: ''
+    instructions: null
     name: Column
     searchable: true
     settings:
       contentTable: '{{%matrixcontent_columncontent}}'
-      maxBlocks: ''
-      minBlocks: ''
+      maxBlocks: null
+      minBlocks: null
       propagationKeyFormat: null
       propagationMethod: all
     translationKeyFormat: null
@@ -47,11 +49,10 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: span
-    instructions: ''
+    instructions: null
     name: Span
     searchable: false
     settings:
-      optgroups: true
       options:
         -
           __assoc__:

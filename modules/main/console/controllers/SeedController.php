@@ -11,20 +11,26 @@ use craft\elements\User;
 use craft\helpers\App;
 use craft\helpers\ArrayHelper;
 use craft\helpers\FileHelper;
-use craft\volumes\Local;
+use craft\models\FsListing;
 use Exception;
 use Faker\Factory;
 use Faker\Generator;
 use GuzzleHttp\Exception\GuzzleException;
+use yii\console\ExitCode;
 use yii\helpers\Console;
+use function dirname;
 use function implode;
 use function is_dir;
-use function utf8_encode;
+use function pathinfo;
 use const DIRECTORY_SEPARATOR;
+use const PATHINFO_BASENAME;
 use const PHP_EOL;
 
 class SeedController extends Controller
 {
+
+    public $defaultAction = 'seed-content';
+
 // Constants
     /**
      * @var string
@@ -45,23 +51,23 @@ class SeedController extends Controller
 
     public string $volume = 'images';
 
-    public function actionDeleteFakedEntries(): void
+    public function actionDeleteFakedEntries(): int
     {
         $category = Entry::find()->section(self::CATEGORY_SECTIONHANDLE)->slug($this->categorySlug)->one();
         if (!$category) {
             $this->stderr('No example category found');
-            return;
+            return ExitCode::UNSPECIFIED_ERROR;
         }
 
         $entries = Entry::find()->section(self::SECTIONHANDLE)->relatedTo($category)->anyStatus()->all();
         if ($entries === []) {
             $this->stderr('No example posts found');
-            return;
+            return ExitCode::UNSPECIFIED_ERROR;
         }
 
         $count = count($entries);
         if (!$this->confirm("Delete {$count} posts related to category {$category->title}?")) {
-            return;
+            return ExitCode::UNSPECIFIED_ERROR;
         }
 
         foreach ($entries as $entry) {
@@ -70,15 +76,17 @@ class SeedController extends Controller
         }
 
         if (!$this->confirm("Delete example category?")) {
-            return;
+            return ExitCode::UNSPECIFIED_ERROR;
         }
 
         Craft::$app->elements->deleteElement($category);
 
         $this->stdout('The entries have been soft-deleted, they can be restored from the entries index.' . PHP_EOL);
+
+        return ExitCode::OK;
     }
 
-    public function actionSeedContent(): void
+    public function actionSeedContent(): int
     {
 
         $this->actionCreateImages();
@@ -92,20 +100,25 @@ class SeedController extends Controller
         $this->actionCreateTransforms();
 
         $this->actionCreateMembersEntries();
+
+        return ExitCode::OK;
     }
 
-    public function actionCreateImages($num = 30, $timeout = 10): void
+    public function actionCreateImages($num = 30, $timeout = 10): int
     {
 
         if (!$this->confirm("Download {$num} example images from Unsplash? (Timeout {$timeout} sec.)")) {
-            return;
+            return ExitCode::UNSPECIFIED_ERROR;
         }
 
         $client = Craft::createGuzzleClient();
 
-        /** @var Local $volume */
         $volume = Craft::$app->volumes->getVolumeByHandle('images');
-        $path = App::parseEnv($volume->path) . DIRECTORY_SEPARATOR . 'examples';
+        if (!$volume) {
+            return ExitCode::UNSPECIFIED_ERROR;
+        }
+
+        $path = App::parseEnv($volume->fs->path) . DIRECTORY_SEPARATOR . 'examples';
         if (!is_dir($path)) {
             FileHelper::createDirectory($path);
         }
@@ -122,6 +135,8 @@ class SeedController extends Controller
         $end = $count + $num;
 
         $loop = 0;
+
+        $session = Craft::$app->assetIndexer->createIndexingSession([$volume]);
 
         for ($i = $start; $i <= $end; ++$i) {
 
@@ -140,7 +155,21 @@ class SeedController extends Controller
                 continue;
             }
 
-            $asset = Craft::$app->assetIndexer->indexFile($volume, 'examples/' . $filename);
+            // $asset = Craft::$app->assetIndexer->indexFile($volume, 'examples/' . $filename, $session->id);
+
+            // TODO: fix https://github.com/craftcms/cms/issues/11365
+            $fs = $volume->getFs();
+            $listingPath = 'examples/' . $filename;
+            $listing = new FsListing([
+                'dirname' => dirname($listingPath),
+                'basename' => pathinfo($listingPath, PATHINFO_BASENAME),
+                'type' => 'file',
+                'dateModified' => $fs->getDateModified($listingPath),
+                'fileSize' => $fs->getFileSize($listingPath),
+            ]);
+
+            $asset = Craft::$app->assetIndexer->indexFileByListing((int)$volume->id, $listing, $session->id);
+
             $asset->setFieldValue('copyright', 'Unsplash via picsum.photos');
             $asset->setFieldValue('altText', 'Platzhaltertext');
             Craft::$app->elements->saveElement($asset);
@@ -153,18 +182,20 @@ class SeedController extends Controller
 
             $this->stdout(" created\n");
         }
+
+        return ExitCode::OK;
     }
 
-    public function actionCreateEntries(int $num = self::NUM_ENTRIES, $sectionHandle = self::SECTIONHANDLE): void
+    public function actionCreateEntries(int $num = self::NUM_ENTRIES, $sectionHandle = self::SECTIONHANDLE): int
     {
         $section = Craft::$app->sections->getSectionByHandle($sectionHandle);
         if (!$section) {
             $this->stderr("Invalid section {$sectionHandle}") . PHP_EOL;
-            return;
+            return ExitCode::UNSPECIFIED_ERROR;
         }
 
         if (!$this->confirm("Create {$num} entries of type '{$section->name}'?")) {
-            return;
+            return ExitCode::UNSPECIFIED_ERROR;
         }
 
         $faker = Factory::create();
@@ -206,6 +237,8 @@ class SeedController extends Controller
                 $this->stderr('failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
             }
         }
+
+        return ExitCode::OK;
     }
 
     protected function getCategory()
@@ -365,11 +398,11 @@ class SeedController extends Controller
 
     // php craft main/seed/create-images
 
-    public function actionResetHomepage(): void
+    public function actionResetHomepage(): int
     {
 
         if (!$this->confirm('Reset homepage content to random articles?')) {
-            return;
+            return ExitCode::UNSPECIFIED_ERROR;
         }
 
         $faker = Factory::create();
@@ -377,7 +410,7 @@ class SeedController extends Controller
         $entry = Entry::find()->section('homepage')->one();
         if (!$entry) {
             $this->stdout("Homepage not found\n");
-            return;
+            return ExitCode::UNSPECIFIED_ERROR;
         }
 
         $title = $this->prompt('New title: ', ['default' => $entry->title, 'required' => true]);
@@ -424,7 +457,7 @@ class SeedController extends Controller
         }
 
         $this->stdout("Done\n");
-        return;
+        return ExitCode::UNSPECIFIED_ERROR;
     }
 
     // php craft main/seed/reset-homepage
@@ -454,17 +487,17 @@ class SeedController extends Controller
         return ArrayHelper::getColumn($entries, 'id');
     }
 
-    public function actionResetSiteInfo(): void
+    public function actionResetSiteInfo(): int
     {
 
         if (!$this->confirm('Update Site Info?')) {
-            return;
+            return ExitCode::UNSPECIFIED_ERROR;
         }
 
         $global = GlobalSet::find()->handle('siteInfo')->one();
         if (!$global) {
             $this->stdout("Global not found\n");
-            return;
+            return ExitCode::UNSPECIFIED_ERROR;
         }
 
         $siteName = $this->prompt('Site Name: ', ['default' => $global->siteName]);
@@ -483,10 +516,12 @@ class SeedController extends Controller
 
         if (!Craft::$app->elements->saveElement($global)) {
             $this->stdout("Could not update Global Set\n");
-            return;
+            return ExitCode::UNSPECIFIED_ERROR;
         }
 
         $this->stdout("Updated\n");
+
+        return ExitCode::OK;
     }
 
     /**
@@ -496,11 +531,11 @@ class SeedController extends Controller
      *
      * @throws GuzzleException
      */
-    public function actionCreateTransforms(): void
+    public function actionCreateTransforms(): int
     {
 
         if (!$this->confirm('Retrieve each page to create missing image sizes? This may take some time.')) {
-            return;
+            return ExitCode::UNSPECIFIED_ERROR;
         }
 
         $client = Craft::createGuzzleClient();
@@ -528,21 +563,23 @@ class SeedController extends Controller
         }
 
         $this->stdout("Done\n");
+
+        return ExitCode::OK;
     }
 
     // php craft main/seed/create-members-entries
 
-    public function actionCreateMembersEntries(): void
+    public function actionCreateMembersEntries(): int
     {
 
         $entry = Entry::find()->section('page')->type('members')->slug('members')->one();
         if ($entry) {
             $this->stdout('Membership Entries exist');
-            return;
+            return ExitCode::UNSPECIFIED_ERROR;
         }
 
         if (!$this->confirm('Create Membership Entries?')) {
-            return;
+            return ExitCode::UNSPECIFIED_ERROR;
         }
 
         $section = Craft::$app->sections->getSectionByHandle('page');
@@ -563,7 +600,7 @@ class SeedController extends Controller
             $this->localize($entry, 'Members', 'members');
         } else {
             $this->stderr('failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
-            return;
+            return ExitCode::UNSPECIFIED_ERROR;
         }
 
         $parent = $entry;
@@ -614,9 +651,10 @@ class SeedController extends Controller
                 'typeId' => $type->id,
                 'authorId' => $user->id,
                 'title' => $item['title'],
-                'slug' => $item['slug'],
-                'newParentId' => $parent->getId()
+                'slug' => $item['slug']
             ]);
+
+            $entry->setParentId($parent->getId());
             $entry->setFieldValue('membersTemplate', $item['membersTemplate']);
 
             if (Craft::$app->elements->saveElement($entry)) {
@@ -624,9 +662,11 @@ class SeedController extends Controller
                 $this->localize($entry, $item['title_en'], $item['slug_en']);
             } else {
                 $this->stderr($item['title'] . ' failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
-                return;
+                return ExitCode::UNSPECIFIED_ERROR;
             }
         }
+
+        return ExitCode::OK;
     }
 
     protected function localize($entry, $title, $slug)

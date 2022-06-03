@@ -11,6 +11,7 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: fdf09014-ae48-4714-abf3-c5ce252cf772
             warning: null
             width: 100
           -
@@ -20,10 +21,11 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: d5658879-1a7f-4544-951b-0e6870544450
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 6af65f26-da0b-4cb2-aacc-97fdfe143f83
 fields:
   051d92e2-649b-4487-b9de-31b3c4bb7d86: # Audio File
     columnSuffix: null
@@ -35,26 +37,29 @@ fields:
     searchable: false
     settings:
       allowSelfRelations: false
+      allowSubfolders: false
       allowUploads: false
       allowedKinds:
         - audio
       defaultUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
       defaultUploadLocationSubpath: audio
-      limit: '1'
       localizeRelations: true
+      maxRelations: 1
+      minRelations: null
       previewMode: full
-      restrictFiles: '1'
+      restrictFiles: true
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      restrictedLocationSubpath: null
       selectionLabel: 'Select file'
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
-      singleUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-      singleUploadLocationSubpath: ''
       source: null
       sources:
         - 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
       targetSiteId: null
-      useSingleFolder: false
       validateRelatedElements: false
       viewMode: list
     translationKeyFormat: null
@@ -65,11 +70,10 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: style
-    instructions: ''
+    instructions: null
     name: Style
     searchable: false
     settings:
-      optgroups: true
       options:
         -
           __assoc__:

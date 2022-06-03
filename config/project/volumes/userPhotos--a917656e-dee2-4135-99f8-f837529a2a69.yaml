@@ -23,18 +23,17 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\AssetTitleField
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: 3cdd8761-2f72-4257-afe5-f3f9e2886052
             warning: null
             width: 100
         name: Inhalt
-        sortOrder: 1
+        uid: ff4034f6-0647-40f8-93bf-77746f4f0230
+fs: userPhotos
 handle: userPhotos
-hasUrls: true
 name: 'User Photos'
-settings:
-  path: '@webroot/userphotos'
 sortOrder: 4
 titleTranslationKeyFormat: null
 titleTranslationMethod: language
-type: craft\volumes\Local
-url: '@web/userphotos'
+transformFs: transforms
+transformSubpath: userPhotos

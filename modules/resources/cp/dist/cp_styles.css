@@ -79,3 +79,6 @@ div[id$="fields-columns"] .superTable-layout-row-new {
     cursor: pointer !important;
 }
 
+:root {
+    --link-color: #0b69a3;;
+}

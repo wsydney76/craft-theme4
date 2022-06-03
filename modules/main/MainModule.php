@@ -3,17 +3,26 @@
 namespace modules\main;
 
 use Craft;
+use craft\base\conditions\BaseCondition;
 use craft\elements\Asset;
 use craft\elements\Entry;
 use craft\events\DefineBehaviorsEvent;
 use craft\events\DefineFieldLayoutElementsEvent;
 use craft\events\DefineRulesEvent;
+use craft\events\ElementEvent;
 use craft\events\ModelEvent;
 use craft\events\RegisterComponentTypesEvent;
+use craft\events\RegisterConditionRuleTypesEvent;
+use craft\helpers\ElementHelper;
 use craft\models\FieldLayout;
+use craft\services\Elements;
 use craft\services\Fields;
 use craft\web\View;
+use Illuminate\Support\Collection;
 use modules\main\behaviors\EntryBehavior;
+use modules\main\conditions\HasDraftsConditionRule;
+use modules\main\conditions\HasEmptyAltTextConditionRule;
+use modules\main\conditions\HasEmptyCopyrightConditionRule;
 use modules\main\fieldlayoutelements\NewRow;
 use modules\main\fields\AspectRatioField;
 use modules\main\fields\IncludeField;
@@ -175,6 +184,39 @@ class MainModule extends Module
                 );
             });
         }
+
+        // Don't update search index for drafts
+        Event::on(
+            Elements::class,
+            Elements::EVENT_BEFORE_UPDATE_SEARCH_INDEX,
+            function(ElementEvent $event) {
+                if (ElementHelper::isDraft($event->element)) {
+                    $event->isValid = false;
+                }
+            }
+        );
+
+        Event::on(
+            BaseCondition::class,
+            BaseCondition::EVENT_REGISTER_CONDITION_RULE_TYPES,
+            function(RegisterConditionRuleTypesEvent $event) {
+                $event->conditionRuleTypes[] = HasEmptyCopyrightConditionRule::class;
+                $event->conditionRuleTypes[] = HasEmptyAltTextConditionRule::class;
+                $event->conditionRuleTypes[] = HasDraftsConditionRule::class;
+            }
+        );
+
+        // Prevent password managers like Bitdefender Wallet from falsely inserting credentials into user form
+        Craft::$app->view->hook('cp.users.edit.content', function(array &$context) {
+            return '<input type="text" name="dummy-first-name" value="wtf" style="display: none">';
+        });
+
+        // Register Collection::one() as an alias of first(), for consistency with yii\db\Query.
+        // TODO: Remove when upgrading to 4.1
+        Collection::macro('one', function() {
+            /** @var Collection $this */
+            return $this->first(...func_get_args());
+        });
     }
 
 }

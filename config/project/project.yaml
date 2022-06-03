@@ -1,6 +1,216 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1651995909
+dateModified: 1654158095
+elementSources:
+  craft\elements\Asset:
+    -
+      heading: 'Site Assets'
+      type: heading
+    -
+      disabled: false
+      key: 'volume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+      tableAttributes:
+        - imageSize
+        - dateModified
+        - link
+      type: native
+    -
+      disabled: false
+      key: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      tableAttributes:
+        - filename
+        - imageSize
+        - dateModified
+        - link
+      type: native
+    -
+      disabled: false
+      key: 'volume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
+      tableAttributes:
+        - provider
+        - dateModified
+        - link
+      type: native
+    -
+      heading: Quality
+      type: heading
+    -
+      condition:
+        class: craft\elements\conditions\assets\AssetCondition
+        conditionRules:
+          -
+            class: modules\main\conditions\HasEmptyAltTextConditionRule
+            uid: be1ac796-4735-40ec-840d-7027e689421e
+            value: true
+        elementType: craft\elements\Asset
+        fieldContext: global
+      key: 'custom:e1a679f1-d1f3-414b-a171-930377cf259b'
+      label: 'Empty Alt Text'
+      tableAttributes:
+        - imageSize
+        - uploader
+        - id
+      type: custom
+      userGroups:
+        - fdf75835-00df-4768-adf9-640f0520bf70 # Editors
+    -
+      condition:
+        class: craft\elements\conditions\assets\AssetCondition
+        conditionRules:
+          -
+            class: modules\main\conditions\HasEmptyCopyrightConditionRule
+            uid: 25431ec8-47a3-47fa-8abc-52dacf2847bc
+            value: true
+        elementType: craft\elements\Asset
+        fieldContext: global
+      key: 'custom:4ee1f15a-964f-4f7a-911f-89f38710ec8f'
+      label: 'Empty Copyright'
+      tableAttributes:
+        - filename
+        - imageSize
+        - uploader
+        - link
+      type: custom
+      userGroups:
+        - fdf75835-00df-4768-adf9-640f0520bf70 # Editors
+    -
+      heading: Internal
+      type: heading
+    -
+      disabled: false
+      key: 'volume:a917656e-dee2-4135-99f8-f837529a2a69' # User Photos
+      tableAttributes:
+        - filename
+        - imageSize
+        - dateModified
+        - link
+      type: native
+    -
+      disabled: false
+      key: 'volume:a010299b-071c-4852-81f6-c15875a5ba4f' # Guide
+      tableAttributes:
+        - filename
+        - imageSize
+        - dateModified
+        - uploader
+        - link
+      type: native
+    -
+      disabled: false
+      key: 'volume:1d9fc6a9-72e3-404b-86a9-2ba2014002f0' # Temporary Uploads
+      tableAttributes:
+        - filename
+        - imageSize
+        - dateModified
+        - link
+      type: native
+  craft\elements\Entry:
+    -
+      disabled: false
+      key: '*'
+      tableAttributes:
+        - section
+        - postDate
+        - link
+      type: native
+    -
+      heading: Site
+      type: heading
+    -
+      key: singles
+      tableAttributes:
+        - drafts
+        - 'field:55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2' # Featured Image
+        - link
+      type: native
+    -
+      key: 'section:a6676538-ee52-4938-aaff-8d9d46b669af' # Page
+      tableAttributes:
+        - drafts
+        - hasProvisionalDraft
+        - type
+        - 'field:55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2' # Featured Image
+        - postDate
+        - link
+      type: native
+    -
+      key: 'section:cd4b4d9a-0519-4f07-93e0-5957b57a9afd' # Legal
+      tableAttributes:
+        - drafts
+        - hasProvisionalDraft
+        - 'field:55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2' # Featured Image
+        - 'field:f6ff43e3-8e77-457f-91cb-101f517889c9' # Teaser
+        - postDate
+        - link
+      type: native
+    -
+      heading: Articles
+      type: heading
+    -
+      disabled: false
+      key: 'section:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
+      tableAttributes:
+        - drafts
+        - hasProvisionalDraft
+        - 'field:55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2' # Featured Image
+        - 'field:f6ff43e3-8e77-457f-91cb-101f517889c9' # Teaser
+        - author
+        - postDate
+        - link
+      type: native
+    -
+      disabled: false
+      key: 'section:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
+      tableAttributes:
+        - drafts
+        - hasProvisionalDraft
+        - 'field:55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2' # Featured Image
+        - 'field:f6ff43e3-8e77-457f-91cb-101f517889c9' # Teaser
+        - author
+        - postDate
+        - link
+      type: native
+    -
+      heading: Intern
+      type: heading
+    -
+      key: 'section:d798b89b-cb00-4853-ac5a-c69bffe3ca76' # Person
+      tableAttributes:
+        - postDate
+        - link
+      type: native
+    -
+      key: 'section:61350169-3950-4815-aea9-b171958d6d8a' # Guide
+      tableAttributes:
+        - drafts
+        - 'field:cce5096c-8ab7-4940-9973-ad47671c92cb' # Admin Guide
+        - author
+        - postDate
+      type: native
+    -
+      heading: Quality
+      type: heading
+    -
+      condition:
+        class: craft\elements\conditions\entries\EntryCondition
+        conditionRules:
+          -
+            class: modules\main\conditions\HasDraftsConditionRule
+            uid: 01eaa9da-205e-4ca2-ba19-0ad920f7b2ac
+            value: true
+        elementType: craft\elements\Entry
+        fieldContext: global
+      key: 'custom:e2731e8b-67b0-4c6a-8082-d7e8407f9192'
+      label: 'My Drafts'
+      tableAttributes:
+        - drafts
+        - hasProvisionalDraft
+        - section
+        - type
+        - link
+        - dateCreated
+        - dateUpdated
+      type: custom
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER
@@ -15,6 +225,56 @@ email:
     useAuthentication: $SMTP_AUTHENTICATION
     username: $SMTP_USER
   transportType: craft\mail\transportadapters\Smtp
+fs:
+  embeds:
+    hasUrls: false
+    name: Embeds
+    settings:
+      path: '@storage/volumes/embeds'
+    type: craft\fs\Local
+    url: null
+  guide:
+    hasUrls: true
+    name: Guide
+    settings:
+      path: '@webroot/guide'
+    type: craft\fs\Local
+    url: '@web/guide'
+  images:
+    hasUrls: true
+    name: Images
+    settings:
+      path: '@webroot/images'
+    type: craft\fs\Local
+    url: '@web/images'
+  media:
+    hasUrls: true
+    name: Media
+    settings:
+      path: '@webroot/media'
+    type: craft\fs\Local
+    url: '@web/media'
+  temporaryUploads:
+    hasUrls: true
+    name: 'Temporary Uploads'
+    settings:
+      path: '@webroot/temporaryuploads'
+    type: craft\fs\Local
+    url: '@web/temporaryuploads'
+  transforms:
+    hasUrls: true
+    name: Transforms
+    settings:
+      path: '@webroot/assets/transforms'
+    type: craft\fs\Local
+    url: '@web/assets/transforms'
+  userPhotos:
+    hasUrls: true
+    name: 'User Photos'
+    settings:
+      path: '@webroot/userphotos'
+    type: craft\fs\Local
+    url: '@web/userphotos'
 meta:
   __names__:
     0c3f6026-fb73-4bb2-a6da-63857c5b8db4: Fax # Fax
@@ -444,7 +704,7 @@ plugins:
     edition: pro
     enabled: true
     licenseKey: KM6EWK48GP7O2AW535XV8UC1
-    schemaVersion: 3.0.0
+    schemaVersion: 4.0.0
   matrixmate:
     edition: standard
     enabled: true
@@ -468,7 +728,7 @@ plugins:
   super-table:
     edition: standard
     enabled: true
-    schemaVersion: 2.2.1
+    schemaVersion: 3.0.0
   work:
     edition: standard
     enabled: true
@@ -478,5 +738,5 @@ system:
   live: true
   name: $SYSTEM_NAME
   retryDuration: null
-  schemaVersion: 3.7.33
+  schemaVersion: 4.0.0.9
   timeZone: $SYSTEM_TIMEZONE

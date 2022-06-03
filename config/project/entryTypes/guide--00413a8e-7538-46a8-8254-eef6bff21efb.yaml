@@ -23,7 +23,8 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\EntryTitleField
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 59eae39d-156e-4c6e-999f-ef1fa51b6cdb
             warning: null
             width: 50
           -
@@ -33,6 +34,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 522d49e6-b053-48d0-aca2-3c370742edb9
             warning: null
             width: 100
           -
@@ -42,24 +44,27 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: b46fb4ad-c79c-42a7-a48b-95f36a8d45d5
             warning: null
             width: 25
           -
             fieldUid: 7bb0cd75-a933-4105-b72c-a34605721327 # Auf der Übersichtsseite anzeigen?
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 73a492e0-e107-4100-ad94-a5e02f00f78a
             warning: null
             width: 25
           -
             fieldUid: 7384bc4c-31c8-4906-a830-d53525e01989 # Guide Inhalt
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 90b43144-79a1-4571-9e2a-4c6a3b38357f
             warning: null
             width: 100
           -
@@ -69,10 +74,11 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 1dcecaf0-7802-4fe9-a9e4-c927b807ed5e
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 0088f10c-51c9-4b2a-aa9b-88139c031740
 handle: guide
 hasTitleField: true
 name: Guide

@@ -11,6 +11,7 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 0e80b69a-ecfa-4302-8f10-ab8698ee83e8
             warning: null
             width: 100
           -
@@ -20,26 +21,27 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: e9339af8-a5c7-466f-bd90-3a1aaf8f4be2
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 14e390c4-90e5-4635-a7a0-196fdb6b69cf
 fields:
   8fb04690-63b2-4e65-bb13-def05a978110: # Answer
     columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: answer
-    instructions: ''
+    instructions: null
     name: Answer
     searchable: true
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: '1'
+      initialRows: 4
+      multiline: true
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -50,16 +52,16 @@ fields:
     contentColumnType: string(240)
     fieldGroup: null
     handle: question
-    instructions: ''
+    instructions: null
     name: Question
     searchable: true
     settings:
       byteLimit: null
       charLimit: 60
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null

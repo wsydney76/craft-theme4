@@ -10,15 +10,17 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 4d28835e-e96b-4259-85cc-a22416b8cc85
             warning: null
             width: 100
           -
             fieldUid: 55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2 # Featured Image
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: b57fff02-8f9c-4fc9-bf89-6cea95dfefd4
             warning: null
             width: 25
           -
@@ -28,6 +30,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: a008ae4f-6653-45c0-854c-609dba453669
             warning: null
             width: 25
           -
@@ -37,6 +40,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 4ef4c97a-b789-4401-8cd3-50225938360e
             warning: null
             width: 25
           -
@@ -46,6 +50,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: f5162f60-092c-49f2-b4fe-d0887135b67d
             warning: null
             width: 25
           -
@@ -55,28 +60,31 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: e5b38611-58a0-433b-82fc-bf6eddecd7bf
             warning: null
             width: 100
           -
             fieldUid: 07e4260f-cc8c-4e3c-8085-fa9c9077ddcb # Entries
-            instructions: ''
+            instructions: null
             label: 'Navigation Entries'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: babff0cb-ef85-44b7-85fe-70ce5557b8b6
             warning: null
             width: 100
         name: Global
-        sortOrder: 1
+        uid: 01adaf9c-18c9-4b9f-a509-8feb1a1ebd41
       -
         elements:
           -
             fieldUid: 94e05a5e-2220-415e-89c6-398c3c22fc07 # Individual contact
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: dcdb3fa2-894d-43f8-a2d5-025ef714be16
             warning: null
             width: 100
           -
@@ -86,6 +94,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 036b8467-9000-442c-b1d9-c52b536bce8e
             warning: null
             width: 25
           -
@@ -95,6 +104,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 775ab8c6-1ae1-4005-b104-4e382e701f9e
             warning: null
             width: 25
           -
@@ -104,6 +114,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: c81f955d-3315-4b49-b003-87b670bb5aac
             warning: null
             width: 25
           -
@@ -113,6 +124,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: f2d021f9-2361-492a-b02a-12c07a505708
             warning: null
             width: 25
           -
@@ -122,45 +134,49 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: fcbd1ba5-d35f-496e-bd85-f3762866472e
             warning: null
             width: 100
         name: Kontakt
-        sortOrder: 2
+        uid: 1c0d3ab1-785f-42ce-b865-dda6c0a24b0f
       -
         elements:
           -
             fieldUid: 266ac6c3-03c0-40eb-8f24-c5c22ed1c5c0 # Content
             instructions: "Leave blank to show default footer.\r\n\r\nDo not change colors here."
             label: 'Footer Content'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 71ad5388-cf79-41f3-90d6-39b4e035fbc7
             warning: null
             width: 100
         name: 'Footer Content'
-        sortOrder: 3
+        uid: 1bf2ef18-18eb-468a-9c30-b9724e776c79
       -
         elements:
           -
             fieldUid: 23765e34-af93-42cb-bbaf-ea8907bc7407 # Cookie Consent Text
             instructions: 'Dieser Text wird in der Consent-Box neben den Buttons angezeigt'
-            label: ''
-            required: ''
+            label: null
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 2961e6d2-b9f4-40b2-80e6-75d8c1915736
             warning: null
             width: 100
           -
             fieldUid: 0d56f12c-69da-44d0-a0d1-36e975f34020 # Cookie Consent Info
             instructions: 'Dieser Text wird in der Info-Box der Cookie-Consent-Einstellungen angezeigt.'
-            label: ''
-            required: ''
+            label: null
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 6701d919-3ccb-4d22-a574-8bce7e872630
             warning: null
             width: 100
         name: Privacy
-        sortOrder: 4
+        uid: d1e09f7c-8e79-4ae7-b925-75ece0b2c472
 handle: siteInfo
 name: 'Site Info'
 sortOrder: 1

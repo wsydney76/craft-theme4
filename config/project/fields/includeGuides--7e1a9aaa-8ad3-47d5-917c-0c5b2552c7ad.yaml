@@ -2,14 +2,15 @@ columnSuffix: null
 contentColumnType: string
 fieldGroup: 6f31e23d-56c9-4afe-aacf-25ec0d12b2c2 # Guide
 handle: includeGuides
-instructions: ''
+instructions: null
 name: 'Include Guides'
 searchable: false
 settings:
   allowSelfRelations: false
-  limit: ''
   localizeRelations: false
-  selectionLabel: ''
+  maxRelations: null
+  minRelations: null
+  selectionLabel: null
   showSiteMenu: false
   source: null
   sources:

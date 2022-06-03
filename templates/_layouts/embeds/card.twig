@@ -1,12 +1,13 @@
 {% from '_macros/lib.twig' import img %}
 
 
-<article class="w-card border border-border mr-4 mb-4  bg-card dark:bg-card-dark text-foreground dark:text-foreground-dark hover:bg-card-hover dark:hover:bg-card-hover-dark transition-colors shadow-lg">
+<article
+        class="w-card border border-border mr-4 mb-4  bg-card dark:bg-card-dark text-foreground dark:text-foreground-dark hover:bg-card-hover dark:hover:bg-card-hover-dark transition-colors shadow-lg">
     <a class="!no-underline flex flex-col justify-between h-full"
        href="{{ entry.url }}">
         <div>
             <div>
-                {% set image = entry.featuredImage|one %}
+                {% set image = entry.featuredImage.one %}
                 {% if not image %}
                     {% set image = siteInfo.featuredImage.one %}
                 {% endif %}

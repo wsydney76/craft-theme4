@@ -11,41 +11,45 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 58a276c0-52ce-4683-8327-5d9e9d5f91a5
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 8ce6b149-47e0-4fc8-8af6-697e642c5c43
 fields:
   6c68905c-e96f-42e0-bc08-1f1f9d58d19f: # __blank__
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: asset
-    instructions: ''
+    instructions: null
     name: __blank__
     searchable: false
     settings:
       allowSelfRelations: false
+      allowSubfolders: false
       allowUploads: false
       allowedKinds:
         - json
       defaultUploadLocationSource: 'volume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
       defaultUploadLocationSubpath: embeds
-      limit: '1'
       localizeRelations: true
+      maxRelations: 1
+      minRelations: null
       previewMode: full
-      restrictFiles: '1'
+      restrictFiles: true
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      restrictedLocationSubpath: '{owner.site.handle}'
       selectionLabel: 'Select embed'
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-      singleUploadLocationSubpath: '{owner.site.handle}'
       source: null
       sources:
         - 'volume:49ccb4b8-c82b-4daf-9af9-1af874ad6dd4' # Embeds
       targetSiteId: null
-      useSingleFolder: false
       validateRelatedElements: false
       viewMode: large
     translationKeyFormat: null

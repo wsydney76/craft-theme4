@@ -23,7 +23,8 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\EntryTitleField
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 41d819ec-24b3-4ab2-85da-66c3b5e17fe9
             warning: null
             width: 75
           -
@@ -33,6 +34,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: d346ef7e-5600-4a6a-b45d-88ba426a8cdb
             warning: null
             width: 25
           -
@@ -42,6 +44,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 9f94e53b-e6a2-4bd7-8b3c-ab410c8701af
             warning: null
             width: 100
           -
@@ -51,6 +54,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 749e5fc7-8ab6-4d4e-8335-1940bf25a0b9
             warning: null
             width: 100
           -
@@ -60,10 +64,11 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: e4d8c6d2-05ed-4425-b56f-eb5235f46ee9
             warning: null
             width: 100
         name: Inhalt
-        sortOrder: 1
+        uid: 5408b860-4119-45b3-a1ac-43ddac2130a7
 handle: message
 hasTitleField: true
 name: Message

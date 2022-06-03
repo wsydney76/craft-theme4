@@ -12,7 +12,7 @@
 <div class="max-w-screen-{{ theme.defaultIndexWidth }} space-y-block">
     {% for entry in entries %}
 
-        {% set image = entry.featuredImage|one %}
+        {% set image = entry.featuredImage.one %}
         {% if not image %}
             {% set image = siteInfo.featuredImage.one %}
         {% endif %}

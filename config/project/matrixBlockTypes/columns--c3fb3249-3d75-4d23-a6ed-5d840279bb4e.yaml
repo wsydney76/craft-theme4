@@ -11,6 +11,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: fcd27d15-a17e-44f7-a1fa-32fa25901188
             warning: null
             width: 100
           -
@@ -20,6 +21,7 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 28e722c2-adec-43b6-b715-9d3636c48a65
             warning: null
             width: 100
           -
@@ -29,6 +31,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 334032fb-461b-4b94-816f-6fd1d72a1820
             warning: null
             width: 25
           -
@@ -38,6 +41,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 6a8adb43-29d4-49a7-8f92-5e57000250b1
             warning: null
             width: 25
           -
@@ -47,6 +51,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: bd829ced-e110-4426-8c88-cdd179191ccb
             warning: null
             width: 25
           -
@@ -56,17 +61,18 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 17ff364c-6297-4467-878e-a34056c71427
             warning: null
             width: 25
         name: Content
-        sortOrder: 1
+        uid: fa8cc2ba-1458-4ec3-a18a-c0be9a0f032b
 fields:
   06cc6bfc-a991-4aa6-99af-018de34f8bf4: # Text color
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: foregroundColor
-    instructions: ''
+    instructions: null
     name: 'Text color'
     searchable: false
     settings:
@@ -79,7 +85,7 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: marginsY
-    instructions: ''
+    instructions: null
     name: 'Margins Y'
     searchable: false
     translationKeyFormat: null
@@ -90,7 +96,7 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: columns
-    instructions: ''
+    instructions: null
     name: Columns
     searchable: true
     settings:
@@ -112,13 +118,12 @@ fields:
                   - ''
       contentTable: '{{%stc_21_columns}}'
       fieldLayout: row
-      maxRows: '3'
-      minRows: '2'
-      placeholderKey: null
+      maxRows: 3
+      minRows: 2
       propagationKeyFormat: null
       propagationMethod: all
       selectionLabel: 'Add a column'
-      staticField: ''
+      staticField: null
     translationKeyFormat: null
     translationMethod: site
     type: verbb\supertable\fields\SuperTableField
@@ -127,7 +132,7 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: width
-    instructions: ''
+    instructions: null
     name: Width
     searchable: false
     settings:
@@ -142,16 +147,16 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: heading
-    instructions: ''
+    instructions: null
     name: Heading
     searchable: true
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -162,7 +167,7 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: backgroundColor
-    instructions: ''
+    instructions: null
     name: 'Background color'
     searchable: false
     settings:

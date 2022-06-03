@@ -11,6 +11,7 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 3c69ce23-17c6-448c-963b-2a8b260966e0
             warning: null
             width: 25
           -
@@ -20,6 +21,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 93c5c914-673d-42df-be58-476751537835
             warning: null
             width: 25
           -
@@ -29,17 +31,18 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: d1abb01e-6a27-41aa-befc-ab648082504b
             warning: null
             width: 25
         name: Content
-        sortOrder: 1
+        uid: 3be1e399-665b-4cac-ac85-47db98093223
 fields:
   80de78f1-6d38-4d79-a522-71b6e6aec241: # Show in modal
     columnSuffix: null
     contentColumnType: boolean
     fieldGroup: null
     handle: showInModal
-    instructions: ''
+    instructions: null
     name: 'Show in modal'
     searchable: false
     settings:
@@ -54,31 +57,34 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: videoFile
-    instructions: ''
+    instructions: null
     name: 'Video File'
     searchable: false
     settings:
       allowSelfRelations: false
+      allowSubfolders: false
       allowUploads: false
       allowedKinds:
         - video
       defaultUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
       defaultUploadLocationSubpath: video
-      limit: ''
       localizeRelations: true
+      maxRelations: null
+      minRelations: null
       previewMode: full
-      restrictFiles: '1'
+      restrictFiles: true
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      restrictedLocationSubpath: null
       selectionLabel: 'Select file'
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-      singleUploadLocationSubpath: ''
       source: null
       sources:
         - 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
       targetSiteId: null
-      useSingleFolder: false
       validateRelatedElements: false
       viewMode: list
     translationKeyFormat: null
@@ -89,31 +95,34 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: posterImage
-    instructions: ''
+    instructions: null
     name: 'Poster Image'
     searchable: false
     settings:
       allowSelfRelations: false
+      allowSubfolders: false
       allowUploads: false
       allowedKinds:
         - image
       defaultUploadLocationSource: 'volume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
-      defaultUploadLocationSubpath: ''
-      limit: '1'
+      defaultUploadLocationSubpath: null
       localizeRelations: false
+      maxRelations: 1
+      minRelations: null
       previewMode: full
-      restrictFiles: '1'
+      restrictFiles: true
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
+      restrictedLocationSubpath: null
       selectionLabel: 'Select image'
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
-      singleUploadLocationSubpath: ''
       source: null
       sources:
         - 'volume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
       targetSiteId: null
-      useSingleFolder: false
       validateRelatedElements: false
       viewMode: large
     translationKeyFormat: null

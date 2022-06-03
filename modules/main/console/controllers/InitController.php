@@ -3,7 +3,6 @@
 namespace modules\main\console\controllers;
 
 use Craft;
-use craft\base\Field;
 use craft\console\Controller;
 use craft\elements\Entry;
 use craft\elements\GlobalSet;
@@ -12,6 +11,7 @@ use craft\helpers\App;
 use craft\helpers\ArrayHelper;
 use craft\helpers\Assets;
 use Faker\Factory;
+use yii\console\ExitCode;
 use function array_diff;
 use function copy;
 use function pathinfo;
@@ -22,38 +22,19 @@ use const PHP_EOL;
 class InitController extends Controller
 {
 
-    public array $assetSources = [
-        'siteHeading' => ['type' => 'heading', 'heading' => 'Site Assets'],
-        'images' => ['type' => 'key', 'tableAttributes' => ['altText', 'imageSize', 'dateModified', 'link']],
-        'media' => ['type' => 'key', 'tableAttributes' => ['filename', 'dateModified', 'link']],
-        'embeds' => ['type' => 'key', 'tableAttributes' => ['provider', 'filename', 'dateModified', 'link']],
-        'private' => ['type' => 'key', 'tableAttributes' => ['filename', 'imageSize', 'dateModified', 'link']],
-        'internalHeading' => ['type' => 'heading', 'heading' => 'Internal'],
-        'guide' => ['type' => 'key', 'tableAttributes' => ['filename', 'imageSize', 'dateModified', 'link']],
-        'userPhotos' => ['type' => 'key', 'tableAttributes' => ['filename', 'imageSize', 'dateModified', 'link']],
-    ];
-
     /**
      * @var string
      */
     public $defaultAction = 'all';
 
-    public function actionAll(): void
+    public function actionAll(): int
     {
         if (!$this->confirm('Run all init actions? This should only be done once, immediately after installing.')) {
-            return;
+            return ExitCode::UNSPECIFIED_ERROR;
         }
 
         $this->stdout('Setting some global content...');
         $this->actionSetup();
-        $this->stdout(PHP_EOL);
-
-        $this->stdout('Set Element Index sources...');
-        $this->actionEntryIndexes();
-        $this->stdout(PHP_EOL);
-
-        $this->stdout('Set Asset Index sources...');
-        $this->actionSetAssetIndexes();
         $this->stdout(PHP_EOL);
 
         $this->stdout('Create one-off pages...');
@@ -67,9 +48,11 @@ class InitController extends Controller
         $this->stdout('Update Users...');
         $this->actionSetUsers();
         $this->stdout(PHP_EOL);
+
+        return ExitCode::OK;
     }
 
-    public function actionSetup(): bool
+    public function actionSetup(): int
     {
         $faker = Factory::create();
 
@@ -141,83 +124,10 @@ class InitController extends Controller
             Craft::$app->elements->saveElement($global);
         }
 
-        return true;
+        return ExitCode::OK;
     }
 
-    public function actionEntryIndexes(): void
-    {
-        $sections = Craft::$app->sections->getAllSections();
-        $s = [];
-        foreach ($sections as $section) {
-            $s[$section->handle] = 'section:' . $section->uid;
-        }
-
-        $f = [];
-        $fields = Craft::$app->fields->getAllFields();
-        foreach ($fields as $field) {
-            /** @var Field $field */
-            $f[$field->handle] = 'field:' . $field->id;
-        }
-
-        $entrySettings = [
-            'sourceOrder' => [
-                ['key', '*'],
-                ['heading', 'Articles'],
-                ['key', $s['article']],
-                ['key', $s['topic']],
-                ['heading', 'Site'],
-                ['key', 'singles'],
-                ['key', $s['page']],
-                ['key', $s['legal']],
-                ['heading', 'Intern'],
-                ['key', $s['person']],
-                ['key', $s['guide']]
-            ],
-            'sources' => [
-                '*' => ['tableAttributes' => ['section', 'postDate', 'link']],
-                'singles' => ['tableAttributes' => ['drafts', $f['featuredImage'], 'link']],
-                $s['page'] => ['tableAttributes' => ['drafts', 'hasProvisionalDraft', 'type', $f['featuredImage'], 'postDate', 'link']],
-                $s['article'] => ['tableAttributes' => ['drafts', 'hasProvisionalDraft', $f['featuredImage'], $f['teaser'], 'author', 'postDate', 'link']],
-                $s['topic'] => ['tableAttributes' => ['drafts', 'hasProvisionalDraft', $f['featuredImage'], $f['teaser'], 'author', 'postDate', 'link']],
-                $s['legal'] => ['tableAttributes' => ['drafts', 'hasProvisionalDraft', $f['featuredImage'], $f['teaser'], 'postDate', 'link']],
-                $s['person'] => ['tableAttributes' => ['drafts', 'author', 'postDate']],
-                $s['guide'] => ['tableAttributes' => ['drafts', 'author', 'postDate']]
-            ]
-        ];
-
-        Craft::$app->elementIndexes->saveSettings('craft\\elements\\Entry', $entrySettings);
-    }
-
-    public function actionSetAssetIndexes(): void
-    {
-        $assetSettings = [
-            'sources' => [],
-            'sourceOrder' => []
-        ];
-
-        foreach ($this->assetSources as $handle => $source) {
-            if ($source['type'] == 'key') {
-                $volume = Craft::$app->volumes->getVolumeByHandle($handle);
-                if ($volume) {
-                    $rootFolder = Craft::$app->assets->getRootFolderByVolumeId($volume->id);
-                    if ($rootFolder) {
-                        $assetSettings['sources']['folder:' . $rootFolder->uid] = [
-                            'tableAttributes' => $source['tableAttributes'],
-                        ];
-                        $assetSettings['sourceOrder'][] = ['key', 'folder:' . $rootFolder->uid];
-                    }
-                }
-            }
-
-            if ($source['type'] == 'heading') {
-                $assetSettings['sourceOrder'][] = ['heading', $source['heading']];
-            }
-        }
-
-        Craft::$app->elementIndexes->saveSettings('craft\\elements\\Asset', $assetSettings);
-    }
-
-    public function actionCreateEntries(): bool
+    public function actionCreateEntries(): int
     {
         $user = User::find()->admin()->one();
 
@@ -390,7 +300,7 @@ class InitController extends Controller
             $this->localize($entry, 'Privacy policy', 'privacy');
         }
 
-        return true;
+        return ExitCode::OK;
     }
 
     protected function localize($entry, $title, $slug)
@@ -403,7 +313,7 @@ class InitController extends Controller
         }
     }
 
-    public function actionCreateGuideEntries(): void
+    public function actionCreateGuideEntries(): int
     {
         // Guide -------------------------------------------------------------------------------
 
@@ -446,6 +356,8 @@ class InitController extends Controller
         $this->setGuideParent('admin', ['colors']);
 
         $this->setIncludeGuides(['article', 'page', 'legal'], ['contentBuilder', 'blocks']);
+
+        return ExitCode::OK;
     }
 
     protected function setGuideParent($parentSlug, $childrenSlugs): void
@@ -463,7 +375,8 @@ class InitController extends Controller
                 continue;
             }
 
-            $entry->newParentId = $parent->id;
+            // $entry->newParentId = $parent->id;
+            $entry->setParentId($parent->id);
             Craft::$app->elements->saveElement($entry);
         }
     }
@@ -502,7 +415,7 @@ class InitController extends Controller
         }
     }
 
-    public function actionSetUsers(): void
+    public function actionSetUsers(): int
     {
         $faker = Factory::create();
 
@@ -574,5 +487,6 @@ class InitController extends Controller
                 Craft::$app->users->saveUserPhoto($tempPath, $user);
             }
         }
+        return ExitCode::OK;
     }
 }

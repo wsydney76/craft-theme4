@@ -2,11 +2,10 @@ columnSuffix: nnpvkgsj
 contentColumnType: string
 fieldGroup: d868de82-ae37-4897-a6bb-ef08e919650b # Common
 handle: increaseTitleContrast
-instructions: ''
+instructions: null
 name: 'Increase Title Contrast'
 searchable: false
 settings:
-  optgroups: true
   options:
     -
       __assoc__:

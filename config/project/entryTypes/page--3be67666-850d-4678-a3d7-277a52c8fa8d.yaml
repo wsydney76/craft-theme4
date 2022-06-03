@@ -6,6 +6,7 @@ fieldLayouts:
           -
             template: _cp/help.twig
             type: craft\fieldlayoutelements\Template
+            uid: 6e1d512e-3db0-4093-a9b0-adaa6d2e1292
             width: 100
           -
             autocapitalize: true
@@ -27,7 +28,8 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\EntryTitleField
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 8b43d267-9138-48a1-9ceb-542b465e7506
             warning: null
             width: 75
           -
@@ -37,46 +39,51 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 320d8469-6d3f-40d2-8245-ac675f47a6da
             warning: null
             width: 25
           -
             fieldUid: 55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2 # Featured Image
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 101c5c26-6943-441a-be60-b487365bfb78
             warning: null
             width: 100
           -
             fieldUid: f6ff43e3-8e77-457f-91cb-101f517889c9 # Teaser
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: c11bd967-dddf-4908-9754-39f1f8e51f31
             warning: null
             width: 100
           -
             fieldUid: 9c9d5cca-e9b2-48e2-911d-21f139d26fed # Intro
             instructions: 'Used in Article block, e.g. for the home page'
-            label: ''
-            required: ''
+            label: null
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: e8fe6fbb-6788-4ce9-b10c-7fc32cbd5487
             warning: null
             width: 100
           -
             fieldUid: 266ac6c3-03c0-40eb-8f24-c5c22ed1c5c0 # Content
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: dfc9ce8f-c136-4e15-829c-72e9317df10b
             warning: null
             width: 100
         name: Common
-        sortOrder: 1
+        uid: f1d7cf42-3103-42bd-b3fb-ccdd8ce22b53
       -
         elements:
           -
@@ -86,10 +93,11 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 470c2445-f657-4d3f-91e9-7b4a3eeeb715
             warning: null
             width: 100
         name: SEO
-        sortOrder: 2
+        uid: 9f343fff-1efc-4a71-8018-ebbd7e25a5c2
 handle: page
 hasTitleField: true
 name: Page

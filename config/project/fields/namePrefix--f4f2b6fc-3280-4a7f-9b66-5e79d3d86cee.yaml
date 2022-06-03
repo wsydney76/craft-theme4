@@ -2,16 +2,16 @@ columnSuffix: xaujqewz
 contentColumnType: string(40)
 fieldGroup: bb94c9b2-f8e4-4729-97b4-9367ffd54772 # Person
 handle: namePrefix
-instructions: ''
+instructions: null
 name: 'Name Prefix'
 searchable: true
 settings:
   byteLimit: null
   charLimit: 10
-  code: ''
+  code: false
   columnType: null
-  initialRows: '4'
-  multiline: ''
+  initialRows: 4
+  multiline: false
   placeholder: null
   uiMode: normal
 translationKeyFormat: null

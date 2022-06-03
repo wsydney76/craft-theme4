@@ -23,7 +23,8 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\EntryTitleField
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 7e805561-f15c-4b30-aaf5-b647ca341e91
             warning: null
             width: 75
           -
@@ -33,6 +34,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 9f8d4230-04ec-4dfc-9fdf-8ed218121fa5
             warning: null
             width: 25
           -
@@ -42,6 +44,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: ce64d9aa-4d15-43c8-83ee-fd0878857be0
             warning: null
             width: 100
           -
@@ -51,6 +54,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 1617cb5d-5789-41ea-8228-2776eb88ca42
             warning: null
             width: 100
           -
@@ -60,10 +64,11 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 1a76b8be-7378-48a1-a28c-fd020c2e6af7
             warning: null
             width: 100
         name: Inhalt
-        sortOrder: 1
+        uid: ed5d37bf-b1cf-499a-8845-c725870822e6
       -
         elements:
           -
@@ -73,10 +78,11 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 75c57fce-e503-4cb3-9167-334b4da8c972
             warning: null
             width: 100
         name: Articles
-        sortOrder: 2
+        uid: c67bef41-9458-4300-969c-52a6e4183449
       -
         elements:
           -
@@ -86,10 +92,11 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: d72cbb60-2a21-4af4-981b-8b3fec194b41
             warning: null
             width: 100
         name: SEO
-        sortOrder: 3
+        uid: 584a69ab-78cf-4758-91c1-b4a70901f8c8
 handle: default
 hasTitleField: true
 name: Standard

@@ -2,31 +2,34 @@ columnSuffix: null
 contentColumnType: string
 fieldGroup: bb94c9b2-f8e4-4729-97b4-9367ffd54772 # Person
 handle: photo
-instructions: ''
+instructions: null
 name: Photo
 searchable: false
 settings:
   allowSelfRelations: false
+  allowSubfolders: false
   allowUploads: true
   allowedKinds:
     - image
   defaultUploadLocationSource: 'volume:a917656e-dee2-4135-99f8-f837529a2a69' # User Photos
-  defaultUploadLocationSubpath: ''
-  limit: '1'
+  defaultUploadLocationSubpath: null
   localizeRelations: false
+  maxRelations: 1
+  minRelations: null
   previewMode: thumbs
-  restrictFiles: '1'
-  selectionLabel: ''
+  restrictFiles: true
+  restrictLocation: false
+  restrictedDefaultUploadSubpath: null
+  restrictedLocationSource: 'volume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
+  restrictedLocationSubpath: null
+  selectionLabel: null
   showSiteMenu: false
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
-  singleUploadLocationSource: 'volume:270fd626-b08d-4f72-9383-3acdcd200225' # Images
-  singleUploadLocationSubpath: ''
   source: null
   sources:
     - 'volume:a917656e-dee2-4135-99f8-f837529a2a69' # User Photos
   targetSiteId: null
-  useSingleFolder: false
   validateRelatedElements: false
   viewMode: large
 translationKeyFormat: null

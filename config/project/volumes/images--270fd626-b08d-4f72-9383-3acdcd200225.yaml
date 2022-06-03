@@ -23,29 +23,32 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\AssetTitleField
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: 94a3b13f-3bef-4a96-85e9-37815cbd36a4
             warning: null
             width: 100
           -
             fieldUid: 27d258a2-a6f5-44f8-9692-e0a1b254cea4 # Alt Text
-            instructions: ''
-            label: ''
-            required: '1'
+            instructions: null
+            label: null
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: a23d0642-d050-4924-b715-5abff27f8baf
             warning: null
             width: 100
           -
             fieldUid: dc298055-236a-4bbc-9246-ae94c0e76889 # Copyright
-            instructions: ''
-            label: ''
-            required: '1'
+            instructions: null
+            label: null
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 2f31c8d5-7c37-4930-a569-c71426eca1ef
             warning: null
             width: 100
         name: Inhalt
-        sortOrder: 1
+        uid: cd6b633e-36fe-4298-a7ea-73617a80f6f0
       -
         elements:
           -
@@ -55,17 +58,16 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 557bbb90-6312-4579-979c-bfc23b3e84ab
             warning: null
             width: 100
         name: 'Transform Settings'
-        sortOrder: 2
+        uid: be924831-f12d-4bc0-a1ab-6b15dd58da81
+fs: images
 handle: images
-hasUrls: true
 name: Images
-settings:
-  path: '@webroot/images'
 sortOrder: 1
 titleTranslationKeyFormat: null
 titleTranslationMethod: language
-type: craft\volumes\Local
-url: '@web/images'
+transformFs: transforms
+transformSubpath: images

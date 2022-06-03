@@ -6,7 +6,6 @@ instructions: 'Einschalten, um am Anfang der Datenschutzseite Einstellungsdialog
 name: 'Show Privacy Settings'
 searchable: false
 settings:
-  optgroups: true
   options:
     -
       __assoc__:

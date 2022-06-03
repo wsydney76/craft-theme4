@@ -37,7 +37,7 @@ class MarginsYField extends Field
     /**
      * @inheritDoc
      */
-    public function getInputHtml($value, ElementInterface $element = null): string
+    public function getInputHtml(mixed $value, ?\craft\base\ElementInterface $element = null): string
     {
 
         return Cp::selectHtml([

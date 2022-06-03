@@ -1,3 +1,5 @@
-description: ''
+description: null
 handle: members
 name: Members
+permissions:
+  - 'assignusergroup:5a1766e4-7075-4071-994a-80df73bb0912' # Members

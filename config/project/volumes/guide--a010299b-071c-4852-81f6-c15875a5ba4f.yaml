@@ -23,18 +23,17 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\AssetTitleField
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: c7d792cf-79ce-463d-a737-c022b7b6bebc
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 044f0979-e2b3-4144-895a-f19058d9687d
+fs: guide
 handle: guide
-hasUrls: true
 name: Guide
-settings:
-  path: '@webroot/guide'
 sortOrder: 5
 titleTranslationKeyFormat: null
 titleTranslationMethod: language
-type: craft\volumes\Local
-url: '@web/guide'
+transformFs: transforms
+transformSubpath: guide

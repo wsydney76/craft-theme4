@@ -3,7 +3,8 @@
         {% set entry = craft.entries.section('person').relatedTo(user).one %}
 
         {% if entry %}
-            <a class="btn" href="{{ entry.cpEditUrl }}" target="_blank">{{ 'Edit Person Entry'|t }}
+            <a class="btn" href="{{ entry.cpEditUrl }}" target="_blank"
+               style="display:block; max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ 'Edit Person Entry'|t }}
                 "{{ entry.title }}"</a>
         {% else %}
 
@@ -38,23 +39,43 @@
 {% endif %}
 
 
-{% js %}
+{% js at head %}
+
 function createAuthorPersonEntry(props) {
-    Craft.createElementEditor('craft\\elements\\Entry', {
+
+    // see ElementsController line 166
+
+    element = {
+        elementType: 'craft\\elements\\Entry',
         siteId: props.siteId,
-        attributes: {
-            sectionId: props.sectionId,
-            typeId: props.typeId,
-            authorId: props.authorId,
-            enabled: 1,
-            user: [props.userId],
-            email: props.email,
-            firstName: props.firstName,
-            lastName: props.lastName
-        },
-        onHideHud: () => {
-            window.location.reload()
-        },
-    })
+        sectionId: props.sectionId,
+        typeId: props.typeId,
+        authorId: props.authorId,
+        enabled: 1,
+        userId: props.userId,
+        email: props.email,
+        firstName: props.firstName,
+        lastName: props.lastName
+    }
+
+    console.log(element)
+
+    Craft.sendActionRequest('POST', 'main/content/create-author-person-entry', {
+        data: element,
+    }).then(ev => {
+        console.log(ev)
+        Craft.cp.displayNotice(ev.data.message);
+        const slideout = Craft.createElementEditor(this.elementType, {
+            siteId: this.siteId,
+            elementId: ev.data.element.id,
+            draftId: ev.data.element.draftId,
+        });
+
+        slideout.on('close', () => {
+            location.reload()
+        });
+    });
+
+
 }
 {% endjs %}

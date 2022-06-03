@@ -4,4 +4,4 @@ php temp-init.php &&^
 php craft install --interactive=0 --username=admin --password=password  --email=admin@example.com  &&^
 php craft migrate/all --interactive=0 &&^
 php craft main/init &&^
-php craft main/seed/seed-content
+php craft main/seed

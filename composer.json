@@ -2,19 +2,19 @@
   "version": "3.6.0",
   "description": "Flexible Theme Starter",
   "require": {
-    "clubstudioltd/craft-asset-rev": "^6.0",
-    "craftcms/cms": "3.7.43",
-    "craftcms/redactor": "2.10.8",
+    "clubstudioltd/craft-asset-rev": "7.0.0",
+    "craftcms/cms": "4.0.3",
+    "craftcms/redactor": "3.0.0",
     "fakerphp/faker": "^1.17",
-    "putyourlightson/craft-sprig": "1.13.0",
-    "spacecatninja/imager-x": "v3.5.8",
-    "spicyweb/craft-embedded-assets": "2.10.7",
-    "vaersaagod/matrixmate": "1.4.3",
-    "vaersaagod/seomate": "1.1.13",
-    "verbb/smith": "1.2.3",
-    "verbb/super-table": "2.7.2",
-    "wsydney76/elementmap": "^2.0",
-    "wsydney76/work": "^1.0",
+    "putyourlightson/craft-sprig": "2.0.1",
+    "spacecatninja/imager-x": "4.0.1",
+    "spicyweb/craft-embedded-assets": "3.0.2",
+    "vaersaagod/matrixmate": "2.0.1",
+    "vaersaagod/seomate": "2.0.1",
+    "verbb/smith": "2.0.0-beta.1",
+    "verbb/super-table": "3.0.0-beta.4",
+    "wsydney76/elementmap": "^4.0.0",
+    "wsydney76/work": "^4.0.0",
     "yiisoft/yii2-shell": "^2.0"
   },
   "autoload": {
@@ -51,6 +51,9 @@
     ]
   },
   "require-dev": {
+    "craftcms/rector": "dev-main",
     "rector/rector": "^0.12.17"
-  }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }

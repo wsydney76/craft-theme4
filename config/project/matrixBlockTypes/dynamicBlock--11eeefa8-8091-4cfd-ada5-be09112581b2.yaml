@@ -11,6 +11,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: b5a8ee72-23ed-4eb3-b8f8-f50b9fd0f8fb
             warning: null
             width: 25
           -
@@ -20,10 +21,11 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 2b4acda6-3c79-470a-9c25-3c365c9af769
             warning: null
             width: 75
         name: Content
-        sortOrder: 1
+        uid: 4808b0bb-4522-40f2-99db-1d1952569abc
 fields:
   2cf2c737-33d2-4b15-8933-7053b22d0020: # Parameter
     columnSuffix: null
@@ -36,10 +38,10 @@ fields:
     settings:
       byteLimit: 256
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -50,7 +52,7 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: template
-    instructions: ''
+    instructions: null
     name: Template
     searchable: false
     settings:

@@ -11,17 +11,18 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 7f6f9438-580e-4f05-85bf-8054b584d5d4
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 321c27c6-c8ad-4601-bb1b-6422a41baee3
 fields:
   de449fa1-c503-42ac-a4cf-4c8fc3656099: # __blank__
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: buttons
-    instructions: ''
+    instructions: null
     name: __blank__
     searchable: false
     settings:
@@ -57,13 +58,12 @@ fields:
                   - ''
       contentTable: '{{%stc_31_buttons}}'
       fieldLayout: table
-      maxRows: ''
-      minRows: '1'
-      placeholderKey: null
+      maxRows: null
+      minRows: 1
       propagationKeyFormat: null
       propagationMethod: all
       selectionLabel: 'Add a button'
-      staticField: ''
+      staticField: null
     translationKeyFormat: null
     translationMethod: site
     type: verbb\supertable\fields\SuperTableField
