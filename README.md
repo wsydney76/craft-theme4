@@ -16,6 +16,7 @@ Usefull for demos and hobby projects.
 * Run `composer install --no-dev`
 * Edit `config/Env.php` with your environment specific settings.
 * Run `php craft install` Enter you user data and confirm the other settings.
+* Run `php craft migrate/all`
 * Run `php craft main/init` Sets up things you will always need.
 
 ## Install with Craft Nitro
@@ -40,6 +41,7 @@ Replace `project` with your project name
     * DEFAULT_SITE_URL: `https://project.nitro`
 * `cd project`
 * Run `nitro craft install` Enter you user data and confirm the other settings.
+* Run `nitro craft migrate/all`
 * Run `nitro craft migrate/all`
 
 * For creating faker content/membership entries as described below replace `php craft` with `nitro craft`
@@ -68,7 +70,7 @@ Replace `project` with your project name
 ## Faker content
 
 * Upload some images into the images volume, if you want to use your own images for faked content.
-* Run `php craft main/seed/seed-content` to seed the system with some images and dummy entries, update Homepage and
+* Run `php craft main/seed` to seed the system with some images and dummy entries, update Homepage and
   global Site Info, and create image transforms.
 * Run `php craft main/seed/create-entries` at any time to create more random entries.
 * Run `php craft main/seed/create-images` at any time to download random images.

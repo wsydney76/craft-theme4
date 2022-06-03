@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1654158095
+dateModified: 1654246037
 elementSources:
   craft\elements\Asset:
     -
@@ -532,7 +532,6 @@ meta:
     bf0f9db1-27b9-4a19-8e36-fc5439109d73: Heading # Heading
     bf525e37-b16f-4ccd-8ea4-8710aed62bfd: 'Footer Text 1' # Footer Text 1
     bfe8dcb6-c176-4d72-ace2-16637d933b4e: Textfarbe # Textfarbe
-    bff42a0d-5c92-4f22-9957-9363f0a62656: 'Related articles' # Related articles
     c03a2ca4-d99b-4e6c-b255-573b366ea90c: Organisation/Festival # Organisation/Festival
     c03f49b8-b958-47d6-a22c-35b86b0e1271: 'Text (Markdown)' # Text (Markdown)
     c3fb3249-3d75-4d23-a6ed-5d840279bb4e: 'Multi Columns' # Multi Columns
