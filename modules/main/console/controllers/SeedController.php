@@ -11,19 +11,15 @@ use craft\elements\User;
 use craft\helpers\App;
 use craft\helpers\ArrayHelper;
 use craft\helpers\FileHelper;
-use craft\models\FsListing;
 use Exception;
 use Faker\Factory;
 use Faker\Generator;
 use GuzzleHttp\Exception\GuzzleException;
 use yii\console\ExitCode;
 use yii\helpers\Console;
-use function dirname;
 use function implode;
 use function is_dir;
-use function pathinfo;
 use const DIRECTORY_SEPARATOR;
-use const PATHINFO_BASENAME;
 use const PHP_EOL;
 
 class SeedController extends Controller
@@ -155,20 +151,7 @@ class SeedController extends Controller
                 continue;
             }
 
-            // $asset = Craft::$app->assetIndexer->indexFile($volume, 'examples/' . $filename, $session->id);
-
-            // TODO: fix https://github.com/craftcms/cms/issues/11365
-            $fs = $volume->getFs();
-            $listingPath = 'examples/' . $filename;
-            $listing = new FsListing([
-                'dirname' => dirname($listingPath),
-                'basename' => pathinfo($listingPath, PATHINFO_BASENAME),
-                'type' => 'file',
-                'dateModified' => $fs->getDateModified($listingPath),
-                'fileSize' => $fs->getFileSize($listingPath),
-            ]);
-
-            $asset = Craft::$app->assetIndexer->indexFileByListing((int)$volume->id, $listing, $session->id);
+            $asset = Craft::$app->assetIndexer->indexFile($volume, 'examples/' . $filename, $session->id);
 
             $asset->setFieldValue('copyright', 'Unsplash via picsum.photos');
             $asset->setFieldValue('altText', 'Platzhaltertext');
