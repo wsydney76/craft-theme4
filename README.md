@@ -1,13 +1,12 @@
-# Theme Craft Starter
+# Theme4 Craft Starter
 
-(Semi-) flexible Craft Starter Project.
+(Semi-) flexible Craft 4 Starter Project.
 
 Usefull for demos and hobby projects.
 
 ## Prerequisits
 
-* Check [Craft's recommended server requirements](https://craftcms.com/docs/3.x/requirements.html).
-* This project requires PHP 8.0.2
+* Check [Craft's recommended server requirements](https://craftcms.com/docs/4.x/requirements.html).
 * Create a MySql database.
 * Set up a web server pointing to the `web` directory of your project. Alternatively you can run `php craft serve` and
   use `http://localhost:8080` as your domain.
@@ -25,7 +24,7 @@ Replace `project` with your project name
 
 * Open Terminal (On Windows: Open WSL2 Terminal (e.g. Ubuntu) as administrator)
 * `cd <your-dev-directory`
-* `nitro create https://github.com/wsydney76/craft-theme project`
+* `nitro create https://github.com/wsydney76/craft-theme4 project`
     * Confirm hostname `project.nitro` and webroot `web`
     * Choose a PHP version: 8.0
     * Add a database: Y
