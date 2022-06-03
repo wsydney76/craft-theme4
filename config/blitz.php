@@ -74,7 +74,7 @@ return [
         // 'cacheWarmerType' => 'project\modules\main\warmers\CustomWarmer',
 
         // The warmer settings.
-        'cacheWarmerSettings' => ['concurrency' => 5],
+        'cacheWarmerSettings' => ['concurrency' => 2],
 
         // The warmer type classes to add to the plugin’s default warmer types.
         // 'cacheWarmerTypes' => [
