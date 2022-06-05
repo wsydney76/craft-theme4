@@ -6,7 +6,7 @@
     .relatedTo(author)
 .one %}
 
-{% embed '_sections/person/profile.twig' with {person, showTitle: true} %}
+{% embed '_sections/person/profile.twig' with {person, author, showTitle: true} %}
     {% block content %}
         <div class="text-base">
             {{ 'Published'|t }}: {{ entry.postDate|date('short') }}

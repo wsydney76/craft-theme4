@@ -1,23 +1,37 @@
-{# param person #}
-{# @var person craft\elements\Entry #}
+{# param person, author #}
+{# @var person \craft\elements\Entry #}
+{# @var author \craft\elements\User #}
 
 {% from '_macros/lib.twig' import img %}
 
-{% set author = author ?? person.user.one %}
 {% set showTitle = showTitle ?? false %}
 
-{% set email = person.email %}
-{% if not email and author %}
+{% if person %}
+    {% set titleLink = person.link %}
+    {% set title = person.title %}
+    {% set email = person.email %}
+    {% if not email and author %}
+        {% set email = author.email %}
+    {% endif %}
+    {% set image = person.photo.one %}
+    {% if not image %}
+        {% set image = author.photo %}
+    {% endif %}
+    {% set teaser = person.teaser %}
+    {% set bio = person.bio %}
+{% else %}
+    {% set titleLink = author.name %}
+    {% set title = author.name %}
     {% set email = author.email %}
+    {% set image = author.photo %}
+    {% set teaser = '' %}
+    {% set bio = '' %}
 {% endif %}
+
 
 <div class="container-{{ theme.pageWidth }} mb-block">
 
     <div class="border-b-2 pb-4 border-border">
-        {% set image = person.photo.one %}
-        {% if not image and author %}
-            {% set image = author.photo %}
-        {% endif %}
 
         <div class="mt-4 flex items-center space-x-4">
             {% if image %}
@@ -30,28 +44,28 @@
                 <div class="space-y-2">
                     {% if showTitle %}
                         <div class="text-2xl font-semibold">
-                            {{ person.authorPersonLink }}
+                            {{ titleLink }}
                         </div>
                     {% endif %}
-                    {% if person.teaser %}
+                    {% if teaser %}
                         <div class="text-base">
-                            {{ person.teaser }}
+                            {{ teaser }}
                         </div>
                     {% endif %}
 
-                    {% if person.bio %}
+                    {% if bio %}
                         <div class="text-base  font-semibold">
-                            {{ person.bio|md|purify }}
+                            {{ bio|md|purify }}
                         </div>
                     {% endif %}
 
-                    {% if email %}
+                    {% if person and email %}
                         {% set messageEntry = craft.entries.section('message').one %}
 
                         {% if messageEntry %}
                             <div class="text-base">
                                 ✉
-                                <a href="{{ url(messageEntry.url, {id: person.id|hash}) }}">{{ 'Message to'|t }} {{ person.title }}</a>
+                                <a href="{{ url(messageEntry.url, {id: person.id|hash}) }}">{{ 'Message to'|t }} {{ title }}</a>
                             </div>
                         {% endif %}
                     {% endif %}

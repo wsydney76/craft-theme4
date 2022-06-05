@@ -1,6 +1,6 @@
 {% from '_macros/lib.twig' import img %}
 
-{% set image = themeOptions.featuredImage ?? entry.featuredImage.one %}
+{% set image = themeOptions.featuredImage ?? entry.featuredImage.one ?? null %}
 {% if not image and theme.useFallbackImage %}
     {% set image = siteInfo.featuredImage.one %}
 {% endif %}

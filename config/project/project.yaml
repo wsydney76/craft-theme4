@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1654421481
+dateModified: 1654423555
 elementSources:
   craft\elements\Asset:
     -
@@ -173,8 +173,10 @@ elementSources:
       heading: Intern
       type: heading
     -
+      disabled: false
       key: 'section:d798b89b-cb00-4853-ac5a-c69bffe3ca76' # Person
       tableAttributes:
+        - 'field:c4ede7fe-f873-4466-8bbc-73ee9e0c54fa' # User
         - postDate
         - link
       type: native

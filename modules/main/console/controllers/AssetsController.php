@@ -13,6 +13,7 @@ use modules\main\helpers\FileHelper;
 use yii\console\ExitCode;
 use yii\db\Exception;
 use function count;
+use const PHP_EOL;
 
 class AssetsController extends Controller
 {
@@ -82,7 +83,7 @@ class AssetsController extends Controller
     /**
      * Creates images transforms by requesting each entry
      *
-     * php craft main/seed/create-transforms
+     * php craft main/assets/create-transforms
      *
      * @throws GuzzleException
      */
@@ -107,19 +108,24 @@ class AssetsController extends Controller
 
         foreach ($entries as $entry) {
             ++$i;
-            $this->stdout("[{$i}/{$c}] Id: {$entry->getId()} {$entry->title} ({$entry->site->name})... ");
+            $this->stdout("[{$i}/{$c}] Id: {$entry->id} {$entry->title} ({$entry->site->name})... ");
 
             try {
                 $result = $client->get($entry->getUrl());
                 $this->stdout($result->getStatusCode());
             } catch (\Exception $exception) {
-                $this->stdout("Error {$exception->getMessage()}");
+                if ($exception->getCode() == 400) {
+                    // Errors can occur if required params are not provided
+                    $this->stdout("Error 400, missing params");
+                } else {
+                    $this->stdout("Error {$exception->getMessage()}");
+                }
             }
 
-            $this->stdout("\n");
+            $this->stdout(PHP_EOL);
         }
 
-        $this->stdout("Done\n");
+        $this->stdout("Done");
 
         return ExitCode::OK;
     }
