@@ -6,18 +6,10 @@ use Craft;
 use craft\console\Controller;
 use craft\db\Table;
 use craft\helpers\App;
-use craft\helpers\FileHelper;
 use craft\models\Volume;
-use craft\volumes\Local;
-use RecursiveDirectoryIterator;
-use RecursiveIteratorIterator;
-use yii\base\ErrorException;
+use modules\main\helpers\FileHelper;
 use yii\console\ExitCode;
 use yii\db\Exception;
-use function is_dir;
-use function rmdir;
-use function strpos;
-use const DIRECTORY_SEPARATOR;
 
 class AssetsController extends Controller
 {
@@ -33,6 +25,11 @@ class AssetsController extends Controller
      */
     public function actionClearImageTransformDirectories(): int
     {
+
+        if (Craft::$app->plugins->isPluginEnabled('imager-x')) {
+            $this->stdout("Imager-X is enabled, please use it's utilities to clear the cache.");
+            return ExitCode::UNSPECIFIED_ERROR;
+        }
 
         if (!$this->confirm('This will delete all image transform data', true)) {
             return ExitCode::OK;
@@ -55,42 +52,28 @@ class AssetsController extends Controller
     private function _clearVolume(Volume $volume): void
     {
         $root = App::parseEnv($volume->getTransformFs()->path);
-        $dirs = $this->_getTransFormDirs($root);
-        foreach ($dirs as $dir) {
-            $this->_deleteDir($dir);
-        }
+
+        FileHelper::clearDirectory($root);
     }
 
     /**
-     * @param $path
-     * @return mixed[]
+     * @throws \yii\base\InvalidConfigException
      */
-    private function _getTransFormDirs($path): array
+    public function actionDeleteEmptyTransformFolders(): int
     {
-        $rii = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($path));
 
-        $dirs = [];
-        foreach ($rii as $dir) {
-            if ($dir->isDir() && strpos($dir->getPathname(), (string)(DIRECTORY_SEPARATOR . '_')) &&
-                !strpos($dir->getPathname(), '..')) {
-                $dirs[] = $dir->getPathname();
-            }
+        if (Craft::$app->plugins->isPluginEnabled('imager-x')) {
+            $this->stdout("Imager-X is enabled, please use it's utilities to clear the cache.");
+            return ExitCode::UNSPECIFIED_ERROR;
         }
 
-        return $dirs;
-    }
-
-    private function _deleteDir($dir): void
-    {
-        if (is_dir($dir)) {
-            try {
-                echo "Deleting {$dir}\n";
-                FileHelper::clearDirectory($dir);
-                rmdir($dir);
-            } catch (ErrorException $errorException) {
-                echo 'Error deleting ' . $dir . ': ' . $errorException->getMessage() . PHP_EOL;
-            }
+        if (!$this->confirm('Delete empty transform subfolders)', true)) {
+            return ExitCode::OK;
         }
+
+        FileHelper::cleanupTransformDirectories();
+
+        return ExitCode::OK;
     }
 
 }
