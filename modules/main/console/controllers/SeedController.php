@@ -517,37 +517,7 @@ class SeedController extends Controller
     public function actionCreateTransforms(): int
     {
 
-        if (!$this->confirm('Retrieve each page to create missing image sizes? This may take some time.')) {
-            return ExitCode::UNSPECIFIED_ERROR;
-        }
-
-        $client = Craft::createGuzzleClient();
-
-        $entries = Entry::find()
-            ->uri(':notempty:')
-            ->orderBy('id')
-            ->all();
-
-        $c = count($entries);
-        $i = 0;
-
-        foreach ($entries as $entry) {
-            ++$i;
-            $this->stdout("[{$i}/{$c}] Id: {$entry->getId()} {$entry->title} {$entry->uri}... ");
-
-            try {
-                $result = $client->get($entry->getUrl());
-                $this->stdout($result->getStatusCode());
-            } catch (Exception $exception) {
-                $this->stdout("Error {$exception->getMessage()}");
-            }
-
-            $this->stdout("\n");
-        }
-
-        $this->stdout("Done\n");
-
-        return ExitCode::OK;
+        return Craft::$app->runAction('main/assets/create-transforms');
     }
 
     // php craft main/seed/create-members-entries

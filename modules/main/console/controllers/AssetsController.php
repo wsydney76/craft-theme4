@@ -5,11 +5,14 @@ namespace modules\main\console\controllers;
 use Craft;
 use craft\console\Controller;
 use craft\db\Table;
+use craft\elements\Entry;
 use craft\helpers\App;
 use craft\models\Volume;
+use GuzzleHttp\Exception\GuzzleException;
 use modules\main\helpers\FileHelper;
 use yii\console\ExitCode;
 use yii\db\Exception;
+use function count;
 
 class AssetsController extends Controller
 {
@@ -72,6 +75,51 @@ class AssetsController extends Controller
         }
 
         FileHelper::cleanupTransformDirectories();
+
+        return ExitCode::OK;
+    }
+
+    /**
+     * Creates images transforms by requesting each entry
+     *
+     * php craft main/seed/create-transforms
+     *
+     * @throws GuzzleException
+     */
+    public function actionCreateTransforms(): int
+    {
+
+        if (!$this->confirm('Retrieve each page to create missing image sizes? This may take some time.')) {
+            return ExitCode::UNSPECIFIED_ERROR;
+        }
+
+        $client = Craft::createGuzzleClient();
+
+        $entries = Entry::find()
+            ->uri(':notempty:')
+            // ->site('*') // uncomment this line if this is a multi site install
+            // ->unique() // uncomment this line if there are no site specific images in a multisite install
+            ->orderBy('id')
+            ->all();
+
+        $c = count($entries);
+        $i = 0;
+
+        foreach ($entries as $entry) {
+            ++$i;
+            $this->stdout("[{$i}/{$c}] Id: {$entry->getId()} {$entry->title} ({$entry->site->name})... ");
+
+            try {
+                $result = $client->get($entry->getUrl());
+                $this->stdout($result->getStatusCode());
+            } catch (\Exception $exception) {
+                $this->stdout("Error {$exception->getMessage()}");
+            }
+
+            $this->stdout("\n");
+        }
+
+        $this->stdout("Done\n");
 
         return ExitCode::OK;
     }
