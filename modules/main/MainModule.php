@@ -83,13 +83,15 @@ class MainModule extends Module
         Event::on(
             Fields::class,
             Fields::EVENT_REGISTER_FIELD_TYPES, function(RegisterComponentTypesEvent $event): void {
-            $event->types[] = IncludeField::class;
-            $event->types[] = WidthField::class;
-            $event->types[] = ThemeColorField::class;
-            $event->types[] = MarginsYField::class;
-            $event->types[] = SectionsField::class;
-            $event->types[] = OrderByField::class;
-            $event->types[] = AspectRatioField::class;
+            $event->types = array_merge($event->types, [
+                IncludeField::class,
+                WidthField::class,
+                ThemeColorField::class,
+                MarginsYField::class,
+                SectionsField::class,
+                OrderByField::class,
+                AspectRatioField::class
+            ]);
         });
 
         // Register Twig extension for theme variable
