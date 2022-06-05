@@ -1,0 +1,14 @@
+columnSuffix: ffsbrork
+contentColumnType: string(255)
+fieldGroup: 609778c1-e7ba-47fc-bd62-7f2c99f0f0ee # Assets
+handle: copyrightLink
+instructions: null
+name: 'Copyright Link'
+searchable: false
+settings:
+  maxLength: 255
+  types:
+    - url
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

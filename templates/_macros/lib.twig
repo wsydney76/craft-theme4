@@ -131,7 +131,11 @@
         <div class="relative inline-block overflow-hidden">
             {{ imgHtml|raw }}
             <div class="absolute bottom-0 right-0 bg-black/30 rounded-tl px-1 py-0.5 text-white text-xs truncate">
-                &copy; {{ image.copyright }}
+                {% if image.copyrightLink %}
+                    &copy; <a href="{{ image.copyrightLink }}">{{ image.copyright }}</a>
+                {% else %}
+                    &copy; {{ image.copyright }}
+                {% endif %}
             </div>
         </div>
     {% else %}

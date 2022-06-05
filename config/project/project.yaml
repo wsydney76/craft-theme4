@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1654423555
+dateModified: 1654427997
 elementSources:
   craft\elements\Asset:
     -
@@ -420,6 +420,7 @@ meta:
     00413a8e-7538-46a8-8254-eef6bff21efb: Guide # Guide
     484ad434-775d-49da-ba41-8fef629fdf05: Heading # Heading
     490eba08-64fd-4e1e-96fd-e726efe3aa99: Institution # Institution
+    0492cf04-a657-4145-a124-7c2f3d500c63: 'Copyright Link' # Copyright Link
     499db390-ca29-450f-8c5d-9a23d0e1e353: Text # Text
     512edbee-e5b1-4422-9597-eeffd72ee9e5: __blank__ # __blank__
     599e26fb-8feb-4096-b249-19bdc57c275a: 'Margins Y' # Margins Y
