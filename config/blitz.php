@@ -17,18 +17,23 @@
  * you do for 'general.php'
  */
 
-use putyourlightson\blitz\models\SiteUriModel;
-
 return [
     '*' => [
         // With this setting enabled, Blitz will log detailed messages to `storage/logs/blitz.log`.
         'debug' => true,
 
-        // With this setting enabled, Blitz will begin caching pages according to the included/excluded URI patterns. Disable this setting to prevent Blitz from caching any new pages.
-        // 'cachingEnabled' => true,
-
         // With this setting enabled, Blitz will provide template performance hints in a utility.
         'hintsEnabled' => false,
+
+        // With this setting enabled, Blitz will begin caching pages according to the included/excluded URI patterns. Disable this setting to prevent Blitz from caching any new pages.
+        //'cachingEnabled' => false,
+
+        // Determines when and how the cache should be refreshed.
+        // - `0`: Expire the cache, regenerate manually or organically
+        // - `1`: Clear the cache, regenerate manually or organically
+        // - `2`: Expire the cache and regenerate in a queue job
+        // - `3`: Clear the cache and regenerate in a queue job
+        'refreshMode' => 3,
 
         // The URI patterns to include in caching. Set `siteId` to a blank string to indicate all sites.
         'includedUriPatterns' => [
@@ -59,51 +64,61 @@ return [
         ],
 
         // The storage type to use.
-        'cacheStorageType' => 'putyourlightson\blitz\drivers\storage\FileStorage',
+        //'cacheStorageType' => 'putyourlightson\blitz\drivers\storage\FileStorage',
 
         // The storage settings.
-        'cacheStorageSettings' => [
-            'folderPath' => '@webroot/cache/blitz',
-            'createGzipFiles' => true,
-        ],
+        //'cacheStorageSettings' => [
+        //    'folderPath' => '@webroot/cache/blitz',
+        //    'createGzipFiles' => false,
+        //    'countCachedFiles' => true,
+        //],
 
         // The storage type classes to add to the plugin’s default storage types.
         //'cacheStorageTypes' => [],
 
-        // The warmer type to use.
-        // 'cacheWarmerType' => 'project\modules\main\warmers\CustomWarmer',
+        // The generator type to use.
+        //'cacheGeneratorType' => 'putyourlightson\blitz\drivers\generators\HttpGenerator',
 
-        // The warmer settings.
-        'cacheWarmerSettings' => ['concurrency' => 2],
+        // The generator settings.
+        'cacheGeneratorSettings' => ['concurrency' => 2],
 
-        // The warmer type classes to add to the plugin’s default warmer types.
-        // 'cacheWarmerTypes' => [
-        //    'project\modules\main\warmers\CustomWarmer'
-        // ],
+        // The generator type classes to add to the plugin’s default generator types.
+        //'cacheGeneratorTypes' => [],
 
-        // Custom site URIs to warm when either a site or the entire cache is warmed.
-//        'customSiteUris' => [
-//            new SiteUriModel(['siteId' => 3, 'uri' => 'fetchpage/home.json']),
-//        ],
+        // Custom site URIs to generate when either a site or the entire cache is generated.
+        //'customSiteUris' => [
+        //    [
+        //        'siteId' => 1,
+        //        'uri' => 'pages/custom',
+        //    ],
+        //],
 
         // The purger type to use.
         //'cachePurgerType' => 'putyourlightson\blitz\drivers\purgers\CloudflarePurger',
 
-        // The purger settings.
-        //'cachePurgerSettings' => [],
+        // The purger settings (zone ID keys are site UIDs).
+        //'cachePurgerSettings' => [
+        //    'zoneIds' => [
+        //        'f64d4923-f64d4923-f64d4923' => [
+        //            'zoneId' => '',
+        //        ],
+        //    ],
+        //    'email' => '',
+        //    'apiKey' => '',
+        //],
 
         // The purger type classes to add to the plugin’s default purger types.
         //'cachePurgerTypes' => [
-        //    'putyourlightson\blitzshell\ShellDeployer',
+        //    'putyourlightson\blitzcloudfront\CloudFrontPurger',
         //],
 
         // The deployer type to use.
         //'deployerType' => 'putyourlightson\blitz\drivers\deployers\GitDeployer',
 
-        // The deployer settings.
+        // The deployer settings (zone ID keys are site UIDs).
         //'deployerSettings' => [
         //    'gitRepositories' => [
-        //        'site-uid-f64d4923-f64d4923-f64d4923' => [
+        //        'f64d4923-f64d4923-f64d4923' => [
         //            'repositoryPath' => '@root/path/to/repo',
         //            'branch' => 'master',
         //            'remote' => 'origin',
@@ -123,35 +138,52 @@ return [
         //    'putyourlightson\blitzshell\ShellDeployer',
         //],
 
-        // Whether the cache should automatically be cleared when elements are updated.
-        'clearCacheAutomatically' => true,
+        // Whether URLs with query strings should be cached and how.
+        // - `0`: Do not cache URLs with query strings
+        // - `1`: Cache URLs with query strings as unique pages
+        // - `2`: Cache URLs with query strings as the same page
+        //'queryStringCaching' => 0,
 
-        // Whether the cache should automatically be warmed after clearing.
-        'warmCacheAutomatically' => true,
+        // The query string parameters to include when determining if and how a page should be cached (regular expressions may be used).
+        //'includedQueryStringParams' => [
+        //    [
+        //        'siteId' => '',
+        //        'queryStringParam' => '.*',
+        //    ],
+        //],
+
+        // The query string parameters to exclude when determining if and how a page should be cached (regular expressions may be used).
+        //'excludedQueryStringParams' => [
+        //    [
+        //        'siteId' => '',
+        //        'queryStringParam' => 'gclid',
+        //    ],
+        //    [
+        //        'siteId' => '',
+        //        'queryStringParam' => 'fbclid',
+        //    ],
+        //],
+
+        // An API key that can be used via a URL (min. 16 characters).
+        //'apiKey' => '',
+
+        // Whether pages containing query string parameters should be generated.
+        'generatePagesWithQueryStringParams' => false,
 
         // Whether the cache should automatically be refreshed after a global set is updated.
         'refreshCacheAutomaticallyForGlobals' => true,
 
+        // Whether the cache should be refreshed when an element is moved within a structure.
+        'refreshCacheWhenElementMovedInStructure' => true,
+
         // Whether the cache should be refreshed when an element is saved but unchanged.
-        //'refreshCacheWhenElementSavedUnchanged' => false,
+        'refreshCacheWhenElementSavedUnchanged' => false,
 
         // Whether the cache should be refreshed when an element is saved but not live.
-        //'refreshCacheWhenElementSavedNotLive' => false,
+        'refreshCacheWhenElementSavedNotLive' => false,
 
-        // Whether URLs with query strings should cached and how.
-        // 0: Do not cache URLs with query strings
-        // 1: Cache URLs with query strings as unique pages
-        // 2: Cache URLs with query strings as the same page
-        //'queryStringCaching' => 0,
-
-        // The query string parameters to exclude when determining if and how a page should be cached.
-        //'excludedQueryStringParams' => ['gclid', 'fbclid'],
-
-        // An API key that can be used to clear, flush, warm, or refresh expired cache through a URL (min. 16 characters).
-        //'apiKey' => '',
-
-        // A path to the `bin` folder that should be forced.
-        //'binPath' => '',
+        // Whether non-HTML responses should be cached. With this setting enabled, Blitz will also cache pages that return non-HTML responses. If enabled, you should ensure that URIs that should not be caches, such as API endpoints, XML sitemaps, etc. are added as excluded URI patterns.
+        //'cacheNonHtmlResponses' => false,
 
         // Whether elements should be cached in the database.
         'cacheElements' => true,
@@ -173,25 +205,35 @@ return [
         //],
 
         // The integrations to initialise.
-        'integrations' => [
-            // 'putyourlightson\blitz\drivers\integrations\FeedMeIntegration',
-            // 'putyourlightson\blitz\drivers\integrations\SeomaticIntegration',
-        ],
+        //'integrations' => [
+        //    'putyourlightson\blitz\drivers\integrations\FeedMeIntegration',
+        //    'putyourlightson\blitz\drivers\integrations\SeomaticIntegration',
+        //],
 
         // The value to send in the cache control header.
-        'cacheControlHeader' => 'public, s-maxage=31536000, max-age=0',
+        //'cacheControlHeader' => 'public, s-maxage=31536000, max-age=0',
 
         // Whether an `X-Powered-By: Blitz` header should be sent.
-        //'sendPoweredByHeader' => true,
+        'sendPoweredByHeader' => false,
 
-        // Whether the timestamp and served by comments should be appended to the cached output.
-        'outputComments' => true,
+        // Whether the "cached on" and "served by" timestamp comments should be appended to the cached output.
+        // - `false`: Do not append any comments
+        // - `true`: Append all comments
+        // - `2`: Append "cached on" comment only
+        // - `3`: Append "served by" comment only
+        //'outputComments' => true,
 
-        // The priority to give the refresh cache job (the lower number the number, the higher the priority). Set to `null` to inherit the default priority.
+        // The priority to give the refresh cache job (the lower the number, the higher the priority). Set to `null` to inherit the default priority.
         //'refreshCacheJobPriority' => 10,
 
-        // The priority to give driver jobs (the lower number the number, the higher the priority). Set to `null` to inherit the default priority.
+        // The priority to give driver jobs (the lower the number, the higher the priority). Set to `null` to inherit the default priority.
         //'driverJobPriority' => 100,
+
+        // The time to reserve for queue jobs in seconds.
+        //'queueJobTtr' => 300,
+
+        // The maximum number of times to attempt retrying a failed queue job.
+        //'maxRetryAttempts' => 10,
 
         // The time in seconds to wait for mutex locks to be released.
         //'mutexTimeout' => 1,
@@ -204,12 +246,4 @@ return [
         // The name of the JavaScript event that will trigger a script inject.
         //'injectScriptEvent' => 'DOMContentLoaded',
     ],
-    'dev' => [
-        // With this setting enabled, Blitz will log detailed messages to `storage/logs/blitz.log`.
-        'debug' => true,
-    ],
-    'production' => [
-        // With this setting enabled, Blitz will begin caching pages according to the included/excluded URI patterns. Disable this setting to prevent Blitz from caching any new pages.
-        'cachingEnabled' => true,
-    ]
 ];
