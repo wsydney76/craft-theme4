@@ -27,6 +27,9 @@ return [
     // coverFull (fullwidth only) coverContent coverBoxed fullText fullTextColor imageText textImage text introImage imageOverlapText halfedTextImage
     'titleStyle' => 'fullTextColor',
 
+    // Title styles that place title/teaser on featuredImage, allow increase contrast for each entry individually for better readability
+    'showIncreaseTitleContrastInput' => ['coverFull', 'coverContent'],
+
     // Title Styles that show meta data in title area
     'showMetaInTitleArea' => ['coverBoxed', 'introImage', 'imageOverlapText', 'halfedTextImage'],
 

@@ -28,6 +28,15 @@ fieldLayouts:
             warning: null
             width: 75
           -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: modules\main\conditions\IsCoverTitleStyleConditionRule
+                  uid: bf2d9b73-f26a-4bba-b4ad-d7c103ddfebc
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
             fieldUid: 1eecdd2c-f9c5-4379-b304-d81774f9391e # Increase Title Contrast
             instructions: null
             label: null
@@ -69,20 +78,6 @@ fieldLayouts:
             width: 100
         name: Inhalt
         uid: ed5d37bf-b1cf-499a-8845-c725870822e6
-      -
-        elements:
-          -
-            fieldUid: bff42a0d-5c92-4f22-9957-9363f0a62656 # Related articles
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 75c57fce-e503-4cb3-9167-334b4da8c972
-            warning: null
-            width: 100
-        name: Articles
-        uid: c67bef41-9458-4300-969c-52a6e4183449
       -
         elements:
           -

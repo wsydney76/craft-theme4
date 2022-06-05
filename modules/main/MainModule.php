@@ -23,6 +23,7 @@ use modules\main\behaviors\EntryBehavior;
 use modules\main\conditions\HasDraftsConditionRule;
 use modules\main\conditions\HasEmptyAltTextConditionRule;
 use modules\main\conditions\HasEmptyCopyrightConditionRule;
+use modules\main\conditions\IsCoverTitleStyleConditionRule;
 use modules\main\fieldlayoutelements\NewRow;
 use modules\main\fields\AspectRatioField;
 use modules\main\fields\IncludeField;
@@ -36,6 +37,7 @@ use modules\main\twigextensions\TwigExtension;
 use modules\resources\cp\CpAssets;
 use yii\base\Event;
 use yii\base\Module;
+use function array_merge;
 
 /**
  * Class MainModule
@@ -200,9 +202,13 @@ class MainModule extends Module
             BaseCondition::class,
             BaseCondition::EVENT_REGISTER_CONDITION_RULE_TYPES,
             function(RegisterConditionRuleTypesEvent $event) {
-                $event->conditionRuleTypes[] = HasEmptyCopyrightConditionRule::class;
-                $event->conditionRuleTypes[] = HasEmptyAltTextConditionRule::class;
-                $event->conditionRuleTypes[] = HasDraftsConditionRule::class;
+
+                $event->conditionRuleTypes = array_merge($event->conditionRuleTypes, [
+                    HasEmptyCopyrightConditionRule::class,
+                    HasEmptyAltTextConditionRule::class,
+                    HasDraftsConditionRule::class,
+                    IsCoverTitleStyleConditionRule::class
+                ]);
             }
         );
 

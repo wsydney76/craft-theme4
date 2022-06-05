@@ -28,6 +28,15 @@ fieldLayouts:
             warning: null
             width: 75
           -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: modules\main\conditions\IsCoverTitleStyleConditionRule
+                  uid: fa27c1e7-7159-42c0-8593-39319046b489
+                  value: true
+              elementType: craft\elements\Entry
+              fieldContext: global
             fieldUid: 1eecdd2c-f9c5-4379-b304-d81774f9391e # Increase Title Contrast
             instructions: null
             label: null

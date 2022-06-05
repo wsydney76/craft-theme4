@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1654246037
+dateModified: 1654421481
 elementSources:
   craft\elements\Asset:
     -
@@ -153,7 +153,6 @@ elementSources:
         - drafts
         - hasProvisionalDraft
         - 'field:55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2' # Featured Image
-        - 'field:f6ff43e3-8e77-457f-91cb-101f517889c9' # Teaser
         - author
         - postDate
         - link
