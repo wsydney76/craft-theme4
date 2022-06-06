@@ -1,6 +1,8 @@
-/* Set link color back to V3 */
+/* Set link color back to V3, increase contrast */
 :root {
-    --link-color: #0b69a3;;
+    --text-color: var(--gray-800);
+    --medium-dark-text-color: var(--gray-700);
+    --link-color: #0b69a3;
 }
 
 /* Increase font size */
@@ -13,10 +15,15 @@ input.text, textarea.text, .text > input, .text > textarea, table.editable texta
     font-size: 16px !important;
 }
 
-
 /* We are not at a funeral */
 #global-sidebar {
     background-color: var(--blue-900) !important;
+}
+
+/* experimental */
+
+.site--en #global-sidebar {
+    background-color: var(--red-800) !important;
 }
 
 /* Element index sidebar */
@@ -34,12 +41,17 @@ input.text, textarea.text, .text > input, .text > textarea, table.editable texta
     cursor: pointer !important;
 }
 
-/* Move matrix block a bit to the right, so that you can easier find the next field */
+/* Move matrix blocks a bit to the right, so that you can easier find the next field */
 .blocks {
     margin-left: 18px !important
 }
 
 /* Make matrix block title bar stand out */
+
+.matrixblock > .titlebar > .blocktype {
+    color: var(--gray-700) !important;
+}
+
 .matrixblock > .titlebar {
     background-color: var(--gray-200) !important
 }
@@ -51,6 +63,31 @@ input.text, textarea.text, .text > input, .text > textarea, table.editable texta
 
 .matrixblock.collapsed > .titlebar > .blocktype {
     font-weight: normal !important
+}
+
+.matrixmate-block-inited .matrixmate-tabs li a {
+    color: var(--gray-900) !important;
+}
+
+/* experimental: titlebar colors by matrixmate group */
+[data-type="image"] .titlebar,
+[data-type="gallery"] .titlebar,
+[data-type="embed"] .titlebar,
+[data-type="imageAndText"] .titlebar,
+[data-type="audio"] .titlebar,
+[data-type="playlist"] .titlebar,
+[data-type="video"] .titlebar {
+    background-color: var(--blue-100) !important;
+}
+
+[data-type="articles"] .titlebar,
+[data-type="summary"] .titlebar,
+[data-type="buttons"] .titlebar,
+[data-type="quote"] .titlebar,
+[data-type="faq"] .titlebar,
+[data-type="markdown"] .titlebar,
+[data-type="dynamicBlock"] .titlebar {
+    background-color: var(--red-100) !important;
 }
 
 /* For colums block: group column content togeter */

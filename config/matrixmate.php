@@ -3,6 +3,8 @@
 return [
     'fields' => [
         'bodyContent' => [
+
+            // all blocks of a group should get a common color in cp_styles.css
             'groups' => [
                 [
                     'label' => Craft::t('site', 'Media'),
