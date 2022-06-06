@@ -49,7 +49,7 @@ module.exports = {
             },
 
             maxWidth: {
-                prose: '75ch'
+                prose: '70ch'
             },
 
             spacing: {
