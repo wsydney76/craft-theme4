@@ -58,7 +58,7 @@
 
                         {% if image %}
                             <div class="mb-4">
-                                {{ img(image, theme.featuredArticleTransform) }}
+                                {{ img(image, theme.featuredArticleTransform, {showCopyright: false}) }}
                             </div>
                         {% endif %}
 
@@ -96,7 +96,7 @@
                         <div class="md:flex md:space-x-block">
                             {% if image %}
                                 <div class="md:w-1/3">
-                                    {{ img(image, theme.defaultArticleTransform) }}
+                                    {{ img(image, theme.defaultArticleTransform, {showCopyright: false}) }}
                                 </div>
                             {% endif %}
                             <div class="mt-4 sm:my-2 md:w-2/3">
