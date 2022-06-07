@@ -41,6 +41,14 @@ input.text, textarea.text, .text > input, .text > textarea, table.editable texta
     cursor: pointer !important;
 }
 
+/*#sidebar .heading::before {
+    content: "> ";
+}
+
+#sidebar a {
+    margin-left: 12px;
+}*/
+
 /* Move matrix blocks a bit to the right, so that you can easier find the next field */
 .blocks {
     margin-left: 18px !important
