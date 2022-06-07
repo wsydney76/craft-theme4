@@ -19,6 +19,8 @@ Usefull for demos and hobby projects.
 * Run `php craft migrate/all`
 * Run `php craft main/init` Sets up things you will always need.
 
+Tip: On Windows you can run `.\install` to perform all steps at once.
+
 ## Install with Craft Nitro
 
 Replace `project` with your project name
@@ -79,9 +81,7 @@ Replace `project` with your project name
 
 ## Localization
 
-The default web site is set up for German.
-
-A second site is prepared for English, however it is not enabled by default.
+There are two sites enabled by default: German (Primary) and English.
 
 Do one of the following:
 
@@ -90,9 +90,8 @@ Do one of the following:
 * Delete the second site
 * Change the language of the primary site, if required.
 
-### You plan a multi site project?
+### The second site should have a different language?
 
-* Enable the second site
 * Change the language of the second site.
 * Translate any existing content.
 
@@ -107,9 +106,9 @@ Do one of the following:
 * Add translations for static strings. `translations/<lang>/site.php`
 * If you run a membership sites, update the relevant paths in `config/general.php`.
 
-### You don't know what you want?
+### You don't know yet what you want?
 
-* Do nothing. Like in real life.
+* Disable the second site, so that you can come back to it later.
 
 ## Setting up a membership site
 
