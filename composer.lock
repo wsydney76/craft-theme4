@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "03b85be9bf0f8a34b56dccd3c9523a99",
+    "content-hash": "434606ae00ed2da379ba68a64d87a1da",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -58,16 +58,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.224.3",
+            "version": "3.224.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "52f45dfe0d1e5a77f33c050bde5134901fc54a57"
+                "reference": "8c8a713b8c1e1a20f66a801f9d2cd7fd80d8d3f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/52f45dfe0d1e5a77f33c050bde5134901fc54a57",
-                "reference": "52f45dfe0d1e5a77f33c050bde5134901fc54a57",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/8c8a713b8c1e1a20f66a801f9d2cd7fd80d8d3f8",
+                "reference": "8c8a713b8c1e1a20f66a801f9d2cd7fd80d8d3f8",
                 "shasum": ""
             },
             "require": {
@@ -143,9 +143,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.224.3"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.224.4"
             },
-            "time": "2022-06-02T18:22:57+00:00"
+            "time": "2022-06-06T18:32:10+00:00"
         },
         {
             "name": "cebe/markdown",
@@ -7469,16 +7469,16 @@
         },
         {
             "name": "verbb/super-table",
-            "version": "3.0.0-beta.4",
+            "version": "dev-craft-4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/verbb/super-table.git",
-                "reference": "00fc1782a797d2f41ae9888c28e352146ed11e00"
+                "reference": "a64c472b4f793511870aed712042fa68594cf6ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/super-table/zipball/00fc1782a797d2f41ae9888c28e352146ed11e00",
-                "reference": "00fc1782a797d2f41ae9888c28e352146ed11e00",
+                "url": "https://api.github.com/repos/verbb/super-table/zipball/a64c472b4f793511870aed712042fa68594cf6ab",
+                "reference": "a64c472b4f793511870aed712042fa68594cf6ab",
                 "shasum": ""
             },
             "require": {
@@ -7531,7 +7531,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-05-18T00:05:59+00:00"
+            "time": "2022-06-03T06:46:31+00:00"
         },
         {
             "name": "voku/anti-xss",
@@ -8943,12 +8943,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/rector.git",
-                "reference": "27514d0bd1b8554f2e0396f1373876a3755c7f07"
+                "reference": "3686dff2d1c58f4f8b0e7a6e7c200a8953a556da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/rector/zipball/27514d0bd1b8554f2e0396f1373876a3755c7f07",
-                "reference": "27514d0bd1b8554f2e0396f1373876a3755c7f07",
+                "url": "https://api.github.com/repos/craftcms/rector/zipball/3686dff2d1c58f4f8b0e7a6e7c200a8953a556da",
+                "reference": "3686dff2d1c58f4f8b0e7a6e7c200a8953a556da",
                 "shasum": ""
             },
             "require": {
@@ -8975,20 +8975,20 @@
                 "issues": "https://github.com/craftcms/rector/issues",
                 "source": "https://github.com/craftcms/rector/tree/main"
             },
-            "time": "2022-05-14T20:04:21+00:00"
+            "time": "2022-06-06T17:02:02+00:00"
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.7.10",
+            "version": "1.7.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "25e069474cf00215b0f64c60a26230908ef3eefa"
+                "reference": "62fcadcde81b4037e42ad2489119d31c46f00191"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/25e069474cf00215b0f64c60a26230908ef3eefa",
-                "reference": "25e069474cf00215b0f64c60a26230908ef3eefa",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/62fcadcde81b4037e42ad2489119d31c46f00191",
+                "reference": "62fcadcde81b4037e42ad2489119d31c46f00191",
                 "shasum": ""
             },
             "require": {
@@ -9014,7 +9014,7 @@
             "description": "PHPStan - PHP Static Analysis Tool",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/1.7.10"
+                "source": "https://github.com/phpstan/phpstan/tree/1.7.11"
             },
             "funding": [
                 {
@@ -9034,7 +9034,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-06-03T14:12:23+00:00"
+            "time": "2022-06-07T08:47:03+00:00"
         },
         {
             "name": "rector/rector",
@@ -9097,9 +9097,17 @@
             "time": "2022-05-01T15:50:16+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "verbb/super-table",
+            "version": "dev-craft-4",
+            "alias": "3.0.0-beta.4",
+            "alias_normalized": "3.0.0.0-beta4"
+        }
+    ],
     "minimum-stability": "dev",
     "stability-flags": {
+        "verbb/super-table": 20,
         "craftcms/rector": 20
     },
     "prefer-stable": true,
