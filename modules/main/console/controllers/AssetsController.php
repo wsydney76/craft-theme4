@@ -98,16 +98,17 @@ class AssetsController extends Controller
 
         $entries = Entry::find()
             ->uri(':notempty:')
-            // ->site('*') // uncomment this line if this is a multi site install
-            // ->unique() // uncomment this line if there are no site specific images in a multisite install
+            ->site('*') // uncomment this line if this is a multi site install
+            ->unique() // uncomment this line if there are no site specific images in a multisite install
             ->orderBy('id')
             ->all();
 
         $c = count($entries);
         $i = 0;
+        $errors = 0;
 
         foreach ($entries as $entry) {
-            ++$i;
+            $i++;
             $this->stdout("[{$i}/{$c}] Id: {$entry->id} {$entry->title} ({$entry->site->name})... ");
 
             try {
@@ -118,6 +119,7 @@ class AssetsController extends Controller
                     // Errors can occur if required params are not provided
                     $this->stdout("Error 400, missing params");
                 } else {
+                    $errors++;
                     $this->stdout("Error {$exception->getMessage()}");
                 }
             }
@@ -125,7 +127,7 @@ class AssetsController extends Controller
             $this->stdout(PHP_EOL);
         }
 
-        $this->stdout("Done");
+        $this->stdout("Done with $errors error(s)");
 
         return ExitCode::OK;
     }
