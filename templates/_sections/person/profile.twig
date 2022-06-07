@@ -28,6 +28,10 @@
     {% set bio = '' %}
 {% endif %}
 
+{# Fix where author.photo not available on all sites #}
+{% if not image and author.photoId %}
+    {% set image = craft.assets.id(author.photoId).site('*').one %}
+{% endif %}
 
 <div class="container-{{ theme.pageWidth }} mb-block">
 
