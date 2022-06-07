@@ -19,9 +19,9 @@
     {% if image %}
         <div class="relative {{ theme.titleStyle == 'coverContent' ? 'max-w-screen-{{ theme.titleImageWidth }} mx-auto' }}">
             {% if theme.titleStyle == 'coverFull' %}
-                {{ img(image, {width:theme.widths['full'], height: height ?? 900}, {loading: null}, false) }}
+                {{ img(image, {width:theme.widths['full'], height: height ?? 900}, {attrs: {loading: null}, showCopyright: false}) }}
             {% else %}
-                {{ img(image, {width: theme.widths[theme.titleImageWidth], height: height ?? 400}, {loading: null}, false) }}
+                {{ img(image, {width: theme.widths[theme.titleImageWidth], height: height ?? 400}, {attrs: {loading: null}, showCopyright: false}) }}
             {% endif %}
 
             <div class="absolute inset-0 flex items-center justify-center {{ increaseTitleContrast == 'image' ? 'backdrop-brightness-75' }} {{ increaseTitleContrast == 'imageDark' ? 'backdrop-brightness-50' }}">
@@ -52,12 +52,12 @@
 {% case "fullText" or "fullTextColor" %}
     {% if image %}
         <div>
-            {{ img(image, {width:theme.widths['full'], height: height ?? 900}, {loading: null}, false) }}
+            {{ img(image, {width:theme.widths['full'], height: height ?? 900}, {attrs: {loading: null}, showCopyright: false}) }}
         </div>
     {% endif %}
 {% default %}
     {% if image %}
-        {{ img(image, {width: theme.widths[theme.titleImageWidth], height: height ?? 400}, {loading: null}, false) }}
+        {{ img(image, {width: theme.widths[theme.titleImageWidth], height: height ?? 400}, {attrs: {loading: null}, showCopyright: false}) }}
     {% endif %}
 {% endswitch %}
 

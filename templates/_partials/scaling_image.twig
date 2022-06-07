@@ -7,9 +7,10 @@
         {% set caption = caption ~ ' &copy; ' ~ image.copyright %}
     {% endif %}
 
-    <a class="bg-none block z-20 focus:outline-none focus:ring-4 focus:ring-black  overflow-hidden" href="{{ url }}" data-caption="{{ caption }}">
+    <a class="bg-none block z-20 focus:outline-none focus:ring-4 focus:ring-black  overflow-hidden" href="{{ url }}"
+       data-caption="{{ caption }}">
         {% if image is defined %}
-            {{ img(image, transform, {class:'transform hover:scale-110 transition'}, false) }}
+            {{ img(image, transform, {attrs: {class:'transform hover:scale-110 transition'}, showCopyright: false}) }}
         {% endif %}
     </a>
 

@@ -11,7 +11,7 @@
                     {% set image = siteInfo.featuredImage.one %}
                 {% endif %}
                 {% if image %}
-                    {{ img(image, theme.cardImageTransform, {}, false) }}
+                    {{ img(image, theme.cardImageTransform, {showCopyright: false}) }}
                 {% endif %}
             </div>
             <div class="p-4">

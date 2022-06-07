@@ -32,7 +32,7 @@
 
 {% if image %}
     <div class="container-{{ themeOptions.titleWidth ?? theme.titleWidth }} -mt-44 mb-20">
-        {{ img(image, theme.introImageTransform, {}, false) }}
+        {{ img(image, theme.introImageTransform, {showCopyright: false}) }}
     </div>
 {% endif %}
 

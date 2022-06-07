@@ -1,7 +1,13 @@
-{% macro img(image, transform = {}, attrs = {}, showCopyright = true, createSrcset = true) %}
+{% macro img(image, transform = {}, params = {}) %}
+
+    {% set params = {
+        attrs: {},
+        showCopyright: true,
+        createSrcset: true
+    }|merge(params) %}
 
     {% if theme.skipSrcsetInDevMode and devMode %}
-        {% set createSrcset = false %}
+        {% set params = params|merge({createSrcset: false}) %}
     {% endif %}
 
     {% if craft.app.plugins.pluginEnabled('imager-x') %}
@@ -19,13 +25,13 @@
                     alt: image.altText ?: image.title,
                     srcset: imager.srcset(transformedImages),
                     loading: 'lazy'
-                }|merge(attrs)) %}
+                }|merge(params.attrs)) %}
             {% else %}
                 {% set imgHtml = tag('img', {
                     src: transformedImages.url,
                     alt: image.altText ?: image.title,
                     loading: 'lazy'
-                }|merge(attrs)) %}
+                }|merge(params.attrs)) %}
             {% endif %}
 
         {% else %}
@@ -57,7 +63,7 @@
                 effects: effects
             } %}
 
-            {% if createSrcset and transform.width is defined and transform.width > theme.minResponsiveWidth %}
+            {% if params.createSrcset and transform.width is defined and transform.width > theme.minResponsiveWidth %}
 
                 {% set ratio = transform.width / transform.height %}
 
@@ -78,7 +84,7 @@
                     alt: image.altText ?: image.title,
                     srcset: imager.srcset(transformedImages),
                     loading: 'lazy'
-                }|merge(attrs)) %}
+                }|merge(params.attrs)) %}
 
             {% else %}
 
@@ -90,7 +96,7 @@
                     width: transform.width,
                     alt: image.altText ?: image.title,
                     loading: 'lazy'
-                }|merge(attrs)) %}
+                }|merge(params.attrs)) %}
 
             {% endif %}
         {% endif %}
@@ -123,11 +129,11 @@
             alt: image.altText ?: image.title,
             srcset: image.srcset(srcSet),
             loading: 'lazy'
-        }|merge(attrs)) %}
+        }|merge(params.attrs)) %}
 
     {% endif %}
 
-    {% if showCopyright and image.copyright %}
+    {% if params.showCopyright and image.copyright %}
         <div class="relative inline-block overflow-hidden">
             {{ imgHtml|raw }}
             <div class="absolute bottom-0 right-0 bg-black/30 rounded-tl px-1 py-0.5 text-white text-xs truncate">

@@ -36,7 +36,7 @@
         <div class="mt-4 flex items-center space-x-4">
             {% if image %}
                 <div>
-                    {{ img(image, {width: 120, height: 120}, {class: 'rounded-full'}, false) }}
+                    {{ img(image, {width: 120, height: 120}, {attrs: {class: 'rounded-full'}}) }}
                 </div>
             {% endif %}
 

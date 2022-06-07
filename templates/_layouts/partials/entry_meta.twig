@@ -5,7 +5,7 @@
     {% set image = entry.author.photo %}
     {% if image %}
         <div class="mr-2">
-            {{ img(image, {width: 50, height: 50}, {class: 'rounded-full'}) }}
+            {{ img(image, {width: 50, height: 50}, {attrs: {class: 'rounded-full'}}) }}
         </div>
     {% endif %}
 
@@ -13,13 +13,13 @@
         {{ entry.postDate|date('short') }} {{ 'by'|t }} {{ entry.authorPersonLink }}
     </div>
 
-    {#{% set categories = entry.categories.all %}
+    {# {% set categories = entry.categories.all %}
     {% if categories %}
         {% for category in categories %}
             <div class="ml-2 font-semibold">
                 |&nbsp;{{ category.link }}
             </div>
         {% endfor %}
-    {% endif %}#}
+    {% endif %} #}
 
 </div>

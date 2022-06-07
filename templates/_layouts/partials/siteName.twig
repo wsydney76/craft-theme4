@@ -4,7 +4,7 @@
 
     {% set image = theme.logoTransform ? siteInfo.logo.one : null %}
     {% if  image %}
-        {{ img(image, theme.logoTransform, {loading: null}, false) }}
+        {{ img(image, theme.logoTransform, {attrs: {loading: null}, showCopyright: false}) }}
     {% else %}
         <div class="font-semibold text-2xl">
             {{ siteInfo.siteName }}

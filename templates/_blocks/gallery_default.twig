@@ -12,7 +12,7 @@
 
 {% set width = block.width == 'default' ? theme.defaultBlockTypeWidth['gallery'] : block.width %}
 
-{% set width = theme.widths[width] ?? 2500  %}
+{% set width = theme.widths[width] ?? 2500 %}
 
 
 {% set imgWidth = (width / numberOfColumns) %}
@@ -46,7 +46,7 @@
             <div class="relative">
                 <a class="bg-none block z-20 focus:outline-none focus:ring-4 focus:ring-black  overflow-hidden"
                    href="{{ lightboxUrl }}" data-caption="{{ caption }}">
-                    {{ img(image, transform, {alt: caption, class:'transform hover:scale-110 transition'}) }}
+                    {{ img(image, transform, {attrs: {alt: caption, class:'transform hover:scale-110 transition'}}) }}
                 </a>
             </div>
 

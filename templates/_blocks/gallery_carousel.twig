@@ -88,7 +88,10 @@
                         {{ img(image, {
                             width: imgWidth,
                             height: (imgWidth / 16 * 9)|round,
-                        }, {loading: null}, true, false)|replace({'src="': 'data-splide-lazy="'})|raw }}
+                        }, {
+                            attrs: {loading: null},
+                            createSrcset: false
+                        })|replace({'src="': 'data-splide-lazy="'})|raw }}
                     </li>
                 {% endfor %}
             </ul>
@@ -100,7 +103,7 @@
             <ul class="splide__list">
                 {% for image in images %}
                     <li class="splide__slide grayscale opacity-80 ">
-                        {{ img(image, thumbTransform, {}, false) }}
+                        {{ img(image, thumbTransform, {showCopyright: false}) }}
                     </li>
                 {% endfor %}
             </ul>

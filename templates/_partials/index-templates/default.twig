@@ -33,7 +33,7 @@
             {% if highlightFirst and loop.index == 1 and theme.defaultIndexFirstImageTransform and pageInfo.currentPage == 1 %}
 
                 {% if image %}
-                    {{ img(image, theme.defaultIndexFirstImageTransform, {}, false) }}
+                    {{ img(image, theme.defaultIndexFirstImageTransform, {showCopyright: false}) }}
                 {% endif %}
 
                 {{ _self.content(entry, true) }}
@@ -42,7 +42,7 @@
                 <div class="sm:flex sm:space-x-block">
                     {% if image %}
                         <div class="sm:shrink-0">
-                            {{ img(image, theme.defaultIndexImageTransform, {}, false) }}
+                            {{ img(image, theme.defaultIndexImageTransform, {showCopyright: false}) }}
                         </div>
                     {% endif %}
                     <div class="mt-4 sm:my-2">
