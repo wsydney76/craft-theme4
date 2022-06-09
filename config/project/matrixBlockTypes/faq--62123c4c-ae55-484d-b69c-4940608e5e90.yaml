@@ -71,6 +71,8 @@ fields:
     name: __blank__
     searchable: true
     settings:
+      blockTypeFields: 0
+      changedFieldIndicator: null
       columns:
         __assoc__:
           -

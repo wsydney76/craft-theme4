@@ -26,6 +26,8 @@ fields:
     name: __blank__
     searchable: false
     settings:
+      blockTypeFields: 0
+      changedFieldIndicator: null
       columns:
         __assoc__:
           -

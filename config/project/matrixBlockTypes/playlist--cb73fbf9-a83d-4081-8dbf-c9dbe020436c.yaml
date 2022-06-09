@@ -36,6 +36,8 @@ fields:
     name: 'Audio Files'
     searchable: false
     settings:
+      blockTypeFields: 0
+      changedFieldIndicator: null
       columns:
         __assoc__:
           -
