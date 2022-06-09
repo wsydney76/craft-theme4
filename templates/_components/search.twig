@@ -3,6 +3,7 @@
 
 {% set offset = offset ?? 0 %}
 {% set limit = limit ?? theme.entriesInSearchResults %}
+{% set total = total ?? (offset + limit) %}
 
 {# Replaces only the `#results` div on keyup or when the value is changed #}
 <label for="query">{{ 'Search Term'|t }}:
@@ -22,16 +23,19 @@
 
 <div id="results" class="mt-block min-h-[200px] animate-fadein">
     {% if query %}
-        {{ sprig.pushUrl('?query=' ~ query) }}
+        {{ sprig.pushUrl('?query=' ~ query ~ '&total=' ~ total) }}
 
         {% set entryQuery = craft.entries
             .search(query)
             .orderBy('score')
-            .offset(offset)
-            .limit(limit)
             .type('not toc')
-            .uri(':notempty:')
-            %}
+            .uri(':notempty:') %}
+
+        {% if sprig.isInclude %}
+            {% do entryQuery.limit(total) %}
+        {% else %}
+            {% do entryQuery.offset(offset).limit(limit) %}
+        {% endif %}
 
         {% if not craft.app.plugins.pluginEnabled('imager-x') %}
             {% do entryQuery.with([
@@ -53,7 +57,7 @@
                 <button sprig
                         id="load-more-oob"
                         class="btn bg-primary text-secondary"
-                        s-val:offset="{{ offset + limit }}"
+                        s-val:offset="{{ total }}"
 
                         {# Appends all `#results h6` elements to the `#entries` element #}
                         s-select="#entries article" s-target="#entries" s-swap="beforeend"
