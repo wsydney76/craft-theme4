@@ -34,7 +34,11 @@
     <div class="gallery-{{ id }} grid grid-cols-2 md:grid-cols-{{ numberOfColumns }} gap-2">
         {% for image in images %}
 
-            {% set caption = image.altText ?: image.title %}
+            {% set alt = image.altText ?: image.title %}
+            {% set lightboxCaption = alt %}
+            {% if image.copyright %}
+                {% set lightboxCaption = "#{alt} &copy; #{image.copyright}" %}
+            {% endif %}
 
             {% if craft.app.plugins.pluginEnabled('imager-x') %}
                 {% set transformedImage = craft.imager.transformImage(image, theme.lightboxImageTransform) %}
@@ -44,9 +48,9 @@
             {% endif %}
 
             <div class="relative">
-                <a class="bg-none block z-20 focus:outline-none focus:ring-4 focus:ring-black  overflow-hidden"
-                   href="{{ lightboxUrl }}" data-caption="{{ caption }}">
-                    {{ img(image, transform, {attrs: {alt: caption, class:'transform hover:scale-110 transition'}}) }}
+                <a class="bg-none block z-20 focus:outline-none focus:ring-4 focus:ring-black overflow-hidden"
+                   href="{{ lightboxUrl }}" data-caption="{{ lightboxCaption }}">
+                    {{ img(image, transform, {attrs: {alt: alt, class:'transform hover:scale-110 transition'}, showCopyright: false}) }}
                 </a>
             </div>
 
