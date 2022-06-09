@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1654542267
+dateModified: 1654792669
 elementSources:
   craft\elements\Asset:
     -
@@ -117,28 +117,24 @@ elementSources:
       heading: Site
       type: heading
     -
+      disabled: false
       key: singles
       tableAttributes:
-        - drafts
-        - 'field:55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2' # Featured Image
+        - section
         - link
       type: native
     -
+      disabled: false
       key: 'section:a6676538-ee52-4938-aaff-8d9d46b669af' # Page
       tableAttributes:
-        - drafts
-        - hasProvisionalDraft
         - type
-        - 'field:55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2' # Featured Image
         - postDate
         - link
       type: native
     -
+      disabled: false
       key: 'section:cd4b4d9a-0519-4f07-93e0-5957b57a9afd' # Legal
       tableAttributes:
-        - drafts
-        - hasProvisionalDraft
-        - 'field:55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2' # Featured Image
         - 'field:f6ff43e3-8e77-457f-91cb-101f517889c9' # Teaser
         - postDate
         - link
@@ -150,9 +146,7 @@ elementSources:
       disabled: false
       key: 'section:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
       tableAttributes:
-        - drafts
-        - hasProvisionalDraft
-        - 'field:55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2' # Featured Image
+        - 'field:f6ff43e3-8e77-457f-91cb-101f517889c9' # Teaser
         - author
         - postDate
         - link
@@ -161,9 +155,6 @@ elementSources:
       disabled: false
       key: 'section:a3a00a5e-73ba-4e8a-9800-375c9be802a9' # Topic
       tableAttributes:
-        - drafts
-        - hasProvisionalDraft
-        - 'field:55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2' # Featured Image
         - 'field:f6ff43e3-8e77-457f-91cb-101f517889c9' # Teaser
         - author
         - postDate
@@ -181,9 +172,9 @@ elementSources:
         - link
       type: native
     -
+      disabled: false
       key: 'section:61350169-3950-4815-aea9-b171958d6d8a' # Guide
       tableAttributes:
-        - drafts
         - 'field:cce5096c-8ab7-4940-9973-ad47671c92cb' # Admin Guide
         - author
         - postDate

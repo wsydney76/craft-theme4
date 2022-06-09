@@ -1,56 +1,56 @@
 {
-  "version": "1.0.0",
-  "description": "Flexible Theme Starter for Craft 4",
-  "require": {
-    "clubstudioltd/craft-asset-rev": "7.0.0",
-    "craftcms/cms": "4.0.4",
-    "craftcms/redactor": "3.0.0",
-    "fakerphp/faker": "^1.17",
-    "putyourlightson/craft-sprig": "2.0.1",
-    "spacecatninja/imager-x": "4.0.1",
-    "spicyweb/craft-embedded-assets": "3.0.2",
-    "vaersaagod/matrixmate": "2.0.1",
-    "vaersaagod/seomate": "2.0.1",
-    "verbb/smith": "2.0.0",
-    "verbb/super-table": "dev-craft-4 as 3.0.0-beta.5",
-    "wsydney76/elementmap": "^4.0.0",
-    "wsydney76/work": "^4.0.0",
-    "yiisoft/yii2-shell": "^2.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "modules\\": "modules/",
-      "config\\": "config/"
-    }
-  },
-  "config": {
-    "sort-packages": true,
-    "optimize-autoloader": true,
-    "platform": {
-      "php": "8.0.2"
+    "version": "1.0.0",
+    "description": "Flexible Theme Starter for Craft 4",
+    "require": {
+        "clubstudioltd/craft-asset-rev": "7.0.0",
+        "craftcms/cms": "4.0.4",
+        "craftcms/redactor": "3.0.0",
+        "fakerphp/faker": "^1.17",
+        "putyourlightson/craft-sprig": "2.0.1",
+        "spacecatninja/imager-x": "4.0.1",
+        "spicyweb/craft-embedded-assets": "3.0.2",
+        "vaersaagod/matrixmate": "2.0.1",
+        "vaersaagod/seomate": "2.0.2",
+        "verbb/smith": "2.0.0",
+        "verbb/super-table": "dev-craft-4 as 3.0.0-beta.5",
+        "wsydney76/elementmap": "^4.0.0",
+        "wsydney76/work": "^4.0.0",
+        "yiisoft/yii2-shell": "^2.0"
     },
-    "allow-plugins": {
-      "yiisoft/yii2-composer": true,
-      "craftcms/plugin-installer": true
-    }
-  },
-  "scripts": {
-    "post-install-cmd": [
-      "@php -r \"file_exists('config/Env.php') || copy('config/Env.php.example', 'config/Env.php');\""
-    ],
-    "pre-update-cmd": [
-      "@php craft off"
-    ],
-    "post-update-cmd": [
-      "@php craft clear-caches/all",
-      "@php craft migrate/all --interactive=0",
-      "@php craft on"
-    ]
-  },
-  "require-dev": {
-    "craftcms/rector": "dev-main",
-    "rector/rector": "^0.12.17"
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+    "autoload": {
+        "psr-4": {
+            "modules\\": "modules/",
+            "config\\": "config/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true,
+        "platform": {
+            "php": "8.0.2"
+        },
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true,
+            "craftcms/plugin-installer": true
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@php -r \"file_exists('config/Env.php') || copy('config/Env.php.example', 'config/Env.php');\""
+        ],
+        "pre-update-cmd": [
+            "@php craft off"
+        ],
+        "post-update-cmd": [
+            "@php craft clear-caches/all",
+            "@php craft migrate/all --interactive=0",
+            "@php craft on"
+        ]
+    },
+    "require-dev": {
+        "craftcms/rector": "dev-main",
+        "rector/rector": "^0.12.17"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
