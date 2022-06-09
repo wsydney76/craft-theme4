@@ -854,6 +854,9 @@ a.btn{
 .bottom-0{
   bottom: 0px;
 }
+.left-0{
+  left: 0px;
+}
 .bottom-4{
   bottom: 1rem;
 }
@@ -865,9 +868,6 @@ a.btn{
 }
 .top-8{
   top: 2rem;
-}
-.left-0{
-  left: 0px;
 }
 .z-20{
   z-index: 20;
