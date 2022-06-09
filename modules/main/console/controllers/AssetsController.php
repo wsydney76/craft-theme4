@@ -127,7 +127,7 @@ class AssetsController extends Controller
             $this->stdout(PHP_EOL);
         }
 
-        $this->stdout("Done with $errors error(s)");
+        $this->stdout("Done with $errors error(s)" . PHP_EOL);
 
         return ExitCode::OK;
     }

@@ -61,17 +61,21 @@ return [
                 'siteId' => '',
                 'uriPattern' => '^members/',
             ],
+            [
+                'siteId' => '',
+                'uriPattern' => '^mitglieder/',
+            ],
         ],
 
         // The storage type to use.
         //'cacheStorageType' => 'putyourlightson\blitz\drivers\storage\FileStorage',
 
         // The storage settings.
-        //'cacheStorageSettings' => [
-        //    'folderPath' => '@webroot/cache/blitz',
-        //    'createGzipFiles' => false,
-        //    'countCachedFiles' => true,
-        //],
+        'cacheStorageSettings' => [
+            'folderPath' => '@webroot/cache/blitz',
+            'createGzipFiles' => true,
+            'countCachedFiles' => true,
+        ],
 
         // The storage type classes to add to the plugin’s default storage types.
         //'cacheStorageTypes' => [],
