@@ -136,7 +136,7 @@
     {% if params.showCopyright and image.copyright %}
         <div class="relative inline-block overflow-hidden">
             {{ imgHtml|raw }}
-            <div class="absolute bottom-0 right-0 bg-black/30 rounded-tl px-1 py-0.5 text-white text-xs truncate">
+            <div class="absolute bottom-0 left-0 bg-black/30 rounded-tl px-1 py-0.5 text-white text-xs truncate">
                 {% if image.copyrightLink %}
                     &copy; <a href="{{ image.copyrightLink }}">{{ image.copyright }}</a>
                 {% else %}

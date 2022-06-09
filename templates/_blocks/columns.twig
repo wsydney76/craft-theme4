@@ -5,10 +5,10 @@
 {% set autoSpan = 6 %}
 
 {% for column in columns %}
-	{% if column.span ?? 'auto' != 'auto' %}
-	    {% set sumSpans = sumSpans + column.span.value %}
+    {% if column.span ?? 'auto' != 'auto' %}
+        {% set sumSpans = sumSpans + column.span.value %}
         {% set countAutoCols = countAutoCols - 1 %}
-	{% endif %}
+    {% endif %}
 {% endfor %}
 
 {% if countAutoCols %}
@@ -20,7 +20,7 @@
 <div class="grid lg:grid-cols-12 gap-8 px-block max-w-screen-{{ width }} mx-auto">
 
     {% if block.heading %}
-        <div class="columns-heading lg:col-span-12 text-center font-headings text-h2 mb-8">
+        <div class="columns-heading lg:col-span-12 font-headings text-h2 mb-8">
             {{ block.heading }}
         </div>
     {% endif %}
@@ -40,7 +40,7 @@
                         colSpan,
                         columnsWidth,
                         context: 'column'
-                    }  %}
+                    } %}
                 </div>
             {% endfor %}
         </div>
