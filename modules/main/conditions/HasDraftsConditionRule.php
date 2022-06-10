@@ -34,8 +34,8 @@ class HasDraftsConditionRule extends BaseLightswitchConditionRule implements Ele
      */
     public function modifyQuery(ElementQueryInterface $query): void
     {
-        $userId = Craft::$app->user->identity->id;
         if ($this->value) {
+            $userId = Craft::$app->user->identity->id;
             $draftsTable = Table::DRAFTS;
             $query->andWhere("EXISTS (SELECT * from $draftsTable WHERE elements.id = $draftsTable.canonicalId AND $draftsTable.creatorId = $userId)");
         }
