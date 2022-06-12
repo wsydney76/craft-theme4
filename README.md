@@ -19,7 +19,8 @@ Usefull for demos and hobby projects.
 * Run `php craft migrate/all`
 * Run `php craft main/init` Sets up things you will always need.
 
-Tip: On Windows you can run `.\install` to perform all steps at once.
+Tip: To setup quick demo projects On Windows you can run `.\install` to perform all steps at once.
+See `setup-temp.php` for conventions.
 
 ## Install with Craft Nitro
 
@@ -47,6 +48,10 @@ Replace `project` with your project name
 * Run `nitro craft migrate/all`
 
 * For creating faker content/membership entries as described below replace `php craft` with `nitro craft`
+
+## Set up Email setting
+
+* Edit `config/Env.php` with your email settings.
 
 ## Set up your dev environment:
 
