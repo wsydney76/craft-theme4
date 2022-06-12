@@ -4,7 +4,7 @@ echo "Conventions:\n";
 echo "Database must exist with the name of the handle, server:localhost/3306 user: root, no password.\n";
 echo "Web server must be setup with http://<handle>.local\n\n";
 
-$handle = readline('Project handle: ');
+$handle = $argv[1] ?? readline('Project handle: ');
 
 $inputFile = './config/Env.php.example';
 $outputFile = './config/Env.php';

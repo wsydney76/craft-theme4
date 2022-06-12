@@ -103,9 +103,11 @@ class SeedController extends Controller
     public function actionCreateImages($num = 30, $timeout = 10): int
     {
 
-        if (!$this->confirm("Download {$num} example images from Unsplash? (Timeout {$timeout} sec.)")) {
+        if ($this->interactive && !$this->confirm("Download {$num} example images from Unsplash?")) {
             return ExitCode::UNSPECIFIED_ERROR;
         }
+
+        $this->stdout("Trying to download {$num} example images from Unsplash (Timeout {$timeout} sec.)" . PHP_EOL);
 
         $client = Craft::createGuzzleClient();
 
@@ -177,9 +179,11 @@ class SeedController extends Controller
             return ExitCode::UNSPECIFIED_ERROR;
         }
 
-        if (!$this->confirm("Create {$num} entries of type '{$section->name}'?")) {
+        if ($this->interactive && !$this->confirm("Create {$num} entries of type '{$section->name}'?")) {
             return ExitCode::UNSPECIFIED_ERROR;
         }
+
+        $this->stdout("Creating {$num} entries of type '{$section->name}'." . PHP_EOL);
 
         $faker = Factory::create();
 
@@ -384,9 +388,11 @@ class SeedController extends Controller
     public function actionResetHomepage(): int
     {
 
-        if (!$this->confirm('Reset homepage content to random articles?')) {
+        if ($this->interactive && !$this->confirm('Reset homepage content to random articles?')) {
             return ExitCode::UNSPECIFIED_ERROR;
         }
+
+        $this->stdout("Creating content for homepage". PHP_EOL);
 
         $faker = Factory::create();
 
@@ -473,9 +479,11 @@ class SeedController extends Controller
     public function actionResetSiteInfo(): int
     {
 
-        if (!$this->confirm('Update Site Info?')) {
+        if ($this->interactive && !$this->confirm('Update Site Info?')) {
             return ExitCode::UNSPECIFIED_ERROR;
         }
+
+        $this->stdout("Updating Site Info" .PHP_EOL);
 
         $global = GlobalSet::find()->handle('siteInfo')->one();
         if (!$global) {
@@ -483,14 +491,14 @@ class SeedController extends Controller
             return ExitCode::UNSPECIFIED_ERROR;
         }
 
-        $siteName = $this->prompt('Site Name: ', ['default' => $global->siteName]);
-        $copyright = $this->prompt('Copyright: ', ['default' => $global->copyright]);
-        $setFeaturedImage = $this->confirm('Set fallback image?');
+        if ($this->interactive) {
+            $siteName = $this->prompt('Site Name: ', ['default' => $global->siteName]);
+            $copyright = $this->prompt('Copyright: ', ['default' => $global->copyright]);
+            $global->setFieldValue('siteName', $siteName);
+            $global->setFieldValue('copyright', $copyright);
+        }
 
-        $global->setFieldValue('siteName', $siteName);
-        $global->setFieldValue('copyright', $copyright);
-
-        if ($setFeaturedImage) {
+        if (!$this->interactive || $this->confirm('Set fallback image?')) {
             $image = $this->getRandomImage();
             if ($image) {
                 $global->setFieldValue('featuredImage', [$image->id]);
@@ -516,8 +524,7 @@ class SeedController extends Controller
      */
     public function actionCreateTransforms(): int
     {
-
-        return Craft::$app->runAction('main/assets/create-transforms');
+        return  Craft::$app->runAction('main/assets/create-transforms', ['interactive' => $this->interactive]);
     }
 
     // php craft main/seed/create-members-entries
@@ -531,7 +538,7 @@ class SeedController extends Controller
             return ExitCode::UNSPECIFIED_ERROR;
         }
 
-        if (!$this->confirm('Create Membership Entries?')) {
+        if ($this->interactive && !$this->confirm('Create Membership Entries?')) {
             return ExitCode::UNSPECIFIED_ERROR;
         }
 

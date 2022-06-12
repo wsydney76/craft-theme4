@@ -1,7 +1,10 @@
 @echo off
+set /P handle=Enter handle:
+
 composer install --no-dev &&^
-php temp-init.php &&^
+php setup-temp.php %handle% &&^
 php craft install --interactive=0 --username=admin --password=password  --email=admin@example.com  &&^
 php craft migrate/all --interactive=0 &&^
-php craft main/init &&^
-php craft main/seed
+php craft main/init --interactive=0 &&^
+php craft main/seed --interactive=0
+

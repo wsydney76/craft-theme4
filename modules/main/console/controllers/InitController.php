@@ -16,6 +16,7 @@ use function array_diff;
 use function copy;
 use function pathinfo;
 use function scandir;
+use function var_dump;
 use const DIRECTORY_SEPARATOR;
 use const PHP_EOL;
 
@@ -29,7 +30,8 @@ class InitController extends Controller
 
     public function actionAll(): int
     {
-        if (!$this->confirm('Run all init actions? This should only be done once, immediately after installing.')) {
+
+        if ($this->interactive && !$this->confirm('Run all init actions? This should only be done once, immediately after installing.')) {
             return ExitCode::UNSPECIFIED_ERROR;
         }
 
