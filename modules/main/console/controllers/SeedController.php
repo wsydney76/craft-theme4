@@ -256,13 +256,13 @@ class SeedController extends Controller
             if (!Craft::$app->elements->saveElement($entry)) {
                 $this->stderr('failed: ' . implode(', ', $entry->getErrorSummary(true)) . PHP_EOL, Console::FG_RED);
             } else {
-                /*$localEntry = $entry->getLocalized()->one();
+                $localEntry = $entry->getLocalized()->one();
                 if ($localEntry) {
                     $localEntry->title = 'Examples';
                     $localEntry->slug = 'examples';
-                    $localEntry->setFieldValue('teaser', 'Sammlung von automatisch generierten Beispielen');
+                    $localEntry->setFieldValue('teaser', 'Collection of automatically generated examples');
                     Craft::$app->elements->saveElement($localEntry);
-                }*/
+                }
                 $this->stdout('created' . PHP_EOL);
             }
         }
@@ -392,7 +392,7 @@ class SeedController extends Controller
             return ExitCode::UNSPECIFIED_ERROR;
         }
 
-        $this->stdout("Creating content for homepage". PHP_EOL);
+        $this->stdout("Creating content for homepage" . PHP_EOL);
 
         $faker = Factory::create();
 
@@ -483,7 +483,7 @@ class SeedController extends Controller
             return ExitCode::UNSPECIFIED_ERROR;
         }
 
-        $this->stdout("Updating Site Info" .PHP_EOL);
+        $this->stdout("Updating Site Info" . PHP_EOL);
 
         $global = GlobalSet::find()->handle('siteInfo')->one();
         if (!$global) {
@@ -524,7 +524,7 @@ class SeedController extends Controller
      */
     public function actionCreateTransforms(): int
     {
-        return  Craft::$app->runAction('main/assets/create-transforms', ['interactive' => $this->interactive]);
+        return Craft::$app->runAction('main/assets/create-transforms', ['interactive' => $this->interactive]);
     }
 
     // php craft main/seed/create-members-entries
