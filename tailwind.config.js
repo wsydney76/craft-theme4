@@ -1,3 +1,5 @@
+/** @type {import('tailwindcss').Config} */
+
 const colors = require('tailwindcss/colors')
 
 // Default Theme color
