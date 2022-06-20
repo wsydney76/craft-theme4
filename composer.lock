@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ca6fb12f37645252dfdb046cc13f74b9",
+    "content-hash": "2a3ceab00ff9a9e974b652757bd3d766",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -45,11 +45,11 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.226.0",
+            "version": "3.227.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/d76d4fe0fa603ddc3f5c54d9664438dc1a808859",
-                "reference": "d76d4fe0fa603ddc3f5c54d9664438dc1a808859",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/88d803113ade68604ec03c591d65e1e44406ab8e",
+                "reference": "88d803113ade68604ec03c591d65e1e44406ab8e",
                 "shasum": ""
             },
             "require": {
@@ -57,9 +57,9 @@
                 "ext-json": "*",
                 "ext-pcre": "*",
                 "ext-simplexml": "*",
-                "guzzlehttp/guzzle": "^5.3.3 || ^6.2.1 || ^7.0",
+                "guzzlehttp/guzzle": "^6.5.7 || ^7.4.4",
                 "guzzlehttp/promises": "^1.4.0",
-                "guzzlehttp/psr7": "^1.7.0 || ^2.1.1",
+                "guzzlehttp/psr7": "^1.8.5 || ^2.3",
                 "mtdowling/jmespath.php": "^2.6",
                 "php": ">=5.5"
             },
@@ -105,7 +105,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2022-06-16T18:14:10+00:00"
+            "time": "2022-06-17T18:15:06+00:00"
         },
         {
             "name": "cebe/markdown",
@@ -1093,11 +1093,11 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "3.2",
+            "version": "3.2.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/a5ed8d58ed0c340a7c2109f587951b1c84cf6286",
-                "reference": "a5ed8d58ed0c340a7c2109f587951b1c84cf6286",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/f88dcf4b14af14a98ad96b14b2b317969eab6715",
+                "reference": "f88dcf4b14af14a98ad96b14b2b317969eab6715",
                 "shasum": ""
             },
             "require": {
@@ -1136,7 +1136,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2022-05-28T22:19:18+00:00"
+            "time": "2022-06-18T20:57:19+00:00"
         },
         {
             "name": "elvanto/litemoji",
@@ -3665,11 +3665,11 @@
         },
         {
             "name": "spacecatninja/imager-x",
-            "version": "4.1.0",
+            "version": "4.1.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spacecatninja/craft-imager-x/zipball/8afa1ef5f8f675203cd041d345cdf2f386f417f6",
-                "reference": "8afa1ef5f8f675203cd041d345cdf2f386f417f6",
+                "url": "https://api.github.com/repos/spacecatninja/craft-imager-x/zipball/a6d434ac9d8e80c8d46d01b89fa8dcba2aabdf1f",
+                "reference": "a6d434ac9d8e80c8d46d01b89fa8dcba2aabdf1f",
                 "shasum": ""
             },
             "require": {
@@ -3723,10 +3723,10 @@
                 "transform"
             ],
             "support": {
-                "docs": "http://imager-x-v3.spacecat.ninja/",
+                "docs": "http://imager-x.spacecat.ninja/",
                 "issues": "https://github.com/spacecatninja/craft-imager-x/issues"
             },
-            "time": "2022-06-16T13:46:30+00:00"
+            "time": "2022-06-19T19:26:32+00:00"
         },
         {
             "name": "spatie/schema-org",
