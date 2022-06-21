@@ -42,7 +42,7 @@
 
     <figure class="{{ boxed ? 'border-2 border-border dark:border-gray-600 p-4 bg-white dark:bg-gray-800 shadow-lg' }} {{ captionRight ? 'md:flow-root ' }}">
 
-        {{ img(image, transform) }}
+        {{ img(image, transform, {imageEffects: block.imageEffects}) }}
 
         {% set caption = caption ?? block.caption %}
 

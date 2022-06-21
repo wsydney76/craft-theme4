@@ -136,6 +136,17 @@ fields:
       localizeRelations: false
       maxRelations: 1
       minRelations: null
+      selectionCondition:
+        __assoc__:
+          -
+            - elementType
+            - craft\elements\Entry
+          -
+            - fieldContext
+            - global
+          -
+            - class
+            - craft\elements\conditions\entries\EntryCondition
       selectionLabel: 'Add a topic'
       showSiteMenu: false
       source: null
@@ -160,6 +171,17 @@ fields:
       localizeRelations: false
       maxRelations: null
       minRelations: null
+      selectionCondition:
+        __assoc__:
+          -
+            - elementType
+            - craft\elements\Entry
+          -
+            - fieldContext
+            - global
+          -
+            - class
+            - craft\elements\conditions\entries\EntryCondition
       selectionLabel: 'Add article'
       showSiteMenu: false
       source: null

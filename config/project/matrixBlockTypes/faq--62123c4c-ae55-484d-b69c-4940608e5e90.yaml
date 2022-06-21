@@ -72,7 +72,7 @@ fields:
     searchable: true
     settings:
       blockTypeFields: 0
-      changedFieldIndicator: null
+      changedFieldIndicator: 598725913
       columns:
         __assoc__:
           -

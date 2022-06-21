@@ -64,6 +64,16 @@ fieldLayouts:
             uid: 866119fe-6c65-4857-b731-8dddbc6d867a
             warning: null
             width: 25
+          -
+            fieldUid: 484e711a-2618-494e-a986-e11b8912b1ff # Image Effects
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9a62d22e-c0ce-4f70-af07-b8fec13e4d10
+            warning: null
+            width: 100
         name: Content
         uid: 73e8b164-ecae-478e-a26f-46a6485e3087
 fields:
@@ -105,6 +115,17 @@ fields:
       restrictedDefaultUploadSubpath: null
       restrictedLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
       restrictedLocationSubpath: null
+      selectionCondition:
+        __assoc__:
+          -
+            - elementType
+            - craft\elements\Asset
+          -
+            - fieldContext
+            - global
+          -
+            - class
+            - craft\elements\conditions\assets\AssetCondition
       selectionLabel: 'Select image'
       showSiteMenu: true
       showUnpermittedFiles: false
@@ -133,6 +154,26 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: modules\main\fields\WidthField
+  484e711a-2618-494e-a986-e11b8912b1ff: # Image Effects
+    columnSuffix: eynadnwm
+    contentColumnType: text
+    fieldGroup: null
+    handle: imageEffects
+    instructions: "Effects to be applied on transformed images. See [docs](https://imager-x.spacecat.ninja/effects.html). Requires Imager X plugin.\r\n\r\nHas to be valid JSON, e.g {\"sharpen\": false}"
+    name: 'Image Effects'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: true
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   599e26fb-8feb-4096-b249-19bdc57c275a: # Margins Y
     columnSuffix: null
     contentColumnType: string

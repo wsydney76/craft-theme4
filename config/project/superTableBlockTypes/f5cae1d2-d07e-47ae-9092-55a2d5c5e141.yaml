@@ -11,7 +11,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: a2881bf4-491e-4d77-a982-fac82dd3f106
+            uid: 42e5b2dd-f503-40e1-9a7e-2cedc64362b5
             warning: null
             width: 100
           -
@@ -21,7 +21,7 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 2864f7bb-3396-49c9-8ce3-881d46d84dc0
+            uid: a9e40243-66ba-4ba6-b03e-65e5630b7ace
             warning: null
             width: 100
           -
@@ -31,7 +31,7 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 29cc69d9-17ba-432d-b9e9-2cbb3385c524
+            uid: 9dd56e4c-06a4-4b4a-93f2-5a5f08698c4f
             warning: null
             width: 100
           -
@@ -41,7 +41,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 2e3f8b42-c483-448a-879d-d94afea69721
+            uid: 372683f5-c7db-4a8e-87c9-da587b53b4e6
             warning: null
             width: 100
           -
@@ -51,7 +51,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 3f865f14-ffa1-408d-bd06-9bcff417b675
+            uid: 4bffbd9c-f3a1-485a-95bc-427303576ddb
             warning: null
             width: 100
         name: Content
@@ -102,6 +102,17 @@ fields:
       restrictedDefaultUploadSubpath: null
       restrictedLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
       restrictedLocationSubpath: null
+      selectionCondition:
+        __assoc__:
+          -
+            - elementType
+            - craft\elements\Asset
+          -
+            - fieldContext
+            - global
+          -
+            - class
+            - craft\elements\conditions\assets\AssetCondition
       selectionLabel: 'Select image'
       showSiteMenu: true
       showUnpermittedFiles: false
@@ -160,6 +171,17 @@ fields:
       restrictedDefaultUploadSubpath: null
       restrictedLocationSource: 'volume:f2bd38f3-47f5-4e49-be18-fa89073255fd' # Media
       restrictedLocationSubpath: null
+      selectionCondition:
+        __assoc__:
+          -
+            - elementType
+            - craft\elements\Asset
+          -
+            - fieldContext
+            - global
+          -
+            - class
+            - craft\elements\conditions\assets\AssetCondition
       selectionLabel: 'Select file'
       showSiteMenu: true
       showUnpermittedFiles: false

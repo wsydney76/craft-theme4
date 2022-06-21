@@ -97,6 +97,7 @@ return [
     'Image Align' => 'Bildausrichtung',
     'Image and Text' => 'Bild und Text',
     'Image Background Color' => 'Bildhintergrundfarbe',
+    'Image effects' => 'Bildeffekte',
     'Image Left' => 'Bild links',
     'Image Right' => 'Bild rechts',
     'Image' => 'Bild',

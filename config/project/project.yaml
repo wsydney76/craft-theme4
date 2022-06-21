@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1655035474
+dateModified: 1655739818
 elementSources:
   craft\elements\Asset:
     -
@@ -410,6 +410,7 @@ meta:
     0382c650-1ca7-4546-9397-dbc92da512a5: 'Spotlight Link' # Spotlight Link
     00413a8e-7538-46a8-8254-eef6bff21efb: Guide # Guide
     484ad434-775d-49da-ba41-8fef629fdf05: Heading # Heading
+    484e711a-2618-494e-a986-e11b8912b1ff: 'Image Effects' # Image Effects
     490eba08-64fd-4e1e-96fd-e726efe3aa99: Institution # Institution
     0492cf04-a657-4145-a124-7c2f3d500c63: 'Copyright Link' # Copyright Link
     499db390-ca29-450f-8c5d-9a23d0e1e353: Text # Text

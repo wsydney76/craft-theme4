@@ -24,6 +24,10 @@ return [
                         [
                             'label' => Craft::t('site', 'Layout'),
                             'fields' => ['aspectRatio', 'width', 'marginsY', 'styles']
+                        ],
+                        [
+                            'label' => Craft::t('site', 'Image effects'),
+                            'fields' => ['imageEffects']
                         ]
 
                     ]

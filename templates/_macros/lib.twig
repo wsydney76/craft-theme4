@@ -3,7 +3,8 @@
     {% set params = {
         attrs: {},
         showCopyright: true,
-        createSrcset: true
+        createSrcset: true,
+        imageEffects: null
     }|merge(params) %}
 
     {% if theme.skipSrcsetInDevMode and devMode %}
@@ -49,7 +50,9 @@
                 {% set transform = transform|merge({width: image.width, height: image.height }) %}
             {% endif %}
 
-            {% if image.imageEffects %}
+            {% if params.imageEffects %}
+                {% set effects = params.imageEffects|json_decode %}
+            {% elseif image.imageEffects %}
                 {% set effects = image.imageEffects|json_decode %}
             {% else %}
                 {% set effects = transform.effects ?? theme.defaultImageEffects %}

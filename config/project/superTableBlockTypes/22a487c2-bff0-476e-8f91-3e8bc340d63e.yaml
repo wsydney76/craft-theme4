@@ -11,7 +11,7 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: cd596a3b-5598-4309-8663-7125be1d02a4
+            uid: 3c64ab70-1d58-49a7-945e-7fa2aa8b3475
             warning: null
             width: 100
           -
@@ -21,7 +21,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: a679f23c-17ae-47ba-abcb-21fed9581623
+            uid: b85f9011-9b4a-43c0-8634-c927741641f6
             warning: null
             width: 100
           -
@@ -31,7 +31,7 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 1ec4abaa-cf59-4201-81b0-86806c53bc62
+            uid: 8ea22a7d-1bc2-46b6-a5c9-94b71e9c1498
             warning: null
             width: 100
           -
@@ -41,7 +41,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: f7055c0b-c8d7-4cb8-bd0c-a2ddc77dcd1a
+            uid: 44aadbff-3258-4780-b8bf-ce49310e14d2
             warning: null
             width: 100
         name: Content
@@ -73,6 +73,17 @@ fields:
       localizeRelations: false
       maxRelations: 1
       minRelations: null
+      selectionCondition:
+        __assoc__:
+          -
+            - elementType
+            - craft\elements\Entry
+          -
+            - fieldContext
+            - global
+          -
+            - class
+            - craft\elements\conditions\entries\EntryCondition
       selectionLabel: 'Select entry'
       showSiteMenu: true
       source: null

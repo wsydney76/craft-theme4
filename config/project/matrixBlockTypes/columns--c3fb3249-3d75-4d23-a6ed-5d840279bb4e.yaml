@@ -101,7 +101,7 @@ fields:
     searchable: true
     settings:
       blockTypeFields: 0
-      changedFieldIndicator: null
+      changedFieldIndicator: 806880187
       columns:
         __assoc__:
           -
