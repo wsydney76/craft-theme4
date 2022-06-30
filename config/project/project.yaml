@@ -1,6 +1,6 @@
 assets:
   tempVolumeUid: 1d9fc6a9-72e3-404b-86a9-2ba2014002f0 # Temporary Uploads
-dateModified: 1655739818
+dateModified: 1656538137
 elementSources:
   craft\elements\Asset:
     -
@@ -146,8 +146,8 @@ elementSources:
       disabled: false
       key: 'section:6087074e-26c7-4216-b6b3-86fbe41e437f' # Article
       tableAttributes:
+        - bigFeaturedImage
         - 'field:f6ff43e3-8e77-457f-91cb-101f517889c9' # Teaser
-        - author
         - postDate
         - link
       type: native

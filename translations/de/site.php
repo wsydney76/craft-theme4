@@ -72,6 +72,7 @@ return [
     'Entries List' => 'Eintragsliste',
     'Entries' => 'Einträge',
     'Featured Image' => 'Beitragsbild',
+    'Featured Image (big)' => 'Beitragsbild (groß)',
     'Featured' => 'Hervorgehoben',
     'First Name' => 'Vorname',
     'Footer Background' => 'Footer-Hintergrundfarbe',

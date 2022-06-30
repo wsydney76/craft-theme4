@@ -4,19 +4,23 @@ namespace modules\main;
 
 use Craft;
 use craft\base\conditions\BaseCondition;
+use craft\base\Element;
 use craft\elements\Asset;
 use craft\elements\Entry;
 use craft\events\DefineBehaviorsEvent;
 use craft\events\DefineRulesEvent;
 use craft\events\ElementEvent;
+use craft\events\ElementIndexTableAttributeEvent;
 use craft\events\ModelEvent;
 use craft\events\RegisterComponentTypesEvent;
 use craft\events\RegisterConditionRuleTypesEvent;
+use craft\events\RegisterElementTableAttributesEvent;
+use craft\events\SetElementTableAttributeHtmlEvent;
 use craft\helpers\ElementHelper;
+use craft\helpers\Html;
 use craft\services\Elements;
 use craft\services\Fields;
 use craft\web\View;
-use Illuminate\Support\Collection;
 use modules\main\behaviors\EntryBehavior;
 use modules\main\conditions\HasDraftsConditionRule;
 use modules\main\conditions\HasEmptyAltTextConditionRule;
@@ -206,12 +210,69 @@ class MainModule extends Module
             return '<input type="text" name="dummy-first-name" value="wtf" style="display: none">';
         });
 
-        // Register Collection::one() as an alias of first(), for consistency with yii\db\Query.
-        // TODO: Remove when upgrading to 4.1
-        Collection::macro('one', function() {
-            /** @var Collection $this */
-            return $this->first(...func_get_args());
+        $this->_setElementIndexColumns();
+    }
+
+    protected function _setElementIndexColumns()
+    {
+        // Register element index column
+        Event::on(
+            Entry::class,
+            Element::EVENT_REGISTER_TABLE_ATTRIBUTES, function(RegisterElementTableAttributesEvent $event) {
+            $event->tableAttributes['bigFeaturedImage'] = ['label' => Craft::t('site', 'Featured Image (big)')];
         });
+
+        Event::on(
+            Entry::class,
+            Element::EVENT_SET_TABLE_ATTRIBUTE_HTML, function(SetElementTableAttributeHtmlEvent $event) {
+
+            if ($event->attribute == 'bigFeaturedImage') {
+                /** @var Entry $entry */
+                $entry = $event->sender;
+                $event->html = 'n/a';
+                $event->handled = true;
+
+                // Don't wait for transformed images if generateTransformsBeforePageLoad = true
+                $config = Craft::$app->config->general;
+                $oldSetting = $config->generateTransformsBeforePageLoad;
+                $config->generateTransformsBeforePageLoad = false;
+
+                if ($entry->featuredImage) {
+                    $image = $entry->featuredImage->one();
+                    if ($image) {
+                        $image->setTransform(['width' => 200, 'height' => 120]);
+
+                        $event->html = Html::tag('a',
+                            Html::tag('img', '', [
+                                'src' => $image->url,
+                                'style' => 'border-radius: 3px',
+                                'width' => $image->width,
+                                'height' => $image->height,
+                                'alt' => $image->alt ?? $image->title
+                            ]),
+                            [
+                                'href' => $image->cpEditUrl
+                            ]);
+                    }
+                }
+
+                $config->generateTransformsBeforePageLoad = $oldSetting;
+            }
+        });
+
+        Event::on(
+            Entry::class,
+            Entry::EVENT_PREP_QUERY_FOR_TABLE_ATTRIBUTE,
+            function(ElementIndexTableAttributeEvent $event) {
+                $query = $event->query;
+                $attr = $event->attribute;
+
+                if ($attr === 'bigFeaturedImage') {
+                    $query->andWith(
+                        ['featuredImage', ['withTransforms' => [['width' => 200, 'height' => 120]]]]
+                    );
+                }
+            });
     }
 
 }
