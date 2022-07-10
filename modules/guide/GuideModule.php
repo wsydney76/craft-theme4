@@ -3,6 +3,8 @@
 namespace modules\guide;
 
 use Craft;
+use craft\elements\Entry;
+use craft\events\DefineHtmlEvent;
 use craft\events\RegisterComponentTypesEvent;
 use craft\events\RegisterTemplateRootsEvent;
 use craft\events\RegisterUrlRulesEvent;
@@ -77,14 +79,11 @@ class GuideModule extends Module
             );
         }
 
-        // Register Edit Screen extensions
-        Craft::$app->view->hook('cp.entries.edit.meta', function(&$context) {
-            if ($context['entry'] != null) {
-                return Craft::$app->view->renderTemplate('guide/editorbutton.twig', ['entry' => $context['entry']]);
-            }
-
-            return '';
-        });
+	    Event::on(
+			Entry::class,
+		    Entry::EVENT_DEFINE_SIDEBAR_HTML, function(DefineHtmlEvent $event) {
+				$event->html .= Craft::$app->view->renderTemplate('guide/editorbutton.twig', ['entry' => $event->sender]);
+	    });
 
         // Register Twig extension for theme variable
         Craft::$app->view->registerTwigExtension(new TwigExtension());

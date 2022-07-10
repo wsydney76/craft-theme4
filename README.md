@@ -13,7 +13,15 @@ Usefull for demos and hobby projects.
 * Set up a web server pointing to the `web` directory of your project. Alternatively you can run `php craft serve` and
   use `http://localhost:8080` as your domain.
 
-## Installation
+## Clone Repository
+
+* Open Terminal (On Windows: Open WSL2 Terminal (e.g. Ubuntu) as administrator)
+* `cd <your-dev-directory`
+* `git clone https://github.com/wsydney76/craft-theme4 project`
+* `cd project`
+
+
+## Installation in WAMP/XAMPP/MAMPP etc.
 
 * Run `composer install --no-dev`
 * Edit `config/Env.php` with your environment specific settings.
@@ -24,18 +32,11 @@ Usefull for demos and hobby projects.
 Tip: To setup quick demo projects On Windows you can run `.\install` to perform all steps at once.
 See `setup-temp.php` for conventions.
 
-## Install with DDEV
+### Install with DDEV
 
 Replace `project` with your project name
 
-### Clone Repository
-
-* Open Terminal (On Windows: Open WSL2 Terminal (e.g. Ubuntu) as administrator)
-* `cd <your-dev-directory`
-* `git clone https://github.com/wsydney76/craft-theme4 project`
-* `cd project`
-
-### Set things up
+#### Set things up
 
 * Create DDEV config: `ddev config --project-type=php --php-version=8.1 --nodejs-version=14 --http-port=81 --https-port=8443`. You can omit
   the ports if you are using the default ports 80/8443
