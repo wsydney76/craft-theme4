@@ -6,7 +6,7 @@
        href="{{ entry.url }}">
         <div>
             <div>
-                {% set image = entry.featuredImage.one %}
+                {% set image = entry.featuredImage.one ?? null %}
                 {% if not image %}
                     {% set image = siteInfo.featuredImage.one %}
                 {% endif %}
