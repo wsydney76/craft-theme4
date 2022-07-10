@@ -1,6 +1,8 @@
 # Theme4 Craft Starter
 
-(Semi-) flexible Craft 4 Starter Project.
+(Semi-) flexible Craft 4 Starter Project. 
+
+Pre-release version, ready for testing and feedback.
 
 Usefull for demos and hobby projects.
 
