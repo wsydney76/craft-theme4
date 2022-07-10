@@ -22,32 +22,25 @@ Usefull for demos and hobby projects.
 Tip: To setup quick demo projects On Windows you can run `.\install` to perform all steps at once.
 See `setup-temp.php` for conventions.
 
-## Install with Craft Nitro
+## Install with DDEV
 
 Replace `project` with your project name
 
 * Open Terminal (On Windows: Open WSL2 Terminal (e.g. Ubuntu) as administrator)
 * `cd <your-dev-directory`
-* `nitro create https://github.com/wsydney76/craft-theme4 project`
-    * Confirm hostname `project.nitro` and webroot `web`
-    * Choose a PHP version: 8.0
-    * Add a database: Y
-    * Select MySql
-    * Enter database name: project
-* On Windows: Follow the instructions to update your hosts file from a Windows shell terminall
+* `git clone https://github.com/wsydney76/craft-theme4 project`
 * On Windows: run `sudo chmod -R 777 project` (More sensitive minds follow the 'Nitro on Windows' documentation...)
-* Edit `config/Env.php` with your environment specific settings
-    * DB_SERVER: Name of the nitro db container, typically `mysql-8.0-3306.database.nitro`
-    * DB_DATABASE: As assigned above
-    * DB_USER: nitro
-    * DB_PASSWORTD: nitro
-    * DEFAULT_SITE_URL: `https://project.nitro`
 * `cd project`
-* Run `nitro craft install` Enter you user data and confirm the other settings.
-* Run `nitro craft migrate/all`
-* Run `nitro craft migrate/all`
+* Create DDEV config: `ddev config --project-type=php --php-version=8.1 --nodejs-version=14 --http-port=81 --https-port=8443`. You can omit
+  the ports if you are using the default ports 80/8443
+* `ddev start`
+* `ddev php setup-ddev.php`. This will create a `config/Env.php' file with default settings. Use your project name as
+  handle when asked.
+* Run `ddev composer install`
+* Run `ddev php craft install --interactive=0 --username=admin --password=password --email=admin@example.com`
+* Run `ddev php craft migrate/all --interactive=0`
 
-* For creating faker content/membership entries as described below replace `php craft` with `nitro craft`
+* For creating faker content/membership entries as described below replace `php craft` with `ddev php craft`
 
 ## Set up Email setting
 

@@ -3,8 +3,10 @@ fieldLayouts:
   10dce2c2-885b-4a43-b29b-bd3e0ad3c037:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: bf0f9db1-27b9-4a19-8e36-fc5439109d73 # Heading
             instructions: null
             label: null
@@ -12,9 +14,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: fcd27d15-a17e-44f7-a1fa-32fa25901188
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: a6f9a628-cf74-47fd-aebe-0587bea06e3c # Columns
             instructions: null
             label: null
@@ -22,9 +26,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 28e722c2-adec-43b6-b715-9d3636c48a65
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: b9e12f8a-d90b-4458-a578-7025f7d0d90a # Width
             instructions: null
             label: null
@@ -32,9 +38,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 334032fb-461b-4b94-816f-6fd1d72a1820
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 7e7c06a8-5d97-4fc6-b2cb-5dd34caec986 # Margins Y
             instructions: null
             label: null
@@ -42,9 +50,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 6a8adb43-29d4-49a7-8f92-5e57000250b1
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: ea0da518-95b9-47c2-8dec-9f2ff43ca7f4 # Background color
             instructions: null
             label: null
@@ -52,9 +62,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: bd829ced-e110-4426-8c88-cdd179191ccb
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 06cc6bfc-a991-4aa6-99af-018de34f8bf4 # Text color
             instructions: null
             label: null
@@ -62,10 +74,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 17ff364c-6297-4467-878e-a34056c71427
+            userCondition: null
             warning: null
             width: 25
         name: Content
         uid: fa8cc2ba-1458-4ec3-a18a-c0be9a0f032b
+        userCondition: null
 fields:
   06cc6bfc-a991-4aa6-99af-018de34f8bf4: # Text color
     columnSuffix: null

@@ -3,8 +3,10 @@ fieldLayouts:
   3a5134c5-c51e-46fc-bbc0-589a0ce04e92:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 3cf774ef-1913-42fe-893f-35e693837468 # Heading
             instructions: null
             label: null
@@ -12,9 +14,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 5500a1f8-e73a-413d-b88f-a51e9132597a
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 02218d8a-3949-46f1-a82d-3bdaaaee7db3 # Articles
             instructions: null
             label: null
@@ -22,9 +26,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: acdf30d4-21db-4c4e-971c-fbb33659fe89
+            userCondition: null
             warning: null
             width: 50
           -
+            elementCondition: null
             fieldUid: 52e2410d-b8f0-4a26-8ee4-4991e1030be2 # Topic
             instructions: null
             label: null
@@ -32,9 +38,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: c8193387-0952-4e4f-a88a-fce86bb843f7
+            userCondition: null
             warning: null
             width: 50
           -
+            elementCondition: null
             fieldUid: 4cbc8de9-52d8-4f78-8a28-8d46a7f76dea # Style
             instructions: null
             label: null
@@ -42,9 +50,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 232498de-9e6e-4b14-89dc-a5c0d2fbfd9d
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 545503ea-c13e-4d00-b7b4-048402b77c79 # Show Author and Date
             instructions: null
             label: null
@@ -52,10 +62,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 7f81f92e-202f-4d38-8615-27f12ce1c9e7
+            userCondition: null
             warning: null
             width: 25
         name: Content
         uid: 3a6fb47e-e6ab-4e1d-a094-21d973be07be
+        userCondition: null
 fields:
   3cf774ef-1913-42fe-893f-35e693837468: # Heading
     columnSuffix: null

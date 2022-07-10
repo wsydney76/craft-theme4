@@ -2,6 +2,7 @@ fieldLayouts:
   c9ac19d7-5f10-4a57-a169-6a8a8b28fed8:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,6 +10,7 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -25,6 +27,7 @@ fieldLayouts:
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
             uid: 8ba610da-a786-467d-8d41-7df5e65ff8f0
+            userCondition: null
             warning: null
             width: 75
           -
@@ -44,9 +47,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 4386dc55-1d37-415b-8f97-6f791727287b
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2 # Featured Image
             instructions: null
             label: null
@@ -54,9 +59,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 481b70bb-0098-4302-95b1-3a225a03391e
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: f6ff43e3-8e77-457f-91cb-101f517889c9 # Teaser
             instructions: null
             label: null
@@ -64,9 +71,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: f5fd3d4d-26ab-4474-8319-ab7fda37432d
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 11b69207-d542-4b25-b583-c6444cf7573e # Show Privacy Settings
             instructions: null
             label: null
@@ -74,9 +83,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 3a858baf-62cd-479c-b9c3-3b61d2e5c088
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 266ac6c3-03c0-40eb-8f24-c5c22ed1c5c0 # Content
             instructions: null
             label: null
@@ -84,10 +95,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 7bca876f-0b70-41e8-b0a1-722303eb155b
+            userCondition: null
             warning: null
             width: 100
         name: Inhalt
         uid: f772543e-14c2-44d2-9024-fe0af1a2d64d
+        userCondition: null
 handle: privacy
 hasTitleField: true
 name: Privacy

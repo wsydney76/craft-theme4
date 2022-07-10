@@ -3,8 +3,10 @@ fieldLayouts:
   93371f62-9ff6-4700-9462-571076c33835:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: e35ec4e7-302c-49f6-b5ae-a95120fbd4c0 # Question
             instructions: null
             label: null
@@ -12,9 +14,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: fb3ed38b-6981-4ec3-8d68-89f8c9bdcc18
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 8fb04690-63b2-4e65-bb13-def05a978110 # Answer
             instructions: null
             label: null
@@ -22,10 +26,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: dd854d2a-3d2f-4064-a5cd-6b3349cfe5e6
+            userCondition: null
             warning: null
             width: 100
         name: Content
         uid: 14e390c4-90e5-4635-a7a0-196fdb6b69cf
+        userCondition: null
 fields:
   8fb04690-63b2-4e65-bb13-def05a978110: # Answer
     columnSuffix: null

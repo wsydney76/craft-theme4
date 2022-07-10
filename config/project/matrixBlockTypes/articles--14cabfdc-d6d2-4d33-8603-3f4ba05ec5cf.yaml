@@ -3,8 +3,10 @@ fieldLayouts:
   60cf895a-c218-4266-b92e-84e7c9af2baa:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 484ad434-775d-49da-ba41-8fef629fdf05 # Heading
             instructions: null
             label: null
@@ -12,9 +14,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 4fcbda06-ad69-4051-a078-f4a920cf1278
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: e26bccc0-5f6e-465a-bc53-ca518d9a70d8 # Articles
             instructions: null
             label: null
@@ -22,9 +26,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 63af6627-7664-4bc0-b5aa-e1d844a3ce63
+            userCondition: null
             warning: null
             width: 50
           -
+            elementCondition: null
             fieldUid: d2bff817-c170-4c81-81c8-715894d6795d # Articles Limit
             instructions: null
             label: null
@@ -32,9 +38,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: f557a29c-6091-4b0c-8b0f-d4981f540255
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 1a4c4f22-b6ec-4dc8-8b67-ef9d928180d0 # Topic
             instructions: null
             label: null
@@ -42,9 +50,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: f4160bb5-4a29-4c3d-80f9-0ea47ba4d264
+            userCondition: null
             warning: null
             width: 50
           -
+            elementCondition: null
             fieldUid: 8b780bbf-5c14-4590-9eac-dda4a4fb6dcd # Restrict to topic
             instructions: null
             label: null
@@ -52,9 +62,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: d71b9389-8b08-492e-85bd-57a507bacb5e
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 073bb589-e25f-4852-95c5-3aa6126e13b0 # Width
             instructions: null
             label: null
@@ -62,9 +74,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: f953c711-65b4-49d4-96f5-7ca9659cb813
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: b8473c9e-0759-45e7-bc02-b5e00a31c275 # Style
             instructions: null
             label: null
@@ -72,9 +86,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: a262dd36-647b-479e-a2a2-5d9c06805f0a
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 42c099ce-f401-404a-9884-34b24e55168a # Add top border
             instructions: null
             label: null
@@ -82,9 +98,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: b8c568a4-b3c8-41e1-a329-bc2a7136ab78
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 14b97a17-1192-45ff-a041-b14cc2b7fdcd # Show Author and Date
             instructions: null
             label: null
@@ -92,10 +110,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: e6560461-08f6-4f97-a101-23d7741e1c85
+            userCondition: null
             warning: null
             width: 25
         name: Content
         uid: 41660015-9759-4d64-8e07-842c7b9bd715
+        userCondition: null
 fields:
   1a4c4f22-b6ec-4dc8-8b67-ef9d928180d0: # Topic
     columnSuffix: null

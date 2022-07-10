@@ -3,8 +3,10 @@ fieldLayouts:
   8013e21a-f4e5-4d2c-bbb7-a3dd5b714a43:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 82a2d82a-ecb9-4e2d-b41d-c67f2f77f73a # Image
             instructions: null
             label: null
@@ -12,9 +14,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 42e5b2dd-f503-40e1-9a7e-2cedc64362b5
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 666c8cf3-0639-4757-aefa-9490930dbf0f # Audio
             instructions: null
             label: null
@@ -22,9 +26,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: a9e40243-66ba-4ba6-b03e-65e5630b7ace
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 95a20cdb-9cb3-4522-a2bf-db9721d195e8 # Titel
             instructions: null
             label: null
@@ -32,9 +38,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 9dd56e4c-06a4-4b4a-93f2-5a5f08698c4f
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: dbc263da-95a4-428a-a2eb-82d51acb4523 # Artist
             instructions: null
             label: null
@@ -42,9 +50,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 372683f5-c7db-4a8e-87c9-da587b53b4e6
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 04d14d45-3d49-4d75-9b1b-56b1cbe51772 # Duration
             instructions: null
             label: null
@@ -52,10 +62,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 4bffbd9c-f3a1-485a-95bc-427303576ddb
+            userCondition: null
             warning: null
             width: 100
         name: Content
         uid: fac15c96-97d1-4434-82c7-dfa6ccaaf587
+        userCondition: null
 fields:
   04d14d45-3d49-4d75-9b1b-56b1cbe51772: # Duration
     columnSuffix: null

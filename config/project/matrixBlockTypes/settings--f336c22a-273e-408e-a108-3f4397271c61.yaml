@@ -3,8 +3,10 @@ fieldLayouts:
   69f8429b-14be-40a0-b9d4-a006da256757:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 61c8dfb5-4ac7-420b-ad8e-5cad0d464a98 # Description
             instructions: null
             label: null
@@ -12,9 +14,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 5d220c53-2355-423a-a3d1-a03161b2db41
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 48fde250-325a-44bf-9238-66f0e831a883 # Image
             instructions: null
             label: null
@@ -22,10 +26,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 1a7b9342-d0c5-48d3-bdf8-4ae38e689e0b
+            userCondition: null
             warning: null
             width: 100
         name: Content
         uid: e41c862a-9799-4d30-940e-bd52268b2c74
+        userCondition: null
 fields:
   48fde250-325a-44bf-9238-66f0e831a883: # Image
     columnSuffix: null

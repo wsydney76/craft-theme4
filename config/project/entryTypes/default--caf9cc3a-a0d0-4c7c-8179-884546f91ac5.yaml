@@ -2,6 +2,7 @@ fieldLayouts:
   1e92ed6d-69b2-4d07-b5bd-d06de6414399:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,6 +10,7 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -25,6 +27,7 @@ fieldLayouts:
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
             uid: 606062d0-e78d-45a6-a255-ad081abf5ba0
+            userCondition: null
             warning: null
             width: 75
           -
@@ -44,9 +47,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 07eda942-f519-48ae-a0f2-9c3c07d03b08
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2 # Featured Image
             instructions: null
             label: null
@@ -54,9 +59,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 653a5a61-122e-47b8-94d4-78bfc6e0b613
+            userCondition: null
             warning: null
             width: 50
           -
+            elementCondition: null
             fieldUid: 2e200cb6-ebde-4ae5-b6fe-3e9b7abd899f # Topics
             instructions: null
             label: null
@@ -64,9 +71,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 3603d1b9-b00d-4038-9ee5-12ee81342875
+            userCondition: null
             warning: null
             width: 50
           -
+            elementCondition: null
             fieldUid: f6ff43e3-8e77-457f-91cb-101f517889c9 # Teaser
             instructions: null
             label: null
@@ -74,9 +83,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 302c4262-ff32-4fb8-aaed-5b578cef1567
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 9c9d5cca-e9b2-48e2-911d-21f139d26fed # Intro
             instructions: 'Used in Article block, e.g. for the home page'
             label: null
@@ -84,9 +95,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 731e1d7d-a637-4a29-aef8-78deafd90335
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 266ac6c3-03c0-40eb-8f24-c5c22ed1c5c0 # Content
             instructions: null
             label: null
@@ -94,9 +107,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 53ed57e7-09c3-4ddb-adfb-99b89147de33
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 07e4260f-cc8c-4e3c-8085-fa9c9077ddcb # Entries
             instructions: null
             label: 'Verwandte Einträge'
@@ -104,13 +119,17 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: fb172686-cdaa-402f-a776-8a85d742ce69
+            userCondition: null
             warning: null
             width: 100
         name: Common
         uid: daac735c-16f0-4e46-a1a0-8ac74717f1f8
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: e62d63b0-c299-42ce-aeef-86a69f7e676c # Seo Fields
             instructions: null
             label: null
@@ -118,10 +137,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: d98f7aa9-7a8f-4f42-b9c3-89ac937db01f
+            userCondition: null
             warning: null
             width: 100
         name: SEO
         uid: f8118665-2816-4041-a251-580002bb1846
+        userCondition: null
 handle: default
 hasTitleField: true
 name: Standard

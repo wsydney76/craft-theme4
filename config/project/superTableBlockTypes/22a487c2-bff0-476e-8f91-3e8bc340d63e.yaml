@@ -3,8 +3,10 @@ fieldLayouts:
   d15441ec-f24b-4cb0-aa32-04e8cc923f56:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: b49d56c6-b29b-4ac0-ba55-aa83643aedaa # Target
             instructions: null
             label: null
@@ -12,9 +14,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 3c64ab70-1d58-49a7-945e-7fa2aa8b3475
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: fb7af698-b5de-4042-9a4a-6f26a22c5073 # Caption
             instructions: null
             label: null
@@ -22,9 +26,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: b85f9011-9b4a-43c0-8634-c927741641f6
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: bde02460-053f-4ab2-8c8a-6b782b53b949 # Background color
             instructions: null
             label: null
@@ -32,9 +38,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 8ea22a7d-1bc2-46b6-a5c9-94b71e9c1498
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 6126b7f5-ffb5-4ad1-958c-bc4b58a8f7d3 # Text color
             instructions: null
             label: null
@@ -42,10 +50,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 44aadbff-3258-4780-b8bf-ce49310e14d2
+            userCondition: null
             warning: null
             width: 100
         name: Content
         uid: a0028d9a-01f6-47e0-9ab2-20a4c425f854
+        userCondition: null
 fields:
   6126b7f5-ffb5-4ad1-958c-bc4b58a8f7d3: # Text color
     columnSuffix: null

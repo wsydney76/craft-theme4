@@ -3,8 +3,10 @@ fieldLayouts:
   1ade30d6-d4fd-4ca6-8b86-7762b4e70a86:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 1df21aa9-d2ee-4afa-88ca-298f68536dfd # Image
             instructions: null
             label: null
@@ -12,9 +14,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: bbfd3b83-eec1-4c29-8eaa-61dba1490ecb
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 4008cfb2-85a6-441c-bffb-b4d1cf5c23e0 # Caption
             instructions: null
             label: null
@@ -22,9 +26,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 6702219f-7c10-4daa-9114-b901090cd42e
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 6cc5489b-8b5b-4803-84e7-8520cf7b142f # Width
             instructions: null
             label: null
@@ -32,9 +38,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 6e02d9fd-7b2c-48ab-a0ab-3769a20b39cf
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 0cb800eb-b7ac-4482-b68e-1bb06dbe4ca9 # Aspect Ratio
             instructions: null
             label: null
@@ -42,9 +50,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: f4229a76-1136-44bd-adf0-3fd596d53216
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 599e26fb-8feb-4096-b249-19bdc57c275a # Margins Y
             instructions: null
             label: null
@@ -52,9 +62,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 6fc083f3-f8a3-47c6-b99a-f82e59f82898
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 695a4b42-15e1-4ea6-acdf-a19587641da5 # Styles
             instructions: null
             label: null
@@ -62,9 +74,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 866119fe-6c65-4857-b731-8dddbc6d867a
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 484e711a-2618-494e-a986-e11b8912b1ff # Image Effects
             instructions: null
             label: null
@@ -72,10 +86,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 9a62d22e-c0ce-4f70-af07-b8fec13e4d10
+            userCondition: null
             warning: null
             width: 100
         name: Content
         uid: 73e8b164-ecae-478e-a26f-46a6485e3087
+        userCondition: null
 fields:
   0cb800eb-b7ac-4482-b68e-1bb06dbe4ca9: # Aspect Ratio
     columnSuffix: null

@@ -2,6 +2,7 @@ fieldLayouts:
   63cf4384-2c9e-4fea-888c-d70557396723:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,6 +10,7 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -25,10 +27,12 @@ fieldLayouts:
             title: null
             type: craft\fieldlayoutelements\assets\AssetTitleField
             uid: 3cdd8761-2f72-4257-afe5-f3f9e2886052
+            userCondition: null
             warning: null
             width: 100
         name: Inhalt
         uid: ff4034f6-0647-40f8-93bf-77746f4f0230
+        userCondition: null
 fs: userPhotos
 handle: userPhotos
 name: 'User Photos'

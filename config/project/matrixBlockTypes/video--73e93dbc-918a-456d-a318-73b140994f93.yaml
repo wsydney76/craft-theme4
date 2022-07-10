@@ -3,8 +3,10 @@ fieldLayouts:
   2396ae75-bd1d-4372-9450-ea76a363f922:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: b2bec7dc-66f2-4af0-9b96-7f9994b1d2c2 # Video File
             instructions: null
             label: null
@@ -12,9 +14,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 3c69ce23-17c6-448c-963b-2a8b260966e0
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: bc242225-cdbb-4145-9746-471878a85673 # Poster Image
             instructions: null
             label: null
@@ -22,9 +26,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 93c5c914-673d-42df-be58-476751537835
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 80de78f1-6d38-4d79-a522-71b6e6aec241 # Show in modal
             instructions: null
             label: null
@@ -32,10 +38,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: d1abb01e-6a27-41aa-befc-ab648082504b
+            userCondition: null
             warning: null
             width: 25
         name: Content
         uid: 3be1e399-665b-4cac-ac85-47db98093223
+        userCondition: null
 fields:
   80de78f1-6d38-4d79-a522-71b6e6aec241: # Show in modal
     columnSuffix: null

@@ -3,8 +3,10 @@ fieldLayouts:
   0ce9bef7-d2ea-4e7e-8ead-86e6d8771e8d:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 051d92e2-649b-4487-b9de-31b3c4bb7d86 # Audio File
             instructions: null
             label: null
@@ -12,9 +14,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: fdf09014-ae48-4714-abf3-c5ce252cf772
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 60d7202b-beaa-4319-83f3-33bcef815c6d # Style
             instructions: null
             label: null
@@ -22,10 +26,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: d5658879-1a7f-4544-951b-0e6870544450
+            userCondition: null
             warning: null
             width: 100
         name: Content
         uid: 6af65f26-da0b-4cb2-aacc-97fdfe143f83
+        userCondition: null
 fields:
   051d92e2-649b-4487-b9de-31b3c4bb7d86: # Audio File
     columnSuffix: null

@@ -3,8 +3,10 @@ fieldLayouts:
   d70a7482-63dc-452f-8a8a-4b741b026dfc:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 85347e4c-c38c-4edd-b1b6-c19c29ca6ad4 # Image
             instructions: null
             label: null
@@ -12,9 +14,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 0108539e-cc88-401e-a745-1a5805a6bc68
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: d7695888-b2ff-4bbe-ba19-672754ca90a3 # Heading
             instructions: null
             label: null
@@ -22,9 +26,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 6fe8298b-10b0-4371-8744-d132721bae90
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: b68da9c5-b120-4d9d-aeda-909f35107532 # Text
             instructions: null
             label: null
@@ -32,9 +38,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: d96da507-f86e-492f-b710-12ffa2708a22
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 30740157-2dd2-4b34-bc62-246493985a92 # Width
             instructions: null
             label: null
@@ -42,9 +50,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: bfbadf29-4d8b-471c-b3a5-d203e531d539
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 842e6c06-cc3a-40c7-9fdb-13b911f9602b # Image Align
             instructions: null
             label: null
@@ -52,9 +62,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: b728a4d3-d8b3-4dd4-ae33-f069e0c55b1a
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: f7d4d3ce-88ca-46e0-a39d-135eb2c82efd # Style
             instructions: null
             label: null
@@ -62,9 +74,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 39231f3a-b962-4001-9cbe-5af16db6c9d9
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 8f7a501f-8f71-499e-925e-a2de6a443fd2 # Margins Y
             instructions: null
             label: null
@@ -72,9 +86,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 299673eb-c04f-44ae-8df1-2c597354efac
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 2e7a2b78-1f15-4193-ab59-950736957ac4 # Aspect Ratio
             instructions: null
             label: null
@@ -82,9 +98,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: ef9d104c-2bb4-4c22-93e0-3658b960b35e
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 44b322dd-2b68-4cbf-ac78-a70d2d80af18 # Image Background Color
             instructions: null
             label: null
@@ -92,10 +110,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 90f9af80-3d25-4135-a634-10c05d3430a9
+            userCondition: null
             warning: null
             width: 25
         name: Content
         uid: 5d560b22-ebe9-4ddb-9c3d-e0f1a4ca2cd5
+        userCondition: null
 fields:
   2e7a2b78-1f15-4193-ab59-950736957ac4: # Aspect Ratio
     columnSuffix: null

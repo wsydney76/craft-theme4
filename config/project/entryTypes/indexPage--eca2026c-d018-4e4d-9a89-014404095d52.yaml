@@ -2,6 +2,7 @@ fieldLayouts:
   a949fea3-f4a0-45a3-aa39-02573d17cef4:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,6 +10,7 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -25,6 +27,7 @@ fieldLayouts:
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
             uid: 472b5f83-38dd-42bc-9d1d-bcb41030f7b1
+            userCondition: null
             warning: null
             width: 75
           -
@@ -44,9 +47,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: f48539bc-2546-4525-8c76-2d761775ac38
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2 # Featured Image
             instructions: null
             label: null
@@ -54,9 +59,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: b7e26cdb-2dbe-4911-ac75-75b20f6e5dc8
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: f6ff43e3-8e77-457f-91cb-101f517889c9 # Teaser
             instructions: null
             label: null
@@ -64,9 +71,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 1a2ff105-c064-4748-b9ce-cf2632f0e288
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 266ac6c3-03c0-40eb-8f24-c5c22ed1c5c0 # Content
             instructions: null
             label: null
@@ -74,9 +83,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: ff691cf2-d76d-4e4c-8921-8cb7da360e4f
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: c301f202-52bb-477a-b6b7-2b4ee598bf4c # Section
             instructions: null
             label: null
@@ -84,9 +95,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 4d6a917b-576d-4a99-8af2-7067a660c327
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: aa0f84e8-acb3-403e-a095-1d6f3d9f98bf # Order By
             instructions: null
             label: null
@@ -94,9 +107,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: fa37c85f-0042-40d6-b6a2-931e9bc74a25
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 3f22fd1a-1b63-4a34-ab28-56dd59bd3e99 # Index Template
             instructions: null
             label: null
@@ -104,9 +119,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: cf7be767-e6cb-4e5f-a2e9-d90df7010732
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: d9637c0b-358e-4727-8210-8648a7f0db61 # Criteria
             instructions: null
             label: null
@@ -114,13 +131,17 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 83511402-0b09-4d18-8853-2e6262ac5a4c
+            userCondition: null
             warning: null
             width: 100
         name: Inhalt
         uid: 68efeb64-bf19-42a2-9485-87b5ef694a6b
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: e62d63b0-c299-42ce-aeef-86a69f7e676c # Seo Fields
             instructions: null
             label: null
@@ -128,10 +149,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: cf743b51-6046-4c6b-a8de-a976bd9be77a
+            userCondition: null
             warning: null
             width: 100
         name: SEO
         uid: b82dd02b-fdfb-4181-910f-91de77fab1fd
+        userCondition: null
 handle: indexPage
 hasTitleField: true
 name: 'Index Page'

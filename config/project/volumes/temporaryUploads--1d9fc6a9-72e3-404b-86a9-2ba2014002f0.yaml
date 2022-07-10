@@ -2,6 +2,7 @@ fieldLayouts:
   a2def34a-76ae-401e-b682-ce96b958a2d9:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,6 +10,7 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -25,9 +27,11 @@ fieldLayouts:
             title: null
             type: craft\fieldlayoutelements\assets\AssetTitleField
             uid: 279b003d-8718-49e8-a431-ba06d16f1681
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 27d258a2-a6f5-44f8-9692-e0a1b254cea4 # Alt Text
             instructions: null
             label: null
@@ -35,9 +39,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: ce34c2fa-82f1-4532-9f27-35c4ad3721d7
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: dc298055-236a-4bbc-9246-ae94c0e76889 # Copyright
             instructions: null
             label: null
@@ -45,9 +51,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 321e3314-15e9-43da-8d1d-1ff2eb632b83
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 0492cf04-a657-4145-a124-7c2f3d500c63 # Copyright Link
             instructions: null
             label: null
@@ -55,10 +63,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: ec17ebba-2901-4f85-b03c-4bb32aeebc3c
+            userCondition: null
             warning: null
             width: 100
         name: Inhalt
         uid: 12cb4b58-2834-4c8c-8308-aebd17ae976c
+        userCondition: null
 fs: temporaryUploads
 handle: temporaryUploads
 name: 'Temporary Uploads'

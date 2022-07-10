@@ -2,18 +2,22 @@ fieldLayouts:
   86552120-6440-41f8-946f-f405832434eb:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             style: tip
             tip: 'Select the entry type ''Privacy'' for the page to be linked as privacy policy in the cookie consent dialog!'
             type: craft\fieldlayoutelements\Tip
             uid: 2e15cb66-7449-43cf-a893-c0577084c174
+            userCondition: null
           -
             autocapitalize: true
             autocomplete: false
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -30,6 +34,7 @@ fieldLayouts:
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
             uid: e407d67b-3265-4ac6-8ddd-0fb51900e107
+            userCondition: null
             warning: null
             width: 75
           -
@@ -49,9 +54,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: ea3bdd1d-b971-43ef-9361-d21ee8126c32
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 55c8d23d-ad74-43a2-a3f2-8c4b6d969fe2 # Featured Image
             instructions: null
             label: null
@@ -59,9 +66,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 302ef5d8-8d34-49fe-a4d6-2e4b193c524a
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: f6ff43e3-8e77-457f-91cb-101f517889c9 # Teaser
             instructions: null
             label: null
@@ -69,9 +78,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 2509a727-22fb-4b94-85b0-6266b35cab8d
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 266ac6c3-03c0-40eb-8f24-c5c22ed1c5c0 # Content
             instructions: null
             label: null
@@ -79,10 +90,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 971ab2cc-f8aa-4501-87b8-bd074e2502b3
+            userCondition: null
             warning: null
             width: 100
         name: Inhalt
         uid: e84f1ab1-d817-4a84-bf5d-9b5c97223016
+        userCondition: null
 handle: legal
 hasTitleField: true
 name: Legal

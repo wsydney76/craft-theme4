@@ -3,8 +3,10 @@ fieldLayouts:
   3cb0c8c3-747f-4de4-a099-e0861fbf8b86:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: f7b15040-ef01-4cf3-ab66-7facec8716bb # Hilfetext zu Matrix-Inhalten einfügen?
             instructions: null
             label: null
@@ -12,10 +14,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 32e86442-3487-4955-a12d-ce7acbed51d0
+            userCondition: null
             warning: null
             width: 100
         name: Content
         uid: 99e350b0-fd02-4ebf-a265-29ab4daf27cb
+        userCondition: null
 fields:
   f7b15040-ef01-4cf3-ab66-7facec8716bb: # Hilfetext zu Matrix-Inhalten einfügen?
     columnSuffix: null

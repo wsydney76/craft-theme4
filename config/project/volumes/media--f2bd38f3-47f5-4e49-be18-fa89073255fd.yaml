@@ -2,6 +2,7 @@ fieldLayouts:
   a2ec2af6-c38e-4877-947c-787e4e135bf3:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,6 +10,7 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -25,9 +27,11 @@ fieldLayouts:
             title: null
             type: craft\fieldlayoutelements\assets\AssetTitleField
             uid: fe34b95e-b492-4a34-aba2-5a5590f4ab9c
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 27d258a2-a6f5-44f8-9692-e0a1b254cea4 # Alt Text
             instructions: null
             label: null
@@ -35,9 +39,11 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 721bb091-e585-4a29-a230-6083b1c33e73
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: dc298055-236a-4bbc-9246-ae94c0e76889 # Copyright
             instructions: null
             label: null
@@ -45,10 +51,12 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 2b1a6e99-9fc6-4b8a-a152-b6983a2bba6b
+            userCondition: null
             warning: null
             width: 100
         name: Inhalt
         uid: c026b1ff-3a17-4fac-a991-4cb0fc0c04b6
+        userCondition: null
 fs: media
 handle: media
 name: Media
