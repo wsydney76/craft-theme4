@@ -1,0 +1,12 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: bb94c9b2-f8e4-4729-97b4-9367ffd54772 # Person
+handle: email
+instructions: null
+name: Email
+searchable: false
+settings:
+  placeholder: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Email

@@ -51,228 +51,224 @@ class MainModule extends Module
 {
 
 // Fields
-    public static $app;
+	public static $app;
 
-    public function init(): void
-    {
-        Craft::setAlias('@modules/main', $this->getBasePath());
+	public function init(): void
+	{
+		Craft::setAlias('@modules/main', $this->getBasePath());
 
-        // Set the controllerNamespace based on whether this is a console or web request
-        if (Craft::$app->getRequest()->getIsConsoleRequest()) {
-            $this->controllerNamespace = 'modules\\main\\console\\controllers';
-        } else {
-            $this->controllerNamespace = 'modules\\main\\controllers';
-        }
+		// Set the controllerNamespace based on whether this is a console or web request
+		if (Craft::$app->getRequest()->getIsConsoleRequest()) {
+			$this->controllerNamespace = 'modules\\main\\console\\controllers';
+		} else {
+			$this->controllerNamespace = 'modules\\main\\controllers';
+		}
 
-        // Register Services
-        $this->setComponents([
-            'content' => ContentService::class
-        ]);
+		// Register Services
+		$this->setComponents([
+			'content' => ContentService::class
+		]);
 
-        // Register Behaviors
-        Event::on(
-            Entry::class,
-            Entry::EVENT_DEFINE_BEHAVIORS, function(DefineBehaviorsEvent $event): void {
-            $event->behaviors[] = EntryBehavior::class;
-        });
+		// Register Behaviors
+		Event::on(
+			Entry::class,
+			Entry::EVENT_DEFINE_BEHAVIORS, function(DefineBehaviorsEvent $event): void {
+			$event->behaviors[] = EntryBehavior::class;
+		});
 
-        // Register Rules
-        Event::on(
-            Entry::class,
-            Entry::EVENT_DEFINE_RULES, function(DefineRulesEvent $event): void {
-            $event->rules[] = ['title', 'string', 'max' => 50, 'on' => Entry::SCENARIO_LIVE];
-        });
+		// Register Rules
+		Event::on(
+			Entry::class,
+			Entry::EVENT_DEFINE_RULES, function(DefineRulesEvent $event): void {
+			$event->rules[] = ['title', 'string', 'max' => 50, 'on' => Entry::SCENARIO_LIVE];
+		});
 
-        // Register custom field types
-        Event::on(
-            Fields::class,
-            Fields::EVENT_REGISTER_FIELD_TYPES, function(RegisterComponentTypesEvent $event): void {
-            $event->types = array_merge($event->types, [
-                IncludeField::class,
-                WidthField::class,
-                ThemeColorField::class,
-                MarginsYField::class,
-                SectionsField::class,
-                OrderByField::class,
-                AspectRatioField::class
-            ]);
-        });
+		// Register custom field types
+		Event::on(
+			Fields::class,
+			Fields::EVENT_REGISTER_FIELD_TYPES, function(RegisterComponentTypesEvent $event): void {
+			$event->types = array_merge($event->types, [
+				IncludeField::class,
+				WidthField::class,
+				ThemeColorField::class,
+				MarginsYField::class,
+				SectionsField::class,
+				OrderByField::class,
+				AspectRatioField::class
+			]);
+		});
 
-        // Register Twig extension for theme variable
-        Craft::$app->view->registerTwigExtension(new TwigExtension());
+		// Register Twig extension for theme variable
+		Craft::$app->view->registerTwigExtension(new TwigExtension());
 
-        // Register CP assets
-        if (Craft::$app->request->isCpRequest) {
-            Event::on(
-                View::class,
-                View::EVENT_BEFORE_RENDER_TEMPLATE, function(): void {
-                Craft::$app->view->registerAssetBundle(CpAssets::class);
-            }
-            );
-        }
+		// Register CP assets
+		if (Craft::$app->request->isCpRequest) {
+			Event::on(
+				View::class,
+				View::EVENT_BEFORE_RENDER_TEMPLATE, function(): void {
+				Craft::$app->view->registerAssetBundle(CpAssets::class);
+			}
+			);
+		}
 
-        // Validate entries on all sites (fixes open Craft bug)
-        Event::on(
-            Entry::class,
-            Entry::EVENT_BEFORE_SAVE, function($event): void {
+		// Validate entries on all sites (fixes open Craft bug)
+		Event::on(
+			Entry::class,
+			Entry::EVENT_BEFORE_SAVE, function($event): void {
 
-            if (Craft::$app->sites->getTotalSites() == 1) {
-                return;
-            }
+			if (Craft::$app->sites->getTotalSites() == 1) {
+				return;
+			}
 
-            /** @var Entry $entry */
-            $entry = $event->sender;
+			/** @var Entry $entry */
+			$entry = $event->sender;
 
-            // TODO: Check conditionals
+			// TODO: Check conditionals
 
-            if ($entry->resaving || $entry->propagating || $entry->getScenario() != Entry::STATUS_LIVE) {
-                return;
-            }
+			if ($entry->resaving || $entry->propagating || $entry->getScenario() != Entry::STATUS_LIVE) {
+				return;
+			}
 
-            $entry->validate();
+			$entry->validate();
 
-            if ($entry->hasErrors()) {
-                return;
-            }
+			if ($entry->hasErrors()) {
+				return;
+			}
 
-            foreach ($entry->getLocalized()->all() as $localizedEntry) {
-                $localizedEntry->scenario = Entry::SCENARIO_LIVE;
+			foreach ($entry->getLocalized()->all() as $localizedEntry) {
+				$localizedEntry->scenario = Entry::SCENARIO_LIVE;
 
-                if (!$localizedEntry->validate()) {
-                    $entry->addError(
-                        $entry->getType()->hasTitleField ? 'title' : 'slug',
-                        Craft::t('site', 'Error validating entry in') .
-                        ' "' . $localizedEntry->site->name . '". ' .
-                        implode(' ', $localizedEntry->getErrorSummary(false)));
-                    $event->isValid = false;
-                }
-            }
-        });
+				if (!$localizedEntry->validate()) {
+					$entry->addError(
+						$entry->getType()->hasTitleField ? 'title' : 'slug',
+						Craft::t('site', 'Error validating entry in') .
+						' "' . $localizedEntry->site->name . '". ' .
+						implode(' ', $localizedEntry->getErrorSummary(false)));
+					$event->isValid = false;
+				}
+			}
+		});
 
-        // Rename images with extension 'jfif' to 'jpg'
-        // see config/general.php for an explanation
-        Event::on(
-            Asset::class,
-            Asset::EVENT_AFTER_SAVE, function(ModelEvent $event): void {
-            /** @var Asset $asset */
-            $asset = $event->sender;
+		// Rename images with extension 'jfif' to 'jpg'
+		// see config/general.php for an explanation
+		Event::on(
+			Asset::class,
+			Asset::EVENT_AFTER_SAVE, function(ModelEvent $event): void {
+			/** @var Asset $asset */
+			$asset = $event->sender;
 
-            if ($asset->kind != 'image') {
-                return;
-            }
+			if ($asset->kind != 'image') {
+				return;
+			}
 
-            $pathInfo = pathinfo($asset->getFilename());
-            if ($pathInfo['extension'] != 'jfif') {
-                return;
-            }
+			$pathInfo = pathinfo($asset->getFilename());
+			if ($pathInfo['extension'] != 'jfif') {
+				return;
+			}
 
-            $newFilename = $pathInfo['filename'] . '.jpg';
-            Craft::$app->assets->moveAsset($asset, $asset->getFolder(), $newFilename);
-        });
+			$newFilename = $pathInfo['filename'] . '.jpg';
+			Craft::$app->assets->moveAsset($asset, $asset->getFolder(), $newFilename);
+		});
 
-        if (Craft::$app->request->isCpRequest) {
-            Craft::$app->view->hook('cp.users.edit.details', function(array $context) {
-                return Craft::$app->view->renderTemplate(
-                    '_cp/user_person.twig',
-                    ['user' => $context['user']],
-                    View::TEMPLATE_MODE_SITE
-                );
-            });
-        }
+		if (Craft::$app->request->isCpRequest) {
+			Craft::$app->view->hook('cp.users.edit.details', function(array $context) {
+				return Craft::$app->view->renderTemplate(
+					'_cp/user_person.twig',
+					['user' => $context['user']],
+					View::TEMPLATE_MODE_SITE
+				);
+			});
+		}
 
-        // Don't update search index for drafts
-        Event::on(
-            Elements::class,
-            Elements::EVENT_BEFORE_UPDATE_SEARCH_INDEX,
-            function(ElementEvent $event) {
-                if (ElementHelper::isDraft($event->element)) {
-                    $event->isValid = false;
-                }
-            }
-        );
+		// Don't update search index for drafts
+		Event::on(
+			Elements::class,
+			Elements::EVENT_BEFORE_UPDATE_SEARCH_INDEX,
+			function(ElementEvent $event) {
+				if (ElementHelper::isDraft($event->element)) {
+					$event->isValid = false;
+				}
+			}
+		);
 
-        Event::on(
-            BaseCondition::class,
-            BaseCondition::EVENT_REGISTER_CONDITION_RULE_TYPES,
-            function(RegisterConditionRuleTypesEvent $event) {
+		Event::on(
+			BaseCondition::class,
+			BaseCondition::EVENT_REGISTER_CONDITION_RULE_TYPES,
+			function(RegisterConditionRuleTypesEvent $event) {
 
-                $event->conditionRuleTypes = array_merge($event->conditionRuleTypes, [
-                    HasEmptyCopyrightConditionRule::class,
-                    HasEmptyAltTextConditionRule::class,
-                    HasDraftsConditionRule::class,
-                    IsCoverTitleStyleConditionRule::class
-                ]);
-            }
-        );
+				$event->conditionRuleTypes = array_merge($event->conditionRuleTypes, [
+					HasEmptyCopyrightConditionRule::class,
+					HasEmptyAltTextConditionRule::class,
+					HasDraftsConditionRule::class,
+					IsCoverTitleStyleConditionRule::class
+				]);
+			}
+		);
 
-        // Prevent password managers like Bitdefender Wallet from falsely inserting credentials into user form
-        Craft::$app->view->hook('cp.users.edit.content', function(array &$context) {
-            return '<input type="text" name="dummy-first-name" value="wtf" style="display: none">';
-        });
+		// Prevent password managers like Bitdefender Wallet from falsely inserting credentials into user form
+		Craft::$app->view->hook('cp.users.edit.content', function(array &$context) {
+			return '<input type="text" name="dummy-first-name" value="wtf" style="display: none">';
+		});
 
-        $this->_setElementIndexColumns();
-    }
+		$this->_setElementIndexColumns();
+	}
 
-    protected function _setElementIndexColumns()
-    {
-        // Register element index column
-        Event::on(
-            Entry::class,
-            Element::EVENT_REGISTER_TABLE_ATTRIBUTES, function(RegisterElementTableAttributesEvent $event) {
-            $event->tableAttributes['bigFeaturedImage'] = ['label' => Craft::t('site', 'Featured Image (big)')];
-        });
+	protected function _setElementIndexColumns()
+	{
+		// Register element index column
+		Event::on(
+			Entry::class,
+			Element::EVENT_REGISTER_TABLE_ATTRIBUTES, function(RegisterElementTableAttributesEvent $event) {
+			$event->tableAttributes['bigFeaturedImage'] = ['label' => Craft::t('site', 'Featured Image (big)')];
+		});
 
-        Event::on(
-            Entry::class,
-            Element::EVENT_SET_TABLE_ATTRIBUTE_HTML, function(SetElementTableAttributeHtmlEvent $event) {
+		Event::on(
+			Entry::class,
+			Element::EVENT_SET_TABLE_ATTRIBUTE_HTML, function(SetElementTableAttributeHtmlEvent $event) {
 
-            if ($event->attribute == 'bigFeaturedImage') {
-                /** @var Entry $entry */
-                $entry = $event->sender;
-                $event->html = 'n/a';
-                $event->handled = true;
+			if ($event->attribute == 'bigFeaturedImage') {
+				/** @var Entry $entry */
+				$entry = $event->sender;
+				$event->html = 'n/a';
+				$event->handled = true;
 
-                // Don't wait for transformed images if generateTransformsBeforePageLoad = true
-                $config = Craft::$app->config->general;
-                $oldSetting = $config->generateTransformsBeforePageLoad;
-                $config->generateTransformsBeforePageLoad = false;
+				// Don't wait for transformed images if generateTransformsBeforePageLoad = true
+				$config = Craft::$app->config->general;
+				$oldSetting = $config->generateTransformsBeforePageLoad;
+				$config->generateTransformsBeforePageLoad = false;
 
-                if ($entry->featuredImage) {
-                    $image = $entry->featuredImage->one();
-                    if ($image) {
-                        $image->setTransform(['width' => 200, 'height' => 120]);
+				if ($entry->featuredImage) {
+					$image = $entry->featuredImage->one();
+					if ($image) {
+						$image->setTransform(['width' => 250, 'height' => 140]);
+						$event->html = Html::tag('img', '', [
+							'src' => $image->url,
+							'style' => 'border-radius: 3px;',
+							'width' => $image->width,
+							'height' => $image->height,
+							'alt' => $image->alt ?? $image->title,
+							'ondblclick' => "Craft.createElementEditor('craft\\\\elements\\\\Asset', {elementId: {$image->id}, siteId: {$entry->site->id}})"
+						]);
+					}
+				}
 
-                        $event->html = Html::tag('a',
-                            Html::tag('img', '', [
-                                'src' => $image->url,
-                                'style' => 'border-radius: 3px',
-                                'width' => $image->width,
-                                'height' => $image->height,
-                                'alt' => $image->alt ?? $image->title
-                            ]),
-                            [
-                                'href' => $image->cpEditUrl
-                            ]);
-                    }
-                }
+				$config->generateTransformsBeforePageLoad = $oldSetting;
+			}
+		});
 
-                $config->generateTransformsBeforePageLoad = $oldSetting;
-            }
-        });
+		Event::on(
+			Entry::class,
+			Entry::EVENT_PREP_QUERY_FOR_TABLE_ATTRIBUTE,
+			function(ElementIndexTableAttributeEvent $event) {
+				$query = $event->query;
+				$attr = $event->attribute;
 
-        Event::on(
-            Entry::class,
-            Entry::EVENT_PREP_QUERY_FOR_TABLE_ATTRIBUTE,
-            function(ElementIndexTableAttributeEvent $event) {
-                $query = $event->query;
-                $attr = $event->attribute;
-
-                if ($attr === 'bigFeaturedImage') {
-                    $query->andWith(
-                        ['featuredImage', ['withTransforms' => [['width' => 200, 'height' => 120]]]]
-                    );
-                }
-            });
-    }
+				if ($attr === 'bigFeaturedImage') {
+					$query->andWith(
+						['featuredImage', ['withTransforms' => [['width' => 200, 'height' => 120]]]]
+					);
+				}
+			});
+	}
 
 }

@@ -1,8 +1,5 @@
 <?php
-echo "Initializing a temp project Env file with a given project handle. \n\n";
-echo "Conventions:\n";
-echo "Database must exist with the name of the handle, server:localhost/3306 user: root, no password.\n";
-echo "Web server must be setup with http://<handle>.local\n\n";
+echo "Initializing a project Env file for DDEV with a given project name. \n\n";
 
 $handle = $argv[1] ?? readline('Project handle: ');
 
@@ -23,5 +20,5 @@ file_put_contents($outputFile, str_replace(
     file_get_contents($inputFile)
 ));
 
-echo "$outputFile written";
+echo "$outputFile written\n";
 

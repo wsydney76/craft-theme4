@@ -26,11 +26,15 @@ See `setup-temp.php` for conventions.
 
 Replace `project` with your project name
 
+### Clone Repository
+
 * Open Terminal (On Windows: Open WSL2 Terminal (e.g. Ubuntu) as administrator)
 * `cd <your-dev-directory`
 * `git clone https://github.com/wsydney76/craft-theme4 project`
-* On Windows: run `sudo chmod -R 777 project` (More sensitive minds follow the 'Nitro on Windows' documentation...)
 * `cd project`
+
+### Set things up
+
 * Create DDEV config: `ddev config --project-type=php --php-version=8.1 --nodejs-version=14 --http-port=81 --https-port=8443`. You can omit
   the ports if you are using the default ports 80/8443
 * `ddev start`
@@ -41,6 +45,8 @@ Replace `project` with your project name
 * Run `ddev php craft migrate/all --interactive=0`
 
 * For creating faker content/membership entries as described below replace `php craft` with `ddev php craft`
+
+Tipp: Run `bash install-ddev`
 
 ## Set up Email setting
 

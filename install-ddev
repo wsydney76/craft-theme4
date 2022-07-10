@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [ -z $1 ]
+then
+    echo Project name missing
+    exit 1
+fi
+
+echo Installing project $1...
+
+ddev config --project-name=$1 --project-type=php --php-version=8.1 --nodejs-version=14 --http-port=81 &&
+php setup-ddev.php $1 &&
+ddev composer install --no-dev &&
+ddev php craft install --interactive=0 --username=admin --password=password  --email=admin@example.com &&
+ddev php craft migrate/all --interactive=0 &&
+ddev php craft main/init --interactive=0 &&
+ddev php craft main/seed --interactive=0 &&
+ddev launch
+
